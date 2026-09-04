@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,11 +6,10 @@
 
   <title>PRASUN STORE | Shop Smart</title>
 
-<meta
-name="description"
-content="PRASUN STORE - Discover solar energy, lighting, electronics, home improvement, kitchen and lifestyle products."
-
->
+  <meta
+    name="description"
+    content="PRASUN STORE - Discover solar energy, lighting, electronics, home improvement, kitchen and lifestyle products."
+  >
 
   <style>
     * {
@@ -27,8 +25,6 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       --border: #e5e7eb;
       --background: #f7f8fa;
       --white: #ffffff;
-      --accent: #111827;
-      --green: #15803d;
     }
 
     html {
@@ -36,10 +32,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
     }
 
     body {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--background);
       color: var(--text);
       line-height: 1.5;
@@ -65,7 +58,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       z-index: 1000;
       background: var(--dark);
       color: white;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .header-inner {
@@ -83,7 +76,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
     .logo {
       font-size: 24px;
       font-weight: 800;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
       white-space: nowrap;
     }
 
@@ -97,11 +90,11 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       color: white;
       font-size: 14px;
       font-weight: 600;
-      opacity: .95;
+      opacity: 0.95;
     }
 
     .main-nav a:hover {
-      opacity: .75;
+      opacity: 0.75;
     }
 
     .cart-link {
@@ -121,24 +114,23 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
     }
 
     .hero-box {
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #f3f4f6 100%
-        );
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f3f4f6 100%
+      );
 
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 48px 40px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.05);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
     }
 
     .hero h1 {
       font-size: 42px;
       line-height: 1.1;
       margin-bottom: 14px;
-      letter-spacing: -.8px;
+      letter-spacing: -0.8px;
     }
 
     .hero p {
@@ -161,19 +153,19 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       height: 50px;
       padding: 0 16px;
 
-      border:
-        1px solid #d1d5db;
-
+      border: 1px solid #d1d5db;
       border-radius: 10px;
+
       background: white;
       outline: none;
     }
 
     .search-box input:focus {
       border-color: #9ca3af;
+
       box-shadow:
         0 0 0 3px
-        rgba(17,24,39,.08);
+        rgba(17, 24, 39, 0.08);
     }
 
     .search-box button {
@@ -191,7 +183,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
     }
 
     .search-box button:hover {
-      opacity: .9;
+      opacity: 0.9;
     }
 
     /* ========================================================
@@ -253,6 +245,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
     .product-card {
       background: white;
+
       border:
         1px solid var(--border);
 
@@ -262,11 +255,11 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       box-shadow:
         0 4px 18px
-        rgba(0,0,0,.045);
+        rgba(0, 0, 0, 0.045);
 
       transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .product-card:hover {
@@ -274,13 +267,16 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       box-shadow:
         0 12px 28px
-        rgba(0,0,0,.09);
+        rgba(0, 0, 0, 0.09);
     }
 
     .image-wrap {
       position: relative;
+
       background: #f3f4f6;
+
       aspect-ratio: 1 / 1;
+
       overflow: hidden;
     }
 
@@ -295,16 +291,16 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       background: white;
 
       transition:
-        transform .25s ease;
+        transform 0.25s ease;
     }
 
-    .product-card:hover
-    .product-image {
+    .product-card:hover .product-image {
       transform: scale(1.03);
     }
 
     .sale-label {
       position: absolute;
+
       top: 12px;
       left: 12px;
 
@@ -317,6 +313,8 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       font-size: 11px;
       font-weight: 700;
+
+      z-index: 2;
     }
 
     .product-info {
@@ -331,8 +329,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       margin-bottom: 10px;
 
-      display:
-        -webkit-box;
+      display: -webkit-box;
 
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -380,6 +377,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       border-radius: 9px;
 
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
@@ -389,42 +387,30 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       cursor: pointer;
 
       transition:
-        opacity .15s ease,
-        transform .15s ease;
+        opacity 0.15s ease,
+        transform 0.15s ease;
     }
 
     .btn:hover {
-      opacity: .88;
+      opacity: 0.88;
     }
 
     .btn-view {
       background: #f1f2f4;
+
       color: var(--dark);
-      border: 1px solid #e5e7eb;
+
+      border:
+        1px solid #e5e7eb;
     }
 
     .btn-buy {
       background: var(--dark);
+
       color: white;
-      border: 1px solid var(--dark);
-    }
 
-    /* ========================================================
-       EMPTY STATE
-    ======================================================== */
-
-    .empty-state {
-      background: white;
       border:
-        1px solid var(--border);
-
-      border-radius: 16px;
-
-      padding: 35px 20px;
-
-      text-align: center;
-
-      color: var(--muted);
+        1px solid var(--dark);
     }
 
     /* ========================================================
@@ -435,6 +421,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       margin-top: 70px;
 
       background: var(--dark);
+
       color: #d1d5db;
 
       padding: 38px 20px;
@@ -446,13 +433,16 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
     .footer-title {
       color: white;
+
       font-size: 18px;
       font-weight: 800;
+
       margin-bottom: 8px;
     }
 
     .footer-text {
       max-width: 700px;
+
       margin: 0 auto;
     }
 
@@ -483,7 +473,6 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
         gap: 14px;
       }
-
     }
 
     @media (max-width: 560px) {
@@ -506,6 +495,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       .hero-box {
         padding: 28px 20px;
+
         border-radius: 16px;
       }
 
@@ -536,7 +526,6 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             2,
             minmax(0, 1fr)
           );
-
       }
 
       .product-info {
@@ -545,6 +534,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       .product-title {
         font-size: 14px;
+
         min-height: 61px;
       }
 
@@ -559,11 +549,8 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       .btn {
         width: 100%;
       }
-
     }
-
   </style>
-
 </head>
 
 <body>
@@ -574,35 +561,34 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
   <header class="site-header">
 
-```
-<div class="header-inner">
+    <div class="header-inner">
 
-  <a
-    href="./index.html"
-    class="logo"
-  >
-    PRASUN STORE
-  </a>
+      <a
+        href="./index.html"
+        class="logo"
+      >
+        PRASUN STORE
+      </a>
 
-  <nav class="main-nav">
+      <nav class="main-nav">
 
-    <a href="./index.html">
-      Home
-    </a>
+        <a href="./index.html">
+          Home
+        </a>
 
-    <a
-      href="./cart.html"
-      class="cart-link"
-    >
-      🛒 Cart
-    </a>
+        <a
+          href="./cart.html"
+          class="cart-link"
+        >
+          🛒 Cart
+        </a>
 
-  </nav>
+      </nav>
 
-</div>
-```
+    </div>
 
   </header>
+
 
   <!-- ======================================================
        HERO
@@ -610,80 +596,82 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
   <main>
 
-```
-<section class="hero">
+    <section class="hero">
 
-  <div class="hero-box">
+      <div class="hero-box">
 
-    <h1>
-      Shop Smarter with PRASUN STORE
-    </h1>
+        <h1>
+          Shop Smarter with PRASUN STORE
+        </h1>
 
-    <p>
-      Discover useful products across
-      solar energy, lighting, electronics,
-      home improvement, kitchen, lifestyle
-      and more.
-    </p>
+        <p>
+          Discover useful products across
+          solar energy, lighting, electronics,
+          home improvement, kitchen, lifestyle
+          and more.
+        </p>
 
-    <div class="search-box">
+        <div class="search-box">
 
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Search products..."
-        autocomplete="off"
-      >
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+          >
 
-      <button
-        type="button"
-        onclick="searchProducts()"
-      >
-        Search
-      </button>
+          <button
+            type="button"
+            onclick="searchProducts()"
+          >
+            Search
+          </button>
 
-    </div>
+        </div>
 
-  </div>
+      </div>
 
-</section>
+    </section>
 
-<!-- ====================================================
-     PRODUCTS
-===================================================== -->
 
-<section class="section">
+    <!-- ====================================================
+         PRODUCTS
+    ===================================================== -->
 
-  <div class="section-header">
+    <section class="section">
 
-    <div>
+      <div class="section-header">
 
-      <h2 class="section-title">
-        Featured Products
-      </h2>
+        <div>
+
+          <h2 class="section-title">
+            Featured Products
+          </h2>
+
+          <div
+            id="productCount"
+            class="product-count"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+      <div id="status">
+        Loading products...
+      </div>
+
 
       <div
-        id="productCount"
-        class="product-count"
+        id="products"
+        class="products"
       ></div>
 
-    </div>
-
-  </div>
-
-  <div id="status">
-    Loading products...
-  </div>
-
-  <div
-    id="products"
-    class="products"
-  ></div>
-
-</section>
-```
+    </section>
 
   </main>
+
 
   <!-- ======================================================
        FOOTER
@@ -691,23 +679,22 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
   <footer>
 
-```
-<div class="footer-title">
-  PRASUN STORE
-</div>
+    <div class="footer-title">
+      PRASUN STORE
+    </div>
 
-<div class="footer-text">
-  Useful products for solar energy,
-  technology, home improvement,
-  lifestyle and more.
-</div>
+    <div class="footer-text">
+      Useful products for solar energy,
+      technology, home improvement,
+      lifestyle and more.
+    </div>
 
-<div style="margin-top:12px;">
-  © 2026 PRASUN STORE. All rights reserved.
-</div>
-```
+    <div style="margin-top:12px;">
+      © 2026 PRASUN STORE. All rights reserved.
+    </div>
 
   </footer>
+
 
   <script>
 
@@ -720,6 +707,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
     const PRODUCT_API =
       `${API_BASE}/api/products`;
+
 
     // ========================================================
     // LOAD PRODUCTS
@@ -742,11 +730,14 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           "productCount"
         );
 
+
       status.className = "";
+
       status.textContent =
         "Loading products...";
 
       container.innerHTML = "";
+
 
       try {
 
@@ -755,13 +746,16 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             PRODUCT_API,
             {
               method: "GET",
+
               headers: {
                 "Accept":
                   "application/json"
               },
+
               cache: "no-store"
             }
           );
+
 
         if (!response.ok) {
 
@@ -771,20 +765,29 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
         }
 
+
         const data =
           await response.json();
+
 
         console.log(
           "PRASUN STORE API:",
           data
         );
 
+
         const products =
-          extractProducts(data);
+          extractProducts(
+            data
+          );
 
-        if (!products.length) {
 
-          productCount.textContent = "";
+        if (
+          !products.length
+        ) {
+
+          productCount.textContent =
+            "";
 
           status.textContent =
             "No products are currently available.";
@@ -793,8 +796,10 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
         }
 
+
         status.className =
           "hidden";
+
 
         productCount.textContent =
           `${products.length} product${
@@ -802,6 +807,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
               ? ""
               : "s"
           }`;
+
 
         for (
           const product of products
@@ -811,6 +817,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             createProductCard(
               product
             );
+
 
           container.appendChild(
             card
@@ -825,8 +832,10 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           error
         );
 
+
         productCount.textContent =
           "";
+
 
         status.textContent =
           "Unable to load products right now. Please try again.";
@@ -834,6 +843,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       }
 
     }
+
 
     // ========================================================
     // EXTRACT PRODUCT ARRAY
@@ -851,33 +861,44 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       if (
-        Array.isArray(data?.products)
+        Array.isArray(
+          data?.products
+        )
       ) {
 
         return data.products;
 
       }
 
+
       if (
-        Array.isArray(data?.items)
+        Array.isArray(
+          data?.items
+        )
       ) {
 
         return data.items;
 
       }
 
+
       if (
-        Array.isArray(data?.data)
+        Array.isArray(
+          data?.data
+        )
       ) {
 
         return data.data;
 
       }
 
+
       return [];
 
     }
+
 
     // ========================================================
     // CREATE PRODUCT CARD
@@ -892,8 +913,10 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           "article"
         );
 
+
       card.className =
         "product-card";
+
 
       // ------------------------------------------------------
       // PRODUCT ID
@@ -905,6 +928,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         product?.aliexpress_product_id ||
         "";
 
+
       // ------------------------------------------------------
       // TITLE
       // ------------------------------------------------------
@@ -913,6 +937,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         product?.title ||
         product?.name ||
         "Product";
+
 
       // ------------------------------------------------------
       // IMAGE
@@ -923,10 +948,12 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           product
         );
 
+
       const proxiedImage =
         createImageProxyUrl(
           originalImage
         );
+
 
       // ------------------------------------------------------
       // PRICE
@@ -939,16 +966,20 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           product?.sale_price
         );
 
+
       const maxPrice =
         parsePrice(
           product?.max_price
         );
 
+
       let priceText =
         "View price";
 
+
       let priceNote =
         "";
+
 
       if (
         minPrice !== null
@@ -962,6 +993,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           priceText =
             `$${minPrice.toFixed(2)}`;
 
+
           priceNote =
             `Up to $${maxPrice.toFixed(2)} depending on variant`;
 
@@ -974,6 +1006,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       // ------------------------------------------------------
       // SALES
       // ------------------------------------------------------
@@ -983,10 +1016,12 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         product?.orders ||
         "";
 
+
       const salesText =
         sales
           ? `${sales} sold`
           : "";
+
 
       // ------------------------------------------------------
       // RATING
@@ -997,10 +1032,12 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         product?.avg_evaluation_rating ||
         "";
 
+
       const ratingText =
         rating
           ? `⭐ ${rating}`
           : "";
+
 
       // ------------------------------------------------------
       // IMAGE ELEMENT
@@ -1011,8 +1048,10 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           "div"
         );
 
+
       imageWrap.className =
         "image-wrap";
+
 
       if (
         minPrice !== null &&
@@ -1025,11 +1064,14 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             "div"
           );
 
+
         label.className =
           "sale-label";
 
+
         label.textContent =
           "BEST VALUE";
+
 
         imageWrap.appendChild(
           label
@@ -1037,47 +1079,60 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       const image =
         document.createElement(
           "img"
         );
 
+
       image.className =
         "product-image";
+
 
       image.alt =
         title;
 
+
       image.loading =
         "lazy";
 
+
       image.decoding =
         "async";
+
 
       image.src =
         proxiedImage ||
         placeholderImage();
 
+
       image.addEventListener(
         "error",
         () => {
 
+          const fallback =
+            placeholderImage();
+
+
           if (
             image.src !==
-            placeholderImage()
+            fallback
           ) {
 
             image.src =
-              placeholderImage();
+              fallback;
 
           }
 
         }
       );
 
+
       imageWrap.appendChild(
         image
       );
+
 
       // ------------------------------------------------------
       // INFO
@@ -1088,23 +1143,29 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           "div"
         );
 
+
       info.className =
         "product-info";
+
 
       const titleElement =
         document.createElement(
           "div"
         );
 
+
       titleElement.className =
         "product-title";
+
 
       titleElement.textContent =
         title;
 
+
       info.appendChild(
         titleElement
       );
+
 
       if (
         ratingText
@@ -1115,11 +1176,14 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             "div"
           );
 
+
         ratingElement.className =
           "product-rating";
 
+
         ratingElement.textContent =
           ratingText;
+
 
         info.appendChild(
           ratingElement
@@ -1127,24 +1191,31 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       const priceElement =
         document.createElement(
           "div"
         );
 
+
       priceElement.className =
         "product-price";
+
 
       priceElement.textContent =
         minPrice !== null &&
         maxPrice !== null &&
         maxPrice > minPrice
+
           ? `From ${priceText}`
+
           : priceText;
+
 
       info.appendChild(
         priceElement
       );
+
 
       if (
         priceNote
@@ -1155,17 +1226,21 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             "div"
           );
 
+
         priceNoteElement.className =
           "price-note";
 
+
         priceNoteElement.textContent =
           priceNote;
+
 
         info.appendChild(
           priceNoteElement
         );
 
       }
+
 
       if (
         salesText
@@ -1176,17 +1251,21 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             "div"
           );
 
+
         meta.className =
           "product-meta";
 
+
         meta.textContent =
           salesText;
+
 
         info.appendChild(
           meta
         );
 
       }
+
 
       // ------------------------------------------------------
       // BUTTONS
@@ -1197,40 +1276,52 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           "div"
         );
 
+
       buttons.className =
         "buttons";
+
 
       const viewButton =
         document.createElement(
           "a"
         );
 
+
       viewButton.className =
         "btn btn-view";
+
 
       viewButton.textContent =
         "View Product";
 
+
       viewButton.href =
         productId
+
           ? `./product.html?id=${encodeURIComponent(
               productId
             )}`
+
           : "./product.html";
+
 
       const buyButton =
         document.createElement(
           "button"
         );
 
+
       buyButton.type =
         "button";
+
 
       buyButton.className =
         "btn btn-buy";
 
+
       buyButton.textContent =
         "Buy Now";
+
 
       buyButton.addEventListener(
         "click",
@@ -1243,29 +1334,36 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         }
       );
 
+
       buttons.appendChild(
         viewButton
       );
+
 
       buttons.appendChild(
         buyButton
       );
 
+
       info.appendChild(
         buttons
       );
+
 
       card.appendChild(
         imageWrap
       );
 
+
       card.appendChild(
         info
       );
 
+
       return card;
 
     }
+
 
     // ========================================================
     // MAIN IMAGE
@@ -1285,6 +1383,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       if (
         Array.isArray(
           product?.images
@@ -1296,9 +1395,10 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           product.images.find(
             value =>
               typeof value ===
-              "string" &&
+                "string" &&
               value.trim()
           );
+
 
         return image
           ? image.trim()
@@ -1306,9 +1406,11 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       return "";
 
     }
+
 
     // ========================================================
     // IMAGE PROXY URL
@@ -1322,6 +1424,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         return "";
       }
 
+
       return (
         `${API_BASE}/api/image?url=` +
         encodeURIComponent(
@@ -1330,6 +1433,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
       );
 
     }
+
 
     // ========================================================
     // PRICE PARSER
@@ -1349,34 +1453,47 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
+
       const number =
         Number(value);
 
+
       if (
-        Number.isFinite(number)
+        Number.isFinite(
+          number
+        )
       ) {
 
         return number;
 
       }
 
+
       const cleaned =
         String(value)
           .replace(/,/g, "")
           .replace(/[^\d.-]/g, "");
 
+
       if (!cleaned) {
         return null;
       }
 
+
       const parsed =
         Number(cleaned);
 
-      return Number.isFinite(parsed)
+
+      return Number.isFinite(
+        parsed
+      )
+
         ? parsed
+
         : null;
 
     }
+
 
     // ========================================================
     // PLACEHOLDER
@@ -1386,6 +1503,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       return (
         "data:image/svg+xml;charset=UTF-8," +
+
         encodeURIComponent(
           `
           <svg
@@ -1394,11 +1512,13 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             height="800"
             viewBox="0 0 800 800"
           >
+
             <rect
               width="800"
               height="800"
               fill="#f1f3f5"
             />
+
             <text
               x="400"
               y="400"
@@ -1410,12 +1530,14 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
             >
               PRASUN STORE
             </text>
+
           </svg>
           `
         )
       );
 
     }
+
 
     // ========================================================
     // BUY NOW
@@ -1435,13 +1557,6 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
-      /*
-       * At this stage Buy Now opens the product page.
-       *
-       * Later, after the product page and checkout are
-       * completed, this will select the product and go
-       * directly into the checkout flow.
-       */
 
       window.location.href =
         `./product.html?id=${encodeURIComponent(
@@ -1449,6 +1564,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         )}`;
 
     }
+
 
     // ========================================================
     // SEARCH
@@ -1461,8 +1577,10 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
           "searchInput"
         );
 
+
       const query =
         input.value.trim();
+
 
       if (!query) {
 
@@ -1472,9 +1590,6 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
       }
 
-      /*
-       * Products.html will be created next.
-       */
 
       window.location.href =
         `./products.html?q=${encodeURIComponent(
@@ -1482,6 +1597,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
         )}`;
 
     }
+
 
     // ========================================================
     // ENTER KEY SEARCH
@@ -1503,6 +1619,7 @@ content="PRASUN STORE - Discover solar energy, lighting, electronics, home impro
 
         }
       );
+
 
     // ========================================================
     // INITIAL LOAD
