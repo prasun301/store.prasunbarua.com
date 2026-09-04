@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PRASUN STORE</title>
-  <meta
-    name="description"
-    content="PRASUN STORE - Shop solar energy, electronics, home improvement and lifestyle products."
-  />
+  <title>PRASUN STORE | Shop Smart</title>
+
+<meta
+name="description"
+content="PRASUN STORE - Discover solar energy, lighting, electronics, home improvement, kitchen and lifestyle products."
+
+>
 
   <style>
     * {
@@ -17,151 +20,351 @@
       padding: 0;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f7f9;
-      color: #222;
+    :root {
+      --dark: #111827;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --background: #f7f8fa;
+      --white: #ffffff;
+      --accent: #111827;
+      --green: #15803d;
     }
 
-    header {
-      background: #111827;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* ========================================================
+       HEADER
+    ======================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
       color: white;
-      padding: 18px 5%;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .header-inner {
-      max-width: 1200px;
-      margin: auto;
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 68px;
+      padding: 0 20px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
+      white-space: nowrap;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 15px;
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
+
+    .main-nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      opacity: .95;
+    }
+
+    .main-nav a:hover {
+      opacity: .75;
+    }
+
+    .cart-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ========================================================
+       HERO
+    ======================================================== */
 
     .hero {
-      max-width: 1200px;
-      margin: 35px auto 20px;
+      max-width: 1280px;
+      margin: 30px auto 0;
       padding: 0 20px;
     }
 
     .hero-box {
-      background: white;
-      border-radius: 18px;
-      padding: 35px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f3f4f6 100%
+        );
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 48px 40px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.05);
     }
 
     .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      letter-spacing: -.8px;
     }
 
     .hero p {
-      color: #666;
+      max-width: 760px;
+      color: var(--muted);
       font-size: 17px;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
 
     .search-box {
       display: flex;
+      max-width: 760px;
       gap: 10px;
-      max-width: 700px;
     }
 
     .search-box input {
       flex: 1;
-      padding: 14px 16px;
-      border: 1px solid #ddd;
+      min-width: 0;
+
+      height: 50px;
+      padding: 0 16px;
+
+      border:
+        1px solid #d1d5db;
+
       border-radius: 10px;
-      font-size: 16px;
+      background: white;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #9ca3af;
+      box-shadow:
+        0 0 0 3px
+        rgba(17,24,39,.08);
     }
 
     .search-box button {
-      padding: 14px 22px;
+      height: 50px;
+      padding: 0 22px;
+
       border: none;
       border-radius: 10px;
-      background: #111827;
+
+      background: var(--dark);
       color: white;
+
+      font-weight: 700;
       cursor: pointer;
-      font-size: 15px;
-      font-weight: 600;
     }
 
+    .search-box button:hover {
+      opacity: .9;
+    }
+
+    /* ========================================================
+       PRODUCTS SECTION
+    ======================================================== */
+
     .section {
-      max-width: 1200px;
-      margin: 30px auto;
+      max-width: 1280px;
+      margin: 38px auto;
       padding: 0 20px;
     }
 
-    .section-title {
-      font-size: 25px;
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 15px;
       margin-bottom: 20px;
     }
 
+    .section-title {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .product-count {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     #status {
-      padding: 20px;
       background: white;
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      color: var(--muted);
       margin-bottom: 20px;
-      color: #666;
+    }
+
+    #status.hidden {
+      display: none;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+
+      grid-template-columns:
+        repeat(
+          auto-fill,
+          minmax(220px, 1fr)
+        );
+
+      gap: 22px;
     }
+
+    /* ========================================================
+       PRODUCT CARD
+    ======================================================== */
 
     .product-card {
       background: white;
-      border-radius: 14px;
+      border:
+        1px solid var(--border);
+
+      border-radius: 16px;
+
       overflow: hidden;
-      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      box-shadow:
+        0 4px 18px
+        rgba(0,0,0,.045);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
     }
 
     .product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+      box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.09);
+    }
+
+    .image-wrap {
+      position: relative;
+      background: #f3f4f6;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
     }
 
     .product-image {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      background: #eee;
+      height: 100%;
+
+      object-fit: contain;
+
       display: block;
+
+      background: white;
+
+      transition:
+        transform .25s ease;
+    }
+
+    .product-card:hover
+    .product-image {
+      transform: scale(1.03);
+    }
+
+    .sale-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+
+      background: var(--dark);
+      color: white;
+
+      padding: 5px 8px;
+
+      border-radius: 6px;
+
+      font-size: 11px;
+      font-weight: 700;
     }
 
     .product-info {
-      padding: 15px;
+      padding: 16px;
     }
 
     .product-title {
-      font-size: 16px;
-      line-height: 1.4;
-      min-height: 45px;
+      font-size: 15px;
+      line-height: 1.45;
+
+      min-height: 66px;
+
       margin-bottom: 10px;
+
+      display:
+        -webkit-box;
+
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+    }
+
+    .product-rating {
+      color: #6b7280;
+      font-size: 13px;
+      margin-bottom: 9px;
     }
 
     .product-price {
-      font-size: 21px;
+      font-size: 23px;
       font-weight: 800;
-      margin-bottom: 12px;
+
+      color: var(--dark);
+
+      margin-bottom: 3px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .product-meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 14px;
     }
 
     .buttons {
@@ -171,313 +374,1139 @@
 
     .btn {
       flex: 1;
-      padding: 11px 8px;
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
+
+      min-height: 42px;
+
+      border-radius: 9px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 13px;
       font-weight: 700;
-      font-size: 14px;
+
+      cursor: pointer;
+
+      transition:
+        opacity .15s ease,
+        transform .15s ease;
+    }
+
+    .btn:hover {
+      opacity: .88;
     }
 
     .btn-view {
-      background: #f0f1f3;
-      color: #111827;
+      background: #f1f2f4;
+      color: var(--dark);
+      border: 1px solid #e5e7eb;
     }
 
     .btn-buy {
-      background: #111827;
+      background: var(--dark);
       color: white;
-      border: none;
+      border: 1px solid var(--dark);
     }
 
-    footer {
-      margin-top: 50px;
-      background: #111827;
-      color: #ccc;
+    /* ========================================================
+       EMPTY STATE
+    ======================================================== */
+
+    .empty-state {
+      background: white;
+      border:
+        1px solid var(--border);
+
+      border-radius: 16px;
+
+      padding: 35px 20px;
+
       text-align: center;
-      padding: 30px 20px;
+
+      color: var(--muted);
+    }
+
+    /* ========================================================
+       FOOTER
+    ======================================================== */
+
+    footer {
+      margin-top: 70px;
+
+      background: var(--dark);
+      color: #d1d5db;
+
+      padding: 38px 20px;
+
+      text-align: center;
+
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    .footer-title {
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .footer-text {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ========================================================
+       RESPONSIVE
+    ======================================================== */
+
+    @media (max-width: 800px) {
+
+      .hero-box {
+        padding: 35px 25px;
+      }
+
       .hero h1 {
-        font-size: 28px;
+        font-size: 34px;
+      }
+
+      .main-nav {
+        gap: 13px;
+      }
+
+      .products {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+        gap: 14px;
+      }
+
+    }
+
+    @media (max-width: 560px) {
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .main-nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        margin-top: 18px;
+      }
+
+      .hero-box {
+        padding: 28px 20px;
+        border-radius: 16px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .hero p {
+        font-size: 15px;
       }
 
       .search-box {
         flex-direction: column;
       }
 
-      nav {
+      .search-box input,
+      .search-box button {
         width: 100%;
       }
 
-      nav a {
-        margin-left: 0;
-        margin-right: 15px;
+      .section-title {
+        font-size: 23px;
       }
+
+      .products {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-title {
+        font-size: 14px;
+        min-height: 61px;
+      }
+
+      .product-price {
+        font-size: 19px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
     }
+
   </style>
+
 </head>
 
 <body>
 
-  <header>
-    <div class="header-inner">
-      <div class="logo">PRASUN STORE</div>
+  <!-- ======================================================
+       HEADER
+  ======================================================= -->
 
-      <nav>
-        <a href="/">Home</a>
-        <a href="/cart.html">Cart 🛒</a>
-      </nav>
-    </div>
+  <header class="site-header">
+
+```
+<div class="header-inner">
+
+  <a
+    href="./index.html"
+    class="logo"
+  >
+    PRASUN STORE
+  </a>
+
+  <nav class="main-nav">
+
+    <a href="./index.html">
+      Home
+    </a>
+
+    <a
+      href="./cart.html"
+      class="cart-link"
+    >
+      🛒 Cart
+    </a>
+
+  </nav>
+
+</div>
+```
+
   </header>
+
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
 
   <main>
 
-    <section class="hero">
-      <div class="hero-box">
-        <h1>Shop Smarter with PRASUN STORE</h1>
-        <p>
-          Discover useful products for solar energy, electronics,
-          home improvement, lifestyle and more.
-        </p>
+```
+<section class="hero">
 
-        <div class="search-box">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search products..."
-          />
-          <button onclick="searchProducts()">Search</button>
-        </div>
-      </div>
-    </section>
+  <div class="hero-box">
 
-    <section class="section">
+    <h1>
+      Shop Smarter with PRASUN STORE
+    </h1>
 
-      <h2 class="section-title">Featured Products</h2>
+    <p>
+      Discover useful products across
+      solar energy, lighting, electronics,
+      home improvement, kitchen, lifestyle
+      and more.
+    </p>
 
-      <div id="status">Loading products...</div>
+    <div class="search-box">
 
-      <div id="products" class="products"></div>
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search products..."
+        autocomplete="off"
+      >
 
-    </section>
+      <button
+        type="button"
+        onclick="searchProducts()"
+      >
+        Search
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div>
+
+      <h2 class="section-title">
+        Featured Products
+      </h2>
+
+      <div
+        id="productCount"
+        class="product-count"
+      ></div>
+
+    </div>
+
+  </div>
+
+  <div id="status">
+    Loading products...
+  </div>
+
+  <div
+    id="products"
+    class="products"
+  ></div>
+
+</section>
+```
 
   </main>
 
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+
   <footer>
-    © 2026 PRASUN STORE. All rights reserved.
+
+```
+<div class="footer-title">
+  PRASUN STORE
+</div>
+
+<div class="footer-text">
+  Useful products for solar energy,
+  technology, home improvement,
+  lifestyle and more.
+</div>
+
+<div style="margin-top:12px;">
+  © 2026 PRASUN STORE. All rights reserved.
+</div>
+```
+
   </footer>
 
   <script>
 
+    // ========================================================
+    // CONFIGURATION
+    // ========================================================
+
     const API_BASE =
       "https://prasun-store.prasun301.workers.dev";
 
+    const PRODUCT_API =
+      `${API_BASE}/api/products`;
+
+    // ========================================================
+    // LOAD PRODUCTS
+    // ========================================================
+
     async function loadProducts() {
 
-      const status = document.getElementById("status");
-      const container = document.getElementById("products");
+      const status =
+        document.getElementById(
+          "status"
+        );
 
-      status.textContent = "Loading products...";
+      const container =
+        document.getElementById(
+          "products"
+        );
+
+      const productCount =
+        document.getElementById(
+          "productCount"
+        );
+
+      status.className = "";
+      status.textContent =
+        "Loading products...";
+
+      container.innerHTML = "";
 
       try {
 
-        const response = await fetch(
-          `${API_BASE}/api/products`,
-          {
-            method: "GET",
-            headers: {
-              "Accept": "application/json"
+        const response =
+          await fetch(
+            PRODUCT_API,
+            {
+              method: "GET",
+              headers: {
+                "Accept":
+                  "application/json"
+              },
+              cache: "no-store"
             }
-          }
-        );
+          );
 
         if (!response.ok) {
+
           throw new Error(
             `HTTP ${response.status}`
           );
+
         }
 
-        const data = await response.json();
+        const data =
+          await response.json();
 
-        console.log("API response:", data);
+        console.log(
+          "PRASUN STORE API:",
+          data
+        );
 
-        let products = [];
-
-        /*
-         * Support several possible API formats.
-         */
-        if (Array.isArray(data)) {
-          products = data;
-        } else if (Array.isArray(data.products)) {
-          products = data.products;
-        } else if (Array.isArray(data.items)) {
-          products = data.items;
-        } else if (
-          data.data &&
-          Array.isArray(data.data)
-        ) {
-          products = data.data;
-        }
+        const products =
+          extractProducts(data);
 
         if (!products.length) {
+
+          productCount.textContent = "";
 
           status.textContent =
             "No products are currently available.";
 
           return;
+
         }
 
-        status.style.display = "none";
+        status.className =
+          "hidden";
 
-        container.innerHTML = "";
+        productCount.textContent =
+          `${products.length} product${
+            products.length === 1
+              ? ""
+              : "s"
+          }`;
 
-        products.forEach(product => {
-
-          const productId =
-            product.product_id ||
-            product.id ||
-            product.aliexpress_product_id ||
-            "";
-
-          const title =
-            product.title ||
-            product.name ||
-            "Untitled Product";
-
-          const image =
-            product.image ||
-            product.image_url ||
-            product.main_image ||
-            (
-              Array.isArray(product.images)
-                ? product.images[0]
-                : ""
-            ) ||
-            "https://via.placeholder.com/500x500?text=Product";
-
-          const price =
-            product.price ||
-            product.sale_price ||
-            product.selling_price ||
-            "";
+        for (
+          const product of products
+        ) {
 
           const card =
-            document.createElement("div");
+            createProductCard(
+              product
+            );
 
-          card.className =
-            "product-card";
+          container.appendChild(
+            card
+          );
 
-          card.innerHTML = `
-
-            <img
-              class="product-image"
-              src="${escapeHtml(image)}"
-              alt="${escapeHtml(title)}"
-              loading="lazy"
-              onerror="this.src='https://via.placeholder.com/500x500?text=Image+Unavailable'"
-            >
-
-            <div class="product-info">
-
-              <div class="product-title">
-                ${escapeHtml(title)}
-              </div>
-
-              <div class="product-price">
-                ${price ? "$" + escapeHtml(String(price)) : "View price"}
-              </div>
-
-              <div class="buttons">
-
-                <a
-                  class="btn btn-view"
-                  href="/product.html?id=${encodeURIComponent(productId)}"
-                >
-                  View
-                </a>
-
-                <button
-                  class="btn btn-buy"
-                  onclick="buyNow('${escapeJs(productId)}')"
-                >
-                  Buy Now
-                </button>
-
-              </div>
-
-            </div>
-          `;
-
-          container.appendChild(card);
-
-        });
+        }
 
       } catch (error) {
 
-        console.error(error);
+        console.error(
+          "LOAD PRODUCTS ERROR:",
+          error
+        );
+
+        productCount.textContent =
+          "";
 
         status.textContent =
-          "Unable to load products. Please check the store API.";
+          "Unable to load products right now. Please try again.";
 
       }
 
     }
 
-    function searchProducts() {
+    // ========================================================
+    // EXTRACT PRODUCT ARRAY
+    // ========================================================
 
-      const query =
-        document.getElementById("searchInput")
-          .value
-          .trim();
+    function extractProducts(
+      data
+    ) {
 
-      if (!query) {
-        loadProducts();
-        return;
+      if (
+        Array.isArray(data)
+      ) {
+
+        return data;
+
       }
 
-      window.location.href =
-        `/products.html?q=${encodeURIComponent(query)}`;
+      if (
+        Array.isArray(data?.products)
+      ) {
+
+        return data.products;
+
+      }
+
+      if (
+        Array.isArray(data?.items)
+      ) {
+
+        return data.items;
+
+      }
+
+      if (
+        Array.isArray(data?.data)
+      ) {
+
+        return data.data;
+
+      }
+
+      return [];
 
     }
 
-    function buyNow(productId) {
+    // ========================================================
+    // CREATE PRODUCT CARD
+    // ========================================================
+
+    function createProductCard(
+      product
+    ) {
+
+      const card =
+        document.createElement(
+          "article"
+        );
+
+      card.className =
+        "product-card";
+
+      // ------------------------------------------------------
+      // PRODUCT ID
+      // ------------------------------------------------------
+
+      const productId =
+        product?.product_id ||
+        product?.id ||
+        product?.aliexpress_product_id ||
+        "";
+
+      // ------------------------------------------------------
+      // TITLE
+      // ------------------------------------------------------
+
+      const title =
+        product?.title ||
+        product?.name ||
+        "Product";
+
+      // ------------------------------------------------------
+      // IMAGE
+      // ------------------------------------------------------
+
+      const originalImage =
+        getMainImage(
+          product
+        );
+
+      const proxiedImage =
+        createImageProxyUrl(
+          originalImage
+        );
+
+      // ------------------------------------------------------
+      // PRICE
+      // ------------------------------------------------------
+
+      const minPrice =
+        parsePrice(
+          product?.min_price ??
+          product?.price ??
+          product?.sale_price
+        );
+
+      const maxPrice =
+        parsePrice(
+          product?.max_price
+        );
+
+      let priceText =
+        "View price";
+
+      let priceNote =
+        "";
+
+      if (
+        minPrice !== null
+      ) {
+
+        if (
+          maxPrice !== null &&
+          maxPrice > minPrice
+        ) {
+
+          priceText =
+            `$${minPrice.toFixed(2)}`;
+
+          priceNote =
+            `Up to $${maxPrice.toFixed(2)} depending on variant`;
+
+        } else {
+
+          priceText =
+            `$${minPrice.toFixed(2)}`;
+
+        }
+
+      }
+
+      // ------------------------------------------------------
+      // SALES
+      // ------------------------------------------------------
+
+      const sales =
+        product?.sales_count ||
+        product?.orders ||
+        "";
+
+      const salesText =
+        sales
+          ? `${sales} sold`
+          : "";
+
+      // ------------------------------------------------------
+      // RATING
+      // ------------------------------------------------------
+
+      const rating =
+        product?.rating ||
+        product?.avg_evaluation_rating ||
+        "";
+
+      const ratingText =
+        rating
+          ? `⭐ ${rating}`
+          : "";
+
+      // ------------------------------------------------------
+      // IMAGE ELEMENT
+      // ------------------------------------------------------
+
+      const imageWrap =
+        document.createElement(
+          "div"
+        );
+
+      imageWrap.className =
+        "image-wrap";
+
+      if (
+        minPrice !== null &&
+        maxPrice !== null &&
+        maxPrice > minPrice
+      ) {
+
+        const label =
+          document.createElement(
+            "div"
+          );
+
+        label.className =
+          "sale-label";
+
+        label.textContent =
+          "BEST VALUE";
+
+        imageWrap.appendChild(
+          label
+        );
+
+      }
+
+      const image =
+        document.createElement(
+          "img"
+        );
+
+      image.className =
+        "product-image";
+
+      image.alt =
+        title;
+
+      image.loading =
+        "lazy";
+
+      image.decoding =
+        "async";
+
+      image.src =
+        proxiedImage ||
+        placeholderImage();
+
+      image.addEventListener(
+        "error",
+        () => {
+
+          if (
+            image.src !==
+            placeholderImage()
+          ) {
+
+            image.src =
+              placeholderImage();
+
+          }
+
+        }
+      );
+
+      imageWrap.appendChild(
+        image
+      );
+
+      // ------------------------------------------------------
+      // INFO
+      // ------------------------------------------------------
+
+      const info =
+        document.createElement(
+          "div"
+        );
+
+      info.className =
+        "product-info";
+
+      const titleElement =
+        document.createElement(
+          "div"
+        );
+
+      titleElement.className =
+        "product-title";
+
+      titleElement.textContent =
+        title;
+
+      info.appendChild(
+        titleElement
+      );
+
+      if (
+        ratingText
+      ) {
+
+        const ratingElement =
+          document.createElement(
+            "div"
+          );
+
+        ratingElement.className =
+          "product-rating";
+
+        ratingElement.textContent =
+          ratingText;
+
+        info.appendChild(
+          ratingElement
+        );
+
+      }
+
+      const priceElement =
+        document.createElement(
+          "div"
+        );
+
+      priceElement.className =
+        "product-price";
+
+      priceElement.textContent =
+        minPrice !== null &&
+        maxPrice !== null &&
+        maxPrice > minPrice
+          ? `From ${priceText}`
+          : priceText;
+
+      info.appendChild(
+        priceElement
+      );
+
+      if (
+        priceNote
+      ) {
+
+        const priceNoteElement =
+          document.createElement(
+            "div"
+          );
+
+        priceNoteElement.className =
+          "price-note";
+
+        priceNoteElement.textContent =
+          priceNote;
+
+        info.appendChild(
+          priceNoteElement
+        );
+
+      }
+
+      if (
+        salesText
+      ) {
+
+        const meta =
+          document.createElement(
+            "div"
+          );
+
+        meta.className =
+          "product-meta";
+
+        meta.textContent =
+          salesText;
+
+        info.appendChild(
+          meta
+        );
+
+      }
+
+      // ------------------------------------------------------
+      // BUTTONS
+      // ------------------------------------------------------
+
+      const buttons =
+        document.createElement(
+          "div"
+        );
+
+      buttons.className =
+        "buttons";
+
+      const viewButton =
+        document.createElement(
+          "a"
+        );
+
+      viewButton.className =
+        "btn btn-view";
+
+      viewButton.textContent =
+        "View Product";
+
+      viewButton.href =
+        productId
+          ? `./product.html?id=${encodeURIComponent(
+              productId
+            )}`
+          : "./product.html";
+
+      const buyButton =
+        document.createElement(
+          "button"
+        );
+
+      buyButton.type =
+        "button";
+
+      buyButton.className =
+        "btn btn-buy";
+
+      buyButton.textContent =
+        "Buy Now";
+
+      buyButton.addEventListener(
+        "click",
+        () => {
+
+          buyNow(
+            productId
+          );
+
+        }
+      );
+
+      buttons.appendChild(
+        viewButton
+      );
+
+      buttons.appendChild(
+        buyButton
+      );
+
+      info.appendChild(
+        buttons
+      );
+
+      card.appendChild(
+        imageWrap
+      );
+
+      card.appendChild(
+        info
+      );
+
+      return card;
+
+    }
+
+    // ========================================================
+    // MAIN IMAGE
+    // ========================================================
+
+    function getMainImage(
+      product
+    ) {
+
+      if (
+        product?.main_image
+      ) {
+
+        return String(
+          product.main_image
+        ).trim();
+
+      }
+
+      if (
+        Array.isArray(
+          product?.images
+        ) &&
+        product.images.length
+      ) {
+
+        const image =
+          product.images.find(
+            value =>
+              typeof value ===
+              "string" &&
+              value.trim()
+          );
+
+        return image
+          ? image.trim()
+          : "";
+
+      }
+
+      return "";
+
+    }
+
+    // ========================================================
+    // IMAGE PROXY URL
+    // ========================================================
+
+    function createImageProxyUrl(
+      imageUrl
+    ) {
+
+      if (!imageUrl) {
+        return "";
+      }
+
+      return (
+        `${API_BASE}/api/image?url=` +
+        encodeURIComponent(
+          imageUrl
+        )
+      );
+
+    }
+
+    // ========================================================
+    // PRICE PARSER
+    // ========================================================
+
+    function parsePrice(
+      value
+    ) {
+
+      if (
+        value === undefined ||
+        value === null ||
+        value === ""
+      ) {
+
+        return null;
+
+      }
+
+      const number =
+        Number(value);
+
+      if (
+        Number.isFinite(number)
+      ) {
+
+        return number;
+
+      }
+
+      const cleaned =
+        String(value)
+          .replace(/,/g, "")
+          .replace(/[^\d.-]/g, "");
+
+      if (!cleaned) {
+        return null;
+      }
+
+      const parsed =
+        Number(cleaned);
+
+      return Number.isFinite(parsed)
+        ? parsed
+        : null;
+
+    }
+
+    // ========================================================
+    // PLACEHOLDER
+    // ========================================================
+
+    function placeholderImage() {
+
+      return (
+        "data:image/svg+xml;charset=UTF-8," +
+        encodeURIComponent(
+          `
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="800"
+            height="800"
+            viewBox="0 0 800 800"
+          >
+            <rect
+              width="800"
+              height="800"
+              fill="#f1f3f5"
+            />
+            <text
+              x="400"
+              y="400"
+              text-anchor="middle"
+              dominant-baseline="middle"
+              fill="#9ca3af"
+              font-family="Arial"
+              font-size="34"
+            >
+              PRASUN STORE
+            </text>
+          </svg>
+          `
+        )
+      );
+
+    }
+
+    // ========================================================
+    // BUY NOW
+    // ========================================================
+
+    function buyNow(
+      productId
+    ) {
 
       if (!productId) {
 
-        alert("Product ID is missing.");
+        alert(
+          "Product ID is missing."
+        );
 
         return;
+
       }
 
+      /*
+       * At this stage Buy Now opens the product page.
+       *
+       * Later, after the product page and checkout are
+       * completed, this will select the product and go
+       * directly into the checkout flow.
+       */
+
       window.location.href =
-        `/product.html?id=${encodeURIComponent(productId)}`;
+        `./product.html?id=${encodeURIComponent(
+          productId
+        )}`;
 
     }
 
-    function escapeHtml(value) {
+    // ========================================================
+    // SEARCH
+    // ========================================================
 
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+    function searchProducts() {
+
+      const input =
+        document.getElementById(
+          "searchInput"
+        );
+
+      const query =
+        input.value.trim();
+
+      if (!query) {
+
+        loadProducts();
+
+        return;
+
+      }
+
+      /*
+       * Products.html will be created next.
+       */
+
+      window.location.href =
+        `./products.html?q=${encodeURIComponent(
+          query
+        )}`;
 
     }
 
-    function escapeJs(value) {
+    // ========================================================
+    // ENTER KEY SEARCH
+    // ========================================================
 
-      return String(value)
-        .replaceAll("\\", "\\\\")
-        .replaceAll("'", "\\'")
-        .replaceAll("\n", "\\n")
-        .replaceAll("\r", "\\r");
+    document
+      .getElementById("searchInput")
+      .addEventListener(
+        "keydown",
+        event => {
 
-    }
+          if (
+            event.key === "Enter"
+          ) {
+
+            searchProducts();
+
+          }
+
+        }
+      );
+
+    // ========================================================
+    // INITIAL LOAD
+    // ========================================================
 
     loadProducts();
 
