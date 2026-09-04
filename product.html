@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Product | Prasun Store</title>
+
   <meta
     name="description"
     content="Shop quality products at Prasun Store."
@@ -63,7 +64,7 @@
       margin: 0 auto;
     }
 
-    /* ---------------- HEADER ---------------- */
+    /* HEADER */
 
     header {
       background: #fff;
@@ -110,7 +111,22 @@
       background: #f9fafb;
     }
 
-    /* ---------------- PAGE ---------------- */
+    .cart-badge {
+      min-width: 21px;
+      height: 21px;
+      padding: 0 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      margin-left: 4px;
+    }
+
+    /* PAGE */
 
     .page {
       padding: 30px 0 60px;
@@ -138,7 +154,7 @@
       align-items: start;
     }
 
-    /* ---------------- GALLERY ---------------- */
+    /* GALLERY */
 
     .gallery-card,
     .info-card,
@@ -169,7 +185,6 @@
       height: 100%;
       object-fit: contain;
       display: block;
-      cursor: zoom-in;
     }
 
     .gallery-thumbs {
@@ -200,7 +215,7 @@
       display: block;
     }
 
-    /* ---------------- PRODUCT INFO ---------------- */
+    /* PRODUCT INFO */
 
     .info-card {
       padding: 26px;
@@ -233,7 +248,6 @@
       font-size: 32px;
       font-weight: 800;
       margin-bottom: 10px;
-      letter-spacing: -0.02em;
     }
 
     .stock {
@@ -250,7 +264,7 @@
       color: var(--danger);
     }
 
-    /* ---------------- VARIANTS ---------------- */
+    /* VARIANTS */
 
     .variants {
       margin-top: 24px;
@@ -289,11 +303,7 @@
       color: var(--text);
       border-radius: 10px;
       cursor: pointer;
-      transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.15s ease,
-        transform 0.15s ease;
+      transition: 0.15s ease;
     }
 
     .variant-option:hover {
@@ -311,8 +321,6 @@
       text-decoration: line-through;
     }
 
-    /* Text-based variant option */
-
     .text-option {
       min-height: 42px;
       padding: 8px 14px;
@@ -322,8 +330,6 @@
       font-size: 14px;
       font-weight: 700;
     }
-
-    /* Image swatch */
 
     .swatch-option {
       width: 76px;
@@ -358,7 +364,7 @@
       text-overflow: ellipsis;
     }
 
-    /* ---------------- QUANTITY ---------------- */
+    /* QUANTITY */
 
     .quantity-row {
       display: flex;
@@ -390,10 +396,6 @@
       font-size: 20px;
     }
 
-    .quantity-control button:hover {
-      background: #f3f4f6;
-    }
-
     .quantity-control input {
       width: 52px;
       height: 40px;
@@ -405,7 +407,7 @@
       font-weight: 700;
     }
 
-    /* ---------------- BUTTONS ---------------- */
+    /* ACTIONS */
 
     .action-buttons {
       display: grid;
@@ -421,20 +423,12 @@
       padding: 12px 18px;
       cursor: pointer;
       font-weight: 800;
-      transition:
-        transform 0.15s ease,
-        opacity 0.15s ease,
-        background 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
+      transition: 0.15s ease;
     }
 
     .btn:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-      transform: none;
     }
 
     .btn-primary {
@@ -455,7 +449,22 @@
       background: #f9fafb;
     }
 
-    /* ---------------- QUICK INFO ---------------- */
+    .notice {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* QUICK INFO */
 
     .quick-info {
       margin-top: 25px;
@@ -479,9 +488,10 @@
     .quick-info-row span:last-child {
       font-weight: 700;
       text-align: right;
+      overflow-wrap: anywhere;
     }
 
-    /* ---------------- DESCRIPTION ---------------- */
+    /* DESCRIPTION */
 
     .description-card {
       margin-top: 36px;
@@ -508,15 +518,9 @@
       border-radius: 10px;
     }
 
-    .description-content video {
-      max-width: 100%;
-    }
-
     .description-content table {
       max-width: 100%;
       border-collapse: collapse;
-      overflow-x: auto;
-      display: block;
     }
 
     .description-content td,
@@ -525,7 +529,7 @@
       padding: 8px 10px;
     }
 
-    /* ---------------- STATES ---------------- */
+    /* LOADING / ERROR */
 
     .loading {
       min-height: 350px;
@@ -547,31 +551,14 @@
       text-align: center;
     }
 
-    .hidden {
-      display: none !important;
+    .error-box h2 {
+      margin-top: 0;
     }
-
-    .notice {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* ---------------- RESPONSIVE ---------------- */
 
     @media (max-width: 900px) {
       .product-layout {
         grid-template-columns: 1fr;
         gap: 24px;
-      }
-
-      .gallery-card,
-      .info-card {
-        padding: 18px;
-      }
-
-      .description-card {
-        padding: 20px;
       }
     }
 
@@ -582,15 +569,6 @@
 
       .header-inner {
         min-height: 62px;
-      }
-
-      .brand {
-        font-size: 19px;
-      }
-
-      .header-link {
-        padding: 0 10px;
-        font-size: 13px;
       }
 
       .product-title {
@@ -618,587 +596,491 @@
         width: 58px;
         height: 58px;
       }
-
-      .quick-info-row {
-        align-items: flex-start;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container header-inner">
-      <a href="/" class="brand">Prasun Store</a>
+<header>
+  <div class="container header-inner">
 
-      <div class="header-actions">
-        <a href="/" class="header-link">Shop</a>
-        <a href="/cart.html" class="header-link">Cart</a>
-      </div>
+    <a href="./index.html" class="brand">
+      Prasun Store
+    </a>
+
+    <div class="header-actions">
+      <a href="./index.html" class="header-link">
+        Shop
+      </a>
+
+      <a href="./cart.html" class="header-link">
+        🛒 Cart
+        <span id="cartBadge" class="cart-badge">0</span>
+      </a>
     </div>
-  </header>
 
-  <main class="page">
-    <div class="container">
+  </div>
+</header>
 
-      <div class="breadcrumbs">
-        <a href="/">Home</a>
-        <span>/</span>
-        <span>Product</span>
+<main class="page">
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="./index.html">Home</a>
+      <span>/</span>
+      <span>Product</span>
+    </div>
+
+    <div id="loading" class="loading">
+      Loading product...
+    </div>
+
+    <div id="errorBox" class="error-box hidden">
+
+      <h2>
+        Unable to load product
+      </h2>
+
+      <p id="errorMessage">
+        Something went wrong.
+      </p>
+
+      <a
+        href="./index.html"
+        class="header-link"
+      >
+        Back to Store
+      </a>
+
+    </div>
+
+    <section
+      id="productSection"
+      class="product-layout hidden"
+    >
+
+      <!-- GALLERY -->
+
+      <div class="gallery-card">
+
+        <div class="main-image-wrap">
+
+          <img
+            id="mainImage"
+            class="main-image"
+            src=""
+            alt="Product image"
+          />
+
+        </div>
+
+        <div
+          id="galleryThumbs"
+          class="gallery-thumbs"
+        ></div>
+
       </div>
 
-      <div id="loading" class="loading">
-        Loading product...
-      </div>
+      <!-- PRODUCT INFORMATION -->
 
-      <div id="errorBox" class="error-box hidden">
-        <h2>Unable to load product</h2>
-        <p id="errorMessage">
-          Something went wrong while loading this product.
-        </p>
-        <a href="/" class="header-link">Back to Store</a>
-      </div>
+      <div class="info-card">
 
-      <section id="productSection" class="product-layout hidden">
+        <h1
+          id="productTitle"
+          class="product-title"
+        >
+          Product
+        </h1>
 
-        <!-- ================= GALLERY ================= -->
+        <div class="rating-row">
 
-        <div class="gallery-card">
+          <span
+            id="ratingStars"
+            class="stars"
+          >
+            ☆☆☆☆☆
+          </span>
 
-          <div class="main-image-wrap">
-            <img
-              id="mainImage"
-              class="main-image"
-              src=""
-              alt="Product image"
+          <span id="ratingText">
+            No ratings
+          </span>
+
+        </div>
+
+        <div
+          id="productPrice"
+          class="price"
+        >
+          $0.00
+        </div>
+
+        <div
+          id="stockText"
+          class="stock in-stock"
+        >
+          Available
+        </div>
+
+        <!-- VARIANTS -->
+
+        <div
+          id="variantsContainer"
+          class="variants hidden"
+        ></div>
+
+        <!-- QUANTITY -->
+
+        <div class="quantity-row">
+
+          <span class="quantity-label">
+            Quantity
+          </span>
+
+          <div class="quantity-control">
+
+            <button
+              type="button"
+              id="quantityMinus"
+            >
+              −
+            </button>
+
+            <input
+              id="quantityInput"
+              type="number"
+              min="1"
+              max="999"
+              value="1"
             />
-          </div>
-
-          <div id="galleryThumbs" class="gallery-thumbs"></div>
-
-        </div>
-
-        <!-- ================= PRODUCT INFO ================= -->
-
-        <div class="info-card">
-
-          <h1 id="productTitle" class="product-title">
-            Product
-          </h1>
-
-          <div class="rating-row">
-            <span id="ratingStars" class="stars">★★★★★</span>
-            <span id="ratingText">No ratings</span>
-          </div>
-
-          <div id="productPrice" class="price">
-            $0.00
-          </div>
-
-          <div id="stockText" class="stock in-stock">
-            In stock
-          </div>
-
-          <!-- VARIANTS -->
-
-          <div id="variantsContainer" class="variants hidden"></div>
-
-          <!-- QUANTITY -->
-
-          <div class="quantity-row">
-            <span class="quantity-label">Quantity</span>
-
-            <div class="quantity-control">
-              <button
-                type="button"
-                id="quantityMinus"
-                aria-label="Decrease quantity"
-              >
-                −
-              </button>
-
-              <input
-                id="quantityInput"
-                type="number"
-                min="1"
-                max="999"
-                value="1"
-              />
-
-              <button
-                type="button"
-                id="quantityPlus"
-                aria-label="Increase quantity"
-              >
-                +
-              </button>
-            </div>
-          </div>
-
-          <!-- ACTION BUTTONS -->
-
-          <div class="action-buttons">
 
             <button
               type="button"
-              id="addToCartBtn"
-              class="btn btn-secondary"
+              id="quantityPlus"
             >
-              Add to Cart
+              +
             </button>
-
-            <button
-              type="button"
-              id="buyNowBtn"
-              class="btn btn-primary"
-            >
-              Buy Now
-            </button>
-
-          </div>
-
-          <div id="selectionNotice" class="notice hidden"></div>
-
-          <!-- QUICK INFO -->
-
-          <div class="quick-info">
-
-            <div class="quick-info-row">
-              <span>SKU</span>
-              <span id="productSku">—</span>
-            </div>
-
-            <div class="quick-info-row">
-              <span>Availability</span>
-              <span id="productAvailability">—</span>
-            </div>
-
-            <div class="quick-info-row">
-              <span>Ships to</span>
-              <span id="productShipsTo">Worldwide</span>
-            </div>
 
           </div>
 
         </div>
 
-      </section>
+        <!-- ACTIONS -->
 
-      <!-- ================= DESCRIPTION ================= -->
+        <div class="action-buttons">
 
-      <section id="descriptionCard" class="description-card hidden">
+          <button
+            type="button"
+            id="addToCartBtn"
+            class="btn btn-secondary"
+          >
+            Add to Cart
+          </button>
 
-        <h2 class="description-title">
-          Product Description
-        </h2>
+          <button
+            type="button"
+            id="buyNowBtn"
+            class="btn btn-primary"
+          >
+            Buy Now
+          </button>
 
-        <div id="descriptionContent" class="description-content"></div>
+        </div>
 
-      </section>
+        <div
+          id="selectionNotice"
+          class="notice hidden"
+        ></div>
 
-    </div>
-  </main>
+        <!-- QUICK INFO -->
 
-  <script>
+        <div class="quick-info">
 
-    /* ============================================================
-       CONFIGURATION
-       ============================================================ */
+          <div class="quick-info-row">
+            <span>SKU</span>
+            <span id="productSku">—</span>
+          </div>
 
-    const API_BASE = "https://prasun-store.prasun301.workers.dev";
+          <div class="quick-info-row">
+            <span>Availability</span>
+            <span id="productAvailability">—</span>
+          </div>
 
+          <div class="quick-info-row">
+            <span>Ships to</span>
+            <span id="productShipsTo">Worldwide</span>
+          </div>
 
-    /* ============================================================
-       GLOBAL STATE
-       ============================================================ */
+        </div>
 
-    let product = null;
+      </div>
 
-    let normalizedSkus = [];
+    </section>
 
-    let selectedProperties = {};
+    <!-- DESCRIPTION -->
 
-    let selectedSku = null;
+    <section
+      id="descriptionCard"
+      class="description-card hidden"
+    >
 
-    let quantity = 1;
+      <h2 class="description-title">
+        Product Description
+      </h2>
 
-    let galleryImages = [];
+      <div
+        id="descriptionContent"
+        class="description-content"
+      ></div>
 
-    let currentImageIndex = 0;
+    </section>
 
+  </div>
 
-    /* ============================================================
-       DOM ELEMENTS
-       ============================================================ */
+</main>
 
-    const loadingEl = document.getElementById("loading");
-    const errorBoxEl = document.getElementById("errorBox");
-    const errorMessageEl = document.getElementById("errorMessage");
-    const productSectionEl = document.getElementById("productSection");
+<script>
 
-    const mainImageEl = document.getElementById("mainImage");
-    const galleryThumbsEl = document.getElementById("galleryThumbs");
+  "use strict";
 
-    const productTitleEl = document.getElementById("productTitle");
-    const ratingStarsEl = document.getElementById("ratingStars");
-    const ratingTextEl = document.getElementById("ratingText");
-    const productPriceEl = document.getElementById("productPrice");
-    const stockTextEl = document.getElementById("stockText");
+  /* ============================================================
+     CONFIGURATION
+     ============================================================ */
 
-    const variantsContainerEl =
-      document.getElementById("variantsContainer");
+  const API_BASE =
+    "https://prasun-store.prasun301.workers.dev";
 
-    const quantityInputEl =
-      document.getElementById("quantityInput");
+  /*
+   * Canonical cart storage key.
+   */
+  const CART_STORAGE_KEY =
+    "prasun_cart";
 
-    const quantityMinusEl =
-      document.getElementById("quantityMinus");
-
-    const quantityPlusEl =
-      document.getElementById("quantityPlus");
-
-    const addToCartBtnEl =
-      document.getElementById("addToCartBtn");
-
-    const buyNowBtnEl =
-      document.getElementById("buyNowBtn");
-
-    const selectionNoticeEl =
-      document.getElementById("selectionNotice");
-
-    const productSkuEl =
-      document.getElementById("productSku");
-
-    const productAvailabilityEl =
-      document.getElementById("productAvailability");
-
-    const productShipsToEl =
-      document.getElementById("productShipsTo");
-
-    const descriptionCardEl =
-      document.getElementById("descriptionCard");
-
-    const descriptionContentEl =
-      document.getElementById("descriptionContent");
+  /*
+   * Legacy key used by older version.
+   */
+  const LEGACY_CART_KEY =
+    "cart";
 
 
-    /* ============================================================
-       URL / PRODUCT ID
-       ============================================================ */
+  /* ============================================================
+     STATE
+     ============================================================ */
 
-    function getProductId() {
+  let product = null;
 
-      const params = new URLSearchParams(
+  let normalizedSkus = [];
+
+  let selectedProperties = {};
+
+  let selectedSku = null;
+
+  let quantity = 1;
+
+  let galleryImages = [];
+
+  let currentImageIndex = 0;
+
+
+  /* ============================================================
+     DOM
+     ============================================================ */
+
+  const loadingEl =
+    document.getElementById("loading");
+
+  const errorBoxEl =
+    document.getElementById("errorBox");
+
+  const errorMessageEl =
+    document.getElementById("errorMessage");
+
+  const productSectionEl =
+    document.getElementById("productSection");
+
+  const mainImageEl =
+    document.getElementById("mainImage");
+
+  const galleryThumbsEl =
+    document.getElementById("galleryThumbs");
+
+  const productTitleEl =
+    document.getElementById("productTitle");
+
+  const ratingStarsEl =
+    document.getElementById("ratingStars");
+
+  const ratingTextEl =
+    document.getElementById("ratingText");
+
+  const productPriceEl =
+    document.getElementById("productPrice");
+
+  const stockTextEl =
+    document.getElementById("stockText");
+
+  const variantsContainerEl =
+    document.getElementById("variantsContainer");
+
+  const quantityInputEl =
+    document.getElementById("quantityInput");
+
+  const quantityMinusEl =
+    document.getElementById("quantityMinus");
+
+  const quantityPlusEl =
+    document.getElementById("quantityPlus");
+
+  const addToCartBtnEl =
+    document.getElementById("addToCartBtn");
+
+  const buyNowBtnEl =
+    document.getElementById("buyNowBtn");
+
+  const selectionNoticeEl =
+    document.getElementById("selectionNotice");
+
+  const productSkuEl =
+    document.getElementById("productSku");
+
+  const productAvailabilityEl =
+    document.getElementById("productAvailability");
+
+  const productShipsToEl =
+    document.getElementById("productShipsTo");
+
+  const descriptionCardEl =
+    document.getElementById("descriptionCard");
+
+  const descriptionContentEl =
+    document.getElementById("descriptionContent");
+
+  const cartBadgeEl =
+    document.getElementById("cartBadge");
+
+
+  /* ============================================================
+     BASIC HELPERS
+     ============================================================ */
+
+  function firstNonEmpty(...values) {
+
+    for (const value of values) {
+
+      if (
+        value !== undefined &&
+        value !== null &&
+        String(value).trim() !== ""
+      ) {
+        return value;
+      }
+
+    }
+
+    return "";
+  }
+
+
+  function toNumber(
+    value,
+    fallback = 0
+  ) {
+
+    const number =
+      Number(value);
+
+    return Number.isFinite(number)
+      ? number
+      : fallback;
+  }
+
+
+  function uniqueArray(array) {
+
+    return [
+      ...new Set(
+        array.filter(Boolean)
+      )
+    ];
+
+  }
+
+
+  function formatPrice(
+    value,
+    currency = "USD"
+  ) {
+
+    const amount =
+      toNumber(
+        value,
+        0
+      );
+
+    try {
+
+      return new Intl.NumberFormat(
+        "en-US",
+        {
+          style: "currency",
+          currency:
+            currency || "USD"
+        }
+      ).format(amount);
+
+    } catch {
+
+      return `$${amount.toFixed(2)}`;
+
+    }
+
+  }
+
+
+  /* ============================================================
+     GET PRODUCT ID
+     ============================================================ */
+
+  function getProductId() {
+
+    const params =
+      new URLSearchParams(
         window.location.search
       );
 
-      return (
-        params.get("id") ||
-        params.get("product_id") ||
-        params.get("productId") ||
-        params.get("sku")
-      );
+    return (
+      params.get("id") ||
+      params.get("product_id") ||
+      params.get("productId") ||
+      params.get("sku")
+    );
+
+  }
+
+
+  /* ============================================================
+     NORMALIZE PRODUCT
+     ============================================================ */
+
+  function normalizeProduct(raw) {
+
+    if (!raw) {
+      return null;
     }
 
+    const data =
+      raw.product ||
+      raw.data ||
+      raw.result ||
+      raw;
 
-    /* ============================================================
-       GENERAL HELPERS
-       ============================================================ */
+    return {
 
-    function escapeHtml(value) {
+      ...data,
 
-      if (value === null || value === undefined) {
-        return "";
-      }
-
-      return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-
-    function toNumber(value, fallback = 0) {
-
-      const num = Number(value);
-
-      return Number.isFinite(num)
-        ? num
-        : fallback;
-    }
-
-
-    function firstNonEmpty(...values) {
-
-      for (const value of values) {
-
-        if (
-          value !== undefined &&
-          value !== null &&
-          String(value).trim() !== ""
-        ) {
-          return value;
-        }
-
-      }
-
-      return "";
-    }
-
-
-    function uniqueArray(array) {
-
-      return [...new Set(
-        array.filter(Boolean)
-      )];
-
-    }
-
-
-    function formatPrice(value, currency = "USD") {
-
-      const amount = toNumber(value, 0);
-
-      try {
-
-        return new Intl.NumberFormat(
-          "en-US",
-          {
-            style: "currency",
-            currency: currency || "USD"
-          }
-        ).format(amount);
-
-      } catch {
-
-        return `${currency || "USD"} ${amount.toFixed(2)}`;
-
-      }
-    }
-
-
-    function getPropertyGroupId(property) {
-
-      return firstNonEmpty(
-        property?.group_id,
-        property?.groupId,
-        property?.property_id,
-        property?.propertyId,
-        property?.sku_property_id,
-        property?.skuPropertyId,
-        property?.id
-      );
-    }
-
-
-    function getPropertyValueId(property) {
-
-      return firstNonEmpty(
-        property?.value_id,
-        property?.valueId,
-        property?.property_value_id,
-        property?.propertyValueId,
-        property?.sku_property_value_id,
-        property?.skuPropertyValueId
-      );
-    }
-
-
-    function getPropertyGroupName(property) {
-
-      return firstNonEmpty(
-        property?.group_name,
-        property?.groupName,
-        property?.property_name,
-        property?.propertyName,
-        property?.sku_property_name,
-        property?.skuPropertyName,
-        property?.name
-      );
-    }
-
-
-    function getPropertyValueName(property) {
-
-      return firstNonEmpty(
-        property?.value_name,
-        property?.valueName,
-        property?.property_value_name,
-        property?.propertyValueName,
-        property?.property_value_definition_name,
-        property?.propertyValueDefinitionName,
-        property?.display,
-        property?.name
-      );
-    }
-
-
-    function getPropertyImage(property) {
-
-      return firstNonEmpty(
-        property?.image,
-        property?.image_url,
-        property?.imageUrl,
-        property?.sku_image,
-        property?.skuImage
-      );
-    }
-
-
-    /* ============================================================
-       MEANINGLESS ALIEXPRESS VARIANT CODES
-       ============================================================ */
-
-    function isMeaninglessVariantCode(value) {
-
-      if (
-        value === undefined ||
-        value === null
-      ) {
-        return true;
-      }
-
-      const text = String(value).trim();
-
-      if (!text) {
-        return true;
-      }
-
-      /*
-        Common AliExpress/internal-looking codes:
-
-        T001
-        T002
-        SKU123
-        COLOR_01
-        COLOR-02
-        OPTION_03
-        OPTION-04
-        VALUE_01
-        VALUE-02
-      */
-
-      const patterns = [
-
-        /^T\d{2,}$/i,
-
-        /^SKU[\s_-]?\d+$/i,
-
-        /^COLOR[\s_-]?\d+$/i,
-
-        /^OPTION[\s_-]?\d+$/i,
-
-        /^VALUE[\s_-]?\d+$/i,
-
-        /^VARIANT[\s_-]?\d+$/i,
-
-        /^PROP[\s_-]?\d+$/i,
-
-        /^STYLE[\s_-]?\d+$/i
-
-      ];
-
-      return patterns.some(
-        pattern => pattern.test(text)
-      );
-    }
-
-
-    function isMeaningfulVariantName(value) {
-
-      if (
-        !value ||
-        isMeaninglessVariantCode(value)
-      ) {
-        return false;
-      }
-
-      const text = String(value).trim();
-
-      return text.length > 0;
-    }
-
-
-    /* ============================================================
-       COLOR GROUP DETECTION
-       ============================================================ */
-
-    function isColorGroupName(name) {
-
-      const text = String(
-        name || ""
-      ).trim().toLowerCase();
-
-      if (!text) {
-        return false;
-      }
-
-      const keywords = [
-        "color",
-        "colour",
-        "colours",
-        "colors",
-        "couleur",
-        "farba",
-        "cor",
-        "colourway",
-        "pattern",
-        "style"
-      ];
-
-      return keywords.some(
-        keyword => text === keyword ||
-        text.includes(keyword)
-      );
-    }
-
-
-    function shouldUseImageSwatches(group) {
-
-      if (!group) {
-        return false;
-      }
-
-      if (!isColorGroupName(group.name)) {
-        return false;
-      }
-
-      const imageCount = group.values.filter(
-        value => Boolean(value.image)
-      ).length;
-
-      /*
-        Require at least two images before
-        using image swatches.
-      */
-
-      return imageCount >= 2;
-    }
-
-
-    /* ============================================================
-       NORMALIZE PRODUCT
-       ============================================================ */
-
-    function normalizeProduct(raw) {
-
-      if (!raw) {
-        return null;
-      }
-
-      const data =
-        raw.product ||
-        raw.data ||
-        raw.result ||
-        raw;
-
-      return {
-        ...data,
-
-        id: firstNonEmpty(
+      id:
+        firstNonEmpty(
           data.id,
           data.product_id,
           data.productId,
@@ -1206,59 +1088,59 @@
           data.itemId
         ),
 
-        title: firstNonEmpty(
+      title:
+        firstNonEmpty(
           data.title,
           data.product_title,
           data.productTitle,
-          data.name
-        ) || "Product",
+          data.name,
+          "Product"
+        ),
 
-        price: firstNonEmpty(
+      price:
+        firstNonEmpty(
           data.price,
           data.sale_price,
           data.salePrice,
           data.min_price,
-          data.minPrice
+          data.minPrice,
+          0
         ),
 
-        original_price: firstNonEmpty(
-          data.original_price,
-          data.originalPrice,
-          data.regular_price,
-          data.regularPrice,
-          data.max_price,
-          data.maxPrice
-        ),
-
-        currency: firstNonEmpty(
+      currency:
+        firstNonEmpty(
           data.currency,
           data.target_currency,
           data.targetCurrency,
           "USD"
         ),
 
-        rating: firstNonEmpty(
+      rating:
+        firstNonEmpty(
           data.rating,
           data.average_rating,
           data.averageRating,
           data.star_rating
         ),
 
-        review_count: firstNonEmpty(
+      review_count:
+        firstNonEmpty(
           data.review_count,
           data.reviewCount,
           data.reviews,
           data.orders
         ),
 
-        stock: firstNonEmpty(
+      stock:
+        firstNonEmpty(
           data.stock,
           data.inventory,
           data.quantity,
           data.total_stock
         ),
 
-        sku: firstNonEmpty(
+      sku:
+        firstNonEmpty(
           data.sku,
           data.product_sku,
           data.productSku,
@@ -1266,7 +1148,8 @@
           data.itemSku
         ),
 
-        description: firstNonEmpty(
+      description:
+        firstNonEmpty(
           data.description,
           data.description_html,
           data.descriptionHtml,
@@ -1276,388 +1159,395 @@
           data.details
         ),
 
-        images:
-          data.images ||
-          data.image_urls ||
-          data.imageUrls ||
-          data.gallery ||
-          data.gallery_images ||
-          data.galleryImages ||
-          [],
+      images:
+        data.images ||
+        data.image_urls ||
+        data.imageUrls ||
+        data.gallery ||
+        data.gallery_images ||
+        data.galleryImages ||
+        [],
 
-        skus:
-          data.skus ||
-          data.sku_list ||
-          data.skuList ||
-          data.sku_array ||
-          data.skuArray ||
-          data.ae_sku_property_dtos ||
-          [],
+      skus:
+        data.skus ||
+        data.sku_list ||
+        data.skuList ||
+        data.sku_array ||
+        data.skuArray ||
+        []
 
-        raw: data
-      };
+    };
+
+  }
+
+
+  /* ============================================================
+     PROPERTY HELPERS
+     ============================================================ */
+
+  function getGroupId(property) {
+
+    return firstNonEmpty(
+      property?.group_id,
+      property?.groupId,
+      property?.property_id,
+      property?.propertyId,
+      property?.sku_property_id,
+      property?.skuPropertyId,
+      property?.id
+    );
+
+  }
+
+
+  function getValueId(property) {
+
+    return firstNonEmpty(
+      property?.value_id,
+      property?.valueId,
+      property?.property_value_id,
+      property?.propertyValueId,
+      property?.sku_property_value_id,
+      property?.skuPropertyValueId
+    );
+
+  }
+
+
+  function getGroupName(property) {
+
+    return firstNonEmpty(
+      property?.group_name,
+      property?.groupName,
+      property?.property_name,
+      property?.propertyName,
+      property?.sku_property_name,
+      property?.skuPropertyName,
+      property?.name,
+      "Option"
+    );
+
+  }
+
+
+  function getValueName(property) {
+
+    return firstNonEmpty(
+      property?.value_name,
+      property?.valueName,
+      property?.property_value_name,
+      property?.propertyValueName,
+      property?.property_value_definition_name,
+      property?.propertyValueDefinitionName,
+      property?.display,
+      property?.name
+    );
+
+  }
+
+
+  function getPropertyImage(property) {
+
+    return firstNonEmpty(
+      property?.image,
+      property?.image_url,
+      property?.imageUrl,
+      property?.sku_image,
+      property?.skuImage
+    );
+
+  }
+
+
+  /* ============================================================
+     NORMALIZE PROPERTY
+     ============================================================ */
+
+  function normalizeSkuProperty(
+    property
+  ) {
+
+    if (!property) {
+      return null;
     }
 
+    const groupId =
+      getGroupId(property);
 
-    /* ============================================================
-       NORMALIZE SKU PROPERTY
-       ============================================================ */
+    const valueId =
+      getValueId(property);
 
-    function normalizeSkuProperty(property) {
+    const groupName =
+      getGroupName(property);
 
-      if (!property) {
-        return null;
-      }
+    const valueName =
+      getValueName(property);
 
-      const groupId =
-        getPropertyGroupId(property);
+    const image =
+      getPropertyImage(property);
 
-      const valueId =
-        getPropertyValueId(property);
+    if (
+      !groupId &&
+      !valueId &&
+      !groupName &&
+      !valueName
+    ) {
+      return null;
+    }
 
-      const groupName =
-        getPropertyGroupName(property);
+    return {
 
-      const valueName =
-        getPropertyValueName(property);
+      group_id:
+        String(
+          groupId ||
+          groupName ||
+          "group"
+        ),
 
-      const image =
-        getPropertyImage(property);
+      value_id:
+        String(
+          valueId ||
+          valueName ||
+          ""
+        ),
+
+      group_name:
+        String(
+          groupName ||
+          "Option"
+        ),
+
+      groupId:
+        String(
+          groupId ||
+          groupName ||
+          "group"
+        ),
+
+      valueId:
+        String(
+          valueId ||
+          valueName ||
+          ""
+        ),
+
+      name:
+        String(
+          groupName ||
+          "Option"
+        ),
+
+      display:
+        String(
+          valueName ||
+          valueId ||
+          ""
+        ),
+
+      value_name:
+        String(
+          valueName ||
+          valueId ||
+          ""
+        ),
+
+      property_value_definition_name:
+        String(
+          valueName ||
+          valueId ||
+          ""
+        ),
+
+      image:
+        image || "",
+
+      sku_image:
+        image || ""
+
+    };
+
+  }
+
+
+  /* ============================================================
+     EXTRACT SKU PROPERTIES
+     ============================================================ */
+
+  function extractSkuProperties(
+    sku
+  ) {
+
+    if (!sku) {
+      return [];
+    }
+
+    const candidates = [];
+
+    const sources = [
+
+      sku.properties,
+
+      sku.propertys,
+
+      sku.property_list,
+
+      sku.propertyList,
+
+      sku.sku_properties,
+
+      sku.skuProperties,
+
+      sku.normalized_properties,
+
+      sku.normalizedProperties
+
+    ];
+
+    for (
+      const source of sources
+    ) {
 
       if (
-        !groupId &&
-        !valueId &&
-        !groupName &&
-        !valueName
+        Array.isArray(source)
       ) {
-        return null;
+
+        candidates.push(
+          ...source
+        );
+
       }
 
-      return {
+      if (
+        source &&
+        typeof source === "object"
+      ) {
 
-        group_id: String(
-          groupId || groupName || "group"
-        ),
+        if (
+          Array.isArray(
+            source.ae_sku_property_d_t_o
+          )
+        ) {
 
-        value_id: String(
-          valueId || valueName || ""
-        ),
+          candidates.push(
+            ...source.ae_sku_property_d_t_o
+          );
 
-        groupId: String(
-          groupId || groupName || "group"
-        ),
-
-        valueId: String(
-          valueId || valueName || ""
-        ),
-
-        property_id: String(
-          groupId || groupName || "group"
-        ),
-
-        property_value_id: String(
-          valueId || valueName || ""
-        ),
-
-        sku_property_id: String(
-          groupId || groupName || "group"
-        ),
-
-        sku_property_name:
-          String(
-            groupName || "Option"
-          ),
-
-        property_name:
-          String(
-            groupName || "Option"
-          ),
-
-        name:
-          String(
-            groupName || "Option"
-          ),
-
-        group_name:
-          String(
-            groupName || "Option"
-          ),
-
-        groupName:
-          String(
-            groupName || "Option"
-          ),
-
-        value_name:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        valueName:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        property_value_name:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        propertyValueName:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        property_value_definition_name:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        propertyValueDefinitionName:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        display:
-          String(
-            valueName ||
-            valueId ||
-            ""
-          ),
-
-        image:
-          image || "",
-
-        image_url:
-          image || "",
-
-        imageUrl:
-          image || "",
-
-        sku_image:
-          image || "",
-
-        skuImage:
-          image || ""
-      };
-    }
-
-
-    /* ============================================================
-       EXTRACT SKU PROPERTIES
-       ============================================================ */
-
-    function extractSkuProperties(sku) {
-
-      if (!sku) {
-        return [];
-      }
-
-      const candidates = [];
-
-      /*
-        Direct property arrays
-      */
-
-      const directArrays = [
-
-        sku.properties,
-
-        sku.propertys,
-
-        sku.property_list,
-
-        sku.propertyList,
-
-        sku.sku_properties,
-
-        sku.skuProperties,
-
-        sku.normalized_properties,
-
-        sku.normalizedProperties,
-
-        sku.ae_sku_property_dtos,
-
-        sku.aeSkuPropertyDtos,
-
-        sku.aeop_s_k_u_propertys,
-
-        sku.aeopSkuPropertys
-
-      ];
-
-      for (const item of directArrays) {
-
-        if (Array.isArray(item)) {
-          candidates.push(...item);
         }
 
         if (
-          item &&
-          typeof item === "object"
+          Array.isArray(
+            source.aeop_s_k_u_property
+          )
         ) {
 
-          if (
-            Array.isArray(
-              item.ae_sku_property_d_t_o
-            )
-          ) {
-            candidates.push(
-              ...item.ae_sku_property_d_t_o
-            );
-          }
+          candidates.push(
+            ...source.aeop_s_k_u_property
+          );
 
-          if (
-            Array.isArray(
-              item.ae_sku_property_dto
-            )
-          ) {
-            candidates.push(
-              ...item.ae_sku_property_dto
-            );
-          }
-
-          if (
-            Array.isArray(
-              item.aeop_s_k_u_property
-            )
-          ) {
-            candidates.push(
-              ...item.aeop_s_k_u_property
-            );
-          }
-
-          if (
-            Array.isArray(
-              item.aeop_sku_property
-            )
-          ) {
-            candidates.push(
-              ...item.aeop_sku_property
-            );
-          }
         }
 
       }
 
-
-      /*
-        Another common structure:
-        ae_sku_property_dtos:
-        {
-          ae_sku_property_d_t_o: [...]
-        }
-      */
-
-      if (
-        sku.ae_sku_property_dtos &&
-        typeof sku.ae_sku_property_dtos === "object"
-      ) {
-
-        const dto =
-          sku.ae_sku_property_dtos
-            .ae_sku_property_d_t_o;
-
-        if (Array.isArray(dto)) {
-          candidates.push(...dto);
-        }
-
-      }
-
-
-      /*
-        If SKU itself contains a property
-      */
-
-      if (
-        sku.group_id ||
-        sku.groupId ||
-        sku.property_id ||
-        sku.propertyId
-      ) {
-        candidates.push(sku);
-      }
-
-
-      /*
-        Normalize and remove duplicates
-      */
-
-      const normalized = [];
-
-      const seen = new Set();
-
-      for (const property of candidates) {
-
-        const item =
-          normalizeSkuProperty(property);
-
-        if (!item) {
-          continue;
-        }
-
-        const key =
-          `${item.group_id}::${item.value_id}`;
-
-        if (seen.has(key)) {
-          continue;
-        }
-
-        seen.add(key);
-
-        normalized.push(item);
-      }
-
-      return normalized;
     }
 
 
-    /* ============================================================
-       NORMALIZE SKUS
-       ============================================================ */
+    /*
+     * Also support normalized properties
+     * returned by your Worker.
+     */
 
-    function normalizeSkus(rawSkus) {
+    if (
+      Array.isArray(
+        sku.normalized_properties
+      )
+    ) {
 
-      let list = rawSkus;
+      candidates.push(
+        ...sku.normalized_properties
+      );
+
+    }
+
+
+    const result = [];
+
+    const seen =
+      new Set();
+
+    for (
+      const property of candidates
+    ) {
+
+      const normalized =
+        normalizeSkuProperty(
+          property
+        );
+
+      if (!normalized) {
+        continue;
+      }
+
+      const key =
+        `${normalized.group_id}::${normalized.value_id}`;
 
       if (
-        list &&
-        typeof list === "object" &&
-        !Array.isArray(list)
+        seen.has(key)
       ) {
-
-        list =
-          list.sku ||
-          list.skus ||
-          list.sku_list ||
-          list.skuList ||
-          list.ae_sku_property_d_t_o ||
-          list.ae_sku_property_dto ||
-          [];
-
+        continue;
       }
 
-      if (!Array.isArray(list)) {
-        return [];
-      }
+      seen.add(key);
 
-      return list.map((sku, index) => {
+      result.push(
+        normalized
+      );
+
+    }
+
+    return result;
+  }
+
+
+  /* ============================================================
+     NORMALIZE SKUS
+     ============================================================ */
+
+  function normalizeSkus(
+    rawSkus
+  ) {
+
+    let list =
+      rawSkus;
+
+    if (
+      list &&
+      !Array.isArray(list) &&
+      typeof list === "object"
+    ) {
+
+      list =
+        list.sku ||
+        list.skus ||
+        list.sku_list ||
+        list.skuList ||
+        list.ae_sku_property_d_t_o ||
+        [];
+
+    }
+
+    if (
+      !Array.isArray(list)
+    ) {
+      return [];
+    }
+
+    return list.map(
+      (sku, index) => {
 
         const properties =
-          extractSkuProperties(sku);
+          extractSkuProperties(
+            sku
+          );
 
         const price =
           firstNonEmpty(
@@ -1728,653 +1618,142 @@
 
         };
 
-      });
-
-    }
-
-
-    /* ============================================================
-       BUILD VARIANT GROUPS
-       ============================================================ */
-
-    function buildVariantGroups(skus) {
-
-      const groups = new Map();
-
-      for (const sku of skus) {
-
-        const properties =
-          sku.properties ||
-          sku.normalized_properties ||
-          [];
-
-        for (const property of properties) {
-
-          const groupId =
-            String(
-              firstNonEmpty(
-                property.group_id,
-                property.groupId,
-                property.property_id,
-                property.propertyId,
-                property.sku_property_id,
-                property.skuPropertyId
-              )
-            );
-
-          if (!groupId) {
-            continue;
-          }
-
-          const groupName =
-            firstNonEmpty(
-              property.group_name,
-              property.groupName,
-              property.property_name,
-              property.propertyName,
-              property.sku_property_name,
-              property.skuPropertyName,
-              property.name,
-              "Option"
-            );
-
-          if (!groups.has(groupId)) {
-
-            groups.set(
-              groupId,
-              {
-                id: groupId,
-                name: String(groupName),
-                values: []
-              }
-            );
-
-          }
-
-          const group =
-            groups.get(groupId);
-
-          const valueId =
-            String(
-              firstNonEmpty(
-                property.value_id,
-                property.valueId,
-                property.property_value_id,
-                property.propertyValueId,
-                property.sku_property_value_id,
-                property.skuPropertyValueId
-              )
-            );
-
-          if (!valueId) {
-            continue;
-          }
-
-          const valueName =
-            firstNonEmpty(
-              property.value_name,
-              property.valueName,
-              property.property_value_name,
-              property.propertyValueName,
-              property.property_value_definition_name,
-              property.propertyValueDefinitionName,
-              property.display,
-              property.name,
-              valueId
-            );
-
-          const image =
-            firstNonEmpty(
-              property.image,
-              property.image_url,
-              property.imageUrl,
-              property.sku_image,
-              property.skuImage,
-              sku.image
-            );
-
-          const existing =
-            group.values.find(
-              value =>
-                String(value.id) ===
-                String(valueId)
-            );
-
-          if (!existing) {
-
-            group.values.push({
-
-              id: valueId,
-
-              name:
-                String(
-                  valueName || valueId
-                ),
-
-              image:
-                image || ""
-
-            });
-
-          } else if (
-            !existing.image &&
-            image
-          ) {
-
-            existing.image = image;
-
-          }
-
-        }
-
       }
+    );
 
-      return Array.from(
-        groups.values()
-      );
-    }
+  }
 
 
-    /* ============================================================
-       VARIANT DISPLAY NAME
-       ============================================================ */
+  /* ============================================================
+     VARIANT NAME HELPERS
+     ============================================================ */
 
-    function getBuyerVariantLabel(
-      value,
-      group,
-      index
+  function isMeaninglessVariantCode(
+    value
+  ) {
+
+    if (
+      value === undefined ||
+      value === null
     ) {
-
-      if (
-        value &&
-        isMeaningfulVariantName(
-          value.name
-        )
-      ) {
-        return String(value.name);
-      }
-
-      /*
-        Don't show T001 / T002 / SKU-style
-        internal codes as the main label.
-      */
-
-      if (
-        isColorGroupName(group.name)
-      ) {
-
-        return `Color ${index + 1}`;
-
-      }
-
-      return `Option ${index + 1}`;
+      return true;
     }
 
-
-    /* ============================================================
-       RENDER VARIANTS
-       ============================================================ */
-
-    function renderVariants() {
-
-      variantsContainerEl.innerHTML = "";
-
-      if (!normalizedSkus.length) {
-
-        variantsContainerEl.classList.add("hidden");
-
-        return;
-
-      }
-
-      const groups =
-        buildVariantGroups(
-          normalizedSkus
-        );
-
-      if (!groups.length) {
-
-        variantsContainerEl.classList.add("hidden");
-
-        return;
-
-      }
-
-      variantsContainerEl.classList.remove(
-        "hidden"
-      );
-
-
-      for (const group of groups) {
-
-        const groupWrapper =
-          document.createElement("div");
-
-        groupWrapper.className =
-          "variant-group";
-
-        const titleRow =
-          document.createElement("div");
-
-        titleRow.className =
-          "variant-title";
-
-        const title =
-          document.createElement("span");
-
-        title.textContent =
-          group.name || "Option";
-
-        const selectedText =
-          document.createElement("span");
-
-        selectedText.className =
-          "variant-selected-text";
-
-        selectedText.dataset.groupId =
-          group.id;
-
-        selectedText.textContent =
-          "Select";
-
-        titleRow.appendChild(title);
-        titleRow.appendChild(selectedText);
-
-        const options =
-          document.createElement("div");
-
-        options.className =
-          "variant-options";
-
-        const useImageSwatches =
-          shouldUseImageSwatches(group);
-
-        group.values.forEach(
-          (value, index) => {
-
-            const button =
-              document.createElement("button");
-
-            button.type = "button";
-
-            button.className =
-              "variant-option";
-
-            button.dataset.groupId =
-              String(group.id);
-
-            button.dataset.valueId =
-              String(value.id);
-
-            const meaningfulName =
-              isMeaningfulVariantName(
-                value.name
-              );
-
-            const buyerLabel =
-              getBuyerVariantLabel(
-                value,
-                group,
-                index
-              );
-
-            if (
-              useImageSwatches &&
-              value.image
-            ) {
-
-              button.classList.add(
-                "swatch-option"
-              );
-
-              const image =
-                document.createElement("img");
-
-              image.className =
-                "variant-swatch-image";
-
-              image.src =
-                value.image;
-
-              image.alt =
-                buyerLabel;
-
-              image.loading =
-                "lazy";
-
-              image.referrerPolicy =
-                "no-referrer";
-
-              button.appendChild(
-                image
-              );
-
-
-              /*
-                Show real color names,
-                but do not show T001/T002/etc.
-              */
-
-              if (meaningfulName) {
-
-                const label =
-                  document.createElement(
-                    "span"
-                  );
-
-                label.className =
-                  "variant-swatch-label";
-
-                label.textContent =
-                  buyerLabel;
-
-                button.appendChild(
-                  label
-                );
-
-              }
-
-              button.title =
-                meaningfulName
-                  ? buyerLabel
-                  : `Color option ${index + 1}`;
-
-              button.setAttribute(
-                "aria-label",
-                meaningfulName
-                  ? buyerLabel
-                  : `Color option ${index + 1}`
-              );
-
-            } else {
-
-              button.classList.add(
-                "text-option"
-              );
-
-              button.textContent =
-                buyerLabel;
-
-              button.title =
-                buyerLabel;
-
-              button.setAttribute(
-                "aria-label",
-                buyerLabel
-              );
-
-            }
-
-
-            button.addEventListener(
-              "click",
-              () => {
-
-                if (
-                  button.classList.contains(
-                    "disabled"
-                  )
-                ) {
-                  return;
-                }
-
-                selectedProperties[
-                  String(group.id)
-                ] =
-                  String(value.id);
-
-                updateVariantUI();
-
-                updateSelectedSku();
-
-              }
-            );
-
-            options.appendChild(
-              button
-            );
-
-          }
-        );
-
-
-        groupWrapper.appendChild(
-          titleRow
-        );
-
-        groupWrapper.appendChild(
-          options
-        );
-
-        variantsContainerEl.appendChild(
-          groupWrapper
-        );
-
-      }
-
-      updateVariantUI();
+    const text =
+      String(value).trim();
+
+    if (!text) {
+      return true;
     }
 
+    const patterns = [
 
-    /* ============================================================
-       AVAILABLE SKU CHECK
-       ============================================================ */
+      /^T\d{2,}$/i,
 
-    function hasAvailableSkuForSelection(
-      groupId,
-      valueId
+      /^SKU[\s_-]?\d+$/i,
+
+      /^COLOR[\s_-]?\d+$/i,
+
+      /^OPTION[\s_-]?\d+$/i,
+
+      /^VALUE[\s_-]?\d+$/i,
+
+      /^VARIANT[\s_-]?\d+$/i,
+
+      /^PROP[\s_-]?\d+$/i,
+
+      /^STYLE[\s_-]?\d+$/i
+
+    ];
+
+    return patterns.some(
+      pattern =>
+        pattern.test(text)
+    );
+
+  }
+
+
+  function isMeaningfulVariantName(
+    value
+  ) {
+
+    return (
+      Boolean(value) &&
+      !isMeaninglessVariantCode(
+        value
+      )
+    );
+
+  }
+
+
+  function isColorGroupName(
+    name
+  ) {
+
+    const text =
+      String(
+        name || ""
+      )
+        .trim()
+        .toLowerCase();
+
+    return [
+      "color",
+      "colour",
+      "colors",
+      "colours",
+      "pattern",
+      "colourway"
+    ].some(
+      keyword =>
+        text === keyword ||
+        text.includes(keyword)
+    );
+
+  }
+
+
+  function shouldUseImageSwatches(
+    group
+  ) {
+
+    if (!group) {
+      return false;
+    }
+
+    if (
+      !isColorGroupName(
+        group.name
+      )
     ) {
-
-      const testGroupId =
-        String(groupId);
-
-      const testValueId =
-        String(valueId);
-
-      return normalizedSkus.some(
-        sku => {
-
-          if (
-            sku.stock !== null &&
-            sku.stock <= 0
-          ) {
-            return false;
-          }
-
-          const properties =
-            sku.properties ||
-            sku.normalized_properties ||
-            [];
-
-          const property =
-            properties.find(
-              item =>
-                String(
-                  firstNonEmpty(
-                    item.group_id,
-                    item.groupId,
-                    item.property_id,
-                    item.propertyId,
-                    item.sku_property_id
-                  )
-                ) === testGroupId
-            );
-
-          if (!property) {
-            return false;
-          }
-
-          const skuValueId =
-            String(
-              firstNonEmpty(
-                property.value_id,
-                property.valueId,
-                property.property_value_id,
-                property.propertyValueId,
-                property.sku_property_value_id
-              )
-            );
-
-          return (
-            skuValueId ===
-            testValueId
-          );
-
-        }
-      );
-
+      return false;
     }
 
-
-    /* ============================================================
-       VARIANT UI STATE
-       ============================================================ */
-
-    function updateVariantUI() {
-
-      document
-        .querySelectorAll(
-          ".variant-option"
-        )
-        .forEach(button => {
-
-          const groupId =
-            String(
-              button.dataset.groupId || ""
-            );
-
-          const valueId =
-            String(
-              button.dataset.valueId || ""
-            );
-
-          const selected =
-            String(
-              selectedProperties[groupId] || ""
-            ) === valueId;
-
-          button.classList.toggle(
-            "selected",
-            selected
-          );
-
-
-          /*
-            Disable values that have
-            no available SKU.
-          */
-
-          const hasAvailable =
-            hasAvailableSkuForSelection(
-              groupId,
-              valueId
-            );
-
-          button.classList.toggle(
-            "disabled",
-            !hasAvailable
-          );
-
-          /*
-            Keep already-selected value
-            usable even if stock structure
-            is unusual.
-          */
-
-          if (selected) {
-
-            button.classList.remove(
-              "disabled"
-            );
-
-          }
-
-        });
-
-
-      /*
-        Update selected labels.
-      */
-
-      const groups =
-        buildVariantGroups(
-          normalizedSkus
-        );
-
-      groups.forEach(
-        group => {
-
-          const label =
-            document.querySelector(
-              `.variant-selected-text[data-group-id="${CSS.escape(
-                String(group.id)
-              )}"]`
-            );
-
-          if (!label) {
-            return;
-          }
-
-          const selectedValueId =
-            selectedProperties[
-              String(group.id)
-            ];
-
-          if (!selectedValueId) {
-
-            label.textContent =
-              "Select";
-
-            return;
-
-          }
-
-          const selectedValue =
-            group.values.find(
-              value =>
-                String(value.id) ===
-                String(selectedValueId)
-            );
-
-          if (!selectedValue) {
-
-            label.textContent =
-              "Select";
-
-            return;
-
-          }
-
-          if (
-            isMeaningfulVariantName(
-              selectedValue.name
-            )
-          ) {
-
-            label.textContent =
-              selectedValue.name;
-
-          } else {
-
-            label.textContent =
-              "Selected";
-
-          }
-
-        }
+    const images =
+      group.values.filter(
+        value =>
+          Boolean(value.image)
       );
 
-    }
+    return images.length >= 2;
+  }
 
 
-    /* ============================================================
-       SKU MATCHING
-       ============================================================ */
+  /* ============================================================
+     BUILD VARIANT GROUPS
+     ============================================================ */
 
-    function skuMatchesSelection(
-      sku,
-      selection,
-      requireAllSelected = false
+  function buildVariantGroups(
+    skus
+  ) {
+
+    const groups =
+      new Map();
+
+    for (
+      const sku of skus
     ) {
 
       const properties =
@@ -2382,33 +1761,54 @@
         sku.normalized_properties ||
         [];
 
-      let matchedCount = 0;
-
       for (
-        const [
-          groupId,
-          selectedValueId
-        ] of Object.entries(selection)
+        const property of properties
       ) {
 
-        const property =
-          properties.find(
-            item =>
-              String(
-                firstNonEmpty(
-                  item.group_id,
-                  item.groupId,
-                  item.property_id,
-                  item.propertyId,
-                  item.sku_property_id
-                )
-              ) ===
-              String(groupId)
+        const groupId =
+          String(
+            firstNonEmpty(
+              property.group_id,
+              property.groupId,
+              property.property_id,
+              property.propertyId,
+              property.sku_property_id
+            )
           );
 
-        if (!property) {
-          return false;
+        if (!groupId) {
+          continue;
         }
+
+        const groupName =
+          firstNonEmpty(
+            property.group_name,
+            property.groupName,
+            property.property_name,
+            property.propertyName,
+            property.sku_property_name,
+            property.skuPropertyName,
+            property.name,
+            "Option"
+          );
+
+        if (
+          !groups.has(groupId)
+        ) {
+
+          groups.set(
+            groupId,
+            {
+              id: groupId,
+              name: String(groupName),
+              values: []
+            }
+          );
+
+        }
+
+        const group =
+          groups.get(groupId);
 
         const valueId =
           String(
@@ -2421,438 +1821,167 @@
             )
           );
 
-        if (
-          valueId !==
-          String(selectedValueId)
-        ) {
-          return false;
+        if (!valueId) {
+          continue;
         }
 
-        matchedCount++;
-
-      }
-
-      if (
-        requireAllSelected
-      ) {
-
-        /*
-          Require all SKU properties
-          to be selected.
-        */
-
-        const uniqueGroups =
-          new Set(
-            properties.map(
-              property =>
-                String(
-                  firstNonEmpty(
-                    property.group_id,
-                    property.groupId,
-                    property.property_id,
-                    property.propertyId,
-                    property.sku_property_id
-                  )
-                )
-            )
+        const valueName =
+          firstNonEmpty(
+            property.value_name,
+            property.valueName,
+            property.property_value_name,
+            property.propertyValueName,
+            property.property_value_definition_name,
+            property.propertyValueDefinitionName,
+            property.display,
+            valueId
           );
 
-        if (
-          matchedCount !==
-          uniqueGroups.size
-        ) {
-          return false;
-        }
+        const image =
+          firstNonEmpty(
+            property.image,
+            property.image_url,
+            property.imageUrl,
+            property.sku_image,
+            property.skuImage,
+            sku.image
+          );
 
-      }
+        const existing =
+          group.values.find(
+            value =>
+              String(value.id) ===
+              String(valueId)
+          );
 
-      return true;
-    }
+        if (!existing) {
 
+          group.values.push({
 
-    function findBestMatchingSku() {
+            id:
+              valueId,
 
-      if (!normalizedSkus.length) {
-        return null;
-      }
+            name:
+              String(
+                valueName ||
+                valueId
+              ),
 
-      /*
-        First try exact complete match.
-      */
+            image:
+              image || ""
 
-      let exact =
-        normalizedSkus.find(
-          sku =>
-            skuMatchesSelection(
-              sku,
-              selectedProperties,
-              true
-            ) &&
-            (
-              sku.stock === null ||
-              sku.stock > 0
-            )
-        );
+          });
 
-      if (exact) {
-        return exact;
-      }
-
-
-      /*
-        Then allow partial match.
-      */
-
-      const candidates =
-        normalizedSkus.filter(
-          sku =>
-            skuMatchesSelection(
-              sku,
-              selectedProperties,
-              false
-            ) &&
-            (
-              sku.stock === null ||
-              sku.stock > 0
-            )
-        );
-
-      if (!candidates.length) {
-        return null;
-      }
-
-
-      /*
-        Select candidate with the
-        highest number of matched properties.
-      */
-
-      let best =
-        candidates[0];
-
-      let bestScore =
-        0;
-
-      for (
-        const sku of candidates
-      ) {
-
-        let score = 0;
-
-        const properties =
-          sku.properties ||
-          sku.normalized_properties ||
-          [];
-
-        for (
-          const [
-            groupId,
-            valueId
-          ] of Object.entries(
-            selectedProperties
-          )
+        } else if (
+          !existing.image &&
+          image
         ) {
 
-          const property =
-            properties.find(
-              item =>
-                String(
-                  firstNonEmpty(
-                    item.group_id,
-                    item.groupId,
-                    item.property_id,
-                    item.propertyId,
-                    item.sku_property_id
-                  )
-                ) ===
-                String(groupId)
-            );
-
-          if (!property) {
-            continue;
-          }
-
-          const skuValueId =
-            String(
-              firstNonEmpty(
-                property.value_id,
-                property.valueId,
-                property.property_value_id,
-                property.propertyValueId,
-                property.sku_property_value_id
-              )
-            );
-
-          if (
-            skuValueId ===
-            String(valueId)
-          ) {
-            score++;
-          }
-
-        }
-
-        if (score > bestScore) {
-
-          bestScore = score;
-
-          best = sku;
+          existing.image =
+            image;
 
         }
 
       }
 
-      return best;
     }
 
+    return [
+      ...groups.values()
+    ];
 
-    /* ============================================================
-       SELECTED SKU UPDATE
-       ============================================================ */
+  }
 
-    function updateSelectedSku() {
 
-      selectedSku =
-        findBestMatchingSku();
+  /* ============================================================
+     RENDER VARIANTS
+     ============================================================ */
 
-      if (!selectedSku) {
+  function renderVariants() {
 
-        selectionNoticeEl.textContent =
-          "Please select an available variant.";
+    variantsContainerEl.innerHTML =
+      "";
 
-        selectionNoticeEl.classList.remove(
-          "hidden"
-        );
+    const groups =
+      buildVariantGroups(
+        normalizedSkus
+      );
 
-        return;
-      }
+    if (!groups.length) {
 
-      selectionNoticeEl.classList.add(
+      variantsContainerEl.classList.add(
         "hidden"
       );
 
-
-      /*
-        Variant-specific price
-      */
-
-      if (
-        selectedSku.price !== null &&
-        selectedSku.price !== undefined &&
-        selectedSku.price > 0
-      ) {
-
-        productPriceEl.textContent =
-          formatPrice(
-            selectedSku.price,
-            product.currency
-          );
-
-      } else {
-
-        productPriceEl.textContent =
-          formatPrice(
-            product.price,
-            product.currency
-          );
-
-      }
-
-
-      /*
-        Variant-specific stock
-      */
-
-      if (
-        selectedSku.stock !== null &&
-        selectedSku.stock !== undefined
-      ) {
-
-        if (
-          selectedSku.stock > 0
-        ) {
-
-          stockTextEl.textContent =
-            `${selectedSku.stock} available`;
-
-          stockTextEl.className =
-            "stock in-stock";
-
-        } else {
-
-          stockTextEl.textContent =
-            "Out of stock";
-
-          stockTextEl.className =
-            "stock out-of-stock";
-
-        }
-
-      }
-
-
-      /*
-        Variant-specific image
-      */
-
-      if (
-        selectedSku.image
-      ) {
-
-        const index =
-          galleryImages.indexOf(
-            selectedSku.image
-          );
-
-        if (index >= 0) {
-
-          setMainImage(index);
-
-        } else {
-
-          mainImageEl.src =
-            selectedSku.image;
-
-        }
-
-      }
-
-
-      /*
-        Variant-specific SKU
-      */
-
-      if (
-        selectedSku.sku
-      ) {
-
-        productSkuEl.textContent =
-          selectedSku.sku;
-
-      }
+      return;
 
     }
 
+    variantsContainerEl.classList.remove(
+      "hidden"
+    );
 
-    /* ============================================================
-       IMAGES
-       ============================================================ */
 
-    function normalizeImages(
-      rawImages
+    for (
+      const group of groups
     ) {
 
-      let images = [];
-
-      if (
-        Array.isArray(rawImages)
-      ) {
-
-        images =
-          rawImages.flatMap(
-            item => {
-
-              if (
-                typeof item === "string"
-              ) {
-
-                return [
-                  item
-                ];
-
-              }
-
-              if (
-                item &&
-                typeof item === "object"
-              ) {
-
-                return [
-                  firstNonEmpty(
-                    item.url,
-                    item.image_url,
-                    item.imageUrl,
-                    item.src,
-                    item.image
-                  )
-                ].filter(Boolean);
-
-              }
-
-              return [];
-
-            }
-          );
-
-      }
-
-      return uniqueArray(
-        images
-      );
-
-    }
-
-
-    function setMainImage(
-      index
-    ) {
-
-      if (
-        !galleryImages.length
-      ) {
-        return;
-      }
-
-      currentImageIndex =
-        Math.max(
-          0,
-          Math.min(
-            index,
-            galleryImages.length - 1
-          )
+      const wrapper =
+        document.createElement(
+          "div"
         );
 
-      mainImageEl.src =
-        galleryImages[
-          currentImageIndex
-        ];
+      wrapper.className =
+        "variant-group";
 
-      galleryThumbsEl
-        .querySelectorAll(
-          ".gallery-thumb"
-        )
-        .forEach(
-          (thumb, thumbIndex) => {
-
-            thumb.classList.toggle(
-              "active",
-              thumbIndex ===
-              currentImageIndex
-            );
-
-          }
+      const titleRow =
+        document.createElement(
+          "div"
         );
 
-    }
+      titleRow.className =
+        "variant-title";
 
+      const title =
+        document.createElement(
+          "span"
+        );
 
-    function renderGallery() {
+      title.textContent =
+        group.name;
 
-      galleryThumbsEl.innerHTML = "";
+      const selectedLabel =
+        document.createElement(
+          "span"
+        );
 
-      if (
-        !galleryImages.length
-      ) {
+      selectedLabel.className =
+        "variant-selected-text";
 
-        mainImageEl.src =
-          "https://via.placeholder.com/800?text=Product";
+      selectedLabel.dataset.groupId =
+        String(group.id);
 
-        return;
+      selectedLabel.textContent =
+        "Select";
 
-      }
+      titleRow.appendChild(title);
+      titleRow.appendChild(selectedLabel);
 
-      galleryImages.forEach(
-        (image, index) => {
+      const options =
+        document.createElement(
+          "div"
+        );
+
+      options.className =
+        "variant-options";
+
+      const useSwatches =
+        shouldUseImageSwatches(
+          group
+        );
+
+      group.values.forEach(
+        (value, index) => {
 
           const button =
             document.createElement(
@@ -2863,398 +1992,484 @@
             "button";
 
           button.className =
-            "gallery-thumb";
+            "variant-option";
 
-          const img =
-            document.createElement(
-              "img"
+          button.dataset.groupId =
+            String(group.id);
+
+          button.dataset.valueId =
+            String(value.id);
+
+          const meaningful =
+            isMeaningfulVariantName(
+              value.name
             );
 
-          img.src =
-            image;
+          const label =
+            meaningful
+              ? String(value.name)
+              : (
+                  isColorGroupName(
+                    group.name
+                  )
+                    ? `Color ${index + 1}`
+                    : `Option ${index + 1}`
+                );
 
-          img.alt =
-            `${product.title} image ${index + 1}`;
 
-          img.loading =
-            "lazy";
+          if (
+            useSwatches &&
+            value.image
+          ) {
 
-          img.referrerPolicy =
-            "no-referrer";
+            button.classList.add(
+              "swatch-option"
+            );
 
-          button.appendChild(
-            img
-          );
+            const image =
+              document.createElement(
+                "img"
+              );
+
+            image.className =
+              "variant-swatch-image";
+
+            image.src =
+              value.image;
+
+            image.alt =
+              label;
+
+            image.loading =
+              "lazy";
+
+            image.referrerPolicy =
+              "no-referrer";
+
+            button.appendChild(
+              image
+            );
+
+
+            if (
+              meaningful
+            ) {
+
+              const text =
+                document.createElement(
+                  "span"
+                );
+
+              text.className =
+                "variant-swatch-label";
+
+              text.textContent =
+                label;
+
+              button.appendChild(
+                text
+              );
+
+            }
+
+            button.title =
+              label;
+
+            button.setAttribute(
+              "aria-label",
+              label
+            );
+
+          } else {
+
+            button.classList.add(
+              "text-option"
+            );
+
+            button.textContent =
+              label;
+
+          }
+
 
           button.addEventListener(
             "click",
             () => {
 
-              setMainImage(
-                index
-              );
+              if (
+                button.classList.contains(
+                  "disabled"
+                )
+              ) {
+                return;
+              }
+
+              selectedProperties[
+                String(group.id)
+              ] =
+                String(value.id);
+
+              updateVariantUI();
+
+              updateSelectedSku();
 
             }
           );
 
-          galleryThumbsEl.appendChild(
+          options.appendChild(
             button
           );
 
         }
       );
 
-      setMainImage(0);
 
-    }
-
-
-    /* ============================================================
-       RATING
-       ============================================================ */
-
-    function renderRating() {
-
-      const rating =
-        toNumber(
-          product.rating,
-          0
-        );
-
-      if (
-        rating <= 0
-      ) {
-
-        ratingStarsEl.textContent =
-          "★★★★★";
-
-        ratingTextEl.textContent =
-          "No ratings";
-
-        return;
-      }
-
-      const rounded =
-        Math.round(
-          Math.max(
-            0,
-            Math.min(
-              5,
-              rating
-            )
-          )
-        );
-
-      ratingStarsEl.textContent =
-        "★".repeat(rounded) +
-        "☆".repeat(5 - rounded);
-
-      const reviewCount =
-        toNumber(
-          product.review_count,
-          0
-        );
-
-      ratingTextEl.textContent =
-        reviewCount > 0
-          ? `${rating.toFixed(1)} (${reviewCount.toLocaleString()} reviews)`
-          : rating.toFixed(1);
-
-    }
-
-
-    /* ============================================================
-       DESCRIPTION
-       ============================================================ */
-
-    function sanitizeDescriptionHtml(
-      html
-    ) {
-
-      if (
-        !html ||
-        typeof html !== "string"
-      ) {
-        return "";
-      }
-
-      /*
-        Remove dangerous elements/attributes
-        while preserving useful product HTML.
-      */
-
-      const parser =
-        new DOMParser();
-
-      const doc =
-        parser.parseFromString(
-          html,
-          "text/html"
-        );
-
-      doc
-        .querySelectorAll(
-          "script, iframe, object, embed, form"
-        )
-        .forEach(
-          el => el.remove()
-        );
-
-      doc
-        .querySelectorAll("*")
-        .forEach(
-          element => {
-
-            [...element.attributes]
-              .forEach(
-                attr => {
-
-                  const name =
-                    attr.name.toLowerCase();
-
-                  const value =
-                    attr.value || "";
-
-                  if (
-                    name.startsWith(
-                      "on"
-                    )
-                  ) {
-
-                    element.removeAttribute(
-                      attr.name
-                    );
-
-                  }
-
-                  if (
-                    (
-                      name === "href" ||
-                      name === "src"
-                    ) &&
-                    /^\s*javascript:/i.test(
-                      value
-                    )
-                  ) {
-
-                    element.removeAttribute(
-                      attr.name
-                    );
-
-                  }
-
-                }
-              );
-
-          }
-        );
-
-      return doc.body.innerHTML;
-
-    }
-
-
-    function renderDescription() {
-
-      const description =
-        product.description;
-
-      if (
-        !description
-      ) {
-
-        descriptionCardEl.classList.add(
-          "hidden"
-        );
-
-        return;
-
-      }
-
-      descriptionCardEl.classList.remove(
-        "hidden"
+      wrapper.appendChild(
+        titleRow
       );
 
-      let text =
-        String(description);
+      wrapper.appendChild(
+        options
+      );
+
+      variantsContainerEl.appendChild(
+        wrapper
+      );
+
+    }
+
+    updateVariantUI();
+
+  }
 
 
-      /*
-        Handle JSON strings that may have been
-        returned by an AliExpress mobile detail.
-      */
+  /* ============================================================
+     CHECK SKU AVAILABILITY
+     ============================================================ */
 
-      const trimmed =
-        text.trim();
+  function hasAvailableSkuForSelection(
+    groupId,
+    valueId
+  ) {
 
-      if (
-        (
-          trimmed.startsWith("{") &&
-          trimmed.endsWith("}")
-        ) ||
-        (
-          trimmed.startsWith("[") &&
-          trimmed.endsWith("]")
-        )
-      ) {
+    return normalizedSkus.some(
+      sku => {
 
-        try {
+        if (
+          sku.stock !== null &&
+          sku.stock <= 0
+        ) {
+          return false;
+        }
 
-          const parsed =
-            JSON.parse(trimmed);
+        const properties =
+          sku.properties ||
+          sku.normalized_properties ||
+          [];
 
-          /*
-            Attempt to extract useful text
-            recursively.
-          */
+        return properties.some(
+          property =>
+            String(
+              firstNonEmpty(
+                property.group_id,
+                property.groupId,
+                property.property_id,
+                property.propertyId,
+                property.sku_property_id
+              )
+            ) ===
+              String(groupId) &&
+            String(
+              firstNonEmpty(
+                property.value_id,
+                property.valueId,
+                property.property_value_id,
+                property.propertyValueId,
+                property.sku_property_value_id
+              )
+            ) ===
+              String(valueId)
+        );
 
-          const pieces = [];
+      }
+    );
 
-          function collectText(
-            value
-          ) {
+  }
 
-            if (
-              value === null ||
-              value === undefined
-            ) {
-              return;
-            }
 
-            if (
-              typeof value === "string"
-            ) {
+  /* ============================================================
+     UPDATE VARIANT UI
+     ============================================================ */
 
-              const valueTrimmed =
-                value.trim();
+  function updateVariantUI() {
 
-              if (
-                valueTrimmed
-              ) {
+    document
+      .querySelectorAll(
+        ".variant-option"
+      )
+      .forEach(
+        button => {
 
-                if (
-                  /^https?:\/\//i.test(
-                    valueTrimmed
-                  )
-                ) {
-                  return;
-                }
+          const groupId =
+            String(
+              button.dataset.groupId
+            );
 
-                pieces.push(
-                  valueTrimmed
-                );
+          const valueId =
+            String(
+              button.dataset.valueId
+            );
 
-              }
+          const isSelected =
+            String(
+              selectedProperties[groupId] ||
+              ""
+            ) === valueId;
 
-              return;
+          button.classList.toggle(
+            "selected",
+            isSelected
+          );
 
-            }
+          const available =
+            hasAvailableSkuForSelection(
+              groupId,
+              valueId
+            );
 
-            if (
-              Array.isArray(value)
-            ) {
+          button.classList.toggle(
+            "disabled",
+            !available &&
+            !isSelected
+          );
 
-              value.forEach(
-                collectText
-              );
+        }
+      );
 
-              return;
 
-            }
+    const groups =
+      buildVariantGroups(
+        normalizedSkus
+      );
 
-            if (
-              typeof value === "object"
-            ) {
+    groups.forEach(
+      group => {
 
-              const priorityKeys = [
-                "text",
-                "content",
-                "description",
-                "value",
-                "title"
-              ];
+        const label =
+          document.querySelector(
+            `.variant-selected-text[data-group-id="${CSS.escape(
+              String(group.id)
+            )}"]`
+          );
 
-              for (
-                const key of priorityKeys
-              ) {
+        if (!label) {
+          return;
+        }
 
-                if (
-                  value[key] !== undefined
-                ) {
+        const selectedId =
+          selectedProperties[
+            String(group.id)
+          ];
 
-                  collectText(
-                    value[key]
-                  );
+        if (!selectedId) {
 
-                }
+          label.textContent =
+            "Select";
 
-              }
+          return;
+        }
 
-            }
+        const value =
+          group.values.find(
+            item =>
+              String(item.id) ===
+              String(selectedId)
+          );
 
-          }
+        if (
+          value &&
+          isMeaningfulVariantName(
+            value.name
+          )
+        ) {
 
-          collectText(parsed);
+          label.textContent =
+            value.name;
 
-          if (
-            pieces.length
-          ) {
+        } else {
 
-            text =
-              uniqueArray(
-                pieces
-              ).join("\n\n");
+          label.textContent =
+            "Selected";
 
-          }
-
-        } catch {
-          /*
-            Leave original text untouched.
-          */
         }
 
       }
+    );
+
+  }
 
 
-      const looksLikeHtml =
-        /<([a-z][\s\S]*?)>/i.test(
-          text
+  /* ============================================================
+     SKU MATCHING
+     ============================================================ */
+
+  function skuMatchesSelection(
+    sku,
+    selection,
+    requireAll = false
+  ) {
+
+    const properties =
+      sku.properties ||
+      sku.normalized_properties ||
+      [];
+
+    let matched = 0;
+
+    for (
+      const [
+        groupId,
+        valueId
+      ] of Object.entries(
+        selection
+      )
+    ) {
+
+      const property =
+        properties.find(
+          item =>
+            String(
+              firstNonEmpty(
+                item.group_id,
+                item.groupId,
+                item.property_id,
+                item.propertyId,
+                item.sku_property_id
+              )
+            ) ===
+              String(groupId)
+        );
+
+      if (!property) {
+        return false;
+      }
+
+      const skuValue =
+        String(
+          firstNonEmpty(
+            property.value_id,
+            property.valueId,
+            property.property_value_id,
+            property.propertyValueId,
+            property.sku_property_value_id
+          )
         );
 
       if (
-        looksLikeHtml
+        skuValue !==
+        String(valueId)
       ) {
-
-        descriptionContentEl.innerHTML =
-          sanitizeDescriptionHtml(
-            text
-          );
-
-      } else {
-
-        descriptionContentEl.textContent =
-          text;
-
+        return false;
       }
+
+      matched++;
 
     }
 
+    if (
+      requireAll &&
+      matched !== properties.length
+    ) {
 
-    /* ============================================================
-       PRODUCT DETAILS
-       ============================================================ */
+      return false;
 
-    function renderProduct() {
+    }
 
-      productTitleEl.textContent =
-        product.title || "Product";
+    return true;
 
-      document.title =
-        `${product.title || "Product"} | Prasun Store`;
+  }
 
-      /*
-        Base price
-      */
+
+  function findExactSku() {
+
+    return normalizedSkus.find(
+      sku =>
+        skuMatchesSelection(
+          sku,
+          selectedProperties,
+          true
+        ) &&
+        (
+          sku.stock === null ||
+          sku.stock > 0
+        )
+    ) || null;
+
+  }
+
+
+  function findBestMatchingSku() {
+
+    if (
+      !normalizedSkus.length
+    ) {
+      return null;
+    }
+
+    const exact =
+      findExactSku();
+
+    if (exact) {
+      return exact;
+    }
+
+    const available =
+      normalizedSkus.filter(
+        sku =>
+          skuMatchesSelection(
+            sku,
+            selectedProperties,
+            false
+          ) &&
+          (
+            sku.stock === null ||
+            sku.stock > 0
+          )
+      );
+
+    if (!available.length) {
+      return null;
+    }
+
+    return available[0];
+
+  }
+
+
+  function updateSelectedSku() {
+
+    selectedSku =
+      findBestMatchingSku();
+
+    if (
+      !selectedSku
+    ) {
+      return;
+    }
+
+
+    if (
+      selectedSku.price !== null &&
+      selectedSku.price > 0
+    ) {
+
+      productPriceEl.textContent =
+        formatPrice(
+          selectedSku.price,
+          product.currency
+        );
+
+    } else {
 
       productPriceEl.textContent =
         formatPrice(
@@ -3262,44 +2477,22 @@
           product.currency
         );
 
+    }
 
-      /*
-        Stock
-      */
 
-      const baseStock =
-        product.stock !== ""
-          ? toNumber(
-              product.stock,
-              0
-            )
-          : null;
+    if (
+      selectedSku.stock !== null
+    ) {
 
       if (
-        baseStock === null
+        selectedSku.stock > 0
       ) {
 
         stockTextEl.textContent =
-          "Available";
+          `${selectedSku.stock} available`;
 
         stockTextEl.className =
           "stock in-stock";
-
-        productAvailabilityEl.textContent =
-          "Available";
-
-      } else if (
-        baseStock > 0
-      ) {
-
-        stockTextEl.textContent =
-          `${baseStock} available`;
-
-        stockTextEl.className =
-          "stock in-stock";
-
-        productAvailabilityEl.textContent =
-          "In stock";
 
       } else {
 
@@ -3309,691 +2502,494 @@
         stockTextEl.className =
           "stock out-of-stock";
 
-        productAvailabilityEl.textContent =
-          "Out of stock";
-
-      }
-
-
-      /*
-        SKU
-      */
-
-      productSkuEl.textContent =
-        product.sku || "—";
-
-
-      /*
-        Images
-      */
-
-      galleryImages =
-        normalizeImages(
-          product.images
-        );
-
-      /*
-        Add SKU images to gallery.
-      */
-
-      normalizedSkus.forEach(
-        sku => {
-
-          if (
-            sku.image
-          ) {
-
-            galleryImages.push(
-              sku.image
-            );
-
-          }
-
-        }
-      );
-
-      galleryImages =
-        uniqueArray(
-          galleryImages
-        );
-
-      renderGallery();
-
-
-      /*
-        Rating
-      */
-
-      renderRating();
-
-
-      /*
-        Description
-      */
-
-      renderDescription();
-
-
-      /*
-        Variants
-      */
-
-      renderVariants();
-
-
-      /*
-        Initial SKU
-      */
-
-      if (
-        normalizedSkus.length
-      ) {
-
-        /*
-          Do NOT automatically choose
-          a random visible variant.
-
-          The first SKU can be used internally
-          for base pricing until buyer makes
-          a selection.
-        */
-
-        selectedSku =
-          normalizedSkus.find(
-            sku =>
-              sku.stock === null ||
-              sku.stock > 0
-          ) ||
-          normalizedSkus[0];
-
-      }
-
-
-      /*
-        Product ships to.
-      */
-
-      productShipsToEl.textContent =
-        firstNonEmpty(
-          product.shipping_country,
-          product.shippingCountry,
-          product.destination,
-          product.ships_to,
-          product.shipsTo,
-          "Worldwide"
-        );
-
-    }
-
-
-    /* ============================================================
-       CART STORAGE
-       ============================================================ */
-
-    function getCart() {
-
-      try {
-
-        const raw =
-          localStorage.getItem(
-            "cart"
-          );
-
-        if (!raw) {
-          return [];
-        }
-
-        const parsed =
-          JSON.parse(raw);
-
-        return Array.isArray(parsed)
-          ? parsed
-          : [];
-
-      } catch {
-
-        return [];
-
       }
 
     }
 
 
-    function saveCart(cart) {
-
-      localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-      );
-
-    }
-
-
-    /* ============================================================
-       CART ITEM
-       ============================================================ */
-
-    function buildCartItem() {
-
-      if (!product) {
-        return null;
-      }
-
-      const productId =
-        String(
-          firstNonEmpty(
-            product.id,
-            getProductId()
-          )
-        );
-
-      const variantKey =
-        selectedSku
-          ? String(
-              selectedSku.sku ||
-              selectedSku.sku_id ||
-              selectedSku.skuId ||
-              selectedSku.index ||
-              ""
-            )
-          : "default";
-
-      const selections = {};
-
-      Object.keys(
-        selectedProperties
-      ).forEach(
-        groupId => {
-
-          selections[
-            String(groupId)
-          ] =
-            String(
-              selectedProperties[groupId]
-            );
-
-        }
-      );
-
-      const itemPrice =
-        selectedSku &&
-        selectedSku.price !== null &&
-        selectedSku.price !== undefined
-          ? toNumber(
-              selectedSku.price,
-              toNumber(
-                product.price,
-                0
-              )
-            )
-          : toNumber(
-              product.price,
-              0
-            );
-
-      const skuImage =
-        selectedSku?.image ||
-        galleryImages[0] ||
-        "";
-
-
-      return {
-
-        id:
-          `${productId}__${variantKey}`,
-
-        product_id:
-          productId,
-
-        title:
-          product.title,
-
-        price:
-          itemPrice,
-
-        currency:
-          product.currency || "USD",
-
-        quantity:
-          quantity,
-
-        image:
-          skuImage,
-
-        sku:
-          selectedSku?.sku ||
-          product.sku ||
-          "",
-
-        selected_properties:
-          selections,
-
-        variant:
-          selectedSku || null
-
-      };
-
-    }
-
-
-    /* ============================================================
-       VALIDATE VARIANT SELECTION
-       ============================================================ */
-
-    function validateSelection() {
-
-      if (
-        !normalizedSkus.length
-      ) {
-        return true;
-      }
-
-      const groups =
-        buildVariantGroups(
-          normalizedSkus
-        );
-
-      const missingGroups =
-        groups.filter(
-          group =>
-            !selectedProperties[
-              String(group.id)
-            ]
-        );
-
-      if (
-        missingGroups.length
-      ) {
-
-        const names =
-          missingGroups
-            .map(
-              group =>
-                group.name ||
-                "Option"
-            )
-            .join(", ");
-
-        selectionNoticeEl.textContent =
-          `Please select: ${names}`;
-
-        selectionNoticeEl.classList.remove(
-          "hidden"
-        );
-
-        return false;
-
-      }
-
-      const exact =
-        normalizedSkus.find(
-          sku =>
-            skuMatchesSelection(
-              sku,
-              selectedProperties,
-              true
-            ) &&
-            (
-              sku.stock === null ||
-              sku.stock > 0
-            )
-        );
-
-      if (!exact) {
-
-        selectionNoticeEl.textContent =
-          "The selected variant is unavailable.";
-
-        selectionNoticeEl.classList.remove(
-          "hidden"
-        );
-
-        return false;
-
-      }
-
-      selectedSku =
-        exact;
-
-      selectionNoticeEl.classList.add(
-        "hidden"
-      );
-
-      return true;
-
-    }
-
-
-    /* ============================================================
-       ADD TO CART
-       ============================================================ */
-
-    function addCurrentProductToCart() {
-
-      if (
-        !validateSelection()
-      ) {
-        return;
-      }
-
-      const item =
-        buildCartItem();
-
-      if (!item) {
-        return;
-      }
-
-      const cart =
-        getCart();
+    if (
+      selectedSku.image
+    ) {
 
       const existingIndex =
-        cart.findIndex(
-          existing =>
-            existing.id ===
-            item.id
+        galleryImages.indexOf(
+          selectedSku.image
         );
 
       if (
         existingIndex >= 0
       ) {
 
-        cart[existingIndex].quantity =
-          Math.max(
-            1,
-            toNumber(
-              cart[existingIndex].quantity,
-              0
-            ) +
-            item.quantity
-          );
+        setMainImage(
+          existingIndex
+        );
 
       } else {
 
-        cart.push(
-          item
-        );
+        mainImageEl.src =
+          selectedSku.image;
 
       }
-
-      saveCart(cart);
-
-      addToCartBtnEl.textContent =
-        "Added ✓";
-
-      setTimeout(
-        () => {
-
-          addToCartBtnEl.textContent =
-            "Add to Cart";
-
-        },
-        1400
-      );
 
     }
 
 
-    /* ============================================================
-       BUY NOW
-       ============================================================ */
-
-    function buyNow() {
-
-      if (
-        !validateSelection()
-      ) {
-        return;
-      }
-
-      const item =
-        buildCartItem();
-
-      if (!item) {
-        return;
-      }
-
-      /*
-        Buy Now uses the same cart structure
-        and forwards to checkout.
-      */
-
-      sessionStorage.setItem(
-        "buyNowItem",
-        JSON.stringify(item)
-      );
-
-      window.location.href =
-        "/checkout.html?buy_now=1";
-
-    }
-
-
-    /* ============================================================
-       QUANTITY
-       ============================================================ */
-
-    function setQuantity(
-      value
+    if (
+      selectedSku.sku
     ) {
 
-      let next =
-        parseInt(
-          value,
-          10
-        );
-
-      if (
-        !Number.isFinite(next) ||
-        next < 1
-      ) {
-        next = 1;
-      }
-
-      if (
-        next > 999
-      ) {
-        next = 999;
-      }
-
-      quantity =
-        next;
-
-      quantityInputEl.value =
-        String(quantity);
+      productSkuEl.textContent =
+        selectedSku.sku;
 
     }
 
-
-    /* ============================================================
-       EVENT LISTENERS
-       ============================================================ */
-
-    quantityMinusEl.addEventListener(
-      "click",
-      () => {
-
-        setQuantity(
-          quantity - 1
-        );
-
-      }
-    );
+  }
 
 
-    quantityPlusEl.addEventListener(
-      "click",
-      () => {
+  /* ============================================================
+     GALLERY
+     ============================================================ */
 
-        setQuantity(
-          quantity + 1
-        );
+  function normalizeImages(
+    rawImages
+  ) {
 
-      }
-    );
+    let images = [];
 
-
-    quantityInputEl.addEventListener(
-      "input",
-      () => {
-
-        setQuantity(
-          quantityInputEl.value
-        );
-
-      }
-    );
-
-
-    addToCartBtnEl.addEventListener(
-      "click",
-      addCurrentProductToCart
-    );
-
-
-    buyNowBtnEl.addEventListener(
-      "click",
-      buyNow
-    );
-
-
-    /* ============================================================
-       LOAD PRODUCT
-       ============================================================ */
-
-    async function loadProduct() {
-
-      const productId =
-        getProductId();
-
-      if (!productId) {
-
-        throw new Error(
-          "No product ID was provided."
-        );
-
-      }
-
-      const response =
-        await fetch(
-          `${API_BASE}/api/products/${encodeURIComponent(
-            productId
-          )}`,
-          {
-            method: "GET",
-            headers: {
-              "Accept":
-                "application/json"
-            },
-            cache: "no-store"
-          }
-        );
-
-      if (!response.ok) {
-
-        throw new Error(
-          `Product request failed with status ${response.status}.`
-        );
-
-      }
-
-      const data =
-        await response.json();
-
-      /*
-        Some Workers return:
-        { product: {...} }
-
-        Others return:
-        { data: {...} }
-
-        normalizeProduct()
-        handles both.
-      */
-
-      const normalized =
-        normalizeProduct(
-          data
-        );
-
-      if (!normalized) {
-
-        throw new Error(
-          "The product data could not be read."
-        );
-
-      }
-
-      product =
-        normalized;
-
-      normalizedSkus =
-        normalizeSkus(
-          product.skus
-        );
-
-      renderProduct();
-
-      loadingEl.classList.add(
-        "hidden"
-      );
-
-      productSectionEl.classList.remove(
-        "hidden"
-      );
-
-    }
-
-
-    /* ============================================================
-       ERROR HANDLING
-       ============================================================ */
-
-    function showError(
-      error
+    if (
+      Array.isArray(rawImages)
     ) {
 
-      console.error(
-        "Product page error:",
-        error
-      );
+      for (
+        const item of rawImages
+      ) {
 
-      loadingEl.classList.add(
-        "hidden"
-      );
-
-      productSectionEl.classList.add(
-        "hidden"
-      );
-
-      errorBoxEl.classList.remove(
-        "hidden"
-      );
-
-      errorMessageEl.textContent =
-        error?.message ||
-        "Unable to load this product.";
-
-    }
-
-
-    /* ============================================================
-       INIT
-       ============================================================ */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      async () => {
-
-        try {
-
-          await loadProduct();
-
-        } catch (
-          error
+        if (
+          typeof item === "string"
         ) {
 
-          showError(
-            error
+          images.push(item);
+
+        } else if (
+          item &&
+          typeof item === "object"
+        ) {
+
+          const url =
+            firstNonEmpty(
+              item.url,
+              item.image_url,
+              item.imageUrl,
+              item.src,
+              item.image
+            );
+
+          if (url) {
+            images.push(url);
+          }
+
+        }
+
+      }
+
+    }
+
+    return uniqueArray(
+      images
+    );
+
+  }
+
+
+  function setMainImage(
+    index
+  ) {
+
+    if (
+      !galleryImages.length
+    ) {
+      return;
+    }
+
+    currentImageIndex =
+      Math.max(
+        0,
+        Math.min(
+          index,
+          galleryImages.length - 1
+        )
+      );
+
+    mainImageEl.src =
+      galleryImages[
+        currentImageIndex
+      ];
+
+    galleryThumbsEl
+      .querySelectorAll(
+        ".gallery-thumb"
+      )
+      .forEach(
+        (thumb, thumbIndex) => {
+
+          thumb.classList.toggle(
+            "active",
+            thumbIndex ===
+              currentImageIndex
+          );
+
+        }
+      );
+
+  }
+
+
+  function renderGallery() {
+
+    galleryThumbsEl.innerHTML =
+      "";
+
+    if (
+      !galleryImages.length
+    ) {
+
+      mainImageEl.src =
+        "https://via.placeholder.com/800?text=Product";
+
+      return;
+
+    }
+
+    galleryImages.forEach(
+      (image, index) => {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+        button.type =
+          "button";
+
+        button.className =
+          "gallery-thumb";
+
+        const img =
+          document.createElement(
+            "img"
+          );
+
+        img.src =
+          image;
+
+        img.alt =
+          `${product.title} image ${index + 1}`;
+
+        img.loading =
+          "lazy";
+
+        img.referrerPolicy =
+          "no-referrer";
+
+        button.appendChild(
+          img
+        );
+
+        button.addEventListener(
+          "click",
+          () =>
+            setMainImage(
+              index
+            )
+        );
+
+        galleryThumbsEl.appendChild(
+          button
+        );
+
+      }
+    );
+
+    setMainImage(0);
+
+  }
+
+
+  /* ============================================================
+     RATING
+     ============================================================ */
+
+  function renderRating() {
+
+    const rating =
+      toNumber(
+        product.rating,
+        0
+      );
+
+    if (
+      rating <= 0
+    ) {
+
+      ratingStarsEl.textContent =
+        "☆☆☆☆☆";
+
+      ratingTextEl.textContent =
+        "No ratings";
+
+      return;
+
+    }
+
+    const rounded =
+      Math.round(
+        Math.min(
+          5,
+          Math.max(
+            0,
+            rating
+          )
+        )
+      );
+
+    ratingStarsEl.textContent =
+      "★".repeat(
+        rounded
+      ) +
+      "☆".repeat(
+        5 - rounded
+      );
+
+    const reviewCount =
+      toNumber(
+        product.review_count,
+        0
+      );
+
+    ratingTextEl.textContent =
+      reviewCount > 0
+        ? `${rating.toFixed(1)} (${reviewCount.toLocaleString()} reviews)`
+        : rating.toFixed(1);
+
+  }
+
+
+  /* ============================================================
+     DESCRIPTION
+     ============================================================ */
+
+  function sanitizeDescriptionHtml(
+    html
+  ) {
+
+    const parser =
+      new DOMParser();
+
+    const doc =
+      parser.parseFromString(
+        html,
+        "text/html"
+      );
+
+    doc
+      .querySelectorAll(
+        "script, iframe, object, embed, form"
+      )
+      .forEach(
+        element =>
+          element.remove()
+      );
+
+    doc
+      .querySelectorAll("*")
+      .forEach(
+        element => {
+
+          [...element.attributes]
+            .forEach(
+              attribute => {
+
+                const name =
+                  attribute.name.toLowerCase();
+
+                const value =
+                  attribute.value || "";
+
+                if (
+                  name.startsWith("on")
+                ) {
+
+                  element.removeAttribute(
+                    attribute.name
+                  );
+
+                }
+
+                if (
+                  (
+                    name === "href" ||
+                    name === "src"
+                  ) &&
+                  /^\s*javascript:/i.test(
+                    value
+                  )
+                ) {
+
+                  element.removeAttribute(
+                    attribute.name
+                  );
+
+                }
+
+              }
+            );
+
+        }
+      );
+
+    return doc.body.innerHTML;
+
+  }
+
+
+  function renderDescription() {
+
+    if (
+      !product.description
+    ) {
+
+      descriptionCardEl.classList.add(
+        "hidden"
+      );
+
+      return;
+
+    }
+
+    descriptionCardEl.classList.remove(
+      "hidden"
+    );
+
+    const description =
+      String(
+        product.description
+      );
+
+    if (
+      /<([a-z][\s\S]*?)>/i.test(
+        description
+      )
+    ) {
+
+      descriptionContentEl.innerHTML =
+        sanitizeDescriptionHtml(
+          description
+        );
+
+    } else {
+
+      descriptionContentEl.textContent =
+        description;
+
+    }
+
+  }
+
+
+  /* ============================================================
+     RENDER PRODUCT
+     ============================================================ */
+
+  function renderProduct() {
+
+    productTitleEl.textContent =
+      product.title;
+
+    document.title =
+      `${product.title} | Prasun Store`;
+
+
+    productPriceEl.textContent =
+      formatPrice(
+        product.price,
+        product.currency
+      );
+
+
+    const stock =
+      product.stock !== ""
+        ? toNumber(
+            product.stock,
+            0
+          )
+        : null;
+
+
+    if (
+      stock === null
+    ) {
+
+      stockTextEl.textContent =
+        "Available";
+
+      stockTextEl.className =
+        "stock in-stock";
+
+      productAvailabilityEl.textContent =
+        "Available";
+
+    } else if (
+      stock > 0
+    ) {
+
+      stockTextEl.textContent =
+        `${stock} available`;
+
+      stockTextEl.className =
+        "stock in-stock";
+
+      productAvailabilityEl.textContent =
+        "In stock";
+
+    } else {
+
+      stockTextEl.textContent =
+        "Out of stock";
+
+      stockTextEl.className =
+        "stock out-of-stock";
+
+      productAvailabilityEl.textContent =
+        "Out of stock";
+
+      addToCartBtnEl.disabled =
+        true;
+
+      buyNowBtnEl.disabled =
+        true;
+
+    }
+
+
+    productSkuEl.textContent =
+      product.sku || "—";
+
+
+    galleryImages =
+      normalizeImages(
+        product.images
+      );
+
+
+    normalizedSkus.forEach(
+      sku => {
+
+        if (
+          sku.image
+        ) {
+
+          galleryImages.push(
+            sku.image
           );
 
         }
@@ -4001,7 +2997,676 @@
       }
     );
 
-  </script>
+
+    galleryImages =
+      uniqueArray(
+        galleryImages
+      );
+
+
+    renderGallery();
+
+    renderRating();
+
+    renderDescription();
+
+    renderVariants();
+
+    updateCartBadge();
+
+    productShipsToEl.textContent =
+      firstNonEmpty(
+        product.shipping_country,
+        product.shippingCountry,
+        product.destination,
+        product.ships_to,
+        product.shipsTo,
+        "Worldwide"
+      );
+
+  }
+
+
+  /* ============================================================
+     CART FUNCTIONS
+     ============================================================ */
+
+  function readCart() {
+
+    try {
+
+      /*
+       * First read the new canonical key.
+       */
+      const currentRaw =
+        localStorage.getItem(
+          CART_STORAGE_KEY
+        );
+
+      if (currentRaw) {
+
+        const current =
+          JSON.parse(
+            currentRaw
+          );
+
+        if (
+          Array.isArray(current)
+        ) {
+          return current;
+        }
+
+      }
+
+
+      /*
+       * Migrate the older "cart" key.
+       */
+      const legacyRaw =
+        localStorage.getItem(
+          LEGACY_CART_KEY
+        );
+
+      if (legacyRaw) {
+
+        const legacy =
+          JSON.parse(
+            legacyRaw
+          );
+
+        if (
+          Array.isArray(legacy)
+        ) {
+
+          localStorage.setItem(
+            CART_STORAGE_KEY,
+            JSON.stringify(
+              legacy
+            )
+          );
+
+          return legacy;
+        }
+
+      }
+
+    } catch (error) {
+
+      console.warn(
+        "Unable to read cart:",
+        error
+      );
+
+    }
+
+    return [];
+
+  }
+
+
+  function saveCart(
+    cart
+  ) {
+
+    const data =
+      JSON.stringify(
+        cart
+      );
+
+    /*
+     * Save to canonical key.
+     */
+    localStorage.setItem(
+      CART_STORAGE_KEY,
+      data
+    );
+
+    /*
+     * Also save to old key for compatibility
+     * with an older cart.html if needed.
+     */
+    localStorage.setItem(
+      LEGACY_CART_KEY,
+      data
+    );
+
+  }
+
+
+  function updateCartBadge() {
+
+    const cart =
+      readCart();
+
+    const total =
+      cart.reduce(
+        (
+          sum,
+          item
+        ) => {
+
+          const itemQuantity =
+            toNumber(
+              item?.quantity,
+              1
+            );
+
+          return (
+            sum +
+            Math.max(
+              1,
+              itemQuantity
+            )
+          );
+
+        },
+        0
+      );
+
+    cartBadgeEl.textContent =
+      String(total);
+
+  }
+
+
+  /* ============================================================
+     BUILD CART ITEM
+     ============================================================ */
+
+  function buildCartItem() {
+
+    if (!product) {
+      return null;
+    }
+
+    const productId =
+      String(
+        firstNonEmpty(
+          product.id,
+          getProductId()
+        )
+      );
+
+    const variantKey =
+      selectedSku
+        ? String(
+            selectedSku.sku ||
+            selectedSku.sku_id ||
+            selectedSku.skuId ||
+            selectedSku.index ||
+            ""
+          )
+        : "default";
+
+
+    const itemPrice =
+      selectedSku &&
+      selectedSku.price !== null &&
+      selectedSku.price !== undefined
+        ? toNumber(
+            selectedSku.price,
+            toNumber(
+              product.price,
+              0
+            )
+          )
+        : toNumber(
+            product.price,
+            0
+          );
+
+
+    return {
+
+      id:
+        `${productId}__${variantKey}`,
+
+      product_id:
+        productId,
+
+      title:
+        product.title,
+
+      price:
+        itemPrice,
+
+      currency:
+        product.currency ||
+        "USD",
+
+      quantity:
+        quantity,
+
+      image:
+        selectedSku?.image ||
+        galleryImages[0] ||
+        "",
+
+      sku:
+        selectedSku?.sku ||
+        product.sku ||
+        "",
+
+      selected_properties:
+        {
+          ...selectedProperties
+        },
+
+      variant:
+        selectedSku ||
+        null
+
+    };
+
+  }
+
+
+  /* ============================================================
+     VALIDATE SELECTION
+     ============================================================ */
+
+  function validateSelection() {
+
+    if (
+      !normalizedSkus.length
+    ) {
+
+      return true;
+
+    }
+
+    const groups =
+      buildVariantGroups(
+        normalizedSkus
+      );
+
+    const missing =
+      groups.filter(
+        group =>
+          !selectedProperties[
+            String(group.id)
+          ]
+      );
+
+    if (
+      missing.length
+    ) {
+
+      selectionNoticeEl.textContent =
+        `Please select: ${missing
+          .map(
+            group =>
+              group.name
+          )
+          .join(", ")}`;
+
+      selectionNoticeEl.classList.remove(
+        "hidden"
+      );
+
+      return false;
+
+    }
+
+
+    const exact =
+      findExactSku();
+
+    if (!exact) {
+
+      selectionNoticeEl.textContent =
+        "The selected variant is unavailable.";
+
+      selectionNoticeEl.classList.remove(
+        "hidden"
+      );
+
+      return false;
+
+    }
+
+    selectedSku =
+      exact;
+
+    selectionNoticeEl.classList.add(
+      "hidden"
+    );
+
+    return true;
+
+  }
+
+
+  /* ============================================================
+     ADD TO CART
+     ============================================================ */
+
+  function addCurrentProductToCart() {
+
+    if (
+      !validateSelection()
+    ) {
+      return;
+    }
+
+    const item =
+      buildCartItem();
+
+    if (!item) {
+      return;
+    }
+
+    const cart =
+      readCart();
+
+    const existingIndex =
+      cart.findIndex(
+        existing =>
+          existing.id ===
+          item.id
+      );
+
+
+    if (
+      existingIndex >= 0
+    ) {
+
+      cart[
+        existingIndex
+      ].quantity =
+        toNumber(
+          cart[
+            existingIndex
+          ].quantity,
+          0
+        ) +
+        item.quantity;
+
+    } else {
+
+      cart.push(
+        item
+      );
+
+    }
+
+
+    saveCart(cart);
+
+    updateCartBadge();
+
+
+    addToCartBtnEl.textContent =
+      "Added ✓";
+
+
+    setTimeout(
+      () => {
+
+        addToCartBtnEl.textContent =
+          "Add to Cart";
+
+      },
+      1600
+    );
+
+  }
+
+
+  /* ============================================================
+     BUY NOW
+     ============================================================ */
+
+  function buyNow() {
+
+    if (
+      !validateSelection()
+    ) {
+      return;
+    }
+
+    const item =
+      buildCartItem();
+
+    if (!item) {
+      return;
+    }
+
+    /*
+     * Store a dedicated buy-now item.
+     */
+    sessionStorage.setItem(
+      "buyNowItem",
+      JSON.stringify(
+        item
+      )
+    );
+
+    window.location.href =
+      "./checkout.html?buy_now=1";
+
+  }
+
+
+  /* ============================================================
+     QUANTITY
+     ============================================================ */
+
+  function setQuantity(
+    value
+  ) {
+
+    let number =
+      parseInt(
+        value,
+        10
+      );
+
+    if (
+      !Number.isFinite(number) ||
+      number < 1
+    ) {
+      number = 1;
+    }
+
+    if (
+      number > 999
+    ) {
+      number = 999;
+    }
+
+    quantity =
+      number;
+
+    quantityInputEl.value =
+      String(quantity);
+
+  }
+
+
+  quantityMinusEl.addEventListener(
+    "click",
+    () => {
+
+      setQuantity(
+        quantity - 1
+      );
+
+    }
+  );
+
+
+  quantityPlusEl.addEventListener(
+    "click",
+    () => {
+
+      setQuantity(
+        quantity + 1
+      );
+
+    }
+  );
+
+
+  quantityInputEl.addEventListener(
+    "input",
+    () => {
+
+      setQuantity(
+        quantityInputEl.value
+      );
+
+    }
+  );
+
+
+  addToCartBtnEl.addEventListener(
+    "click",
+    addCurrentProductToCart
+  );
+
+
+  buyNowBtnEl.addEventListener(
+    "click",
+    buyNow
+  );
+
+
+  /* ============================================================
+     LOAD PRODUCT
+     ============================================================ */
+
+  async function loadProduct() {
+
+    const productId =
+      getProductId();
+
+    if (!productId) {
+
+      throw new Error(
+        "No product ID was provided."
+      );
+
+    }
+
+    const response =
+      await fetch(
+        `${API_BASE}/api/products/${encodeURIComponent(
+          productId
+        )}`,
+        {
+          method: "GET",
+          headers: {
+            "Accept":
+              "application/json"
+          },
+          cache: "no-store"
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        `Product request failed (${response.status}).`
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+    const normalized =
+      normalizeProduct(
+        data
+      );
+
+    if (!normalized) {
+
+      throw new Error(
+        "Product data could not be read."
+      );
+
+    }
+
+    product =
+      normalized;
+
+    normalizedSkus =
+      normalizeSkus(
+        product.skus
+      );
+
+    renderProduct();
+
+
+    loadingEl.classList.add(
+      "hidden"
+    );
+
+    productSectionEl.classList.remove(
+      "hidden"
+    );
+
+  }
+
+
+  /* ============================================================
+     ERROR
+     ============================================================ */
+
+  function showError(
+    error
+  ) {
+
+    console.error(
+      error
+    );
+
+    loadingEl.classList.add(
+      "hidden"
+    );
+
+    productSectionEl.classList.add(
+      "hidden"
+    );
+
+    errorBoxEl.classList.remove(
+      "hidden"
+    );
+
+    errorMessageEl.textContent =
+      error?.message ||
+      "Unable to load product.";
+
+  }
+
+
+  /* ============================================================
+     INIT
+     ============================================================ */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    async () => {
+
+      try {
+
+        await loadProduct();
+
+      } catch (error) {
+
+        showError(
+          error
+        );
+
+      }
+
+    }
+  );
+
+</script>
 
 </body>
 </html>
