@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,10 +7,11 @@
 
   <title>Checkout | PrasunStore</title>
 
-  <meta
-    name="description"
-    content="Secure checkout at PrasunStore. Complete your shipping details and place your order."
-  >
+<meta
+name="description"
+content="Secure checkout at PrasunStore. Complete your shipping details and place your order."
+
+>
 
   <style>
     * {
@@ -219,9 +221,9 @@
 
     .bank-details {
       margin-top: 16px;
-      padding: 16px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      padding: 18px;
+      background: #ffffff;
+      border: 1px solid #dbeafe;
       border-radius: 10px;
       font-size: 14px;
       color: #374151;
@@ -229,6 +231,59 @@
 
     .bank-details strong {
       color: #111827;
+    }
+
+    .bank-section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .bank-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .bank-row:last-child {
+      border-bottom: 0;
+    }
+
+    .bank-label {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    .bank-value {
+      color: #111827;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .payment-reference {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 9px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+    }
+
+    .payment-reference strong {
+      color: #1e3a8a;
+    }
+
+    .payment-warning {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 9px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      font-size: 13px;
     }
 
     .payment-note {
@@ -406,6 +461,21 @@
       margin: 14px 0;
     }
 
+    .success-bank-box {
+      max-width: 650px;
+      margin: 24px auto 0;
+      padding: 18px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .success-bank-box strong {
+      color: #111827;
+    }
+
     .continue-button {
       display: inline-block;
       margin-top: 20px;
@@ -475,8 +545,18 @@
       .logo {
         font-size: 21px;
       }
+
+      .bank-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .bank-label {
+        font-size: 12px;
+      }
     }
   </style>
+
 </head>
 
 <body>
@@ -487,16 +567,20 @@
 
   <header>
     <div class="header-inner">
-      <a href="./index.html" class="logo">
-        Prasun<span>Store</span>
-      </a>
 
-      <a href="./cart.html" class="back-link">
-        ← Back to Cart
-      </a>
-    </div>
+```
+  <a href="./index.html" class="logo">
+    Prasun<span>Store</span>
+  </a>
+
+  <a href="./cart.html" class="back-link">
+    ← Back to Cart
+  </a>
+
+</div>
+```
+
   </header>
-
 
   <!-- =========================
        MAIN
@@ -504,383 +588,721 @@
 
   <main class="page">
 
-    <h1 class="page-title">Checkout</h1>
+```
+<h1 class="page-title">
+  Checkout
+</h1>
 
-    <div id="globalError" class="message error-message hidden"></div>
 
+<div
+  id="globalError"
+  class="message error-message hidden"
+></div>
 
-    <!-- EMPTY CHECKOUT -->
 
-    <div id="emptyCheckout" class="message error-message hidden">
-      Your cart is empty. Please add a product before proceeding to checkout.
-      <br><br>
-      <a href="./index.html" style="font-weight:700;">
-        Continue Shopping →
-      </a>
-    </div>
+<!-- EMPTY CHECKOUT -->
 
+<div
+  id="emptyCheckout"
+  class="message error-message hidden"
+>
 
-    <!-- CHECKOUT CONTENT -->
+  Your cart is empty. Please add a product
+  before proceeding to checkout.
 
-    <div id="checkoutContent" class="checkout-layout hidden">
+  <br><br>
 
-      <!-- =========================
-           LEFT COLUMN
-      ========================== -->
+  <a
+    href="./index.html"
+    style="font-weight:700;"
+  >
+    Continue Shopping →
+  </a>
 
-      <div>
+</div>
 
-        <!-- CUSTOMER INFORMATION -->
 
-        <section class="card">
+<!-- CHECKOUT CONTENT -->
 
-          <h2>Customer Information</h2>
+<div
+  id="checkoutContent"
+  class="checkout-layout hidden"
+>
 
-          <div class="form-grid">
 
-            <div class="form-group">
-              <label for="firstName">
-                First Name <span class="required">*</span>
-              </label>
+  <!-- =========================
+       LEFT COLUMN
+  ========================== -->
 
-              <input
-                type="text"
-                id="firstName"
-                autocomplete="given-name"
-                required
-              >
-            </div>
+  <div>
 
 
-            <div class="form-group">
-              <label for="lastName">
-                Last Name <span class="required">*</span>
-              </label>
+    <!-- CUSTOMER INFORMATION -->
 
-              <input
-                type="text"
-                id="lastName"
-                autocomplete="family-name"
-                required
-              >
-            </div>
+    <section class="card">
 
+      <h2>
+        Customer Information
+      </h2>
 
-            <div class="form-group">
-              <label for="email">
-                Email Address <span class="required">*</span>
-              </label>
+      <div class="form-grid">
 
-              <input
-                type="email"
-                id="email"
-                autocomplete="email"
-                required
-              >
-            </div>
 
+        <div class="form-group">
 
-            <div class="form-group">
-              <label for="phone">
-                Phone Number <span class="required">*</span>
-              </label>
+          <label for="firstName">
+            First Name
+            <span class="required">*</span>
+          </label>
 
-              <input
-                type="tel"
-                id="phone"
-                autocomplete="tel"
-                required
-              >
-            </div>
-
-          </div>
-
-        </section>
-
-
-        <!-- SHIPPING ADDRESS -->
-
-        <section class="card">
-
-          <h2>Shipping Address</h2>
-
-          <div class="form-grid">
-
-            <div class="form-group full">
-              <label for="address">
-                Street Address <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="address"
-                autocomplete="street-address"
-                placeholder="House number, street name, apartment, etc."
-                required
-              >
-            </div>
-
-
-            <div class="form-group">
-              <label for="city">
-                City <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="city"
-                autocomplete="address-level2"
-                required
-              >
-            </div>
-
-
-            <div class="form-group">
-              <label for="state">
-                State / Province / Region
-              </label>
-
-              <input
-                type="text"
-                id="state"
-                autocomplete="address-level1"
-              >
-            </div>
-
-
-            <div class="form-group">
-              <label for="postalCode">
-                Postal / ZIP Code <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="postalCode"
-                autocomplete="postal-code"
-                required
-              >
-            </div>
-
-
-            <div class="form-group">
-              <label for="country">
-                Country / Territory <span class="required">*</span>
-              </label>
-
-              <select
-                id="country"
-                autocomplete="country-name"
-                required
-              >
-                <option value="">Select country</option>
-              </select>
-            </div>
-
-
-            <div class="form-group full">
-              <label for="orderNotes">
-                Order Notes
-              </label>
-
-              <textarea
-                id="orderNotes"
-                placeholder="Optional delivery instructions or other notes..."
-              ></textarea>
-            </div>
-
-          </div>
-
-        </section>
-
-
-       <!-- PAYMENT -->
-
-<section class="card">
-
-  <h2>Payment Method</h2>
-
-  <div class="payment-option">
-
-    <div class="payment-row">
-
-      <input
-        type="radio"
-        id="bankTransfer"
-        name="paymentMethod"
-        value="bank_transfer"
-        checked
-      >
-
-      <div>
-
-        <div class="payment-title">
-          Bank Transfer
-        </div>
-
-        <div class="payment-description">
-          Pay by direct bank transfer. Your order will be processed
-          after your payment has been received and verified.
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="bank-details">
-
-      <div>
-        <strong>Bank Transfer Instructions</strong>
-      </div>
-
-      <br>
-
-      <div>
-        Bank Name:
-        <strong>YOUR BANK NAME</strong>
-      </div>
-
-      <div>
-        Account Name:
-        <strong>PRASUN ENGINEERING TECHNOLOGY</strong>
-      </div>
-
-      <div>
-        Account Number:
-        <strong>YOUR ACCOUNT NUMBER</strong>
-      </div>
-
-      <div>
-        SWIFT / BIC:
-        <strong>YOUR SWIFT CODE</strong>
-      </div>
-
-      <div>
-        Branch:
-        <strong>YOUR BANK BRANCH</strong>
-      </div>
-
-      <br>
-
-      <div>
-        <strong>Payment Reference:</strong>
-        Please use your order number as the payment reference
-        when making the bank transfer.
-      </div>
-
-      <br>
-
-      <div>
-        <strong>Important:</strong>
-        Your order will remain pending until the bank transfer
-        is received and verified.
-      </div>
-
-    </div>
-
-    <div class="payment-note">
-      Bank transfers may take some time to reach our account.
-      Orders are processed only after payment confirmation.
-    </div>
-
-  </div>
-
-</section>
-
-      <!-- =========================
-           RIGHT COLUMN
-      ========================== -->
-
-      <aside class="card summary-card">
-
-        <h2>Order Summary</h2>
-
-        <div id="summaryItems"></div>
-
-        <div class="totals">
-
-          <div class="total-row">
-            <span>Subtotal</span>
-            <strong id="subtotal">$0.00</strong>
-          </div>
-
-
-          <div class="total-row">
-            <span>Shipping</span>
-            <strong id="shipping">$0.00</strong>
-          </div>
-
-
-          <div class="total-row grand-total">
-            <span>Total</span>
-            <strong id="grandTotal">$0.00</strong>
-          </div>
+          <input
+            type="text"
+            id="firstName"
+            autocomplete="given-name"
+            required
+          >
 
         </div>
 
 
-        <button
-          type="button"
-          id="placeOrderButton"
-          class="checkout-button"
-        >
-          Place Order
-        </button>
+        <div class="form-group">
 
-      </aside>
+          <label for="lastName">
+            Last Name
+            <span class="required">*</span>
+          </label>
 
-    </div>
+          <input
+            type="text"
+            id="lastName"
+            autocomplete="family-name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="phone">
+            Phone Number
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            autocomplete="tel"
+            required
+          >
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- =========================
-         SUCCESS
+         SHIPPING ADDRESS
     ========================== -->
 
-    <div id="successContent" class="success-box hidden">
+    <section class="card">
 
-      <div class="success-icon">
-        ✓
+      <h2>
+        Shipping Address
+      </h2>
+
+      <div class="form-grid">
+
+
+        <div class="form-group full">
+
+          <label for="address">
+            Street Address
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="address"
+            autocomplete="street-address"
+            placeholder="House number, street name, apartment, etc."
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="city">
+            City
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="city"
+            autocomplete="address-level2"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="state">
+            State / Province / Region
+          </label>
+
+          <input
+            type="text"
+            id="state"
+            autocomplete="address-level1"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="postalCode">
+            Postal / ZIP Code
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="postalCode"
+            autocomplete="postal-code"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="country">
+            Country / Territory
+            <span class="required">*</span>
+          </label>
+
+          <select
+            id="country"
+            autocomplete="country-name"
+            required
+          >
+
+            <option value="">
+              Select country
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label for="orderNotes">
+            Order Notes
+          </label>
+
+          <textarea
+            id="orderNotes"
+            placeholder="Optional delivery instructions or other notes..."
+          ></textarea>
+
+        </div>
+
       </div>
 
-      <h2>Order Placed Successfully</h2>
+    </section>
 
-      <p>
-        Thank you for your order at PrasunStore.
-      </p>
 
-      <div class="order-number" id="successOrderNumber">
-        Order #—
+    <!-- =========================
+         PAYMENT
+    ========================== -->
+
+    <section class="card">
+
+      <h2>
+        Payment Method
+      </h2>
+
+
+      <div class="payment-option">
+
+
+        <div class="payment-row">
+
+          <input
+            type="radio"
+            id="bankTransfer"
+            name="paymentMethod"
+            value="bank_transfer"
+            checked
+          >
+
+
+          <div>
+
+            <div class="payment-title">
+              Bank Transfer
+            </div>
+
+            <div class="payment-description">
+              Pay by direct bank transfer in USD.
+              Your order will be processed after
+              your payment has been received and verified.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- BANK DETAILS -->
+
+        <div class="bank-details">
+
+
+          <div class="bank-section-title">
+            USD SWIFT Bank Transfer Instructions
+          </div>
+
+
+          <!-- BENEFICIARY -->
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Beneficiary Name
+            </div>
+
+            <div class="bank-value">
+              PRASUN ENGINEERING TECHNOLOGY
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Beneficiary Address
+            </div>
+
+            <div class="bank-value">
+              9E3, N/A, 288, Phum 3,
+              Boeng Keng Kang Ti Pir,
+              Boeng Keng Kang,
+              Phnom Penh, Cambodia
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Beneficiary Account Number
+            </div>
+
+            <div class="bank-value">
+              018167402
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Currency
+            </div>
+
+            <div class="bank-value">
+              USD
+            </div>
+
+          </div>
+
+
+          <!-- BENEFICIARY BANK -->
+
+          <br>
+
+          <div class="bank-section-title">
+            Beneficiary Bank
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Bank Name
+            </div>
+
+            <div class="bank-value">
+              ADVANCED BANK OF ASIA LIMITED
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Bank Address
+            </div>
+
+            <div class="bank-value">
+              No. 148, Preah Sihanouk Blvd.,
+              Phnom Penh, Cambodia
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              SWIFT / BIC
+            </div>
+
+            <div class="bank-value">
+              ABAAKHPP
+            </div>
+
+          </div>
+
+
+          <!-- CORRESPONDENT BANK -->
+
+          <br>
+
+          <div class="bank-section-title">
+            Correspondent Bank
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Bank Name
+            </div>
+
+            <div class="bank-value">
+              JP Morgan Chase Bank
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              Bank Address
+            </div>
+
+            <div class="bank-value">
+              New York, USA
+            </div>
+
+          </div>
+
+
+          <div class="bank-row">
+
+            <div class="bank-label">
+              SWIFT / BIC
+            </div>
+
+            <div class="bank-value">
+              CHASUS33
+            </div>
+
+          </div>
+
+
+          <!-- PAYMENT REFERENCE -->
+
+          <div class="payment-reference">
+
+            <strong>
+              Payment Reference / Purpose of Payment
+            </strong>
+
+            <br>
+
+            Please use your
+            <strong>Order Number</strong>
+            as the payment reference when making
+            the bank transfer.
+
+          </div>
+
+
+          <!-- IMPORTANT -->
+
+          <div class="payment-warning">
+
+            <strong>Important:</strong>
+            Please ensure that the beneficiary name,
+            account number, bank name, and SWIFT code
+            are entered exactly as shown above.
+
+            International bank transfers may be subject
+            to bank or correspondent-bank charges.
+
+            Please ensure the full order amount is received
+            by Prasun Engineering Technology.
+
+          </div>
+
+
+        </div>
+
+
+        <div class="payment-note">
+
+          Your order will remain
+          <strong>pending payment</strong>
+          until the bank transfer is received
+          and manually verified.
+
+        </div>
+
+
       </div>
 
-      <p>
-        Payment Method: <strong>Bank Transfer</strong>
-      </p>
+    </section>
 
-      <p>
-        Your order is currently pending payment verification.
-      </p>
+  </div>
 
-      <p>
-        Please complete the bank transfer using the payment instructions
-        provided during checkout.
-      </p>
 
-      <a href="./index.html" class="continue-button">
-        Continue Shopping
-      </a>
+  <!-- =========================
+       RIGHT COLUMN
+  ========================== -->
+
+  <aside class="card summary-card">
+
+    <h2>
+      Order Summary
+    </h2>
+
+
+    <div id="summaryItems"></div>
+
+
+    <div class="totals">
+
+
+      <div class="total-row">
+
+        <span>
+          Subtotal
+        </span>
+
+        <strong id="subtotal">
+          $0.00
+        </strong>
+
+      </div>
+
+
+      <div class="total-row">
+
+        <span>
+          Shipping
+        </span>
+
+        <strong id="shipping">
+          $0.00
+        </strong>
+
+      </div>
+
+
+      <div class="total-row grand-total">
+
+        <span>
+          Total
+        </span>
+
+        <strong id="grandTotal">
+          $0.00
+        </strong>
+
+      </div>
+
 
     </div>
 
-  </main>
 
+    <button
+      type="button"
+      id="placeOrderButton"
+      class="checkout-button"
+    >
+      Place Order
+    </button>
+
+
+  </aside>
+
+</div>
+
+
+<!-- =========================
+     SUCCESS
+========================== -->
+
+<div
+  id="successContent"
+  class="success-box hidden"
+>
+
+  <div class="success-icon">
+    ✓
+  </div>
+
+
+  <h2>
+    Order Placed Successfully
+  </h2>
+
+
+  <p>
+    Thank you for your order at PrasunStore.
+  </p>
+
+
+  <div
+    class="order-number"
+    id="successOrderNumber"
+  >
+    Order #—
+  </div>
+
+
+  <p>
+    Payment Method:
+    <strong>
+      Bank Transfer
+    </strong>
+  </p>
+
+
+  <p>
+    Your order is currently
+    <strong>
+      pending payment verification
+    </strong>.
+  </p>
+
+
+  <div class="success-bank-box">
+
+    <strong>
+      Please complete your USD bank transfer using:
+    </strong>
+
+    <br><br>
+
+    Beneficiary:
+    <strong>
+      PRASUN ENGINEERING TECHNOLOGY
+    </strong>
+
+    <br>
+
+    Account Number:
+    <strong>
+      018167402
+    </strong>
+
+    <br>
+
+    Bank:
+    <strong>
+      ADVANCED BANK OF ASIA LIMITED
+    </strong>
+
+    <br>
+
+    SWIFT:
+    <strong>
+      ABAAKHPP
+    </strong>
+
+    <br><br>
+
+    <strong>
+      Payment Reference:
+    </strong>
+
+    Please use your order number shown above
+    as the payment reference.
+
+  </div>
+
+
+  <p style="margin-top:18px;">
+
+    Please retain your bank transfer confirmation
+    until your payment has been verified.
+
+  </p>
+
+
+  <a
+    href="./index.html"
+    class="continue-button"
+  >
+    Continue Shopping
+  </a>
+
+</div>
+```
+
+  </main>
 
   <!-- =========================
        FOOTER
   ========================== -->
 
   <footer>
-    © <span id="footerYear"></span> PrasunStore. All rights reserved.
-  </footer>
 
+```
+©
+<span id="footerYear"></span>
+PrasunStore.
+All rights reserved.
+```
+
+  </footer>
 
   <!-- =========================
        JAVASCRIPT
@@ -1230,13 +1652,19 @@
       const select =
         document.getElementById("country");
 
+
       COUNTRIES.forEach(country => {
 
         const option =
           document.createElement("option");
 
-        option.value = country;
-        option.textContent = country;
+
+        option.value =
+          country;
+
+        option.textContent =
+          country;
+
 
         select.appendChild(option);
 
@@ -1296,26 +1724,41 @@
          */
 
         let buyNowRaw =
-          getStorageItem(sessionStorage, BUY_NOW_KEY);
+          getStorageItem(
+            sessionStorage,
+            BUY_NOW_KEY
+          );
+
 
         if (!buyNowRaw) {
 
           buyNowRaw =
-            getStorageItem(localStorage, BUY_NOW_KEY);
+            getStorageItem(
+              localStorage,
+              BUY_NOW_KEY
+            );
 
         }
 
+
         if (!buyNowRaw) {
 
           buyNowRaw =
-            getStorageItem(sessionStorage, LEGACY_BUY_NOW_KEY);
+            getStorageItem(
+              sessionStorage,
+              LEGACY_BUY_NOW_KEY
+            );
 
         }
 
+
         if (!buyNowRaw) {
 
           buyNowRaw =
-            getStorageItem(localStorage, LEGACY_BUY_NOW_KEY);
+            getStorageItem(
+              localStorage,
+              LEGACY_BUY_NOW_KEY
+            );
 
         }
 
@@ -1325,11 +1768,16 @@
           const buyNowItem =
             parseJSON(buyNowRaw);
 
-          if (buyNowItem && typeof buyNowItem === "object") {
+
+          if (
+            buyNowItem &&
+            typeof buyNowItem === "object"
+          ) {
 
             checkoutItems = [
               sanitizeCartItem(buyNowItem)
             ];
+
 
             renderCheckout();
 
@@ -1345,12 +1793,19 @@
          */
 
         let cartRaw =
-          getStorageItem(localStorage, CART_STORAGE_KEY);
+          getStorageItem(
+            localStorage,
+            CART_STORAGE_KEY
+          );
+
 
         if (!cartRaw) {
 
           cartRaw =
-            getStorageItem(localStorage, LEGACY_CART_KEY);
+            getStorageItem(
+              localStorage,
+              LEGACY_CART_KEY
+            );
 
         }
 
@@ -1363,7 +1818,11 @@
 
           checkoutItems =
             cart
-              .filter(item => item && typeof item === "object")
+              .filter(
+                item =>
+                  item &&
+                  typeof item === "object"
+              )
               .map(sanitizeCartItem)
               .filter(Boolean);
 
@@ -1383,6 +1842,7 @@
           error
         );
 
+
         showError(
           "We could not load your checkout items. Please return to your cart and try again."
         );
@@ -1399,17 +1859,23 @@
     function sanitizeCartItem(item) {
 
       if (!item) {
+
         return null;
+
       }
 
 
       const price =
         Number(item.price) || 0;
 
+
       const quantity =
         Math.max(
           1,
-          parseInt(item.quantity, 10) || 1
+          parseInt(
+            item.quantity,
+            10
+          ) || 1
         );
 
 
@@ -1439,7 +1905,9 @@
 
         id:
           item.id ||
-          `${item.product_id || item.productId || "product"}_${Date.now()}`,
+          `${item.product_id ||
+            item.productId ||
+            "product"}_${Date.now()}`,
 
         product_id:
           item.product_id ||
@@ -1487,27 +1955,45 @@
     function renderCheckout() {
 
       const checkoutContent =
-        document.getElementById("checkoutContent");
+        document.getElementById(
+          "checkoutContent"
+        );
+
 
       const emptyCheckout =
-        document.getElementById("emptyCheckout");
+        document.getElementById(
+          "emptyCheckout"
+        );
 
 
-      if (!Array.isArray(checkoutItems) ||
-          checkoutItems.length === 0) {
+      if (
+        !Array.isArray(checkoutItems) ||
+        checkoutItems.length === 0
+      ) {
 
-        checkoutContent.classList.add("hidden");
+        checkoutContent.classList.add(
+          "hidden"
+        );
 
-        emptyCheckout.classList.remove("hidden");
+
+        emptyCheckout.classList.remove(
+          "hidden"
+        );
+
 
         return;
 
       }
 
 
-      emptyCheckout.classList.add("hidden");
+      emptyCheckout.classList.add(
+        "hidden"
+      );
 
-      checkoutContent.classList.remove("hidden");
+
+      checkoutContent.classList.remove(
+        "hidden"
+      );
 
 
       renderSummary();
@@ -1519,10 +2005,14 @@
        FORMAT MONEY
     ========================================== */
 
-    function formatMoney(amount, currency = "USD") {
+    function formatMoney(
+      amount,
+      currency = "USD"
+    ) {
 
       const numericAmount =
         Number(amount) || 0;
+
 
       try {
 
@@ -1530,7 +2020,8 @@
           "en-US",
           {
             style: "currency",
-            currency: currency || "USD"
+            currency:
+              currency || "USD"
           }
         ).format(numericAmount);
 
@@ -1560,6 +2051,7 @@
       ) {
 
         return Object.entries(properties)
+
           .map(([key, value]) => {
 
             if (
@@ -1567,13 +2059,18 @@
               value === undefined ||
               value === ""
             ) {
+
               return "";
+
             }
+
 
             return `${key}: ${value}`;
 
           })
+
           .filter(Boolean)
+
           .join(" • ");
 
       }
@@ -1588,19 +2085,28 @@
         typeof item.variant === "object"
       ) {
 
-        if (Array.isArray(item.variant.properties)) {
+        if (
+          Array.isArray(
+            item.variant.properties
+          )
+        ) {
 
           return item.variant.properties
+
             .map(property => {
 
               if (!property) {
+
                 return "";
+
               }
+
 
               const name =
                 property.name ||
                 property.sku_property_name ||
                 "";
+
 
               const value =
                 property.display ||
@@ -1608,16 +2114,25 @@
                 property.property_value_definition_name ||
                 "";
 
-              if (!name && !value) {
+
+              if (
+                !name &&
+                !value
+              ) {
+
                 return "";
+
               }
+
 
               return name
                 ? `${name}: ${value}`
                 : value;
 
             })
+
             .filter(Boolean)
+
             .join(" • ");
 
         }
@@ -1637,7 +2152,9 @@
     function renderSummary() {
 
       const container =
-        document.getElementById("summaryItems");
+        document.getElementById(
+          "summaryItems"
+        );
 
 
       container.innerHTML = "";
@@ -1649,23 +2166,33 @@
       checkoutItems.forEach(item => {
 
         const lineTotal =
-          item.price * item.quantity;
+          item.price *
+          item.quantity;
 
-        subtotal += lineTotal;
+
+        subtotal +=
+          lineTotal;
 
 
         const wrapper =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
+
 
         wrapper.className =
           "summary-item";
 
 
         const image =
-          document.createElement("img");
+          document.createElement(
+            "img"
+          );
+
 
         image.className =
           "summary-image";
+
 
         image.alt =
           item.title;
@@ -1676,10 +2203,12 @@
           image.src =
             item.image;
 
+
           image.onerror =
             function () {
 
-              this.style.display = "none";
+              this.style.display =
+                "none";
 
             };
 
@@ -1692,17 +2221,24 @@
 
 
         const info =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
+
 
         info.className =
           "summary-info";
 
 
         const title =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
+
 
         title.className =
           "summary-title";
+
 
         title.textContent =
           item.title;
@@ -1713,10 +2249,14 @@
 
 
         const variant =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
+
 
         variant.className =
           "summary-variant";
+
 
         if (variantText) {
 
@@ -1732,10 +2272,14 @@
 
 
         const price =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
+
 
         price.className =
           "summary-price";
+
 
         price.textContent =
           `${item.quantity} × ${formatMoney(
@@ -1744,23 +2288,38 @@
           )}`;
 
 
-        info.appendChild(title);
+        info.appendChild(
+          title
+        );
+
 
         if (variantText) {
 
-          info.appendChild(variant);
+          info.appendChild(
+            variant
+          );
 
         }
 
-        info.appendChild(price);
+
+        info.appendChild(
+          price
+        );
 
 
-        wrapper.appendChild(image);
+        wrapper.appendChild(
+          image
+        );
 
-        wrapper.appendChild(info);
+
+        wrapper.appendChild(
+          info
+        );
 
 
-        container.appendChild(wrapper);
+        container.appendChild(
+          wrapper
+        );
 
       });
 
@@ -1768,29 +2327,49 @@
       /*
        * Shipping:
        * Currently free.
-       *
-       * You can later replace this with
-       * country-based shipping calculation.
        */
 
       const shipping = 0;
 
+
       const total =
-        subtotal + shipping;
+        subtotal +
+        shipping;
 
 
-      document.getElementById("subtotal").textContent =
-        formatMoney(subtotal, "USD");
+      document
+        .getElementById(
+          "subtotal"
+        )
+        .textContent =
+        formatMoney(
+          subtotal,
+          "USD"
+        );
 
 
-      document.getElementById("shipping").textContent =
+      document
+        .getElementById(
+          "shipping"
+        )
+        .textContent =
         shipping === 0
           ? "Free"
-          : formatMoney(shipping, "USD");
+          : formatMoney(
+              shipping,
+              "USD"
+            );
 
 
-      document.getElementById("grandTotal").textContent =
-        formatMoney(total, "USD");
+      document
+        .getElementById(
+          "grandTotal"
+        )
+        .textContent =
+        formatMoney(
+          total,
+          "USD"
+        );
 
     }
 
@@ -1849,7 +2428,9 @@
       for (const field of fields) {
 
         const element =
-          document.getElementById(field.id);
+          document.getElementById(
+            field.id
+          );
 
 
         if (
@@ -1861,7 +2442,9 @@
             `${field.label} is required.`
           );
 
+
           element?.focus();
+
 
           return false;
 
@@ -1871,20 +2454,35 @@
 
 
       const email =
-        document.getElementById("email").value.trim();
+        document
+          .getElementById(
+            "email"
+          )
+          .value
+          .trim();
 
 
       const emailPattern =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-      if (!emailPattern.test(email)) {
+      if (
+        !emailPattern.test(
+          email
+        )
+      ) {
 
         showError(
           "Please enter a valid email address."
         );
 
-        document.getElementById("email").focus();
+
+        document
+          .getElementById(
+            "email"
+          )
+          .focus();
+
 
         return false;
 
@@ -1903,16 +2501,26 @@
     function showError(message) {
 
       const element =
-        document.getElementById("globalError");
+        document.getElementById(
+          "globalError"
+        );
+
 
       element.textContent =
         message;
 
-      element.classList.remove("hidden");
+
+      element.classList.remove(
+        "hidden"
+      );
+
 
       window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
       });
 
     }
@@ -1925,8 +2533,12 @@
     function hideError() {
 
       document
-        .getElementById("globalError")
-        .classList.add("hidden");
+        .getElementById(
+          "globalError"
+        )
+        .classList.add(
+          "hidden"
+        );
 
     }
 
@@ -1940,22 +2552,34 @@
       const now =
         new Date();
 
+
       const year =
         now.getFullYear();
 
+
       const month =
-        String(now.getMonth() + 1)
-          .padStart(2, "0");
+        String(
+          now.getMonth() + 1
+        ).padStart(
+          2,
+          "0"
+        );
+
 
       const day =
-        String(now.getDate())
-          .padStart(2, "0");
+        String(
+          now.getDate()
+        ).padStart(
+          2,
+          "0"
+        );
 
 
       const random =
         Math.floor(
           100000 +
-          Math.random() * 900000
+          Math.random() *
+          900000
         );
 
 
@@ -1974,61 +2598,81 @@
 
         firstName:
           document
-            .getElementById("firstName")
+            .getElementById(
+              "firstName"
+            )
             .value
             .trim(),
 
         lastName:
           document
-            .getElementById("lastName")
+            .getElementById(
+              "lastName"
+            )
             .value
             .trim(),
 
         email:
           document
-            .getElementById("email")
+            .getElementById(
+              "email"
+            )
             .value
             .trim(),
 
         phone:
           document
-            .getElementById("phone")
+            .getElementById(
+              "phone"
+            )
             .value
             .trim(),
 
         address:
           document
-            .getElementById("address")
+            .getElementById(
+              "address"
+            )
             .value
             .trim(),
 
         city:
           document
-            .getElementById("city")
+            .getElementById(
+              "city"
+            )
             .value
             .trim(),
 
         state:
           document
-            .getElementById("state")
+            .getElementById(
+              "state"
+            )
             .value
             .trim(),
 
         postalCode:
           document
-            .getElementById("postalCode")
+            .getElementById(
+              "postalCode"
+            )
             .value
             .trim(),
 
         country:
           document
-            .getElementById("country")
+            .getElementById(
+              "country"
+            )
             .value
             .trim(),
 
         notes:
           document
-            .getElementById("orderNotes")
+            .getElementById(
+              "orderNotes"
+            )
             .value
             .trim()
 
@@ -2044,16 +2688,23 @@
     function calculateSubtotal() {
 
       return checkoutItems.reduce(
+
         (sum, item) => {
 
           return sum +
             (
-              Number(item.price) *
-              Number(item.quantity)
+              Number(
+                item.price
+              ) *
+              Number(
+                item.quantity
+              )
             );
 
         },
+
         0
+
       );
 
     }
@@ -2079,23 +2730,37 @@
         if (existing) {
 
           const parsed =
-            parseJSON(existing, []);
+            parseJSON(
+              existing,
+              []
+            );
 
-          if (Array.isArray(parsed)) {
 
-            orders = parsed;
+          if (
+            Array.isArray(parsed)
+          ) {
+
+            orders =
+              parsed;
 
           }
 
         }
 
 
-        orders.push(order);
+        orders.push(
+          order
+        );
 
 
         localStorage.setItem(
+
           ORDERS_STORAGE_KEY,
-          JSON.stringify(orders)
+
+          JSON.stringify(
+            orders
+          )
+
         );
 
 
@@ -2107,6 +2772,7 @@
           "Could not save order:",
           error
         );
+
 
         return false;
 
@@ -2127,6 +2793,7 @@
           CART_STORAGE_KEY
         );
 
+
         localStorage.removeItem(
           LEGACY_CART_KEY
         );
@@ -2136,6 +2803,7 @@
           BUY_NOW_KEY
         );
 
+
         localStorage.removeItem(
           BUY_NOW_KEY
         );
@@ -2144,6 +2812,7 @@
         sessionStorage.removeItem(
           LEGACY_BUY_NOW_KEY
         );
+
 
         localStorage.removeItem(
           LEGACY_BUY_NOW_KEY
@@ -2180,6 +2849,7 @@
           "Your cart is empty."
         );
 
+
         return;
 
       }
@@ -2198,7 +2868,9 @@
         );
 
 
-      button.disabled = true;
+      button.disabled =
+        true;
+
 
       button.textContent =
         "Processing Order...";
@@ -2219,7 +2891,8 @@
 
 
         const total =
-          subtotal + shipping;
+          subtotal +
+          shipping;
 
 
         const orderId =
@@ -2246,60 +2919,109 @@
           payment_method:
             "bank_transfer",
 
+          payment_currency:
+            "USD",
+
+          payment_reference:
+            orderId,
+
+          payment_instructions: {
+
+            beneficiary_name:
+              "PRASUN ENGINEERING TECHNOLOGY",
+
+            beneficiary_address:
+              "9E3, N/A, 288, Phum 3, Boeng Keng Kang Ti Pir, Boeng Keng Kang, Phnom Penh, Cambodia",
+
+            beneficiary_account_number:
+              "018167402",
+
+            beneficiary_bank_name:
+              "ADVANCED BANK OF ASIA LIMITED",
+
+            beneficiary_bank_address:
+              "No. 148, Preah Sihanouk Blvd., Phnom Penh, Cambodia",
+
+            beneficiary_bank_swift:
+              "ABAAKHPP",
+
+            correspondent_bank_name:
+              "JP Morgan Chase Bank",
+
+            correspondent_bank_address:
+              "New York, USA",
+
+            correspondent_bank_swift:
+              "CHASUS33"
+
+          },
+
           currency:
             "USD",
 
           subtotal:
-            Number(subtotal.toFixed(2)),
+            Number(
+              subtotal.toFixed(2)
+            ),
 
           shipping:
-            Number(shipping.toFixed(2)),
+            Number(
+              shipping.toFixed(2)
+            ),
 
           total:
-            Number(total.toFixed(2)),
+            Number(
+              total.toFixed(2)
+            ),
 
           customer,
 
           items:
-            checkoutItems.map(item => ({
+            checkoutItems.map(
+              item => ({
 
-              id:
-                item.id,
+                id:
+                  item.id,
 
-              product_id:
-                item.product_id,
+                product_id:
+                  item.product_id,
 
-              title:
-                item.title,
+                title:
+                  item.title,
 
-              price:
-                item.price,
+                price:
+                  item.price,
 
-              quantity:
-                item.quantity,
+                quantity:
+                  item.quantity,
 
-              currency:
-                item.currency,
+                currency:
+                  item.currency,
 
-              image:
-                item.image,
+                image:
+                  item.image,
 
-              sku:
-                item.sku,
+                sku:
+                  item.sku,
 
-              selected_properties:
-                item.selected_properties || {},
+                selected_properties:
+                  item.selected_properties ||
+                  {},
 
-              variant:
-                item.variant || null
+                variant:
+                  item.variant ||
+                  null
 
-            }))
+              })
+            )
 
         };
 
 
         const saved =
-          saveOrder(order);
+          saveOrder(
+            order
+          );
 
 
         if (!saved) {
@@ -2314,7 +3036,9 @@
         clearCartAfterOrder();
 
 
-        showSuccess(orderId);
+        showSuccess(
+          orderId
+        );
 
 
       } catch (error) {
@@ -2330,7 +3054,9 @@
         );
 
 
-        button.disabled = false;
+        button.disabled =
+          false;
+
 
         button.textContent =
           "Place Order";
@@ -2344,32 +3070,51 @@
        SHOW SUCCESS
     ========================================== */
 
-    function showSuccess(orderId) {
+    function showSuccess(
+      orderId
+    ) {
 
       document
-        .getElementById("checkoutContent")
-        .classList.add("hidden");
-
-
-      document
-        .getElementById("emptyCheckout")
-        .classList.add("hidden");
-
-
-      document
-        .getElementById("successContent")
-        .classList.remove("hidden");
+        .getElementById(
+          "checkoutContent"
+        )
+        .classList.add(
+          "hidden"
+        );
 
 
       document
-        .getElementById("successOrderNumber")
+        .getElementById(
+          "emptyCheckout"
+        )
+        .classList.add(
+          "hidden"
+        );
+
+
+      document
+        .getElementById(
+          "successContent"
+        )
+        .classList.remove(
+          "hidden"
+        );
+
+
+      document
+        .getElementById(
+          "successOrderNumber"
+        )
         .textContent =
         `Order #${orderId}`;
 
 
       window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
       });
 
     }
