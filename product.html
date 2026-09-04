@@ -1128,67 +1128,93 @@
 
     function renderRating() {
 
-      const container =
-        document.getElementById(
-          "ratingRow"
-        );
+  const container =
+    document.getElementById(
+      "ratingRow"
+    );
 
+  const rawRating =
+    product?.rating ??
+    product?.avg_evaluation_rating ??
+    "";
 
-      const rating =
-        Number(
-          product.rating
-        );
+  const rating =
+    Number(rawRating);
 
+  const sales =
+    product?.sales_count || "";
 
-      const sales =
-        product.sales_count ||
-        "";
+  const reviewCount =
+    Number(
+      product?.evaluation_count ??
+      product?.review_count ??
+      0
+    );
 
+  let html = "";
 
-      let html = "";
+  /*
+   * Only display a star rating when the
+   * actual numeric rating is greater than 0.
+   *
+   * 0, 0.0, "0", "0.0", empty and invalid
+   * values are intentionally hidden.
+   */
 
+  if (
+    Number.isFinite(rating) &&
+    rating > 0
+  ) {
 
-      if (
-        Number.isFinite(
-          rating
-        ) &&
-        rating > 0
-      ) {
+    html +=
+      `<span>⭐ ${rating.toFixed(1)}</span>`;
 
-        html +=
-          `<span>⭐ ${rating.toFixed(1)}</span>`;
+  }
 
-      }
+  /*
+   * Show sales information when available.
+   */
 
+  if (sales) {
 
-      if (sales) {
+    html +=
+      `<span>${escapeHtml(
+        String(sales)
+      )} sold</span>`;
 
-        html +=
-          `<span>${escapeHtml(
-            String(sales)
-          )} sold</span>`;
+  }
 
-      }
+  /*
+   * Show review count only when greater than zero.
+   */
 
+  if (
+    Number.isFinite(reviewCount) &&
+    reviewCount > 0
+  ) {
 
-      if (
-        product.evaluation_count
-      ) {
+    html +=
+      `<span>${escapeHtml(
+        String(reviewCount)
+      )} reviews</span>`;
 
-        html +=
-          `<span>${escapeHtml(
-            String(
-              product.evaluation_count
-            )
-          )} reviews</span>`;
+  }
 
-      }
+  container.innerHTML =
+    html;
 
+  /*
+   * Hide the entire row when there is
+   * no valid rating, sales count or
+   * review count.
+   */
 
-      container.innerHTML =
-        html;
+  container.style.display =
+    html
+      ? "flex"
+      : "none";
 
-    }
+}
 
 
     // ========================================================
