@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product | PRASUN STORE</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f7f9;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 5%;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .product-box {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    .gallery {
+      min-width: 0;
+    }
+
+    .main-image-wrap {
+      background: #f2f3f5;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .main-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      display: block;
+    }
+
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+
+    .thumb {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #eee;
+      flex: 0 0 auto;
+    }
+
+    .thumb.active {
+      border-color: #111827;
+    }
+
+    .details h1 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .meta {
+      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .variant-group {
+      margin: 20px 0;
+    }
+
+    .variant-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .variant-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .variant-option {
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 8px;
+      padding: 10px 13px;
+      cursor: pointer;
+    }
+
+    .variant-option.selected {
+      border-color: #111827;
+      background: #111827;
+      color: white;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .quantity button {
+      width: 38px;
+      height: 38px;
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .quantity span {
+      min-width: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .cart-btn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .buy-btn {
+      background: #111827;
+      color: white;
+    }
+
+    .description {
+      background: white;
+      margin-top: 25px;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    .description h2 {
+      margin-bottom: 15px;
+    }
+
+    .description-content {
+      line-height: 1.7;
+      color: #444;
+      overflow-wrap: anywhere;
+    }
+
+    .loading,
+    .error {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .error {
+      color: #b91c1c;
+    }
+
+    @media (max-width: 800px) {
+      .product-box {
+        grid-template-columns: 1fr;
+      }
+
+      .details h1 {
+        font-size: 25px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">PRASUN STORE</a>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/cart.html">Cart 🛒</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <div id="loading" class="loading">
+    Loading product...
+  </div>
+
+  <div id="productArea" style="display:none;">
+
+    <section class="product-box">
+
+      <div class="gallery">
+
+        <div class="main-image-wrap">
+          <img
+            id="mainImage"
+            class="main-image"
+            src=""
+            alt="Product"
+          >
+        </div>
+
+        <div id="thumbs" class="thumbs"></div>
+
+      </div>
+
+      <div class="details">
+
+        <h1 id="productTitle">Product</h1>
+
+        <div id="price" class="price">
+          --
+        </div>
+
+        <div id="meta" class="meta"></div>
+
+        <div id="variants"></div>
+
+        <div class="quantity">
+          <strong>Quantity:</strong>
+
+          <button onclick="changeQuantity(-1)">
+            −
+          </button>
+
+          <span id="quantity">
+            1
+          </span>
+
+          <button onclick="changeQuantity(1)">
+            +
+          </button>
+        </div>
+
+        <div class="actions">
+
+          <button
+            class="action-btn cart-btn"
+            onclick="addToCart()"
+          >
+            Add to Cart
+          </button>
+
+          <button
+            class="action-btn buy-btn"
+            onclick="buyNow()"
+          >
+            Buy Now
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="description">
+
+      <h2>Product Description</h2>
+
+      <div
+        id="description"
+        class="description-content"
+      >
+        Loading...
+      </div>
+
+    </section>
+
+  </div>
+
+  <div
+    id="error"
+    class="error"
+    style="display:none;"
+  ></div>
+
+</main>
+
+<script>
+
+  const API_BASE =
+    "https://prasun-store.prasun301.workers.dev";
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const productId =
+    params.get("id");
+
+  let product = null;
+  let quantity = 1;
+  let selectedVariants = {};
+
+  function getProductImages(data) {
+
+    const result = [];
+
+    if (Array.isArray(data.images)) {
+      result.push(...data.images);
+    }
+
+    if (data.image) {
+      result.push(data.image);
+    }
+
+    if (data.image_url) {
+      result.push(data.image_url);
+    }
+
+    if (data.main_image) {
+      result.push(data.main_image);
+    }
+
+    return [...new Set(
+      result.filter(Boolean)
+    )];
+
+  }
+
+  function escapeHtml(value) {
+
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  }
+
+  async function loadProduct() {
+
+    if (!productId) {
+
+      showError(
+        "Product ID is missing."
+      );
+
+      return;
+    }
+
+    try {
+
+      /*
+       * First try the local product API.
+       */
+      let response =
+        await fetch(
+          `${API_BASE}/api/products`
+        );
+
+      if (!response.ok) {
+        throw new Error(
+          `Products API returned ${response.status}`
+        );
+      }
+
+      const data =
+        await response.json();
+
+      let products = [];
+
+      if (Array.isArray(data)) {
+
+        products = data;
+
+      } else if (Array.isArray(data.products)) {
+
+        products = data.products;
+
+      } else if (Array.isArray(data.items)) {
+
+        products = data.items;
+
+      } else if (
+        data.data &&
+        Array.isArray(data.data)
+      ) {
+
+        products = data.data;
+
+      }
+
+      product =
+        products.find(item => {
+
+          const id =
+            String(
+              item.product_id ||
+              item.id ||
+              item.aliexpress_product_id ||
+              ""
+            );
+
+          return id === String(productId);
+
+        });
+
+      /*
+       * If local storage doesn't contain the
+       * product in the expected format, try the
+       * AliExpress product endpoint.
+       */
+      if (!product) {
+
+        response =
+          await fetch(
+            `${API_BASE}/api/aliexpress/product?product_id=${encodeURIComponent(productId)}`
+          );
+
+        if (!response.ok) {
+          throw new Error(
+            `Product API returned ${response.status}`
+          );
+        }
+
+        const apiData =
+          await response.json();
+
+        product =
+          normalizeApiProduct(apiData);
+
+      }
+
+      if (!product) {
+
+        throw new Error(
+          "Product could not be found."
+        );
+
+      }
+
+      renderProduct(product);
+
+    } catch (error) {
+
+      console.error(error);
+
+      showError(
+        "Unable to load this product. " +
+        error.message
+      );
+
+    }
+
+  }
+
+  function normalizeApiProduct(data) {
+
+    /*
+     * This handles the raw AliExpress product
+     * response currently returned by your Worker.
+     */
+
+    const result =
+      data?.response
+        ?.aliexpress_ds_product_get_response
+        ?.result;
+
+    if (!result) {
+      return null;
+    }
+
+    const base =
+      result.ae_item_base_info_dto || {};
+
+    const multimedia =
+      result.ae_multimedia_info_dto || {};
+
+    const packageInfo =
+      result.package_info_dto || {};
+
+    const logistics =
+      result.logistics_info_dto || {};
+
+    const properties =
+      result.ae_item_properties
+        ?.ae_item_property || [];
+
+    let images = [];
+
+    if (
+      typeof multimedia.image_urls === "string"
+    ) {
+
+      images =
+        multimedia.image_urls
+          .split(";")
+          .map(x => x.trim())
+          .filter(Boolean);
+
+    }
+
+    let skus =
+      result.ae_item_sku_info_dtos
+        ?.ae_item_sku_info_d_t_o || [];
+
+    return {
+
+      product_id:
+        base.product_id ||
+        data.product_id,
+
+      title:
+        base.subject ||
+        "AliExpress Product",
+
+      images,
+
+      skus,
+
+      properties,
+
+      description:
+        base.detail || "",
+
+      shipping:
+        logistics,
+
+      package:
+        packageInfo,
+
+      sales_count:
+        base.sales_count || "",
+
+      rating:
+        base.avg_evaluation_rating || "",
+
+      currency:
+        base.currency_code || "USD"
+
+    };
+
+  }
+
+  function findPrice(product) {
+
+    const possibleValues = [
+
+      product.sale_price,
+
+      product.price,
+
+      product.selling_price,
+
+      product.min_price,
+
+      product.skus?.[0]?.sale_price,
+
+      product.skus?.[0]?.price,
+
+      product.skus?.[0]?.sku_price,
+
+      product.skus?.[0]?.offer_sale_price
+
+    ];
+
+    for (const value of possibleValues) {
+
+      if (
+        value !== undefined &&
+        value !== null &&
+        value !== ""
+      ) {
+
+        return value;
+
+      }
+
+    }
+
+    return null;
+
+  }
+
+  function renderProduct(data) {
+
+    document.title =
+      `${data.title || "Product"} | PRASUN STORE`;
+
+    document.getElementById("productTitle")
+      .textContent =
+      data.title || "Product";
+
+    const price =
+      findPrice(data);
+
+    document.getElementById("price")
+      .textContent =
+      price !== null
+        ? `$${Number(price).toFixed(2)}`
+        : "Price unavailable";
+
+    let meta = "";
+
+    if (data.sales_count) {
+
+      meta +=
+        `Sales: ${escapeHtml(data.sales_count)}<br>`;
+
+    }
+
+    if (data.rating) {
+
+      meta +=
+        `Rating: ${escapeHtml(data.rating)}<br>`;
+
+    }
+
+    if (
+      data.shipping &&
+      data.shipping.delivery_time
+    ) {
+
+      meta +=
+        `Estimated delivery: ${escapeHtml(data.shipping.delivery_time)} days<br>`;
+
+    }
+
+    document.getElementById("meta")
+      .innerHTML =
+      meta;
+
+    renderImages(data);
+
+    renderVariants(data);
+
+    renderDescription(data);
+
+    document.getElementById("loading")
+      .style.display = "none";
+
+    document.getElementById("productArea")
+      .style.display = "block";
+
+  }
+
+  function renderImages(data) {
+
+    const images =
+      getProductImages(data);
+
+    const mainImage =
+      document.getElementById("mainImage");
+
+    const thumbs =
+      document.getElementById("thumbs");
+
+    thumbs.innerHTML = "";
+
+    if (!images.length) {
+
+      mainImage.src =
+        "https://via.placeholder.com/800x800?text=No+Image";
+
+      return;
+
+    }
+
+    mainImage.src = images[0];
+
+    images.forEach(
+      (image, index) => {
+
+        const img =
+          document.createElement("img");
+
+        img.className =
+          "thumb" +
+          (index === 0 ? " active" : "");
+
+        img.src = image;
+        img.alt = "Product image";
+
+        img.onclick = () => {
+
+          mainImage.src = image;
+
+          document
+            .querySelectorAll(".thumb")
+            .forEach(x =>
+              x.classList.remove("active")
+            );
+
+          img.classList.add("active");
+
+        };
+
+        thumbs.appendChild(img);
+
+      }
+    );
+
+  }
+
+  function renderVariants(data) {
+
+    const container =
+      document.getElementById("variants");
+
+    container.innerHTML = "";
+
+    const skus =
+      Array.isArray(data.skus)
+        ? data.skus
+        : [];
+
+    /*
+     * Raw AliExpress SKU/property structures vary.
+     * We display properties when available.
+     */
+
+    const propertyMap = {};
+
+    if (Array.isArray(data.properties)) {
+
+      data.properties.forEach(property => {
+
+        const name =
+          property.attr_name ||
+          property.name ||
+          property.property_name ||
+          property.attrName;
+
+        const value =
+          property.attr_value ||
+          property.value ||
+          property.property_value ||
+          property.attrValue;
+
+        if (name && value) {
+
+          if (!propertyMap[name]) {
+            propertyMap[name] = [];
+          }
+
+          if (
+            !propertyMap[name]
+              .includes(value)
+          ) {
+
+            propertyMap[name].push(value);
+
+          }
+
+        }
+
+      });
+
+    }
+
+    /*
+     * Render property selectors.
+     */
+    Object.entries(propertyMap)
+      .forEach(([name, values]) => {
+
+        const group =
+          document.createElement("div");
+
+        group.className =
+          "variant-group";
+
+        const title =
+          document.createElement("div");
+
+        title.className =
+          "variant-title";
+
+        title.textContent =
+          name;
+
+        group.appendChild(title);
+
+        const options =
+          document.createElement("div");
+
+        options.className =
+          "variant-options";
+
+        values.forEach(value => {
+
+          const button =
+            document.createElement("button");
+
+          button.className =
+            "variant-option";
+
+          button.textContent =
+            value;
+
+          button.onclick = () => {
+
+            selectedVariants[name] =
+              value;
+
+            options
+              .querySelectorAll(
+                ".variant-option"
+              )
+              .forEach(x =>
+                x.classList.remove(
+                  "selected"
+                )
+              );
+
+            button.classList.add(
+              "selected"
+            );
+
+          };
+
+          options.appendChild(button);
+
+        });
+
+        group.appendChild(options);
+
+        container.appendChild(group);
+
+      });
+
+  }
+
+  function renderDescription(data) {
+
+    const container =
+      document.getElementById(
+        "description"
+      );
+
+    const html =
+      data.description || "";
+
+    /*
+     * Raw AliExpress HTML should NOT be inserted
+     * blindly in a production store without sanitizing.
+     *
+     * For now, display it as HTML only when it
+     * exists. We can add sanitization later.
+     */
+
+    if (html) {
+
+      container.innerHTML = html;
+
+    } else {
+
+      container.textContent =
+        "No product description available.";
+
+    }
+
+  }
+
+  function changeQuantity(amount) {
+
+    quantity += amount;
+
+    if (quantity < 1) {
+      quantity = 1;
+    }
+
+    document.getElementById("quantity")
+      .textContent = quantity;
+
+  }
+
+  function buildCartItem() {
+
+    return {
+
+      product_id:
+        product.product_id ||
+        product.id ||
+        product.aliexpress_product_id,
+
+      title:
+        product.title ||
+        product.name ||
+        "Product",
+
+      image:
+        getProductImages(product)[0] || "",
+
+      price:
+        findPrice(product),
+
+      quantity,
+
+      variants:
+        selectedVariants
+
+    };
+
+  }
+
+  function getCart() {
+
+    try {
+
+      return JSON.parse(
+        localStorage.getItem(
+          "prasun_cart"
+        )
+      ) || [];
+
+    } catch {
+
+      return [];
+
+    }
+
+  }
+
+  function saveCart(cart) {
+
+    localStorage.setItem(
+      "prasun_cart",
+      JSON.stringify(cart)
+    );
+
+  }
+
+  function addToCart() {
+
+    const item =
+      buildCartItem();
+
+    const cart =
+      getCart();
+
+    const existing =
+      cart.find(x =>
+        String(x.product_id) ===
+        String(item.product_id)
+      );
+
+    if (existing) {
+
+      existing.quantity +=
+        item.quantity;
+
+    } else {
+
+      cart.push(item);
+
+    }
+
+    saveCart(cart);
+
+    alert(
+      "Product added to cart."
+    );
+
+  }
+
+  function buyNow() {
+
+    const item =
+      buildCartItem();
+
+    const cart =
+      [item];
+
+    saveCart(cart);
+
+    window.location.href =
+      "/checkout.html";
+
+  }
+
+  function showError(message) {
+
+    document.getElementById("loading")
+      .style.display = "none";
+
+    const error =
+      document.getElementById("error");
+
+    error.textContent =
+      message;
+
+    error.style.display =
+      "block";
+
+  }
+
+  loadProduct();
+
+</script>
+
+</body>
+</html>
