@@ -1027,16 +1027,19 @@
       // RATING
       // ------------------------------------------------------
 
-      const rating =
-        product?.rating ||
-        product?.avg_evaluation_rating ||
-        "";
+      const rawRating =
+  product?.rating ??
+  product?.avg_evaluation_rating ??
+  "";
 
+const numericRating =
+  Number(rawRating);
 
-      const ratingText =
-        rating
-          ? `⭐ ${rating}`
-          : "";
+const ratingText =
+  Number.isFinite(numericRating) &&
+  numericRating > 0
+    ? `⭐ ${numericRating.toFixed(1)}`
+    : "";
 
 
       // ------------------------------------------------------
