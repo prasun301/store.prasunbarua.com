@@ -37,10 +37,8 @@
         Helvetica,
         Arial,
         sans-serif;
-
       background: #f7f8fa;
       color: #111827;
-
       line-height: 1.55;
     }
 
@@ -61,11 +59,7 @@
     }
 
     .container {
-      width: min(
-        1200px,
-        calc(100% - 32px)
-      );
-
+      width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -75,41 +69,24 @@
 
     .top-header {
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
-      background: rgba(
-        255,
-        255,
-        255,
-        0.96
-      );
-
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
-
-      border-bottom:
-        1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .header-inner {
       min-height: 72px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
       gap: 20px;
     }
 
     .brand {
       font-size: 24px;
-
       font-weight: 800;
-
       letter-spacing: -0.5px;
     }
 
@@ -119,19 +96,12 @@
 
     .header-link {
       display: inline-flex;
-
       align-items: center;
-
       gap: 7px;
-
       min-height: 42px;
-
       padding: 8px 12px;
-
       border-radius: 10px;
-
       color: #374151;
-
       font-weight: 800;
     }
 
@@ -141,25 +111,15 @@
 
     .cart-badge {
       min-width: 20px;
-
       height: 20px;
-
       padding: 0 6px;
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
       border-radius: 999px;
-
       background: #2563eb;
-
       color: #ffffff;
-
       font-size: 11px;
-
       font-weight: 900;
     }
 
@@ -173,14 +133,11 @@
 
     .breadcrumb {
       display: flex;
-
       gap: 8px;
-
       color: #6b7280;
-
       font-size: 13px;
-
       margin-bottom: 18px;
+      flex-wrap: wrap;
     }
 
     .breadcrumb a:hover {
@@ -189,9 +146,7 @@
 
     .page-title {
       font-size: 34px;
-
       letter-spacing: -0.8px;
-
       margin-bottom: 24px;
     }
 
@@ -201,35 +156,24 @@
 
     .checkout-layout {
       display: grid;
-
       grid-template-columns:
         minmax(0, 1fr)
         390px;
-
       gap: 24px;
-
       align-items: start;
     }
 
     .panel {
       background: #ffffff;
-
-      border:
-        1px solid #e5e7eb;
-
+      border: 1px solid #e5e7eb;
       border-radius: 20px;
-
       overflow: hidden;
     }
 
     .panel-header {
       padding: 19px 22px;
-
-      border-bottom:
-        1px solid #e5e7eb;
-
+      border-bottom: 1px solid #e5e7eb;
       font-size: 18px;
-
       font-weight: 900;
     }
 
@@ -243,29 +187,23 @@
 
     .form-grid {
       display: grid;
-
       grid-template-columns:
         repeat(2, minmax(0, 1fr));
-
       gap: 16px;
     }
 
     .field {
       display: flex;
-
       flex-direction: column;
-
       gap: 7px;
     }
 
     .field.full {
-      grid-column:
-        1 / -1;
+      grid-column: 1 / -1;
     }
 
     .field label {
       font-size: 13px;
-
       font-weight: 800;
     }
 
@@ -277,26 +215,17 @@
     .field select,
     .field textarea {
       width: 100%;
-
       min-height: 44px;
-
-      border:
-        1px solid #d1d5db;
-
+      border: 1px solid #d1d5db;
       border-radius: 9px;
-
       padding: 10px 12px;
-
       outline: none;
-
       background: #ffffff;
-
       color: #111827;
     }
 
     .field textarea {
       min-height: 100px;
-
       resize: vertical;
     }
 
@@ -304,23 +233,27 @@
     .field select:focus,
     .field textarea:focus {
       border-color: #60a5fa;
-
       box-shadow:
         0 0 0 4px
-        rgba(
-          37,
-          99,
-          235,
-          0.08
-        );
+        rgba(37, 99, 235, 0.08);
+    }
+
+    .field[aria-invalid="true"] input,
+    .field[aria-invalid="true"] select,
+    .field[aria-invalid="true"] textarea {
+      border-color: #dc2626;
     }
 
     .field-error {
       color: #dc2626;
-
       font-size: 12px;
-
       display: none;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 26px 0;
     }
 
     /* ============================================================
@@ -329,32 +262,20 @@
 
     .payment-options {
       display: flex;
-
       flex-direction: column;
-
       gap: 10px;
-
       margin-top: 18px;
     }
 
     .payment-option {
       position: relative;
-
       display: flex;
-
       align-items: flex-start;
-
       gap: 12px;
-
       padding: 14px;
-
-      border:
-        1px solid #d1d5db;
-
+      border: 1px solid #d1d5db;
       border-radius: 11px;
-
       cursor: pointer;
-
       transition: 0.2s ease;
     }
 
@@ -364,13 +285,11 @@
 
     .payment-option.selected {
       border-color: #2563eb;
-
       background: #eff6ff;
     }
 
     .payment-option input {
       margin-top: 3px;
-
       accent-color: #2563eb;
     }
 
@@ -380,23 +299,16 @@
 
     .payment-description {
       margin-top: 2px;
-
       color: #6b7280;
-
       font-size: 12px;
     }
 
     .payment-notice {
       margin-top: 14px;
-
       padding: 12px;
-
       border-radius: 9px;
-
       background: #fffbeb;
-
       color: #92400e;
-
       font-size: 13px;
     }
 
@@ -406,137 +318,89 @@
 
     .summary {
       background: #ffffff;
-
-      border:
-        1px solid #e5e7eb;
-
+      border: 1px solid #e5e7eb;
       border-radius: 20px;
-
       padding: 22px;
-
       position: sticky;
-
       top: 100px;
     }
 
     .summary-title {
       font-size: 20px;
-
       font-weight: 900;
-
       margin-bottom: 18px;
     }
 
     .summary-items {
       max-height: 360px;
-
       overflow-y: auto;
-
-      border-bottom:
-        1px solid #e5e7eb;
-
+      border-bottom: 1px solid #e5e7eb;
       padding-bottom: 12px;
     }
 
     .summary-item {
       display: grid;
-
-      grid-template-columns:
-        56px minmax(0, 1fr);
-
+      grid-template-columns: 56px minmax(0, 1fr);
       gap: 11px;
-
       padding: 9px 0;
     }
 
     .summary-image {
       width: 56px;
       height: 56px;
-
       object-fit: cover;
-
       border-radius: 8px;
-
       background: #f3f4f6;
     }
 
     .summary-item-title {
       font-size: 13px;
-
       font-weight: 800;
-
       display: -webkit-box;
-
       -webkit-box-orient: vertical;
-
       -webkit-line-clamp: 2;
-
       overflow: hidden;
     }
 
     .summary-item-meta {
       color: #6b7280;
-
       font-size: 12px;
-
       margin-top: 2px;
     }
 
     .summary-item-price {
       font-size: 13px;
-
       font-weight: 900;
-
       margin-top: 4px;
     }
 
     .summary-row {
       display: flex;
-
       justify-content: space-between;
-
       gap: 16px;
-
       padding: 7px 0;
-
       font-size: 14px;
-
       color: #4b5563;
     }
 
     .summary-row.total {
       color: #111827;
-
       font-size: 21px;
-
       font-weight: 900;
-
       padding-top: 16px;
-
       margin-top: 7px;
-
-      border-top:
-        1px solid #e5e7eb;
+      border-top: 1px solid #e5e7eb;
     }
 
     .place-order-button {
       width: 100%;
-
       min-height: 52px;
-
-      border:
-        1px solid #2563eb;
-
+      border: 1px solid #2563eb;
       border-radius: 11px;
-
       background: #2563eb;
-
       color: #ffffff;
-
       font-weight: 900;
-
       margin-top: 18px;
-
       transition: 0.2s ease;
     }
 
@@ -546,18 +410,15 @@
 
     .place-order-button:disabled {
       cursor: not-allowed;
-
       opacity: 0.5;
     }
 
     .secure-note {
       margin-top: 12px;
-
       color: #6b7280;
-
       font-size: 12px;
-
       text-align: center;
+      line-height: 1.5;
     }
 
     /* ============================================================
@@ -566,47 +427,32 @@
 
     .empty-checkout {
       background: #ffffff;
-
-      border:
-        1px solid #e5e7eb;
-
+      border: 1px solid #e5e7eb;
       border-radius: 20px;
-
       padding: 60px 24px;
-
       text-align: center;
     }
 
     .empty-title {
       font-size: 23px;
-
       font-weight: 900;
-
       margin-bottom: 7px;
     }
 
     .empty-text {
       color: #6b7280;
-
       margin-bottom: 20px;
     }
 
     .shop-button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       min-height: 46px;
-
       padding: 0 18px;
-
       border-radius: 10px;
-
       background: #111827;
-
       color: #ffffff;
-
       font-weight: 900;
     }
 
@@ -616,115 +462,75 @@
 
     .success-panel {
       max-width: 740px;
-
       margin: 0 auto;
-
       background: #ffffff;
-
-      border:
-        1px solid #e5e7eb;
-
+      border: 1px solid #e5e7eb;
       border-radius: 20px;
-
       padding: 48px 28px;
-
       text-align: center;
     }
 
     .success-icon {
       width: 66px;
       height: 66px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      margin:
-        0 auto 18px;
-
+      margin: 0 auto 18px;
       border-radius: 50%;
-
       background: #ecfdf5;
-
       color: #047857;
-
       font-size: 32px;
     }
 
     .success-title {
       font-size: 29px;
-
       font-weight: 900;
-
       margin-bottom: 7px;
     }
 
     .success-text {
       color: #6b7280;
-
       max-width: 560px;
-
       margin: 0 auto;
     }
 
     .order-number {
       display: inline-block;
-
       margin-top: 16px;
-
       padding: 10px 14px;
-
       border-radius: 9px;
-
       background: #f3f4f6;
-
       font-weight: 900;
-
       letter-spacing: 0.3px;
     }
 
     .success-actions {
       display: flex;
-
       justify-content: center;
-
       gap: 10px;
-
       flex-wrap: wrap;
-
       margin-top: 24px;
     }
 
     .success-button {
       min-height: 44px;
-
       padding: 0 17px;
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
       border-radius: 10px;
-
       font-weight: 900;
     }
 
     .success-button.primary {
       background: #111827;
-
       color: #ffffff;
     }
 
     .success-button.secondary {
-      border:
-        1px solid #d1d5db;
-
+      border: 1px solid #d1d5db;
       background: #ffffff;
-
       color: #111827;
     }
 
@@ -734,32 +540,19 @@
 
     .toast {
       position: fixed;
-
       right: 20px;
       bottom: 20px;
-
       z-index: 2000;
-
       max-width: 360px;
-
       padding: 14px 16px;
-
       border-radius: 12px;
-
       background: #111827;
-
       color: #ffffff;
-
       font-size: 14px;
-
       font-weight: 700;
-
       opacity: 0;
-
       pointer-events: none;
-
       transform: translateY(12px);
-
       transition:
         opacity 0.2s ease,
         transform 0.2s ease;
@@ -767,7 +560,6 @@
 
     .toast.show {
       opacity: 1;
-
       transform: translateY(0);
     }
 
@@ -777,25 +569,19 @@
 
     footer {
       margin-top: 30px;
-
       background: #111827;
-
       color: #ffffff;
     }
 
     .footer-inner {
       padding: 36px 0;
-
       display: flex;
-
       justify-content: space-between;
-
       gap: 24px;
     }
 
     .footer-brand {
       font-size: 20px;
-
       font-weight: 900;
     }
 
@@ -805,34 +591,23 @@
 
     .footer-text {
       margin-top: 8px;
-
       color: #9ca3af;
-
       max-width: 500px;
-
       font-size: 14px;
     }
 
     .footer-links {
       display: flex;
-
       gap: 16px;
-
       flex-wrap: wrap;
-
       color: #d1d5db;
-
       font-size: 14px;
     }
 
     .copyright {
-      border-top:
-        1px solid #1f2937;
-
+      border-top: 1px solid #1f2937;
       padding: 16px 0;
-
       color: #9ca3af;
-
       font-size: 13px;
     }
 
@@ -841,10 +616,8 @@
        ============================================================ */
 
     @media (max-width: 900px) {
-
       .checkout-layout {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .summary {
@@ -853,33 +626,20 @@
     }
 
     @media (max-width: 600px) {
-
       .container {
-        width:
-          min(
-            100% - 20px,
-            1200px
-          );
+        width: min(100% - 20px, 1200px);
       }
 
       .header-inner {
         min-height: 64px;
       }
 
-      .header-link span:not(
-        .cart-badge
-      ) {
-        display: none;
-      }
-
       .form-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .field.full {
-        grid-column:
-          auto;
+        grid-column: auto;
       }
 
       .panel-body {
@@ -889,1778 +649,2268 @@
       .summary {
         padding: 18px;
       }
+
+      .page-title {
+        font-size: 29px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ============================================================
-       HEADER
-       ============================================================ -->
+<header class="top-header">
 
-  <header class="top-header">
+  <div class="container header-inner">
 
-    <div class="container header-inner">
+    <a
+      href="./index.html"
+      class="brand"
+    >
+      Prasun<span>Store</span>
+    </a>
 
-      <a
-        href="./index.html"
-        class="brand"
+    <a
+      href="./cart.html"
+      class="header-link"
+    >
+      🛒
+      <span>Cart</span>
+
+      <span
+        id="cartCount"
+        class="cart-badge"
       >
-        Prasun<span>Store</span>
+        0
+      </span>
+    </a>
+
+  </div>
+
+</header>
+
+
+<main class="page">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+
+      <a href="./index.html">
+        Home
       </a>
 
-      <div>
+      <span>›</span>
+
+      <a href="./cart.html">
+        Cart
+      </a>
+
+      <span>›</span>
+
+      <span>
+        Checkout
+      </span>
+
+    </div>
+
+
+    <!-- ============================================================
+         EMPTY CHECKOUT
+         ============================================================ -->
+
+    <section
+      id="emptyCheckout"
+      class="empty-checkout"
+      style="display:none;"
+    >
+
+      <div class="success-icon">
+        🛒
+      </div>
+
+      <div class="empty-title">
+        Your order is empty
+      </div>
+
+      <div class="empty-text">
+        Please add a product to your cart before checking out.
+      </div>
+
+      <a
+        href="./index.html#products"
+        class="shop-button"
+      >
+        Continue Shopping
+      </a>
+
+    </section>
+
+
+    <!-- ============================================================
+         CHECKOUT CONTENT
+         ============================================================ -->
+
+    <section
+      id="checkoutContent"
+      style="display:none;"
+    >
+
+      <h1 class="page-title">
+        Checkout
+      </h1>
+
+
+      <div class="checkout-layout">
+
+        <!-- ========================================================
+             CUSTOMER DETAILS
+             ======================================================== -->
+
+        <section class="panel">
+
+          <div class="panel-header">
+            Contact & Shipping Information
+          </div>
+
+          <div class="panel-body">
+
+            <form
+              id="checkoutForm"
+              novalidate
+            >
+
+              <div class="form-grid">
+
+                <div class="field">
+
+                  <label for="fullName">
+                    Full Name
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Your full name"
+                    required
+                  />
+
+                  <div
+                    id="fullNameError"
+                    class="field-error"
+                  >
+                    Please enter your full name.
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="email">
+                    Email Address
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+
+                  <div
+                    id="emailError"
+                    class="field-error"
+                  >
+                    Please enter a valid email address.
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="phone">
+                    Phone Number
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="+855..."
+                    required
+                  />
+
+                  <div
+                    id="phoneError"
+                    class="field-error"
+                  >
+                    Please enter a phone number.
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="country">
+                    Country
+                    <span class="required">*</span>
+                  </label>
+
+                  <select
+                    id="country"
+                    name="country"
+                    autocomplete="country-name"
+                    required
+                  >
+
+                    <option value="">
+                      Select country
+                    </option>
+
+                    <option value="Cambodia">
+                      Cambodia
+                    </option>
+
+                    <option value="Bangladesh">
+                      Bangladesh
+                    </option>
+
+                    <option value="United States">
+                      United States
+                    </option>
+
+                    <option value="United Kingdom">
+                      United Kingdom
+                    </option>
+
+                    <option value="Canada">
+                      Canada
+                    </option>
+
+                    <option value="Australia">
+                      Australia
+                    </option>
+
+                    <option value="Germany">
+                      Germany
+                    </option>
+
+                    <option value="France">
+                      France
+                    </option>
+
+                    <option value="Italy">
+                      Italy
+                    </option>
+
+                    <option value="Spain">
+                      Spain
+                    </option>
+
+                    <option value="Netherlands">
+                      Netherlands
+                    </option>
+
+                    <option value="Singapore">
+                      Singapore
+                    </option>
+
+                    <option value="Malaysia">
+                      Malaysia
+                    </option>
+
+                    <option value="Thailand">
+                      Thailand
+                    </option>
+
+                    <option value="Vietnam">
+                      Vietnam
+                    </option>
+
+                    <option value="Philippines">
+                      Philippines
+                    </option>
+
+                    <option value="Indonesia">
+                      Indonesia
+                    </option>
+
+                    <option value="Other">
+                      Other
+                    </option>
+
+                  </select>
+
+                  <div
+                    id="countryError"
+                    class="field-error"
+                  >
+                    Please select your country.
+                  </div>
+
+                </div>
+
+
+                <div class="field full">
+
+                  <label for="address">
+                    Street Address
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    autocomplete="street-address"
+                    placeholder="Street, house/building number"
+                    required
+                  />
+
+                  <div
+                    id="addressError"
+                    class="field-error"
+                  >
+                    Please enter your address.
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="city">
+                    City
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    autocomplete="address-level2"
+                    placeholder="City"
+                    required
+                  />
+
+                  <div
+                    id="cityError"
+                    class="field-error"
+                  >
+                    Please enter your city.
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="postalCode">
+                    Postal Code
+                  </label>
+
+                  <input
+                    id="postalCode"
+                    name="postalCode"
+                    type="text"
+                    autocomplete="postal-code"
+                    placeholder="Postal code"
+                  />
+
+                </div>
+
+
+                <div class="field full">
+
+                  <label for="state">
+                    State / Province / Region
+                  </label>
+
+                  <input
+                    id="state"
+                    name="state"
+                    type="text"
+                    autocomplete="address-level1"
+                    placeholder="State / Province / Region"
+                  />
+
+                </div>
+
+
+                <div class="field full">
+
+                  <label for="orderNotes">
+                    Order Notes
+                  </label>
+
+                  <textarea
+                    id="orderNotes"
+                    name="orderNotes"
+                    placeholder="Optional delivery instructions or notes"
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+
+              <div class="divider"></div>
+
+
+              <h2
+                style="
+                  font-size:18px;
+                  font-weight:900;
+                  margin-bottom:4px;
+                "
+              >
+                Payment Method
+              </h2>
+
+              <div
+                style="
+                  color:#6b7280;
+                  font-size:13px;
+                "
+              >
+                Select your preferred payment method.
+              </div>
+
+
+              <div
+                id="paymentOptions"
+                class="payment-options"
+              >
+
+                <label class="payment-option selected">
+
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="cash_on_delivery"
+                    checked
+                  />
+
+                  <div>
+
+                    <div class="payment-name">
+                      Cash on Delivery
+                    </div>
+
+                    <div class="payment-description">
+                      Pay when your order is delivered, where available.
+                    </div>
+
+                  </div>
+
+                </label>
+
+
+                <label class="payment-option">
+
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="bank_transfer"
+                  />
+
+                  <div>
+
+                    <div class="payment-name">
+                      Bank Transfer
+                    </div>
+
+                    <div class="payment-description">
+                      Payment instructions can be provided after order submission.
+                    </div>
+
+                  </div>
+
+                </label>
+
+              </div>
+
+
+              <div class="payment-notice">
+                Online card payment is not enabled yet.
+                Do not enter card numbers or payment credentials on this page.
+              </div>
+
+            </form>
+
+          </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             SUMMARY
+             ======================================================== -->
+
+        <aside class="summary">
+
+          <div class="summary-title">
+            Your Order
+          </div>
+
+          <div
+            id="summaryItems"
+            class="summary-items"
+          ></div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Items
+            </span>
+
+            <span id="itemCount">
+              0
+            </span>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Subtotal
+            </span>
+
+            <span id="subtotal">
+              $0.00
+            </span>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Shipping
+            </span>
+
+            <span>
+              Calculated separately
+            </span>
+
+          </div>
+
+
+          <div class="summary-row total">
+
+            <span>
+              Total
+            </span>
+
+            <span id="total">
+              $0.00
+            </span>
+
+          </div>
+
+
+          <button
+            id="placeOrderButton"
+            type="button"
+            class="place-order-button"
+          >
+            Place Order
+          </button>
+
+
+          <div class="secure-note">
+            Your order details are stored locally until
+            an automated backend order/payment system is connected.
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         SUCCESS
+         ============================================================ -->
+
+    <section
+      id="successPanel"
+      class="success-panel"
+      style="display:none;"
+    >
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <div class="success-title">
+        Order Request Received
+      </div>
+
+      <div class="success-text">
+        Your order information has been saved successfully.
+        Your order reference is shown below.
+      </div>
+
+      <div
+        id="orderNumber"
+        class="order-number"
+      >
+        Order: —
+      </div>
+
+      <div class="success-actions">
+
+        <a
+          href="./index.html"
+          class="success-button primary"
+        >
+          Continue Shopping
+        </a>
 
         <a
           href="./cart.html"
-          class="header-link"
+          class="success-button secondary"
         >
-          🛒
-          <span>Cart</span>
-
-          <span
-            id="cartCount"
-            class="cart-badge"
-          >
-            0
-          </span>
+          View Cart
         </a>
 
       </div>
 
-    </div>
+    </section>
 
-  </header>
+  </div>
 
-  <!-- ============================================================
-       MAIN
-       ============================================================ -->
+</main>
 
-  <main class="page">
 
-    <div class="container">
+<div
+  id="toast"
+  class="toast"
+  role="status"
+  aria-live="polite"
+></div>
 
-      <div class="breadcrumb">
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div>
+
+        <div class="footer-brand">
+          Prasun<span>Store</span>
+        </div>
+
+        <div class="footer-text">
+          Practical products and useful solutions for technology,
+          home, lifestyle, solar energy and more.
+        </div>
+
+      </div>
+
+      <div class="footer-links">
 
         <a href="./index.html">
           Home
         </a>
 
-        <span>›</span>
-
         <a href="./cart.html">
           Cart
         </a>
 
-        <span>›</span>
-
-        <span>
-          Checkout
-        </span>
-
-      </div>
-
-      <!-- ========================================================
-           EMPTY CHECKOUT
-           ======================================================== -->
-
-      <section
-        id="emptyCheckout"
-        class="empty-checkout"
-        style="display: none;"
-      >
-
-        <div class="success-icon">
-          🛒
-        </div>
-
-        <div class="empty-title">
-          Your order is empty
-        </div>
-
-        <div class="empty-text">
-          Please add a product to your cart before checking out.
-        </div>
-
-        <a
-          href="./index.html#products"
-          class="shop-button"
-        >
-          Continue Shopping
-        </a>
-
-      </section>
-
-      <!-- ========================================================
-           CHECKOUT
-           ======================================================== -->
-
-      <section
-        id="checkoutContent"
-        style="display: none;"
-      >
-
-        <h1 class="page-title">
-          Checkout
-        </h1>
-
-        <div class="checkout-layout">
-
-          <!-- ====================================================
-               CUSTOMER INFORMATION
-               ==================================================== -->
-
-          <div>
-
-            <section class="panel">
-
-              <div class="panel-header">
-                Contact & Shipping Information
-              </div>
-
-              <div class="panel-body">
-
-                <form
-                  id="checkoutForm"
-                  novalidate
-                >
-
-                  <div class="form-grid">
-
-                    <!-- Name -->
-
-                    <div class="field">
-
-                      <label for="fullName">
-                        Full Name
-                        <span class="required">
-                          *
-                        </span>
-                      </label>
-
-                      <input
-                        id="fullName"
-                        name="fullName"
-                        type="text"
-                        autocomplete="name"
-                        placeholder="Your full name"
-                        required
-                      />
-
-                      <div
-                        id="fullNameError"
-                        class="field-error"
-                      >
-                        Please enter your full name.
-                      </div>
-
-                    </div>
-
-                    <!-- Email -->
-
-                    <div class="field">
-
-                      <label for="email">
-                        Email Address
-                        <span class="required">
-                          *
-                        </span>
-                      </label>
-
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        placeholder="you@example.com"
-                        required
-                      />
-
-                      <div
-                        id="emailError"
-                        class="field-error"
-                      >
-                        Please enter a valid email address.
-                      </div>
-
-                    </div>
-
-                    <!-- Phone -->
-
-                    <div class="field">
-
-                      <label for="phone">
-                        Phone Number
-                        <span class="required">
-                          *
-                        </span>
-                      </label>
-
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        autocomplete="tel"
-                        placeholder="+855..."
-                        required
-                      />
-
-                      <div
-                        id="phoneError"
-                        class="field-error"
-                      >
-                        Please enter a phone number.
-                      </div>
-
-                    </div>
-
-                    <!-- Country -->
-
-                    <div class="field">
-
-                      <label for="country">
-                        Country
-                        <span class="required">
-                          *
-                        </span>
-                      </label>
-
-                      <select
-                        id="country"
-                        name="country"
-                        autocomplete="country-name"
-                        required
-                      >
-
-                        <option value="">
-                          Select country
-                        </option>
-
-                        <option value="Cambodia">
-                          Cambodia
-                        </option>
-
-                        <option value="Bangladesh">
-                          Bangladesh
-                        </option>
-
-                        <option value="United States">
-                          United States
-                        </option>
-
-                        <option value="United Kingdom">
-                          United Kingdom
-                        </option>
-
-                        <option value="Canada">
-                          Canada
-                        </option>
-
-                        <option value="Australia">
-                          Australia
-                        </option>
-
-                        <option value="Germany">
-                          Germany
-                        </option>
-
-                        <option value="France">
-                          France
-                        </option>
-
-                        <option value="Italy">
-                          Italy
-                        </option>
-
-                        <option value="Spain">
-                          Spain
-                        </option>
-
-                        <option value="Netherlands">
-                          Netherlands
-                        </option>
-
-                        <option value="Singapore">
-                          Singapore
-                        </option>
-
-                        <option value="Malaysia">
-                          Malaysia
-                        </option>
-
-                        <option value="Thailand">
-                          Thailand
-                        </option>
-
-                        <option value="Vietnam">
-                          Vietnam
-                        </option>
-
-                        <option value="Philippines">
-                          Philippines
-                        </option>
-
-                        <option value="Indonesia">
-                          Indonesia
-                        </option>
-
-                        <option value="Other">
-                          Other
-                        </option>
-
-                      </select>
-
-                      <div
-                        id="countryError"
-                        class="field-error"
-                      >
-                        Please select your country.
-                      </div>
-
-                    </div>
-
-                    <!-- Address -->
-
-                    <div class="field full">
-
-                      <label for="address">
-                        Street Address
-                        <span class="required">
-                          *
-                        </span>
-                      </label>
-
-                      <input
-                        id="address"
-                        name="address"
-                        type="text"
-                        autocomplete="street-address"
-                        placeholder="Street, house/building number"
-                        required
-                      />
-
-                      <div
-                        id="addressError"
-                        class="field-error"
-                      >
-                        Please enter your address.
-                      </div>
-
-                    </div>
-
-                    <!-- City -->
-
-                    <div class="field">
-
-                      <label for="city">
-                        City
-                        <span class="required">
-                          *
-                        </span>
-                      </label>
-
-                      <input
-                        id="city"
-                        name="city"
-                        type="text"
-                        autocomplete="address-level2"
-                        placeholder="City"
-                        required
-                      />
-
-                      <div
-                        id="cityError"
-                        class="field-error"
-                      >
-                        Please enter your city.
-                      </div>
-
-                    </div>
-
-                    <!-- Postal -->
-
-                    <div class="field">
-
-                      <label for="postalCode">
-                        Postal Code
-                      </label>
-
-                      <input
-                        id="postalCode"
-                        name="postalCode"
-                        type="text"
-                        autocomplete="postal-code"
-                        placeholder="Postal code"
-                      />
-
-                    </div>
-
-                    <!-- State -->
-
-                    <div class="field full">
-
-                      <label for="state">
-                        State / Province / Region
-                      </label>
-
-                      <input
-                        id="state"
-                        name="state"
-                        type="text"
-                        autocomplete="address-level1"
-                        placeholder="State / Province / Region"
-                      />
-
-                    </div>
-
-                    <!-- Notes -->
-
-                    <div class="field full">
-
-                      <label for="orderNotes">
-                        Order Notes
-                      </label>
-
-                      <textarea
-                        id="orderNotes"
-                        name="orderNotes"
-                        placeholder="Optional delivery instructions or notes"
-                      ></textarea>
-
-                    </div>
-
-                  </div>
-
-                  <!-- ==================================================
-                       PAYMENT
-                       ================================================== -->
-
-                  <div class="divider"></div>
-
-                  <h2
-                    style="
-                      font-size: 18px;
-                      font-weight: 900;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Payment Method
-                  </h2>
-
-                  <div
-                    style="
-                      color: #6b7280;
-                      font-size: 13px;
-                    "
-                  >
-                    Select how you would like to pay.
-                  </div>
-
-                  <div
-                    id="paymentOptions"
-                    class="payment-options"
-                  >
-
-                    <label
-                      class="payment-option selected"
-                    >
-
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="cash_on_delivery"
-                        checked
-                      />
-
-                      <div>
-
-                        <div class="payment-name">
-                          Cash on Delivery
-                        </div>
-
-                        <div class="payment-description">
-                          Pay when your order is delivered, where available.
-                        </div>
-
-                      </div>
-
-                    </label>
-
-                    <label
-                      class="payment-option"
-                    >
-
-                      <input
-                        type="radio"
-                        name="paymentMethod"
-                        value="bank_transfer"
-                      />
-
-                      <div>
-
-                        <div class="payment-name">
-                          Bank Transfer
-                        </div>
-
-                        <div class="payment-description">
-                          Payment instructions can be provided after order submission.
-                        </div>
-
-                      </div>
-
-                    </label>
-
-                  </div>
-
-                  <div class="payment-notice">
-                    Online card payment is not enabled yet. Do not enter
-                    card numbers or payment credentials on this page.
-                  </div>
-
-                </form>
-
-              </div>
-
-            </section>
-
-          </div>
-
-          <!-- ====================================================
-               ORDER SUMMARY
-               ==================================================== -->
-
-          <aside class="summary">
-
-            <div class="summary-title">
-              Your Order
-            </div>
-
-            <div
-              id="summaryItems"
-              class="summary-items"
-            ></div>
-
-            <div class="summary-row">
-
-              <span>
-                Items
-              </span>
-
-              <span
-                id="itemCount"
-              >
-                0
-              </span>
-
-            </div>
-
-            <div class="summary-row">
-
-              <span>
-                Subtotal
-              </span>
-
-              <span
-                id="subtotal"
-              >
-                $0.00
-              </span>
-
-            </div>
-
-            <div class="summary-row">
-
-              <span>
-                Shipping
-              </span>
-
-              <span>
-                Calculated separately
-              </span>
-
-            </div>
-
-            <div class="summary-row total">
-
-              <span>
-                Total
-              </span>
-
-              <span
-                id="total"
-              >
-                $0.00
-              </span>
-
-            </div>
-
-            <button
-              id="placeOrderButton"
-              type="button"
-              class="place-order-button"
-            >
-              Place Order
-            </button>
-
-            <div class="secure-note">
-              Your order details stay in your browser until the
-              backend order system is connected.
-            </div>
-
-          </aside>
-
-        </div>
-
-      </section>
-
-      <!-- ========================================================
-           SUCCESS
-           ======================================================== -->
-
-      <section
-        id="successPanel"
-        class="success-panel"
-        style="display: none;"
-      >
-
-        <div class="success-icon">
-          ✓
-        </div>
-
-        <div class="success-title">
-          Order Request Received
-        </div>
-
-        <div class="success-text">
-          Your order information has been saved successfully on this
-          device. A real online payment/order-processing service still
-          needs to be connected to complete automated fulfillment.
-        </div>
-
-        <div
-          id="orderNumber"
-          class="order-number"
-        >
-          Order: —
-        </div>
-
-        <div class="success-actions">
-
-          <a
-            href="./index.html"
-            class="success-button primary"
-          >
-            Continue Shopping
-          </a>
-
-          <a
-            href="./cart.html"
-            class="success-button secondary"
-          >
-            View Cart
-          </a>
-
-        </div>
-
-      </section>
-
-    </div>
-
-  </main>
-
-  <div
-    id="toast"
-    class="toast"
-    role="status"
-    aria-live="polite"
-  ></div>
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-inner">
-
-        <div>
-
-          <div class="footer-brand">
-            Prasun<span>Store</span>
-          </div>
-
-          <div class="footer-text">
-            Practical products and useful solutions for technology,
-            home, lifestyle, solar energy and more.
-          </div>
-
-        </div>
-
-        <div class="footer-links">
-
-          <a href="./index.html">
-            Home
-          </a>
-
-          <a href="./cart.html">
-            Cart
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="copyright">
-        ©
-        <span id="currentYear"></span>
-        Prasun Store. All rights reserved.
       </div>
 
     </div>
 
-  </footer>
 
-  <script>
-    "use strict";
+    <div class="copyright">
 
-    /* ============================================================
-       CONFIGURATION
-       ============================================================ */
+      ©
+      <span id="currentYear"></span>
+      Prasun Store. All rights reserved.
 
-    const CART_STORAGE_KEY =
-      "prasun_cart";
+    </div>
 
-    const BUY_NOW_STORAGE_KEY =
-      "prasun_buy_now";
+  </div>
 
-    const ORDER_STORAGE_KEY =
-      "prasun_orders";
+</footer>
 
-    /* ============================================================
-       DOM
-       ============================================================ */
 
-    const checkoutContent =
-      document.getElementById(
-        "checkoutContent"
-      );
+<script>
 
-    const emptyCheckout =
-      document.getElementById(
-        "emptyCheckout"
-      );
+"use strict";
 
-    const successPanel =
-      document.getElementById(
-        "successPanel"
-      );
+/* ============================================================
+   STORAGE
+   ============================================================ */
 
-    const summaryItems =
-      document.getElementById(
-        "summaryItems"
-      );
+const CART_STORAGE_KEY =
+  "prasun_cart";
 
-    const itemCount =
-      document.getElementById(
-        "itemCount"
-      );
+const LEGACY_CART_KEY =
+  "cart";
 
-    const subtotal =
-      document.getElementById(
-        "subtotal"
-      );
+const BUY_NOW_STORAGE_KEY =
+  "prasun_buy_now";
 
-    const total =
-      document.getElementById(
-        "total"
-      );
+const LEGACY_BUY_NOW_KEY =
+  "buyNowItem";
 
-    const placeOrderButton =
-      document.getElementById(
-        "placeOrderButton"
-      );
+const ORDER_STORAGE_KEY =
+  "prasun_orders";
 
-    const checkoutForm =
-      document.getElementById(
-        "checkoutForm"
-      );
 
-    const cartCount =
-      document.getElementById(
-        "cartCount"
-      );
+/* ============================================================
+   DOM
+   ============================================================ */
 
-    const orderNumber =
-      document.getElementById(
-        "orderNumber"
-      );
+const checkoutContent =
+  document.getElementById(
+    "checkoutContent"
+  );
 
-    const toast =
-      document.getElementById(
-        "toast"
-      );
+const emptyCheckout =
+  document.getElementById(
+    "emptyCheckout"
+  );
 
-    document.getElementById(
-      "currentYear"
-    ).textContent =
+const successPanel =
+  document.getElementById(
+    "successPanel"
+  );
+
+const summaryItems =
+  document.getElementById(
+    "summaryItems"
+  );
+
+const itemCount =
+  document.getElementById(
+    "itemCount"
+  );
+
+const subtotal =
+  document.getElementById(
+    "subtotal"
+  );
+
+const total =
+  document.getElementById(
+    "total"
+  );
+
+const placeOrderButton =
+  document.getElementById(
+    "placeOrderButton"
+  );
+
+const checkoutForm =
+  document.getElementById(
+    "checkoutForm"
+  );
+
+const cartCount =
+  document.getElementById(
+    "cartCount"
+  );
+
+const orderNumber =
+  document.getElementById(
+    "orderNumber"
+  );
+
+const toast =
+  document.getElementById(
+    "toast"
+  );
+
+const currentYear =
+  document.getElementById(
+    "currentYear"
+  );
+
+
+/* ============================================================
+   STATE
+   ============================================================ */
+
+let checkoutItems = [];
+
+let toastTimer = null;
+
+
+/* ============================================================
+   INITIALIZATION
+   ============================================================ */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    currentYear.textContent =
       new Date().getFullYear();
 
-    /* ============================================================
-       STATE
-       ============================================================ */
+    setupPaymentOptions();
 
-    let checkoutItems = [];
+    loadCheckoutItems();
 
-    let toastTimer = null;
+    renderCheckout();
 
-    /* ============================================================
-       INITIALIZE
-       ============================================================ */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      () => {
-
-        setupPaymentOptions();
-
-        loadCheckoutItems();
-
-        renderCheckout();
-
-        placeOrderButton.addEventListener(
-          "click",
-          placeOrder
-        );
-      }
+    placeOrderButton.addEventListener(
+      "click",
+      placeOrder
     );
 
-    /* ============================================================
-       LOAD CHECKOUT ITEMS
-       ============================================================ */
+  }
+);
 
-    function loadCheckoutItems() {
 
-      /*
-       * Buy Now has priority.
-       */
-      try {
+/* ============================================================
+   LOAD CHECKOUT ITEMS
+   ============================================================ */
 
-        const buyNowRaw =
-          localStorage.getItem(
-            BUY_NOW_STORAGE_KEY
-          );
+function loadCheckoutItems() {
 
-        if (
-          buyNowRaw
-        ) {
+  /*
+   * 1. Support Buy Now from sessionStorage.
+   *    This matches the product.html implementation.
+   */
 
-          const buyNowItems =
-            JSON.parse(
-              buyNowRaw
-            );
+  try {
 
-          if (
-            Array.isArray(
-              buyNowItems
-            ) &&
-            buyNowItems.length
-          ) {
+    const sessionBuyNow =
+      sessionStorage.getItem(
+        BUY_NOW_STORAGE_KEY
+      );
 
-            checkoutItems =
-              sanitizeItems(
-                buyNowItems
-              );
-
-            return;
-          }
-        }
-
-      } catch (error) {
-
-        console.warn(
-          "Unable to load Buy Now data:",
-          error
-        );
-      }
-
-      /*
-       * Otherwise use the regular cart.
-       */
-      try {
-
-        const cartRaw =
-          localStorage.getItem(
-            CART_STORAGE_KEY
-          );
-
-        if (
-          cartRaw
-        ) {
-
-          const cart =
-            JSON.parse(
-              cartRaw
-            );
-
-          if (
-            Array.isArray(
-              cart
-            )
-          {
-
-            checkoutItems =
-              sanitizeItems(
-                cart
-              );
-
-            return;
-          }
-        }
-
-      } catch (error) {
-
-        console.warn(
-          "Unable to load cart:",
-          error
-        );
-      }
-
-      checkoutItems = [];
-    }
-
-    /* ============================================================
-       SANITIZE ITEMS
-       ============================================================ */
-
-    function sanitizeItems(
-      items
+    if (
+      sessionBuyNow
     ) {
 
-      return items
-        .filter(
-          item =>
-            item &&
-            item.product_id
-        )
-        .map(
-          item => ({
-
-            product_id:
-              String(
-                item.product_id
-              ),
-
-            sku_id:
-              String(
-                item.sku_id ||
-                item.product_id
-              ),
-
-            sku_attr:
-              String(
-                item.sku_attr ||
-                ""
-              ),
-
-            title:
-              String(
-                item.title ||
-                "Product"
-              ),
-
-            image:
-              String(
-                item.image ||
-                item.image_proxy ||
-                ""
-              ),
-
-            image_proxy:
-              String(
-                item.image_proxy ||
-                item.image ||
-                ""
-              ),
-
-            price:
-              normalizePrice(
-                item.price
-              ),
-
-            currency:
-              normalizeCurrency(
-                item.currency
-              ),
-
-            quantity:
-              normalizeQuantity(
-                item.quantity
-              ),
-
-            variants:
-              Array.isArray(
-                item.variants
-              )
-                ? item.variants
-                : [],
-
-            product_url:
-              String(
-                item.product_url ||
-                ""
-              )
-          })
+      const buyNowItem =
+        JSON.parse(
+          sessionBuyNow
         );
-    }
-
-    /* ============================================================
-       RENDER
-       ============================================================ */
-
-    function renderCheckout() {
-
-      updateCartCount();
 
       if (
-        !checkoutItems.length
+        buyNowItem &&
+        typeof buyNowItem === "object"
       ) {
 
-        checkoutContent.style.display =
-          "none";
-
-        emptyCheckout.style.display =
-          "block";
-
-        return;
-      }
-
-      emptyCheckout.style.display =
-        "none";
-
-      successPanel.style.display =
-        "none";
-
-      checkoutContent.style.display =
-        "block";
-
-      renderSummary();
-    }
-
-    /* ============================================================
-       SUMMARY
-       ============================================================ */
-
-    function renderSummary() {
-
-      summaryItems.innerHTML =
-        "";
-
-      let count = 0;
-
-      let subtotalValue = 0;
-
-      const fragment =
-        document.createDocumentFragment();
-
-      checkoutItems.forEach(
-        item => {
-
-          count +=
-            item.quantity;
-
-          subtotalValue +=
-            item.price *
-            item.quantity;
-
-          const wrapper =
-            document.createElement(
-              "div"
-            );
-
-          wrapper.className =
-            "summary-item";
-
-          const image =
-            document.createElement(
-              "img"
-            );
-
-          image.className =
-            "summary-image";
-
-          image.src =
-            item.image ||
-            item.image_proxy ||
-            "";
-
-          image.alt =
-            item.title;
-
-          image.addEventListener(
-            "error",
-            () => {
-
-              image.style.visibility =
-                "hidden";
-            },
-            { once: true }
+        checkoutItems =
+          sanitizeItems(
+            [buyNowItem]
           );
 
-          wrapper.appendChild(
-            image
-          );
-
-          const info =
-            document.createElement(
-              "div"
-            );
-
-          const title =
-            document.createElement(
-              "div"
-            );
-
-          title.className =
-            "summary-item-title";
-
-          title.textContent =
-            item.title;
-
-          info.appendChild(
-            title
-          );
-
-          const meta =
-            document.createElement(
-              "div"
-            );
-
-          meta.className =
-            "summary-item-meta";
-
-          meta.textContent =
-            `Qty: ${item.quantity}`;
-
-          info.appendChild(
-            meta
-          );
-
-          const price =
-            document.createElement(
-              "div"
-            );
-
-          price.className =
-            "summary-item-price";
-
-          price.textContent =
-            formatMoney(
-              item.price *
-                item.quantity,
-              item.currency
-            );
-
-          info.appendChild(
-            price
-          );
-
-          wrapper.appendChild(
-            info
-          );
-
-          fragment.appendChild(
-            wrapper
-          );
+        if (
+          checkoutItems.length
+        ) {
+          return;
         }
-      );
 
-      summaryItems.appendChild(
-        fragment
-      );
+      }
 
-      itemCount.textContent =
-        String(
-          count
-        );
-
-      const currency =
-        getCheckoutCurrency();
-
-      subtotal.textContent =
-        formatMoney(
-          subtotalValue,
-          currency
-        );
-
-      total.textContent =
-        formatMoney(
-          subtotalValue,
-          currency
-        );
     }
 
-    /* ============================================================
-       PAYMENT OPTIONS
-       ============================================================ */
+  } catch (error) {
 
-    function setupPaymentOptions() {
+    console.warn(
+      "Unable to read Buy Now session data:",
+      error
+    );
 
-      document
-        .querySelectorAll(
-          ".payment-option"
+  }
+
+
+  /*
+   * 2. Support old Buy Now localStorage.
+   */
+
+  try {
+
+    const localBuyNow =
+      localStorage.getItem(
+        BUY_NOW_STORAGE_KEY
+      ) ||
+      localStorage.getItem(
+        LEGACY_BUY_NOW_KEY
+      );
+
+    if (
+      localBuyNow
+    ) {
+
+      const buyNowItem =
+        JSON.parse(
+          localBuyNow
+        );
+
+      if (
+        buyNowItem &&
+        typeof buyNowItem === "object"
+      ) {
+
+        checkoutItems =
+          sanitizeItems(
+            [buyNowItem]
+          );
+
+        if (
+          checkoutItems.length
+        ) {
+          return;
+        }
+
+      }
+
+    }
+
+  } catch (error) {
+
+    console.warn(
+      "Unable to read old Buy Now data:",
+      error
+    );
+
+  }
+
+
+  /*
+   * 3. Normal shopping cart.
+   */
+
+  try {
+
+    let cartRaw =
+      localStorage.getItem(
+        CART_STORAGE_KEY
+      );
+
+    /*
+     * Fallback for legacy cart.
+     */
+
+    if (
+      !cartRaw
+    ) {
+
+      cartRaw =
+        localStorage.getItem(
+          LEGACY_CART_KEY
+        );
+
+      if (
+        cartRaw
+      ) {
+
+        localStorage.setItem(
+          CART_STORAGE_KEY,
+          cartRaw
+        );
+
+      }
+
+    }
+
+
+    if (
+      cartRaw
+    ) {
+
+      const cart =
+        JSON.parse(
+          cartRaw
+        );
+
+      if (
+        Array.isArray(cart)
+      ) {
+
+        checkoutItems =
+          sanitizeItems(
+            cart
+          );
+
+        return;
+
+      }
+
+    }
+
+  } catch (error) {
+
+    console.warn(
+      "Unable to read cart:",
+      error
+    );
+
+  }
+
+
+  checkoutItems = [];
+
+}
+
+
+/* ============================================================
+   SANITIZE ITEMS
+   ============================================================ */
+
+function sanitizeItems(
+  items
+) {
+
+  if (
+    !Array.isArray(items)
+  ) {
+    return [];
+  }
+
+  return items
+
+    .filter(
+      item =>
+        item &&
+        (
+          item.product_id ||
+          item.productId ||
+          item.id
         )
-        .forEach(
-          option => {
+    )
 
-            const radio =
-              option.querySelector(
-                "input[type=radio]"
-              );
+    .map(
+      item => {
 
-            if (!radio) {
-              return;
-            }
+        const productId =
+          String(
+            item.product_id ||
+            item.productId ||
+            item.id
+          );
 
-            radio.addEventListener(
-              "change",
-              () => {
+        const price =
+          normalizePrice(
+            item.price
+          );
 
-                document
-                  .querySelectorAll(
-                    ".payment-option"
-                  )
-                  .forEach(
-                    item =>
-                      item.classList.remove(
-                        "selected"
-                      )
-                  );
+        const currency =
+          normalizeCurrency(
+            item.currency
+          );
 
-                if (
-                  radio.checked
-                ) {
+        const quantity =
+          normalizeQuantity(
+            item.quantity
+          );
 
-                  option.classList.add(
-                    "selected"
-                  );
-                }
-              }
-            );
-          }
-        );
-    }
+        return {
 
-    /* ============================================================
-       PLACE ORDER
-       ============================================================ */
-
-    function placeOrder() {
-
-      clearValidation();
-
-      const validation =
-        validateCustomerForm();
-
-      if (
-        !validation.valid
-      ) {
-
-        showToast(
-          "Please complete the required fields."
-        );
-
-        validation.firstInvalid?.focus();
-
-        return;
-      }
-
-      if (
-        !checkoutItems.length
-      ) {
-
-        showToast(
-          "Your order is empty."
-        );
-
-        return;
-      }
-
-      const paymentMethod =
-        getPaymentMethod();
-
-      const subtotalValue =
-        calculateSubtotal();
-
-      const currency =
-        getCheckoutCurrency();
-
-      const customer =
-        {
-          full_name:
-            getValue(
-              "fullName"
+          id:
+            String(
+              item.id ||
+              `${productId}__default`
             ),
 
-          email:
-            getValue(
-              "email"
+          product_id:
+            productId,
+
+          sku:
+            String(
+              item.sku ||
+              ""
             ),
 
-          phone:
-            getValue(
-              "phone"
+          sku_id:
+            String(
+              item.sku_id ||
+              item.skuId ||
+              item.sku ||
+              ""
             ),
 
-          country:
-            getValue(
-              "country"
+          title:
+            String(
+              item.title ||
+              "Product"
             ),
 
-          address:
-            getValue(
-              "address"
+          image:
+            String(
+              item.image ||
+              item.image_proxy ||
+              ""
             ),
 
-          city:
-            getValue(
-              "city"
+          image_proxy:
+            String(
+              item.image_proxy ||
+              item.image ||
+              ""
             ),
 
-          state:
-            getValue(
-              "state"
-            ),
-
-          postal_code:
-            getValue(
-              "postalCode"
-            ),
-
-          notes:
-            getValue(
-              "orderNotes"
-            )
-        };
-
-      const orderId =
-        generateOrderId();
-
-      const order =
-        {
-          order_id:
-            orderId,
-
-          created_at:
-            new Date()
-              .toISOString(),
-
-          status:
-            "pending",
-
-          payment_method:
-            paymentMethod,
+          price:
+            price,
 
           currency:
             currency,
 
-          subtotal:
-            subtotalValue,
+          quantity:
+            quantity,
 
-          shipping:
-            0,
-
-          total:
-            subtotalValue,
-
-          customer:
-            customer,
-
-          items:
-            checkoutItems
-              .map(
-                item => ({
-                  ...item
-                })
-              )
-        };
-
-      saveOrder(
-        order
-      );
-
-      /*
-       * Clear Buy Now.
-       */
-      try {
-
-        localStorage.removeItem(
-          BUY_NOW_STORAGE_KEY
-        );
-
-      } catch {}
-
-      /*
-       * Clear the normal cart as well.
-       *
-       * In a production version, the backend should become
-       * the source of truth after successful payment/order creation.
-       */
-      try {
-
-        localStorage.removeItem(
-          CART_STORAGE_KEY
-        );
-
-      } catch {}
-
-      showSuccess(
-        order
-      );
-    }
-
-    /* ============================================================
-       VALIDATION
-       ============================================================ */
-
-    function validateCustomerForm() {
-
-      let valid = true;
-
-      let firstInvalid =
-        null;
-
-      const requiredFields =
-        [
-          {
-            id:
-              "fullName",
-
-            errorId:
-              "fullNameError",
-
-            check:
-              value =>
-                value.length >= 2,
-
-            message:
-              "Please enter your full name."
-          },
-
-          {
-            id:
-              "email",
-
-            errorId:
-              "emailError",
-
-            check:
-              value =>
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-                  value
+          variants:
+            Array.isArray(
+              item.variants
+            )
+              ? item.variants
+              : (
+                  Array.isArray(
+                    item.selected_properties
+                  )
+                    ? convertSelectedProperties(
+                        item.selected_properties
+                      )
+                    : []
                 ),
 
-            message:
-              "Please enter a valid email address."
-          },
+          selected_properties:
+            item.selected_properties &&
+            typeof item.selected_properties ===
+              "object"
+              ? item.selected_properties
+              : {},
 
-          {
-            id:
-              "phone",
+          variant:
+            item.variant ||
+            null,
 
-            errorId:
-              "phoneError",
-
-            check:
-              value =>
-                value.replace(
-                  /[\s()+\-]/g,
-                  ""
-                ).length >= 6,
-
-            message:
-              "Please enter a valid phone number."
-          },
-
-          {
-            id:
-              "country",
-
-            errorId:
-              "countryError",
-
-            check:
-              value =>
-                value.length > 0,
-
-            message:
-              "Please select your country."
-          },
-
-          {
-            id:
-              "address",
-
-            errorId:
-              "addressError",
-
-            check:
-              value =>
-                value.length >= 4,
-
-            message:
-              "Please enter your address."
-          },
-
-          {
-            id:
-              "city",
-
-            errorId:
-              "cityError",
-
-            check:
-              value =>
-                value.length >= 2,
-
-            message:
-              "Please enter your city."
-          }
-        ];
-
-      requiredFields.forEach(
-        field => {
-
-          const element =
-            document.getElementById(
-              field.id
-            );
-
-          const errorElement =
-            document.getElementById(
-              field.errorId
-            );
-
-          const value =
+          product_url:
             String(
-              element?.value ||
+              item.product_url ||
               ""
-            ).trim();
+            )
 
-          const passes =
-            field.check(
-              value
-            );
+        };
 
-          if (
-            !passes
-          ) {
+      }
+    );
 
-            valid = false;
+}
+
+
+/* ============================================================
+   SELECTED PROPERTY CONVERTER
+   ============================================================ */
+
+function convertSelectedProperties(
+  properties
+) {
+
+  if (
+    !properties ||
+    typeof properties !== "object"
+  ) {
+    return [];
+  }
+
+  return Object.entries(
+    properties
+  ).map(
+    (
+      [
+        group,
+        value
+      ]
+    ) => ({
+
+      group_name:
+        group,
+
+      value_name:
+        value
+
+    })
+  );
+
+}
+
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+
+function renderCheckout() {
+
+  updateCartCount();
+
+  if (
+    !checkoutItems.length
+  ) {
+
+    checkoutContent.style.display =
+      "none";
+
+    emptyCheckout.style.display =
+      "block";
+
+    successPanel.style.display =
+      "none";
+
+    return;
+
+  }
+
+
+  emptyCheckout.style.display =
+    "none";
+
+  successPanel.style.display =
+    "none";
+
+  checkoutContent.style.display =
+    "block";
+
+
+  renderSummary();
+
+}
+
+
+/* ============================================================
+   RENDER SUMMARY
+   ============================================================ */
+
+function renderSummary() {
+
+  summaryItems.innerHTML =
+    "";
+
+  let quantityTotal =
+    0;
+
+  let subtotalValue =
+    0;
+
+
+  const fragment =
+    document.createDocumentFragment();
+
+
+  checkoutItems.forEach(
+    item => {
+
+      quantityTotal +=
+        item.quantity;
+
+      subtotalValue +=
+        item.price *
+        item.quantity;
+
+
+      const wrapper =
+        document.createElement(
+          "div"
+        );
+
+      wrapper.className =
+        "summary-item";
+
+
+      const image =
+        document.createElement(
+          "img"
+        );
+
+      image.className =
+        "summary-image";
+
+      image.src =
+        item.image ||
+        item.image_proxy ||
+        "";
+
+      image.alt =
+        item.title;
+
+
+      image.addEventListener(
+        "error",
+        () => {
+
+          image.style.display =
+            "none";
+
+        },
+        { once: true }
+      );
+
+
+      wrapper.appendChild(
+        image
+      );
+
+
+      const info =
+        document.createElement(
+          "div"
+        );
+
+
+      const title =
+        document.createElement(
+          "div"
+        );
+
+      title.className =
+        "summary-item-title";
+
+      title.textContent =
+        item.title;
+
+      info.appendChild(
+        title
+      );
+
+
+      const variants =
+        formatVariants(
+          item.variants
+        );
+
+
+      const meta =
+        document.createElement(
+          "div"
+        );
+
+      meta.className =
+        "summary-item-meta";
+
+      meta.textContent =
+        variants
+          ? `Qty: ${item.quantity} • ${variants}`
+          : `Qty: ${item.quantity}`;
+
+      info.appendChild(
+        meta
+      );
+
+
+      const itemPrice =
+        document.createElement(
+          "div"
+        );
+
+      itemPrice.className =
+        "summary-item-price";
+
+      itemPrice.textContent =
+        formatMoney(
+          item.price *
+          item.quantity,
+          item.currency
+        );
+
+      info.appendChild(
+        itemPrice
+      );
+
+
+      wrapper.appendChild(
+        info
+      );
+
+      fragment.appendChild(
+        wrapper
+      );
+
+    }
+  );
+
+
+  summaryItems.appendChild(
+    fragment
+  );
+
+
+  itemCount.textContent =
+    String(
+      quantityTotal
+    );
+
+
+  const currency =
+    getCheckoutCurrency();
+
+
+  subtotal.textContent =
+    formatMoney(
+      subtotalValue,
+      currency
+    );
+
+
+  total.textContent =
+    formatMoney(
+      subtotalValue,
+      currency
+    );
+
+}
+
+
+/* ============================================================
+   VARIANT DISPLAY
+   ============================================================ */
+
+function formatVariants(
+  variants
+) {
+
+  if (
+    !Array.isArray(
+      variants
+    ) ||
+    !variants.length
+  ) {
+    return "";
+  }
+
+
+  return variants
+    .map(
+      property => {
+
+        const group =
+          property?.group_name ||
+          property?.groupName ||
+          property?.name ||
+          "";
+
+        const value =
+          property?.value_name ||
+          property?.valueName ||
+          property?.value ||
+          property?.display ||
+          "";
+
+        if (
+          group &&
+          value
+        ) {
+
+          return `${group}: ${value}`;
+
+        }
+
+        return value || group;
+
+      }
+    )
+    .filter(Boolean)
+    .join(
+      " • "
+    );
+
+}
+
+
+/* ============================================================
+   PAYMENT UI
+   ============================================================ */
+
+function setupPaymentOptions() {
+
+  document
+    .querySelectorAll(
+      ".payment-option"
+    )
+    .forEach(
+      option => {
+
+        const radio =
+          option.querySelector(
+            'input[type="radio"]'
+          );
+
+        if (
+          !radio
+        ) {
+          return;
+        }
+
+
+        radio.addEventListener(
+          "change",
+          () => {
+
+            document
+              .querySelectorAll(
+                ".payment-option"
+              )
+              .forEach(
+                item => {
+
+                  item.classList.remove(
+                    "selected"
+                  );
+
+                }
+              );
+
 
             if (
-              errorElement
+              radio.checked
             ) {
 
-              errorElement.textContent =
-                field.message;
+              option.classList.add(
+                "selected"
+              );
 
-              errorElement.style.display =
-                "block";
             }
 
-            element?.setAttribute(
+          }
+        );
+
+      }
+    );
+
+}
+
+
+/* ============================================================
+   PLACE ORDER
+   ============================================================ */
+
+function placeOrder() {
+
+  clearValidation();
+
+
+  const validation =
+    validateCustomerForm();
+
+
+  if (
+    !validation.valid
+  ) {
+
+    showToast(
+      "Please complete the required fields."
+    );
+
+
+    if (
+      validation.firstInvalid
+    ) {
+
+      validation.firstInvalid.focus();
+
+    }
+
+    return;
+  }
+
+
+  if (
+    !checkoutItems.length
+  ) {
+
+    showToast(
+      "Your cart is empty."
+    );
+
+    return;
+
+  }
+
+
+  const customer = {
+
+    full_name:
+      getValue(
+        "fullName"
+      ),
+
+    email:
+      getValue(
+        "email"
+      ),
+
+    phone:
+      getValue(
+        "phone"
+      ),
+
+    country:
+      getValue(
+        "country"
+      ),
+
+    address:
+      getValue(
+        "address"
+      ),
+
+    city:
+      getValue(
+        "city"
+      ),
+
+    state:
+      getValue(
+        "state"
+      ),
+
+    postal_code:
+      getValue(
+        "postalCode"
+      ),
+
+    notes:
+      getValue(
+        "orderNotes"
+      )
+
+  };
+
+
+  const paymentMethod =
+    getPaymentMethod();
+
+
+  const subtotalValue =
+    calculateSubtotal();
+
+
+  const currency =
+    getCheckoutCurrency();
+
+
+  const newOrder = {
+
+    order_id:
+      generateOrderId(),
+
+    created_at:
+      new Date().toISOString(),
+
+    status:
+      "pending",
+
+    payment_method:
+      paymentMethod,
+
+    currency:
+      currency,
+
+    subtotal:
+      subtotalValue,
+
+    shipping:
+      0,
+
+    total:
+      subtotalValue,
+
+    customer:
+      customer,
+
+    items:
+      checkoutItems.map(
+        item => ({
+          ...item
+        })
+      )
+
+  };
+
+
+  saveOrder(
+    newOrder
+  );
+
+
+  /*
+   * Clear normal cart after order.
+   */
+
+  try {
+
+    localStorage.removeItem(
+      CART_STORAGE_KEY
+    );
+
+    localStorage.removeItem(
+      LEGACY_CART_KEY
+    );
+
+  } catch {}
+
+
+  /*
+   * Clear Buy Now storage.
+   */
+
+  try {
+
+    sessionStorage.removeItem(
+      BUY_NOW_STORAGE_KEY
+    );
+
+  } catch {}
+
+
+  try {
+
+    localStorage.removeItem(
+      BUY_NOW_STORAGE_KEY
+    );
+
+    localStorage.removeItem(
+      LEGACY_BUY_NOW_KEY
+    );
+
+  } catch {}
+
+
+  showSuccess(
+    newOrder
+  );
+
+}
+
+
+/* ============================================================
+   VALIDATION
+   ============================================================ */
+
+function validateCustomerForm() {
+
+  let valid = true;
+
+  let firstInvalid = null;
+
+
+  const fields = [
+
+    {
+      id:
+        "fullName",
+
+      error:
+        "fullNameError",
+
+      test:
+        value =>
+          value.length >= 2,
+
+      message:
+        "Please enter your full name."
+    },
+
+    {
+      id:
+        "email",
+
+      error:
+        "emailError",
+
+      test:
+        value =>
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+            value
+          ),
+
+      message:
+        "Please enter a valid email address."
+    },
+
+    {
+      id:
+        "phone",
+
+      error:
+        "phoneError",
+
+      test:
+        value =>
+          value
+            .replace(
+              /[\s()+\-]/g,
+              ""
+            )
+            .length >= 6,
+
+      message:
+        "Please enter a valid phone number."
+    },
+
+    {
+      id:
+        "country",
+
+      error:
+        "countryError",
+
+      test:
+        value =>
+          value.length > 0,
+
+      message:
+        "Please select your country."
+    },
+
+    {
+      id:
+        "address",
+
+      error:
+        "addressError",
+
+      test:
+        value =>
+          value.length >= 4,
+
+      message:
+        "Please enter your address."
+    },
+
+    {
+      id:
+        "city",
+
+      error:
+        "cityError",
+
+      test:
+        value =>
+          value.length >= 2,
+
+      message:
+        "Please enter your city."
+    }
+
+  ];
+
+
+  fields.forEach(
+    field => {
+
+      const element =
+        document.getElementById(
+          field.id
+        );
+
+      const errorElement =
+        document.getElementById(
+          field.error
+        );
+
+      const value =
+        String(
+          element?.value ||
+          ""
+        ).trim();
+
+
+      if (
+        !field.test(
+          value
+        )
+      ) {
+
+        valid = false;
+
+
+        if (
+          errorElement
+        ) {
+
+          errorElement.textContent =
+            field.message;
+
+          errorElement.style.display =
+            "block";
+
+        }
+
+
+        if (
+          element
+        ) {
+
+          element.setAttribute(
+            "aria-invalid",
+            "true"
+          );
+
+          element
+            .closest(
+              ".field"
+            )
+            ?.setAttribute(
               "aria-invalid",
               "true"
             );
 
-            if (
-              !firstInvalid
-            ) {
-
-              firstInvalid =
-                element;
-            }
-
-          } else {
-
-            if (
-              errorElement
-            ) {
-
-              errorElement.style.display =
-                "none";
-            }
-
-            element?.removeAttribute(
-              "aria-invalid"
-            );
-          }
         }
-      );
 
-      return {
-        valid,
-        firstInvalid
-      };
-    }
 
-    function clearValidation() {
+        if (
+          !firstInvalid
+        ) {
 
-      document
-        .querySelectorAll(
-          ".field-error"
-        )
-        .forEach(
-          error => {
+          firstInvalid =
+            element;
 
-            error.style.display =
-              "none";
-          }
-        );
+        }
 
-      document
-        .querySelectorAll(
-          "[aria-invalid]"
-        )
-        .forEach(
-          element => {
+      } else {
 
-            element.removeAttribute(
-              "aria-invalid"
-            );
-          }
-        );
-    }
+        if (
+          errorElement
+        ) {
 
-    /* ============================================================
-       PAYMENT METHOD
-       ============================================================ */
+          errorElement.style.display =
+            "none";
 
-    function getPaymentMethod() {
+        }
 
-      const selected =
-        document.querySelector(
-          'input[name="paymentMethod"]:checked'
-        );
 
-      return (
-        selected?.value ||
-        "cash_on_delivery"
-      );
-    }
+        if (
+          element
+        ) {
 
-    /* ============================================================
-       SAVE ORDER
-       ============================================================ */
-
-    function saveOrder(
-      order
-    ) {
-
-      try {
-
-        const raw =
-          localStorage.getItem(
-            ORDER_STORAGE_KEY
+          element.removeAttribute(
+            "aria-invalid"
           );
 
-        let orders = [];
-
-        if (
-          raw
-        ) {
-
-          const parsed =
-            JSON.parse(
-              raw
-            );
-
-          if (
-            Array.isArray(
-              parsed
+          element
+            .closest(
+              ".field"
             )
-          ) {
-            orders =
-              parsed;
-          }
-        }
-
-        orders.push(
-          order
-        );
-
-        /*
-         * Keep local storage reasonably small.
-         */
-        if (
-          orders.length > 20
-        ) {
-
-          orders =
-            orders.slice(
-              -20
+            ?.removeAttribute(
+              "aria-invalid"
             );
+
         }
 
-        localStorage.setItem(
-          ORDER_STORAGE_KEY,
-          JSON.stringify(
-            orders
-          )
-        );
-
-      } catch (error) {
-
-        console.error(
-          "Unable to save local order:",
-          error
-        );
-
-        /*
-         * The visual success page can still be displayed,
-         * but tell the user the local save failed.
-         */
-        showToast(
-          "Order could not be saved locally."
-        );
       }
+
     }
+  );
 
-    /* ============================================================
-       SUCCESS
-       ============================================================ */
 
-    function showSuccess(
-      order
+  return {
+    valid,
+    firstInvalid
+  };
+
+}
+
+
+/* ============================================================
+   CLEAR VALIDATION
+   ============================================================ */
+
+function clearValidation() {
+
+  document
+    .querySelectorAll(
+      ".field-error"
+    )
+    .forEach(
+      element => {
+
+        element.style.display =
+          "none";
+
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      "[aria-invalid]"
+    )
+    .forEach(
+      element => {
+
+        element.removeAttribute(
+          "aria-invalid"
+        );
+
+      }
+    );
+
+}
+
+
+/* ============================================================
+   PAYMENT METHOD
+   ============================================================ */
+
+function getPaymentMethod() {
+
+  const selected =
+    document.querySelector(
+      'input[name="paymentMethod"]:checked'
+    );
+
+  return (
+    selected?.value ||
+    "cash_on_delivery"
+  );
+
+}
+
+
+/* ============================================================
+   SAVE ORDER
+   ============================================================ */
+
+function saveOrder(
+  order
+) {
+
+  try {
+
+    let orders = [];
+
+
+    const raw =
+      localStorage.getItem(
+        ORDER_STORAGE_KEY
+      );
+
+
+    if (
+      raw
     ) {
 
-      checkoutContent.style.display =
-        "none";
+      const parsed =
+        JSON.parse(
+          raw
+        );
 
-      emptyCheckout.style.display =
-        "none";
 
-      successPanel.style.display =
-        "block";
+      if (
+        Array.isArray(
+          parsed
+        )
+      ) {
 
-      orderNumber.textContent =
-        `Order: ${order.order_id}`;
+        orders =
+          parsed;
+
+      }
+
+    }
+
+
+    orders.push(
+      order
+    );
+
+
+    if (
+      orders.length > 50
+    ) {
+
+      orders =
+        orders.slice(
+          -50
+        );
+
+    }
+
+
+    localStorage.setItem(
+      ORDER_STORAGE_KEY,
+      JSON.stringify(
+        orders
+      )
+    );
+
+
+    return true;
+
+  } catch (error) {
+
+    console.error(
+      "Order save error:",
+      error
+    );
+
+    return false;
+
+  }
+
+}
+
+
+/* ============================================================
+   SUCCESS
+   ============================================================ */
+
+function showSuccess(
+  order
+) {
+
+  checkoutContent.style.display =
+    "none";
+
+  emptyCheckout.style.display =
+    "none";
+
+  successPanel.style.display =
+    "block";
+
+
+  orderNumber.textContent =
+    `Order: ${order.order_id}`;
+
+
+  cartCount.textContent =
+    "0";
+
+
+  window.scrollTo(
+    {
+      top: 0,
+      behavior: "smooth"
+    }
+  );
+
+}
+
+
+/* ============================================================
+   SUBTOTAL
+   ============================================================ */
+
+function calculateSubtotal() {
+
+  return checkoutItems.reduce(
+    (
+      sum,
+      item
+    ) => {
+
+      return (
+        sum +
+        (
+          normalizePrice(
+            item.price
+          ) *
+          normalizeQuantity(
+            item.quantity
+          )
+        )
+      );
+
+    },
+    0
+  );
+
+}
+
+
+/* ============================================================
+   CURRENCY
+   ============================================================ */
+
+function getCheckoutCurrency() {
+
+  const item =
+    checkoutItems.find(
+      item =>
+        item?.currency
+    );
+
+  return normalizeCurrency(
+    item?.currency
+  );
+
+}
+
+
+/* ============================================================
+   CART COUNT
+   ============================================================ */
+
+function updateCartCount() {
+
+  try {
+
+    let raw =
+      localStorage.getItem(
+        CART_STORAGE_KEY
+      );
+
+
+    if (
+      !raw
+    ) {
+
+      raw =
+        localStorage.getItem(
+          LEGACY_CART_KEY
+        );
+
+    }
+
+
+    if (
+      !raw
+    ) {
 
       cartCount.textContent =
         "0";
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      return;
     }
 
-    /* ============================================================
-       CALCULATIONS
-       ============================================================ */
 
-    function calculateSubtotal() {
+    const cart =
+      JSON.parse(
+        raw
+      );
 
-      return checkoutItems.reduce(
+
+    if (
+      !Array.isArray(
+        cart
+      )
+    ) {
+
+      cartCount.textContent =
+        "0";
+
+      return;
+
+    }
+
+
+    const count =
+      cart.reduce(
         (
           sum,
           item
@@ -2668,300 +2918,274 @@
 
           return (
             sum +
-            (
-              normalizePrice(
-                item.price
-              ) *
-              normalizeQuantity(
-                item.quantity
-              )
+            normalizeQuantity(
+              item.quantity
             )
           );
+
         },
         0
       );
-    }
 
-    function getCheckoutCurrency() {
 
-      const first =
-        checkoutItems.find(
-          item =>
-            item?.currency
-        );
-
-      return normalizeCurrency(
-        first?.currency
+    cartCount.textContent =
+      String(
+        count
       );
-    }
 
-    /* ============================================================
-       CART COUNT
-       ============================================================ */
+  } catch {
 
-    function updateCartCount() {
+    cartCount.textContent =
+      "0";
 
-      try {
+  }
 
-        const raw =
-          localStorage.getItem(
-            CART_STORAGE_KEY
-          );
+}
 
-        if (
-          !raw
-        ) {
 
-          cartCount.textContent =
-            "0";
+/* ============================================================
+   GET FORM VALUE
+   ============================================================ */
 
-          return;
-        }
+function getValue(
+  id
+) {
 
-        const cart =
-          JSON.parse(
-            raw
-          );
-
-        if (
-          !Array.isArray(
-            cart
-          )
-        ) {
-
-          cartCount.textContent =
-            "0";
-
-          return;
-        }
-
-        const totalQuantity =
-          cart.reduce(
-            (
-              sum,
-              item
-            ) => {
-
-              return (
-                sum +
-                normalizeQuantity(
-                  item.quantity
-                )
-              );
-            },
-            0
-          );
-
-        cartCount.textContent =
-          String(
-            totalQuantity
-          );
-
-      } catch {
-
-        cartCount.textContent =
-          "0";
-      }
-    }
-
-    /* ============================================================
-       VALUE
-       ============================================================ */
-
-    function getValue(
+  return String(
+    document.getElementById(
       id
-    ) {
+    )?.value ||
+    ""
+  ).trim();
 
-      const element =
-        document.getElementById(
-          id
-        );
+}
 
-      return String(
-        element?.value ||
+
+/* ============================================================
+   ORDER ID
+   ============================================================ */
+
+function generateOrderId() {
+
+  const now =
+    new Date();
+
+  const date =
+    now
+      .toISOString()
+      .replace(
+        /[-:.TZ]/g,
         ""
-      ).trim();
-    }
-
-    /* ============================================================
-       ORDER ID
-       ============================================================ */
-
-    function generateOrderId() {
-
-      const now =
-        new Date();
-
-      const stamp =
-        now
-          .toISOString()
-          .replace(
-            /[-:.TZ]/g,
-            ""
-          );
-
-      const random =
-        Math.floor(
-          1000 +
-          Math.random() *
-            9000
-        );
-
-      return `PRSN-${stamp.slice(
+      )
+      .slice(
         0,
         14
-      )}-${random}`;
-    }
-
-    /* ============================================================
-       HELPERS
-       ============================================================ */
-
-    function normalizeQuantity(
-      value
-    ) {
-
-      const number =
-        parseInt(
-          value,
-          10
-        );
-
-      if (
-        !Number.isFinite(
-          number
-        ) ||
-        number < 1
-      ) {
-        return 1;
-      }
-
-      return Math.min(
-        99,
-        number
       );
-    }
 
-    function normalizePrice(
-      value
-    ) {
+  const random =
+    Math.floor(
+      1000 +
+      Math.random() *
+      9000
+    );
 
-      const number =
-        Number(
-          value
-        );
+  return `PRSN-${date}-${random}`;
 
-      if (
-        !Number.isFinite(
-          number
-        ) ||
-        number < 0
-      ) {
-        return 0;
-      }
+}
 
-      return number;
-    }
 
-    function normalizeCurrency(
-      value
-    ) {
+/* ============================================================
+   NORMALIZE QUANTITY
+   ============================================================ */
 
-      const currency =
-        String(
-          value ||
-          "USD"
-        ).toUpperCase();
+function normalizeQuantity(
+  value
+) {
 
-      return /^[A-Z]{3}$/.test(
-        currency
-      )
-        ? currency
-        : "USD";
-    }
-
-    function formatMoney(
+  const number =
+    parseInt(
       value,
+      10
+    );
+
+
+  if (
+    !Number.isFinite(
+      number
+    ) ||
+    number < 1
+  ) {
+
+    return 1;
+
+  }
+
+
+  return Math.min(
+    99,
+    number
+  );
+
+}
+
+
+/* ============================================================
+   NORMALIZE PRICE
+   ============================================================ */
+
+function normalizePrice(
+  value
+) {
+
+  if (
+    value === null ||
+    value === undefined ||
+    value === ""
+  ) {
+
+    return 0;
+
+  }
+
+
+  const number =
+    Number(
+      value
+    );
+
+
+  return (
+    Number.isFinite(
+      number
+    ) &&
+    number >= 0
+  )
+    ? number
+    : 0;
+
+}
+
+
+/* ============================================================
+   NORMALIZE CURRENCY
+   ============================================================ */
+
+function normalizeCurrency(
+  value
+) {
+
+  const currency =
+    String(
+      value ||
+      "USD"
+    )
+      .toUpperCase()
+      .trim();
+
+
+  return /^[A-Z]{3}$/.test(
+    currency
+  )
+    ? currency
+    : "USD";
+
+}
+
+
+/* ============================================================
+   FORMAT MONEY
+   ============================================================ */
+
+function formatMoney(
+  value,
+  currency
+) {
+
+  const amount =
+    normalizePrice(
+      value
+    );
+
+  const safeCurrency =
+    normalizeCurrency(
       currency
-    ) {
+    );
 
-      const number =
-        normalizePrice(
-          value
-        );
 
-      const safeCurrency =
-        normalizeCurrency(
-          currency
-        );
+  try {
 
-      try {
+    return new Intl.NumberFormat(
+      "en-US",
+      {
+        style:
+          "currency",
 
-        return new Intl.NumberFormat(
-          "en-US",
-          {
-            style:
-              "currency",
+        currency:
+          safeCurrency,
 
-            currency:
-              safeCurrency,
+        minimumFractionDigits:
+          2,
 
-            minimumFractionDigits:
-              2,
-
-            maximumFractionDigits:
-              2
-          }
-        ).format(
-          number
-        );
-
-      } catch {
-
-        return `$${number.toFixed(
+        maximumFractionDigits:
           2
-        )}`;
       }
-    }
+    ).format(
+      amount
+    );
 
-    /* ============================================================
-       TOAST
-       ============================================================ */
+  } catch {
 
-    function showToast(
-      message
-    ) {
+    return `$${amount.toFixed(
+      2
+    )}`;
 
-      toast.textContent =
-        message;
+  }
 
-      toast.classList.add(
-        "show"
-      );
+}
 
-      if (
-        toastTimer
-      ) {
 
-        clearTimeout(
-          toastTimer
+/* ============================================================
+   TOAST
+   ============================================================ */
+
+function showToast(
+  message
+) {
+
+  toast.textContent =
+    message;
+
+  toast.classList.add(
+    "show"
+  );
+
+
+  if (
+    toastTimer
+  ) {
+
+    clearTimeout(
+      toastTimer
+    );
+
+  }
+
+
+  toastTimer =
+    setTimeout(
+      () => {
+
+        toast.classList.remove(
+          "show"
         );
-      }
 
-      toastTimer =
-        setTimeout(
-          () => {
+      },
+      2800
+    );
 
-            toast.classList.remove(
-              "show"
-            );
+}
 
-          },
-          2800
-        );
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
