@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Prasun Store – Smart Products at Great Prices</title>
+
   <meta
     name="description"
-    content="Prasun Store offers useful products across technology, home improvement, lifestyle, solar energy and more."
+    content="Discover useful products across technology, home improvement, lifestyle, solar energy and more at Prasun Store."
   />
+
   <meta
     name="keywords"
     content="prasun store, online shopping, technology products, home products, lifestyle products, solar energy products"
   />
-  <meta name="theme-color" content="#111827" />
+
+  <meta
+    name="theme-color"
+    content="#111827"
+  />
 
   <style>
     * {
@@ -56,7 +62,10 @@
     }
 
     .container {
-      width: min(1200px, calc(100% - 32px));
+      width: min(
+        1200px,
+        calc(100% - 32px)
+      );
       margin: 0 auto;
     }
 
@@ -68,7 +77,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(
+        255,
+        255,
+        255,
+        0.97
+      );
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #e5e7eb;
     }
@@ -85,7 +99,6 @@
       font-size: 24px;
       font-weight: 800;
       letter-spacing: -0.5px;
-      color: #111827;
     }
 
     .brand span {
@@ -96,7 +109,6 @@
       flex: 1;
       max-width: 620px;
       margin: 0 auto;
-      position: relative;
     }
 
     .search-form {
@@ -106,13 +118,19 @@
       border: 1px solid #e5e7eb;
       border-radius: 12px;
       overflow: hidden;
-      transition: 0.2s ease;
     }
 
     .search-form:focus-within {
-      background: #ffffff;
+      background: #fff;
       border-color: #93c5fd;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+      box-shadow:
+        0 0 0 4px
+        rgba(
+          37,
+          99,
+          235,
+          0.08
+        );
     }
 
     .search-input {
@@ -124,18 +142,13 @@
       color: #111827;
     }
 
-    .search-input::placeholder {
-      color: #9ca3af;
-    }
-
     .search-button {
       flex: 0 0 auto;
       border: 0;
       background: #111827;
-      color: #ffffff;
+      color: #fff;
       padding: 0 20px;
       font-weight: 700;
-      transition: 0.2s ease;
     }
 
     .search-button:hover {
@@ -146,7 +159,7 @@
       flex: 0 0 auto;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
     }
 
     .header-link {
@@ -158,7 +171,6 @@
       border-radius: 10px;
       color: #374151;
       font-weight: 700;
-      transition: 0.2s ease;
     }
 
     .header-link:hover {
@@ -167,15 +179,15 @@
     }
 
     .cart-badge {
-      min-width: 20px;
-      height: 20px;
+      min-width: 21px;
+      height: 21px;
       padding: 0 6px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 999px;
       background: #2563eb;
-      color: #ffffff;
+      color: #fff;
       font-size: 11px;
       font-weight: 800;
     }
@@ -187,13 +199,31 @@
     .hero {
       padding: 56px 0 32px;
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 35%),
-        radial-gradient(circle at top right, rgba(16, 185, 129, 0.10), transparent 30%);
+        radial-gradient(
+          circle at top left,
+          rgba(
+            37,
+            99,
+            235,
+            0.12
+          ),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(
+            16,
+            185,
+            129,
+            0.10
+          ),
+          transparent 30%
+        );
     }
 
     .hero-box {
       background: #111827;
-      color: #ffffff;
+      color: #fff;
       border-radius: 24px;
       padding: 48px;
       overflow: hidden;
@@ -208,7 +238,12 @@
       border-radius: 50%;
       right: -120px;
       top: -120px;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(
+        255,
+        255,
+        255,
+        0.06
+      );
     }
 
     .hero-content {
@@ -228,7 +263,12 @@
     }
 
     .hero h1 {
-      font-size: clamp(32px, 5vw, 58px);
+      font-size:
+        clamp(
+          32px,
+          5vw,
+          58px
+        );
       line-height: 1.05;
       letter-spacing: -1.5px;
       margin-bottom: 18px;
@@ -256,11 +296,10 @@
       border-radius: 10px;
       font-weight: 800;
       border: 1px solid transparent;
-      transition: 0.2s ease;
     }
 
     .hero-button.primary {
-      background: #ffffff;
+      background: #fff;
       color: #111827;
     }
 
@@ -270,16 +309,21 @@
 
     .hero-button.secondary {
       background: transparent;
-      color: #ffffff;
+      color: #fff;
       border-color: #4b5563;
     }
 
     .hero-button.secondary:hover {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(
+        255,
+        255,
+        255,
+        0.06
+      );
     }
 
     /* =========================
-       SECTION
+       PRODUCTS
        ========================= */
 
     .section {
@@ -312,76 +356,18 @@
       white-space: nowrap;
     }
 
-    /* =========================
-       STATES
-       ========================= */
-
-    .state-box {
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      background: #ffffff;
-      padding: 30px;
-    }
-
-    .spinner {
-      width: 42px;
-      height: 42px;
-      border: 4px solid #e5e7eb;
-      border-top-color: #2563eb;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin-bottom: 16px;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .state-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .state-text {
-      color: #6b7280;
-      max-width: 560px;
-    }
-
-    .retry-button {
-      margin-top: 18px;
-      border: 0;
-      border-radius: 10px;
-      background: #111827;
-      color: #ffffff;
-      padding: 11px 18px;
-      font-weight: 800;
-    }
-
-    .retry-button:hover {
-      background: #1f2937;
-    }
-
-    /* =========================
-       PRODUCT GRID
-       ========================= */
-
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns:
+        repeat(
+          4,
+          minmax(0, 1fr)
+        );
       gap: 20px;
     }
 
     .product-card {
-      background: #ffffff;
+      background: #fff;
       border: 1px solid #e5e7eb;
       border-radius: 18px;
       overflow: hidden;
@@ -397,7 +383,14 @@
     .product-card:hover {
       transform: translateY(-3px);
       border-color: #d1d5db;
-      box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+      box-shadow:
+        0 16px 40px
+        rgba(
+          17,
+          24,
+          39,
+          0.08
+        );
     }
 
     .product-image-wrap {
@@ -449,13 +442,13 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      flex-wrap: wrap;
       min-height: 20px;
       font-size: 13px;
     }
 
     .stars {
       color: #f59e0b;
-      letter-spacing: 0.5px;
     }
 
     .rating-number {
@@ -479,7 +472,6 @@
       font-size: 22px;
       line-height: 1.1;
       font-weight: 900;
-      color: #111827;
     }
 
     .price-old {
@@ -513,12 +505,11 @@
       border-radius: 9px;
       font-weight: 800;
       padding: 8px 10px;
-      transition: 0.2s ease;
     }
 
     .view-button {
       border: 1px solid #d1d5db;
-      background: #ffffff;
+      background: #fff;
       color: #111827;
     }
 
@@ -529,23 +520,77 @@
     .buy-button {
       border: 1px solid #2563eb;
       background: #2563eb;
-      color: #ffffff;
+      color: #fff;
     }
 
     .buy-button:hover {
       background: #1d4ed8;
-      border-color: #1d4ed8;
     }
 
     /* =========================
-       EMPTY SEARCH
+       STATES
+       ========================= */
+
+    .state-box {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      background: #fff;
+      padding: 30px;
+    }
+
+    .spinner {
+      width: 42px;
+      height: 42px;
+      border: 4px solid #e5e7eb;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation:
+        spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .state-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .state-text {
+      color: #6b7280;
+      max-width: 560px;
+    }
+
+    .retry-button {
+      margin-top: 18px;
+      border: 0;
+      border-radius: 10px;
+      background: #111827;
+      color: #fff;
+      padding: 11px 18px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       EMPTY
        ========================= */
 
     .empty-search {
       padding: 60px 20px;
       border: 1px dashed #d1d5db;
       border-radius: 18px;
-      background: #ffffff;
+      background: #fff;
       text-align: center;
     }
 
@@ -565,7 +610,7 @@
     footer {
       margin-top: 20px;
       background: #111827;
-      color: #ffffff;
+      color: #fff;
     }
 
     .footer-inner {
@@ -601,7 +646,7 @@
     }
 
     .footer-links a:hover {
-      color: #ffffff;
+      color: #fff;
     }
 
     .copyright {
@@ -616,12 +661,19 @@
        ========================= */
 
     @media (max-width: 1050px) {
+
       .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(
+            3,
+            minmax(0, 1fr)
+          );
       }
+
     }
 
     @media (max-width: 800px) {
+
       .header-inner {
         flex-wrap: wrap;
         padding: 12px 0;
@@ -647,17 +699,27 @@
       }
 
       .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
       }
 
       .footer-inner {
         flex-direction: column;
       }
+
     }
 
     @media (max-width: 540px) {
+
       .container {
-        width: min(100% - 20px, 1200px);
+        width:
+          min(
+            100% - 20px,
+            1200px
+          );
       }
 
       .header-actions {
@@ -666,10 +728,6 @@
 
       .header-link {
         padding: 8px;
-      }
-
-      .header-link .link-label {
-        display: none;
       }
 
       .hero {
@@ -694,27 +752,32 @@
         grid-template-columns: 1fr;
       }
 
-      .product-actions {
-        grid-template-columns: 1fr 1fr;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- HEADER -->
+
   <header class="top-header">
+
     <div class="container header-inner">
 
-      <a href="./index.html" class="brand" aria-label="Prasun Store home">
+      <a
+        href="./index.html"
+        class="brand"
+      >
         Prasun<span>Store</span>
       </a>
 
       <div class="search-wrap">
-        <form id="searchForm" class="search-form">
+
+        <form
+          id="searchForm"
+          class="search-form"
+        >
+
           <input
             id="searchInput"
             class="search-input"
@@ -723,41 +786,67 @@
             autocomplete="off"
             aria-label="Search products"
           />
+
           <button
-            id="searchButton"
-            class="search-button"
             type="submit"
+            class="search-button"
           >
             Search
           </button>
+
         </form>
+
       </div>
 
       <div class="header-actions">
-        <a href="#products" class="header-link">
-          <span>🛍️</span>
-          <span class="link-label">Products</span>
+
+        <a
+          href="#products"
+          class="header-link"
+        >
+          🛍️
+          <span class="link-label">
+            Products
+          </span>
         </a>
 
-        <a href="./cart.html" class="header-link" id="cartLink">
-          <span>🛒</span>
-          <span class="link-label">Cart</span>
-          <span class="cart-badge" id="cartCount">0</span>
+        <a
+          href="./cart.html"
+          class="header-link"
+        >
+          🛒
+          <span class="link-label">
+            Cart
+          </span>
+
+          <span
+            id="cartCount"
+            class="cart-badge"
+          >
+            0
+          </span>
+
         </a>
+
       </div>
 
     </div>
+
   </header>
 
-  <!-- =========================
-       HERO
-       ========================= -->
+
+  <!-- MAIN -->
+
   <main>
 
+    <!-- HERO -->
+
     <section class="hero">
+
       <div class="container">
 
         <div class="hero-box">
+
           <div class="hero-content">
 
             <div class="hero-kicker">
@@ -770,48 +859,79 @@
             </h1>
 
             <p>
-              Discover selected products across technology, home improvement,
+              Discover selected products across
+              technology, home improvement,
               lifestyle, solar energy and more.
             </p>
 
             <div class="hero-actions">
-              <a href="#products" class="hero-button primary">
+
+              <a
+                href="#products"
+                class="hero-button primary"
+              >
                 Shop Products
               </a>
 
-              <a href="#products" class="hero-button secondary">
+              <a
+                href="#products"
+                class="hero-button secondary"
+              >
                 Explore Store
               </a>
+
             </div>
 
           </div>
+
         </div>
 
       </div>
+
     </section>
 
-    <!-- =========================
-         PRODUCTS
-         ========================= -->
-    <section class="section" id="products">
+
+    <!-- PRODUCTS -->
+
+    <section
+      class="section"
+      id="products"
+    >
 
       <div class="container">
 
         <div class="section-head">
+
           <div>
-            <h2 class="section-title">Featured Products</h2>
+
+            <h2 class="section-title">
+              Featured Products
+            </h2>
+
             <p class="section-subtitle">
-              Browse products currently available in the store.
+              Browse products currently available
+              in the store.
             </p>
+
           </div>
 
-          <div class="product-count" id="productCount">
+          <div
+            id="productCount"
+            class="product-count"
+          >
             Loading...
           </div>
+
         </div>
 
-        <!-- Loading -->
-        <div id="loadingState" class="state-box">
+
+        <!-- LOADING -->
+
+        <div
+          id="loadingState"
+          class="state-box"
+        >
+
           <div class="spinner"></div>
 
           <div class="state-title">
@@ -819,50 +939,68 @@
           </div>
 
           <div class="state-text">
-            Please wait while we load the latest products from the store.
+            Please wait while we load the latest
+            products from the store.
           </div>
+
         </div>
 
-        <!-- Error -->
+
+        <!-- ERROR -->
+
         <div
           id="errorState"
           class="state-box"
-          style="display: none;"
+          style="display:none;"
         >
+
           <div class="state-title">
             Unable to load products
           </div>
 
-          <div class="state-text" id="errorMessage">
-            Something went wrong while loading the products.
+          <div
+            id="errorMessage"
+            class="state-text"
+          >
+            Something went wrong.
           </div>
 
           <button
             type="button"
-            class="retry-button"
             id="retryButton"
+            class="retry-button"
           >
             Try Again
           </button>
+
         </div>
 
-        <!-- Empty -->
+
+        <!-- EMPTY -->
+
         <div
           id="emptyState"
           class="empty-search"
-          style="display: none;"
+          style="display:none;"
         >
-          <h3>No products found</h3>
+
+          <h3>
+            No products found
+          </h3>
+
           <p>
-            Try another search or check back later for more products.
+            Try another search or check back later.
           </p>
+
         </div>
 
-        <!-- Product grid -->
+
+        <!-- PRODUCT GRID -->
+
         <div
           id="productGrid"
           class="product-grid"
-          style="display: none;"
+          style="display:none;"
         ></div>
 
       </div>
@@ -871,9 +1009,9 @@
 
   </main>
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
+
+  <!-- FOOTER -->
+
   <footer>
 
     <div class="container">
@@ -881,710 +1019,910 @@
       <div class="footer-inner">
 
         <div>
+
           <div class="footer-brand">
             Prasun<span>Store</span>
           </div>
 
           <div class="footer-text">
-            Practical products and useful solutions for technology,
-            home, lifestyle, solar energy and more.
+            Practical products and useful solutions
+            for technology, home, lifestyle,
+            solar energy and more.
           </div>
+
         </div>
 
         <div class="footer-links">
-          <a href="./index.html">Home</a>
-          <a href="#products">Products</a>
-          <a href="./cart.html">Cart</a>
+
+          <a href="./index.html">
+            Home
+          </a>
+
+          <a href="#products">
+            Products
+          </a>
+
+          <a href="./cart.html">
+            Cart
+          </a>
+
         </div>
 
       </div>
 
+
       <div class="copyright">
-        © <span id="currentYear"></span> Prasun Store. All rights reserved.
+
+        ©
+        <span id="currentYear"></span>
+        Prasun Store.
+        All rights reserved.
+
       </div>
 
     </div>
 
   </footer>
 
-  <script>
-    "use strict";
 
-    /* ============================================================
-       CONFIGURATION
-       ============================================================ */
+<script>
 
-    const API_BASE =
-      "https://prasun-store.prasun301.workers.dev";
+  "use strict";
 
-    const PRODUCTS_API =
-      `${API_BASE}/api/products`;
 
-    const CART_STORAGE_KEY =
-      "prasun_cart";
+  /* ============================================================
+     CONFIG
+     ============================================================ */
 
-    /* ============================================================
-       DOM
-       ============================================================ */
+  const API_BASE =
+    "https://prasun-store.prasun301.workers.dev";
 
-    const productGrid =
-      document.getElementById("productGrid");
+  const PRODUCTS_API =
+    `${API_BASE}/api/products`;
 
-    const loadingState =
-      document.getElementById("loadingState");
+  const CART_STORAGE_KEY =
+    "prasun_cart";
 
-    const errorState =
-      document.getElementById("errorState");
+  const LEGACY_CART_KEY =
+    "cart";
 
-    const emptyState =
-      document.getElementById("emptyState");
 
-    const errorMessage =
-      document.getElementById("errorMessage");
+  /* ============================================================
+     DOM
+     ============================================================ */
 
-    const retryButton =
-      document.getElementById("retryButton");
+  const productGrid =
+    document.getElementById(
+      "productGrid"
+    );
 
-    const productCount =
-      document.getElementById("productCount");
+  const loadingState =
+    document.getElementById(
+      "loadingState"
+    );
 
-    const searchForm =
-      document.getElementById("searchForm");
+  const errorState =
+    document.getElementById(
+      "errorState"
+    );
 
-    const searchInput =
-      document.getElementById("searchInput");
+  const emptyState =
+    document.getElementById(
+      "emptyState"
+    );
 
-    const cartCount =
-      document.getElementById("cartCount");
+  const errorMessage =
+    document.getElementById(
+      "errorMessage"
+    );
 
-    const currentYear =
-      document.getElementById("currentYear");
+  const retryButton =
+    document.getElementById(
+      "retryButton"
+    );
 
-    /* ============================================================
-       STATE
-       ============================================================ */
+  const productCount =
+    document.getElementById(
+      "productCount"
+    );
 
-    let allProducts = [];
+  const searchForm =
+    document.getElementById(
+      "searchForm"
+    );
 
-    let currentProducts = [];
+  const searchInput =
+    document.getElementById(
+      "searchInput"
+    );
 
-    /* ============================================================
-       INITIALIZATION
-       ============================================================ */
+  const cartCount =
+    document.getElementById(
+      "cartCount"
+    );
 
-    document.addEventListener("DOMContentLoaded", () => {
+  const currentYear =
+    document.getElementById(
+      "currentYear"
+    );
+
+
+  /* ============================================================
+     STATE
+     ============================================================ */
+
+  let allProducts = [];
+
+  let currentProducts = [];
+
+
+  /* ============================================================
+     INIT
+     ============================================================ */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
       currentYear.textContent =
         new Date().getFullYear();
+
+      migrateCart();
 
       updateCartCount();
 
       setupSearch();
 
       loadProducts();
-    });
 
-    /* ============================================================
-       LOAD PRODUCTS
-       ============================================================ */
+    }
+  );
 
-    async function loadProducts() {
-      showLoading();
 
-      try {
-        const response = await fetch(
+  /* ============================================================
+     LOAD PRODUCTS
+     ============================================================ */
+
+  async function loadProducts() {
+
+    showLoading();
+
+    try {
+
+      const response =
+        await fetch(
           PRODUCTS_API,
           {
             method: "GET",
             headers: {
-              "Accept": "application/json"
+              "Accept":
+                "application/json"
             },
             cache: "no-store"
           }
         );
 
-        let data = null;
 
-        try {
-          data = await response.json();
-        } catch (jsonError) {
-          throw new Error(
-            `Server returned invalid JSON (${response.status}).`
-          );
-        }
+      if (!response.ok) {
 
-        if (!response.ok) {
-          throw new Error(
-            data?.error ||
-            `Server error (${response.status}).`
-          );
-        }
-
-        /*
-         * Supported Worker response patterns:
-         *
-         * {
-         *   success: true,
-         *   products: [...]
-         * }
-         *
-         * OR
-         *
-         * {
-         *   data: [...]
-         * }
-         *
-         * OR
-         *
-         * [...]
-         */
-
-        const products =
-          extractProductArray(data);
-
-        allProducts =
-          normalizeProductList(products);
-
-        /*
-         * Sort newest/imported products first when
-         * the backend supplies a date. Otherwise preserve
-         * the Worker order.
-         */
-        allProducts =
-          sortProducts(allProducts);
-
-        currentProducts =
-          [...allProducts];
-
-        if (!allProducts.length) {
-          showEmpty();
-          updateProductCount(0);
-          return;
-        }
-
-        renderProducts(currentProducts);
-
-      } catch (error) {
-
-        console.error(
-          "Product loading error:",
-          error
+        throw new Error(
+          `Server returned ${response.status}.`
         );
 
-        const message =
-          error?.message ||
-          "Unable to load products right now.";
-
-        showError(message);
       }
+
+
+      const data =
+        await response.json();
+
+
+      const products =
+        extractProductArray(
+          data
+        );
+
+
+      allProducts =
+        normalizeProductList(
+          products
+        );
+
+
+      currentProducts =
+        [
+          ...allProducts
+        ];
+
+
+      if (
+        !allProducts.length
+      ) {
+
+        showEmpty();
+
+        updateProductCount(
+          0
+        );
+
+        return;
+
+      }
+
+
+      renderProducts(
+        currentProducts
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Product loading error:",
+        error
+      );
+
+      showError(
+        error?.message ||
+        "Unable to load products."
+      );
+
     }
 
-    /* ============================================================
-       EXTRACT PRODUCT ARRAY
-       ============================================================ */
+  }
 
-    function extractProductArray(data) {
 
-      if (Array.isArray(data)) {
-        return data;
-      }
+  /* ============================================================
+     EXTRACT ARRAY
+     ============================================================ */
 
-      if (Array.isArray(data?.products)) {
-        return data.products;
-      }
+  function extractProductArray(
+    data
+  ) {
 
-      if (Array.isArray(data?.data)) {
-        return data.data;
-      }
-
-      if (Array.isArray(data?.data?.products)) {
-        return data.data.products;
-      }
-
-      if (Array.isArray(data?.result)) {
-        return data.result;
-      }
-
-      if (Array.isArray(data?.result?.products)) {
-        return data.result.products;
-      }
-
-      return [];
+    if (
+      Array.isArray(data)
+    ) {
+      return data;
     }
 
-    /* ============================================================
-       NORMALIZE PRODUCT LIST
-       ============================================================ */
+    if (
+      Array.isArray(
+        data?.products
+      )
+    ) {
+      return data.products;
+    }
 
-    function normalizeProductList(products) {
+    if (
+      Array.isArray(
+        data?.data
+      )
+    ) {
+      return data.data;
+    }
 
-      return products
-        .filter(Boolean)
-        .map(product => {
+    if (
+      Array.isArray(
+        data?.data?.products
+      )
+    ) {
+      return data.data.products;
+    }
+
+    if (
+      Array.isArray(
+        data?.result
+      )
+    ) {
+      return data.result;
+    }
+
+    if (
+      Array.isArray(
+        data?.result?.products
+      )
+    ) {
+      return data.result.products;
+    }
+
+    return [];
+
+  }
+
+
+  /* ============================================================
+     NORMALIZE LIST
+     ============================================================ */
+
+  function normalizeProductList(
+    products
+  ) {
+
+    return products
+      .filter(Boolean)
+      .map(
+        product => {
 
           const id =
-            getProductId(product);
+            getProductId(
+              product
+            );
 
           const title =
             cleanText(
               product?.title ||
               product?.subject ||
+              product?.name ||
               "Product"
             );
 
           const image =
-            getPrimaryImage(product);
+            getPrimaryImage(
+              product
+            );
 
           const price =
-            getDisplayPrice(product);
+            getDisplayPrice(
+              product
+            );
 
           const originalPrice =
-            getOriginalPrice(product);
+            getOriginalPrice(
+              product
+            );
 
           const rating =
-            getRating(product);
+            getRating(
+              product
+            );
 
           const sales =
-            getSales(product);
+            getSales(
+              product
+            );
 
           const description =
             cleanText(
               product?.description ||
-              product?.detail ||
               product?.short_description ||
               product?.shortDescription ||
               ""
             );
 
           return {
+
             ...product,
-            _id: id,
-            _title: title,
-            _image: image,
-            _price: price,
-            _originalPrice: originalPrice,
-            _rating: rating,
-            _sales: sales,
-            _description: description
+
+            _id:
+              id,
+
+            _title:
+              title,
+
+            _image:
+              image,
+
+            _price:
+              price,
+
+            _originalPrice:
+              originalPrice,
+
+            _rating:
+              rating,
+
+            _sales:
+              sales,
+
+            _description:
+              description
+
           };
-        })
-        .filter(product => product._id);
+
+        }
+      )
+      .filter(
+        product =>
+          product._id
+      );
+
+  }
+
+
+  /* ============================================================
+     ID
+     ============================================================ */
+
+  function getProductId(
+    product
+  ) {
+
+    const value =
+      product?.product_id ??
+      product?.productId ??
+      product?.item_id ??
+      product?.itemId ??
+      product?.id;
+
+    if (
+      value === undefined ||
+      value === null ||
+      value === ""
+    ) {
+      return "";
     }
 
-    /* ============================================================
-       PRODUCT ID
-       ============================================================ */
+    return String(
+      value
+    ).trim();
 
-    function getProductId(product) {
+  }
 
-      const id =
-        product?.product_id ??
-        product?.productId ??
-        product?.itemId ??
-        product?.item_id ??
-        product?.id;
 
-      if (
-        id === null ||
-        id === undefined ||
-        id === ""
-      ) {
-        return "";
+  /* ============================================================
+     IMAGE
+     ============================================================ */
+
+  function getPrimaryImage(
+    product
+  ) {
+
+    const values = [
+
+      product?.image,
+
+      product?.image_url,
+
+      product?.imageUrl,
+
+      product?.main_image,
+
+      product?.mainImage,
+
+      product?.itemMainPic,
+
+      product?.item_main_pic
+
+    ];
+
+
+    for (
+      const value of values
+    ) {
+
+      const url =
+        normalizeImage(
+          value
+        );
+
+      if (url) {
+        return url;
       }
 
-      return String(id).trim();
     }
 
-    /* ============================================================
-       IMAGE
-       ============================================================ */
 
-    function getPrimaryImage(product) {
+    if (
+      Array.isArray(
+        product?.images
+      )
+    ) {
 
-      const possibleImages = [
-        product?.image,
-        product?.image_url,
-        product?.imageUrl,
-        product?.main_image,
-        product?.mainImage,
-        product?.itemMainPic,
-        product?.item_main_pic,
-        product?.image_proxy
-      ];
+      for (
+        const image of product.images
+      ) {
 
-      for (const value of possibleImages) {
-        const url = normalizeImageUrl(value);
+        const value =
+          typeof image === "string"
+            ? image
+            : (
+                image?.url ||
+                image?.image_url ||
+                image?.imageUrl ||
+                image?.src ||
+                image?.image
+              );
+
+        const url =
+          normalizeImage(
+            value
+          );
 
         if (url) {
           return url;
         }
+
       }
 
-      if (Array.isArray(product?.images)) {
-        for (const image of product.images) {
+    }
 
-          const url =
-            normalizeImageUrl(
-              typeof image === "string"
-                ? image
-                : image?.url ||
-                  image?.image_url ||
-                  image?.src ||
-                  image?.image
-            );
 
-          if (url) {
-            return url;
-          }
-        }
-      }
+    return "";
 
+  }
+
+
+  function normalizeImage(
+    value
+  ) {
+
+    if (!value) {
       return "";
     }
 
-    function normalizeImageUrl(value) {
+    let url =
+      String(value).trim();
 
-      if (!value) {
-        return "";
-      }
-
-      let url =
-        String(value).trim();
-
-      if (!url) {
-        return "";
-      }
-
-      /*
-       * Handle protocol-relative AliExpress image URLs.
-       */
-      if (url.startsWith("//")) {
-        url = `https:${url}`;
-      }
-
-      /*
-       * Convert escaped URL strings.
-       */
+    if (
+      url.startsWith("//")
+    ) {
       url =
-        url
-          .replace(/&amp;/gi, "&")
-          .replace(/\\\//g, "/");
-
-      return url;
+        `https:${url}`;
     }
 
-    /* ============================================================
-       PRICE
-       ============================================================ */
+    return url
+      .replace(
+        /&amp;/gi,
+        "&"
+      )
+      .replace(
+        /\\\//g,
+        "/"
+      );
 
-    function getDisplayPrice(product) {
+  }
 
-      const candidates = [
-        product?.min_price,
-        product?.sale_price,
-        product?.price,
-        product?.salePrice,
-        product?.targetSalePrice,
-        product?.price_min,
-        product?.low_price
-      ];
 
-      for (const value of candidates) {
+  /* ============================================================
+     PRICE
+     ============================================================ */
 
-        const number =
-          parseNumber(value);
+  function getDisplayPrice(
+    product
+  ) {
 
-        if (
-          number !== null &&
-          number >= 0
-        ) {
-          return number;
-        }
-      }
+    const values = [
 
-      /*
-       * Try nested price objects.
-       */
-      const nestedCandidates = [
-        product?.price_info?.sale_price,
-        product?.price_info?.min_price,
-        product?.priceInfo?.salePrice,
-        product?.priceInfo?.minPrice
-      ];
+      product?.min_price,
 
-      for (const value of nestedCandidates) {
+      product?.sale_price,
 
-        const number =
-          parseNumber(value);
+      product?.price,
 
-        if (
-          number !== null &&
-          number >= 0
-        ) {
-          return number;
-        }
-      }
+      product?.salePrice,
 
-      return 0;
-    }
+      product?.targetSalePrice,
 
-    function getOriginalPrice(product) {
+      product?.low_price
 
-      const candidates = [
-        product?.original_price,
-        product?.originalPrice,
-        product?.regular_price,
-        product?.targetOriginalPrice,
-        product?.price_max,
-        product?.old_price
-      ];
+    ];
 
-      for (const value of candidates) {
 
-        const number =
-          parseNumber(value);
-
-        if (
-          number !== null &&
-          number > 0
-        ) {
-          return number;
-        }
-      }
-
-      return 0;
-    }
-
-    function parseNumber(value) {
-
-      if (
-        value === null ||
-        value === undefined ||
-        value === ""
-      ) {
-        return null;
-      }
-
-      if (
-        typeof value === "number" &&
-        Number.isFinite(value)
-      ) {
-        return value;
-      }
-
-      const cleaned =
-        String(value)
-          .replace(/,/g, "")
-          .replace(/[^\d.-]/g, "");
-
-      if (!cleaned) {
-        return null;
-      }
+    for (
+      const value of values
+    ) {
 
       const number =
-        Number(cleaned);
+        parseNumber(
+          value
+        );
 
-      return Number.isFinite(number)
-        ? number
-        : null;
+      if (
+        number !== null &&
+        number >= 0
+      ) {
+        return number;
+      }
+
     }
 
-    /* ============================================================
-       RATING
-       ============================================================ */
+    return 0;
 
-    function getRating(product) {
+  }
 
-      const candidates = [
-        product?.rating,
-        product?.avg_rating,
-        product?.average_rating,
-        product?.avg_evaluation_rating,
-        product?.evaluateRate,
-        product?.score
-      ];
 
-      for (const value of candidates) {
+  function getOriginalPrice(
+    product
+  ) {
 
-        const number =
-          parseNumber(value);
+    const values = [
+
+      product?.original_price,
+
+      product?.originalPrice,
+
+      product?.regular_price,
+
+      product?.targetOriginalPrice,
+
+      product?.old_price
+
+    ];
+
+
+    for (
+      const value of values
+    ) {
+
+      const number =
+        parseNumber(
+          value
+        );
+
+      if (
+        number !== null &&
+        number > 0
+      ) {
+
+        return number;
+
+      }
+
+    }
+
+    return 0;
+
+  }
+
+
+  function parseNumber(
+    value
+  ) {
+
+    if (
+      value === null ||
+      value === undefined ||
+      value === ""
+    ) {
+      return null;
+    }
+
+    const cleaned =
+      String(value)
+        .replace(
+          /,/g,
+          ""
+        )
+        .replace(
+          /[^\d.-]/g,
+          ""
+        );
+
+    if (!cleaned) {
+      return null;
+    }
+
+    const number =
+      Number(
+        cleaned
+      );
+
+    return Number.isFinite(
+      number
+    )
+      ? number
+      : null;
+
+  }
+
+
+  /* ============================================================
+     RATING
+     ============================================================ */
+
+  function getRating(
+    product
+  ) {
+
+    const values = [
+
+      product?.rating,
+
+      product?.avg_rating,
+
+      product?.average_rating,
+
+      product?.avg_evaluation_rating,
+
+      product?.evaluateRate,
+
+      product?.score
+
+    ];
+
+
+    for (
+      const value of values
+    ) {
+
+      const number =
+        parseNumber(
+          value
+        );
+
+      if (
+        number !== null &&
+        number >= 0
+      ) {
 
         if (
-          number !== null &&
-          number >= 0
+          number > 5 &&
+          number <= 100
         ) {
-          /*
-           * Some source data may provide percentage-like
-           * rating values such as 95 rather than 4.8.
-           */
-          if (number > 5 && number <= 100) {
-            return Math.min(
-              5,
-              number / 20
-            );
-          }
 
           return Math.min(
             5,
-            number
+            number / 20
           );
+
         }
+
+        return Math.min(
+          5,
+          number
+        );
+
       }
 
-      return 0;
     }
 
-    /* ============================================================
-       SALES
-       ============================================================ */
+    return 0;
 
-    function getSales(product) {
+  }
 
-      const candidates = [
-        product?.sales,
-        product?.orders,
-        product?.order_count,
-        product?.sales_count,
-        product?.sold
-      ];
 
-      for (const value of candidates) {
+  /* ============================================================
+     SALES
+     ============================================================ */
 
-        const number =
-          parseNumber(value);
+  function getSales(
+    product
+  ) {
 
-        if (
-          number !== null &&
-          number >= 0
-        ) {
-          return number;
-        }
+    const values = [
+
+      product?.sales,
+
+      product?.orders,
+
+      product?.order_count,
+
+      product?.sales_count,
+
+      product?.sold
+
+    ];
+
+
+    for (
+      const value of values
+    ) {
+
+      const number =
+        parseNumber(
+          value
+        );
+
+      if (
+        number !== null &&
+        number >= 0
+      ) {
+        return number;
       }
 
-      return 0;
     }
 
-    /* ============================================================
-       SORT
-       ============================================================ */
+    return 0;
 
-    function sortProducts(products) {
+  }
 
-      return [...products].sort((a, b) => {
 
-        /*
-         * Preserve Worker order unless timestamps exist.
-         */
-        const dateA =
-          getTimestamp(a);
+  /* ============================================================
+     RENDER PRODUCTS
+     ============================================================ */
 
-        const dateB =
-          getTimestamp(b);
+  function renderProducts(
+    products
+  ) {
 
-        if (
-          dateA !== null &&
-          dateB !== null
-        ) {
-          return dateB - dateA;
-        }
+    hideStates();
 
-        if (
-          dateA !== null &&
-          dateB === null
-        ) {
-          return -1;
-        }
+    if (
+      !products.length
+    ) {
 
-        if (
-          dateA === null &&
-          dateB !== null
-        ) {
-          return 1;
-        }
+      productGrid.style.display =
+        "none";
 
-        return 0;
-      });
+      emptyState.style.display =
+        "block";
+
+      updateProductCount(
+        0
+      );
+
+      return;
     }
 
-    function getTimestamp(product) {
 
-      const value =
-        product?.updated_at ??
-        product?.updatedAt ??
-        product?.created_at ??
-        product?.createdAt ??
-        product?.imported_at ??
-        product?.importedAt;
+    productGrid.innerHTML =
+      "";
 
-      if (!value) {
-        return null;
+
+    const fragment =
+      document.createDocumentFragment();
+
+
+    products.forEach(
+      product => {
+
+        fragment.appendChild(
+          createProductCard(
+            product
+          )
+        );
+
       }
+    );
 
-      const timestamp =
-        new Date(value).getTime();
 
-      return Number.isFinite(timestamp)
-        ? timestamp
-        : null;
-    }
+    productGrid.appendChild(
+      fragment
+    );
 
-    /* ============================================================
-       RENDER
-       ============================================================ */
 
-    function renderProducts(products) {
+    productGrid.style.display =
+      "grid";
 
-      hideAllStates();
 
-      if (!products.length) {
-        productGrid.style.display = "none";
-        emptyState.style.display = "block";
-        updateProductCount(0);
-        return;
-      }
+    updateProductCount(
+      products.length
+    );
 
-      productGrid.innerHTML = "";
+  }
 
-      const fragment =
-        document.createDocumentFragment();
 
-      products.forEach(product => {
+  /* ============================================================
+     CREATE CARD
+     ============================================================ */
 
-        const card =
-          createProductCard(product);
+  function createProductCard(
+    product
+  ) {
 
-        fragment.appendChild(card);
-      });
+    const card =
+      document.createElement(
+        "article"
+      );
 
-      productGrid.appendChild(fragment);
+    card.className =
+      "product-card";
 
-      productGrid.style.display = "grid";
 
-      updateProductCount(products.length);
-    }
+    /* IMAGE */
 
-    /* ============================================================
-       CREATE PRODUCT CARD
-       ============================================================ */
+    const imageWrap =
+      document.createElement(
+        "div"
+      );
 
-    function createProductCard(product) {
+    imageWrap.className =
+      "product-image-wrap";
 
-      const card =
-        document.createElement("article");
 
-      card.className =
-        "product-card";
-
-      const imageWrap =
-        document.createElement("div");
-
-      imageWrap.className =
-        "product-image-wrap";
+    if (
+      product._image
+    ) {
 
       const image =
-        document.createElement("img");
+        document.createElement(
+          "img"
+        );
 
       image.className =
         "product-image";
+
+      image.src =
+        product._image;
 
       image.alt =
         product._title;
@@ -1595,767 +1933,934 @@
       image.decoding =
         "async";
 
-      if (product._image) {
+      image.referrerPolicy =
+        "no-referrer";
 
-        image.src =
-          product._image;
 
-        image.addEventListener(
-          "error",
-          () => {
-            imageWrap.innerHTML = "";
+      image.addEventListener(
+        "error",
+        () => {
 
-            const fallback =
-              document.createElement("div");
+          imageWrap.innerHTML =
+            "";
 
-            fallback.className =
-              "product-image-fallback";
-
-            fallback.textContent =
-              "Image unavailable";
-
-            imageWrap.appendChild(
-              fallback
+          const fallback =
+            document.createElement(
+              "div"
             );
-          },
-          { once: true }
-        );
 
-        imageWrap.appendChild(image);
+          fallback.className =
+            "product-image-fallback";
 
-      } else {
+          fallback.textContent =
+            "Image unavailable";
 
-        const fallback =
-          document.createElement("div");
-
-        fallback.className =
-          "product-image-fallback";
-
-        fallback.textContent =
-          "No image";
-
-        imageWrap.appendChild(
-          fallback
-        );
-      }
-
-      const body =
-        document.createElement("div");
-
-      body.className =
-        "product-body";
-
-      const title =
-        document.createElement("h3");
-
-      title.className =
-        "product-title";
-
-      title.textContent =
-        product._title;
-
-      body.appendChild(title);
-
-      /* Rating */
-      const ratingRow =
-        document.createElement("div");
-
-      ratingRow.className =
-        "product-rating";
-
-      if (product._rating > 0) {
-
-        const stars =
-          document.createElement("span");
-
-        stars.className =
-          "stars";
-
-        stars.textContent =
-          createStars(product._rating);
-
-        ratingRow.appendChild(stars);
-
-        const ratingNumber =
-          document.createElement("span");
-
-        ratingNumber.className =
-          "rating-number";
-
-        ratingNumber.textContent =
-          product._rating.toFixed(1);
-
-        ratingRow.appendChild(
-          ratingNumber
-        );
-
-      } else {
-
-        const noRating =
-          document.createElement("span");
-
-        noRating.className =
-          "sales";
-
-        noRating.textContent =
-          "No rating yet";
-
-        ratingRow.appendChild(
-          noRating
-        );
-      }
-
-      if (product._sales > 0) {
-
-        const sales =
-          document.createElement("span");
-
-        sales.className =
-          "sales";
-
-        sales.textContent =
-          `• ${formatSales(product._sales)} sold`;
-
-        ratingRow.appendChild(
-          sales
-        );
-      }
-
-      body.appendChild(
-        ratingRow
-      );
-
-      /* Price */
-      const priceRow =
-        document.createElement("div");
-
-      priceRow.className =
-        "product-price";
-
-      const currentPrice =
-        document.createElement("span");
-
-      currentPrice.className =
-        "price-current";
-
-      currentPrice.textContent =
-        formatPrice(product._price);
-
-      priceRow.appendChild(
-        currentPrice
-      );
-
-      if (
-        product._originalPrice > 0 &&
-        product._originalPrice >
-          product._price
-      ) {
-
-        const oldPrice =
-          document.createElement("span");
-
-        oldPrice.className =
-          "price-old";
-
-        oldPrice.textContent =
-          formatPrice(
-            product._originalPrice
+          imageWrap.appendChild(
+            fallback
           );
 
-        priceRow.appendChild(
-          oldPrice
-        );
-      }
-
-      body.appendChild(
-        priceRow
-      );
-
-      /* Description */
-      if (product._description) {
-
-        const description =
-          document.createElement("p");
-
-        description.className =
-          "product-description-preview";
-
-        description.textContent =
-          product._description;
-
-        body.appendChild(
-          description
-        );
-
-      } else {
-
-        /*
-         * Keep card spacing consistent when
-         * description isn't available.
-         */
-        const spacer =
-          document.createElement("div");
-
-        spacer.className =
-          "product-description-preview";
-
-        spacer.textContent =
-          "";
-
-        body.appendChild(
-          spacer
-        );
-      }
-
-      /* Buttons */
-      const actions =
-        document.createElement("div");
-
-      actions.className =
-        "product-actions";
-
-      const viewButton =
-        document.createElement("button");
-
-      viewButton.type =
-        "button";
-
-      viewButton.className =
-        "product-button view-button";
-
-      viewButton.textContent =
-        "View Product";
-
-      viewButton.addEventListener(
-        "click",
-        () => {
-          openProduct(product._id);
-        }
-      );
-
-      actions.appendChild(
-        viewButton
-      );
-
-      const buyButton =
-        document.createElement("button");
-
-      buyButton.type =
-        "button";
-
-      buyButton.className =
-        "product-button buy-button";
-
-      buyButton.textContent =
-        "Buy Now";
-
-      buyButton.addEventListener(
-        "click",
-        () => {
-          buyProduct(product._id);
-        }
-      );
-
-      actions.appendChild(
-        buyButton
-      );
-
-      body.appendChild(
-        actions
-      );
-
-      card.appendChild(
-        imageWrap
-      );
-
-      card.appendChild(
-        body
-      );
-
-      return card;
-    }
-
-    /* ============================================================
-       STARS
-       ============================================================ */
-
-    function createStars(rating) {
-
-      const rounded =
-        Math.round(rating);
-
-      let output = "";
-
-      for (
-        let i = 1;
-        i <= 5;
-        i++
-      ) {
-        output +=
-          i <= rounded
-            ? "★"
-            : "☆";
-      }
-
-      return output;
-    }
-
-    /* ============================================================
-       PRICE FORMAT
-       ============================================================ */
-
-    function formatPrice(price) {
-
-      const number =
-        Number(price);
-
-      if (
-        !Number.isFinite(number) ||
-        number < 0
-      ) {
-        return "Price unavailable";
-      }
-
-      /*
-       * Worker catalog is expected to return
-       * the target currency price.
-       *
-       * Using USD here because the current
-       * AliExpress Worker configuration targets
-       * USD unless another currency is returned
-       * by the Worker in the future.
-       */
-      return new Intl.NumberFormat(
-        "en-US",
+        },
         {
-          style: "currency",
-          currency: "USD",
-          minimumFractionDigits:
-            number >= 100
-              ? 2
-              : 2,
-          maximumFractionDigits: 2
+          once: true
         }
-      ).format(number);
-    }
-
-    /* ============================================================
-       SALES FORMAT
-       ============================================================ */
-
-    function formatSales(value) {
-
-      const number =
-        Number(value);
-
-      if (!Number.isFinite(number)) {
-        return "0";
-      }
-
-      if (number >= 1000000) {
-        return `${(
-          number / 1000000
-        ).toFixed(1)}M`;
-      }
-
-      if (number >= 1000) {
-        return `${(
-          number / 1000
-        ).toFixed(1)}K`;
-      }
-
-      return String(
-        Math.round(number)
       );
-    }
 
-    /* ============================================================
-       OPEN PRODUCT
-       ============================================================ */
 
-    function openProduct(productId) {
+      imageWrap.appendChild(
+        image
+      );
 
-      if (!productId) {
-        return;
-      }
+    } else {
 
-      const safeId =
-        encodeURIComponent(
-          String(productId)
+      const fallback =
+        document.createElement(
+          "div"
         );
 
-      window.location.href =
-        `./product.html?id=${safeId}`;
-    }
+      fallback.className =
+        "product-image-fallback";
 
-    /* ============================================================
-       BUY PRODUCT
-       ============================================================ */
+      fallback.textContent =
+        "No image";
 
-    function buyProduct(productId) {
-
-      /*
-       * The homepage does not know the product SKU or
-       * selected variant yet.
-       *
-       * Therefore Buy Now correctly opens the product page,
-       * where the customer can select the variant and
-       * proceed to checkout.
-       */
-      openProduct(productId);
-    }
-
-    /* ============================================================
-       SEARCH
-       ============================================================ */
-
-    function setupSearch() {
-
-      searchForm.addEventListener(
-        "submit",
-        event => {
-
-          event.preventDefault();
-
-          const query =
-            cleanText(
-              searchInput.value
-            ).toLowerCase();
-
-          /*
-           * Empty search = show all products.
-           */
-          if (!query) {
-
-            currentProducts =
-              [...allProducts];
-
-            renderProducts(
-              currentProducts
-            );
-
-            scrollToProducts();
-
-            return;
-          }
-
-          const filtered =
-            allProducts.filter(
-              product => {
-
-                const haystack =
-                  [
-                    product._title,
-                    product._description,
-                    product?.category_name,
-                    product?.categoryName,
-                    product?.category_id,
-                    product?.brand
-                  ]
-                    .filter(Boolean)
-                    .join(" ")
-                    .toLowerCase();
-
-                return haystack.includes(
-                  query
-                );
-              }
-            );
-
-          currentProducts =
-            filtered;
-
-          if (!filtered.length) {
-
-            productGrid.style.display =
-              "none";
-
-            loadingState.style.display =
-              "none";
-
-            errorState.style.display =
-              "none";
-
-            emptyState.style.display =
-              "block";
-
-            productCount.textContent =
-              "0 products";
-
-          } else {
-
-            renderProducts(
-              filtered
-            );
-          }
-
-          scrollToProducts();
-        }
+      imageWrap.appendChild(
+        fallback
       );
+
     }
 
-    /* ============================================================
-       CLEAR SEARCH WITH ESC
-       ============================================================ */
 
-    document.addEventListener(
-      "keydown",
+    /* BODY */
+
+    const body =
+      document.createElement(
+        "div"
+      );
+
+    body.className =
+      "product-body";
+
+
+    /* TITLE */
+
+    const title =
+      document.createElement(
+        "h3"
+      );
+
+    title.className =
+      "product-title";
+
+    title.textContent =
+      product._title;
+
+    body.appendChild(
+      title
+    );
+
+
+    /* RATING */
+
+    const rating =
+      document.createElement(
+        "div"
+      );
+
+    rating.className =
+      "product-rating";
+
+
+    if (
+      product._rating > 0
+    ) {
+
+      const stars =
+        document.createElement(
+          "span"
+        );
+
+      stars.className =
+        "stars";
+
+      stars.textContent =
+        createStars(
+          product._rating
+        );
+
+      rating.appendChild(
+        stars
+      );
+
+
+      const number =
+        document.createElement(
+          "span"
+        );
+
+      number.className =
+        "rating-number";
+
+      number.textContent =
+        product._rating.toFixed(
+          1
+        );
+
+      rating.appendChild(
+        number
+      );
+
+    } else {
+
+      const noRating =
+        document.createElement(
+          "span"
+        );
+
+      noRating.className =
+        "sales";
+
+      noRating.textContent =
+        "No rating yet";
+
+      rating.appendChild(
+        noRating
+      );
+
+    }
+
+
+    if (
+      product._sales > 0
+    ) {
+
+      const sales =
+        document.createElement(
+          "span"
+        );
+
+      sales.className =
+        "sales";
+
+      sales.textContent =
+        `• ${formatSales(
+          product._sales
+        )} sold`;
+
+      rating.appendChild(
+        sales
+      );
+
+    }
+
+
+    body.appendChild(
+      rating
+    );
+
+
+    /* PRICE */
+
+    const price =
+      document.createElement(
+        "div"
+      );
+
+    price.className =
+      "product-price";
+
+
+    const current =
+      document.createElement(
+        "span"
+      );
+
+    current.className =
+      "price-current";
+
+    current.textContent =
+      formatPrice(
+        product._price
+      );
+
+    price.appendChild(
+      current
+    );
+
+
+    if (
+      product._originalPrice >
+        product._price &&
+      product._originalPrice >
+        0
+    ) {
+
+      const old =
+        document.createElement(
+          "span"
+        );
+
+      old.className =
+        "price-old";
+
+      old.textContent =
+        formatPrice(
+          product._originalPrice
+        );
+
+      price.appendChild(
+        old
+      );
+
+    }
+
+
+    body.appendChild(
+      price
+    );
+
+
+    /* DESCRIPTION */
+
+    const description =
+      document.createElement(
+        "p"
+      );
+
+    description.className =
+      "product-description-preview";
+
+    description.textContent =
+      product._description ||
+      "";
+
+    body.appendChild(
+      description
+    );
+
+
+    /* ACTIONS */
+
+    const actions =
+      document.createElement(
+        "div"
+      );
+
+    actions.className =
+      "product-actions";
+
+
+    const view =
+      document.createElement(
+        "button"
+      );
+
+    view.type =
+      "button";
+
+    view.className =
+      "product-button view-button";
+
+    view.textContent =
+      "View Product";
+
+    view.addEventListener(
+      "click",
+      () =>
+        openProduct(
+          product._id
+        )
+    );
+
+
+    const buy =
+      document.createElement(
+        "button"
+      );
+
+    buy.type =
+      "button";
+
+    buy.className =
+      "product-button buy-button";
+
+    buy.textContent =
+      "Shop Now";
+
+    buy.addEventListener(
+      "click",
+      () =>
+        openProduct(
+          product._id
+        )
+    );
+
+
+    actions.appendChild(
+      view
+    );
+
+    actions.appendChild(
+      buy
+    );
+
+
+    body.appendChild(
+      actions
+    );
+
+
+    card.appendChild(
+      imageWrap
+    );
+
+    card.appendChild(
+      body
+    );
+
+
+    return card;
+
+  }
+
+
+  /* ============================================================
+     STARS
+     ============================================================ */
+
+  function createStars(
+    rating
+  ) {
+
+    const rounded =
+      Math.round(
+        rating
+      );
+
+    return (
+      "★".repeat(
+        rounded
+      ) +
+      "☆".repeat(
+        5 - rounded
+      )
+    );
+
+  }
+
+
+  /* ============================================================
+     PRICE
+     ============================================================ */
+
+  function formatPrice(
+    price
+  ) {
+
+    const number =
+      Number(
+        price
+      );
+
+    if (
+      !Number.isFinite(
+        number
+      )
+    ) {
+      return "Price unavailable";
+    }
+
+    return new Intl.NumberFormat(
+      "en-US",
+      {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    ).format(
+      number
+    );
+
+  }
+
+
+  /* ============================================================
+     SALES
+     ============================================================ */
+
+  function formatSales(
+    value
+  ) {
+
+    const number =
+      Number(
+        value
+      );
+
+    if (
+      !Number.isFinite(
+        number
+      )
+    ) {
+      return "0";
+    }
+
+    if (
+      number >= 1000000
+    ) {
+
+      return `${(
+        number / 1000000
+      ).toFixed(1)}M`;
+
+    }
+
+    if (
+      number >= 1000
+    ) {
+
+      return `${(
+        number / 1000
+      ).toFixed(1)}K`;
+
+    }
+
+    return String(
+      Math.round(
+        number
+      )
+    );
+
+  }
+
+
+  /* ============================================================
+     OPEN PRODUCT
+     ============================================================ */
+
+  function openProduct(
+    productId
+  ) {
+
+    if (!productId) {
+      return;
+    }
+
+    window.location.href =
+      `./product.html?id=${encodeURIComponent(
+        productId
+      )}`;
+
+  }
+
+
+  /* ============================================================
+     SEARCH
+     ============================================================ */
+
+  function setupSearch() {
+
+    searchForm.addEventListener(
+      "submit",
       event => {
 
-        if (
-          event.key === "Escape" &&
-          document.activeElement === searchInput
-        ) {
+        event.preventDefault();
 
-          searchInput.value = "";
+        const query =
+          cleanText(
+            searchInput.value
+          ).toLowerCase();
+
+
+        if (!query) {
 
           currentProducts =
-            [...allProducts];
+            [
+              ...allProducts
+            ];
 
           renderProducts(
             currentProducts
           );
+
+          scrollToProducts();
+
+          return;
+
         }
+
+
+        const filtered =
+          allProducts.filter(
+            product => {
+
+              const content =
+                [
+                  product._title,
+                  product._description,
+                  product?.category,
+                  product?.category_name,
+                  product?.categoryName,
+                  product?.brand
+                ]
+                  .filter(Boolean)
+                  .join(" ")
+                  .toLowerCase();
+
+              return content.includes(
+                query
+              );
+
+            }
+          );
+
+
+        currentProducts =
+          filtered;
+
+
+        renderProducts(
+          filtered
+        );
+
+
+        scrollToProducts();
+
       }
     );
 
-    /* ============================================================
-       SCROLL TO PRODUCTS
-       ============================================================ */
+  }
 
-    function scrollToProducts() {
 
-      const element =
-        document.getElementById(
-          "products"
+  /* ============================================================
+     CLEAR SEARCH
+     ============================================================ */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (
+        event.key === "Escape" &&
+        document.activeElement ===
+          searchInput
+      ) {
+
+        searchInput.value =
+          "";
+
+        currentProducts =
+          [
+            ...allProducts
+          ];
+
+        renderProducts(
+          currentProducts
         );
 
-      if (!element) {
+      }
+
+    }
+  );
+
+
+  /* ============================================================
+     SCROLL
+     ============================================================ */
+
+  function scrollToProducts() {
+
+    const section =
+      document.getElementById(
+        "products"
+      );
+
+    if (!section) {
+      return;
+    }
+
+    window.scrollTo(
+      {
+        top:
+          section.offsetTop - 80,
+        behavior:
+          "smooth"
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     CART MIGRATION
+     ============================================================ */
+
+  function migrateCart() {
+
+    try {
+
+      const current =
+        localStorage.getItem(
+          CART_STORAGE_KEY
+        );
+
+      if (current) {
         return;
       }
 
-      window.scrollTo({
-        top:
-          element.offsetTop - 80,
-        behavior: "smooth"
-      });
+
+      const legacy =
+        localStorage.getItem(
+          LEGACY_CART_KEY
+        );
+
+      if (legacy) {
+
+        localStorage.setItem(
+          CART_STORAGE_KEY,
+          legacy
+        );
+
+      }
+
+    } catch (error) {
+
+      console.warn(
+        "Cart migration failed:",
+        error
+      );
+
     }
 
-    /* ============================================================
-       CART COUNT
-       ============================================================ */
+  }
 
-    function updateCartCount() {
 
-      try {
+  /* ============================================================
+     CART COUNT
+     ============================================================ */
 
-        const raw =
-          localStorage.getItem(
-            CART_STORAGE_KEY
-          );
+  function updateCartCount() {
 
-        if (!raw) {
-          cartCount.textContent = "0";
-          return;
-        }
+    try {
 
-        const cart =
-          JSON.parse(raw);
-
-        if (!Array.isArray(cart)) {
-          cartCount.textContent = "0";
-          return;
-        }
-
-        const total =
-          cart.reduce(
-            (sum, item) => {
-
-              const quantity =
-                parseInt(
-                  item?.quantity ?? 1,
-                  10
-                );
-
-              return (
-                sum +
-                (
-                  Number.isFinite(
-                    quantity
-                  ) &&
-                  quantity > 0
-                    ? quantity
-                    : 1
-                )
-              );
-            },
-            0
-          );
-
-        cartCount.textContent =
-          String(total);
-
-      } catch (error) {
-
-        console.warn(
-          "Unable to read cart:",
-          error
+      let raw =
+        localStorage.getItem(
+          CART_STORAGE_KEY
         );
+
+
+      if (!raw) {
+
+        raw =
+          localStorage.getItem(
+            LEGACY_CART_KEY
+          );
+
+      }
+
+
+      if (!raw) {
 
         cartCount.textContent =
           "0";
-      }
-    }
 
-    /* ============================================================
-       UI STATES
-       ============================================================ */
-
-    function hideAllStates() {
-
-      loadingState.style.display =
-        "none";
-
-      errorState.style.display =
-        "none";
-
-      emptyState.style.display =
-        "none";
-    }
-
-    function showLoading() {
-
-      productGrid.style.display =
-        "none";
-
-      errorState.style.display =
-        "none";
-
-      emptyState.style.display =
-        "none";
-
-      loadingState.style.display =
-        "flex";
-
-      productCount.textContent =
-        "Loading...";
-    }
-
-    function showError(message) {
-
-      productGrid.style.display =
-        "none";
-
-      loadingState.style.display =
-        "none";
-
-      emptyState.style.display =
-        "none";
-
-      errorState.style.display =
-        "flex";
-
-      errorMessage.textContent =
-        message ||
-        "Unable to load products.";
-
-      productCount.textContent =
-        "Unavailable";
-    }
-
-    function showEmpty() {
-
-      productGrid.style.display =
-        "none";
-
-      loadingState.style.display =
-        "none";
-
-      errorState.style.display =
-        "none";
-
-      emptyState.style.display =
-        "block";
-    }
-
-    function updateProductCount(count) {
-
-      if (count === 1) {
-        productCount.textContent =
-          "1 product";
         return;
+
       }
 
-      productCount.textContent =
-        `${count} products`;
-    }
 
-    /* ============================================================
-       RETRY
-       ============================================================ */
+      const cart =
+        JSON.parse(
+          raw
+        );
 
-    retryButton.addEventListener(
-      "click",
-      () => {
-        loadProducts();
-      }
-    );
-
-    /* ============================================================
-       HELPERS
-       ============================================================ */
-
-    function cleanText(value) {
 
       if (
-        value === null ||
-        value === undefined
+        !Array.isArray(
+          cart
+        )
       ) {
-        return "";
+
+        cartCount.textContent =
+          "0";
+
+        return;
+
       }
 
-      let text =
-        String(value);
 
-      /*
-       * Remove HTML for the product-card preview.
-       * The full product page handles the complete description.
-       */
-      text =
-        text.replace(
-          /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
-          " "
+      const total =
+        cart.reduce(
+          (
+            sum,
+            item
+          ) => {
+
+            const quantity =
+              Number(
+                item?.quantity ||
+                1
+              );
+
+            return (
+              sum +
+              (
+                Number.isFinite(
+                  quantity
+                )
+                  ? Math.max(
+                      1,
+                      quantity
+                    )
+                  : 1
+              )
+            );
+
+          },
+          0
         );
 
-      text =
-        text.replace(
-          /<style[\s\S]*?>[\s\S]*?<\/style>/gi,
-          " "
+
+      cartCount.textContent =
+        String(
+          total
         );
 
-      text =
-        text.replace(
-          /<[^>]+>/g,
-          " "
-        );
+    } catch (error) {
 
-      const textarea =
-        document.createElement(
-          "textarea"
-        );
+      console.warn(
+        "Unable to read cart:",
+        error
+      );
 
-      textarea.innerHTML =
-        text;
+      cartCount.textContent =
+        "0";
 
-      text =
-        textarea.value;
-
-      return text
-        .replace(/\s+/g, " ")
-        .trim();
     }
 
-  </script>
+  }
+
+
+  /* ============================================================
+     UI STATES
+     ============================================================ */
+
+  function hideStates() {
+
+    loadingState.style.display =
+      "none";
+
+    errorState.style.display =
+      "none";
+
+    emptyState.style.display =
+      "none";
+
+  }
+
+
+  function showLoading() {
+
+    productGrid.style.display =
+      "none";
+
+    errorState.style.display =
+      "none";
+
+    emptyState.style.display =
+      "none";
+
+    loadingState.style.display =
+      "flex";
+
+    productCount.textContent =
+      "Loading...";
+
+  }
+
+
+  function showError(
+    message
+  ) {
+
+    productGrid.style.display =
+      "none";
+
+    loadingState.style.display =
+      "none";
+
+    emptyState.style.display =
+      "none";
+
+    errorState.style.display =
+      "flex";
+
+    errorMessage.textContent =
+      message;
+
+    productCount.textContent =
+      "Unavailable";
+
+  }
+
+
+  function showEmpty() {
+
+    productGrid.style.display =
+      "none";
+
+    loadingState.style.display =
+      "none";
+
+    errorState.style.display =
+      "none";
+
+    emptyState.style.display =
+      "block";
+
+  }
+
+
+  function updateProductCount(
+    count
+  ) {
+
+    productCount.textContent =
+      count === 1
+        ? "1 product"
+        : `${count} products`;
+
+  }
+
+
+  /* ============================================================
+     RETRY
+     ============================================================ */
+
+  retryButton.addEventListener(
+    "click",
+    () => {
+
+      loadProducts();
+
+    }
+  );
+
+
+  /* ============================================================
+     TEXT CLEANUP
+     ============================================================ */
+
+  function cleanText(
+    value
+  ) {
+
+    if (
+      value === null ||
+      value === undefined
+    ) {
+      return "";
+    }
+
+    let text =
+      String(value);
+
+    text =
+      text.replace(
+        /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
+        " "
+      );
+
+    text =
+      text.replace(
+        /<style[\s\S]*?>[\s\S]*?<\/style>/gi,
+        " "
+      );
+
+    text =
+      text.replace(
+        /<[^>]+>/g,
+        " "
+      );
+
+    const textarea =
+      document.createElement(
+        "textarea"
+      );
+
+    textarea.innerHTML =
+      text;
+
+    return textarea.value
+      .replace(
+        /\s+/g,
+        " "
+      )
+      .trim();
+
+  }
+
+</script>
 
 </body>
 </html>
