@@ -11,51 +11,38 @@
     content="Shop quality products at Prasun Store."
   />
 
-  <meta name="application-name" content="Prasun Store" />
-  <meta name="apple-mobile-web-app-title" content="Prasun Store" />
-  <meta name="theme-color" content="#111827" />
-
   <!-- ============================================================
-       FAVICON
+       FAVICON.IO
+       Upload these favicon.io files to the website root:
+       favicon.ico
+       favicon-16x16.png
+       favicon-32x32.png
+       apple-touch-icon.png
+       site.webmanifest
        ============================================================ -->
 
-  <link
-    rel="icon"
-    href="/favicon.ico?v=2"
-    type="image/x-icon"
-    sizes="any"
-  />
-
-  <link
-    rel="shortcut icon"
-    href="/favicon.ico?v=2"
-    type="image/x-icon"
-  />
-
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="/favicon-32x32.png?v=2"
+    href="/favicon-32x32.png"
   />
-
   <link
     rel="icon"
     type="image/png"
     sizes="16x16"
-    href="/favicon-16x16.png?v=2"
+    href="/favicon-16x16.png"
   />
-
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="/apple-touch-icon.png?v=2"
+    href="/apple-touch-icon.png"
   />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <link
-    rel="manifest"
-    href="/site.webmanifest?v=2"
-  />
+  <meta name="application-name" content="Prasun Store" />
+  <meta name="apple-mobile-web-app-title" content="Prasun Store" />
 
   <style>
     :root {
@@ -68,9 +55,6 @@
       --primary-hover: #000000;
       --success: #15803d;
       --danger: #dc2626;
-      --warning-bg: #fff7ed;
-      --warning-border: #fed7aa;
-      --warning-text: #9a3412;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       --radius: 16px;
     }
@@ -108,13 +92,6 @@
       font: inherit;
     }
 
-    button:focus-visible,
-    a:focus-visible,
-    input:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.25);
-      outline-offset: 2px;
-    }
-
     .container {
       width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
@@ -140,6 +117,10 @@
       gap: 20px;
     }
 
+    /*
+     * Brand
+     */
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -148,15 +129,17 @@
       font-weight: 800;
       letter-spacing: -0.02em;
       white-space: nowrap;
-      flex: 0 1 auto;
     }
 
     .brand-text {
       display: inline-block;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: var(--text);
     }
+
+    /*
+     * Header actions
+     */
 
     .header-actions {
       display: flex;
@@ -175,7 +158,6 @@
       border-radius: 10px;
       border: 1px solid var(--border);
       background: #fff;
-      color: var(--text);
       font-weight: 600;
       font-size: 14px;
       white-space: nowrap;
@@ -194,6 +176,10 @@
       transform: translateY(1px);
     }
 
+    /*
+     * Professional SVG icons
+     */
+
     .header-icon {
       width: 18px;
       height: 18px;
@@ -206,9 +192,9 @@
       stroke-linejoin: round;
     }
 
-    /* ============================================================
-       CART BADGE
-       ============================================================ */
+    /*
+     * Cart badge
+     */
 
     .cart-badge {
       min-width: 21px;
@@ -263,7 +249,7 @@
     }
 
     /* ============================================================
-       CARDS
+       GALLERY
        ============================================================ */
 
     .gallery-card,
@@ -274,10 +260,6 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-
-    /* ============================================================
-       GALLERY
-       ============================================================ */
 
     .gallery-card {
       padding: 18px;
@@ -327,9 +309,7 @@
 
     .gallery-thumb.active {
       border: 2px solid var(--primary);
-      box-shadow:
-        0 0 0 1px
-        rgba(17, 24, 39, 0.08);
+      box-shadow: 0 0 0 1px rgba(17, 24, 39, 0.08);
     }
 
     .gallery-thumb img {
@@ -352,7 +332,6 @@
       font-size: clamp(26px, 3vw, 38px);
       line-height: 1.15;
       letter-spacing: -0.025em;
-      overflow-wrap: anywhere;
     }
 
     .rating-row {
@@ -599,9 +578,9 @@
       margin-top: 14px;
       padding: 10px 12px;
       border-radius: 8px;
-      background: var(--warning-bg);
-      color: var(--warning-text);
-      border: 1px solid var(--warning-border);
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
       font-size: 13px;
       font-weight: 600;
     }
@@ -669,7 +648,6 @@
     }
 
     .description-content table {
-      width: 100%;
       max-width: 100%;
       border-collapse: collapse;
       overflow-x: auto;
@@ -683,7 +661,7 @@
     }
 
     /* ============================================================
-       LOADING
+       LOADING / ERROR
        ============================================================ */
 
     .loading {
@@ -693,13 +671,7 @@
       justify-content: center;
       font-weight: 700;
       color: var(--muted);
-      text-align: center;
-      padding: 20px;
     }
-
-    /* ============================================================
-       ERROR
-       ============================================================ */
 
     .error-box {
       margin: 30px auto;
@@ -714,10 +686,6 @@
 
     .error-box h2 {
       margin-top: 0;
-    }
-
-    .error-box .header-link {
-      margin-top: 10px;
     }
 
     /* ============================================================
@@ -736,6 +704,7 @@
        ============================================================ */
 
     @media (max-width: 560px) {
+
       .container {
         width: min(100% - 20px, 1200px);
       }
@@ -744,6 +713,10 @@
         min-height: 62px;
         gap: 10px;
       }
+
+      /*
+       * Keep Prasun Store visible on mobile.
+       */
 
       .brand {
         min-width: 0;
@@ -770,6 +743,10 @@
         width: 17px;
         height: 17px;
       }
+
+      /*
+       * Make Cart compact but keep the text visible.
+       */
 
       .cart-badge {
         min-width: 19px;
@@ -826,6 +803,7 @@
        ============================================================ */
 
     @media (max-width: 380px) {
+
       .header-inner {
         gap: 7px;
       }
@@ -857,23 +835,6 @@
         height: 18px;
       }
     }
-
-    /* ============================================================
-       REDUCED MOTION
-       ============================================================ */
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-      }
-    }
   </style>
 </head>
 
@@ -887,13 +848,15 @@
       class="brand"
       aria-label="Prasun Store home"
     >
-      <span class="brand-text">Prasun Store</span>
+      <span class="brand-text">
+        Prasun Store
+      </span>
     </a>
 
     <div class="header-actions">
 
       <a
-        href="./index.html#products"
+        href="./index.html"
         class="header-link"
         aria-label="Shop products"
       >
@@ -913,11 +876,14 @@
         <span>Shop</span>
       </a>
 
+
       <a
         href="./cart.html"
         class="header-link"
         aria-label="Shopping cart"
       >
+
+        <!-- Professional SVG cart icon -->
         <svg
           class="header-icon"
           viewBox="0 0 24 24"
@@ -933,10 +899,14 @@
         <span
           id="cartBadge"
           class="cart-badge"
-        >0</span>
+        >
+          0
+        </span>
+
       </a>
 
     </div>
+
   </div>
 </header>
 
@@ -952,10 +922,7 @@
     </div>
 
 
-    <div
-      id="loading"
-      class="loading"
-    >
+    <div id="loading" class="loading">
       Loading product...
     </div>
 
@@ -964,18 +931,22 @@
       id="errorBox"
       class="error-box hidden"
     >
-      <h2>Unable to load product</h2>
+
+      <h2>
+        Unable to load product
+      </h2>
 
       <p id="errorMessage">
         Something went wrong.
       </p>
 
       <a
-        href="./index.html#products"
+        href="./index.html"
         class="header-link"
       >
         Back to Store
       </a>
+
     </div>
 
 
@@ -983,6 +954,10 @@
       id="productSection"
       class="product-layout hidden"
     >
+
+      <!-- ======================================================
+           GALLERY
+           ====================================================== -->
 
       <div class="gallery-card">
 
@@ -1005,6 +980,10 @@
       </div>
 
 
+      <!-- ======================================================
+           PRODUCT INFORMATION
+           ====================================================== -->
+
       <div class="info-card">
 
         <h1
@@ -1020,7 +999,9 @@
           <span
             id="ratingStars"
             class="stars"
-          >☆☆☆☆☆</span>
+          >
+            ☆☆☆☆☆
+          </span>
 
           <span id="ratingText">
             No ratings
@@ -1045,11 +1026,19 @@
         </div>
 
 
+        <!-- ====================================================
+             VARIANTS
+             ==================================================== -->
+
         <div
           id="variantsContainer"
           class="variants hidden"
         ></div>
 
+
+        <!-- ====================================================
+             QUANTITY
+             ==================================================== -->
 
         <div class="quantity-row">
 
@@ -1063,7 +1052,9 @@
               type="button"
               id="quantityMinus"
               aria-label="Decrease quantity"
-            >−</button>
+            >
+              −
+            </button>
 
             <input
               id="quantityInput"
@@ -1078,12 +1069,18 @@
               type="button"
               id="quantityPlus"
               aria-label="Increase quantity"
-            >+</button>
+            >
+              +
+            </button>
 
           </div>
 
         </div>
 
+
+        <!-- ====================================================
+             ACTIONS
+             ==================================================== -->
 
         <div class="action-buttons">
 
@@ -1112,6 +1109,10 @@
         ></div>
 
 
+        <!-- ====================================================
+             QUICK INFO
+             ==================================================== -->
+
         <div class="quick-info">
 
           <div class="quick-info-row">
@@ -1136,6 +1137,10 @@
     </section>
 
 
+    <!-- ========================================================
+         DESCRIPTION
+         ======================================================== -->
+
     <section
       id="descriptionCard"
       class="description-card hidden"
@@ -1158,7 +1163,9 @@
 
 
 <script>
+
 "use strict";
+
 
 /* ============================================================
    CONFIGURATION
@@ -1173,20 +1180,23 @@ const CART_STORAGE_KEY =
 const LEGACY_CART_KEY =
   "cart";
 
-const BUY_NOW_KEY =
-  "buyNowItem";
-
 
 /* ============================================================
    STATE
    ============================================================ */
 
 let product = null;
+
 let normalizedSkus = [];
+
 let selectedProperties = {};
+
 let selectedSku = null;
+
 let quantity = 1;
+
 let galleryImages = [];
+
 let currentImageIndex = 0;
 
 
@@ -1294,36 +1304,6 @@ function toNumber(
   fallback = 0
 ) {
 
-  if (
-    typeof value === "number" &&
-    Number.isFinite(value)
-  ) {
-    return value;
-  }
-
-  if (
-    typeof value === "string"
-  ) {
-
-    const cleaned =
-      value
-        .replace(/,/g, "")
-        .replace(/[^\d.-]/g, "")
-        .trim();
-
-    if (!cleaned) {
-      return fallback;
-    }
-
-    const parsed =
-      Number(cleaned);
-
-    return Number.isFinite(parsed)
-      ? parsed
-      : fallback;
-
-  }
-
   const number =
     Number(value);
 
@@ -1356,11 +1336,6 @@ function formatPrice(
       0
     );
 
-  const normalizedCurrency =
-    String(
-      currency || "USD"
-    ).toUpperCase();
-
   try {
 
     return new Intl.NumberFormat(
@@ -1368,7 +1343,7 @@ function formatPrice(
       {
         style: "currency",
         currency:
-          normalizedCurrency
+          currency || "USD"
       }
     ).format(amount);
 
@@ -1381,22 +1356,8 @@ function formatPrice(
 }
 
 
-function safeString(value) {
-
-  if (
-    value === undefined ||
-    value === null
-  ) {
-    return "";
-  }
-
-  return String(value).trim();
-
-}
-
-
 /* ============================================================
-   PRODUCT ID
+   GET PRODUCT ID
    ============================================================ */
 
 function getProductId() {
@@ -1406,100 +1367,12 @@ function getProductId() {
       window.location.search
     );
 
-  return safeString(
-    firstNonEmpty(
-      params.get("id"),
-      params.get("product_id"),
-      params.get("productId"),
-      params.get("item_id"),
-      params.get("itemId")
-    )
+  return (
+    params.get("id") ||
+    params.get("product_id") ||
+    params.get("productId") ||
+    params.get("sku")
   );
-
-}
-
-
-/* ============================================================
-   DEEP PRODUCT RESPONSE EXTRACTION
-   ============================================================ */
-
-function extractProductObject(raw) {
-
-  if (!raw) {
-    return null;
-  }
-
-  if (
-    typeof raw !== "object"
-  ) {
-    return null;
-  }
-
-  const candidates = [
-
-    raw.product,
-
-    raw.productData,
-
-    raw.product_data,
-
-    raw.item,
-
-    raw.data?.product,
-
-    raw.data?.productData,
-
-    raw.data?.product_data,
-
-    raw.data?.item,
-
-    raw.result?.product,
-
-    raw.result?.productData,
-
-    raw.result?.product_data,
-
-    raw.result?.item,
-
-    raw.data,
-
-    raw.result,
-
-    raw
-
-  ];
-
-  for (
-    const candidate of candidates
-  ) {
-
-    if (
-      candidate &&
-      typeof candidate === "object" &&
-      !Array.isArray(candidate)
-    ) {
-
-      const hasProductFields =
-        candidate.id ||
-        candidate.product_id ||
-        candidate.productId ||
-        candidate.title ||
-        candidate.name ||
-        candidate.subject ||
-        candidate.skus ||
-        candidate.images;
-
-      if (
-        hasProductFields
-      ) {
-        return candidate;
-      }
-
-    }
-
-  }
-
-  return null;
 
 }
 
@@ -1510,226 +1383,116 @@ function extractProductObject(raw) {
 
 function normalizeProduct(raw) {
 
-  const data =
-    extractProductObject(
-      raw
-    );
-
-  if (!data) {
+  if (!raw) {
     return null;
   }
 
-  const title =
-    firstNonEmpty(
-      data.title,
-      data.product_title,
-      data.productTitle,
-      data.subject,
-      data.name,
-      data.item_title,
-      data.itemTitle,
-      "Product"
-    );
-
-
-  const price =
-    firstNonEmpty(
-      data.price,
-      data.sale_price,
-      data.salePrice,
-      data.current_price,
-      data.currentPrice,
-      data.min_price,
-      data.minPrice,
-      data.offer_price,
-      data.offerPrice,
-      data.cost,
-      0
-    );
-
-
-  const currency =
-    firstNonEmpty(
-      data.currency,
-      data.target_currency,
-      data.targetCurrency,
-      data.price_currency,
-      data.priceCurrency,
-      "USD"
-    );
-
-
-  const rating =
-    firstNonEmpty(
-      data.rating,
-      data.average_rating,
-      data.averageRating,
-      data.star_rating,
-      data.starRating,
-      data.score
-    );
-
-
-  const reviewCount =
-    firstNonEmpty(
-      data.review_count,
-      data.reviewCount,
-      data.rating_count,
-      data.ratingCount,
-      data.reviews,
-      data.review_num,
-      data.reviewNum
-    );
-
-
-  const stock =
-    firstNonEmpty(
-      data.stock,
-      data.inventory,
-      data.quantity,
-      data.total_stock,
-      data.totalStock,
-      data.available_quantity,
-      data.availableQuantity
-    );
-
-
-  const sku =
-    firstNonEmpty(
-      data.sku,
-      data.product_sku,
-      data.productSku,
-      data.item_sku,
-      data.itemSku,
-      data.sku_code,
-      data.skuCode
-    );
-
-
-  const description =
-    firstNonEmpty(
-      data.description_html,
-      data.descriptionHtml,
-      data.description,
-      data.product_description,
-      data.productDescription,
-      data.detail,
-      data.details,
-      data.content,
-      ""
-    );
-
-
-  let images =
-    firstNonEmpty(
-      data.images,
-      data.image_urls,
-      data.imageUrls,
-      data.gallery,
-      data.gallery_images,
-      data.galleryImages,
-      data.image_list,
-      data.imageList,
-      data.photos
-    );
-
-
-  if (
-    !Array.isArray(images)
-  ) {
-
-    images = [
-
-      firstNonEmpty(
-        data.image,
-        data.image_url,
-        data.imageUrl,
-        data.main_image,
-        data.mainImage,
-        data.thumbnail,
-        data.thumb
-      )
-
-    ].filter(Boolean);
-
-  }
-
-
-  const skus =
-    firstNonEmpty(
-      data.skus,
-      data.sku_list,
-      data.skuList,
-      data.variants,
-      data.variant_list,
-      data.variantList,
-      data.sku_array,
-      data.skuArray,
-      []
-    );
-
+  const data =
+    raw.product ||
+    raw.data ||
+    raw.result ||
+    raw;
 
   return {
 
     ...data,
 
     id:
-      String(
-        firstNonEmpty(
-          data.id,
-          data.product_id,
-          data.productId,
-          data.item_id,
-          data.itemId,
-          getProductId()
-        )
+      firstNonEmpty(
+        data.id,
+        data.product_id,
+        data.productId,
+        data.item_id,
+        data.itemId
       ),
 
     title:
-      String(title),
+      firstNonEmpty(
+        data.title,
+        data.product_title,
+        data.productTitle,
+        data.name,
+        "Product"
+      ),
 
     price:
-      price !== ""
-        ? toNumber(price, 0)
-        : 0,
+      firstNonEmpty(
+        data.price,
+        data.sale_price,
+        data.salePrice,
+        data.min_price,
+        data.minPrice,
+        0
+      ),
 
     currency:
-      String(
-        currency || "USD"
-      ).toUpperCase(),
+      firstNonEmpty(
+        data.currency,
+        data.target_currency,
+        data.targetCurrency,
+        "USD"
+      ),
 
     rating:
-      rating !== ""
-        ? toNumber(rating, 0)
-        : 0,
+      firstNonEmpty(
+        data.rating,
+        data.average_rating,
+        data.averageRating,
+        data.star_rating
+      ),
 
     review_count:
-      reviewCount !== ""
-        ? toNumber(
-            reviewCount,
-            0
-          )
-        : 0,
+      firstNonEmpty(
+        data.review_count,
+        data.reviewCount,
+        data.reviews,
+        data.orders
+      ),
 
     stock:
-      stock !== ""
-        ? toNumber(
-            stock,
-            0
-          )
-        : "",
+      firstNonEmpty(
+        data.stock,
+        data.inventory,
+        data.quantity,
+        data.total_stock
+      ),
 
     sku:
-      String(
-        sku || ""
+      firstNonEmpty(
+        data.sku,
+        data.product_sku,
+        data.productSku,
+        data.item_sku,
+        data.itemSku
       ),
 
     description:
-      description || "",
+      firstNonEmpty(
+        data.description,
+        data.description_html,
+        data.descriptionHtml,
+        data.product_description,
+        data.productDescription,
+        data.detail,
+        data.details
+      ),
 
-    images,
+    images:
+      data.images ||
+      data.image_urls ||
+      data.imageUrls ||
+      data.gallery ||
+      data.gallery_images ||
+      data.galleryImages ||
+      [],
 
-    skus
+    skus:
+      data.skus ||
+      data.sku_list ||
+      data.skuList ||
+      data.sku_array ||
+      data.skuArray ||
+      []
 
   };
 
@@ -1740,139 +1503,82 @@ function normalizeProduct(raw) {
    PROPERTY HELPERS
    ============================================================ */
 
-function getGroupId(
-  property
-) {
+function getGroupId(property) {
 
   return firstNonEmpty(
-
     property?.group_id,
-
     property?.groupId,
-
     property?.property_id,
-
     property?.propertyId,
-
     property?.sku_property_id,
-
     property?.skuPropertyId,
-
     property?.id
-
   );
 
 }
 
 
-function getValueId(
-  property
-) {
+function getValueId(property) {
 
   return firstNonEmpty(
-
     property?.value_id,
-
     property?.valueId,
-
     property?.property_value_id,
-
     property?.propertyValueId,
-
     property?.sku_property_value_id,
-
-    property?.skuPropertyValueId,
-
-    property?.valueId
-
+    property?.skuPropertyValueId
   );
 
 }
 
 
-function getGroupName(
-  property
-) {
+function getGroupName(property) {
 
   return firstNonEmpty(
-
     property?.group_name,
-
     property?.groupName,
-
     property?.property_name,
-
     property?.propertyName,
-
     property?.sku_property_name,
-
     property?.skuPropertyName,
-
     property?.name,
-
     "Option"
-
   );
 
 }
 
 
-function getValueName(
-  property
-) {
+function getValueName(property) {
 
   return firstNonEmpty(
-
     property?.value_name,
-
     property?.valueName,
-
     property?.property_value_name,
-
     property?.propertyValueName,
-
     property?.property_value_definition_name,
-
     property?.propertyValueDefinitionName,
-
     property?.display,
-
-    property?.value,
-
     property?.name
-
   );
 
 }
 
 
-function getPropertyImage(
-  property
-) {
+function getPropertyImage(property) {
 
   return firstNonEmpty(
-
     property?.image,
-
     property?.image_url,
-
     property?.imageUrl,
-
     property?.sku_image,
-
-    property?.skuImage,
-
-    property?.imagePath,
-
-    property?.image_path
-
+    property?.skuImage
   );
 
 }
 
 
 /* ============================================================
-   NORMALIZE SKU PROPERTY
+   NORMALIZE PROPERTY
    ============================================================ */
 
 function normalizeSkuProperty(
@@ -1884,30 +1590,19 @@ function normalizeSkuProperty(
   }
 
   const groupId =
-    getGroupId(
-      property
-    );
+    getGroupId(property);
 
   const valueId =
-    getValueId(
-      property
-    );
+    getValueId(property);
 
   const groupName =
-    getGroupName(
-      property
-    );
+    getGroupName(property);
 
   const valueName =
-    getValueName(
-      property
-    );
+    getValueName(property);
 
   const image =
-    getPropertyImage(
-      property
-    );
-
+    getPropertyImage(property);
 
   if (
     !groupId &&
@@ -1915,11 +1610,8 @@ function normalizeSkuProperty(
     !groupName &&
     !valueName
   ) {
-
     return null;
-
   }
-
 
   return {
 
@@ -2025,18 +1717,9 @@ function extractSkuProperties(
 
     sku.normalized_properties,
 
-    sku.normalizedProperties,
-
-    sku.selected_properties,
-
-    sku.selectedProperties,
-
-    sku.variant_properties,
-
-    sku.variantProperties
+    sku.normalizedProperties
 
   ];
-
 
   for (
     const source of sources
@@ -2052,78 +1735,32 @@ function extractSkuProperties(
 
     }
 
-
     if (
       source &&
-      typeof source === "object" &&
-      !Array.isArray(source)
+      typeof source === "object"
     ) {
 
-      const nestedArrays = [
-
-        source.ae_sku_property_d_t_o,
-
-        source.aeop_s_k_u_property,
-
-        source.properties,
-
-        source.property_list,
-
-        source.propertyList
-
-      ];
-
-
-      for (
-        const nested of nestedArrays
+      if (
+        Array.isArray(
+          source.ae_sku_property_d_t_o
+        )
       ) {
 
-        if (
-          Array.isArray(nested)
-        ) {
-
-          candidates.push(
-            ...nested
-          );
-
-        }
+        candidates.push(
+          ...source.ae_sku_property_d_t_o
+        );
 
       }
 
-
-      for (
-        const [
-          key,
-          value
-        ] of Object.entries(source)
+      if (
+        Array.isArray(
+          source.aeop_s_k_u_property
+        )
       ) {
 
-        if (
-          value &&
-          typeof value === "object" &&
-          !Array.isArray(value)
-        ) {
-
-          const normalized =
-            normalizeSkuProperty({
-              group_id:
-                key,
-              group_name:
-                key,
-              ...value
-            });
-
-          if (
-            normalized
-          ) {
-
-            candidates.push(
-              normalized
-            );
-
-          }
-
-        }
+        candidates.push(
+          ...source.aeop_s_k_u_property
+        );
 
       }
 
@@ -2132,11 +1769,23 @@ function extractSkuProperties(
   }
 
 
+  if (
+    Array.isArray(
+      sku.normalized_properties
+    )
+  ) {
+
+    candidates.push(
+      ...sku.normalized_properties
+    );
+
+  }
+
+
   const result = [];
 
   const seen =
     new Set();
-
 
   for (
     const property of candidates
@@ -2147,22 +1796,18 @@ function extractSkuProperties(
         property
       );
 
-
     if (!normalized) {
       continue;
     }
 
-
     const key =
       `${normalized.group_id}::${normalized.value_id}`;
-
 
     if (
       seen.has(key)
     ) {
       continue;
     }
-
 
     seen.add(key);
 
@@ -2171,7 +1816,6 @@ function extractSkuProperties(
     );
 
   }
-
 
   return result;
 
@@ -2189,7 +1833,6 @@ function normalizeSkus(
   let list =
     rawSkus;
 
-
   if (
     list &&
     !Array.isArray(list) &&
@@ -2197,145 +1840,68 @@ function normalizeSkus(
   ) {
 
     list =
-      firstNonEmpty(
-
-        list.sku,
-
-        list.skus,
-
-        list.sku_list,
-
-        list.skuList,
-
-        list.variants,
-
-        list.variant_list,
-
-        list.variantList
-
-      );
-
-
-    if (
-      !Array.isArray(list)
-    ) {
-
-      list =
-        [];
-
-    }
+      list.sku ||
+      list.skus ||
+      list.sku_list ||
+      list.skuList ||
+      list.ae_sku_property_d_t_o ||
+      [];
 
   }
-
 
   if (
     !Array.isArray(list)
   ) {
-
     return [];
-
   }
 
-
   return list.map(
-    (
-      sku,
-      index
-    ) => {
+    (sku, index) => {
 
       const properties =
         extractSkuProperties(
           sku
         );
 
-
       const price =
         firstNonEmpty(
-
           sku.price,
-
           sku.sale_price,
-
           sku.salePrice,
-
-          sku.current_price,
-
-          sku.currentPrice,
-
           sku.offer_price,
-
           sku.offerPrice,
-
           sku.sku_price,
-
-          sku.skuPrice,
-
-          sku.cost
-
+          sku.skuPrice
         );
-
 
       const stock =
         firstNonEmpty(
-
           sku.stock,
-
           sku.inventory,
-
           sku.quantity,
-
-          sku.available_quantity,
-
-          sku.availableQuantity,
-
           sku.sku_stock,
-
           sku.skuStock
-
         );
-
 
       const skuCode =
         firstNonEmpty(
-
           sku.sku,
-
           sku.sku_code,
-
           sku.skuCode,
-
           sku.sku_id,
-
           sku.skuId,
-
-          sku.id,
-
           `sku-${index + 1}`
-
         );
-
 
       const image =
         firstNonEmpty(
-
           sku.image,
-
           sku.image_url,
-
           sku.imageUrl,
-
           sku.sku_image,
-
           sku.skuImage,
-
-          sku.img,
-
-          sku.thumbnail,
-
-          sku.thumb
-
+          sku.img
         );
-
 
       return {
 
@@ -2344,24 +1910,16 @@ function normalizeSkus(
         index,
 
         sku:
-          String(
-            skuCode
-          ),
+          String(skuCode),
 
         price:
           price !== ""
-            ? toNumber(
-                price,
-                0
-              )
+            ? toNumber(price, 0)
             : null,
 
         stock:
           stock !== ""
-            ? toNumber(
-                stock,
-                0
-              )
+            ? toNumber(stock, 0)
             : null,
 
         image:
@@ -2381,7 +1939,7 @@ function normalizeSkus(
 
 
 /* ============================================================
-   VARIANT LABEL HELPERS
+   VARIANT NAME HELPERS
    ============================================================ */
 
 function isMeaninglessVariantCode(
@@ -2392,22 +1950,15 @@ function isMeaninglessVariantCode(
     value === undefined ||
     value === null
   ) {
-
     return true;
-
   }
 
-
   const text =
-    String(
-      value
-    ).trim();
-
+    String(value).trim();
 
   if (!text) {
     return true;
   }
-
 
   const patterns = [
 
@@ -2416,8 +1967,6 @@ function isMeaninglessVariantCode(
     /^SKU[\s_-]?\d+$/i,
 
     /^COLOR[\s_-]?\d+$/i,
-
-    /^COLOUR[\s_-]?\d+$/i,
 
     /^OPTION[\s_-]?\d+$/i,
 
@@ -2431,12 +1980,9 @@ function isMeaninglessVariantCode(
 
   ];
 
-
   return patterns.some(
     pattern =>
-      pattern.test(
-        text
-      )
+      pattern.test(text)
   );
 
 }
@@ -2467,21 +2013,13 @@ function isColorGroupName(
       .trim()
       .toLowerCase();
 
-
   return [
-
     "color",
-
     "colour",
-
     "colors",
-
     "colours",
-
     "pattern",
-
     "colourway"
-
   ].some(
     keyword =>
       text === keyword ||
@@ -2499,30 +2037,21 @@ function shouldUseImageSwatches(
     return false;
   }
 
-
   if (
     !isColorGroupName(
       group.name
     )
   ) {
-
     return false;
-
   }
-
 
   const images =
     group.values.filter(
       value =>
-        Boolean(
-          value.image
-        )
+        Boolean(value.image)
     );
 
-
-  return (
-    images.length >= 2
-  );
+  return images.length >= 2;
 
 }
 
@@ -2538,7 +2067,6 @@ function buildVariantGroups(
   const groups =
     new Map();
 
-
   for (
     const sku of skus
   ) {
@@ -2548,7 +2076,6 @@ function buildVariantGroups(
       sku.normalized_properties ||
       [];
 
-
     for (
       const property of properties
     ) {
@@ -2556,167 +2083,91 @@ function buildVariantGroups(
       const groupId =
         String(
           firstNonEmpty(
-
             property.group_id,
-
             property.groupId,
-
             property.property_id,
-
             property.propertyId,
-
-            property.sku_property_id,
-
-            property.skuPropertyId,
-
-            property.group_name,
-
-            property.groupName
-
+            property.sku_property_id
           )
         );
-
 
       if (!groupId) {
         continue;
       }
 
-
       const groupName =
         firstNonEmpty(
-
           property.group_name,
-
           property.groupName,
-
           property.property_name,
-
           property.propertyName,
-
           property.sku_property_name,
-
           property.skuPropertyName,
-
           property.name,
-
           "Option"
-
         );
 
-
       if (
-        !groups.has(
-          groupId
-        )
+        !groups.has(groupId)
       ) {
 
         groups.set(
           groupId,
           {
-            id:
-              groupId,
-
-            name:
-              String(
-                groupName
-              ),
-
-            values:
-              []
+            id: groupId,
+            name: String(groupName),
+            values: []
           }
         );
 
       }
 
-
       const group =
-        groups.get(
-          groupId
-        );
-
+        groups.get(groupId);
 
       const valueId =
         String(
           firstNonEmpty(
-
             property.value_id,
-
             property.valueId,
-
             property.property_value_id,
-
             property.propertyValueId,
-
-            property.sku_property_value_id,
-
-            property.skuPropertyValueId,
-
-            property.value_name,
-
-            property.valueName
-
+            property.sku_property_value_id
           )
         );
-
 
       if (!valueId) {
         continue;
       }
 
-
       const valueName =
         firstNonEmpty(
-
           property.value_name,
-
           property.valueName,
-
           property.property_value_name,
-
           property.propertyValueName,
-
           property.property_value_definition_name,
-
           property.propertyValueDefinitionName,
-
           property.display,
-
-          property.value,
-
           valueId
-
         );
-
 
       const image =
         firstNonEmpty(
-
           property.image,
-
           property.image_url,
-
           property.imageUrl,
-
           property.sku_image,
-
           property.skuImage,
-
           sku.image
-
         );
-
 
       const existing =
         group.values.find(
           value =>
-            String(
-              value.id
-            ) ===
-            String(
-              valueId
-            )
+            String(value.id) ===
+            String(valueId)
         );
-
 
       if (!existing) {
 
@@ -2750,7 +2201,6 @@ function buildVariantGroups(
 
   }
 
-
   return [
     ...groups.values()
   ];
@@ -2767,12 +2217,10 @@ function renderVariants() {
   variantsContainerEl.innerHTML =
     "";
 
-
   const groups =
     buildVariantGroups(
       normalizedSkus
     );
-
 
   if (!groups.length) {
 
@@ -2783,7 +2231,6 @@ function renderVariants() {
     return;
 
   }
-
 
   variantsContainerEl.classList.remove(
     "hidden"
@@ -2802,7 +2249,6 @@ function renderVariants() {
     wrapper.className =
       "variant-group";
 
-
     const titleRow =
       document.createElement(
         "div"
@@ -2811,7 +2257,6 @@ function renderVariants() {
     titleRow.className =
       "variant-title";
 
-
     const title =
       document.createElement(
         "span"
@@ -2819,7 +2264,6 @@ function renderVariants() {
 
     title.textContent =
       group.name;
-
 
     const selectedLabel =
       document.createElement(
@@ -2830,22 +2274,13 @@ function renderVariants() {
       "variant-selected-text";
 
     selectedLabel.dataset.groupId =
-      String(
-        group.id
-      );
+      String(group.id);
 
     selectedLabel.textContent =
       "Select";
 
-
-    titleRow.appendChild(
-      title
-    );
-
-    titleRow.appendChild(
-      selectedLabel
-    );
-
+    titleRow.appendChild(title);
+    titleRow.appendChild(selectedLabel);
 
     const options =
       document.createElement(
@@ -2855,18 +2290,13 @@ function renderVariants() {
     options.className =
       "variant-options";
 
-
     const useSwatches =
       shouldUseImageSwatches(
         group
       );
 
-
     group.values.forEach(
-      (
-        value,
-        index
-      ) => {
+      (value, index) => {
 
         const button =
           document.createElement(
@@ -2880,27 +2310,19 @@ function renderVariants() {
           "variant-option";
 
         button.dataset.groupId =
-          String(
-            group.id
-          );
+          String(group.id);
 
         button.dataset.valueId =
-          String(
-            value.id
-          );
-
+          String(value.id);
 
         const meaningful =
           isMeaningfulVariantName(
             value.name
           );
 
-
         const label =
           meaningful
-            ? String(
-                value.name
-              )
+            ? String(value.name)
             : (
                 isColorGroupName(
                   group.name
@@ -2918,7 +2340,6 @@ function renderVariants() {
           button.classList.add(
             "swatch-option"
           );
-
 
           const image =
             document.createElement(
@@ -2939,16 +2360,6 @@ function renderVariants() {
 
           image.referrerPolicy =
             "no-referrer";
-
-
-          image.onerror =
-            () => {
-
-              image.style.display =
-                "none";
-
-            };
-
 
           button.appendChild(
             image
@@ -2975,7 +2386,6 @@ function renderVariants() {
             );
 
           }
-
 
           button.title =
             label;
@@ -3006,26 +2416,13 @@ function renderVariants() {
                 "disabled"
               )
             ) {
-
               return;
-
             }
 
-
             selectedProperties[
-              String(
-                group.id
-              )
+              String(group.id)
             ] =
-              String(
-                value.id
-              );
-
-
-            selectionNoticeEl.classList.add(
-              "hidden"
-            );
-
+              String(value.id);
 
             updateVariantUI();
 
@@ -3033,7 +2430,6 @@ function renderVariants() {
 
           }
         );
-
 
         options.appendChild(
           button
@@ -3057,73 +2453,7 @@ function renderVariants() {
 
   }
 
-
   updateVariantUI();
-
-}
-
-
-/* ============================================================
-   SKU PROPERTY MATCH
-   ============================================================ */
-
-function propertyMatches(
-  property,
-  groupId,
-  valueId
-) {
-
-  if (!property) {
-    return false;
-  }
-
-
-  const propertyGroup =
-    String(
-      firstNonEmpty(
-
-        property.group_id,
-
-        property.groupId,
-
-        property.property_id,
-
-        property.propertyId,
-
-        property.sku_property_id,
-
-        property.skuPropertyId
-
-      )
-    );
-
-
-  const propertyValue =
-    String(
-      firstNonEmpty(
-
-        property.value_id,
-
-        property.valueId,
-
-        property.property_value_id,
-
-        property.propertyValueId,
-
-        property.sku_property_value_id,
-
-        property.skuPropertyValueId
-
-      )
-    );
-
-
-  return (
-    propertyGroup ===
-      String(groupId) &&
-    propertyValue ===
-      String(valueId)
-  );
 
 }
 
@@ -3144,25 +2474,36 @@ function hasAvailableSkuForSelection(
         sku.stock !== null &&
         sku.stock <= 0
       ) {
-
         return false;
-
       }
-
 
       const properties =
         sku.properties ||
         sku.normalized_properties ||
         [];
 
-
       return properties.some(
         property =>
-          propertyMatches(
-            property,
-            groupId,
-            valueId
-          )
+          String(
+            firstNonEmpty(
+              property.group_id,
+              property.groupId,
+              property.property_id,
+              property.propertyId,
+              property.sku_property_id
+            )
+          ) ===
+            String(groupId) &&
+          String(
+            firstNonEmpty(
+              property.value_id,
+              property.valueId,
+              property.property_value_id,
+              property.propertyValueId,
+              property.sku_property_value_id
+            )
+          ) ===
+            String(valueId)
       );
 
     }
@@ -3194,28 +2535,22 @@ function updateVariantUI() {
             button.dataset.valueId
           );
 
-
         const isSelected =
           String(
-            selectedProperties[
-              groupId
-            ] || ""
-          ) ===
-          valueId;
-
+            selectedProperties[groupId] ||
+            ""
+          ) === valueId;
 
         button.classList.toggle(
           "selected",
           isSelected
         );
 
-
         const available =
           hasAvailableSkuForSelection(
             groupId,
             valueId
           );
-
 
         button.classList.toggle(
           "disabled",
@@ -3232,32 +2567,24 @@ function updateVariantUI() {
       normalizedSkus
     );
 
-
   groups.forEach(
     group => {
 
       const label =
         document.querySelector(
           `.variant-selected-text[data-group-id="${CSS.escape(
-            String(
-              group.id
-            )
+            String(group.id)
           )}"]`
         );
-
 
       if (!label) {
         return;
       }
 
-
       const selectedId =
         selectedProperties[
-          String(
-            group.id
-          )
+          String(group.id)
         ];
-
 
       if (!selectedId) {
 
@@ -3268,18 +2595,12 @@ function updateVariantUI() {
 
       }
 
-
       const value =
         group.values.find(
           item =>
-            String(
-              item.id
-            ) ===
-            String(
-              selectedId
-            )
+            String(item.id) ===
+            String(selectedId)
         );
-
 
       if (
         value &&
@@ -3310,7 +2631,8 @@ function updateVariantUI() {
 
 function skuMatchesSelection(
   sku,
-  selection
+  selection,
+  requireAll = false
 ) {
 
   const properties =
@@ -3318,6 +2640,7 @@ function skuMatchesSelection(
     sku.normalized_properties ||
     [];
 
+  let matched = 0;
 
   for (
     const [
@@ -3328,25 +2651,55 @@ function skuMatchesSelection(
     )
   ) {
 
-    const matched =
-      properties.some(
-        property =>
-          propertyMatches(
-            property,
-            groupId,
-            valueId
-          )
+    const property =
+      properties.find(
+        item =>
+          String(
+            firstNonEmpty(
+              item.group_id,
+              item.groupId,
+              item.property_id,
+              item.propertyId,
+              item.sku_property_id
+            )
+          ) ===
+          String(groupId)
       );
 
-
-    if (!matched) {
-
+    if (!property) {
       return false;
-
     }
+
+    const skuValue =
+      String(
+        firstNonEmpty(
+          property.value_id,
+          property.valueId,
+          property.property_value_id,
+          property.propertyValueId,
+          property.sku_property_value_id
+        )
+      );
+
+    if (
+      skuValue !==
+      String(valueId)
+    ) {
+      return false;
+    }
+
+    matched++;
 
   }
 
+  if (
+    requireAll &&
+    matched !== properties.length
+  ) {
+
+    return false;
+
+  }
 
   return true;
 
@@ -3355,80 +2708,17 @@ function skuMatchesSelection(
 
 function findExactSku() {
 
-  const groups =
-    buildVariantGroups(
-      normalizedSkus
-    );
-
-
-  if (
-    groups.length === 0
-  ) {
-
-    return null;
-
-  }
-
-
-  const requiredGroupCount =
-    groups.length;
-
-
-  const selectedCount =
-    Object.keys(
-      selectedProperties
-    ).length;
-
-
-  if (
-    selectedCount !==
-    requiredGroupCount
-  ) {
-
-    return null;
-
-  }
-
-
   return normalizedSkus.find(
-    sku => {
-
-      if (
-        sku.stock !== null &&
-        sku.stock <= 0
-      ) {
-
-        return false;
-
-      }
-
-
-      if (
-        !skuMatchesSelection(
-          sku,
-          selectedProperties
-        )
-      ) {
-
-        return false;
-
-      }
-
-
-      const propertyCount =
-        (
-          sku.properties ||
-          sku.normalized_properties ||
-          []
-        ).length;
-
-
-      return (
-        propertyCount >=
-        requiredGroupCount
-      );
-
-    }
+    sku =>
+      skuMatchesSelection(
+        sku,
+        selectedProperties,
+        true
+      ) &&
+      (
+        sku.stock === null ||
+        sku.stock > 0
+      )
   ) || null;
 
 }
@@ -3439,96 +2729,59 @@ function findBestMatchingSku() {
   if (
     !normalizedSkus.length
   ) {
-
     return null;
-
   }
-
 
   const exact =
     findExactSku();
-
 
   if (exact) {
     return exact;
   }
 
-
   const available =
     normalizedSkus.filter(
-      sku => {
-
-        if (
-          sku.stock !== null &&
-          sku.stock <= 0
-        ) {
-
-          return false;
-
-        }
-
-
-        return skuMatchesSelection(
+      sku =>
+        skuMatchesSelection(
           sku,
-          selectedProperties
-        );
-
-      }
+          selectedProperties,
+          false
+        ) &&
+        (
+          sku.stock === null ||
+          sku.stock > 0
+        )
     );
 
+  if (!available.length) {
+    return null;
+  }
 
-  return available.length
-    ? available[0]
-    : null;
+  return available[0];
 
 }
 
-
-/* ============================================================
-   UPDATE SELECTED SKU
-   ============================================================ */
 
 function updateSelectedSku() {
 
   selectedSku =
     findBestMatchingSku();
 
-
   if (
     !selectedSku
   ) {
-
-    if (
-      !normalizedSkus.length
-    ) {
-
-      productPriceEl.textContent =
-        formatPrice(
-          product.price,
-          product.currency
-        );
-
-    }
-
     return;
-
   }
 
 
-  const skuPrice =
-    selectedSku.price;
-
-
   if (
-    skuPrice !== null &&
-    Number.isFinite(
-      skuPrice
-    )
+    selectedSku.price !== null &&
+    selectedSku.price > 0
   ) {
 
     productPriceEl.textContent =
       formatPrice(
-        skuPrice,
+        selectedSku.price,
         product.currency
       );
 
@@ -3557,12 +2810,6 @@ function updateSelectedSku() {
       stockTextEl.className =
         "stock in-stock";
 
-      addToCartBtnEl.disabled =
-        false;
-
-      buyNowBtnEl.disabled =
-        false;
-
     } else {
 
       stockTextEl.textContent =
@@ -3570,12 +2817,6 @@ function updateSelectedSku() {
 
       stockTextEl.className =
         "stock out-of-stock";
-
-      addToCartBtnEl.disabled =
-        true;
-
-      buyNowBtnEl.disabled =
-        true;
 
     }
 
@@ -3590,7 +2831,6 @@ function updateSelectedSku() {
       galleryImages.indexOf(
         selectedSku.image
       );
-
 
     if (
       existingIndex >= 0
@@ -3630,13 +2870,10 @@ function normalizeImages(
   rawImages
 ) {
 
-  const images = [];
-
+  let images = [];
 
   if (
-    Array.isArray(
-      rawImages
-    )
+    Array.isArray(rawImages)
   ) {
 
     for (
@@ -3647,59 +2884,24 @@ function normalizeImages(
         typeof item === "string"
       ) {
 
-        const value =
-          item.trim();
+        images.push(item);
 
-        if (
-          value
-        ) {
-
-          images.push(
-            value
-          );
-
-        }
-
-        continue;
-
-      }
-
-
-      if (
+      } else if (
         item &&
         typeof item === "object"
       ) {
 
         const url =
           firstNonEmpty(
-
             item.url,
-
             item.image_url,
-
             item.imageUrl,
-
             item.src,
-
-            item.image,
-
-            item.main_image,
-
-            item.mainImage,
-
-            item.thumbnail,
-
-            item.thumb
-
+            item.image
           );
-
 
         if (url) {
-
-          images.push(
-            String(url)
-          );
-
+          images.push(url);
         }
 
       }
@@ -3707,7 +2909,6 @@ function normalizeImages(
     }
 
   }
-
 
   return uniqueArray(
     images
@@ -3723,11 +2924,8 @@ function setMainImage(
   if (
     !galleryImages.length
   ) {
-
     return;
-
   }
-
 
   currentImageIndex =
     Math.max(
@@ -3738,42 +2936,17 @@ function setMainImage(
       )
     );
 
-
-  const image =
+  mainImageEl.src =
     galleryImages[
       currentImageIndex
     ];
-
-
-  mainImageEl.src =
-    image;
-
-
-  mainImageEl.onerror =
-    () => {
-
-      mainImageEl.onerror =
-        null;
-
-      mainImageEl.src =
-        "https://via.placeholder.com/800?text=Product";
-
-    };
-
-
-  mainImageEl.alt =
-    `${product.title} image ${currentImageIndex + 1}`;
-
 
   galleryThumbsEl
     .querySelectorAll(
       ".gallery-thumb"
     )
     .forEach(
-      (
-        thumb,
-        thumbIndex
-      ) => {
+      (thumb, thumbIndex) => {
 
         thumb.classList.toggle(
           "active",
@@ -3792,7 +2965,6 @@ function renderGallery() {
   galleryThumbsEl.innerHTML =
     "";
 
-
   if (
     !galleryImages.length
   ) {
@@ -3800,19 +2972,12 @@ function renderGallery() {
     mainImageEl.src =
       "https://via.placeholder.com/800?text=Product";
 
-    mainImageEl.alt =
-      "Product image unavailable";
-
     return;
 
   }
 
-
   galleryImages.forEach(
-    (
-      image,
-      index
-    ) => {
+    (image, index) => {
 
       const button =
         document.createElement(
@@ -3829,7 +2994,6 @@ function renderGallery() {
         "aria-label",
         `View product image ${index + 1}`
       );
-
 
       const img =
         document.createElement(
@@ -3848,32 +3012,17 @@ function renderGallery() {
       img.referrerPolicy =
         "no-referrer";
 
-
-      img.onerror =
-        () => {
-
-          button.style.display =
-            "none";
-
-        };
-
-
       button.appendChild(
         img
       );
 
-
       button.addEventListener(
         "click",
-        () => {
-
+        () =>
           setMainImage(
             index
-          );
-
-        }
+          )
       );
-
 
       galleryThumbsEl.appendChild(
         button
@@ -3881,7 +3030,6 @@ function renderGallery() {
 
     }
   );
-
 
   setMainImage(0);
 
@@ -3900,7 +3048,6 @@ function renderRating() {
       0
     );
 
-
   if (
     rating <= 0
   ) {
@@ -3915,7 +3062,6 @@ function renderRating() {
 
   }
 
-
   const rounded =
     Math.round(
       Math.min(
@@ -3927,7 +3073,6 @@ function renderRating() {
       )
     );
 
-
   ratingStarsEl.textContent =
     "★".repeat(
       rounded
@@ -3936,13 +3081,11 @@ function renderRating() {
       5 - rounded
     );
 
-
   const reviewCount =
     toNumber(
       product.review_count,
       0
     );
-
 
   ratingTextEl.textContent =
     reviewCount > 0
@@ -3963,79 +3106,67 @@ function sanitizeDescriptionHtml(
   const parser =
     new DOMParser();
 
-
   const doc =
     parser.parseFromString(
-      String(html),
+      html,
       "text/html"
     );
 
-
   doc
     .querySelectorAll(
-      "script, iframe, object, embed, form, link, meta, style"
+      "script, iframe, object, embed, form"
     )
     .forEach(
       element =>
         element.remove()
     );
 
-
   doc
     .querySelectorAll("*")
     .forEach(
       element => {
 
-        [
-          ...element.attributes
-        ].forEach(
-          attribute => {
+        [...element.attributes]
+          .forEach(
+            attribute => {
 
-            const name =
-              attribute.name.toLowerCase();
+              const name =
+                attribute.name.toLowerCase();
 
-            const value =
-              attribute.value || "";
+              const value =
+                attribute.value || "";
 
+              if (
+                name.startsWith("on")
+              ) {
 
-            if (
-              name.startsWith(
-                "on"
-              )
-            ) {
+                element.removeAttribute(
+                  attribute.name
+                );
 
-              element.removeAttribute(
-                attribute.name
-              );
+              }
 
-              return;
+              if (
+                (
+                  name === "href" ||
+                  name === "src"
+                ) &&
+                /^\s*javascript:/i.test(
+                  value
+                )
+              ) {
 
-            }
+                element.removeAttribute(
+                  attribute.name
+                );
 
-
-            if (
-              (
-                name === "href" ||
-                name === "src" ||
-                name === "xlink:href"
-              ) &&
-              /^\s*(javascript|vbscript|data):/i.test(
-                value
-              )
-            ) {
-
-              element.removeAttribute(
-                attribute.name
-              );
+              }
 
             }
-
-          }
-        );
+          );
 
       }
     );
-
 
   return doc.body.innerHTML;
 
@@ -4052,19 +3183,18 @@ function renderDescription() {
       "hidden"
     );
 
-    descriptionContentEl.innerHTML =
-      "";
-
     return;
 
   }
 
+  descriptionCardEl.classList.remove(
+    "hidden"
+  );
 
   const description =
     String(
       product.description
     );
-
 
   if (
     /<([a-z][\s\S]*?)>/i.test(
@@ -4072,25 +3202,10 @@ function renderDescription() {
     )
   ) {
 
-    const sanitized =
+    descriptionContentEl.innerHTML =
       sanitizeDescriptionHtml(
         description
       );
-
-
-    descriptionContentEl.innerHTML =
-      sanitized;
-
-
-    if (
-      !descriptionContentEl.textContent.trim() &&
-      !descriptionContentEl.querySelector("img, table")
-    ) {
-
-      descriptionContentEl.textContent =
-        description;
-
-    }
 
   } else {
 
@@ -4098,11 +3213,6 @@ function renderDescription() {
       description;
 
   }
-
-
-  descriptionCardEl.classList.remove(
-    "hidden"
-  );
 
 }
 
@@ -4113,14 +3223,8 @@ function renderDescription() {
 
 function renderProduct() {
 
-  if (!product) {
-    return;
-  }
-
-
   productTitleEl.textContent =
     product.title;
-
 
   document.title =
     `${product.title} | Prasun Store`;
@@ -4133,14 +3237,8 @@ function renderProduct() {
     );
 
 
-  const hasStockValue =
-    product.stock !== "" &&
-    product.stock !== null &&
-    product.stock !== undefined;
-
-
   const stock =
-    hasStockValue
+    product.stock !== ""
       ? toNumber(
           product.stock,
           0
@@ -4161,12 +3259,6 @@ function renderProduct() {
     productAvailabilityEl.textContent =
       "Available";
 
-    addToCartBtnEl.disabled =
-      false;
-
-    buyNowBtnEl.disabled =
-      false;
-
   } else if (
     stock > 0
   ) {
@@ -4179,12 +3271,6 @@ function renderProduct() {
 
     productAvailabilityEl.textContent =
       "In stock";
-
-    addToCartBtnEl.disabled =
-      false;
-
-    buyNowBtnEl.disabled =
-      false;
 
   } else {
 
@@ -4207,8 +3293,7 @@ function renderProduct() {
 
 
   productSkuEl.textContent =
-    product.sku ||
-    "—";
+    product.sku || "—";
 
 
   galleryImages =
@@ -4250,29 +3335,21 @@ function renderProduct() {
 
   updateCartBadge();
 
-
   productShipsToEl.textContent =
     firstNonEmpty(
-
       product.shipping_country,
-
       product.shippingCountry,
-
       product.destination,
-
       product.ships_to,
-
       product.shipsTo,
-
       "Worldwide"
-
     );
 
 }
 
 
 /* ============================================================
-   CART
+   CART FUNCTIONS
    ============================================================ */
 
 function readCart() {
@@ -4284,7 +3361,6 @@ function readCart() {
         CART_STORAGE_KEY
       );
 
-
     if (currentRaw) {
 
       const current =
@@ -4292,15 +3368,10 @@ function readCart() {
           currentRaw
         );
 
-
       if (
-        Array.isArray(
-          current
-        )
+        Array.isArray(current)
       ) {
-
         return current;
-
       }
 
     }
@@ -4311,7 +3382,6 @@ function readCart() {
         LEGACY_CART_KEY
       );
 
-
     if (legacyRaw) {
 
       const legacy =
@@ -4319,11 +3389,8 @@ function readCart() {
           legacyRaw
         );
 
-
       if (
-        Array.isArray(
-          legacy
-        )
+        Array.isArray(legacy)
       ) {
 
         localStorage.setItem(
@@ -4333,9 +3400,7 @@ function readCart() {
           )
         );
 
-
         return legacy;
-
       }
 
     }
@@ -4348,7 +3413,6 @@ function readCart() {
     );
 
   }
-
 
   return [];
 
@@ -4364,31 +3428,15 @@ function saveCart(
       cart
     );
 
+  localStorage.setItem(
+    CART_STORAGE_KEY,
+    data
+  );
 
-  try {
-
-    localStorage.setItem(
-      CART_STORAGE_KEY,
-      data
-    );
-
-    localStorage.setItem(
-      LEGACY_CART_KEY,
-      data
-    );
-
-  } catch (error) {
-
-    console.error(
-      "Unable to save cart:",
-      error
-    );
-
-    throw new Error(
-      "Your browser could not save the cart."
-    );
-
-  }
+  localStorage.setItem(
+    LEGACY_CART_KEY,
+    data
+  );
 
 }
 
@@ -4398,7 +3446,6 @@ function updateCartBadge() {
   const cart =
     readCart();
 
-
   const total =
     cart.reduce(
       (
@@ -4407,29 +3454,25 @@ function updateCartBadge() {
       ) => {
 
         const itemQuantity =
-          Math.max(
-            1,
-            toNumber(
-              item?.quantity,
-              1
-            )
+          toNumber(
+            item?.quantity,
+            1
           );
-
 
         return (
           sum +
-          itemQuantity
+          Math.max(
+            1,
+            itemQuantity
+          )
         );
 
       },
       0
     );
 
-
   cartBadgeEl.textContent =
-    String(
-      total
-    );
+    String(total);
 
 }
 
@@ -4444,7 +3487,6 @@ function buildCartItem() {
     return null;
   }
 
-
   const productId =
     String(
       firstNonEmpty(
@@ -4453,17 +3495,14 @@ function buildCartItem() {
       )
     );
 
-
   const variantKey =
     selectedSku
       ? String(
-          firstNonEmpty(
-            selectedSku.sku,
-            selectedSku.sku_id,
-            selectedSku.skuId,
-            selectedSku.id,
-            selectedSku.index
-          )
+          selectedSku.sku ||
+          selectedSku.sku_id ||
+          selectedSku.skuId ||
+          selectedSku.index ||
+          ""
         )
       : "default";
 
@@ -4521,20 +3560,6 @@ function buildCartItem() {
         ...selectedProperties
       },
 
-    selectedProperties:
-      {
-        ...selectedProperties
-      },
-
-    variants:
-      selectedSku
-        ? (
-            selectedSku.properties ||
-            selectedSku.normalized_properties ||
-            []
-          )
-        : [],
-
     variant:
       selectedSku ||
       null
@@ -4550,11 +3575,6 @@ function buildCartItem() {
 
 function validateSelection() {
 
-  selectionNoticeEl.classList.add(
-    "hidden"
-  );
-
-
   if (
     !normalizedSkus.length
   ) {
@@ -4563,30 +3583,18 @@ function validateSelection() {
 
   }
 
-
   const groups =
     buildVariantGroups(
       normalizedSkus
     );
 
-
-  if (!groups.length) {
-
-    return true;
-
-  }
-
-
   const missing =
     groups.filter(
       group =>
         !selectedProperties[
-          String(
-            group.id
-          )
+          String(group.id)
         ]
     );
-
 
   if (
     missing.length
@@ -4600,11 +3608,9 @@ function validateSelection() {
         )
         .join(", ")}`;
 
-
     selectionNoticeEl.classList.remove(
       "hidden"
     );
-
 
     return false;
 
@@ -4614,31 +3620,25 @@ function validateSelection() {
   const exact =
     findExactSku();
 
-
   if (!exact) {
 
     selectionNoticeEl.textContent =
       "The selected variant is unavailable.";
 
-
     selectionNoticeEl.classList.remove(
       "hidden"
     );
-
 
     return false;
 
   }
 
-
   selectedSku =
     exact;
-
 
   selectionNoticeEl.classList.add(
     "hidden"
   );
-
 
   return true;
 
@@ -4654,98 +3654,69 @@ function addCurrentProductToCart() {
   if (
     !validateSelection()
   ) {
-
     return;
-
   }
-
 
   const item =
     buildCartItem();
 
-
   if (!item) {
-
     return;
+  }
+
+  const cart =
+    readCart();
+
+  const existingIndex =
+    cart.findIndex(
+      existing =>
+        existing.id ===
+        item.id
+    );
+
+
+  if (
+    existingIndex >= 0
+  ) {
+
+    cart[
+      existingIndex
+    ].quantity =
+      toNumber(
+        cart[
+          existingIndex
+        ].quantity,
+        0
+      ) +
+      item.quantity;
+
+  } else {
+
+    cart.push(
+      item
+    );
 
   }
 
 
-  try {
+  saveCart(cart);
 
-    const cart =
-      readCart();
-
-
-    const existingIndex =
-      cart.findIndex(
-        existing =>
-          existing &&
-          existing.id ===
-            item.id
-      );
+  updateCartBadge();
 
 
-    if (
-      existingIndex >= 0
-    ) {
-
-      cart[
-        existingIndex
-      ].quantity =
-        Math.min(
-          999,
-          toNumber(
-            cart[
-              existingIndex
-            ].quantity,
-            0
-          ) +
-          item.quantity
-        );
-
-    } else {
-
-      cart.push(
-        item
-      );
-
-    }
+  addToCartBtnEl.textContent =
+    "Added ✓";
 
 
-    saveCart(
-      cart
-    );
+  setTimeout(
+    () => {
 
+      addToCartBtnEl.textContent =
+        "Add to Cart";
 
-    updateCartBadge();
-
-
-    addToCartBtnEl.textContent =
-      "Added ✓";
-
-
-    setTimeout(
-      () => {
-
-        addToCartBtnEl.textContent =
-          "Add to Cart";
-
-      },
-      1600
-    );
-
-  } catch (error) {
-
-    selectionNoticeEl.textContent =
-      error?.message ||
-      "Unable to add this product to the cart.";
-
-    selectionNoticeEl.classList.remove(
-      "hidden"
-    );
-
-  }
+    },
+    1600
+  );
 
 }
 
@@ -4759,60 +3730,25 @@ function buyNow() {
   if (
     !validateSelection()
   ) {
-
     return;
-
   }
-
 
   const item =
     buildCartItem();
 
-
   if (!item) {
-
     return;
-
   }
 
+  sessionStorage.setItem(
+    "buyNowItem",
+    JSON.stringify(
+      item
+    )
+  );
 
-  try {
-
-    const data =
-      JSON.stringify(
-        item
-      );
-
-
-    sessionStorage.setItem(
-      BUY_NOW_KEY,
-      data
-    );
-
-
-    /*
-     * Keep compatibility with the
-     * previous checkout implementation.
-     */
-    sessionStorage.setItem(
-      "prasun_buy_now",
-      data
-    );
-
-
-    window.location.href =
-      "./checkout.html?buy_now=1";
-
-  } catch (error) {
-
-    selectionNoticeEl.textContent =
-      "Unable to continue to checkout. Please try again.";
-
-    selectionNoticeEl.classList.remove(
-      "hidden"
-    );
-
-  }
+  window.location.href =
+    "./checkout.html?buy_now=1";
 
 }
 
@@ -4831,36 +3767,24 @@ function setQuantity(
       10
     );
 
-
   if (
-    !Number.isFinite(
-      number
-    ) ||
+    !Number.isFinite(number) ||
     number < 1
   ) {
-
     number = 1;
-
   }
-
 
   if (
     number > 999
   ) {
-
     number = 999;
-
   }
-
 
   quantity =
     number;
 
-
   quantityInputEl.value =
-    String(
-      quantity
-    );
+    String(quantity);
 
 }
 
@@ -4901,18 +3825,6 @@ quantityInputEl.addEventListener(
 );
 
 
-quantityInputEl.addEventListener(
-  "blur",
-  () => {
-
-    setQuantity(
-      quantityInputEl.value
-    );
-
-  }
-);
-
-
 addToCartBtnEl.addEventListener(
   "click",
   addCurrentProductToCart
@@ -4926,82 +3838,6 @@ buyNowBtnEl.addEventListener(
 
 
 /* ============================================================
-   FETCH JSON SAFELY
-   ============================================================ */
-
-async function fetchProductData(
-  productId
-) {
-
-  const url =
-    `${API_BASE}/api/products/${encodeURIComponent(
-      productId
-    )}`;
-
-
-  const response =
-    await fetch(
-      url,
-      {
-        method: "GET",
-        headers: {
-          "Accept":
-            "application/json,text/plain,*/*"
-        },
-        cache: "no-store"
-      }
-    );
-
-
-  const responseText =
-    await response.text();
-
-
-  if (
-    !response.ok
-  ) {
-
-    throw new Error(
-      `Product request failed (${response.status}).`
-    );
-
-  }
-
-
-  if (!responseText.trim()) {
-
-    throw new Error(
-      "The product server returned an empty response."
-    );
-
-  }
-
-
-  let data;
-
-
-  try {
-
-    data =
-      JSON.parse(
-        responseText
-      );
-
-  } catch {
-
-    throw new Error(
-      "The product server returned an invalid response."
-    );
-
-  }
-
-
-  return data;
-
-}
-
-
-/* ============================================================
    LOAD PRODUCT
    ============================================================ */
 
@@ -5009,7 +3845,6 @@ async function loadProduct() {
 
   const productId =
     getProductId();
-
 
   if (!productId) {
 
@@ -5019,57 +3854,54 @@ async function loadProduct() {
 
   }
 
-
-  const data =
-    await fetchProductData(
-      productId
+  const response =
+    await fetch(
+      `${API_BASE}/api/products/${encodeURIComponent(
+        productId
+      )}`,
+      {
+        method: "GET",
+        headers: {
+          "Accept":
+            "application/json"
+        },
+        cache: "no-store"
+      }
     );
 
 
-  /*
-   * Some Worker responses use success=false
-   * even though the HTTP status is 200.
-   */
-  if (
-    data &&
-    data.success === false
-  ) {
+  if (!response.ok) {
 
     throw new Error(
-      firstNonEmpty(
-        data.message,
-        data.error,
-        "The product could not be loaded."
-      )
+      `Product request failed (${response.status}).`
     );
 
   }
 
+
+  const data =
+    await response.json();
 
   const normalized =
     normalizeProduct(
       data
     );
 
-
   if (!normalized) {
 
     throw new Error(
-      "Product data could not be read from the server response."
+      "Product data could not be read."
     );
 
   }
 
-
   product =
     normalized;
-
 
   normalizedSkus =
     normalizeSkus(
       product.skus
     );
-
 
   renderProduct();
 
@@ -5078,17 +3910,9 @@ async function loadProduct() {
     "hidden"
   );
 
-
   productSectionEl.classList.remove(
     "hidden"
   );
-
-
-  /*
-   * Make sure the selected SKU state
-   * is synchronized after rendering.
-   */
-  updateSelectedSku();
 
 }
 
@@ -5102,30 +3926,20 @@ function showError(
 ) {
 
   console.error(
-    "Prasun Store product error:",
     error
   );
-
 
   loadingEl.classList.add(
     "hidden"
   );
 
-
   productSectionEl.classList.add(
     "hidden"
   );
 
-
-  descriptionCardEl.classList.add(
-    "hidden"
-  );
-
-
   errorBoxEl.classList.remove(
     "hidden"
   );
-
 
   errorMessageEl.textContent =
     error?.message ||
@@ -5135,46 +3949,12 @@ function showError(
 
 
 /* ============================================================
-   GLOBAL ERROR VISIBILITY
-   ============================================================ */
-
-window.addEventListener(
-  "error",
-  event => {
-
-    console.error(
-      "Product page error:",
-      event.error ||
-      event.message
-    );
-
-  }
-);
-
-
-window.addEventListener(
-  "unhandledrejection",
-  event => {
-
-    console.error(
-      "Product page promise error:",
-      event.reason
-    );
-
-  }
-);
-
-
-/* ============================================================
    INIT
    ============================================================ */
 
 document.addEventListener(
   "DOMContentLoaded",
   async () => {
-
-    updateCartBadge();
-
 
     try {
 
@@ -5190,6 +3970,7 @@ document.addEventListener(
 
   }
 );
+
 </script>
 
 </body>
