@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Prasun Store | Technology, Home, Lifestyle & Solar Products</title>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Prasun Store | Technology, Home, Lifestyle & Solar Products
+  </title>
 
   <meta
     name="description"
@@ -31,40 +38,131 @@
     content="Prasun Store"
   />
 
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  />
+
+
   <!-- ============================================================
-       FAVICON.IO
+       CANONICAL
        ============================================================ -->
 
   <link
-    rel="icon"
-    type="image/x-icon"
-    href="./favicon.ico"
+    rel="canonical"
+    href="https://store.prasunbarua.com/"
   />
 
+
+  <!-- ============================================================
+       FAVICON.IO
+       IMPORTANT:
+       All favicon files must be deployed in the ROOT directory
+       of store.prasunbarua.com
+       ============================================================ -->
+
+  <!-- Standard favicon -->
   <link
     rel="icon"
+    href="/favicon.ico?v=2"
+    type="image/x-icon"
+  />
+
+  <!-- Browser shortcut icon fallback -->
+  <link
+    rel="shortcut icon"
+    href="/favicon.ico?v=2"
+    type="image/x-icon"
+  />
+
+  <!-- PNG favicon -->
+  <link
+    rel="icon"
+    href="/favicon-32x32.png?v=2"
     type="image/png"
     sizes="32x32"
-    href="./favicon-32x32.png"
   />
 
   <link
     rel="icon"
+    href="/favicon-16x16.png?v=2"
     type="image/png"
     sizes="16x16"
-    href="./favicon-16x16.png"
   />
 
+  <!-- Apple -->
   <link
     rel="apple-touch-icon"
+    href="/apple-touch-icon.png?v=2"
     sizes="180x180"
-    href="./apple-touch-icon.png"
   />
 
+  <!-- Web manifest -->
   <link
     rel="manifest"
-    href="./site.webmanifest"
+    href="/site.webmanifest?v=2"
   />
+
+
+  <!-- ============================================================
+       OPEN GRAPH
+       ============================================================ -->
+
+  <meta
+    property="og:title"
+    content="Prasun Store | Technology, Home, Lifestyle & Solar Products"
+  />
+
+  <meta
+    property="og:description"
+    content="Discover useful products across technology, home improvement, lifestyle, solar energy and more at Prasun Store."
+  />
+
+  <meta
+    property="og:url"
+    content="https://store.prasunbarua.com/"
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Prasun Store"
+  />
+
+
+  <!-- ============================================================
+       TWITTER / X
+       ============================================================ -->
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Prasun Store | Technology, Home, Lifestyle & Solar Products"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Discover useful products across technology, home improvement, lifestyle, solar energy and more at Prasun Store."
+  />
+
 
   <style>
 
@@ -127,10 +225,11 @@
     }
 
     .container {
-      width: min(
-        1200px,
-        calc(100% - 32px)
-      );
+      width:
+        min(
+          1200px,
+          calc(100% - 32px)
+        );
 
       margin: 0 auto;
     }
@@ -141,7 +240,10 @@
        ============================================================ */
 
     :focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline:
+        3px solid
+        rgba(37, 99, 235, 0.35);
+
       outline-offset: 3px;
     }
 
@@ -152,22 +254,29 @@
 
     .top-header {
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
       background:
         rgba(255, 255, 255, 0.96);
 
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter:
+        blur(14px);
 
-      border-bottom: 1px solid #e5e7eb;
+      -webkit-backdrop-filter:
+        blur(14px);
+
+      border-bottom:
+        1px solid #e5e7eb;
     }
 
     .header-inner {
       min-height: 72px;
 
       display: flex;
+
       align-items: center;
 
       gap: 18px;
@@ -182,6 +291,7 @@
       flex: 0 0 auto;
 
       display: inline-flex;
+
       align-items: center;
 
       gap: 9px;
@@ -195,6 +305,7 @@
       display: block;
 
       width: auto;
+
       height: 44px;
 
       max-width: 180px;
@@ -206,6 +317,7 @@
 
     .brand-name {
       font-size: 23px;
+
       font-weight: 850;
 
       letter-spacing: -0.65px;
@@ -228,6 +340,7 @@
       flex: 1;
 
       width: 100%;
+
       max-width: 620px;
 
       margin: 0 auto;
@@ -240,7 +353,8 @@
 
       background: #f3f4f6;
 
-      border: 1px solid #e5e7eb;
+      border:
+        1px solid #e5e7eb;
 
       border-radius: 12px;
 
@@ -264,9 +378,11 @@
 
     .search-input {
       width: 100%;
+
       min-width: 0;
 
       border: 0;
+
       outline: 0;
 
       background: transparent;
@@ -288,7 +404,9 @@
       flex: 0 0 auto;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 7px;
@@ -298,6 +416,7 @@
       border: 0;
 
       background: #111827;
+
       color: #fff;
 
       padding: 0 18px;
@@ -319,6 +438,7 @@
 
     .search-icon {
       width: 17px;
+
       height: 17px;
 
       flex: 0 0 auto;
@@ -335,6 +455,7 @@
       flex: 0 0 auto;
 
       display: flex;
+
       align-items: center;
 
       gap: 4px;
@@ -342,7 +463,9 @@
 
     .header-link {
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 7px;
@@ -364,11 +487,13 @@
 
     .header-link:hover {
       background: #f3f4f6;
+
       color: #111827;
     }
 
     .header-icon {
       width: 19px;
+
       height: 19px;
 
       flex: 0 0 auto;
@@ -382,20 +507,25 @@
 
     .cart-badge {
       min-width: 21px;
+
       height: 21px;
 
       padding: 0 6px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       border-radius: 999px;
 
       background: #2563eb;
+
       color: #fff;
 
       font-size: 11px;
+
       font-weight: 850;
 
       line-height: 1;
@@ -428,12 +558,13 @@
       overflow: hidden;
 
       background: #111827;
+
       color: #fff;
 
       border-radius: 24px;
 
       padding: 50px;
-      
+
       box-shadow:
         0 22px 55px
         rgba(17, 24, 39, 0.14);
@@ -445,9 +576,11 @@
       position: absolute;
 
       width: 440px;
+
       height: 440px;
 
       right: -180px;
+
       top: -220px;
 
       border-radius: 50%;
@@ -469,9 +602,11 @@
       position: absolute;
 
       width: 260px;
+
       height: 260px;
 
       right: -120px;
+
       bottom: -170px;
 
       border-radius: 50%;
@@ -482,6 +617,7 @@
 
     .hero-content {
       position: relative;
+
       z-index: 2;
 
       max-width: 720px;
@@ -489,6 +625,7 @@
 
     .hero-kicker {
       display: inline-flex;
+
       align-items: center;
 
       min-height: 28px;
@@ -498,9 +635,11 @@
       color: #93c5fd;
 
       font-size: 13px;
+
       font-weight: 850;
 
       text-transform: uppercase;
+
       letter-spacing: 1.1px;
     }
 
@@ -533,6 +672,7 @@
       margin-top: 28px;
 
       display: flex;
+
       flex-wrap: wrap;
 
       gap: 11px;
@@ -540,7 +680,9 @@
 
     .hero-button {
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       min-height: 46px;
@@ -551,7 +693,8 @@
 
       font-weight: 850;
 
-      border: 1px solid transparent;
+      border:
+        1px solid transparent;
 
       transition:
         background 0.18s ease,
@@ -565,6 +708,7 @@
 
     .hero-button.primary {
       background: #fff;
+
       color: #111827;
     }
 
@@ -574,6 +718,7 @@
 
     .hero-button.secondary {
       background: transparent;
+
       color: #fff;
 
       border-color: #4b5563;
@@ -597,7 +742,9 @@
 
     .section-head {
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       gap: 18px;
@@ -625,6 +772,7 @@
       color: #6b7280;
 
       font-size: 14px;
+
       font-weight: 750;
 
       white-space: nowrap;
@@ -651,6 +799,7 @@
       min-width: 0;
 
       display: flex;
+
       flex-direction: column;
 
       overflow: hidden;
@@ -701,6 +850,7 @@
       content: "";
 
       position: absolute;
+
       inset: 0;
 
       pointer-events: none;
@@ -716,6 +866,7 @@
 
     .product-image {
       width: 100%;
+
       height: 100%;
 
       display: block;
@@ -732,12 +883,15 @@
 
     .product-image-fallback {
       width: 100%;
+
       height: 100%;
 
       display: flex;
+
       flex-direction: column;
 
       align-items: center;
+
       justify-content: center;
 
       gap: 10px;
@@ -747,6 +901,7 @@
       background: #f3f4f6;
 
       font-size: 13px;
+
       font-weight: 750;
 
       text-align: center;
@@ -754,6 +909,7 @@
 
     .fallback-icon {
       width: 42px;
+
       height: 42px;
 
       color: #cbd5e1;
@@ -768,6 +924,7 @@
       padding: 16px;
 
       display: flex;
+
       flex-direction: column;
 
       flex: 1;
@@ -785,6 +942,7 @@
       display: -webkit-box;
 
       -webkit-box-orient: vertical;
+
       -webkit-line-clamp: 2;
 
       overflow: hidden;
@@ -801,6 +959,7 @@
       margin-top: 9px;
 
       display: flex;
+
       align-items: center;
 
       gap: 6px;
@@ -839,6 +998,7 @@
       margin-top: 12px;
 
       display: flex;
+
       align-items: baseline;
 
       gap: 7px;
@@ -883,6 +1043,7 @@
       display: -webkit-box;
 
       -webkit-box-orient: vertical;
+
       -webkit-line-clamp: 2;
 
       overflow: hidden;
@@ -932,6 +1093,7 @@
         1px solid #d1d5db;
 
       background: #fff;
+
       color: #111827;
     }
 
@@ -944,6 +1106,7 @@
         1px solid #2563eb;
 
       background: #2563eb;
+
       color: #fff;
     }
 
@@ -960,9 +1123,11 @@
       min-height: 280px;
 
       display: flex;
+
       flex-direction: column;
 
       align-items: center;
+
       justify-content: center;
 
       text-align: center;
@@ -979,6 +1144,7 @@
 
     .spinner {
       width: 42px;
+
       height: 42px;
 
       margin-bottom: 17px;
@@ -1022,6 +1188,7 @@
       border-radius: 10px;
 
       background: #111827;
+
       color: #fff;
 
       padding: 11px 18px;
@@ -1061,6 +1228,7 @@
 
     .empty-icon {
       width: 46px;
+
       height: 46px;
 
       margin: 0 auto 14px;
@@ -1283,11 +1451,13 @@
 
       .header-icon {
         width: 20px;
+
         height: 20px;
       }
 
       .cart-badge {
         min-width: 20px;
+
         height: 20px;
 
         padding: 0 5px;
@@ -1303,6 +1473,7 @@
 
       .search-icon {
         width: 16px;
+
         height: 16px;
       }
 
@@ -1336,6 +1507,7 @@
 
       .section {
         padding-top: 25px;
+
         padding-bottom: 48px;
       }
 
@@ -1392,6 +1564,7 @@
 
       .header-link {
         padding-left: 6px;
+
         padding-right: 6px;
       }
 
@@ -1416,13 +1589,16 @@
       *::before,
       *::after {
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -2837,10 +3013,6 @@
         "product-card";
 
 
-      /* ==========================================================
-         IMAGE
-         ========================================================== */
-
       const imageWrap =
         document.createElement(
           "div"
@@ -2908,10 +3080,6 @@
       }
 
 
-      /* ==========================================================
-         BODY
-         ========================================================== */
-
       const body =
         document.createElement(
           "div"
@@ -2920,8 +3088,6 @@
       body.className =
         "product-body";
 
-
-      /* TITLE */
 
       const title =
         document.createElement(
@@ -2938,10 +3104,6 @@
         title
       );
 
-
-      /* ==========================================================
-         RATING
-         ========================================================== */
 
       const rating =
         document.createElement(
@@ -3045,10 +3207,6 @@
       );
 
 
-      /* ==========================================================
-         PRICE
-         ========================================================== */
-
       const price =
         document.createElement(
           "div"
@@ -3108,10 +3266,6 @@
       );
 
 
-      /* ==========================================================
-         DESCRIPTION
-         ========================================================== */
-
       const description =
         document.createElement(
           "p"
@@ -3128,10 +3282,6 @@
         description
       );
 
-
-      /* ==========================================================
-         ACTIONS
-         ========================================================== */
 
       const actions =
         document.createElement(
@@ -3354,7 +3504,7 @@
         document.createElementNS(
           "http://www.w3.org/2000/svg",
           "path"
-        );
+      );
 
       path.setAttribute(
         "d",
