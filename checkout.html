@@ -2,13 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Checkout | PrasunStore</title>
 
   <meta
     name="description"
     content="Secure checkout at PrasunStore."
+  >
+
+  <!-- FAVICON.IO -->
+  <!-- Upload the favicon.io generated files to your website root -->
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="/favicon.ico"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon-32x32.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon-16x16.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/apple-touch-icon.png"
+  >
+
+  <link
+    rel="manifest"
+    href="/site.webmanifest"
+  >
+
+  <meta
+    name="application-name"
+    content="PrasunStore"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="PrasunStore"
   >
 
   <style>
@@ -43,6 +89,8 @@
       font: inherit;
     }
 
+    /* HEADER */
+
     header {
       background: #fff;
       border-bottom: 1px solid #e5e7eb;
@@ -64,21 +112,43 @@
     .logo {
       font-size: 24px;
       font-weight: 800;
+      color: #111827;
+      white-space: nowrap;
     }
 
     .logo span {
       color: #2563eb;
     }
 
+    /* BACK LINK */
+
     .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       color: #374151;
       font-weight: 600;
       font-size: 14px;
+      white-space: nowrap;
+      transition: color 0.2s ease;
     }
 
     .back-link:hover {
       color: #2563eb;
     }
+
+    .back-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* PAGE */
 
     .page {
       max-width: 1200px;
@@ -106,7 +176,8 @@
       border-radius: 14px;
       padding: 24px;
       margin-bottom: 22px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+      box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.03);
     }
 
     .card h2 {
@@ -114,6 +185,8 @@
       margin-bottom: 20px;
       color: #111827;
     }
+
+    /* FORM */
 
     .form-grid {
       display: grid;
@@ -369,6 +442,8 @@
       font-weight: 800;
     }
 
+    /* CHECKOUT BUTTON */
+
     .checkout-button {
       width: 100%;
       border: 0;
@@ -424,7 +499,8 @@
       border-radius: 16px;
       padding: 35px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+      box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.04);
     }
 
     .success-icon {
@@ -437,8 +513,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 32px;
-      font-weight: 800;
+    }
+
+    .success-icon svg {
+      width: 34px;
+      height: 34px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .success-box h2 {
@@ -467,6 +551,7 @@
       background: #2563eb;
       color: #fff;
       font-weight: 700;
+      transition: background 0.2s ease;
     }
 
     .continue-button:hover {
@@ -519,10 +604,21 @@
 
       .header-inner {
         padding: 13px 14px;
+        gap: 12px;
       }
 
       .logo {
         font-size: 21px;
+      }
+
+      .back-link {
+        font-size: 13px;
+        gap: 6px;
+      }
+
+      .back-icon {
+        width: 17px;
+        height: 17px;
       }
 
       .bank-detail-row {
@@ -537,6 +633,25 @@
       .bank-detail-value {
         text-align: left;
       }
+
+      .success-box {
+        padding: 28px 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .header-inner {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .back-link {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
@@ -545,13 +660,32 @@
 
 <header>
   <div class="header-inner">
-    <a href="./index.html" class="logo">
+
+    <a
+      href="./index.html"
+      class="logo"
+      aria-label="PrasunStore Home"
+    >
       Prasun<span>Store</span>
     </a>
 
-    <a href="./cart.html" class="back-link">
-      ← Back to Cart
+    <a
+      href="./cart.html"
+      class="back-link"
+      aria-label="Back to Cart"
+    >
+      <svg
+        class="back-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M19 12H5"></path>
+        <path d="M12 19l-7-7 7-7"></path>
+      </svg>
+
+      <span>Back to Cart</span>
     </a>
+
   </div>
 </header>
 
@@ -561,21 +695,36 @@
     Checkout
   </h1>
 
-  <div id="globalError" class="message error-message hidden"></div>
+  <div
+    id="globalError"
+    class="message error-message hidden"
+  ></div>
 
   <!-- EMPTY CART -->
 
-  <div id="emptyCheckout" class="message error-message hidden">
-    Your cart is empty. Please add a product before proceeding to checkout.
+  <div
+    id="emptyCheckout"
+    class="message error-message hidden"
+  >
+    Your cart is empty. Please add a product before proceeding
+    to checkout.
+
     <br><br>
-    <a href="./index.html" style="font-weight:700;">
+
+    <a
+      href="./index.html"
+      style="font-weight:700;"
+    >
       Continue Shopping →
     </a>
   </div>
 
   <!-- CHECKOUT -->
 
-  <div id="checkoutContent" class="checkout-layout hidden">
+  <div
+    id="checkoutContent"
+    class="checkout-layout hidden"
+  >
 
     <!-- LEFT COLUMN -->
 
@@ -584,9 +733,13 @@
       <!-- CUSTOMER INFORMATION -->
 
       <section class="card">
-        <h2>Customer Information</h2>
+
+        <h2>
+          Customer Information
+        </h2>
 
         <div class="form-grid">
+
           <div>
             <label for="firstName">
               First Name
@@ -638,16 +791,23 @@
               autocomplete="tel"
             >
           </div>
+
         </div>
+
       </section>
 
       <!-- SHIPPING ADDRESS -->
 
       <section class="card">
-        <h2>Shipping Address</h2>
+
+        <h2>
+          Shipping Address
+        </h2>
 
         <div class="form-grid">
+
           <div class="form-group full">
+
             <label for="address">
               Street Address
               <span class="required">*</span>
@@ -659,9 +819,11 @@
               autocomplete="street-address"
               placeholder="House number, street name, apartment, etc."
             >
+
           </div>
 
           <div>
+
             <label for="city">
               City
               <span class="required">*</span>
@@ -672,9 +834,11 @@
               id="city"
               autocomplete="address-level2"
             >
+
           </div>
 
           <div>
+
             <label for="state">
               State / Province / Region
             </label>
@@ -684,9 +848,11 @@
               id="state"
               autocomplete="address-level1"
             >
+
           </div>
 
           <div>
+
             <label for="postalCode">
               Postal / ZIP Code
               <span class="required">*</span>
@@ -697,9 +863,11 @@
               id="postalCode"
               autocomplete="postal-code"
             >
+
           </div>
 
           <div>
+
             <label for="country">
               Country / Territory
               <span class="required">*</span>
@@ -709,11 +877,17 @@
               id="country"
               autocomplete="country-name"
             >
-              <option value="">Select country</option>
+
+              <option value="">
+                Select country
+              </option>
+
             </select>
+
           </div>
 
           <div class="form-group full">
+
             <label for="orderNotes">
               Order Notes
             </label>
@@ -722,17 +896,25 @@
               id="orderNotes"
               placeholder="Optional delivery instructions or other notes..."
             ></textarea>
+
           </div>
+
         </div>
+
       </section>
 
       <!-- PAYMENT METHOD -->
 
       <section class="card">
-        <h2>Payment Method</h2>
+
+        <h2>
+          Payment Method
+        </h2>
 
         <div class="payment-option">
+
           <div class="payment-row">
+
             <input
               type="radio"
               id="bankTransfer"
@@ -742,6 +924,7 @@
             >
 
             <div>
+
               <div class="payment-title">
                 Bank Transfer
               </div>
@@ -751,12 +934,15 @@
                 Your order will be processed after payment
                 is received and verified.
               </div>
+
             </div>
+
           </div>
 
           <!-- BANK TRANSFER DETAILS -->
 
           <div class="bank-details">
+
             <div class="bank-details-header">
               USD SWIFT Bank Transfer Instructions
             </div>
@@ -764,87 +950,175 @@
             <!-- BENEFICIARY -->
 
             <div class="bank-section">
-              <div class="bank-section-title">Beneficiary</div>
 
-              <div class="bank-detail-row">
-                <div class="bank-detail-label">Beneficiary Name</div>
-                <div class="bank-detail-value">PRASUN ENGINEERING TECHNOLOGY</div>
+              <div class="bank-section-title">
+                Beneficiary
               </div>
 
               <div class="bank-detail-row">
-                <div class="bank-detail-label">Beneficiary Account Number</div>
-                <div class="bank-detail-value">018167402</div>
+
+                <div class="bank-detail-label">
+                  Beneficiary Name
+                </div>
+
+                <div class="bank-detail-value">
+                  PRASUN ENGINEERING TECHNOLOGY
+                </div>
+
               </div>
 
               <div class="bank-detail-row">
-                <div class="bank-detail-label">Currency</div>
-                <div class="bank-detail-value">USD</div>
+
+                <div class="bank-detail-label">
+                  Beneficiary Account Number
+                </div>
+
+                <div class="bank-detail-value">
+                  018167402
+                </div>
+
               </div>
+
+              <div class="bank-detail-row">
+
+                <div class="bank-detail-label">
+                  Currency
+                </div>
+
+                <div class="bank-detail-value">
+                  USD
+                </div>
+
+              </div>
+
             </div>
 
             <!-- BENEFICIARY BANK -->
 
             <div class="bank-section">
-              <div class="bank-section-title">Beneficiary Bank</div>
 
-              <div class="bank-detail-row">
-                <div class="bank-detail-label">Bank Name</div>
-                <div class="bank-detail-value">ADVANCED BANK OF ASIA LIMITED</div>
+              <div class="bank-section-title">
+                Beneficiary Bank
               </div>
 
               <div class="bank-detail-row">
-                <div class="bank-detail-label">Bank Address</div>
+
+                <div class="bank-detail-label">
+                  Bank Name
+                </div>
+
+                <div class="bank-detail-value">
+                  ADVANCED BANK OF ASIA LIMITED
+                </div>
+
+              </div>
+
+              <div class="bank-detail-row">
+
+                <div class="bank-detail-label">
+                  Bank Address
+                </div>
+
                 <div class="bank-detail-value">
                   No. 148, Preah Sihanouk Blvd.,<br>
                   Phnom Penh, Cambodia
                 </div>
+
               </div>
 
               <div class="bank-detail-row">
-                <div class="bank-detail-label">SWIFT / BIC</div>
-                <div class="bank-detail-value swift-code">ABAAKHPP</div>
+
+                <div class="bank-detail-label">
+                  SWIFT / BIC
+                </div>
+
+                <div class="bank-detail-value swift-code">
+                  ABAAKHPP
+                </div>
+
               </div>
+
             </div>
 
             <!-- CORRESPONDENT BANK -->
 
             <div class="bank-section">
-              <div class="bank-section-title">Correspondent Bank</div>
 
-              <div class="bank-detail-row">
-                <div class="bank-detail-label">Bank Name</div>
-                <div class="bank-detail-value">JP Morgan Chase Bank</div>
+              <div class="bank-section-title">
+                Correspondent Bank
               </div>
 
               <div class="bank-detail-row">
-                <div class="bank-detail-label">Bank Address</div>
-                <div class="bank-detail-value">New York, USA</div>
+
+                <div class="bank-detail-label">
+                  Bank Name
+                </div>
+
+                <div class="bank-detail-value">
+                  JP Morgan Chase Bank
+                </div>
+
               </div>
 
               <div class="bank-detail-row">
-                <div class="bank-detail-label">SWIFT / BIC</div>
-                <div class="bank-detail-value swift-code">CHASUS33</div>
+
+                <div class="bank-detail-label">
+                  Bank Address
+                </div>
+
+                <div class="bank-detail-value">
+                  New York, USA
+                </div>
+
               </div>
+
+              <div class="bank-detail-row">
+
+                <div class="bank-detail-label">
+                  SWIFT / BIC
+                </div>
+
+                <div class="bank-detail-value swift-code">
+                  CHASUS33
+                </div>
+
+              </div>
+
             </div>
 
             <!-- PAYMENT REFERENCE -->
 
             <div class="payment-reference">
-              <strong>Payment Reference:</strong>
+
+              <strong>
+                Payment Reference:
+              </strong>
+
               After submitting your order, use your
-              <strong>PrasunStore Order Number</strong>
+              <strong>
+                PrasunStore Order Number
+              </strong>
               as the payment reference when making the bank transfer.
+
             </div>
+
           </div>
 
           <div class="payment-note">
+
             Your order will remain
-            <strong>Pending Bank Transfer</strong>
+            <strong>
+              Pending Bank Transfer
+            </strong>
             until the payment is received and verified.
+
             Please do not consider the order paid until
             PrasunStore confirms the payment.
+
           </div>
+
         </div>
+
       </section>
 
     </div>
@@ -852,25 +1126,51 @@
     <!-- RIGHT COLUMN — ORDER SUMMARY -->
 
     <aside class="card summary-card">
-      <h2>Order Summary</h2>
+
+      <h2>
+        Order Summary
+      </h2>
 
       <div id="summaryItems"></div>
 
       <div class="totals">
+
         <div class="total-row">
-          <span>Subtotal</span>
-          <strong id="subtotal">$0.00</strong>
+
+          <span>
+            Subtotal
+          </span>
+
+          <strong id="subtotal">
+            $0.00
+          </strong>
+
         </div>
 
         <div class="total-row">
-          <span>Shipping</span>
-          <strong id="shipping">Free</strong>
+
+          <span>
+            Shipping
+          </span>
+
+          <strong id="shipping">
+            Free
+          </strong>
+
         </div>
 
         <div class="total-row grand-total">
-          <span>Total</span>
-          <strong id="grandTotal">$0.00</strong>
+
+          <span>
+            Total
+          </span>
+
+          <strong id="grandTotal">
+            $0.00
+          </strong>
+
         </div>
+
       </div>
 
       <button
@@ -880,40 +1180,86 @@
       >
         Place Order
       </button>
+
     </aside>
 
   </div>
 
   <!-- SUCCESS -->
 
-  <div id="successContent" class="success-box hidden">
-    <div class="success-icon">✓</div>
+  <div
+    id="successContent"
+    class="success-box hidden"
+  >
 
-    <h2>Order Received</h2>
+    <div
+      class="success-icon"
+      aria-hidden="true"
+    >
 
-    <p>Thank you for your order at PrasunStore.</p>
+      <svg
+        viewBox="0 0 24 24"
+      >
+        <path d="M5 12.5l4.2 4.2L19 7"></path>
+      </svg>
 
-    <div class="order-number" id="successOrderNumber">
+    </div>
+
+    <h2>
+      Order Received
+    </h2>
+
+    <p>
+      Thank you for your order at PrasunStore.
+    </p>
+
+    <div
+      class="order-number"
+      id="successOrderNumber"
+    >
       Order #—
     </div>
 
-    <p>A confirmation email has been sent to your email address.</p>
+    <p>
+      A confirmation email has been sent to your email address.
+    </p>
 
-    <p>Payment Method: <strong>Bank Transfer</strong></p>
+    <p>
+      Payment Method:
+      <strong>
+        Bank Transfer
+      </strong>
+    </p>
 
-    <p>Your order is currently <strong>Pending Bank Transfer</strong>.</p>
+    <p>
+      Your order is currently
+      <strong>
+        Pending Bank Transfer
+      </strong>.
+    </p>
 
-    <p>Please complete the USD SWIFT bank transfer using the payment instructions provided during checkout.</p>
+    <p>
+      Please complete the USD SWIFT bank transfer using
+      the payment instructions provided during checkout.
+    </p>
 
-    <a href="./index.html" class="continue-button">
+    <a
+      href="./index.html"
+      class="continue-button"
+    >
       Continue Shopping
     </a>
+
   </div>
 
 </main>
 
 <footer>
-  © <span id="footerYear"></span> PrasunStore. All rights reserved.
+
+  ©
+  <span id="footerYear"></span>
+  PrasunStore. All rights reserved.
+
 </footer>
 
 <script>
@@ -921,6 +1267,7 @@
 
 const CART_STORAGE_KEY = "prasun_cart";
 const LEGACY_CART_KEY = "cart";
+
 const BUY_NOW_KEY = "prasun_buy_now";
 const LEGACY_BUY_NOW_KEY = "buyNowItem";
 
@@ -930,100 +1277,317 @@ const ORDER_BACKEND_URL =
 let checkoutItems = [];
 
 const COUNTRIES = [
-  "Afghanistan", "Åland Islands", "Albania", "Algeria", "American Samoa",
-  "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda",
-  "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan",
-  "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium",
-  "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia",
-  "Bonaire, Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana",
-  "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei",
-  "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
-  "Cameroon", "Canada", "Cayman Islands", "Central African Republic",
-  "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands",
-  "Colombia", "Comoros", "Congo", "Congo, Democratic Republic of the",
-  "Cook Islands", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba",
-  "Curaçao", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica",
-  "Dominican Republic", "Ecuador", "Egypt", "El Salvador",
-  "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia",
-  "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France",
-  "French Guiana", "French Polynesia", "French Southern Territories",
-  "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar",
-  "Greece", "Greenland", "Grenada", "Guadeloupe", "Guatemala", "Guernsey",
-  "Guinea", "Guinea-Bissau", "Guyana", "Haiti",
-  "Heard Island and McDonald Islands", "Holy See", "Honduras",
-  "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq",
-  "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan",
-  "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North",
-  "Korea, South", "Kuwait", "Laos", "Latvia", "Lebanon", "Lesotho",
-  "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
-  "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
-  "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mayotte",
-  "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro",
-  "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
-  "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua",
-  "Niger", "Nigeria", "Niue", "Norfolk Island", "North Macedonia",
-  "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau",
-  "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay",
-  "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico",
-  "Qatar", "Réunion", "Romania", "Russia", "Rwanda",
+  "Afghanistan",
+  "Åland Islands",
+  "Albania",
+  "Algeria",
+  "American Samoa",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bermuda",
+  "Bhutan",
+  "Bolivia",
+  "Bonaire, Sint Eustatius and Saba",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Bouvet Island",
+  "Brazil",
+  "British Indian Ocean Territory",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cabo Verde",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cayman Islands",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Christmas Island",
+  "Cocos (Keeling) Islands",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Congo, Democratic Republic of the",
+  "Cook Islands",
+  "Costa Rica",
+  "Côte d'Ivoire",
+  "Croatia",
+  "Cuba",
+  "Curaçao",
+  "Cyprus",
+  "Czechia",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Falkland Islands",
+  "Faroe Islands",
+  "Fiji",
+  "Finland",
+  "France",
+  "French Guiana",
+  "French Polynesia",
+  "French Southern Territories",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Gibraltar",
+  "Greece",
+  "Greenland",
+  "Grenada",
+  "Guadeloupe",
+  "Guatemala",
+  "Guernsey",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Heard Island and McDonald Islands",
+  "Holy See",
+  "Honduras",
+  "Hong Kong",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Isle of Man",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jersey",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Korea, North",
+  "Korea, South",
+  "Kuwait",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macao",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mayotte",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Montserrat",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Caledonia",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "Niue",
+  "Norfolk Island",
+  "North Macedonia",
+  "Northern Mariana Islands",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestine, State of",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Pitcairn",
+  "Poland",
+  "Portugal",
+  "Puerto Rico",
+  "Qatar",
+  "Réunion",
+  "Romania",
+  "Russia",
+  "Rwanda",
   "Saint Barthélemy",
   "Saint Helena, Ascension and Tristan da Cunha",
-  "Saint Kitts and Nevis", "Saint Lucia",
-  "Saint Martin (French part)", "Saint Pierre and Miquelon",
-  "Saint Vincent and the Grenadines", "Samoa", "San Marino",
-  "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia",
-  "Seychelles", "Sierra Leone", "Singapore",
-  "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands",
-  "Somalia", "South Africa",
-  "South Georgia and the South Sandwich Islands", "South Sudan", "Spain",
-  "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Sweden",
-  "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand",
-  "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago",
-  "Tunisia", "Türkiye", "Turkmenistan", "Turks and Caicos Islands",
-  "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
-  "United Kingdom", "United States",
-  "United States Minor Outlying Islands", "Uruguay", "Uzbekistan",
-  "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands, British",
-  "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara",
-  "Yemen", "Zambia", "Zimbabwe"
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Martin (French part)",
+  "Saint Pierre and Miquelon",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Sint Maarten (Dutch part)",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Georgia and the South Sandwich Islands",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Svalbard and Jan Mayen",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tokelau",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Türkiye",
+  "Turkmenistan",
+  "Turks and Caicos Islands",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "United States Minor Outlying Islands",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Venezuela",
+  "Viet Nam",
+  "Virgin Islands, British",
+  "Virgin Islands, U.S.",
+  "Wallis and Futuna",
+  "Western Sahara",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe"
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
-  const footerYear = document.getElementById("footerYear");
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
 
-  if (footerYear) {
-    footerYear.textContent = new Date().getFullYear();
+    const footerYear =
+      document.getElementById("footerYear");
+
+    if (footerYear) {
+      footerYear.textContent =
+        new Date().getFullYear();
+    }
+
+    populateCountries();
+
+    loadCheckoutItems();
+
+    const button =
+      document.getElementById(
+        "placeOrderButton"
+      );
+
+    if (button) {
+      button.addEventListener(
+        "click",
+        placeOrder
+      );
+    }
   }
-
-  populateCountries();
-  loadCheckoutItems();
-
-  const button = document.getElementById("placeOrderButton");
-
-  if (button) {
-    button.addEventListener("click", placeOrder);
-  }
-});
+);
 
 function populateCountries() {
-  const select = document.getElementById("country");
 
-  if (!select) return;
+  const select =
+    document.getElementById("country");
 
-  COUNTRIES.forEach(function (country) {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    select.appendChild(option);
-  });
+  if (!select) {
+    return;
+  }
+
+  COUNTRIES.forEach(
+    function (country) {
+
+      const option =
+        document.createElement("option");
+
+      option.value = country;
+      option.textContent = country;
+
+      select.appendChild(option);
+    }
+  );
 }
 
 function parseJSON(value, fallback) {
+
   if (fallback === undefined) {
     fallback = null;
   }
 
-  if (value === null || value === undefined) {
+  if (
+    value === null ||
+    value === undefined
+  ) {
     return fallback;
   }
 
@@ -1038,7 +1602,11 @@ function parseJSON(value, fallback) {
   }
 }
 
-function getStorageItem(storage, key) {
+function getStorageItem(
+  storage,
+  key
+) {
+
   try {
     return storage.getItem(key);
   } catch (error) {
@@ -1047,29 +1615,44 @@ function getStorageItem(storage, key) {
 }
 
 function parsePrice(value) {
-  if (value === null || value === undefined) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
     return 0;
   }
 
   if (typeof value === "number") {
-    return Number.isFinite(value) ? value : 0;
+    return Number.isFinite(value)
+      ? value
+      : 0;
   }
 
   if (typeof value === "string") {
-    const cleaned = value
-      .replace(/,/g, "")
-      .replace(/[^\d.-]/g, "");
 
-    const number = Number(cleaned);
+    const cleaned =
+      value
+        .replace(/,/g, "")
+        .replace(/[^\d.-]/g, "");
 
-    return Number.isFinite(number) ? number : 0;
+    const number =
+      Number(cleaned);
+
+    return Number.isFinite(number)
+      ? number
+      : 0;
   }
 
   return 0;
 }
 
 function getItemPrice(item) {
-  if (!item || typeof item !== "object") {
+
+  if (
+    !item ||
+    typeof item !== "object"
+  ) {
     return 0;
   }
 
@@ -1088,24 +1671,38 @@ function getItemPrice(item) {
     item.finalPrice
   ];
 
-  for (const value of priceFields) {
-    const parsed = parsePrice(value);
+  for (
+    const value of priceFields
+  ) {
+
+    const parsed =
+      parsePrice(value);
 
     if (parsed > 0) {
       return parsed;
     }
   }
 
-  if (item.product && typeof item.product === "object") {
-    const nestedPrice = getItemPrice(item.product);
+  if (
+    item.product &&
+    typeof item.product === "object"
+  ) {
+
+    const nestedPrice =
+      getItemPrice(item.product);
 
     if (nestedPrice > 0) {
       return nestedPrice;
     }
   }
 
-  if (item.variant && typeof item.variant === "object") {
-    const variantPrice = getItemPrice(item.variant);
+  if (
+    item.variant &&
+    typeof item.variant === "object"
+  ) {
+
+    const variantPrice =
+      getItemPrice(item.variant);
 
     if (variantPrice > 0) {
       return variantPrice;
@@ -1116,34 +1713,47 @@ function getItemPrice(item) {
 }
 
 function getItemQuantity(item) {
-  const quantity = parseInt(
-    item && (
-      item.quantity ??
-      item.qty ??
-      item.count ??
-      1
-    ),
-    10
-  );
+
+  const quantity =
+    parseInt(
+      item &&
+      (
+        item.quantity ??
+        item.qty ??
+        item.count ??
+        1
+      ),
+      10
+    );
 
   return Math.max(
     1,
-    Number.isFinite(quantity) ? quantity : 1
+    Number.isFinite(quantity)
+      ? quantity
+      : 1
   );
 }
 
 function sanitizeCartItem(item) {
-  if (!item || typeof item !== "object") {
+
+  if (
+    !item ||
+    typeof item !== "object"
+  ) {
     return null;
   }
 
   const productObject =
-    item.product && typeof item.product === "object"
+    item.product &&
+    typeof item.product === "object"
       ? item.product
       : null;
 
-  const price = getItemPrice(item);
-  const quantity = getItemQuantity(item);
+  const price =
+    getItemPrice(item);
+
+  const quantity =
+    getItemQuantity(item);
 
   let selectedProperties = {};
 
@@ -1151,17 +1761,25 @@ function sanitizeCartItem(item) {
     item.selected_properties &&
     typeof item.selected_properties === "object"
   ) {
-    selectedProperties = item.selected_properties;
+
+    selectedProperties =
+      item.selected_properties;
+
   } else if (
     item.selectedProperties &&
     typeof item.selectedProperties === "object"
   ) {
-    selectedProperties = item.selectedProperties;
+
+    selectedProperties =
+      item.selectedProperties;
+
   } else if (
     item.properties &&
     typeof item.properties === "object"
   ) {
-    selectedProperties = item.properties;
+
+    selectedProperties =
+      item.properties;
   }
 
   const title =
@@ -1198,17 +1816,21 @@ function sanitizeCartItem(item) {
     "";
 
   return {
+
     id:
       item.id ||
       `${productId || "product"}_${Date.now()}_${Math.random()
         .toString(36)
         .slice(2, 8)}`,
 
-    product_id: productId,
+    product_id:
+      productId,
 
-    title: title,
+    title:
+      title,
 
-    price: price,
+    price:
+      price,
 
     currency:
       item.currency ||
@@ -1217,13 +1839,17 @@ function sanitizeCartItem(item) {
       productObject?.currency ||
       "USD",
 
-    quantity: quantity,
+    quantity:
+      quantity,
 
-    image: image,
+    image:
+      image,
 
-    sku: sku,
+    sku:
+      sku,
 
-    selected_properties: selectedProperties,
+    selected_properties:
+      selectedProperties,
 
     variant:
       item.variant ||
@@ -1234,61 +1860,104 @@ function sanitizeCartItem(item) {
 }
 
 function loadCheckoutItems() {
+
   try {
+
     let buyNowRaw =
-      getStorageItem(sessionStorage, BUY_NOW_KEY) ||
-      getStorageItem(localStorage, BUY_NOW_KEY) ||
-      getStorageItem(sessionStorage, LEGACY_BUY_NOW_KEY) ||
-      getStorageItem(localStorage, LEGACY_BUY_NOW_KEY);
+      getStorageItem(
+        sessionStorage,
+        BUY_NOW_KEY
+      ) ||
+      getStorageItem(
+        localStorage,
+        BUY_NOW_KEY
+      ) ||
+      getStorageItem(
+        sessionStorage,
+        LEGACY_BUY_NOW_KEY
+      ) ||
+      getStorageItem(
+        localStorage,
+        LEGACY_BUY_NOW_KEY
+      );
 
     if (buyNowRaw) {
-      const buyNowItem = parseJSON(buyNowRaw);
+
+      const buyNowItem =
+        parseJSON(buyNowRaw);
 
       if (Array.isArray(buyNowItem)) {
-        checkoutItems = buyNowItem
-          .map(sanitizeCartItem)
-          .filter(Boolean);
+
+        checkoutItems =
+          buyNowItem
+            .map(sanitizeCartItem)
+            .filter(Boolean);
+
       } else if (
         buyNowItem &&
         typeof buyNowItem === "object"
       ) {
-        const sanitized = sanitizeCartItem(buyNowItem);
+
+        const sanitized =
+          sanitizeCartItem(
+            buyNowItem
+          );
 
         if (sanitized) {
-          checkoutItems = [sanitized];
+          checkoutItems = [
+            sanitized
+          ];
         }
       }
 
       if (checkoutItems.length) {
+
         console.log(
           "Checkout loaded from Buy Now:",
           checkoutItems
         );
 
         renderCheckout();
+
         return;
       }
     }
 
     const cartRaw =
-      getStorageItem(localStorage, CART_STORAGE_KEY) ||
-      getStorageItem(localStorage, LEGACY_CART_KEY);
+      getStorageItem(
+        localStorage,
+        CART_STORAGE_KEY
+      ) ||
+      getStorageItem(
+        localStorage,
+        LEGACY_CART_KEY
+      );
 
-    const cart = parseJSON(cartRaw, []);
+    const cart =
+      parseJSON(
+        cartRaw,
+        []
+      );
 
     if (Array.isArray(cart)) {
-      checkoutItems = cart
-        .map(sanitizeCartItem)
-        .filter(Boolean);
+
+      checkoutItems =
+        cart
+          .map(sanitizeCartItem)
+          .filter(Boolean);
+
     } else if (
       cart &&
       typeof cart === "object"
     ) {
-      const sanitized = sanitizeCartItem(cart);
 
-      checkoutItems = sanitized
-        ? [sanitized]
-        : [];
+      const sanitized =
+        sanitizeCartItem(cart);
+
+      checkoutItems =
+        sanitized
+          ? [sanitized]
+          : [];
     }
 
     console.log(
@@ -1296,21 +1965,26 @@ function loadCheckoutItems() {
       checkoutItems
     );
 
-    checkoutItems.forEach(function (item, index) {
-      console.log(
-        "Checkout item " + (index + 1),
-        {
-          title: item.title,
-          price: item.price,
-          quantity: item.quantity,
-          currency: item.currency
-        }
-      );
-    });
+    checkoutItems.forEach(
+      function (item, index) {
+
+        console.log(
+          "Checkout item " +
+          (index + 1),
+          {
+            title: item.title,
+            price: item.price,
+            quantity: item.quantity,
+            currency: item.currency
+          }
+        );
+      }
+    );
 
     renderCheckout();
 
   } catch (error) {
+
     console.error(
       "Checkout loading error:",
       error
@@ -1323,37 +1997,56 @@ function loadCheckoutItems() {
 }
 
 function renderCheckout() {
+
   const content =
-    document.getElementById("checkoutContent");
+    document.getElementById(
+      "checkoutContent"
+    );
 
   const empty =
-    document.getElementById("emptyCheckout");
+    document.getElementById(
+      "emptyCheckout"
+    );
 
   if (!checkoutItems.length) {
+
     if (content) {
-      content.classList.add("hidden");
+      content.classList.add(
+        "hidden"
+      );
     }
 
     if (empty) {
-      empty.classList.remove("hidden");
+      empty.classList.remove(
+        "hidden"
+      );
     }
 
     return;
   }
 
   if (empty) {
-    empty.classList.add("hidden");
+    empty.classList.add(
+      "hidden"
+    );
   }
 
   if (content) {
-    content.classList.remove("hidden");
+    content.classList.remove(
+      "hidden"
+    );
   }
 
   renderSummary();
 }
 
-function formatMoney(amount, currency) {
-  const numericAmount = Number(amount) || 0;
+function formatMoney(
+  amount,
+  currency
+) {
+
+  const numericAmount =
+    Number(amount) || 0;
 
   currency =
     typeof currency === "string" &&
@@ -1362,16 +2055,28 @@ function formatMoney(amount, currency) {
       : "USD";
 
   try {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: currency
-    }).format(numericAmount);
+
+    return new Intl.NumberFormat(
+      "en-US",
+      {
+        style: "currency",
+        currency: currency
+      }
+    ).format(
+      numericAmount
+    );
+
   } catch (error) {
-    return "$" + numericAmount.toFixed(2);
+
+    return (
+      "$" +
+      numericAmount.toFixed(2)
+    );
   }
 }
 
 function getVariantText(item) {
+
   const properties =
     item.selected_properties;
 
@@ -1380,23 +2085,31 @@ function getVariantText(item) {
     typeof properties === "object" &&
     Object.keys(properties).length
   ) {
-    return Object.entries(properties)
-      .map(function ([key, value]) {
-        if (
-          value === null ||
-          value === undefined ||
-          value === ""
-        ) {
-          return "";
-        }
 
-        return `${key}: ${value}`;
-      })
+    return Object.entries(
+      properties
+    )
+      .map(
+        function ([key, value]) {
+
+          if (
+            value === null ||
+            value === undefined ||
+            value === ""
+          ) {
+            return "";
+          }
+
+          return `${key}: ${value}`;
+        }
+      )
       .filter(Boolean)
       .join(", ");
   }
 
-  if (typeof item.variant === "string") {
+  if (
+    typeof item.variant === "string"
+  ) {
     return item.variant;
   }
 
@@ -1404,18 +2117,24 @@ function getVariantText(item) {
     item.variant &&
     typeof item.variant === "object"
   ) {
-    return Object.entries(item.variant)
-      .map(function ([key, value]) {
-        if (
-          value === null ||
-          value === undefined ||
-          value === ""
-        ) {
-          return "";
-        }
 
-        return `${key}: ${value}`;
-      })
+    return Object.entries(
+      item.variant
+    )
+      .map(
+        function ([key, value]) {
+
+          if (
+            value === null ||
+            value === undefined ||
+            value === ""
+          ) {
+            return "";
+          }
+
+          return `${key}: ${value}`;
+        }
+      )
       .filter(Boolean)
       .join(", ");
   }
@@ -1424,30 +2143,58 @@ function getVariantText(item) {
 }
 
 function escapeHTML(value) {
-  if (value === null || value === undefined) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
     return "";
   }
 
   return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+    .replace(
+      /</g,
+      "&lt;"
+    )
+    .replace(
+      />/g,
+      "&gt;"
+    )
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 }
 
 function renderSummary() {
+
   const container =
-    document.getElementById("summaryItems");
+    document.getElementById(
+      "summaryItems"
+    );
 
   const subtotalElement =
-    document.getElementById("subtotal");
+    document.getElementById(
+      "subtotal"
+    );
 
   const shippingElement =
-    document.getElementById("shipping");
+    document.getElementById(
+      "shipping"
+    );
 
   const grandTotalElement =
-    document.getElementById("grandTotal");
+    document.getElementById(
+      "grandTotal"
+    );
 
   if (!container) {
     return;
@@ -1458,100 +2205,143 @@ function renderSummary() {
   let subtotal = 0;
   let currency = "USD";
 
-  checkoutItems.forEach(function (item) {
-    const price =
-      Number(item.price) || 0;
+  checkoutItems.forEach(
+    function (item) {
 
-    const quantity =
-      Math.max(
-        1,
-        Number(item.quantity) || 1
+      const price =
+        Number(item.price) || 0;
+
+      const quantity =
+        Math.max(
+          1,
+          Number(item.quantity) || 1
+        );
+
+      const lineTotal =
+        price * quantity;
+
+      subtotal += lineTotal;
+
+      if (item.currency) {
+        currency =
+          item.currency;
+      }
+
+      const variantText =
+        getVariantText(item);
+
+      const summaryItem =
+        document.createElement(
+          "div"
+        );
+
+      summaryItem.className =
+        "summary-item";
+
+      summaryItem.innerHTML = `
+        <img
+          class="summary-image"
+          src="${escapeHTML(
+            item.image || ""
+          )}"
+          alt="${escapeHTML(
+            item.title
+          )}"
+          onerror="this.style.visibility='hidden';"
+        >
+
+        <div class="summary-info">
+
+          <div class="summary-title">
+            ${escapeHTML(
+              item.title
+            )}
+          </div>
+
+          ${
+            variantText
+              ? `
+                <div class="summary-variant">
+                  ${escapeHTML(
+                    variantText
+                  )}
+                </div>
+              `
+              : ""
+          }
+
+          <div class="summary-price">
+            ${formatMoney(
+              price,
+              currency
+            )}
+            × ${quantity}
+          </div>
+
+          <div class="summary-price">
+            <strong>
+              ${formatMoney(
+                lineTotal,
+                currency
+              )}
+            </strong>
+          </div>
+
+        </div>
+      `;
+
+      container.appendChild(
+        summaryItem
       );
-
-    const lineTotal =
-      price * quantity;
-
-    subtotal += lineTotal;
-
-    if (item.currency) {
-      currency = item.currency;
     }
-
-    const variantText =
-      getVariantText(item);
-
-    const summaryItem =
-      document.createElement("div");
-
-    summaryItem.className =
-      "summary-item";
-
-    summaryItem.innerHTML = `
-      <img
-        class="summary-image"
-        src="${escapeHTML(item.image || "")}"
-        alt="${escapeHTML(item.title)}"
-        onerror="this.style.visibility='hidden';"
-      >
-
-      <div class="summary-info">
-
-        <div class="summary-title">
-          ${escapeHTML(item.title)}
-        </div>
-
-        ${
-          variantText
-            ? `
-              <div class="summary-variant">
-                ${escapeHTML(variantText)}
-              </div>
-            `
-            : ""
-        }
-
-        <div class="summary-price">
-          ${formatMoney(price, currency)}
-          × ${quantity}
-        </div>
-
-        <div class="summary-price">
-          <strong>
-            ${formatMoney(lineTotal, currency)}
-          </strong>
-        </div>
-
-      </div>
-    `;
-
-    container.appendChild(summaryItem);
-  });
+  );
 
   const shipping = 0;
-  const grandTotal = subtotal + shipping;
+
+  const grandTotal =
+    subtotal + shipping;
 
   if (subtotalElement) {
+
     subtotalElement.textContent =
-      formatMoney(subtotal, currency);
+      formatMoney(
+        subtotal,
+        currency
+      );
   }
 
   if (shippingElement) {
+
     shippingElement.textContent =
       shipping > 0
-        ? formatMoney(shipping, currency)
+        ? formatMoney(
+            shipping,
+            currency
+          )
         : "Free";
   }
 
   if (grandTotalElement) {
+
     grandTotalElement.textContent =
-      formatMoney(grandTotal, currency);
+      formatMoney(
+        grandTotal,
+        currency
+      );
   }
 
   window.checkoutTotals = {
-    subtotal: subtotal,
-    shipping: shipping,
-    total: grandTotal,
-    currency: currency
+    subtotal:
+      subtotal,
+
+    shipping:
+      shipping,
+
+    total:
+      grandTotal,
+
+    currency:
+      currency
   };
 
   console.log(
@@ -1561,6 +2351,7 @@ function renderSummary() {
 }
 
 function getValue(id) {
+
   const element =
     document.getElementById(id);
 
@@ -1570,21 +2361,61 @@ function getValue(id) {
 }
 
 function validateCheckoutForm() {
+
   const requiredFields = [
-    ["firstName", "First Name"],
-    ["lastName", "Last Name"],
-    ["email", "Email Address"],
-    ["phone", "Phone Number"],
-    ["address", "Street Address"],
-    ["city", "City"],
-    ["postalCode", "Postal / ZIP Code"],
-    ["country", "Country"]
+
+    [
+      "firstName",
+      "First Name"
+    ],
+
+    [
+      "lastName",
+      "Last Name"
+    ],
+
+    [
+      "email",
+      "Email Address"
+    ],
+
+    [
+      "phone",
+      "Phone Number"
+    ],
+
+    [
+      "address",
+      "Street Address"
+    ],
+
+    [
+      "city",
+      "City"
+    ],
+
+    [
+      "postalCode",
+      "Postal / ZIP Code"
+    ],
+
+    [
+      "country",
+      "Country"
+    ]
+
   ];
 
-  for (const [id, label] of requiredFields) {
-    const value = getValue(id);
+  for (
+    const [id, label]
+    of requiredFields
+  ) {
+
+    const value =
+      getValue(id);
 
     if (!value) {
+
       showError(
         `${label} is required.`
       );
@@ -1606,7 +2437,10 @@ function validateCheckoutForm() {
   const emailPattern =
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!emailPattern.test(email)) {
+  if (
+    !emailPattern.test(email)
+  ) {
+
     showError(
       "Please enter a valid email address."
     );
@@ -1622,6 +2456,7 @@ function validateCheckoutForm() {
 }
 
 function buildOrderPayload() {
+
   const totals =
     window.checkoutTotals || {
       subtotal: 0,
@@ -1631,7 +2466,9 @@ function buildOrderPayload() {
     };
 
   return {
+
     customer: {
+
       firstName:
         getValue("firstName"),
 
@@ -1646,6 +2483,7 @@ function buildOrderPayload() {
     },
 
     shipping_address: {
+
       address:
         getValue("address"),
 
@@ -1675,45 +2513,52 @@ function buildOrderPayload() {
       "pending_bank_transfer",
 
     items:
-      checkoutItems.map(function (item) {
-        const price =
-          Number(item.price) || 0;
+      checkoutItems.map(
+        function (item) {
 
-        const quantity =
-          Number(item.quantity) || 1;
+          const price =
+            Number(item.price) || 0;
 
-        return {
-          id: item.id,
+          const quantity =
+            Number(item.quantity) || 1;
 
-          product_id:
-            item.product_id,
+          return {
 
-          title:
-            item.title,
+            id:
+              item.id,
 
-          sku:
-            item.sku,
+            product_id:
+              item.product_id,
 
-          price: price,
+            title:
+              item.title,
 
-          quantity: quantity,
+            sku:
+              item.sku,
 
-          line_total:
-            price * quantity,
+            price:
+              price,
 
-          currency:
-            item.currency || "USD",
+            quantity:
+              quantity,
 
-          image:
-            item.image || "",
+            line_total:
+              price * quantity,
 
-          selected_properties:
-            item.selected_properties || {},
+            currency:
+              item.currency || "USD",
 
-          variant:
-            item.variant || null
-        };
-      }),
+            image:
+              item.image || "",
+
+            selected_properties:
+              item.selected_properties || {},
+
+            variant:
+              item.variant || null
+          };
+        }
+      ),
 
     subtotal:
       Number(totals.subtotal) || 0,
@@ -1730,11 +2575,13 @@ function buildOrderPayload() {
 }
 
 async function placeOrder() {
+
   hideError();
 
   renderSummary();
 
   if (!checkoutItems.length) {
+
     showError(
       "Your cart is empty."
     );
@@ -1746,9 +2593,12 @@ async function placeOrder() {
     window.checkoutTotals || {};
 
   if (
-    !Number.isFinite(Number(totals.total)) ||
+    !Number.isFinite(
+      Number(totals.total)
+    ) ||
     Number(totals.total) <= 0
   ) {
+
     console.error(
       "Invalid checkout total:",
       totals,
@@ -1767,15 +2617,20 @@ async function placeOrder() {
   }
 
   const button =
-    document.getElementById("placeOrderButton");
+    document.getElementById(
+      "placeOrderButton"
+    );
 
   if (button) {
+
     button.disabled = true;
+
     button.textContent =
       "Submitting Order...";
   }
 
   try {
+
     const payload =
       buildOrderPayload();
 
@@ -1803,8 +2658,12 @@ async function placeOrder() {
     let result = null;
 
     try {
-      result = await response.json();
+
+      result =
+        await response.json();
+
     } catch (error) {
+
       result = null;
     }
 
@@ -1814,6 +2673,7 @@ async function placeOrder() {
     );
 
     if (!response.ok) {
+
       throw new Error(
         result?.error ||
         result?.message ||
@@ -1831,9 +2691,12 @@ async function placeOrder() {
 
     clearCheckoutStorage();
 
-    showSuccess(orderNumber);
+    showSuccess(
+      orderNumber
+    );
 
   } catch (error) {
+
     console.error(
       "Place order error:",
       error
@@ -1845,7 +2708,9 @@ async function placeOrder() {
     );
 
     if (button) {
+
       button.disabled = false;
+
       button.textContent =
         "Place Order";
     }
@@ -1853,13 +2718,21 @@ async function placeOrder() {
 }
 
 function generateLocalOrderNumber() {
-  const now = new Date();
+
+  const now =
+    new Date();
 
   const date =
     now
       .toISOString()
-      .replace(/\D/g, "")
-      .slice(0, 14);
+      .replace(
+        /\D/g,
+        ""
+      )
+      .slice(
+        0,
+        14
+      );
 
   const random =
     Math.floor(
@@ -1871,101 +2744,166 @@ function generateLocalOrderNumber() {
 }
 
 function clearCheckoutStorage() {
+
   const keys = [
+
     CART_STORAGE_KEY,
     LEGACY_CART_KEY,
     BUY_NOW_KEY,
     LEGACY_BUY_NOW_KEY
+
   ];
 
-  keys.forEach(function (key) {
-    try {
-      localStorage.removeItem(key);
-    } catch (error) {}
+  keys.forEach(
+    function (key) {
 
-    try {
-      sessionStorage.removeItem(key);
-    } catch (error) {}
-  });
+      try {
+
+        localStorage.removeItem(
+          key
+        );
+
+      } catch (error) {}
+
+      try {
+
+        sessionStorage.removeItem(
+          key
+        );
+
+      } catch (error) {}
+
+    }
+  );
 }
 
-function showSuccess(orderNumber) {
+function showSuccess(
+  orderNumber
+) {
+
   const checkoutContent =
-    document.getElementById("checkoutContent");
+    document.getElementById(
+      "checkoutContent"
+    );
 
   const successContent =
-    document.getElementById("successContent");
+    document.getElementById(
+      "successContent"
+    );
 
   const orderNumberElement =
-    document.getElementById("successOrderNumber");
+    document.getElementById(
+      "successOrderNumber"
+    );
 
   const globalError =
-    document.getElementById("globalError");
+    document.getElementById(
+      "globalError"
+    );
 
   if (globalError) {
-    globalError.classList.add("hidden");
+
+    globalError.classList.add(
+      "hidden"
+    );
   }
 
   if (checkoutContent) {
-    checkoutContent.classList.add("hidden");
+
+    checkoutContent.classList.add(
+      "hidden"
+    );
   }
 
   if (successContent) {
-    successContent.classList.remove("hidden");
+
+    successContent.classList.remove(
+      "hidden"
+    );
   }
 
   if (orderNumberElement) {
+
     orderNumberElement.textContent =
       `Order #${orderNumber}`;
   }
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo(
+    {
+      top: 0,
+      behavior: "smooth"
+    }
+  );
 }
 
-function showError(message) {
+function showError(
+  message
+) {
+
   const element =
-    document.getElementById("globalError");
+    document.getElementById(
+      "globalError"
+    );
 
   if (!element) {
-    console.error(message);
+
+    console.error(
+      message
+    );
+
     return;
   }
 
   element.textContent =
-    message || "Something went wrong.";
+    message ||
+    "Something went wrong.";
 
-  element.classList.remove("hidden");
+  element.classList.remove(
+    "hidden"
+  );
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo(
+    {
+      top: 0,
+      behavior: "smooth"
+    }
+  );
 }
 
 function hideError() {
+
   const element =
-    document.getElementById("globalError");
+    document.getElementById(
+      "globalError"
+    );
 
   if (element) {
-    element.classList.add("hidden");
+
+    element.classList.add(
+      "hidden"
+    );
   }
 }
 
 window.PrasunCheckoutDebug = {
-  getItems: function () {
-    return checkoutItems;
-  },
 
-  getTotals: function () {
-    return window.checkoutTotals || null;
-  },
+  getItems:
+    function () {
+      return checkoutItems;
+    },
 
-  reload: function () {
-    loadCheckoutItems();
-  }
+  getTotals:
+    function () {
+      return (
+        window.checkoutTotals ||
+        null
+      );
+    },
+
+  reload:
+    function () {
+      loadCheckoutItems();
+    }
 };
 </script>
 
