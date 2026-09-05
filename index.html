@@ -98,6 +98,7 @@
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
 }
 
@@ -107,6 +108,17 @@
   height: 46px;
   max-width: 190px;
   object-fit: contain;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.brand-name span {
+  color: #2563eb;
 }
 
     .search-wrap {
@@ -757,9 +769,13 @@
       }
 
       .brand-logo {
-  height: 40px;
-  max-width: 160px;
-}
+    height: 40px;
+    max-width: 160px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
 
     }
   </style>
@@ -783,6 +799,9 @@
     alt="Prasun Store"
     class="brand-logo"
   />
+      <span class="brand-name">
+    Prasun<span>Store</span>
+  </span>
 </a>
       <div class="search-wrap">
 
