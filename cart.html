@@ -164,16 +164,18 @@
        ========================================================= */
 
     .brand {
+      flex: 0 0 auto;
+
       display: inline-flex;
       align-items: center;
 
+      gap: 9px;
+
       min-width: 0;
-      flex-shrink: 0;
 
-      font-size: 24px;
-      font-weight: 800;
+      border-radius: 10px;
 
-      letter-spacing: -0.5px;
+      color: #111827;
 
       white-space: nowrap;
 
@@ -182,7 +184,32 @@
         transform 0.1s ease;
     }
 
-    .brand span {
+    .brand-logo {
+      display: block;
+
+      width: auto;
+      height: 44px;
+
+      max-width: 180px;
+
+      object-fit: contain;
+
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      font-size: 23px;
+
+      font-weight: 850;
+
+      letter-spacing: -0.65px;
+
+      white-space: nowrap;
+
+      line-height: 1;
+    }
+
+    .brand-name span {
       color: #2563eb;
     }
 
@@ -1171,7 +1198,19 @@
 
         min-width: 0;
 
+        gap: 7px;
+      }
+
+      .brand-logo {
+        height: 39px;
+
+        max-width: 145px;
+      }
+
+      .brand-name {
         font-size: 20px;
+
+        letter-spacing: -0.5px;
       }
 
 
@@ -1329,7 +1368,7 @@
 
     @media (max-width: 420px) {
 
-      .brand {
+      .brand-name {
         font-size: 18px;
       }
 
@@ -1404,9 +1443,21 @@
        VERY SMALL MOBILE
        ========================================================= */
 
+    @media (max-width: 380px) {
+
+      .brand-logo {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+    }
+
     @media (max-width: 360px) {
 
-      .brand {
+      .brand-name {
         font-size: 17px;
       }
 
@@ -1488,8 +1539,21 @@
         href="./index.html"
         class="brand"
         aria-label="Prasun Store home"
+        title="Prasun Store"
       >
-        Prasun<span>Store</span>
+
+        <img
+          src="./prasun-store-logo.jpeg"
+          alt="Prasun Store logo"
+          class="brand-logo"
+          width="180"
+          height="44"
+        >
+
+        <span class="brand-name">
+          Prasun<span>Store</span>
+        </span>
+
       </a>
 
 
