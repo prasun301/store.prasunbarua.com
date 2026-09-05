@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Checkout | PrasunStore</title>
-
 <meta
 name="description"
 content="Secure checkout at PrasunStore. Complete your shipping details and place your order."
-
 >
-
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family:
         -apple-system,
@@ -32,23 +26,19 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       color: #1f2937;
       line-height: 1.5;
     }
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
     button,
     input,
     select,
     textarea {
       font: inherit;
     }
-
     /* =========================
        HEADER
     ========================== */
-
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
@@ -56,7 +46,6 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       top: 0;
       z-index: 100;
     }
-
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
@@ -66,55 +55,45 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       justify-content: space-between;
       gap: 20px;
     }
-
     .logo {
       font-size: 24px;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
-
     .logo span {
       color: #2563eb;
     }
-
     .back-link {
       color: #374151;
       font-weight: 600;
       font-size: 14px;
     }
-
     .back-link:hover {
       color: #2563eb;
     }
-
     /* =========================
        PAGE
     ========================== */
-
     .page {
       max-width: 1200px;
       margin: 0 auto;
       padding: 35px 20px 60px;
     }
-
     .page-title {
       font-size: 32px;
       font-weight: 800;
       margin-bottom: 28px;
       color: #111827;
     }
-
     .checkout-layout {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 380px;
       gap: 28px;
       align-items: start;
     }
-
     /* =========================
        CARDS
     ========================== */
-
     .card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -123,31 +102,25 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       margin-bottom: 22px;
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
     }
-
     .card h2 {
       font-size: 20px;
       margin-bottom: 20px;
       color: #111827;
     }
-
     /* =========================
        FORM
     ========================== */
-
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
-
     .form-group {
       margin-bottom: 0;
     }
-
     .form-group.full {
       grid-column: 1 / -1;
     }
-
     label {
       display: block;
       font-size: 14px;
@@ -155,11 +128,9 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       margin-bottom: 7px;
       color: #374151;
     }
-
     .required {
       color: #dc2626;
     }
-
     input,
     select,
     textarea {
@@ -172,53 +143,44 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-
     input:focus,
     select:focus,
     textarea:focus {
       border-color: #2563eb;
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
     }
-
     textarea {
       resize: vertical;
       min-height: 100px;
     }
-
     /* =========================
        PAYMENT
     ========================== */
-
     .payment-option {
       border: 2px solid #2563eb;
       border-radius: 12px;
       padding: 17px;
       background: #eff6ff;
     }
-
     .payment-row {
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
-
     .payment-row input {
       width: auto;
       margin-top: 5px;
       accent-color: #2563eb;
     }
-
     .payment-title {
       font-weight: 800;
       color: #111827;
       margin-bottom: 4px;
     }
-
     .payment-description {
       font-size: 14px;
       color: #4b5563;
     }
-
     .bank-details {
       margin-top: 16px;
       padding: 18px;
@@ -228,18 +190,15 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       font-size: 14px;
       color: #374151;
     }
-
     .bank-details strong {
       color: #111827;
     }
-
     .bank-section-title {
       font-size: 15px;
       font-weight: 800;
       color: #111827;
       margin-bottom: 10px;
     }
-
     .bank-row {
       display: grid;
       grid-template-columns: 180px 1fr;
@@ -247,22 +206,18 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       padding: 6px 0;
       border-bottom: 1px solid #f3f4f6;
     }
-
     .bank-row:last-child {
       border-bottom: 0;
     }
-
     .bank-label {
       color: #6b7280;
       font-weight: 600;
     }
-
     .bank-value {
       color: #111827;
       font-weight: 700;
       word-break: break-word;
     }
-
     .payment-reference {
       margin-top: 16px;
       padding: 14px;
@@ -271,11 +226,9 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       border: 1px solid #bfdbfe;
       color: #1e3a8a;
     }
-
     .payment-reference strong {
       color: #1e3a8a;
     }
-
     .payment-warning {
       margin-top: 12px;
       padding: 14px;
@@ -285,33 +238,27 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       color: #92400e;
       font-size: 13px;
     }
-
     .payment-note {
       margin-top: 12px;
       font-size: 13px;
       color: #6b7280;
     }
-
     /* =========================
        ORDER SUMMARY
     ========================== */
-
     .summary-card {
       position: sticky;
       top: 95px;
     }
-
     .summary-item {
       display: flex;
       gap: 12px;
       padding: 14px 0;
       border-bottom: 1px solid #e5e7eb;
     }
-
     .summary-item:last-child {
       border-bottom: 0;
     }
-
     .summary-image {
       width: 68px;
       height: 68px;
@@ -321,12 +268,10 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       background: #f3f4f6;
       border: 1px solid #e5e7eb;
     }
-
     .summary-info {
       min-width: 0;
       flex: 1;
     }
-
     .summary-title {
       font-size: 14px;
       font-weight: 700;
@@ -336,25 +281,21 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-
     .summary-variant {
       margin-top: 5px;
       font-size: 12px;
       color: #6b7280;
     }
-
     .summary-price {
       margin-top: 5px;
       font-size: 13px;
       color: #374151;
     }
-
     .totals {
       border-top: 1px solid #e5e7eb;
       margin-top: 12px;
       padding-top: 15px;
     }
-
     .total-row {
       display: flex;
       justify-content: space-between;
@@ -363,7 +304,6 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       color: #4b5563;
       font-size: 14px;
     }
-
     .total-row.grand-total {
       padding-top: 14px;
       margin-top: 8px;
@@ -372,7 +312,6 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       font-size: 20px;
       font-weight: 800;
     }
-
     .checkout-button {
       width: 100%;
       border: 0;
@@ -385,41 +324,33 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
     }
-
     .checkout-button:hover {
       background: #1d4ed8;
     }
-
     .checkout-button:active {
       transform: translateY(1px);
     }
-
     .checkout-button:disabled {
       background: #9ca3af;
       cursor: not-allowed;
     }
-
     /* =========================
        EMPTY / ERROR / SUCCESS
     ========================== */
-
     .hidden {
       display: none !important;
     }
-
     .message {
       padding: 18px;
       border-radius: 10px;
       margin-bottom: 20px;
       font-size: 14px;
     }
-
     .error-message {
       background: #fef2f2;
       border: 1px solid #fecaca;
       color: #991b1b;
     }
-
     .success-box {
       background: #ffffff;
       border: 1px solid #d1fae5;
@@ -428,7 +359,6 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       text-align: center;
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
     }
-
     .success-icon {
       width: 65px;
       height: 65px;
@@ -442,25 +372,21 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       font-size: 32px;
       font-weight: 800;
     }
-
     .success-box h2 {
       font-size: 26px;
       color: #111827;
       margin-bottom: 10px;
     }
-
     .success-box p {
       color: #4b5563;
       margin-bottom: 8px;
     }
-
     .order-number {
       font-size: 20px;
       font-weight: 800;
       color: #2563eb;
       margin: 14px 0;
     }
-
     .success-bank-box {
       max-width: 650px;
       margin: 24px auto 0;
@@ -471,11 +397,9 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       text-align: left;
       font-size: 14px;
     }
-
     .success-bank-box strong {
       color: #111827;
     }
-
     .continue-button {
       display: inline-block;
       margin-top: 20px;
@@ -485,15 +409,12 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       color: #ffffff;
       font-weight: 700;
     }
-
     .continue-button:hover {
       background: #1d4ed8;
     }
-
     /* =========================
        FOOTER
     ========================== */
-
     footer {
       background: #111827;
       color: #d1d5db;
@@ -501,834 +422,539 @@ content="Secure checkout at PrasunStore. Complete your shipping details and plac
       text-align: center;
       font-size: 13px;
     }
-
     /* =========================
        RESPONSIVE
     ========================== */
-
     @media (max-width: 900px) {
       .checkout-layout {
         grid-template-columns: 1fr;
       }
-
       .summary-card {
         position: static;
       }
     }
-
     @media (max-width: 650px) {
       .page {
         padding: 25px 14px 45px;
       }
-
       .page-title {
         font-size: 27px;
       }
-
       .card {
         padding: 18px;
       }
-
       .form-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
-
       .form-group.full {
         grid-column: auto;
       }
-
       .header-inner {
         padding: 13px 14px;
       }
-
       .logo {
         font-size: 21px;
       }
-
       .bank-row {
         grid-template-columns: 1fr;
         gap: 2px;
       }
-
       .bank-label {
         font-size: 12px;
       }
     }
   </style>
-
 </head>
-
 <body>
-
   <!-- =========================
        HEADER
   ========================== -->
-
   <header>
     <div class="header-inner">
-
-```
-  <a href="./index.html" class="logo">
-    Prasun<span>Store</span>
-  </a>
-
-  <a href="./cart.html" class="back-link">
-    ← Back to Cart
-  </a>
-
-</div>
-```
-
+      <a href="./index.html" class="logo">
+        Prasun<span>Store</span>
+      </a>
+      <a href="./cart.html" class="back-link">
+        ← Back to Cart
+      </a>
+    </div>
   </header>
-
   <!-- =========================
        MAIN
   ========================== -->
-
   <main class="page">
-
-```
-<h1 class="page-title">
-  Checkout
-</h1>
-
-
-<div
-  id="globalError"
-  class="message error-message hidden"
-></div>
-
-
-<!-- EMPTY CHECKOUT -->
-
-<div
-  id="emptyCheckout"
-  class="message error-message hidden"
->
-
-  Your cart is empty. Please add a product
-  before proceeding to checkout.
-
-  <br><br>
-
-  <a
-    href="./index.html"
-    style="font-weight:700;"
-  >
-    Continue Shopping →
-  </a>
-
-</div>
-
-
-<!-- CHECKOUT CONTENT -->
-
-<div
-  id="checkoutContent"
-  class="checkout-layout hidden"
->
-
-
-  <!-- =========================
-       LEFT COLUMN
-  ========================== -->
-
-  <div>
-
-
-    <!-- CUSTOMER INFORMATION -->
-
-    <section class="card">
-
-      <h2>
-        Customer Information
-      </h2>
-
-      <div class="form-grid">
-
-
-        <div class="form-group">
-
-          <label for="firstName">
-            First Name
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="text"
-            id="firstName"
-            autocomplete="given-name"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="lastName">
-            Last Name
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="text"
-            id="lastName"
-            autocomplete="family-name"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="email">
-            Email Address
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            autocomplete="email"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="phone">
-            Phone Number
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="tel"
-            id="phone"
-            autocomplete="tel"
-            required
-          >
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         SHIPPING ADDRESS
-    ========================== -->
-
-    <section class="card">
-
-      <h2>
-        Shipping Address
-      </h2>
-
-      <div class="form-grid">
-
-
-        <div class="form-group full">
-
-          <label for="address">
-            Street Address
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="text"
-            id="address"
-            autocomplete="street-address"
-            placeholder="House number, street name, apartment, etc."
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="city">
-            City
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="text"
-            id="city"
-            autocomplete="address-level2"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="state">
-            State / Province / Region
-          </label>
-
-          <input
-            type="text"
-            id="state"
-            autocomplete="address-level1"
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="postalCode">
-            Postal / ZIP Code
-            <span class="required">*</span>
-          </label>
-
-          <input
-            type="text"
-            id="postalCode"
-            autocomplete="postal-code"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="country">
-            Country / Territory
-            <span class="required">*</span>
-          </label>
-
-          <select
-            id="country"
-            autocomplete="country-name"
-            required
-          >
-
-            <option value="">
-              Select country
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label for="orderNotes">
-            Order Notes
-          </label>
-
-          <textarea
-            id="orderNotes"
-            placeholder="Optional delivery instructions or other notes..."
-          ></textarea>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         PAYMENT
-    ========================== -->
-
-    <section class="card">
-
-      <h2>
-        Payment Method
-      </h2>
-
-
-      <div class="payment-option">
-
-
-        <div class="payment-row">
-
-          <input
-            type="radio"
-            id="bankTransfer"
-            name="paymentMethod"
-            value="bank_transfer"
-            checked
-          >
-
-
-          <div>
-
-            <div class="payment-title">
-              Bank Transfer
-            </div>
-
-            <div class="payment-description">
-              Pay by direct bank transfer in USD.
-              Your order will be processed after
-              your payment has been received and verified.
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- BANK DETAILS -->
-
-        <div class="bank-details">
-
-
-          <div class="bank-section-title">
-            USD SWIFT Bank Transfer Instructions
-          </div>
-
-
-          <!-- BENEFICIARY -->
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Beneficiary Name
-            </div>
-
-            <div class="bank-value">
-              PRASUN ENGINEERING TECHNOLOGY
-            </div>
-
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Beneficiary Account Number
-            </div>
-
-            <div class="bank-value">
-              018167402
-            </div>
-
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Currency
-            </div>
-
-            <div class="bank-value">
-              USD
-            </div>
-
-          </div>
-
-
-          <!-- BENEFICIARY BANK -->
-
-          <br>
-
-          <div class="bank-section-title">
-            Beneficiary Bank
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Bank Name
-            </div>
-
-            <div class="bank-value">
-              ADVANCED BANK OF ASIA LIMITED
-            </div>
-
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Bank Address
-            </div>
-
-            <div class="bank-value">
-              No. 148, Preah Sihanouk Blvd.,
-              Phnom Penh, Cambodia
-            </div>
-
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              SWIFT / BIC
-            </div>
-
-            <div class="bank-value">
-              ABAAKHPP
-            </div>
-
-          </div>
-
-
-          <!-- CORRESPONDENT BANK -->
-
-          <br>
-
-          <div class="bank-section-title">
-            Correspondent Bank
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Bank Name
-            </div>
-
-            <div class="bank-value">
-              JP Morgan Chase Bank
-            </div>
-
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              Bank Address
-            </div>
-
-            <div class="bank-value">
-              New York, USA
-            </div>
-
-          </div>
-
-
-          <div class="bank-row">
-
-            <div class="bank-label">
-              SWIFT / BIC
-            </div>
-
-            <div class="bank-value">
-              CHASUS33
-            </div>
-
-          </div>
-
-
-          <!-- PAYMENT REFERENCE -->
-
-          <div class="payment-reference">
-
-            <strong>
-              Payment Reference / Purpose of Payment
-            </strong>
-
-            <br>
-
-            Please use your
-            <strong>Order Number</strong>
-            as the payment reference when making
-            the bank transfer.
-
-          </div>
-
-
-          <!-- IMPORTANT -->
-
-          <div class="payment-warning">
-
-            <strong>Important:</strong>
-            Please ensure that the beneficiary name,
-            account number, bank name, and SWIFT code
-            are entered exactly as shown above.
-
-            International bank transfers may be subject
-            to bank or correspondent-bank charges.
-
-            Please ensure the full order amount is received
-            by Prasun Engineering Technology.
-
-          </div>
-
-
-        </div>
-
-
-        <div class="payment-note">
-
-          Your order will remain
-          <strong>pending payment</strong>
-          until the bank transfer is received
-          and manually verified.
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-  </div>
-
-
-  <!-- =========================
-       RIGHT COLUMN
-  ========================== -->
-
-  <aside class="card summary-card">
-
-    <h2>
-      Order Summary
-    </h2>
-
-
-    <div id="summaryItems"></div>
-
-
-    <div class="totals">
-
-
-      <div class="total-row">
-
-        <span>
-          Subtotal
-        </span>
-
-        <strong id="subtotal">
-          $0.00
-        </strong>
-
-      </div>
-
-
-      <div class="total-row">
-
-        <span>
-          Shipping
-        </span>
-
-        <strong id="shipping">
-          $0.00
-        </strong>
-
-      </div>
-
-
-      <div class="total-row grand-total">
-
-        <span>
-          Total
-        </span>
-
-        <strong id="grandTotal">
-          $0.00
-        </strong>
-
-      </div>
-
-
-    </div>
-
-
-    <button
-      type="button"
-      id="placeOrderButton"
-      class="checkout-button"
+    <h1 class="page-title">
+      Checkout
+    </h1>
+    <div
+      id="globalError"
+      class="message error-message hidden"
+    ></div>
+    <!-- EMPTY CHECKOUT -->
+    <div
+      id="emptyCheckout"
+      class="message error-message hidden"
     >
-      Place Order
-    </button>
-
-
-  </aside>
-
-</div>
-
-
-<!-- =========================
-     SUCCESS
-========================== -->
-
-<div
-  id="successContent"
-  class="success-box hidden"
->
-
-  <div class="success-icon">
-    ✓
-  </div>
-
-
-  <h2>
-    Order Placed Successfully
-  </h2>
-
-
-  <p>
-    Thank you for your order at PrasunStore.
-  </p>
-
-
-  <div
-    class="order-number"
-    id="successOrderNumber"
-  >
-    Order #—
-  </div>
-
-
-  <p>
-    Payment Method:
-    <strong>
-      Bank Transfer
-    </strong>
-  </p>
-
-
-  <p>
-    Your order is currently
-    <strong>
-      pending payment verification
-    </strong>.
-  </p>
-
-
-  <div class="success-bank-box">
-
-    <strong>
-      Please complete your USD bank transfer using:
-    </strong>
-
-    <br><br>
-
-    Beneficiary:
-    <strong>
-      PRASUN ENGINEERING TECHNOLOGY
-    </strong>
-
-    <br>
-
-    Account Number:
-    <strong>
-      018167402
-    </strong>
-
-    <br>
-
-    Bank:
-    <strong>
-      ADVANCED BANK OF ASIA LIMITED
-    </strong>
-
-    <br>
-
-    SWIFT:
-    <strong>
-      ABAAKHPP
-    </strong>
-
-    <br><br>
-
-    <strong>
-      Payment Reference:
-    </strong>
-
-    Please use your order number shown above
-    as the payment reference.
-
-  </div>
-
-
-  <p style="margin-top:18px;">
-
-    Please retain your bank transfer confirmation
-    until your payment has been verified.
-
-  </p>
-
-
-  <a
-    href="./index.html"
-    class="continue-button"
-  >
-    Continue Shopping
-  </a>
-
-</div>
-```
-
+      Your cart is empty. Please add a product
+      before proceeding to checkout.
+      <br><br>
+      <a
+        href="./index.html"
+        style="font-weight:700;"
+      >
+        Continue Shopping →
+      </a>
+    </div>
+    <!-- CHECKOUT CONTENT -->
+    <div
+      id="checkoutContent"
+      class="checkout-layout hidden"
+    >
+      <!-- =========================
+           LEFT COLUMN
+      ========================== -->
+      <div>
+        <!-- CUSTOMER INFORMATION -->
+        <section class="card">
+          <h2>
+            Customer Information
+          </h2>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstName">
+                First Name
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                autocomplete="given-name"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="lastName">
+                Last Name
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                autocomplete="family-name"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="email">
+                Email Address
+                <span class="required">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                autocomplete="email"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="phone">
+                Phone Number
+                <span class="required">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                autocomplete="tel"
+                required
+              >
+            </div>
+          </div>
+        </section>
+        <!-- =========================
+             SHIPPING ADDRESS
+        ========================== -->
+        <section class="card">
+          <h2>
+            Shipping Address
+          </h2>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="address">
+                Street Address
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="address"
+                autocomplete="street-address"
+                placeholder="House number, street name, apartment, etc."
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="city">
+                City
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="city"
+                autocomplete="address-level2"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="state">
+                State / Province / Region
+              </label>
+              <input
+                type="text"
+                id="state"
+                autocomplete="address-level1"
+              >
+            </div>
+            <div class="form-group">
+              <label for="postalCode">
+                Postal / ZIP Code
+                <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="postalCode"
+                autocomplete="postal-code"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="country">
+                Country / Territory
+                <span class="required">*</span>
+              </label>
+              <select
+                id="country"
+                autocomplete="country-name"
+                required
+              >
+                <option value="">
+                  Select country
+                </option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="orderNotes">
+                Order Notes
+              </label>
+              <textarea
+                id="orderNotes"
+                placeholder="Optional delivery instructions or other notes..."
+              ></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- =========================
+             PAYMENT
+        ========================== -->
+        <section class="card">
+          <h2>
+            Payment Method
+          </h2>
+          <div class="payment-option">
+            <div class="payment-row">
+              <input
+                type="radio"
+                id="bankTransfer"
+                name="paymentMethod"
+                value="bank_transfer"
+                checked
+              >
+              <div>
+                <div class="payment-title">
+                  Bank Transfer
+                </div>
+                <div class="payment-description">
+                  Pay by direct bank transfer in USD.
+                  Your order will be processed after
+                  your payment has been received and verified.
+                </div>
+              </div>
+            </div>
+            <!-- BANK DETAILS -->
+            <div class="bank-details">
+              <div class="bank-section-title">
+                USD SWIFT Bank Transfer Instructions
+              </div>
+              <!-- BENEFICIARY -->
+              <div class="bank-row">
+                <div class="bank-label">
+                  Beneficiary Name
+                </div>
+                <div class="bank-value">
+                  PRASUN ENGINEERING TECHNOLOGY
+                </div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  Beneficiary Account Number
+                </div>
+                <div class="bank-value">
+                  018167402
+                </div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  Currency
+                </div>
+                <div class="bank-value">
+                  USD
+                </div>
+              </div>
+              <!-- BENEFICIARY BANK -->
+              <br>
+              <div class="bank-section-title">
+                Beneficiary Bank
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  Bank Name
+                </div>
+                <div class="bank-value">
+                  ADVANCED BANK OF ASIA LIMITED
+                </div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  Bank Address
+                </div>
+                <div class="bank-value">
+                  No. 148, Preah Sihanouk Blvd.,
+                  Phnom Penh, Cambodia
+                </div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  SWIFT / BIC
+                </div>
+                <div class="bank-value">
+                  ABAAKHPP
+                </div>
+              </div>
+              <!-- CORRESPONDENT BANK -->
+              <br>
+              <div class="bank-section-title">
+                Correspondent Bank
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  Bank Name
+                </div>
+                <div class="bank-value">
+                  JP Morgan Chase Bank
+                </div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  Bank Address
+                </div>
+                <div class="bank-value">
+                  New York, USA
+                </div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-label">
+                  SWIFT / BIC
+                </div>
+                <div class="bank-value">
+                  CHASUS33
+                </div>
+              </div>
+              <!-- PAYMENT REFERENCE -->
+              <div class="payment-reference">
+                <strong>
+                  Payment Reference / Purpose of Payment
+                </strong>
+                <br>
+                Please use your
+                <strong>Order Number</strong>
+                as the payment reference when making
+                the bank transfer.
+              </div>
+              <!-- IMPORTANT -->
+              <div class="payment-warning">
+                <strong>Important:</strong>
+                Please ensure that the beneficiary name,
+                account number, bank name, and SWIFT code
+                are entered exactly as shown above.
+                International bank transfers may be subject
+                to bank or correspondent-bank charges.
+                Please ensure the full order amount is received
+                by Prasun Engineering Technology.
+              </div>
+            </div>
+            <div class="payment-note">
+              Your order will remain
+              <strong>pending payment</strong>
+              until the bank transfer is received
+              and manually verified.
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- =========================
+           RIGHT COLUMN
+      ========================== -->
+      <aside class="card summary-card">
+        <h2>
+          Order Summary
+        </h2>
+        <div id="summaryItems"></div>
+        <div class="totals">
+          <div class="total-row">
+            <span>
+              Subtotal
+            </span>
+            <strong id="subtotal">
+              $0.00
+            </strong>
+          </div>
+          <div class="total-row">
+            <span>
+              Shipping
+            </span>
+            <strong id="shipping">
+              $0.00
+            </strong>
+          </div>
+          <div class="total-row grand-total">
+            <span>
+              Total
+            </span>
+            <strong id="grandTotal">
+              $0.00
+            </strong>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="placeOrderButton"
+          class="checkout-button"
+        >
+          Place Order
+        </button>
+      </aside>
+    </div>
+    <!-- =========================
+         SUCCESS
+    ========================== -->
+    <div
+      id="successContent"
+      class="success-box hidden"
+    >
+      <div class="success-icon">
+        ✓
+      </div>
+      <h2>
+        Order Placed Successfully
+      </h2>
+      <p>
+        Thank you for your order at PrasunStore.
+      </p>
+      <div
+        class="order-number"
+        id="successOrderNumber"
+      >
+        Order #—
+      </div>
+      <p>
+        Payment Method:
+        <strong>
+          Bank Transfer
+        </strong>
+      </p>
+      <p>
+        Your order is currently
+        <strong>
+          pending payment verification
+        </strong>.
+      </p>
+      <div class="success-bank-box">
+        <strong>
+          Please complete your USD bank transfer using:
+        </strong>
+        <br><br>
+        Beneficiary:
+        <strong>
+          PRASUN ENGINEERING TECHNOLOGY
+        </strong>
+        <br>
+        Account Number:
+        <strong>
+          018167402
+        </strong>
+        <br>
+        Bank:
+        <strong>
+          ADVANCED BANK OF ASIA LIMITED
+        </strong>
+        <br>
+        SWIFT:
+        <strong>
+          ABAAKHPP
+        </strong>
+        <br><br>
+        <strong>
+          Payment Reference:
+        </strong>
+        Please use your order number shown above
+        as the payment reference.
+      </div>
+      <p style="margin-top:18px;">
+        Please retain your bank transfer confirmation
+        until your payment has been verified.
+      </p>
+      <a
+        href="./index.html"
+        class="continue-button"
+      >
+        Continue Shopping
+      </a>
+    </div>
   </main>
-
   <!-- =========================
        FOOTER
   ========================== -->
-
   <footer>
-
-```
-©
-<span id="footerYear"></span>
-PrasunStore.
-All rights reserved.
-```
-
+    ©
+    <span id="footerYear"></span>
+    PrasunStore.
+    All rights reserved.
   </footer>
-
   <!-- =========================
        JAVASCRIPT
   ========================== -->
-
   <script>
-
     /* =========================================
        STORAGE KEYS
     ========================================== */
-
     const CART_STORAGE_KEY = "prasun_cart";
     const LEGACY_CART_KEY = "cart";
-
     const BUY_NOW_KEY = "prasun_buy_now";
     const LEGACY_BUY_NOW_KEY = "buyNowItem";
-
     const ORDERS_STORAGE_KEY = "prasun_orders";
-
-
     /* =========================================
        API
     ========================================== */
-
     const API_BASE =
-      "https://prasun-store.prasun301.workers.dev";
-
-
+      "[https://prasun-store.prasun301.workers.dev](https://prasun-store.prasun301.workers.dev)";
     /* =========================================
        GLOBAL STATE
     ========================================== */
-
     let checkoutItems = [];
-
-
     /* =========================================
        COUNTRY LIST
        ISO 3166-1 style country / territory list
     ========================================== */
-
     const COUNTRIES = [
-
       "Afghanistan",
       "Åland Islands",
       "Albania",
@@ -1345,7 +971,6 @@ All rights reserved.
       "Australia",
       "Austria",
       "Azerbaijan",
-
       "Bahamas",
       "Bahrain",
       "Bangladesh",
@@ -1367,7 +992,6 @@ All rights reserved.
       "Bulgaria",
       "Burkina Faso",
       "Burundi",
-
       "Cabo Verde",
       "Cambodia",
       "Cameroon",
@@ -1391,12 +1015,10 @@ All rights reserved.
       "Curaçao",
       "Cyprus",
       "Czechia",
-
       "Denmark",
       "Djibouti",
       "Dominica",
       "Dominican Republic",
-
       "Ecuador",
       "Egypt",
       "El Salvador",
@@ -1405,7 +1027,6 @@ All rights reserved.
       "Estonia",
       "Eswatini",
       "Ethiopia",
-
       "Falkland Islands",
       "Faroe Islands",
       "Fiji",
@@ -1414,7 +1035,6 @@ All rights reserved.
       "French Guiana",
       "French Polynesia",
       "French Southern Territories",
-
       "Gabon",
       "Gambia",
       "Georgia",
@@ -1431,14 +1051,12 @@ All rights reserved.
       "Guinea",
       "Guinea-Bissau",
       "Guyana",
-
       "Haiti",
       "Heard Island and McDonald Islands",
       "Holy See",
       "Honduras",
       "Hong Kong",
       "Hungary",
-
       "Iceland",
       "India",
       "Indonesia",
@@ -1448,12 +1066,10 @@ All rights reserved.
       "Isle of Man",
       "Israel",
       "Italy",
-
       "Jamaica",
       "Japan",
       "Jersey",
       "Jordan",
-
       "Kazakhstan",
       "Kenya",
       "Kiribati",
@@ -1461,7 +1077,6 @@ All rights reserved.
       "Korea, South",
       "Kuwait",
       "Kyrgyzstan",
-
       "Laos",
       "Latvia",
       "Lebanon",
@@ -1471,7 +1086,6 @@ All rights reserved.
       "Liechtenstein",
       "Lithuania",
       "Luxembourg",
-
       "Macao",
       "Madagascar",
       "Malawi",
@@ -1494,7 +1108,6 @@ All rights reserved.
       "Morocco",
       "Mozambique",
       "Myanmar",
-
       "Namibia",
       "Nauru",
       "Nepal",
@@ -1509,9 +1122,7 @@ All rights reserved.
       "North Macedonia",
       "Northern Mariana Islands",
       "Norway",
-
       "Oman",
-
       "Pakistan",
       "Palau",
       "Palestine, State of",
@@ -1524,14 +1135,11 @@ All rights reserved.
       "Poland",
       "Portugal",
       "Puerto Rico",
-
       "Qatar",
-
       "Réunion",
       "Romania",
       "Russia",
       "Rwanda",
-
       "Saint Barthélemy",
       "Saint Helena, Ascension and Tristan da Cunha",
       "Saint Kitts and Nevis",
@@ -1564,7 +1172,6 @@ All rights reserved.
       "Sweden",
       "Switzerland",
       "Syria",
-
       "Taiwan",
       "Tajikistan",
       "Tanzania",
@@ -1579,7 +1186,6 @@ All rights reserved.
       "Turkmenistan",
       "Turks and Caicos Islands",
       "Tuvalu",
-
       "Uganda",
       "Ukraine",
       "United Arab Emirates",
@@ -1588,218 +1194,131 @@ All rights reserved.
       "United States Minor Outlying Islands",
       "Uruguay",
       "Uzbekistan",
-
       "Vanuatu",
       "Venezuela",
       "Viet Nam",
       "Virgin Islands, British",
       "Virgin Islands, U.S.",
-
       "Wallis and Futuna",
-
       "Western Sahara",
-
       "Yemen",
-
       "Zambia",
       "Zimbabwe"
-
     ];
-
-
     /* =========================================
        INITIALIZE
     ========================================== */
-
     document.addEventListener("DOMContentLoaded", () => {
-
       document.getElementById("footerYear").textContent =
         new Date().getFullYear();
-
       populateCountries();
-
       loadCheckoutItems();
-
       document
         .getElementById("placeOrderButton")
         .addEventListener("click", placeOrder);
-
     });
-
-
     /* =========================================
        POPULATE COUNTRY SELECT
     ========================================== */
-
     function populateCountries() {
-
       const select =
         document.getElementById("country");
-
-
       COUNTRIES.forEach(country => {
-
         const option =
           document.createElement("option");
-
-
         option.value =
           country;
-
         option.textContent =
           country;
-
-
         select.appendChild(option);
-
       });
-
     }
-
-
     /* =========================================
        SAFE JSON PARSER
     ========================================== */
-
     function parseJSON(value, fallback = null) {
-
       try {
-
         return JSON.parse(value);
-
       } catch (error) {
-
         return fallback;
-
       }
-
     }
-
-
     /* =========================================
        GET STORAGE VALUE
     ========================================== */
-
     function getStorageItem(storage, key) {
-
       try {
-
         return storage.getItem(key);
-
       } catch (error) {
-
         return null;
-
       }
-
     }
-
-
     /* =========================================
        LOAD CHECKOUT ITEMS
     ========================================== */
-
     function loadCheckoutItems() {
-
       try {
-
         /*
          * First check Buy Now.
          */
-
         let buyNowRaw =
           getStorageItem(
             sessionStorage,
             BUY_NOW_KEY
           );
-
-
         if (!buyNowRaw) {
-
           buyNowRaw =
             getStorageItem(
               localStorage,
               BUY_NOW_KEY
             );
-
         }
-
-
         if (!buyNowRaw) {
-
           buyNowRaw =
             getStorageItem(
               sessionStorage,
               LEGACY_BUY_NOW_KEY
             );
-
         }
-
-
         if (!buyNowRaw) {
-
           buyNowRaw =
             getStorageItem(
               localStorage,
               LEGACY_BUY_NOW_KEY
             );
-
         }
-
-
         if (buyNowRaw) {
-
           const buyNowItem =
             parseJSON(buyNowRaw);
-
-
           if (
             buyNowItem &&
             typeof buyNowItem === "object"
           ) {
-
             checkoutItems = [
               sanitizeCartItem(buyNowItem)
             ];
-
-
             renderCheckout();
-
             return;
-
           }
-
         }
-
-
         /*
          * Otherwise load normal cart.
          */
-
         let cartRaw =
           getStorageItem(
             localStorage,
             CART_STORAGE_KEY
           );
-
-
         if (!cartRaw) {
-
           cartRaw =
             getStorageItem(
               localStorage,
               LEGACY_CART_KEY
             );
-
         }
-
-
         const cart =
           parseJSON(cartRaw, []);
-
-
         if (Array.isArray(cart)) {
-
           checkoutItems =
             cart
               .filter(
@@ -1809,50 +1328,29 @@ All rights reserved.
               )
               .map(sanitizeCartItem)
               .filter(Boolean);
-
         } else {
-
           checkoutItems = [];
-
         }
-
-
         renderCheckout();
-
       } catch (error) {
-
         console.error(
           "Checkout loading error:",
           error
         );
-
-
         showError(
           "We could not load your checkout items. Please return to your cart and try again."
         );
-
       }
-
     }
-
-
     /* =========================================
        SANITIZE CART ITEM
     ========================================== */
-
     function sanitizeCartItem(item) {
-
       if (!item) {
-
         return null;
-
       }
-
-
       const price =
         Number(item.price) || 0;
-
-
       const quantity =
         Math.max(
           1,
@@ -1861,145 +1359,95 @@ All rights reserved.
             10
           ) || 1
         );
-
-
       let selectedProperties = {};
-
-
       if (
         item.selected_properties &&
         typeof item.selected_properties === "object"
       ) {
-
         selectedProperties =
           item.selected_properties;
-
       } else if (
         item.selectedProperties &&
         typeof item.selectedProperties === "object"
       ) {
-
         selectedProperties =
           item.selectedProperties;
-
       }
-
-
       return {
-
         id:
           item.id ||
           `${item.product_id ||
             item.productId ||
             "product"}_${Date.now()}`,
-
         product_id:
           item.product_id ||
           item.productId ||
           "",
-
         title:
           item.title ||
           item.name ||
           "Product",
-
         price,
-
         currency:
           item.currency ||
           "USD",
-
         quantity,
-
         image:
           item.image ||
           item.thumbnail ||
           "",
-
         sku:
           item.sku ||
           "",
-
         selected_properties:
           selectedProperties,
-
         variant:
           item.variant ||
           null
-
       };
-
     }
-
-
     /* =========================================
        RENDER CHECKOUT
     ========================================== */
-
     function renderCheckout() {
-
       const checkoutContent =
         document.getElementById(
           "checkoutContent"
         );
-
-
       const emptyCheckout =
         document.getElementById(
           "emptyCheckout"
         );
-
-
       if (
         !Array.isArray(checkoutItems) ||
         checkoutItems.length === 0
       ) {
-
         checkoutContent.classList.add(
           "hidden"
         );
-
-
         emptyCheckout.classList.remove(
           "hidden"
         );
-
-
         return;
-
       }
-
-
       emptyCheckout.classList.add(
         "hidden"
       );
-
-
       checkoutContent.classList.remove(
         "hidden"
       );
-
-
       renderSummary();
-
     }
-
-
     /* =========================================
        FORMAT MONEY
     ========================================== */
-
     function formatMoney(
       amount,
       currency = "USD"
     ) {
-
       const numericAmount =
         Number(amount) || 0;
-
-
       try {
-
         return new Intl.NumberFormat(
           "en-US",
           {
@@ -2008,319 +1456,188 @@ All rights reserved.
               currency || "USD"
           }
         ).format(numericAmount);
-
       } catch (error) {
-
         return `$${numericAmount.toFixed(2)}`;
-
       }
-
     }
-
-
     /* =========================================
        GET VARIANT TEXT
     ========================================== */
-
     function getVariantText(item) {
-
       const properties =
         item.selected_properties;
-
-
       if (
         properties &&
         typeof properties === "object" &&
         Object.keys(properties).length > 0
       ) {
-
         return Object.entries(properties)
-
           .map(([key, value]) => {
-
             if (
               value === null ||
               value === undefined ||
               value === ""
             ) {
-
               return "";
-
             }
-
-
             return `${key}: ${value}`;
-
           })
-
           .filter(Boolean)
-
           .join(" • ");
-
       }
-
-
       /*
        * Fallback for older cart structures.
        */
-
       if (
         item.variant &&
         typeof item.variant === "object"
       ) {
-
         if (
           Array.isArray(
             item.variant.properties
           )
         ) {
-
           return item.variant.properties
-
             .map(property => {
-
               if (!property) {
-
                 return "";
-
               }
-
-
               const name =
                 property.name ||
                 property.sku_property_name ||
                 "";
-
-
               const value =
                 property.display ||
                 property.value ||
                 property.property_value_definition_name ||
                 "";
-
-
               if (
                 !name &&
                 !value
               ) {
-
                 return "";
-
               }
-
-
               return name
                 ? `${name}: ${value}`
                 : value;
-
             })
-
             .filter(Boolean)
-
             .join(" • ");
-
         }
-
       }
-
-
       return "";
-
     }
-
-
     /* =========================================
        RENDER SUMMARY
     ========================================== */
-
     function renderSummary() {
-
       const container =
         document.getElementById(
           "summaryItems"
         );
-
-
       container.innerHTML = "";
-
-
       let subtotal = 0;
-
-
       checkoutItems.forEach(item => {
-
         const lineTotal =
           item.price *
           item.quantity;
-
-
         subtotal +=
           lineTotal;
-
-
         const wrapper =
           document.createElement(
             "div"
           );
-
-
         wrapper.className =
           "summary-item";
-
-
         const image =
           document.createElement(
             "img"
           );
-
-
         image.className =
           "summary-image";
-
-
         image.alt =
           item.title;
-
-
         if (item.image) {
-
           image.src =
             item.image;
-
-
           image.onerror =
             function () {
-
               this.style.display =
                 "none";
-
             };
-
         } else {
-
           image.style.display =
             "none";
-
         }
-
-
         const info =
           document.createElement(
             "div"
           );
-
-
         info.className =
           "summary-info";
-
-
         const title =
           document.createElement(
             "div"
           );
-
-
         title.className =
           "summary-title";
-
-
         title.textContent =
           item.title;
-
-
         const variantText =
           getVariantText(item);
-
-
         const variant =
           document.createElement(
             "div"
           );
-
-
         variant.className =
           "summary-variant";
-
-
         if (variantText) {
-
           variant.textContent =
             variantText;
-
         } else {
-
           variant.textContent =
             "";
-
         }
-
-
         const price =
           document.createElement(
             "div"
           );
-
-
         price.className =
           "summary-price";
-
-
         price.textContent =
           `${item.quantity} × ${formatMoney(
             item.price,
             item.currency
           )}`;
-
-
         info.appendChild(
           title
         );
-
-
         if (variantText) {
-
           info.appendChild(
             variant
           );
-
         }
-
-
         info.appendChild(
           price
         );
-
-
         wrapper.appendChild(
           image
         );
-
-
         wrapper.appendChild(
           info
         );
-
-
         container.appendChild(
           wrapper
         );
-
       });
-
-
       /*
        * Shipping:
        * Currently free.
        */
-
       const shipping = 0;
-
-
       const total =
         subtotal +
         shipping;
-
-
       document
         .getElementById(
           "subtotal"
@@ -2330,8 +1647,6 @@ All rights reserved.
           subtotal,
           "USD"
         );
-
-
       document
         .getElementById(
           "shipping"
@@ -2343,8 +1658,6 @@ All rights reserved.
               shipping,
               "USD"
             );
-
-
       document
         .getElementById(
           "grandTotal"
@@ -2354,89 +1667,61 @@ All rights reserved.
           total,
           "USD"
         );
-
     }
-
-
     /* =========================================
        VALIDATE FORM
     ========================================== */
-
     function validateForm() {
-
       const fields = [
-
         {
           id: "firstName",
           label: "First Name"
         },
-
         {
           id: "lastName",
           label: "Last Name"
         },
-
         {
           id: "email",
           label: "Email Address"
         },
-
         {
           id: "phone",
           label: "Phone Number"
         },
-
         {
           id: "address",
           label: "Street Address"
         },
-
         {
           id: "city",
           label: "City"
         },
-
         {
           id: "postalCode",
           label: "Postal / ZIP Code"
         },
-
         {
           id: "country",
           label: "Country / Territory"
         }
-
       ];
-
-
       for (const field of fields) {
-
         const element =
           document.getElementById(
             field.id
           );
-
-
         if (
           !element ||
           !element.value.trim()
         ) {
-
           showError(
             `${field.label} is required.`
           );
-
-
           element?.focus();
-
-
           return false;
-
         }
-
       }
-
-
       const email =
         document
           .getElementById(
@@ -2444,78 +1729,47 @@ All rights reserved.
           )
           .value
           .trim();
-
-
       const emailPattern =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
       if (
         !emailPattern.test(
           email
         )
       ) {
-
         showError(
           "Please enter a valid email address."
         );
-
-
         document
           .getElementById(
             "email"
           )
           .focus();
-
-
         return false;
-
       }
-
-
       return true;
-
     }
-
-
     /* =========================================
        SHOW ERROR
     ========================================== */
-
     function showError(message) {
-
       const element =
         document.getElementById(
           "globalError"
         );
-
-
       element.textContent =
         message;
-
-
       element.classList.remove(
         "hidden"
       );
-
-
       window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
       });
-
     }
-
-
     /* =========================================
        HIDE ERROR
     ========================================== */
-
     function hideError() {
-
       document
         .getElementById(
           "globalError"
@@ -2523,24 +1777,15 @@ All rights reserved.
         .classList.add(
           "hidden"
         );
-
     }
-
-
     /* =========================================
        GENERATE ORDER ID
     ========================================== */
-
     function generateOrderId() {
-
       const now =
         new Date();
-
-
       const year =
         now.getFullYear();
-
-
       const month =
         String(
           now.getMonth() + 1
@@ -2548,8 +1793,6 @@ All rights reserved.
           2,
           "0"
         );
-
-
       const day =
         String(
           now.getDate()
@@ -2557,29 +1800,19 @@ All rights reserved.
           2,
           "0"
         );
-
-
       const random =
         Math.floor(
           100000 +
           Math.random() *
           900000
         );
-
-
       return `PS-${year}${month}${day}-${random}`;
-
     }
-
-
     /* =========================================
        GET CUSTOMER DATA
     ========================================== */
-
     function getCustomerData() {
-
       return {
-
         firstName:
           document
             .getElementById(
@@ -2587,7 +1820,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         lastName:
           document
             .getElementById(
@@ -2595,7 +1827,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         email:
           document
             .getElementById(
@@ -2603,7 +1834,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         phone:
           document
             .getElementById(
@@ -2611,7 +1841,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         address:
           document
             .getElementById(
@@ -2619,7 +1848,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         city:
           document
             .getElementById(
@@ -2627,7 +1855,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         state:
           document
             .getElementById(
@@ -2635,7 +1862,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         postalCode:
           document
             .getElementById(
@@ -2643,7 +1869,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         country:
           document
             .getElementById(
@@ -2651,7 +1876,6 @@ All rights reserved.
             )
             .value
             .trim(),
-
         notes:
           document
             .getElementById(
@@ -2659,22 +1883,14 @@ All rights reserved.
             )
             .value
             .trim()
-
       };
-
     }
-
-
     /* =========================================
        CALCULATE TOTAL
     ========================================== */
-
     function calculateSubtotal() {
-
       return checkoutItems.reduce(
-
         (sum, item) => {
-
           return sum +
             (
               Number(
@@ -2684,380 +1900,231 @@ All rights reserved.
                 item.quantity
               )
             );
-
         },
-
         0
-
       );
-
     }
-
-
     /* =========================================
        SAVE ORDER LOCALLY
     ========================================== */
-
     function saveOrder(order) {
-
       try {
-
         let orders = [];
-
-
         const existing =
           localStorage.getItem(
             ORDERS_STORAGE_KEY
           );
-
-
         if (existing) {
-
           const parsed =
             parseJSON(
               existing,
               []
             );
-
-
           if (
             Array.isArray(parsed)
           ) {
-
             orders =
               parsed;
-
           }
-
         }
-
-
         orders.push(
           order
         );
-
-
         localStorage.setItem(
-
           ORDERS_STORAGE_KEY,
-
           JSON.stringify(
             orders
           )
-
         );
-
-
         return true;
-
       } catch (error) {
-
         console.error(
           "Could not save order:",
           error
         );
-
-
         return false;
-
       }
-
     }
-
-
     /* =========================================
        CLEAR CART
     ========================================== */
-
     function clearCartAfterOrder() {
-
       try {
-
         localStorage.removeItem(
           CART_STORAGE_KEY
         );
-
-
         localStorage.removeItem(
           LEGACY_CART_KEY
         );
-
-
         sessionStorage.removeItem(
           BUY_NOW_KEY
         );
-
-
         localStorage.removeItem(
           BUY_NOW_KEY
         );
-
-
         sessionStorage.removeItem(
           LEGACY_BUY_NOW_KEY
         );
-
-
         localStorage.removeItem(
           LEGACY_BUY_NOW_KEY
         );
-
-
       } catch (error) {
-
         console.error(
           "Cart cleanup error:",
           error
         );
-
       }
-
     }
-
-
     /* =========================================
        PLACE ORDER
     ========================================== */
-
     function placeOrder() {
-
       hideError();
-
-
       if (
         !checkoutItems ||
         checkoutItems.length === 0
       ) {
-
         showError(
           "Your cart is empty."
         );
-
-
         return;
-
       }
-
-
       if (!validateForm()) {
-
         return;
-
       }
-
-
       const button =
         document.getElementById(
           "placeOrderButton"
         );
-
-
       button.disabled =
         true;
-
-
       button.textContent =
         "Processing Order...";
-
-
       try {
-
         const customer =
           getCustomerData();
-
-
         const subtotal =
           calculateSubtotal();
-
-
         const shipping =
           0;
-
-
         const total =
           subtotal +
           shipping;
-
-
         const orderId =
           generateOrderId();
-
-
         const order = {
-
           id:
             orderId,
-
           order_number:
             orderId,
-
           created_at:
             new Date().toISOString(),
-
           status:
             "pending_payment",
-
           payment_status:
             "pending",
-
           payment_method:
             "bank_transfer",
-
           payment_currency:
             "USD",
-
           payment_reference:
             orderId,
-
           payment_instructions: {
-
             beneficiary_name:
               "PRASUN ENGINEERING TECHNOLOGY",
-
             beneficiary_address:
               "9E3, N/A, 288, Phum 3, Boeng Keng Kang Ti Pir, Boeng Keng Kang, Phnom Penh, Cambodia",
-
             beneficiary_account_number:
               "018167402",
-
             beneficiary_bank_name:
               "ADVANCED BANK OF ASIA LIMITED",
-
             beneficiary_bank_address:
               "No. 148, Preah Sihanouk Blvd., Phnom Penh, Cambodia",
-
             beneficiary_bank_swift:
               "ABAAKHPP",
-
             correspondent_bank_name:
               "JP Morgan Chase Bank",
-
             correspondent_bank_address:
               "New York, USA",
-
             correspondent_bank_swift:
               "CHASUS33"
-
           },
-
           currency:
             "USD",
-
           subtotal:
             Number(
               subtotal.toFixed(2)
             ),
-
           shipping:
             Number(
               shipping.toFixed(2)
             ),
-
           total:
             Number(
               total.toFixed(2)
             ),
-
           customer,
-
           items:
             checkoutItems.map(
               item => ({
-
                 id:
                   item.id,
-
                 product_id:
                   item.product_id,
-
                 title:
                   item.title,
-
                 price:
                   item.price,
-
                 quantity:
                   item.quantity,
-
                 currency:
                   item.currency,
-
                 image:
                   item.image,
-
                 sku:
                   item.sku,
-
                 selected_properties:
                   item.selected_properties ||
                   {},
-
                 variant:
                   item.variant ||
                   null
-
               })
             )
-
         };
-
-
         const saved =
           saveOrder(
             order
           );
-
-
         if (!saved) {
-
           throw new Error(
             "Unable to save your order."
           );
-
         }
-
-
         clearCartAfterOrder();
-
-
         showSuccess(
           orderId
         );
-
-
       } catch (error) {
-
         console.error(
           "Order error:",
           error
         );
-
-
         showError(
           "We could not complete your order. Please try again."
         );
-
-
         button.disabled =
           false;
-
-
         button.textContent =
           "Place Order";
-
       }
-
     }
-
-
     /* =========================================
        SHOW SUCCESS
     ========================================== */
-
     function showSuccess(
       orderId
     ) {
-
       document
         .getElementById(
           "checkoutContent"
@@ -3065,8 +2132,6 @@ All rights reserved.
         .classList.add(
           "hidden"
         );
-
-
       document
         .getElementById(
           "emptyCheckout"
@@ -3074,8 +2139,6 @@ All rights reserved.
         .classList.add(
           "hidden"
         );
-
-
       document
         .getElementById(
           "successContent"
@@ -3083,27 +2146,17 @@ All rights reserved.
         .classList.remove(
           "hidden"
         );
-
-
       document
         .getElementById(
           "successOrderNumber"
         )
         .textContent =
         `Order #${orderId}`;
-
-
       window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
       });
-
     }
-
   </script>
-
 </body>
 </html>
