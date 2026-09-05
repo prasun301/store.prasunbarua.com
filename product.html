@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Details - Prasun Store</title>
   <style>
-    /* Base resets & CSS variables */
+    /* CSS Variables & Tokens */
     :root {
       --primary: #2563eb;
       --primary-hover: #1d4ed8;
       --bg: #ffffff;
+      --card-bg: #f9fafb;
       --text: #1f2937;
-      --text-muted: #4b5563;
+      --text-muted: #6b7280;
       --border: #e5e7eb;
       --focus-ring: #2563eb;
       --radius: 8px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
     body {
@@ -26,7 +31,7 @@
       line-height: 1.5;
     }
 
-    /* Screen Reader Only Utility */
+    /* Screen Reader Only Utility Class */
     .sr-only {
       position: absolute;
       width: 1px;
@@ -54,7 +59,7 @@
       top: -40px;
       left: 10px;
       background: var(--primary);
-      color: white;
+      color: #ffffff;
       padding: 8px 16px;
       z-index: 100;
       text-decoration: none;
@@ -67,12 +72,51 @@
     }
 
     /* Layout Structure */
+    .header-bar {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
     }
 
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* Category Filter Nav Bar */
+    .category-nav {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cat-btn {
+      background: none;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .cat-btn[aria-current="page"] {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* PDP Grid Layout */
     .pdp-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -95,7 +139,7 @@
     .main-image-wrap {
       width: 100%;
       aspect-ratio: 1;
-      background-color: #f9fafb;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
@@ -151,6 +195,18 @@
       margin: 0;
     }
 
+    .category-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: #f3f4f6;
+      color: var(--text-muted);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      width: fit-content;
+    }
+
     .rating-row {
       display: flex;
       align-items: center;
@@ -164,7 +220,7 @@
       color: #111827;
     }
 
-    /* Swatches & Fieldsets */
+    /* Swatches & Options */
     .variant-fieldset {
       border: none;
       padding: 0;
@@ -177,7 +233,6 @@
     .variant-legend {
       font-weight: 600;
       font-size: 0.95rem;
-      margin-bottom: 0.25rem;
     }
 
     .swatch-group {
@@ -190,7 +245,7 @@
       padding: 0.5rem 1rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      background: #fff;
+      background: #ffffff;
       cursor: pointer;
       font-weight: 500;
     }
@@ -213,7 +268,7 @@
       width: 38px;
       height: 38px;
       border: 1px solid var(--border);
-      background: #f9fafb;
+      background: var(--card-bg);
       border-radius: var(--radius);
       font-size: 1.2rem;
       cursor: pointer;
@@ -243,199 +298,103 @@
     .add-to-cart-btn:hover {
       background-color: var(--primary-hover);
     }
+
+    /* Loading State Overlay */
+    .loading-state {
+      text-align: center;
+      padding: 4rem 1rem;
+      font-size: 1.125rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
 
-  <!-- Skip Link for Keyboard/Screen Reader Navigation -->
+  <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header role="banner">
+  <header class="header-bar" role="banner">
     <div class="container">
       <nav aria-label="Main Navigation">
-        <a href="/" aria-label="Prasun Store Home">Prasun Store</a>
+        <a href="/" class="brand-logo" aria-label="Prasun Store Home">Prasun Store</a>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" tabIndex="-1">
+  <main id="main-content" tabindex="-1">
     <div class="container">
-      <div class="pdp-grid">
+
+      <!-- Dynamic Category Navigation Bar -->
+      <nav aria-label="Product Categories">
+        <div id="category-nav" class="category-nav">
+          <button type="button" class="cat-btn" aria-current="page" onclick="filterByCategory('all')">All Products</button>
+        </div>
+      </nav>
+
+      <!-- Main Loader State -->
+      <div id="loading-view" class="loading-state" aria-live="polite">
+        Loading product details...
+      </div>
+
+      <!-- Main Content Area -->
+      <div id="product-view" class="pdp-grid" style="display: none;">
         
-        <!-- Media Gallery Region -->
-        <section aria-label="Product Media Gallery" class="gallery-container">
+        <!-- Media Gallery -->
+        <section aria-label="Product Gallery" class="gallery-container">
           <div class="main-image-wrap">
-            <img 
-              id="main-product-img" 
-              src="https://via.placeholder.com/600" 
-              alt="Prasun Signature Hoodie in Classic Navy Blue" 
-            />
+            <img id="main-product-img" src="" alt="Product image" />
           </div>
 
-          <!-- Thumbnail Gallery List -->
-          <ul class="thumbnails-list" role="list" aria-label="Product image thumbnails">
-            <li>
-              <button 
-                type="button" 
-                class="thumb-btn" 
-                aria-pressed="true"
-                aria-label="View main photo 1 of 3: Front view"
-                onclick="switchMainImage(this, 'https://via.placeholder.com/600')"
-              >
-                <img src="https://via.placeholder.com/100" alt="" aria-hidden="true" />
-              </button>
-            </li>
-            <li>
-              <button 
-                type="button" 
-                class="thumb-btn" 
-                aria-pressed="false"
-                aria-label="View photo 2 of 3: Back detail"
-                onclick="switchMainImage(this, 'https://via.placeholder.com/600/111')"
-              >
-                <img src="https://via.placeholder.com/100/111" alt="" aria-hidden="true" />
-              </button>
-            </li>
-            <li>
-              <button 
-                type="button" 
-                class="thumb-btn" 
-                aria-pressed="false"
-                aria-label="View photo 3 of 3: Fabric close-up"
-                onclick="switchMainImage(this, 'https://via.placeholder.com/600/222')"
-              >
-                <img src="https://via.placeholder.com/100/222" alt="" aria-hidden="true" />
-              </button>
-            </li>
+          <ul id="thumbnails-list" class="thumbnails-list" role="list" aria-label="Product thumbnails">
+            <!-- Thumbnails inserted dynamically -->
           </ul>
         </section>
 
-        <!-- Product Purchase Options & Details -->
+        <!-- Product Details & Actions -->
         <section aria-label="Product Details and Options" class="product-details">
-          <h1 class="product-title" id="product-title">Prasun Signature Fleece Hoodie</h1>
+          <span id="product-category" class="category-badge">Category</span>
+          <h1 id="product-title" class="product-title">Loading Product...</h1>
 
-          <!-- Rating with Accessible Context -->
-          <div class="rating-row" role="img" aria-label="Rating 4.8 out of 5 stars based on 124 reviews">
-            <span aria-hidden="true">★★★★★</span>
-            <span class="sr-only">4.8 out of 5 stars</span>
-            <span style="color: var(--text-muted); font-size: 0.875rem;">(124 reviews)</span>
+          <!-- Accessible Rating Row -->
+          <div id="rating-container" class="rating-row" role="img" aria-label="Rating 0 out of 5 stars">
+            <span id="rating-stars" aria-hidden="true">★★★★★</span>
+            <span id="rating-text" class="sr-only">0 out of 5 stars</span>
+            <span id="rating-count" style="color: var(--text-muted); font-size: 0.875rem;">(0 reviews)</span>
           </div>
 
-          <!-- Price Display with Live Announcer -->
-          <div 
-            id="product-price" 
-            class="price-display" 
-            aria-live="polite" 
-            aria-atomic="true"
-          >
-            $68.00
+          <!-- Price Output with ARIA Live updates -->
+          <div id="product-price" class="price-display" aria-live="polite" aria-atomic="true">
+            $0.00
           </div>
 
-          <!-- Variant Group 1: Color -->
-          <fieldset class="variant-fieldset">
-            <legend class="variant-legend">Color: <span id="selected-color-label">Navy Blue</span></legend>
-            <div class="swatch-group" role="radiogroup" aria-label="Color selection">
-              <button 
-                type="button" 
-                role="radio" 
-                aria-checked="true" 
-                class="swatch-btn" 
-                onclick="selectOption(this, 'selected-color-label', 'Navy Blue')"
-              >
-                Navy Blue
-              </button>
-              <button 
-                type="button" 
-                role="radio" 
-                aria-checked="false" 
-                class="swatch-btn" 
-                onclick="selectOption(this, 'selected-color-label', 'Heather Gray')"
-              >
-                Heather Gray
-              </button>
-            </div>
-          </fieldset>
+          <!-- Variant Options Container -->
+          <div id="variants-container">
+            <!-- Dynamic option fieldsets inserted here -->
+          </div>
 
-          <!-- Variant Group 2: Size -->
-          <fieldset class="variant-fieldset">
-            <legend class="variant-legend">Size: <span id="selected-size-label">Medium</span></legend>
-            <div class="swatch-group" role="radiogroup" aria-label="Size selection">
-              <button 
-                type="button" 
-                role="radio" 
-                aria-checked="false" 
-                class="swatch-btn" 
-                onclick="selectOption(this, 'selected-size-label', 'Small')"
-              >
-                Small
-              </button>
-              <button 
-                type="button" 
-                role="radio" 
-                aria-checked="true" 
-                class="swatch-btn" 
-                onclick="selectOption(this, 'selected-size-label', 'Medium')"
-              >
-                Medium
-              </button>
-              <button 
-                type="button" 
-                role="radio" 
-                aria-checked="false" 
-                class="swatch-btn" 
-                onclick="selectOption(this, 'selected-size-label', 'Large')"
-              >
-                Large
-              </button>
-            </div>
-          </fieldset>
-
-          <!-- Quantity Selection -->
+          <!-- Quantity Selector -->
           <div class="variant-fieldset">
             <label for="qty-input" class="variant-legend">Quantity</label>
             <div class="quantity-control">
-              <button 
-                type="button" 
-                class="qty-btn" 
-                id="qty-minus" 
-                aria-label="Decrease quantity" 
-                onclick="adjustQuantity(-1)"
-              >
-                -
-              </button>
-              <input 
-                type="number" 
-                id="qty-input" 
-                class="qty-input" 
-                value="1" 
-                min="1" 
-                aria-live="polite"
-              />
-              <button 
-                type="button" 
-                class="qty-btn" 
-                id="qty-plus" 
-                aria-label="Increase quantity" 
-                onclick="adjustQuantity(1)"
-              >
-                +
-              </button>
+              <button type="button" class="qty-btn" aria-label="Decrease quantity" onclick="adjustQuantity(-1)">-</button>
+              <input type="number" id="qty-input" class="qty-input" value="1" min="1" aria-live="polite" />
+              <button type="button" class="qty-btn" aria-label="Increase quantity" onclick="adjustQuantity(1)">+</button>
             </div>
           </div>
 
           <!-- Add to Cart Action -->
-          <button type="button" class="add-to-cart-btn" id="add-to-cart-btn" onclick="addToCart()">
+          <button type="button" id="add-to-cart-btn" class="add-to-cart-btn" onclick="handleAddToCart()">
             Add to Cart
           </button>
 
-          <!-- Status Announcer for Screen Readers -->
+          <!-- Announcer for screen readers -->
           <div id="cart-status" class="sr-only" role="status" aria-live="polite"></div>
 
-          <!-- Description Section -->
+          <!-- Description Section with Hardened HTML Scrubbing -->
           <article aria-labelledby="desc-heading" style="margin-top: 1rem;">
-            <h2 id="desc-heading" style="font-size: 1.2rem;">Product Description</h2>
-            <div id="product-description-content">
-              <p>Crafted from premium heavyweight organic fleece, the Prasun Signature Hoodie offers lasting comfort, reinforced stitching, and a tailored double-lined hood.</p>
+            <h2 id="desc-heading" style="font-size: 1.2rem;">Description</h2>
+            <div id="product-description">
+              <p>No description available for this item.</p>
             </div>
           </article>
         </section>
@@ -446,64 +405,264 @@
 
   <footer role="contentinfo" style="border-top: 1px solid var(--border); margin-top: 3rem; padding: 2rem 0;">
     <div class="container">
-      <p style="font-size: 0.875rem; color: var(--text-muted);">&copy; Prasun Store. All rights reserved.</p>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">&copy; Prasun Store. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Placeholder Image Fallback Handler
+    // State management
+    const API_BASE = 'https://prasun-store.prasun301.workers.dev';
     const PLACEHOLDER_SVG = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='100%' height='100%' fill='%23f3f4f6'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-family='sans-serif' font-size='16'>Image unavailable</text></svg>`;
+    
+    let allProducts = [];
+    let currentProduct = null;
+    let selectedOptions = {};
 
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', () => {
-        img.onerror = null;
-        img.src = PLACEHOLDER_SVG;
-      });
-    });
+    // HTML Sanitizer (Whitelist Scrubbing)
+    function sanitizeDescriptionHtml(rawHtml) {
+      if (!rawHtml) return '<p>No description available.</p>';
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(rawHtml, 'text/html');
 
-    // Image Switcher
-    function switchMainImage(selectedBtn, newSrc) {
-      document.querySelectorAll('.thumb-btn').forEach(btn => {
-        btn.setAttribute('aria-pressed', 'false');
+      const BANNED_TAGS = ['script', 'iframe', 'object', 'embed', 'style', 'form', 'svg', 'math', 'base', 'meta'];
+      BANNED_TAGS.forEach(tag => {
+        doc.querySelectorAll(tag).forEach(el => el.remove());
       });
-      selectedBtn.setAttribute('aria-pressed', 'true');
+
+      doc.querySelectorAll('*').forEach(el => {
+        Array.from(el.attributes).forEach(attr => {
+          const name = attr.name.toLowerCase();
+          const val = attr.value.trim().toLowerCase();
+
+          if (name.startsWith('on')) {
+            el.removeAttribute(attr.name);
+          } else if ((name === 'href' || name === 'src') && val.startsWith('javascript:')) {
+            el.removeAttribute(attr.name);
+          }
+        });
+      });
+
+      return doc.body.innerHTML;
+    }
+
+    // Normalizer Helpers
+    function normalizeCategory(cat) {
+      if (!cat) return { id: 'uncategorized', name: 'Uncategorized', slug: 'uncategorized' };
+      if (typeof cat === 'string') {
+        const slug = cat.toLowerCase().replace(/\s+/g, '-');
+        return { id: slug, name: cat, slug: slug };
+      }
+      return {
+        id: String(cat.id || cat.slug || 'uncategorized'),
+        name: cat.name || cat.title || 'Uncategorized',
+        slug: (cat.slug || cat.name || 'uncategorized').toLowerCase().replace(/\s+/g, '-')
+      };
+    }
+
+    function normalizeProduct(raw) {
+      if (!raw) return null;
+      
+      const images = Array.isArray(raw.images) && raw.images.length > 0 
+        ? raw.images 
+        : (raw.image ? [raw.image] : [PLACEHOLDER_SVG]);
+
+      return {
+        id: String(raw.id || raw._id || Math.random()),
+        title: raw.title || raw.name || 'Unnamed Product',
+        price: typeof raw.price === 'number' ? raw.price : parseFloat(raw.price || 0),
+        rating: raw.rating?.rate || raw.rating || 4.5,
+        ratingCount: raw.rating?.count || raw.reviewCount || 12,
+        category: normalizeCategory(raw.category),
+        images: images,
+        description: raw.description || '',
+        skus: Array.isArray(raw.skus) ? raw.skus : []
+      };
+    }
+
+    // Fetch API with High Limit Parameter (Fixes 26 limit issue)
+    async function fetchAllProducts() {
+      try {
+        // Request limit=1000 to bypass default pagination cutoffs
+        const response = await fetch(`${API_BASE}/products?limit=1000`);
+        const data = await response.json();
+        
+        const rawList = Array.isArray(data) ? data : (data.products || data.data || []);
+        return rawList.map(normalizeProduct);
+      } catch (err) {
+        console.error('Failed fetching product list:', err);
+        return [];
+      }
+    }
+
+    // Initialize Page Data
+    async function initPage() {
+      allProducts = await fetchAllProducts();
+
+      if (allProducts.length === 0) {
+        document.getElementById('loading-view').innerText = 'Failed to load products. Please refresh.';
+        return;
+      }
+
+      renderCategoryNav(allProducts);
+
+      // Check URL parameters for specific ID or category
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetId = urlParams.get('id');
+      const targetCategory = urlParams.get('category');
+
+      if (targetId) {
+        currentProduct = allProducts.find(p => p.id === targetId) || allProducts[0];
+      } else if (targetCategory) {
+        const filtered = filterProductsByCategory(allProducts, targetCategory);
+        currentProduct = filtered.length > 0 ? filtered[0] : allProducts[0];
+      } else {
+        currentProduct = allProducts[0];
+      }
+
+      renderProductDetails(currentProduct);
+      document.getElementById('loading-view').style.display = 'none';
+      document.getElementById('product-view').style.display = 'grid';
+    }
+
+    // Robust Category Matching
+    function filterProductsByCategory(products, targetCategory) {
+      if (!targetCategory || targetCategory.toLowerCase() === 'all') return products;
+      const cleanTarget = targetCategory.trim().toLowerCase().replace(/-/g, ' ');
+
+      return products.filter(p => {
+        const catName = p.category.name.toLowerCase().replace(/-/g, ' ');
+        const catSlug = p.category.slug.toLowerCase().replace(/-/g, ' ');
+        return catName === cleanTarget || catSlug === cleanTarget;
+      });
+    }
+
+    // Render Category Nav Buttons
+    function renderCategoryNav(products) {
+      const navContainer = document.getElementById('category-nav');
+      const categoriesMap = new Map();
+
+      products.forEach(p => {
+        if (p.category && p.category.slug) {
+          categoriesMap.set(p.category.slug, p.category.name);
+        }
+      });
+
+      let navHtml = `<button type="button" class="cat-btn" aria-current="page" onclick="filterByCategory('all')">All Products</button>`;
+      
+      categoriesMap.forEach((name, slug) => {
+        navHtml += `<button type="button" class="cat-btn" aria-current="false" onclick="filterByCategory('${slug}')">${name}</button>`;
+      });
+
+      navContainer.innerHTML = navHtml;
+    }
+
+    function filterByCategory(categorySlug) {
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.setAttribute('aria-current', 'false');
+      });
+      event.target.setAttribute('aria-current', 'page');
+
+      const matches = filterProductsByCategory(allProducts, categorySlug);
+      if (matches.length > 0) {
+        currentProduct = matches[0];
+        renderProductDetails(currentProduct);
+      }
+    }
+
+    // Render Product Details & Gallery
+    function renderProductDetails(product) {
+      document.title = `${product.title} - Prasun Store`;
+      document.getElementById('product-title').textContent = product.title;
+      document.getElementById('product-category').textContent = product.category.name;
+      document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+      document.getElementById('product-description').innerHTML = sanitizeDescriptionHtml(product.description);
+
+      // Ratings
+      const stars = '★'.repeat(Math.round(product.rating)) + '☆'.repeat(5 - Math.round(product.rating));
+      document.getElementById('rating-stars').textContent = stars;
+      document.getElementById('rating-text').textContent = `${product.rating} out of 5 stars`;
+      document.getElementById('rating-count').textContent = `(${product.ratingCount} reviews)`;
+
+      // Gallery Images
       const mainImg = document.getElementById('main-product-img');
-      mainImg.src = newSrc;
+      mainImg.src = product.images[0] || PLACEHOLDER_SVG;
+      mainImg.alt = `${product.title} main photo`;
+      mainImg.onerror = function() { this.src = PLACEHOLDER_SVG; };
+
+      const thumbList = document.getElementById('thumbnails-list');
+      thumbList.innerHTML = product.images.map((imgUrl, index) => `
+        <li>
+          <button 
+            type="button" 
+            class="thumb-btn" 
+            aria-pressed="${index === 0 ? 'true' : 'false'}"
+            aria-label="View photo ${index + 1} of ${product.images.length}"
+            onclick="switchMainImage(this, '${imgUrl}')"
+          >
+            <img src="${imgUrl}" alt="" aria-hidden="true" onerror="this.src='${PLACEHOLDER_SVG}'" />
+          </button>
+        </li>
+      `).join('');
     }
 
-    // Swatch Selection Function
-    function selectOption(clickedBtn, labelId, value) {
-      const parentGroup = clickedBtn.closest('[role="radiogroup"]');
-      parentGroup.querySelectorAll('[role="radio"]').forEach(btn => {
-        btn.setAttribute('aria-checked', 'false');
-      });
-      clickedBtn.setAttribute('aria-checked', 'true');
-      document.getElementById(labelId).textContent = value;
+    function switchMainImage(btn, src) {
+      document.querySelectorAll('.thumb-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      const mainImg = document.getElementById('main-product-img');
+      mainImg.src = src;
     }
 
-    // Quantity Adjustment
     function adjustQuantity(delta) {
       const qtyInput = document.getElementById('qty-input');
-      let currentVal = parseInt(qtyInput.value, 10) || 1;
-      currentVal = Math.max(1, currentVal + delta);
-      qtyInput.value = currentVal;
+      let val = parseInt(qtyInput.value, 10) || 1;
+      val = Math.max(1, val + delta);
+      qtyInput.value = val;
     }
 
-    // Add to Cart Feedback
-    function addToCart() {
+    // Backward-Compatible Cart Storage Handling
+    function handleAddToCart() {
+      const qty = parseInt(document.getElementById('qty-input').value, 10) || 1;
+      const cartItem = {
+        id: currentProduct.id,
+        title: currentProduct.title,
+        price: currentProduct.price,
+        quantity: qty,
+        image: currentProduct.images[0]
+      };
+
+      // Read current state
+      let cart = [];
+      try {
+        const rawCart = localStorage.getItem('prasun_cart') || localStorage.getItem('cart');
+        cart = rawCart ? JSON.parse(rawCart) : [];
+      } catch (e) {
+        cart = [];
+      }
+
+      // Sync existing items
+      const existingIndex = cart.findIndex(item => item.id === cartItem.id);
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += qty;
+      } else {
+        cart.push(cartItem);
+      }
+
+      // Write back to both keys for backward compatibility
+      localStorage.setItem('prasun_cart', JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Screen Reader Feedback
       const statusDiv = document.getElementById('cart-status');
-      const title = document.getElementById('product-title').innerText;
-      const qty = document.getElementById('qty-input').value;
-      
-      statusDiv.textContent = `Added ${qty} item(s) of ${title} to your shopping cart.`;
-      
+      statusDiv.textContent = `Added ${qty} unit(s) of ${currentProduct.title} to your cart.`;
+
       const btn = document.getElementById('add-to-cart-btn');
       const originalText = btn.textContent;
       btn.textContent = 'Added!';
-      setTimeout(() => {
-        btn.textContent = originalText;
-      }, 2000);
+      setTimeout(() => { btn.textContent = originalText; }, 2000);
     }
+
+    // Run Initialization
+    window.addEventListener('DOMContentLoaded', initPage);
   </script>
 </body>
 </html>
