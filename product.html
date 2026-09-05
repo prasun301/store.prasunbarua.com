@@ -11,34 +11,10 @@
     content="Shop quality products at Prasun Store."
   />
 
-  <!-- ============================================================
-       FAVICON.IO
-       Upload these favicon.io files to the website root:
-       favicon.ico
-       favicon-16x16.png
-       favicon-32x32.png
-       apple-touch-icon.png
-       site.webmanifest
-       ============================================================ -->
-
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="/favicon-32x32.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="/favicon-16x16.png"
-  />
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="/apple-touch-icon.png"
-  />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
   <meta name="application-name" content="Prasun Store" />
@@ -118,28 +94,42 @@
     }
 
     /*
-     * Brand
+     * Brand - SAME STYLE AS INDEX.HTML
      */
 
     .brand {
+      flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
+      gap: 9px;
       min-width: 0;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      border-radius: 10px;
+    }
+
+    .brand-logo {
+      display: block;
+      width: auto;
+      height: 44px;
+      max-width: 180px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      font-size: 23px;
+      font-weight: 850;
+      letter-spacing: -0.65px;
       white-space: nowrap;
+      line-height: 1;
     }
 
-    .brand-text {
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .brand-name span {
+      color: #2563eb;
     }
 
-    /*
-     * Header actions
-     */
+    /* ============================================================
+       HEADER ACTIONS
+       ============================================================ */
 
     .header-actions {
       display: flex;
@@ -176,10 +166,6 @@
       transform: translateY(1px);
     }
 
-    /*
-     * Professional SVG icons
-     */
-
     .header-icon {
       width: 18px;
       height: 18px;
@@ -191,10 +177,6 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-
-    /*
-     * Cart badge
-     */
 
     .cart-badge {
       min-width: 21px;
@@ -714,18 +696,18 @@
         gap: 10px;
       }
 
-      /*
-       * Keep Prasun Store visible on mobile.
-       */
-
       .brand {
-        min-width: 0;
-        flex: 1 1 auto;
-        font-size: 18px;
+        gap: 7px;
       }
 
-      .brand-text {
+      .brand-logo {
+        height: 39px;
         max-width: 145px;
+      }
+
+      .brand-name {
+        font-size: 20px;
+        letter-spacing: -0.5px;
       }
 
       .header-actions {
@@ -743,10 +725,6 @@
         width: 17px;
         height: 17px;
       }
-
-      /*
-       * Make Cart compact but keep the text visible.
-       */
 
       .cart-badge {
         min-width: 19px;
@@ -808,12 +786,12 @@
         gap: 7px;
       }
 
-      .brand {
-        font-size: 17px;
+      .brand-logo {
+        display: none;
       }
 
-      .brand-text {
-        max-width: 115px;
+      .brand-name {
+        font-size: 19px;
       }
 
       .header-actions {
@@ -847,10 +825,21 @@
       href="./index.html"
       class="brand"
       aria-label="Prasun Store home"
+      title="Prasun Store"
     >
-      <span class="brand-text">
-        Prasun Store
+
+      <img
+        src="./prasun-store-logo.jpeg"
+        alt="Prasun Store logo"
+        class="brand-logo"
+        width="180"
+        height="44"
+      />
+
+      <span class="brand-name">
+        Prasun<span>Store</span>
       </span>
+
     </a>
 
     <div class="header-actions">
@@ -876,14 +865,12 @@
         <span>Shop</span>
       </a>
 
-
       <a
         href="./cart.html"
         class="header-link"
         aria-label="Shopping cart"
       >
 
-        <!-- Professional SVG cart icon -->
         <svg
           class="header-icon"
           viewBox="0 0 24 24"
@@ -910,7 +897,6 @@
   </div>
 </header>
 
-
 <main class="page">
 
   <div class="container">
@@ -921,11 +907,9 @@
       <span>Product</span>
     </div>
 
-
     <div id="loading" class="loading">
       Loading product...
     </div>
-
 
     <div
       id="errorBox"
@@ -949,15 +933,10 @@
 
     </div>
 
-
     <section
       id="productSection"
       class="product-layout hidden"
     >
-
-      <!-- ======================================================
-           GALLERY
-           ====================================================== -->
 
       <div class="gallery-card">
 
@@ -979,11 +958,6 @@
 
       </div>
 
-
-      <!-- ======================================================
-           PRODUCT INFORMATION
-           ====================================================== -->
-
       <div class="info-card">
 
         <h1
@@ -992,7 +966,6 @@
         >
           Product
         </h1>
-
 
         <div class="rating-row">
 
@@ -1009,14 +982,12 @@
 
         </div>
 
-
         <div
           id="productPrice"
           class="price"
         >
           $0.00
         </div>
-
 
         <div
           id="stockText"
@@ -1025,20 +996,10 @@
           Available
         </div>
 
-
-        <!-- ====================================================
-             VARIANTS
-             ==================================================== -->
-
         <div
           id="variantsContainer"
           class="variants hidden"
         ></div>
-
-
-        <!-- ====================================================
-             QUANTITY
-             ==================================================== -->
 
         <div class="quantity-row">
 
@@ -1077,11 +1038,6 @@
 
         </div>
 
-
-        <!-- ====================================================
-             ACTIONS
-             ==================================================== -->
-
         <div class="action-buttons">
 
           <button
@@ -1102,16 +1058,10 @@
 
         </div>
 
-
         <div
           id="selectionNotice"
           class="notice hidden"
         ></div>
-
-
-        <!-- ====================================================
-             QUICK INFO
-             ==================================================== -->
 
         <div class="quick-info">
 
@@ -1136,11 +1086,6 @@
 
     </section>
 
-
-    <!-- ========================================================
-         DESCRIPTION
-         ======================================================== -->
-
     <section
       id="descriptionCard"
       class="description-card hidden"
@@ -1161,15 +1106,9 @@
 
 </main>
 
-
 <script>
 
 "use strict";
-
-
-/* ============================================================
-   CONFIGURATION
-   ============================================================ */
 
 const API_BASE =
   "https://prasun-store.prasun301.workers.dev";
@@ -1180,29 +1119,13 @@ const CART_STORAGE_KEY =
 const LEGACY_CART_KEY =
   "cart";
 
-
-/* ============================================================
-   STATE
-   ============================================================ */
-
 let product = null;
-
 let normalizedSkus = [];
-
 let selectedProperties = {};
-
 let selectedSku = null;
-
 let quantity = 1;
-
 let galleryImages = [];
-
 let currentImageIndex = 0;
-
-
-/* ============================================================
-   DOM
-   ============================================================ */
 
 const loadingEl =
   document.getElementById("loading");
@@ -1276,10 +1199,6 @@ const descriptionContentEl =
 const cartBadgeEl =
   document.getElementById("cartBadge");
 
-
-/* ============================================================
-   BASIC HELPERS
-   ============================================================ */
 
 function firstNonEmpty(...values) {
 
@@ -1356,10 +1275,6 @@ function formatPrice(
 }
 
 
-/* ============================================================
-   GET PRODUCT ID
-   ============================================================ */
-
 function getProductId() {
 
   const params =
@@ -1376,10 +1291,6 @@ function getProductId() {
 
 }
 
-
-/* ============================================================
-   NORMALIZE PRODUCT
-   ============================================================ */
 
 function normalizeProduct(raw) {
 
@@ -1499,10 +1410,6 @@ function normalizeProduct(raw) {
 }
 
 
-/* ============================================================
-   PROPERTY HELPERS
-   ============================================================ */
-
 function getGroupId(property) {
 
   return firstNonEmpty(
@@ -1576,10 +1483,6 @@ function getPropertyImage(property) {
 
 }
 
-
-/* ============================================================
-   NORMALIZE PROPERTY
-   ============================================================ */
 
 function normalizeSkuProperty(
   property
@@ -1686,10 +1589,6 @@ function normalizeSkuProperty(
 
 }
 
-
-/* ============================================================
-   EXTRACT SKU PROPERTIES
-   ============================================================ */
 
 function extractSkuProperties(
   sku
@@ -1822,10 +1721,6 @@ function extractSkuProperties(
 }
 
 
-/* ============================================================
-   NORMALIZE SKUS
-   ============================================================ */
-
 function normalizeSkus(
   rawSkus
 ) {
@@ -1937,10 +1832,6 @@ function normalizeSkus(
 
 }
 
-
-/* ============================================================
-   VARIANT NAME HELPERS
-   ============================================================ */
 
 function isMeaninglessVariantCode(
   value
@@ -2055,10 +1946,6 @@ function shouldUseImageSwatches(
 
 }
 
-
-/* ============================================================
-   BUILD VARIANT GROUPS
-   ============================================================ */
 
 function buildVariantGroups(
   skus
@@ -2207,10 +2094,6 @@ function buildVariantGroups(
 
 }
 
-
-/* ============================================================
-   RENDER VARIANTS
-   ============================================================ */
 
 function renderVariants() {
 
@@ -2458,10 +2341,6 @@ function renderVariants() {
 }
 
 
-/* ============================================================
-   CHECK SKU AVAILABILITY
-   ============================================================ */
-
 function hasAvailableSkuForSelection(
   groupId,
   valueId
@@ -2511,10 +2390,6 @@ function hasAvailableSkuForSelection(
 
 }
 
-
-/* ============================================================
-   UPDATE VARIANT UI
-   ============================================================ */
 
 function updateVariantUI() {
 
@@ -2624,10 +2499,6 @@ function updateVariantUI() {
 
 }
 
-
-/* ============================================================
-   SKU MATCHING
-   ============================================================ */
 
 function skuMatchesSelection(
   sku,
@@ -2862,10 +2733,6 @@ function updateSelectedSku() {
 }
 
 
-/* ============================================================
-   GALLERY
-   ============================================================ */
-
 function normalizeImages(
   rawImages
 ) {
@@ -3036,10 +2903,6 @@ function renderGallery() {
 }
 
 
-/* ============================================================
-   RATING
-   ============================================================ */
-
 function renderRating() {
 
   const rating =
@@ -3094,10 +2957,6 @@ function renderRating() {
 
 }
 
-
-/* ============================================================
-   DESCRIPTION
-   ============================================================ */
 
 function sanitizeDescriptionHtml(
   html
@@ -3216,10 +3075,6 @@ function renderDescription() {
 
 }
 
-
-/* ============================================================
-   RENDER PRODUCT
-   ============================================================ */
 
 function renderProduct() {
 
@@ -3348,10 +3203,6 @@ function renderProduct() {
 }
 
 
-/* ============================================================
-   CART FUNCTIONS
-   ============================================================ */
-
 function readCart() {
 
   try {
@@ -3436,6 +3287,7 @@ function saveCart(
   localStorage.setItem(
     LEGACY_CART_KEY,
     data
+
   );
 
 }
@@ -3476,10 +3328,6 @@ function updateCartBadge() {
 
 }
 
-
-/* ============================================================
-   BUILD CART ITEM
-   ============================================================ */
 
 function buildCartItem() {
 
@@ -3569,10 +3417,6 @@ function buildCartItem() {
 }
 
 
-/* ============================================================
-   VALIDATE SELECTION
-   ============================================================ */
-
 function validateSelection() {
 
   if (
@@ -3644,10 +3488,6 @@ function validateSelection() {
 
 }
 
-
-/* ============================================================
-   ADD TO CART
-   ============================================================ */
 
 function addCurrentProductToCart() {
 
@@ -3721,10 +3561,6 @@ function addCurrentProductToCart() {
 }
 
 
-/* ============================================================
-   BUY NOW
-   ============================================================ */
-
 function buyNow() {
 
   if (
@@ -3752,10 +3588,6 @@ function buyNow() {
 
 }
 
-
-/* ============================================================
-   QUANTITY
-   ============================================================ */
 
 function setQuantity(
   value
@@ -3837,10 +3669,6 @@ buyNowBtnEl.addEventListener(
 );
 
 
-/* ============================================================
-   LOAD PRODUCT
-   ============================================================ */
-
 async function loadProduct() {
 
   const productId =
@@ -3917,10 +3745,6 @@ async function loadProduct() {
 }
 
 
-/* ============================================================
-   ERROR
-   ============================================================ */
-
 function showError(
   error
 ) {
@@ -3947,10 +3771,6 @@ function showError(
 
 }
 
-
-/* ============================================================
-   INIT
-   ============================================================ */
 
 document.addEventListener(
   "DOMContentLoaded",
