@@ -13,7 +13,7 @@
 
   <!-- ============================================================
        FAVICON.IO
-       Upload these favicon.io files to the website root:
+       Upload these files to the website root:
        favicon.ico
        favicon-16x16.png
        favicon-32x32.png
@@ -92,6 +92,13 @@
       font: inherit;
     }
 
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.25);
+      outline-offset: 2px;
+    }
+
     .container {
       width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
@@ -117,10 +124,6 @@
       gap: 20px;
     }
 
-    /*
-     * Brand
-     */
-
     .brand {
       display: inline-flex;
       align-items: center;
@@ -129,6 +132,7 @@
       font-weight: 800;
       letter-spacing: -0.02em;
       white-space: nowrap;
+      flex: 0 1 auto;
     }
 
     .brand-text {
@@ -136,10 +140,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
-    /*
-     * Header actions
-     */
 
     .header-actions {
       display: flex;
@@ -176,9 +176,9 @@
       transform: translateY(1px);
     }
 
-    /*
-     * Professional SVG icons
-     */
+    /* ============================================================
+       PROFESSIONAL SVG ICONS
+       ============================================================ */
 
     .header-icon {
       width: 18px;
@@ -192,9 +192,9 @@
       stroke-linejoin: round;
     }
 
-    /*
-     * Cart badge
-     */
+    /* ============================================================
+       CART BADGE
+       ============================================================ */
 
     .cart-badge {
       min-width: 21px;
@@ -249,7 +249,7 @@
     }
 
     /* ============================================================
-       GALLERY
+       CARDS
        ============================================================ */
 
     .gallery-card,
@@ -260,6 +260,10 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+
+    /* ============================================================
+       GALLERY
+       ============================================================ */
 
     .gallery-card {
       padding: 18px;
@@ -309,7 +313,9 @@
 
     .gallery-thumb.active {
       border: 2px solid var(--primary);
-      box-shadow: 0 0 0 1px rgba(17, 24, 39, 0.08);
+      box-shadow:
+        0 0 0 1px
+        rgba(17, 24, 39, 0.08);
     }
 
     .gallery-thumb img {
@@ -332,6 +338,7 @@
       font-size: clamp(26px, 3vw, 38px);
       line-height: 1.15;
       letter-spacing: -0.025em;
+      overflow-wrap: anywhere;
     }
 
     .rating-row {
@@ -744,10 +751,6 @@
         height: 17px;
       }
 
-      /*
-       * Make Cart compact but keep the text visible.
-       */
-
       .cart-badge {
         min-width: 19px;
         height: 19px;
@@ -843,18 +846,19 @@
 <header>
   <div class="container header-inner">
 
+    <!-- Brand -->
     <a
       href="./index.html"
       class="brand"
       aria-label="Prasun Store home"
     >
-      <span class="brand-text">
-        Prasun Store
-      </span>
+      <span class="brand-text">Prasun Store</span>
     </a>
 
+    <!-- Header actions -->
     <div class="header-actions">
 
+      <!-- Shop -->
       <a
         href="./index.html"
         class="header-link"
@@ -876,14 +880,12 @@
         <span>Shop</span>
       </a>
 
-
+      <!-- Cart -->
       <a
         href="./cart.html"
         class="header-link"
         aria-label="Shopping cart"
       >
-
-        <!-- Professional SVG cart icon -->
         <svg
           class="header-icon"
           viewBox="0 0 24 24"
@@ -899,14 +901,10 @@
         <span
           id="cartBadge"
           class="cart-badge"
-        >
-          0
-        </span>
-
+        >0</span>
       </a>
 
     </div>
-
   </div>
 </header>
 
@@ -915,6 +913,7 @@
 
   <div class="container">
 
+    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
       <a href="./index.html">Home</a>
       <span>/</span>
@@ -922,19 +921,21 @@
     </div>
 
 
-    <div id="loading" class="loading">
+    <!-- Loading -->
+    <div
+      id="loading"
+      class="loading"
+    >
       Loading product...
     </div>
 
 
+    <!-- Error -->
     <div
       id="errorBox"
       class="error-box hidden"
     >
-
-      <h2>
-        Unable to load product
-      </h2>
+      <h2>Unable to load product</h2>
 
       <p id="errorMessage">
         Something went wrong.
@@ -946,10 +947,10 @@
       >
         Back to Store
       </a>
-
     </div>
 
 
+    <!-- Product -->
     <section
       id="productSection"
       class="product-layout hidden"
@@ -999,9 +1000,7 @@
           <span
             id="ratingStars"
             class="stars"
-          >
-            ☆☆☆☆☆
-          </span>
+          >☆☆☆☆☆</span>
 
           <span id="ratingText">
             No ratings
@@ -1026,20 +1025,14 @@
         </div>
 
 
-        <!-- ====================================================
-             VARIANTS
-             ==================================================== -->
-
+        <!-- Variants -->
         <div
           id="variantsContainer"
           class="variants hidden"
         ></div>
 
 
-        <!-- ====================================================
-             QUANTITY
-             ==================================================== -->
-
+        <!-- Quantity -->
         <div class="quantity-row">
 
           <span class="quantity-label">
@@ -1052,9 +1045,7 @@
               type="button"
               id="quantityMinus"
               aria-label="Decrease quantity"
-            >
-              −
-            </button>
+            >−</button>
 
             <input
               id="quantityInput"
@@ -1069,19 +1060,14 @@
               type="button"
               id="quantityPlus"
               aria-label="Increase quantity"
-            >
-              +
-            </button>
+            >+</button>
 
           </div>
 
         </div>
 
 
-        <!-- ====================================================
-             ACTIONS
-             ==================================================== -->
-
+        <!-- Actions -->
         <div class="action-buttons">
 
           <button
@@ -1109,10 +1095,7 @@
         ></div>
 
 
-        <!-- ====================================================
-             QUICK INFO
-             ==================================================== -->
-
+        <!-- Quick information -->
         <div class="quick-info">
 
           <div class="quick-info-row">
@@ -1163,7 +1146,6 @@
 
 
 <script>
-
 "use strict";
 
 
@@ -2249,6 +2231,7 @@ function renderVariants() {
     wrapper.className =
       "variant-group";
 
+
     const titleRow =
       document.createElement(
         "div"
@@ -2257,6 +2240,7 @@ function renderVariants() {
     titleRow.className =
       "variant-title";
 
+
     const title =
       document.createElement(
         "span"
@@ -2264,6 +2248,7 @@ function renderVariants() {
 
     title.textContent =
       group.name;
+
 
     const selectedLabel =
       document.createElement(
@@ -2279,8 +2264,10 @@ function renderVariants() {
     selectedLabel.textContent =
       "Select";
 
+
     titleRow.appendChild(title);
     titleRow.appendChild(selectedLabel);
+
 
     const options =
       document.createElement(
@@ -2290,10 +2277,12 @@ function renderVariants() {
     options.className =
       "variant-options";
 
+
     const useSwatches =
       shouldUseImageSwatches(
         group
       );
+
 
     group.values.forEach(
       (value, index) => {
@@ -2315,10 +2304,12 @@ function renderVariants() {
         button.dataset.valueId =
           String(value.id);
 
+
         const meaningful =
           isMeaningfulVariantName(
             value.name
           );
+
 
         const label =
           meaningful
@@ -2341,6 +2332,7 @@ function renderVariants() {
             "swatch-option"
           );
 
+
           const image =
             document.createElement(
               "img"
@@ -2360,6 +2352,16 @@ function renderVariants() {
 
           image.referrerPolicy =
             "no-referrer";
+
+
+          image.onerror =
+            () => {
+
+              image.style.display =
+                "none";
+
+            };
+
 
           button.appendChild(
             image
@@ -2386,6 +2388,7 @@ function renderVariants() {
             );
 
           }
+
 
           button.title =
             label;
@@ -2431,6 +2434,7 @@ function renderVariants() {
           }
         );
 
+
         options.appendChild(
           button
         );
@@ -2452,6 +2456,7 @@ function renderVariants() {
     );
 
   }
+
 
   updateVariantUI();
 
@@ -2546,6 +2551,7 @@ function updateVariantUI() {
           isSelected
         );
 
+
         const available =
           hasAvailableSkuForSelection(
             groupId,
@@ -2567,6 +2573,7 @@ function updateVariantUI() {
       normalizedSkus
     );
 
+
   groups.forEach(
     group => {
 
@@ -2581,10 +2588,12 @@ function updateVariantUI() {
         return;
       }
 
+
       const selectedId =
         selectedProperties[
           String(group.id)
         ];
+
 
       if (!selectedId) {
 
@@ -2595,12 +2604,14 @@ function updateVariantUI() {
 
       }
 
+
       const value =
         group.values.find(
           item =>
             String(item.id) ===
             String(selectedId)
         );
+
 
       if (
         value &&
@@ -2642,6 +2653,7 @@ function skuMatchesSelection(
 
   let matched = 0;
 
+
   for (
     const [
       groupId,
@@ -2666,9 +2678,11 @@ function skuMatchesSelection(
           String(groupId)
       );
 
+
     if (!property) {
       return false;
     }
+
 
     const skuValue =
       String(
@@ -2681,6 +2695,7 @@ function skuMatchesSelection(
         )
       );
 
+
     if (
       skuValue !==
       String(valueId)
@@ -2688,9 +2703,11 @@ function skuMatchesSelection(
       return false;
     }
 
+
     matched++;
 
   }
+
 
   if (
     requireAll &&
@@ -2700,6 +2717,7 @@ function skuMatchesSelection(
     return false;
 
   }
+
 
   return true;
 
@@ -2732,12 +2750,15 @@ function findBestMatchingSku() {
     return null;
   }
 
+
   const exact =
     findExactSku();
+
 
   if (exact) {
     return exact;
   }
+
 
   const available =
     normalizedSkus.filter(
@@ -2753,9 +2774,11 @@ function findBestMatchingSku() {
         )
     );
 
+
   if (!available.length) {
     return null;
   }
+
 
   return available[0];
 
@@ -2766,6 +2789,7 @@ function updateSelectedSku() {
 
   selectedSku =
     findBestMatchingSku();
+
 
   if (
     !selectedSku
@@ -2832,6 +2856,7 @@ function updateSelectedSku() {
         selectedSku.image
       );
 
+
     if (
       existingIndex >= 0
     ) {
@@ -2872,6 +2897,7 @@ function normalizeImages(
 
   let images = [];
 
+
   if (
     Array.isArray(rawImages)
   ) {
@@ -2900,6 +2926,7 @@ function normalizeImages(
             item.image
           );
 
+
         if (url) {
           images.push(url);
         }
@@ -2909,6 +2936,7 @@ function normalizeImages(
     }
 
   }
+
 
   return uniqueArray(
     images
@@ -2927,6 +2955,7 @@ function setMainImage(
     return;
   }
 
+
   currentImageIndex =
     Math.max(
       0,
@@ -2936,10 +2965,12 @@ function setMainImage(
       )
     );
 
+
   mainImageEl.src =
     galleryImages[
       currentImageIndex
     ];
+
 
   galleryThumbsEl
     .querySelectorAll(
@@ -2965,6 +2996,7 @@ function renderGallery() {
   galleryThumbsEl.innerHTML =
     "";
 
+
   if (
     !galleryImages.length
   ) {
@@ -2972,9 +3004,13 @@ function renderGallery() {
     mainImageEl.src =
       "https://via.placeholder.com/800?text=Product";
 
+    mainImageEl.alt =
+      "Product image unavailable";
+
     return;
 
   }
+
 
   galleryImages.forEach(
     (image, index) => {
@@ -2995,6 +3031,7 @@ function renderGallery() {
         `View product image ${index + 1}`
       );
 
+
       const img =
         document.createElement(
           "img"
@@ -3012,9 +3049,20 @@ function renderGallery() {
       img.referrerPolicy =
         "no-referrer";
 
+
+      img.onerror =
+        () => {
+
+          button.style.display =
+            "none";
+
+        };
+
+
       button.appendChild(
         img
       );
+
 
       button.addEventListener(
         "click",
@@ -3024,12 +3072,14 @@ function renderGallery() {
           )
       );
 
+
       galleryThumbsEl.appendChild(
         button
       );
 
     }
   );
+
 
   setMainImage(0);
 
@@ -3048,6 +3098,7 @@ function renderRating() {
       0
     );
 
+
   if (
     rating <= 0
   ) {
@@ -3062,6 +3113,7 @@ function renderRating() {
 
   }
 
+
   const rounded =
     Math.round(
       Math.min(
@@ -3073,6 +3125,7 @@ function renderRating() {
       )
     );
 
+
   ratingStarsEl.textContent =
     "★".repeat(
       rounded
@@ -3081,11 +3134,13 @@ function renderRating() {
       5 - rounded
     );
 
+
   const reviewCount =
     toNumber(
       product.review_count,
       0
     );
+
 
   ratingTextEl.textContent =
     reviewCount > 0
@@ -3106,11 +3161,13 @@ function sanitizeDescriptionHtml(
   const parser =
     new DOMParser();
 
+
   const doc =
     parser.parseFromString(
       html,
       "text/html"
     );
+
 
   doc
     .querySelectorAll(
@@ -3121,12 +3178,15 @@ function sanitizeDescriptionHtml(
         element.remove()
     );
 
+
   doc
     .querySelectorAll("*")
     .forEach(
       element => {
 
-        [...element.attributes]
+        [
+          ...element.attributes
+        ]
           .forEach(
             attribute => {
 
@@ -3135,6 +3195,7 @@ function sanitizeDescriptionHtml(
 
               const value =
                 attribute.value || "";
+
 
               if (
                 name.startsWith("on")
@@ -3145,6 +3206,7 @@ function sanitizeDescriptionHtml(
                 );
 
               }
+
 
               if (
                 (
@@ -3168,6 +3230,7 @@ function sanitizeDescriptionHtml(
       }
     );
 
+
   return doc.body.innerHTML;
 
 }
@@ -3187,14 +3250,17 @@ function renderDescription() {
 
   }
 
+
   descriptionCardEl.classList.remove(
     "hidden"
   );
+
 
   const description =
     String(
       product.description
     );
+
 
   if (
     /<([a-z][\s\S]*?)>/i.test(
@@ -3225,6 +3291,7 @@ function renderProduct() {
 
   productTitleEl.textContent =
     product.title;
+
 
   document.title =
     `${product.title} | Prasun Store`;
@@ -3335,6 +3402,7 @@ function renderProduct() {
 
   updateCartBadge();
 
+
   productShipsToEl.textContent =
     firstNonEmpty(
       product.shipping_country,
@@ -3361,6 +3429,7 @@ function readCart() {
         CART_STORAGE_KEY
       );
 
+
     if (currentRaw) {
 
       const current =
@@ -3368,10 +3437,13 @@ function readCart() {
           currentRaw
         );
 
+
       if (
         Array.isArray(current)
       ) {
+
         return current;
+
       }
 
     }
@@ -3382,12 +3454,14 @@ function readCart() {
         LEGACY_CART_KEY
       );
 
+
     if (legacyRaw) {
 
       const legacy =
         JSON.parse(
           legacyRaw
         );
+
 
       if (
         Array.isArray(legacy)
@@ -3400,7 +3474,9 @@ function readCart() {
           )
         );
 
+
         return legacy;
+
       }
 
     }
@@ -3413,6 +3489,7 @@ function readCart() {
     );
 
   }
+
 
   return [];
 
@@ -3428,10 +3505,12 @@ function saveCart(
       cart
     );
 
+
   localStorage.setItem(
     CART_STORAGE_KEY,
     data
   );
+
 
   localStorage.setItem(
     LEGACY_CART_KEY,
@@ -3446,6 +3525,7 @@ function updateCartBadge() {
   const cart =
     readCart();
 
+
   const total =
     cart.reduce(
       (
@@ -3459,6 +3539,7 @@ function updateCartBadge() {
             1
           );
 
+
         return (
           sum +
           Math.max(
@@ -3470,6 +3551,7 @@ function updateCartBadge() {
       },
       0
     );
+
 
   cartBadgeEl.textContent =
     String(total);
@@ -3487,6 +3569,7 @@ function buildCartItem() {
     return null;
   }
 
+
   const productId =
     String(
       firstNonEmpty(
@@ -3494,6 +3577,7 @@ function buildCartItem() {
         getProductId()
       )
     );
+
 
   const variantKey =
     selectedSku
@@ -3583,10 +3667,12 @@ function validateSelection() {
 
   }
 
+
   const groups =
     buildVariantGroups(
       normalizedSkus
     );
+
 
   const missing =
     groups.filter(
@@ -3595,6 +3681,7 @@ function validateSelection() {
           String(group.id)
         ]
     );
+
 
   if (
     missing.length
@@ -3608,9 +3695,11 @@ function validateSelection() {
         )
         .join(", ")}`;
 
+
     selectionNoticeEl.classList.remove(
       "hidden"
     );
+
 
     return false;
 
@@ -3620,25 +3709,31 @@ function validateSelection() {
   const exact =
     findExactSku();
 
+
   if (!exact) {
 
     selectionNoticeEl.textContent =
       "The selected variant is unavailable.";
 
+
     selectionNoticeEl.classList.remove(
       "hidden"
     );
+
 
     return false;
 
   }
 
+
   selectedSku =
     exact;
+
 
   selectionNoticeEl.classList.add(
     "hidden"
   );
+
 
   return true;
 
@@ -3657,15 +3752,19 @@ function addCurrentProductToCart() {
     return;
   }
 
+
   const item =
     buildCartItem();
+
 
   if (!item) {
     return;
   }
 
+
   const cart =
     readCart();
+
 
   const existingIndex =
     cart.findIndex(
@@ -3733,12 +3832,15 @@ function buyNow() {
     return;
   }
 
+
   const item =
     buildCartItem();
+
 
   if (!item) {
     return;
   }
+
 
   sessionStorage.setItem(
     "buyNowItem",
@@ -3746,6 +3848,7 @@ function buyNow() {
       item
     )
   );
+
 
   window.location.href =
     "./checkout.html?buy_now=1";
@@ -3767,21 +3870,29 @@ function setQuantity(
       10
     );
 
+
   if (
     !Number.isFinite(number) ||
     number < 1
   ) {
+
     number = 1;
+
   }
+
 
   if (
     number > 999
   ) {
+
     number = 999;
+
   }
+
 
   quantity =
     number;
+
 
   quantityInputEl.value =
     String(quantity);
@@ -3846,6 +3957,7 @@ async function loadProduct() {
   const productId =
     getProductId();
 
+
   if (!productId) {
 
     throw new Error(
@@ -3853,6 +3965,7 @@ async function loadProduct() {
     );
 
   }
+
 
   const response =
     await fetch(
@@ -3882,10 +3995,12 @@ async function loadProduct() {
   const data =
     await response.json();
 
+
   const normalized =
     normalizeProduct(
       data
     );
+
 
   if (!normalized) {
 
@@ -3895,13 +4010,16 @@ async function loadProduct() {
 
   }
 
+
   product =
     normalized;
+
 
   normalizedSkus =
     normalizeSkus(
       product.skus
     );
+
 
   renderProduct();
 
@@ -3909,6 +4027,7 @@ async function loadProduct() {
   loadingEl.classList.add(
     "hidden"
   );
+
 
   productSectionEl.classList.remove(
     "hidden"
@@ -3929,17 +4048,21 @@ function showError(
     error
   );
 
+
   loadingEl.classList.add(
     "hidden"
   );
+
 
   productSectionEl.classList.add(
     "hidden"
   );
 
+
   errorBoxEl.classList.remove(
     "hidden"
   );
+
 
   errorMessageEl.textContent =
     error?.message ||
@@ -3970,7 +4093,6 @@ document.addEventListener(
 
   }
 );
-
 </script>
 
 </body>
