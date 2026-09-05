@@ -13,6 +13,53 @@
 
   <meta name="theme-color" content="#111827" />
 
+  <!-- ============================================================
+       FAVICON.IO
+       Place these files in your website root:
+       favicon.ico
+       favicon-16x16.png
+       favicon-32x32.png
+       apple-touch-icon.png
+       site.webmanifest
+       ============================================================ -->
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon-32x32.png"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon-16x16.png"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/apple-touch-icon.png"
+  />
+
+  <link
+    rel="manifest"
+    href="/site.webmanifest"
+  />
+
+  <meta
+    name="application-name"
+    content="Prasun Store"
+  />
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Prasun Store"
+  />
+
   <style>
     * {
       box-sizing: border-box;
@@ -82,19 +129,38 @@
       gap: 20px;
     }
 
+    /*
+     * BRAND
+     */
+
     .brand {
+      display: inline-flex;
+      align-items: center;
+
+      min-width: 0;
+
       font-size: 24px;
       font-weight: 800;
+
       letter-spacing: -0.5px;
+
+      white-space: nowrap;
+
+      flex-shrink: 0;
     }
 
     .brand span {
       color: #2563eb;
     }
 
+    /*
+     * SEARCH
+     */
+
     .search-wrap {
       flex: 1;
       max-width: 620px;
+
       margin: 0 auto;
     }
 
@@ -102,14 +168,18 @@
       display: flex;
 
       background: #f3f4f6;
+
       border: 1px solid #e5e7eb;
 
       border-radius: 12px;
+
       overflow: hidden;
     }
 
     .search-input {
       width: 100%;
+
+      min-width: 0;
 
       border: 0;
       outline: 0;
@@ -119,7 +189,13 @@
       padding: 12px 14px;
     }
 
+    .search-input:focus {
+      background: #ffffff;
+    }
+
     .search-button {
+      flex-shrink: 0;
+
       border: 0;
 
       background: #111827;
@@ -130,30 +206,83 @@
       font-weight: 800;
     }
 
+    .search-button:hover {
+      background: #000000;
+    }
+
+    /*
+     * HEADER ACTIONS
+     */
+
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+
+      gap: 8px;
+
+      flex-shrink: 0;
     }
 
     .header-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+
+      gap: 7px;
 
       min-height: 42px;
 
       padding: 8px 12px;
 
+      border: 1px solid transparent;
+
       border-radius: 10px;
 
       color: #374151;
+
       font-weight: 700;
+
+      white-space: nowrap;
+
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
     }
 
     .header-link:hover {
       background: #f3f4f6;
+
+      border-color: #e5e7eb;
+
+      color: #111827;
     }
+
+    /*
+     * PROFESSIONAL SVG HEADER ICONS
+     */
+
+    .header-icon {
+      width: 18px;
+      height: 18px;
+
+      flex: 0 0 auto;
+
+      display: block;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 2;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /*
+     * CART BADGE
+     */
 
     .cart-badge {
       min-width: 20px;
@@ -172,6 +301,8 @@
 
       font-size: 11px;
       font-weight: 800;
+
+      line-height: 1;
     }
 
     /* ============================================================
@@ -199,6 +330,7 @@
 
     .page-title {
       font-size: 34px;
+
       letter-spacing: -0.8px;
 
       margin-bottom: 24px;
@@ -271,6 +403,10 @@
       border-radius: 12px;
 
       overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .cart-image {
@@ -356,6 +492,13 @@
       background: #f9fafb;
 
       font-size: 19px;
+
+      transition:
+        background 0.15s ease;
+    }
+
+    .quantity-button:hover {
+      background: #f3f4f6;
     }
 
     .quantity-value {
@@ -437,6 +580,7 @@
       font-weight: 900;
 
       padding-top: 16px;
+
       margin-top: 8px;
 
       border-top: 1px solid #e5e7eb;
@@ -463,6 +607,10 @@
       color: #ffffff;
 
       font-weight: 900;
+
+      transition:
+        background 0.15s ease,
+        opacity 0.15s ease;
     }
 
     .checkout-button:hover {
@@ -490,6 +638,9 @@
       color: #111827;
 
       font-weight: 800;
+
+      transition:
+        background 0.15s ease;
     }
 
     .continue-button:hover {
@@ -512,10 +663,39 @@
       text-align: center;
     }
 
-    .empty-icon {
-      font-size: 46px;
+    /*
+     * Professional SVG empty-cart icon
+     */
 
-      margin-bottom: 12px;
+    .empty-icon {
+      width: 64px;
+      height: 64px;
+
+      margin: 0 auto 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #6b7280;
+
+      border-radius: 50%;
+
+      background: #f3f4f6;
+    }
+
+    .empty-icon svg {
+      width: 32px;
+      height: 32px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 1.8;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .empty-title {
@@ -549,6 +729,13 @@
       color: #ffffff;
 
       font-weight: 900;
+
+      transition:
+        background 0.15s ease;
+    }
+
+    .shop-button:hover {
+      background: #000000;
     }
 
     /* ============================================================
@@ -637,6 +824,7 @@
 
     .footer-links {
       display: flex;
+
       gap: 16px;
 
       flex-wrap: wrap;
@@ -644,6 +832,10 @@
       color: #d1d5db;
 
       font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
     }
 
     .copyright {
@@ -657,10 +849,11 @@
     }
 
     /* ============================================================
-       RESPONSIVE
+       TABLET
        ============================================================ */
 
     @media (max-width: 900px) {
+
       .cart-layout {
         grid-template-columns: 1fr;
       }
@@ -668,18 +861,76 @@
       .summary {
         position: static;
       }
+
     }
 
+    /* ============================================================
+       MOBILE
+       ============================================================ */
+
     @media (max-width: 650px) {
+
       .container {
         width: min(100% - 20px, 1200px);
       }
 
       .header-inner {
+        min-height: auto;
+
         flex-wrap: wrap;
 
-        padding: 12px 0;
+        padding: 11px 0;
+
+        gap: 10px;
       }
+
+      /*
+       * Keep Prasun Store visible.
+       */
+
+      .brand {
+        font-size: 20px;
+
+        flex: 1 1 auto;
+
+        min-width: 0;
+      }
+
+      /*
+       * Header actions remain beside the brand.
+       */
+
+      .header-actions {
+        margin-left: auto;
+
+        gap: 5px;
+      }
+
+      .header-link {
+        min-height: 38px;
+
+        padding: 7px 9px;
+
+        gap: 5px;
+
+        font-size: 13px;
+      }
+
+      .header-icon {
+        width: 17px;
+        height: 17px;
+      }
+
+      .cart-badge {
+        min-width: 19px;
+        height: 19px;
+
+        font-size: 10px;
+      }
+
+      /*
+       * Search goes to second row.
+       */
 
       .search-wrap {
         flex-basis: 100%;
@@ -687,14 +938,36 @@
         max-width: none;
 
         order: 3;
+
+        margin: 0;
       }
 
-      .header-actions {
-        margin-left: auto;
+      .search-input {
+        padding: 11px 12px;
+      }
+
+      .search-button {
+        padding: 0 15px;
+      }
+
+      .page {
+        padding: 24px 0 45px;
+      }
+
+      .page-title {
+        font-size: 30px;
+
+        margin-bottom: 20px;
       }
 
       .cart-item {
-        grid-template-columns: 82px minmax(0, 1fr);
+        grid-template-columns:
+          82px
+          minmax(0, 1fr);
+
+        gap: 14px;
+
+        padding: 16px;
       }
 
       .cart-image-wrap {
@@ -708,27 +981,159 @@
         flex-direction: row;
 
         align-items: center;
+
+        justify-content: space-between;
+
+        width: 100%;
       }
 
       .item-total {
         order: 2;
       }
+
+      .quantity-control {
+        order: 1;
+      }
+
+      .remove-button {
+        order: 3;
+      }
+
+      .summary {
+        padding: 20px;
+      }
+
+      .empty-cart {
+        padding: 48px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+    }
+
+    /* ============================================================
+       SMALL MOBILE
+       ============================================================ */
+
+    @media (max-width: 420px) {
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .header-actions {
+        gap: 3px;
+      }
+
+      .header-link {
+        padding: 6px 7px;
+
+        font-size: 12px;
+      }
+
+      .header-icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .cart-badge {
+        min-width: 18px;
+        height: 18px;
+
+        padding: 0 5px;
+
+        font-size: 10px;
+      }
+
+      .cart-item {
+        grid-template-columns:
+          72px
+          minmax(0, 1fr);
+
+        padding: 14px;
+      }
+
+      .cart-image-wrap {
+        width: 72px;
+        height: 72px;
+      }
+
+      .cart-title {
+        font-size: 14px;
+      }
+
+      .cart-unit-price {
+        font-size: 13px;
+      }
+
+      .item-total {
+        font-size: 16px;
+      }
+
+      .quantity-button {
+        width: 34px;
+        height: 34px;
+      }
+
+      .quantity-value {
+        min-width: 36px;
+        height: 34px;
+      }
+
+    }
+
+    /* ============================================================
+       VERY SMALL MOBILE
+       ============================================================ */
+
+    @media (max-width: 360px) {
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .header-link {
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      .header-link span:not(.cart-badge) {
+        display: none;
+      }
+
+      .header-icon {
+        width: 18px;
+        height: 18px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ==========================================================
+       HEADER
+       ========================================================== -->
+
   <header class="top-header">
 
     <div class="container header-inner">
 
+      <!-- BRAND -->
+
       <a
         href="./index.html"
         class="brand"
+        aria-label="Prasun Store home"
       >
         Prasun<span>Store</span>
       </a>
+
+
+      <!-- SEARCH -->
 
       <div class="search-wrap">
 
@@ -743,6 +1148,7 @@
             type="search"
             placeholder="Search products..."
             autocomplete="off"
+            aria-label="Search products"
           />
 
           <button
@@ -756,22 +1162,66 @@
 
       </div>
 
+
+      <!-- HEADER ACTIONS -->
+
       <div class="header-actions">
+
+        <!-- PRODUCTS / SHOP -->
 
         <a
           href="./index.html#products"
           class="header-link"
+          aria-label="View products"
         >
-          🛍️
-          <span>Products</span>
+
+          <!-- Professional store icon -->
+
+          <svg
+            class="header-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M4 7h16"></path>
+            <path d="M5 7l1-3h12l1 3"></path>
+            <path d="M5 7v12h14V7"></path>
+            <path d="M9 19v-5h6v5"></path>
+            <path d="M4 7c0 1.1.9 2 2 2s2-.9 2-2"></path>
+            <path d="M8 7c0 1.1.9 2 2 2s2-.9 2-2"></path>
+            <path d="M12 7c0 1.1.9 2 2 2s2-.9 2-2"></path>
+            <path d="M16 7c0 1.1.9 2 2 2s2-.9 2-2"></path>
+          </svg>
+
+          <span>
+            Products
+          </span>
+
         </a>
+
+
+        <!-- CART -->
 
         <a
           href="./cart.html"
           class="header-link"
+          aria-label="Shopping cart"
         >
-          🛒
-          <span>Cart</span>
+
+          <!-- Professional SVG cart icon -->
+
+          <svg
+            class="header-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
+            <circle cx="10" cy="20" r="1.3"></circle>
+            <circle cx="18" cy="20" r="1.3"></circle>
+          </svg>
+
+          <span>
+            Cart
+          </span>
 
           <span
             id="cartCount"
@@ -779,6 +1229,7 @@
           >
             0
           </span>
+
         </a>
 
       </div>
@@ -787,9 +1238,16 @@
 
   </header>
 
+
+  <!-- ==========================================================
+       MAIN
+       ========================================================== -->
+
   <main class="page">
 
     <div class="container">
+
+      <!-- BREADCRUMB -->
 
       <div class="breadcrumb">
 
@@ -797,7 +1255,9 @@
           Home
         </a>
 
-        <span>›</span>
+        <span>
+          ›
+        </span>
 
         <span>
           Cart
@@ -805,11 +1265,15 @@
 
       </div>
 
+
       <h1 class="page-title">
         Shopping Cart
       </h1>
 
-      <!-- EMPTY -->
+
+      <!-- ========================================================
+           EMPTY CART
+           ======================================================== -->
 
       <section
         id="emptyCart"
@@ -817,17 +1281,33 @@
         style="display: none;"
       >
 
-        <div class="empty-icon">
-          🛒
+        <!-- Professional SVG cart icon -->
+
+        <div
+          class="empty-icon"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
+            <circle cx="10" cy="20" r="1.3"></circle>
+            <circle cx="18" cy="20" r="1.3"></circle>
+          </svg>
+
         </div>
+
 
         <div class="empty-title">
           Your cart is empty
         </div>
 
+
         <div class="empty-text">
           Add some products before proceeding to checkout.
         </div>
+
 
         <a
           href="./index.html#products"
@@ -838,13 +1318,20 @@
 
       </section>
 
-      <!-- CART -->
+
+      <!-- ========================================================
+           CART LAYOUT
+           ======================================================== -->
 
       <section
         id="cartLayout"
         class="cart-layout"
         style="display: none;"
       >
+
+        <!-- ======================================================
+             CART ITEMS
+             ====================================================== -->
 
         <div class="cart-panel">
 
@@ -856,11 +1343,17 @@
 
         </div>
 
+
+        <!-- ======================================================
+             ORDER SUMMARY
+             ====================================================== -->
+
         <aside class="summary">
 
           <div class="summary-title">
             Order Summary
           </div>
+
 
           <div class="summary-row">
 
@@ -874,6 +1367,7 @@
 
           </div>
 
+
           <div class="summary-row">
 
             <span>
@@ -885,6 +1379,7 @@
             </span>
 
           </div>
+
 
           <div class="summary-row">
 
@@ -898,6 +1393,7 @@
 
           </div>
 
+
           <div class="summary-row total">
 
             <span>
@@ -910,6 +1406,7 @@
 
           </div>
 
+
           <a
             href="./checkout.html"
             id="checkoutButton"
@@ -917,6 +1414,7 @@
           >
             Proceed to Checkout
           </a>
+
 
           <a
             href="./index.html#products"
@@ -933,12 +1431,22 @@
 
   </main>
 
+
+  <!-- ==========================================================
+       TOAST
+       ========================================================== -->
+
   <div
     id="toast"
     class="toast"
     role="status"
     aria-live="polite"
   ></div>
+
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
 
   <footer>
 
@@ -959,6 +1467,7 @@
 
         </div>
 
+
         <div class="footer-links">
 
           <a href="./index.html">
@@ -977,21 +1486,35 @@
 
       </div>
 
+
       <div class="copyright">
+
         ©
         <span id="currentYear"></span>
         Prasun Store. All rights reserved.
+
       </div>
 
     </div>
 
   </footer>
 
+
   <script>
     "use strict";
 
+
+    /* ============================================================
+       CONFIGURATION
+       ============================================================ */
+
     const CART_STORAGE_KEY =
       "prasun_cart";
+
+
+    /* ============================================================
+       DOM ELEMENTS
+       ============================================================ */
 
     const cartItemsElement =
       document.getElementById(
@@ -1038,14 +1561,25 @@
         "toast"
       );
 
+
+    /* ============================================================
+       STATE
+       ============================================================ */
+
+    let cart = [];
+
+    let toastTimer = null;
+
+
+    /* ============================================================
+       YEAR
+       ============================================================ */
+
     document.getElementById(
       "currentYear"
     ).textContent =
       new Date().getFullYear();
 
-    let cart = [];
-
-    let toastTimer = null;
 
     /* ============================================================
        INITIALIZE
@@ -1060,8 +1594,10 @@
         setupSearch();
 
         renderCart();
+
       }
     );
+
 
     /* ============================================================
        LOAD CART
@@ -1076,17 +1612,21 @@
             CART_STORAGE_KEY
           );
 
+
         if (!raw) {
 
           cart = [];
 
           return;
+
         }
+
 
         const parsed =
           JSON.parse(
             raw
           );
+
 
         cart =
           Array.isArray(
@@ -1095,15 +1635,18 @@
             ? parsed
             : [];
 
+
         /*
-         * Remove invalid items.
+         * Remove invalid cart entries.
          */
+
         cart =
           cart.filter(
             item =>
               item &&
               item.product_id
           );
+
 
         cart.forEach(
           item => {
@@ -1113,17 +1656,21 @@
                 item.quantity
               );
 
+
             item.price =
               normalizePrice(
                 item.price
               );
 
+
             item.currency =
               normalizeCurrency(
                 item.currency
               );
+
           }
         );
+
 
       } catch (error) {
 
@@ -1135,7 +1682,9 @@
         cart = [];
 
       }
+
     }
+
 
     /* ============================================================
        SAVE CART
@@ -1152,6 +1701,7 @@
           )
         );
 
+
       } catch (error) {
 
         console.error(
@@ -1159,11 +1709,15 @@
           error
         );
 
+
         showToast(
           "Unable to save your cart."
         );
+
       }
+
     }
+
 
     /* ============================================================
        RENDER CART
@@ -1173,6 +1727,11 @@
 
       updateCartBadge();
 
+
+      /*
+       * EMPTY CART
+       */
+
       if (!cart.length) {
 
         cartLayout.style.display =
@@ -1181,23 +1740,35 @@
         emptyCart.style.display =
           "block";
 
+
         summaryItems.textContent =
           "0";
+
 
         summarySubtotal.textContent =
           "$0.00";
 
+
         summaryTotal.textContent =
           "$0.00";
+
 
         checkoutButton.style.pointerEvents =
           "none";
 
+
         checkoutButton.style.opacity =
           "0.45";
 
+
         return;
+
       }
+
+
+      /*
+       * CART HAS ITEMS
+       */
 
       emptyCart.style.display =
         "none";
@@ -1205,17 +1776,22 @@
       cartLayout.style.display =
         "grid";
 
+
       checkoutButton.style.pointerEvents =
         "auto";
+
 
       checkoutButton.style.opacity =
         "1";
 
+
       cartItemsElement.innerHTML =
         "";
 
+
       const fragment =
         document.createDocumentFragment();
+
 
       cart.forEach(
         (
@@ -1229,15 +1805,20 @@
               index
             )
           );
+
         }
       );
+
 
       cartItemsElement.appendChild(
         fragment
       );
 
+
       updateSummary();
+
     }
+
 
     /* ============================================================
        CREATE CART ITEM
@@ -1253,38 +1834,49 @@
           "article"
         );
 
+
       wrapper.className =
         "cart-item";
 
-      /* Image */
+
+      /* ========================================================
+         IMAGE
+         ======================================================== */
 
       const imageWrap =
         document.createElement(
           "div"
         );
 
+
       imageWrap.className =
         "cart-image-wrap";
+
 
       const image =
         document.createElement(
           "img"
         );
 
+
       image.className =
         "cart-image";
+
 
       image.alt =
         item.title ||
         "Product";
 
+
       image.loading =
         "lazy";
+
 
       image.src =
         item.image ||
         item.image_proxy ||
         "";
+
 
       image.addEventListener(
         "error",
@@ -1293,70 +1885,84 @@
           image.style.display =
             "none";
 
+
           imageWrap.textContent =
             "Image unavailable";
 
-          imageWrap.style.display =
-            "flex";
-
-          imageWrap.style.alignItems =
-            "center";
-
-          imageWrap.style.justifyContent =
-            "center";
 
           imageWrap.style.color =
             "#9ca3af";
 
+
           imageWrap.style.fontSize =
             "12px";
+
         },
-        { once: true }
+        {
+          once: true
+        }
       );
+
 
       imageWrap.appendChild(
         image
       );
 
+
       wrapper.appendChild(
         imageWrap
       );
 
-      /* Information */
+
+      /* ========================================================
+         PRODUCT INFORMATION
+         ======================================================== */
 
       const info =
         document.createElement(
           "div"
         );
 
+
       info.className =
         "cart-info";
+
 
       const title =
         document.createElement(
           "a"
         );
 
+
       title.className =
         "cart-title";
+
 
       title.textContent =
         item.title ||
         "Product";
+
 
       title.href =
         `./product.html?id=${encodeURIComponent(
           item.product_id
         )}`;
 
+
       info.appendChild(
         title
       );
+
+
+      /* ========================================================
+         VARIANTS
+         ======================================================== */
 
       const variantText =
         formatVariants(
           item.variants
         );
+
 
       if (
         variantText
@@ -1367,24 +1973,35 @@
             "div"
           );
 
+
         variant.className =
           "cart-variant";
+
 
         variant.textContent =
           variantText;
 
+
         info.appendChild(
           variant
         );
+
       }
+
+
+      /* ========================================================
+         UNIT PRICE
+         ======================================================== */
 
       const unitPrice =
         document.createElement(
           "div"
         );
 
+
       unitPrice.className =
         "cart-unit-price";
+
 
       unitPrice.textContent =
         `${formatMoney(
@@ -1392,31 +2009,42 @@
           item.currency
         )} each`;
 
+
       info.appendChild(
         unitPrice
       );
+
 
       wrapper.appendChild(
         info
       );
 
-      /* Controls */
+
+      /* ========================================================
+         CONTROLS
+         ======================================================== */
 
       const controls =
         document.createElement(
           "div"
         );
 
+
       controls.className =
         "cart-controls";
+
+
+      /* ITEM TOTAL */
 
       const itemTotal =
         document.createElement(
           "div"
         );
 
+
       itemTotal.className =
         "item-total";
+
 
       itemTotal.textContent =
         formatMoney(
@@ -1425,36 +2053,49 @@
           item.currency
         );
 
+
       controls.appendChild(
         itemTotal
       );
+
+
+      /* QUANTITY CONTROL */
 
       const quantityControl =
         document.createElement(
           "div"
         );
 
+
       quantityControl.className =
         "quantity-control";
+
+
+      /* MINUS */
 
       const minus =
         document.createElement(
           "button"
         );
 
+
       minus.type =
         "button";
+
 
       minus.className =
         "quantity-button";
 
+
       minus.textContent =
         "−";
+
 
       minus.setAttribute(
         "aria-label",
         "Decrease quantity"
       );
+
 
       minus.addEventListener(
         "click",
@@ -1464,48 +2105,64 @@
             index,
             -1
           );
+
         }
       );
+
 
       quantityControl.appendChild(
         minus
       );
+
+
+      /* VALUE */
 
       const quantity =
         document.createElement(
           "div"
         );
 
+
       quantity.className =
         "quantity-value";
+
 
       quantity.textContent =
         String(
           item.quantity
         );
 
+
       quantityControl.appendChild(
         quantity
       );
+
+
+      /* PLUS */
 
       const plus =
         document.createElement(
           "button"
         );
 
+
       plus.type =
         "button";
+
 
       plus.className =
         "quantity-button";
 
+
       plus.textContent =
         "+";
+
 
       plus.setAttribute(
         "aria-label",
         "Increase quantity"
       );
+
 
       plus.addEventListener(
         "click",
@@ -1515,30 +2172,40 @@
             index,
             1
           );
+
         }
       );
+
 
       quantityControl.appendChild(
         plus
       );
 
+
       controls.appendChild(
         quantityControl
       );
+
+
+      /* REMOVE */
 
       const remove =
         document.createElement(
           "button"
         );
 
+
       remove.type =
         "button";
+
 
       remove.className =
         "remove-button";
 
+
       remove.textContent =
         "Remove";
+
 
       remove.addEventListener(
         "click",
@@ -1547,22 +2214,28 @@
           removeItem(
             index
           );
+
         }
       );
+
 
       controls.appendChild(
         remove
       );
 
+
       wrapper.appendChild(
         controls
       );
 
+
       return wrapper;
+
     }
 
+
     /* ============================================================
-       QUANTITY
+       CHANGE QUANTITY
        ============================================================ */
 
     function changeQuantity(
@@ -1573,18 +2246,22 @@
       if (
         !cart[index]
       ) {
+
         return;
+
       }
+
 
       const current =
         normalizeQuantity(
-          cart[index]
-            .quantity
+          cart[index].quantity
         );
+
 
       const next =
         current +
         delta;
+
 
       if (
         next <= 0
@@ -1595,18 +2272,23 @@
         );
 
         return;
+
       }
+
 
       cart[index].quantity =
         next;
 
+
       saveCart();
 
       renderCart();
+
     }
 
+
     /* ============================================================
-       REMOVE
+       REMOVE ITEM
        ============================================================ */
 
     function removeItem(
@@ -1617,28 +2299,36 @@
         index < 0 ||
         index >= cart.length
       ) {
+
         return;
+
       }
+
 
       const removed =
         cart[index];
+
 
       cart.splice(
         index,
         1
       );
 
+
       saveCart();
 
       renderCart();
 
+
       showToast(
         `${removed?.title || "Product"} removed from cart.`
       );
+
     }
 
+
     /* ============================================================
-       SUMMARY
+       UPDATE SUMMARY
        ============================================================ */
 
     function updateSummary() {
@@ -1646,8 +2336,10 @@
       let quantityTotal =
         0;
 
+
       let subtotal =
         0;
+
 
       cart.forEach(
         item => {
@@ -1657,27 +2349,34 @@
               item.quantity
             );
 
+
           const price =
             normalizePrice(
               item.price
             );
 
+
           quantityTotal +=
             quantity;
+
 
           subtotal +=
             price *
             quantity;
+
         }
       );
+
 
       summaryItems.textContent =
         String(
           quantityTotal
         );
 
+
       const currency =
         getCartCurrency();
+
 
       summarySubtotal.textContent =
         formatMoney(
@@ -1685,12 +2384,19 @@
           currency
         );
 
+
       summaryTotal.textContent =
         formatMoney(
           subtotal,
           currency
         );
+
     }
+
+
+    /* ============================================================
+       GET CART CURRENCY
+       ============================================================ */
 
     function getCartCurrency() {
 
@@ -1700,10 +2406,13 @@
             item?.currency
         );
 
+
       return normalizeCurrency(
         first?.currency
       );
+
     }
+
 
     /* ============================================================
        CART BADGE
@@ -1724,18 +2433,22 @@
                 item.quantity
               )
             );
+
           },
           0
         );
+
 
       cartCount.textContent =
         String(
           total
         );
+
     }
 
+
     /* ============================================================
-       VARIANTS
+       FORMAT VARIANTS
        ============================================================ */
 
     function formatVariants(
@@ -1748,8 +2461,11 @@
         ) ||
         !variants.length
       ) {
+
         return "";
+
       }
+
 
       const values =
         variants
@@ -1762,11 +2478,13 @@
                 property?.name ||
                 "";
 
+
               const value =
                 property?.value_name ||
                 property?.property_value_name ||
                 property?.value ||
                 "";
+
 
               if (
                 name &&
@@ -1774,20 +2492,28 @@
               ) {
 
                 return `${name}: ${value}`;
+
               }
+
 
               return (
                 value ||
                 name
               );
+
             }
           )
-          .filter(Boolean);
+          .filter(
+            Boolean
+          );
+
 
       return values.join(
         " • "
       );
+
     }
+
 
     /* ============================================================
        SEARCH
@@ -1800,10 +2526,12 @@
           "searchForm"
         );
 
+
       const input =
         document.getElementById(
           "searchInput"
         );
+
 
       form.addEventListener(
         "submit",
@@ -1811,11 +2539,13 @@
 
           event.preventDefault();
 
+
           const query =
             String(
               input.value ||
               ""
             ).trim();
+
 
           if (!query) {
 
@@ -1823,18 +2553,23 @@
               "./index.html#products";
 
             return;
+
           }
+
 
           window.location.href =
             `./index.html?q=${encodeURIComponent(
               query
             )}#products`;
+
         }
       );
+
     }
 
+
     /* ============================================================
-       HELPERS
+       NORMALIZE QUANTITY
        ============================================================ */
 
     function normalizeQuantity(
@@ -1847,20 +2582,30 @@
           10
         );
 
+
       if (
         !Number.isFinite(
           quantity
         ) ||
         quantity < 1
       ) {
+
         return 1;
+
       }
+
 
       return Math.min(
         99,
         quantity
       );
+
     }
+
+
+    /* ============================================================
+       NORMALIZE PRICE
+       ============================================================ */
 
     function normalizePrice(
       value
@@ -1871,17 +2616,27 @@
           value
         );
 
+
       if (
         !Number.isFinite(
           number
         ) ||
         number < 0
       ) {
+
         return 0;
+
       }
 
+
       return number;
+
     }
+
+
+    /* ============================================================
+       NORMALIZE CURRENCY
+       ============================================================ */
 
     function normalizeCurrency(
       value
@@ -1893,12 +2648,19 @@
           "USD"
         ).toUpperCase();
 
+
       return /^[A-Z]{3}$/.test(
         currency
       )
         ? currency
         : "USD";
+
     }
+
+
+    /* ============================================================
+       FORMAT MONEY
+       ============================================================ */
 
     function formatMoney(
       value,
@@ -1910,35 +2672,46 @@
           value
         );
 
+
       const safeCurrency =
         normalizeCurrency(
           currency
         );
+
 
       try {
 
         return new Intl.NumberFormat(
           "en-US",
           {
-            style: "currency",
+            style:
+              "currency",
+
             currency:
               safeCurrency,
+
             minimumFractionDigits:
               2,
+
             maximumFractionDigits:
               2
+
           }
         ).format(
           number
         );
+
 
       } catch {
 
         return `$${number.toFixed(
           2
         )}`;
+
       }
+
     }
+
 
     /* ============================================================
        TOAST
@@ -1951,9 +2724,11 @@
       toast.textContent =
         message;
 
+
       toast.classList.add(
         "show"
       );
+
 
       if (
         toastTimer
@@ -1962,7 +2737,9 @@
         clearTimeout(
           toastTimer
         );
+
       }
+
 
       toastTimer =
         setTimeout(
@@ -1975,6 +2752,7 @@
           },
           2500
         );
+
     }
 
   </script>
