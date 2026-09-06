@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -12,7 +14,12 @@
 
   <meta
     name="description"
-    content="Review your selected products and proceed to checkout at Prasun Store."
+    content="Review your selected products and proceed securely to checkout at Prasun Store."
+  >
+
+  <meta
+    name="robots"
+    content="noindex, follow"
   >
 
   <meta
@@ -20,9 +27,78 @@
     content="#111827"
   >
 
+  <meta
+    name="application-name"
+    content="Prasun Store"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Prasun Store"
+  >
+
   <!-- =========================================================
-       FAVICON.IO
-       Upload these files to the website root
+       OPEN GRAPH
+       ========================================================= -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Shopping Cart | Prasun Store"
+  >
+
+  <meta
+    property="og:description"
+    content="Review your selected products and proceed to checkout at Prasun Store."
+  >
+
+  <meta
+    property="og:url"
+    content="https://store.prasunbarua.com/cart.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://store.prasunbarua.com/prasun-store-logo.jpeg"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Prasun Store"
+  >
+
+
+  <!-- =========================================================
+       TWITTER
+       ========================================================= -->
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Shopping Cart | Prasun Store"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Review your selected products and proceed to checkout at Prasun Store."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://store.prasunbarua.com/prasun-store-logo.jpeg"
+  >
+
+
+  <!-- =========================================================
+       FAVICON
        ========================================================= -->
 
   <link
@@ -56,30 +132,26 @@
     href="/site.webmanifest"
   >
 
-  <meta
-    name="application-name"
-    content="Prasun Store"
-  >
-
-  <meta
-    name="apple-mobile-web-app-title"
-    content="Prasun Store"
-  >
 
   <style>
+
     /* =========================================================
        RESET
        ========================================================= */
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
+
 
     body {
       font-family:
@@ -93,42 +165,64 @@
         sans-serif;
 
       background: #f7f8fa;
+
       color: #111827;
 
       line-height: 1.55;
 
       min-height: 100vh;
+
+      -webkit-font-smoothing: antialiased;
+
+      text-rendering: optimizeLegibility;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
+
     button,
     input {
       font: inherit;
     }
 
+
     button {
       cursor: pointer;
+
       -webkit-tap-highlight-color: transparent;
     }
+
 
     img {
       max-width: 100%;
     }
 
+
     a:focus-visible,
     button:focus-visible,
     input:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.25);
-      outline-offset: 2px;
+      outline: 3px solid rgba(37, 99, 235, 0.30);
+
+      outline-offset: 3px;
     }
 
+
     .container {
-      width: min(1200px, calc(100% - 32px));
+      width: min(
+        1200px,
+        calc(100% - 32px)
+      );
+
       margin: 0 auto;
+    }
+
+
+    .is-hidden {
+      display: none !important;
     }
 
 
@@ -138,21 +232,28 @@
 
     .top-header {
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
-      background: rgba(255, 255, 255, 0.97);
+      background:
+        rgba(255, 255, 255, 0.97);
 
       backdrop-filter: blur(12px);
+
       -webkit-backdrop-filter: blur(12px);
 
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom:
+        1px solid #e5e7eb;
     }
+
 
     .header-inner {
       min-height: 72px;
 
       display: flex;
+
       align-items: center;
 
       gap: 20px;
@@ -167,6 +268,7 @@
       flex: 0 0 auto;
 
       display: inline-flex;
+
       align-items: center;
 
       gap: 9px;
@@ -184,10 +286,12 @@
         transform 0.1s ease;
     }
 
+
     .brand-logo {
       display: block;
 
       width: auto;
+
       height: 44px;
 
       max-width: 180px;
@@ -196,6 +300,7 @@
 
       flex: 0 0 auto;
     }
+
 
     .brand-name {
       font-size: 23px;
@@ -209,13 +314,16 @@
       line-height: 1;
     }
 
+
     .brand-name span {
       color: #2563eb;
     }
 
+
     .brand:hover {
-      opacity: 0.9;
+      opacity: 0.90;
     }
+
 
     .brand:active {
       transform: translateY(1px);
@@ -234,6 +342,7 @@
       margin: 0 auto;
     }
 
+
     .search-form {
       display: flex;
 
@@ -241,7 +350,8 @@
 
       background: #f3f4f6;
 
-      border: 1px solid #e5e7eb;
+      border:
+        1px solid #e5e7eb;
 
       border-radius: 12px;
 
@@ -252,6 +362,7 @@
         box-shadow 0.15s ease;
     }
 
+
     .search-form:focus-within {
       border-color: #93c5fd;
 
@@ -259,11 +370,14 @@
         0 0 0 3px rgba(37, 99, 235, 0.08);
     }
 
+
     .search-input {
       width: 100%;
+
       min-width: 0;
 
       border: 0;
+
       outline: 0;
 
       background: transparent;
@@ -273,13 +387,16 @@
       padding: 12px 14px;
     }
 
+
     .search-input::placeholder {
       color: #9ca3af;
     }
 
+
     .search-input:focus {
       background: #ffffff;
     }
+
 
     .search-button {
       flex-shrink: 0;
@@ -287,6 +404,7 @@
       border: 0;
 
       background: #111827;
+
       color: #ffffff;
 
       padding: 0 20px;
@@ -297,12 +415,16 @@
         background 0.15s ease;
     }
 
+
     .search-button:hover {
       background: #000000;
     }
 
+
     .search-button:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline:
+        3px solid rgba(37, 99, 235, 0.35);
+
       outline-offset: -3px;
     }
 
@@ -313,6 +435,7 @@
 
     .header-actions {
       display: flex;
+
       align-items: center;
 
       gap: 8px;
@@ -320,11 +443,14 @@
       flex-shrink: 0;
     }
 
+
     .header-link {
       position: relative;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 7px;
@@ -333,7 +459,8 @@
 
       padding: 8px 12px;
 
-      border: 1px solid transparent;
+      border:
+        1px solid transparent;
 
       border-radius: 10px;
 
@@ -349,6 +476,7 @@
         color 0.15s ease;
     }
 
+
     .header-link:hover {
       background: #f3f4f6;
 
@@ -356,6 +484,7 @@
 
       color: #111827;
     }
+
 
     .header-link:active {
       transform: translateY(1px);
@@ -368,6 +497,7 @@
 
     .header-icon {
       width: 18px;
+
       height: 18px;
 
       flex: 0 0 auto;
@@ -381,6 +511,7 @@
       stroke-width: 2;
 
       stroke-linecap: round;
+
       stroke-linejoin: round;
     }
 
@@ -391,20 +522,25 @@
 
     .cart-badge {
       min-width: 20px;
+
       height: 20px;
 
       padding: 0 6px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       border-radius: 999px;
 
       background: #2563eb;
+
       color: #ffffff;
 
       font-size: 11px;
+
       font-weight: 800;
 
       line-height: 1;
@@ -417,10 +553,16 @@
 
     .page {
       padding: 32px 0 60px;
+
+      min-height: calc(
+        100vh - 190px
+      );
     }
+
 
     .breadcrumb {
       display: flex;
+
       align-items: center;
 
       gap: 8px;
@@ -432,20 +574,27 @@
       margin-bottom: 18px;
     }
 
+
     .breadcrumb a {
       transition:
         color 0.15s ease;
     }
 
+
     .breadcrumb a:hover {
       color: #111827;
     }
 
+
     .breadcrumb a:focus-visible {
-      outline: 2px solid #2563eb;
+      outline:
+        2px solid #2563eb;
+
       outline-offset: 3px;
+
       border-radius: 3px;
     }
+
 
     .page-title {
       font-size: 34px;
@@ -484,22 +633,43 @@
     .cart-panel {
       background: #ffffff;
 
-      border: 1px solid #e5e7eb;
+      border:
+        1px solid #e5e7eb;
 
       border-radius: 20px;
 
       overflow: hidden;
     }
 
+
     .cart-panel-header {
       padding: 18px 20px;
 
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom:
+        1px solid #e5e7eb;
 
       font-size: 17px;
+
       font-weight: 900;
 
       color: #111827;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 12px;
+    }
+
+
+    .cart-panel-count {
+      color: #6b7280;
+
+      font-size: 13px;
+
+      font-weight: 700;
     }
 
 
@@ -519,8 +689,10 @@
 
       padding: 20px;
 
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom:
+        1px solid #e5e7eb;
     }
+
 
     .cart-item:last-child {
       border-bottom: 0;
@@ -533,36 +705,53 @@
 
     .cart-image-wrap {
       width: 110px;
+
       height: 110px;
 
       background: #f8fafc;
 
-      border: 1px solid #eef2f7;
+      border:
+        1px solid #eef2f7;
 
       border-radius: 12px;
 
       overflow: hidden;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
     }
 
+
     .cart-image {
       width: 100%;
+
       height: 100%;
 
-      object-fit: cover;
+      /*
+       * Contain is preferable for CJ product images because
+       * many product images have different aspect ratios.
+       */
+
+      object-fit: contain;
+
+      padding: 5px;
 
       display: block;
     }
 
+
     .image-fallback {
       width: 100%;
+
       height: 100%;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       color: #9ca3af;
@@ -570,8 +759,10 @@
       background: #f8fafc;
     }
 
+
     .image-fallback svg {
       width: 34px;
+
       height: 34px;
 
       stroke: currentColor;
@@ -581,6 +772,7 @@
       stroke-width: 1.6;
 
       stroke-linecap: round;
+
       stroke-linejoin: round;
     }
 
@@ -593,12 +785,14 @@
       min-width: 0;
     }
 
+
     .cart-title {
       display: block;
 
       color: #111827;
 
       font-size: 16px;
+
       font-weight: 800;
 
       line-height: 1.4;
@@ -611,9 +805,11 @@
         color 0.15s ease;
     }
 
+
     .cart-title:hover {
       color: #2563eb;
     }
+
 
     .cart-variant {
       color: #6b7280;
@@ -624,6 +820,7 @@
 
       overflow-wrap: anywhere;
     }
+
 
     .cart-unit-price {
       color: #374151;
@@ -650,6 +847,7 @@
       gap: 12px;
     }
 
+
     .item-total {
       color: #111827;
 
@@ -667,9 +865,11 @@
 
     .quantity-control {
       display: inline-flex;
+
       align-items: center;
 
-      border: 1px solid #d1d5db;
+      border:
+        1px solid #d1d5db;
 
       border-radius: 9px;
 
@@ -678,8 +878,10 @@
       background: #ffffff;
     }
 
+
     .quantity-button {
       width: 36px;
+
       height: 36px;
 
       border: 0;
@@ -693,40 +895,66 @@
       line-height: 1;
 
       transition:
-        background 0.15s ease;
+        background 0.15s ease,
+        color 0.15s ease;
     }
+
 
     .quantity-button:hover {
       background: #f3f4f6;
     }
 
+
     .quantity-button:active {
       transform: translateY(1px);
     }
 
+
+    .quantity-button:disabled {
+      cursor: not-allowed;
+
+      opacity: 0.45;
+    }
+
+
+    .quantity-button:disabled:hover {
+      background: #f9fafb;
+    }
+
+
     .quantity-button:focus-visible {
       position: relative;
+
       z-index: 2;
 
-      outline: 3px solid rgba(37, 99, 235, 0.25);
+      outline:
+        3px solid rgba(37, 99, 235, 0.25);
 
       outline-offset: -3px;
     }
 
+
     .quantity-value {
       min-width: 40px;
+
       height: 36px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      border-left: 1px solid #e5e7eb;
-      border-right: 1px solid #e5e7eb;
+      border-left:
+        1px solid #e5e7eb;
+
+      border-right:
+        1px solid #e5e7eb;
 
       color: #111827;
 
       font-size: 13px;
+
       font-weight: 900;
     }
 
@@ -745,14 +973,19 @@
       font-size: 13px;
 
       font-weight: 800;
+
+      padding: 3px 0;
     }
+
 
     .remove-button:hover {
       text-decoration: underline;
     }
 
+
     .remove-button:focus-visible {
-      outline: 2px solid #dc2626;
+      outline:
+        2px solid #dc2626;
 
       outline-offset: 3px;
 
@@ -767,7 +1000,8 @@
     .summary {
       background: #ffffff;
 
-      border: 1px solid #e5e7eb;
+      border:
+        1px solid #e5e7eb;
 
       border-radius: 20px;
 
@@ -778,6 +1012,7 @@
       top: 100px;
     }
 
+
     .summary-title {
       color: #111827;
 
@@ -787,6 +1022,7 @@
 
       margin-bottom: 20px;
     }
+
 
     .summary-row {
       display: flex;
@@ -802,9 +1038,13 @@
       font-size: 14px;
     }
 
+
     .summary-row > span:last-child {
       text-align: right;
+
+      overflow-wrap: anywhere;
     }
+
 
     .summary-row.total {
       color: #111827;
@@ -817,7 +1057,19 @@
 
       margin-top: 8px;
 
-      border-top: 1px solid #e5e7eb;
+      border-top:
+        1px solid #e5e7eb;
+    }
+
+
+    .shipping-note {
+      color: #6b7280;
+
+      font-size: 12px;
+
+      line-height: 1.45;
+
+      margin-top: 13px;
     }
 
 
@@ -833,11 +1085,13 @@
       min-height: 50px;
 
       align-items: center;
+
       justify-content: center;
 
       margin-top: 20px;
 
-      border: 1px solid #2563eb;
+      border:
+        1px solid #2563eb;
 
       border-radius: 11px;
 
@@ -853,24 +1107,31 @@
         transform 0.1s ease;
     }
 
+
     .checkout-button:hover {
       background: #1d4ed8;
     }
+
 
     .checkout-button:active {
       transform: translateY(1px);
     }
 
+
     .checkout-button:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.3);
+      outline:
+        3px solid rgba(37, 99, 235, 0.30);
 
       outline-offset: 3px;
     }
+
 
     .checkout-button.disabled {
       pointer-events: none;
 
       opacity: 0.45;
+
+      cursor: not-allowed;
     }
 
 
@@ -886,11 +1147,13 @@
       min-height: 46px;
 
       align-items: center;
+
       justify-content: center;
 
       margin-top: 10px;
 
-      border: 1px solid #d1d5db;
+      border:
+        1px solid #d1d5db;
 
       border-radius: 11px;
 
@@ -906,18 +1169,22 @@
         transform 0.1s ease;
     }
 
+
     .continue-button:hover {
       background: #f3f4f6;
 
       border-color: #cbd5e1;
     }
 
+
     .continue-button:active {
       transform: translateY(1px);
     }
 
+
     .continue-button:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.25);
+      outline:
+        3px solid rgba(37, 99, 235, 0.25);
 
       outline-offset: 3px;
     }
@@ -930,7 +1197,8 @@
     .empty-cart {
       background: #ffffff;
 
-      border: 1px solid #e5e7eb;
+      border:
+        1px solid #e5e7eb;
 
       border-radius: 20px;
 
@@ -939,14 +1207,18 @@
       text-align: center;
     }
 
+
     .empty-icon {
       width: 64px;
+
       height: 64px;
 
       margin: 0 auto 16px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       color: #6b7280;
@@ -956,8 +1228,10 @@
       background: #f3f4f6;
     }
 
+
     .empty-icon svg {
       width: 32px;
+
       height: 32px;
 
       stroke: currentColor;
@@ -967,8 +1241,10 @@
       stroke-width: 1.8;
 
       stroke-linecap: round;
+
       stroke-linejoin: round;
     }
+
 
     .empty-title {
       color: #111827;
@@ -980,11 +1256,13 @@
       margin-bottom: 7px;
     }
 
+
     .empty-text {
       color: #6b7280;
 
       margin-bottom: 20px;
     }
+
 
     .shop-button {
       display: inline-flex;
@@ -992,6 +1270,7 @@
       min-height: 46px;
 
       align-items: center;
+
       justify-content: center;
 
       padding: 0 18px;
@@ -1009,18 +1288,73 @@
         transform 0.1s ease;
     }
 
+
     .shop-button:hover {
       background: #000000;
     }
+
 
     .shop-button:active {
       transform: translateY(1px);
     }
 
+
     .shop-button:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.3);
+      outline:
+        3px solid rgba(37, 99, 235, 0.30);
 
       outline-offset: 3px;
+    }
+
+
+    /* =========================================================
+       CART INFORMATION NOTICE
+       ========================================================= */
+
+    .cart-security-note {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 9px;
+
+      margin-top: 18px;
+
+      padding: 12px 13px;
+
+      background: #f8fafc;
+
+      border:
+        1px solid #e5e7eb;
+
+      border-radius: 10px;
+
+      color: #6b7280;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+    .cart-security-note svg {
+      width: 17px;
+
+      height: 17px;
+
+      flex: 0 0 auto;
+
+      margin-top: 1px;
+
+      stroke: currentColor;
+
+      fill: none;
+
+      stroke-width: 2;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
     }
 
 
@@ -1032,11 +1366,12 @@
       position: fixed;
 
       right: 20px;
+
       bottom: 20px;
 
       z-index: 2000;
 
-      max-width:
+      width:
         min(360px, calc(100vw - 40px));
 
       padding: 14px 16px;
@@ -1062,6 +1397,7 @@
         transform 0.2s ease;
     }
 
+
     .toast.show {
       opacity: 1;
 
@@ -1081,6 +1417,7 @@
       margin-top: 30px;
     }
 
+
     .footer-inner {
       padding: 36px 0;
 
@@ -1091,15 +1428,18 @@
       gap: 24px;
     }
 
+
     .footer-brand {
       font-size: 20px;
 
       font-weight: 900;
     }
 
+
     .footer-brand span {
       color: #60a5fa;
     }
+
 
     .footer-text {
       margin-top: 8px;
@@ -1110,6 +1450,7 @@
 
       font-size: 14px;
     }
+
 
     .footer-links {
       display: flex;
@@ -1123,25 +1464,31 @@
       font-size: 14px;
     }
 
+
     .footer-links a {
       transition:
         color 0.15s ease;
     }
 
+
     .footer-links a:hover {
       color: #ffffff;
     }
 
+
     .footer-links a:focus-visible {
-      outline: 2px solid #ffffff;
+      outline:
+        2px solid #ffffff;
 
       outline-offset: 3px;
 
       border-radius: 3px;
     }
 
+
     .copyright {
-      border-top: 1px solid #1f2937;
+      border-top:
+        1px solid #1f2937;
 
       padding: 16px 0;
 
@@ -1161,6 +1508,7 @@
         grid-template-columns: 1fr;
       }
 
+
       .summary {
         position: static;
       }
@@ -1175,8 +1523,13 @@
     @media (max-width: 650px) {
 
       .container {
-        width: min(100% - 20px, 1200px);
+        width:
+          min(
+            100% - 20px,
+            1200px
+          );
       }
+
 
       .header-inner {
         min-height: auto;
@@ -1201,11 +1554,13 @@
         gap: 7px;
       }
 
+
       .brand-logo {
         height: 39px;
 
         max-width: 145px;
       }
+
 
       .brand-name {
         font-size: 20px;
@@ -1224,6 +1579,7 @@
         gap: 5px;
       }
 
+
       .header-link {
         min-height: 38px;
 
@@ -1234,13 +1590,17 @@
         font-size: 13px;
       }
 
+
       .header-icon {
         width: 17px;
+
         height: 17px;
       }
 
+
       .cart-badge {
         min-width: 19px;
+
         height: 19px;
 
         padding: 0 5px;
@@ -1263,9 +1623,11 @@
         margin: 0;
       }
 
+
       .search-input {
         padding: 11px 12px;
       }
+
 
       .search-button {
         padding: 0 15px;
@@ -1279,6 +1641,7 @@
       .page {
         padding: 24px 0 45px;
       }
+
 
       .page-title {
         font-size: 30px;
@@ -1301,10 +1664,13 @@
         padding: 16px;
       }
 
+
       .cart-image-wrap {
         width: 82px;
+
         height: 82px;
       }
+
 
       .cart-controls {
         grid-column: 1 / -1;
@@ -1320,13 +1686,16 @@
         gap: 10px;
       }
 
+
       .item-total {
         order: 2;
       }
 
+
       .quantity-control {
         order: 1;
       }
+
 
       .remove-button {
         order: 3;
@@ -1372,9 +1741,11 @@
         font-size: 18px;
       }
 
+
       .header-actions {
         gap: 3px;
       }
+
 
       .header-link {
         padding: 6px 7px;
@@ -1382,13 +1753,17 @@
         font-size: 12px;
       }
 
+
       .header-icon {
         width: 16px;
+
         height: 16px;
       }
 
+
       .cart-badge {
         min-width: 18px;
+
         height: 18px;
 
         padding: 0 5px;
@@ -1396,10 +1771,6 @@
         font-size: 10px;
       }
 
-
-      /* -------------------------------------------------------
-         CART ITEM
-         ------------------------------------------------------- */
 
       .cart-item {
         grid-template-columns:
@@ -1409,30 +1780,39 @@
         padding: 14px;
       }
 
+
       .cart-image-wrap {
         width: 72px;
+
         height: 72px;
       }
+
 
       .cart-title {
         font-size: 14px;
       }
 
+
       .cart-unit-price {
         font-size: 13px;
       }
+
 
       .item-total {
         font-size: 16px;
       }
 
+
       .quantity-button {
         width: 34px;
+
         height: 34px;
       }
 
+
       .quantity-value {
         min-width: 36px;
+
         height: 34px;
       }
 
@@ -1449,11 +1829,13 @@
         display: none;
       }
 
+
       .brand-name {
         font-size: 19px;
       }
 
     }
+
 
     @media (max-width: 360px) {
 
@@ -1461,36 +1843,40 @@
         font-size: 17px;
       }
 
+
       .header-link {
         padding-left: 6px;
+
         padding-right: 6px;
       }
 
-      /*
-       * Hide only text labels.
-       * Icons and cart badge remain visible.
-       */
 
       .header-link span:not(.cart-badge) {
         display: none;
       }
 
+
       .header-icon {
         width: 18px;
+
         height: 18px;
       }
+
 
       .header-actions {
         gap: 2px;
       }
 
+
       .page-title {
         font-size: 27px;
       }
 
+
       .summary-row {
         font-size: 13px;
       }
+
 
       .summary-row.total {
         font-size: 19px;
@@ -1509,19 +1895,29 @@
         scroll-behavior: auto;
       }
 
+
       *,
       *::before,
       *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+        transition-duration:
+          0.01ms !important;
+
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
       }
 
     }
+
   </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =========================================================
        HEADER
@@ -1530,6 +1926,7 @@
   <header class="top-header">
 
     <div class="container header-inner">
+
 
       <!-- =====================================================
            BRAND
@@ -1548,6 +1945,7 @@
           class="brand-logo"
           width="180"
           height="44"
+          decoding="async"
         >
 
         <span class="brand-name">
@@ -1566,6 +1964,7 @@
         <form
           id="searchForm"
           class="search-form"
+          role="search"
         >
 
           <input
@@ -1574,6 +1973,7 @@
             type="search"
             placeholder="Search products..."
             autocomplete="off"
+            enterkeyhint="search"
             aria-label="Search products"
           >
 
@@ -1595,6 +1995,7 @@
 
       <div class="header-actions">
 
+
         <!-- ===================================================
              PRODUCTS
              =================================================== -->
@@ -1610,13 +2011,21 @@
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
+
             <path d="M4 10v9h16v-9"></path>
+
             <path d="M3 10l2-6h14l2 6"></path>
+
             <path d="M3 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
+
             <path d="M7 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
+
             <path d="M11 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
+
             <path d="M15 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
+
             <path d="M8 19v-4h8v4"></path>
+
           </svg>
 
           <span>
@@ -1634,6 +2043,7 @@
           href="./cart.html"
           class="header-link"
           aria-label="Shopping cart"
+          aria-current="page"
         >
 
           <svg
@@ -1641,9 +2051,21 @@
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
+
             <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
-            <circle cx="10" cy="20" r="1.3"></circle>
-            <circle cx="18" cy="20" r="1.3"></circle>
+
+            <circle
+              cx="10"
+              cy="20"
+              r="1.3"
+            ></circle>
+
+            <circle
+              cx="18"
+              cy="20"
+              r="1.3"
+            ></circle>
+
           </svg>
 
           <span>
@@ -1653,7 +2075,7 @@
           <span
             id="cartCount"
             class="cart-badge"
-            aria-label="Items in cart"
+            aria-label="0 items in cart"
           >
             0
           </span>
@@ -1675,11 +2097,15 @@
 
     <div class="container">
 
+
       <!-- =====================================================
            BREADCRUMB
            ===================================================== -->
 
-      <div class="breadcrumb">
+      <nav
+        class="breadcrumb"
+        aria-label="Breadcrumb"
+      >
 
         <a href="./index.html">
           Home
@@ -1689,11 +2115,11 @@
           ›
         </span>
 
-        <span>
+        <span aria-current="page">
           Cart
         </span>
 
-      </div>
+      </nav>
 
 
       <h1 class="page-title">
@@ -1707,8 +2133,7 @@
 
       <section
         id="emptyCart"
-        class="empty-cart"
-        style="display: none;"
+        class="empty-cart is-hidden"
         aria-labelledby="emptyCartTitle"
       >
 
@@ -1720,25 +2145,37 @@
           <svg
             viewBox="0 0 24 24"
           >
+
             <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
-            <circle cx="10" cy="20" r="1.3"></circle>
-            <circle cx="18" cy="20" r="1.3"></circle>
+
+            <circle
+              cx="10"
+              cy="20"
+              r="1.3"
+            ></circle>
+
+            <circle
+              cx="18"
+              cy="20"
+              r="1.3"
+            ></circle>
+
           </svg>
 
         </div>
 
 
-        <div
+        <h2
           id="emptyCartTitle"
           class="empty-title"
         >
           Your cart is empty
-        </div>
+        </h2>
 
 
-        <div class="empty-text">
+        <p class="empty-text">
           Add some products before proceeding to checkout.
-        </div>
+        </p>
 
 
         <a
@@ -1757,9 +2194,10 @@
 
       <section
         id="cartLayout"
-        class="cart-layout"
-        style="display: none;"
+        class="cart-layout is-hidden"
+        aria-label="Shopping cart"
       >
+
 
         <!-- ===================================================
              CART ITEMS
@@ -1768,8 +2206,20 @@
         <div class="cart-panel">
 
           <div class="cart-panel-header">
-            Your Items
+
+            <span>
+              Your Items
+            </span>
+
+            <span
+              id="cartPanelCount"
+              class="cart-panel-count"
+            >
+              0 items
+            </span>
+
           </div>
+
 
           <div id="cartItems"></div>
 
@@ -1785,9 +2235,9 @@
           aria-label="Order summary"
         >
 
-          <div class="summary-title">
+          <h2 class="summary-title">
             Order Summary
-          </div>
+          </h2>
 
 
           <div class="summary-row">
@@ -1842,6 +2292,12 @@
           </div>
 
 
+          <p class="shipping-note">
+            Final shipping charges, product availability,
+            and order totals are confirmed during checkout.
+          </p>
+
+
           <a
             href="./checkout.html"
             id="checkoutButton"
@@ -1857,6 +2313,40 @@
           >
             Continue Shopping
           </a>
+
+
+          <!-- =================================================
+               SECURITY NOTE
+               ================================================= -->
+
+          <div class="cart-security-note">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <rect
+                x="4"
+                y="10"
+                width="16"
+                height="11"
+                rx="2"
+              ></rect>
+
+              <path
+                d="M8 10V7a4 4 0 0 1 8 0v3"
+              ></path>
+
+            </svg>
+
+            <span>
+              Your cart is saved on this device.
+              Final prices and availability are verified
+              again before your order is accepted.
+            </span>
+
+          </div>
 
         </aside>
 
@@ -1876,6 +2366,7 @@
     class="toast"
     role="status"
     aria-live="polite"
+    aria-atomic="true"
   ></div>
 
 
@@ -1887,6 +2378,7 @@
 
     <div class="container">
 
+
       <div class="footer-inner">
 
         <div>
@@ -1896,14 +2388,17 @@
           </div>
 
           <div class="footer-text">
-            Practical products and useful solutions for technology,
-            home, lifestyle, solar energy and more.
+            Practical products and useful solutions for
+            technology, home, lifestyle, solar energy and more.
           </div>
 
         </div>
 
 
-        <div class="footer-links">
+        <nav
+          class="footer-links"
+          aria-label="Footer navigation"
+        >
 
           <a href="./index.html">
             Home
@@ -1913,11 +2408,14 @@
             Products
           </a>
 
-          <a href="./cart.html">
+          <a
+            href="./cart.html"
+            aria-current="page"
+          >
             Cart
           </a>
 
-        </div>
+        </nav>
 
       </div>
 
@@ -1936,6 +2434,7 @@
 
 
   <script>
+
     "use strict";
 
 
@@ -1947,6 +2446,45 @@
       "prasun_cart";
 
 
+    /*
+     * Store currency.
+     *
+     * Your CJ Worker should return customer-facing prices
+     * in USD. The cart therefore keeps the storefront currency
+     * consistent instead of allowing mixed currencies.
+     */
+
+    const STORE_CURRENCY =
+      "USD";
+
+
+    /*
+     * Maximum quantity allowed for a single cart line.
+     */
+
+    const MAX_ITEM_QUANTITY =
+      99;
+
+
+    /*
+     * Maximum total quantity across the whole cart.
+     *
+     * This protects the browser-side cart from accidental
+     * or maliciously inflated quantities.
+     */
+
+    const MAX_TOTAL_QUANTITY =
+      100;
+
+
+    /*
+     * Maximum title length displayed in the UI.
+     */
+
+    const MAX_TITLE_LENGTH =
+      500;
+
+
     /* =========================================================
        DOM ELEMENTS
        ========================================================= */
@@ -1956,40 +2494,54 @@
         "cartItems"
       );
 
+
     const cartLayout =
       document.getElementById(
         "cartLayout"
       );
+
 
     const emptyCart =
       document.getElementById(
         "emptyCart"
       );
 
+
     const cartCount =
       document.getElementById(
         "cartCount"
       );
+
+
+    const cartPanelCount =
+      document.getElementById(
+        "cartPanelCount"
+      );
+
 
     const summaryItems =
       document.getElementById(
         "summaryItems"
       );
 
+
     const summarySubtotal =
       document.getElementById(
         "summarySubtotal"
       );
+
 
     const summaryTotal =
       document.getElementById(
         "summaryTotal"
       );
 
+
     const checkoutButton =
       document.getElementById(
         "checkoutButton"
       );
+
 
     const toast =
       document.getElementById(
@@ -2007,31 +2559,14 @@
 
 
     /* =========================================================
-       YEAR
-       ========================================================= */
-
-    const currentYearElement =
-      document.getElementById(
-        "currentYear"
-      );
-
-    if (currentYearElement) {
-
-      currentYearElement.textContent =
-        String(
-          new Date().getFullYear()
-        );
-
-    }
-
-
-    /* =========================================================
-       INITIALIZE
+       INITIALIZATION
        ========================================================= */
 
     document.addEventListener(
       "DOMContentLoaded",
       function () {
+
+        updateCurrentYear();
 
         loadCart();
 
@@ -2041,6 +2576,32 @@
 
       }
     );
+
+
+    /* =========================================================
+       YEAR
+       ========================================================= */
+
+    function updateCurrentYear() {
+
+      const currentYearElement =
+        document.getElementById(
+          "currentYear"
+        );
+
+
+      if (
+        currentYearElement
+      ) {
+
+        currentYearElement.textContent =
+          String(
+            new Date().getFullYear()
+          );
+
+      }
+
+    }
 
 
     /* =========================================================
@@ -2057,7 +2618,9 @@
           );
 
 
-        if (!raw) {
+        if (
+          !raw
+        ) {
 
           cart = [];
 
@@ -2072,68 +2635,224 @@
           );
 
 
-        cart =
-          Array.isArray(parsed)
-            ? parsed
-            : [];
+        if (
+          !Array.isArray(
+            parsed
+          )
+        ) {
+
+          cart = [];
+
+          return;
+
+        }
 
 
         /*
-         * Remove invalid entries.
+         * Sanitize every cart item.
+         */
+
+        const sanitized = [];
+
+
+        for (
+          const item of parsed
+        ) {
+
+          const normalized =
+            normalizeCartItem(
+              item
+            );
+
+
+          if (
+            normalized
+          ) {
+
+            sanitized.push(
+              normalized
+            );
+
+          }
+
+        }
+
+
+        /*
+         * Enforce total quantity limit.
          */
 
         cart =
-          cart.filter(
-            function (item) {
-
-              return (
-                item &&
-                typeof item === "object" &&
-                item.product_id
-              );
-
-            }
+          limitTotalCartQuantity(
+            sanitized
           );
 
 
         /*
-         * Normalize every valid entry.
+         * Save the normalized version.
          */
 
-        cart.forEach(
-          function (item) {
-
-            item.quantity =
-              normalizeQuantity(
-                item.quantity
-              );
-
-
-            item.price =
-              normalizePrice(
-                item.price
-              );
-
-
-            item.currency =
-              normalizeCurrency(
-                item.currency
-              );
-
-          }
-        );
-
+        saveCart();
 
       } catch (error) {
 
-        console.error(
-          "Unable to load cart:",
-          error
-        );
+        /*
+         * Do not expose raw LocalStorage data
+         * in production console output.
+         */
 
         cart = [];
 
+        showToast(
+          "Your saved cart could not be loaded."
+        );
+
       }
+
+    }
+
+
+    /* =========================================================
+       NORMALIZE CART ITEM
+       ========================================================= */
+
+    function normalizeCartItem(
+      item
+    ) {
+
+      if (
+        !item ||
+        typeof item !== "object"
+      ) {
+
+        return null;
+
+      }
+
+
+      const productId =
+        String(
+          item.product_id ||
+          item.productId ||
+          item.pid ||
+          ""
+        ).trim();
+
+
+      if (
+        !productId
+      ) {
+
+        return null;
+
+      }
+
+
+      const title =
+        normalizeText(
+          item.title ||
+          item.name ||
+          "Product",
+          MAX_TITLE_LENGTH
+        );
+
+
+      const image =
+        getSafeImageSource(
+          item.image ||
+          item.image_proxy ||
+          item.variantImage ||
+          ""
+        );
+
+
+      const price =
+        normalizePrice(
+          item.price ??
+          item.sale_price ??
+          item.selling_price ??
+          item.sellPrice ??
+          item.variantSellPrice ??
+          item.product?.price ??
+          0
+        );
+
+
+      const quantity =
+        normalizeQuantity(
+          item.quantity
+        );
+
+
+      /*
+       * The storefront is USD.
+       *
+       * The backend must still validate the authoritative
+       * product price during order creation.
+       */
+
+      const currency =
+        STORE_CURRENCY;
+
+
+      const normalized = {
+        ...item,
+
+        product_id:
+          productId,
+
+        title:
+          title,
+
+        image:
+          image,
+
+        price:
+          price,
+
+        currency:
+          currency,
+
+        quantity:
+          quantity
+      };
+
+
+      /*
+       * Preserve useful CJ identifiers when available.
+       */
+
+      if (
+        item.vid ||
+        item.variant_id ||
+        item.variantId
+      ) {
+
+        normalized.variant_id =
+          String(
+            item.vid ||
+            item.variant_id ||
+            item.variantId
+          ).trim();
+
+      }
+
+
+      if (
+        item.sku ||
+        item.variantSku
+      ) {
+
+        normalized.sku =
+          String(
+            item.sku ||
+            item.variantSku
+          ).trim();
+
+      }
+
+
+      return normalized;
 
     }
 
@@ -2148,23 +2867,81 @@
 
         localStorage.setItem(
           CART_STORAGE_KEY,
-          JSON.stringify(cart)
+          JSON.stringify(
+            cart
+          )
         );
-
 
       } catch (error) {
 
-        console.error(
-          "Unable to save cart:",
-          error
-        );
-
-
         showToast(
-          "Unable to save your cart."
+          "Unable to save your cart on this device."
         );
 
       }
+
+    }
+
+
+    /* =========================================================
+       LIMIT TOTAL CART QUANTITY
+       ========================================================= */
+
+    function limitTotalCartQuantity(
+      items
+    ) {
+
+      let remaining =
+        MAX_TOTAL_QUANTITY;
+
+
+      const result = [];
+
+
+      for (
+        const item of items
+      ) {
+
+        if (
+          remaining <= 0
+        ) {
+
+          break;
+
+        }
+
+
+        const quantity =
+          Math.min(
+            normalizeQuantity(
+              item.quantity
+            ),
+            remaining
+          );
+
+
+        if (
+          quantity <= 0
+        ) {
+
+          continue;
+
+        }
+
+
+        result.push({
+          ...item,
+          quantity
+        });
+
+
+        remaining -=
+          quantity;
+
+      }
+
+
+      return result;
 
     }
 
@@ -2182,13 +2959,18 @@
        * EMPTY CART
        */
 
-      if (!cart.length) {
+      if (
+        !cart.length
+      ) {
 
-        cartLayout.style.display =
-          "none";
+        cartLayout.classList.add(
+          "is-hidden"
+        );
 
-        emptyCart.style.display =
-          "block";
+
+        emptyCart.classList.remove(
+          "is-hidden"
+        );
 
 
         summaryItems.textContent =
@@ -2197,15 +2979,13 @@
 
         summarySubtotal.textContent =
           formatMoney(
-            0,
-            "USD"
+            0
           );
 
 
         summaryTotal.textContent =
           formatMoney(
-            0,
-            "USD"
+            0
           );
 
 
@@ -2213,10 +2993,16 @@
           "disabled"
         );
 
+
         checkoutButton.setAttribute(
           "aria-disabled",
           "true"
         );
+
+
+        cartPanelCount.textContent =
+          "0 items";
+
 
         return;
 
@@ -2227,24 +3013,39 @@
        * CART HAS ITEMS
        */
 
-      emptyCart.style.display =
-        "none";
+      emptyCart.classList.add(
+        "is-hidden"
+      );
 
-      cartLayout.style.display =
-        "grid";
+
+      cartLayout.classList.remove(
+        "is-hidden"
+      );
 
 
       checkoutButton.classList.remove(
         "disabled"
       );
 
+
       checkoutButton.removeAttribute(
         "aria-disabled"
       );
 
 
-      cartItemsElement.innerHTML =
-        "";
+      /*
+       * Clear existing DOM safely.
+       */
+
+      while (
+        cartItemsElement.firstChild
+      ) {
+
+        cartItemsElement.removeChild(
+          cartItemsElement.firstChild
+        );
+
+      }
 
 
       const fragment =
@@ -2311,40 +3112,40 @@
         "cart-image-wrap";
 
 
-      const image =
-        document.createElement(
-          "img"
+      const imageSource =
+        getSafeImageSource(
+          item.image ||
+          item.image_proxy ||
+          ""
         );
 
 
-      image.className =
-        "cart-image";
-
-
-      image.alt =
-        item.title ||
-        "Product";
-
-
-      image.loading =
-        "lazy";
-
-
-      image.decoding =
-        "async";
-
-
-      const imageSource =
-        item.image ||
-        item.image_proxy ||
-        "";
-
-
       if (
-        String(
-          imageSource
-        ).trim()
+        imageSource
       ) {
+
+        const image =
+          document.createElement(
+            "img"
+          );
+
+
+        image.className =
+          "cart-image";
+
+
+        image.alt =
+          item.title ||
+          "Product";
+
+
+        image.loading =
+          "lazy";
+
+
+        image.decoding =
+          "async";
+
 
         image.src =
           imageSource;
@@ -2370,7 +3171,6 @@
         imageWrap.appendChild(
           image
         );
-
 
       } else {
 
@@ -2421,6 +3221,12 @@
         )}`;
 
 
+      title.setAttribute(
+        "aria-label",
+        `View ${item.title || "product"}`
+      );
+
+
       info.appendChild(
         title
       );
@@ -2432,7 +3238,7 @@
 
       const variantText =
         formatVariants(
-          item.variants
+          item
         );
 
 
@@ -2477,8 +3283,7 @@
 
       unitPrice.textContent =
         `${formatMoney(
-          item.price,
-          item.currency
+          item.price
         )} each`;
 
 
@@ -2523,9 +3328,17 @@
       itemTotal.textContent =
         formatMoney(
           item.price *
-            item.quantity,
-          item.currency
+          item.quantity
         );
+
+
+      itemTotal.setAttribute(
+        "aria-label",
+        `Item total ${formatMoney(
+          item.price *
+          item.quantity
+        )}`
+      );
 
 
       controls.appendChild(
@@ -2548,8 +3361,16 @@
 
 
       quantityControl.setAttribute(
+        "role",
+        "group"
+      );
+
+
+      quantityControl.setAttribute(
         "aria-label",
-        "Quantity"
+        `Quantity for ${
+          item.title || "product"
+        }`
       );
 
 
@@ -2583,6 +3404,10 @@
       );
 
 
+      minus.disabled =
+        item.quantity <= 1;
+
+
       minus.addEventListener(
         "click",
         function () {
@@ -2607,7 +3432,7 @@
 
       const quantity =
         document.createElement(
-          "div"
+          "span"
         );
 
 
@@ -2624,6 +3449,14 @@
       quantity.setAttribute(
         "aria-live",
         "polite"
+      );
+
+
+      quantity.setAttribute(
+        "aria-label",
+        `Quantity ${
+          item.quantity
+        }`
       );
 
 
@@ -2660,6 +3493,17 @@
           item.title || "product"
         }`
       );
+
+
+      const currentTotal =
+        getTotalCartQuantity();
+
+
+      plus.disabled =
+        item.quantity >=
+          MAX_ITEM_QUANTITY ||
+        currentTotal >=
+          MAX_TOTAL_QUANTITY;
 
 
       plus.addEventListener(
@@ -2772,35 +3616,129 @@
 
 
       fallback.setAttribute(
+        "role",
+        "img"
+      );
+
+
+      fallback.setAttribute(
         "aria-label",
         "Product image unavailable"
       );
 
 
-      fallback.innerHTML = `
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <rect
-            x="3"
-            y="4"
-            width="18"
-            height="16"
-            rx="2"
-          ></rect>
+      const svg =
+        document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "svg"
+        );
 
-          <circle
-            cx="8"
-            cy="9"
-            r="1.5"
-          ></circle>
 
-          <path
-            d="M3 16l4.5-4.5L11 15l2.5-2.5L21 19"
-          ></path>
-        </svg>
-      `;
+      svg.setAttribute(
+        "viewBox",
+        "0 0 24 24"
+      );
+
+
+      svg.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      const rect =
+        document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "rect"
+        );
+
+
+      rect.setAttribute(
+        "x",
+        "3"
+      );
+
+
+      rect.setAttribute(
+        "y",
+        "4"
+      );
+
+
+      rect.setAttribute(
+        "width",
+        "18"
+      );
+
+
+      rect.setAttribute(
+        "height",
+        "16"
+      );
+
+
+      rect.setAttribute(
+        "rx",
+        "2"
+      );
+
+
+      const circle =
+        document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "circle"
+        );
+
+
+      circle.setAttribute(
+        "cx",
+        "8"
+      );
+
+
+      circle.setAttribute(
+        "cy",
+        "9"
+      );
+
+
+      circle.setAttribute(
+        "r",
+        "1.5"
+      );
+
+
+      const path =
+        document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "path"
+        );
+
+
+      path.setAttribute(
+        "d",
+        "M3 16l4.5-4.5L11 15l2.5-2.5L21 19"
+      );
+
+
+      svg.appendChild(
+        rect
+      );
+
+
+      svg.appendChild(
+        circle
+      );
+
+
+      svg.appendChild(
+        path
+      );
+
+
+      fallback.appendChild(
+        svg
+      );
 
 
       container.appendChild(
@@ -2834,11 +3772,26 @@
         );
 
 
-      const next =
-        current +
+      const change =
         Number(
           delta
         );
+
+
+      if (
+        !Number.isFinite(
+          change
+        )
+      ) {
+
+        return;
+
+      }
+
+
+      const next =
+        current +
+        change;
 
 
       if (
@@ -2855,11 +3808,27 @@
 
 
       if (
-        next > 99
+        next >
+        MAX_ITEM_QUANTITY
       ) {
 
         showToast(
-          "Maximum quantity is 99."
+          `Maximum quantity is ${MAX_ITEM_QUANTITY}.`
+        );
+
+        return;
+
+      }
+
+
+      if (
+        change > 0 &&
+        getTotalCartQuantity() >=
+          MAX_TOTAL_QUANTITY
+      ) {
+
+        showToast(
+          `Maximum total cart quantity is ${MAX_TOTAL_QUANTITY}.`
         );
 
         return;
@@ -2869,6 +3838,12 @@
 
       cart[index].quantity =
         next;
+
+
+      cart =
+        limitTotalCartQuantity(
+          cart
+        );
 
 
       saveCart();
@@ -2965,47 +3940,49 @@
         );
 
 
-      const currency =
-        getCartCurrency();
-
-
       summarySubtotal.textContent =
         formatMoney(
-          subtotal,
-          currency
+          subtotal
         );
 
 
       summaryTotal.textContent =
         formatMoney(
-          subtotal,
-          currency
+          subtotal
         );
+
+
+      cartPanelCount.textContent =
+        `${cart.length} ${
+          cart.length === 1
+            ? "product"
+            : "products"
+        }`;
 
     }
 
 
     /* =========================================================
-       GET CART CURRENCY
+       GET TOTAL CART QUANTITY
        ========================================================= */
 
-    function getCartCurrency() {
+    function getTotalCartQuantity() {
 
-      const first =
-        cart.find(
-          function (item) {
+      return cart.reduce(
+        function (
+          total,
+          item
+        ) {
 
-            return (
-              item &&
-              item.currency
-            );
+          return (
+            total +
+            normalizeQuantity(
+              item.quantity
+            )
+          );
 
-          }
-        );
-
-
-      return normalizeCurrency(
-        first?.currency
+        },
+        0
       );
 
     }
@@ -3018,22 +3995,7 @@
     function updateCartBadge() {
 
       const total =
-        cart.reduce(
-          function (
-            sum,
-            item
-          ) {
-
-            return (
-              sum +
-              normalizeQuantity(
-                item.quantity
-              )
-            );
-
-          },
-          0
-        );
+        getTotalCartQuantity();
 
 
       cartCount.textContent =
@@ -3059,14 +4021,12 @@
        ========================================================= */
 
     function formatVariants(
-      variants
+      item
     ) {
 
       if (
-        !Array.isArray(
-          variants
-        ) ||
-        !variants.length
+        !item ||
+        typeof item !== "object"
       ) {
 
         return "";
@@ -3074,50 +4034,176 @@
       }
 
 
-      const values =
-        variants
-          .map(
-            function (property) {
-
-              const name =
-                property?.group_name ||
-                property?.property_name ||
-                property?.name ||
-                "";
+      const source =
+        item.variants ||
+        item.selected_properties ||
+        item.properties ||
+        item.selectedProperties ||
+        null;
 
 
-              const value =
-                property?.value_name ||
-                property?.property_value_name ||
-                property?.value ||
-                "";
+      /*
+       * -------------------------------------------------------
+       * ARRAY FORMAT
+       * -------------------------------------------------------
+       *
+       * Supports:
+       *
+       * group_name/value_name
+       * property_name/property_value_name
+       * name/value
+       * CJ-normalized objects
+       */
 
+      if (
+        Array.isArray(
+          source
+        )
+      ) {
 
-              if (
-                name &&
-                value
+        const values =
+          source
+            .map(
+              function (
+                property
               ) {
 
-                return `${name}: ${value}`;
+                if (
+                  !property ||
+                  typeof property !== "object"
+                ) {
+
+                  return "";
+
+                }
+
+
+                const name =
+                  normalizeText(
+                    property.group_name ||
+                    property.property_name ||
+                    property.name ||
+                    property.option_name ||
+                    property.key ||
+                    "",
+                    150
+                  );
+
+
+                const value =
+                  normalizeText(
+                    property.value_name ||
+                    property.property_value_name ||
+                    property.value ||
+                    property.option_value ||
+                    property.label ||
+                    "",
+                    250
+                  );
+
+
+                if (
+                  name &&
+                  value
+                ) {
+
+                  return `${name}: ${value}`;
+
+                }
+
+
+                return (
+                  value ||
+                  name
+                );
 
               }
+            )
+            .filter(
+              Boolean
+            );
 
 
-              return (
-                value ||
-                name
-              );
+        if (
+          values.length
+        ) {
 
-            }
-          )
-          .filter(
-            Boolean
+          return uniqueStrings(
+            values
+          ).join(
+            " • "
           );
 
+        }
 
-      return values.join(
-        " • "
-      );
+      }
+
+
+      /*
+       * -------------------------------------------------------
+       * CJ VARIANT NAME
+       * -------------------------------------------------------
+       */
+
+      const variantName =
+        normalizeText(
+          item.variantNameEn ||
+          item.variant_name ||
+          item.variantName ||
+          "",
+          400
+        );
+
+
+      if (
+        variantName
+      ) {
+
+        return variantName;
+
+      }
+
+
+      /*
+       * -------------------------------------------------------
+       * CJ VARIANT KEY
+       * -------------------------------------------------------
+       */
+
+      const variantKey =
+        normalizeText(
+          item.variantKey ||
+          item.variant_key ||
+          "",
+          400
+        );
+
+
+      if (
+        variantKey
+      ) {
+
+        return variantKey;
+
+      }
+
+
+      /*
+       * -------------------------------------------------------
+       * SIMPLE VARIANT VALUE
+       * -------------------------------------------------------
+       */
+
+      const variant =
+        normalizeText(
+          item.variant ||
+          item.variant_value ||
+          "",
+          400
+        );
+
+
+      return variant;
 
     }
 
@@ -3158,13 +4244,15 @@
 
 
           const query =
-            String(
-              input.value ||
-              ""
-            ).trim();
+            normalizeText(
+              input.value,
+              200
+            );
 
 
-          if (!query) {
+          if (
+            !query
+          ) {
 
             window.location.href =
               "./index.html#products";
@@ -3194,17 +4282,30 @@
     ) {
 
       const quantity =
-        parseInt(
-          value,
-          10
+        Number(
+          value
         );
 
 
       if (
         !Number.isFinite(
           quantity
-        ) ||
-        quantity < 1
+        )
+      ) {
+
+        return 1;
+
+      }
+
+
+      const integer =
+        Math.floor(
+          quantity
+        );
+
+
+      if (
+        integer < 1
       ) {
 
         return 1;
@@ -3213,8 +4314,8 @@
 
 
       return Math.min(
-        99,
-        quantity
+        MAX_ITEM_QUANTITY,
+        integer
       );
 
     }
@@ -3246,7 +4347,128 @@
       }
 
 
-      return number;
+      /*
+       * Avoid displaying excessively large manipulated
+       * LocalStorage values.
+       *
+       * This is only a browser-side protection.
+       * The backend remains authoritative.
+       */
+
+      return Math.min(
+        number,
+        100000000
+      );
+
+    }
+
+
+    /* =========================================================
+       NORMALIZE TEXT
+       ========================================================= */
+
+    function normalizeText(
+      value,
+      maxLength = 500
+    ) {
+
+      const text =
+        String(
+          value ?? ""
+        )
+          .replace(
+            /\s+/g,
+            " "
+          )
+          .trim();
+
+
+      return text.slice(
+        0,
+        maxLength
+      );
+
+    }
+
+
+    /* =========================================================
+       SAFE IMAGE SOURCE
+       ========================================================= */
+
+    function getSafeImageSource(
+      value
+    ) {
+
+      const source =
+        String(
+          value || ""
+        ).trim();
+
+
+      if (
+        !source
+      ) {
+
+        return "";
+
+      }
+
+
+      /*
+       * Allow normal relative paths.
+       */
+
+      if (
+        source.startsWith("/")
+      ) {
+
+        return source;
+
+      }
+
+
+      if (
+        source.startsWith("./") ||
+        source.startsWith("../")
+      ) {
+
+        return source;
+
+      }
+
+
+      /*
+       * Allow only HTTP/HTTPS remote images.
+       */
+
+      try {
+
+        const url =
+          new URL(
+            source,
+            window.location.origin
+          );
+
+
+        if (
+          url.protocol !== "http:" &&
+          url.protocol !== "https:"
+        ) {
+
+          return "";
+
+        }
+
+
+        return url.href;
+
+      } catch (
+        error
+      ) {
+
+        return "";
+
+      }
 
     }
 
@@ -3255,22 +4477,14 @@
        NORMALIZE CURRENCY
        ========================================================= */
 
-    function normalizeCurrency(
-      value
-    ) {
+    function normalizeCurrency() {
 
-      const currency =
-        String(
-          value ||
-          "USD"
-        ).toUpperCase();
+      /*
+       * Prasun Store currently operates with USD storefront
+       * pricing.
+       */
 
-
-      return /^[A-Z]{3}$/.test(
-        currency
-      )
-        ? currency
-        : "USD";
+      return STORE_CURRENCY;
 
     }
 
@@ -3280,8 +4494,7 @@
        ========================================================= */
 
     function formatMoney(
-      value,
-      currency
+      value
     ) {
 
       const number =
@@ -3290,10 +4503,8 @@
         );
 
 
-      const safeCurrency =
-        normalizeCurrency(
-          currency
-        );
+      const currency =
+        normalizeCurrency();
 
 
       try {
@@ -3305,7 +4516,7 @@
               "currency",
 
             currency:
-              safeCurrency,
+              currency,
 
             minimumFractionDigits:
               2,
@@ -3317,14 +4528,82 @@
           number
         );
 
-
-      } catch (error) {
+      } catch (
+        error
+      ) {
 
         return `$${number.toFixed(
           2
         )}`;
 
       }
+
+    }
+
+
+    /* =========================================================
+       UNIQUE STRINGS
+       ========================================================= */
+
+    function uniqueStrings(
+      values
+    ) {
+
+      const seen =
+        new Set();
+
+
+      const result =
+        [];
+
+
+      for (
+        const value of values
+      ) {
+
+        const normalized =
+          String(
+            value || ""
+          ).trim();
+
+
+        if (
+          !normalized
+        ) {
+
+          continue;
+
+        }
+
+
+        const key =
+          normalized.toLowerCase();
+
+
+        if (
+          seen.has(
+            key
+          )
+        ) {
+
+          continue;
+
+        }
+
+
+        seen.add(
+          key
+        );
+
+
+        result.push(
+          normalized
+        );
+
+      }
+
+
+      return result;
 
     }
 
@@ -3347,9 +4626,9 @@
 
 
       toast.textContent =
-        String(
-          message ||
-          ""
+        normalizeText(
+          message,
+          300
         );
 
 
@@ -3402,12 +4681,65 @@
             "Your cart is empty."
           );
 
+          return;
+
         }
+
+
+        /*
+         * Important:
+         *
+         * This page does NOT calculate or authorize the final
+         * order amount. checkout.html and, ultimately, the
+         * order backend must perform authoritative validation.
+         */
 
       }
     );
 
+
+    /* =========================================================
+       PUBLIC DEBUG INFORMATION
+       =========================================================
+       Deliberately limited.
+       No customer PII or full cart payload is exposed.
+       ========================================================= */
+
+    window.PrasunCartDebug = {
+
+      getItemCount: function () {
+
+        return cart.length;
+
+      },
+
+
+      getTotalQuantity: function () {
+
+        return getTotalCartQuantity();
+
+      },
+
+
+      getCurrency: function () {
+
+        return STORE_CURRENCY;
+
+      },
+
+
+      refresh: function () {
+
+        loadCart();
+
+        renderCart();
+
+      }
+
+    };
+
   </script>
 
 </body>
+
 </html>
