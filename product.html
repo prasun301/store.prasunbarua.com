@@ -1,147 +1,33 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Product | Prasun Store</title>
 
-<meta
-name="description"
-content="View product details, available options, pricing and availability at Prasun Store."
-
->
-
-<meta
-name="robots"
-content="index, follow, max-image-preview:large"
-
->
-
-<meta
-name="theme-color"
-content="#111827"
-
->
-
-<meta
-name="apple-mobile-web-app-capable"
-content="yes"
-
->
-
-<meta
-name="apple-mobile-web-app-status-bar-style"
-content="default"
-
->
-
-<meta
-name="apple-mobile-web-app-title"
-content="Prasun Store"
-
->
-
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="/favicon.ico?v=3"
-  >
-
-  <link
-    rel="apple-touch-icon"
-    href="/prasun-store-logo.jpeg"
-  >
-
-  <link
-    rel="manifest"
-    href="/manifest.json"
+  <meta
+    name="description"
+    content="View product details, available options, pricing and availability at Prasun Store."
   >
 
   <link
     rel="canonical"
     href="https://store.prasunbarua.com/product.html"
-    id="canonical-link"
   >
 
-<meta
-property="og:type"
-content="product"
-
->
-
-<meta
-property="og:site_name"
-content="Prasun Store"
-
->
-
-<meta
-property="og:title"
-content="Product | Prasun Store"
-id="og-title"
-
->
-
-<meta
-property="og:description"
-content="View product details at Prasun Store."
-id="og-description"
-
->
-
-<meta
-property="og:url"
-content="https://store.prasunbarua.com/product.html"
-id="og-url"
-
->
-
-<meta
-property="og:image"
-content="https://store.prasunbarua.com/prasun-store-logo.jpeg"
-id="og-image"
-
->
-
-<meta
-name="twitter:card"
-content="summary_large_image"
-
->
-
-<meta
-name="twitter:title"
-content="Product | Prasun Store"
-id="twitter-title"
-
->
-
-<meta
-name="twitter:description"
-content="View product details at Prasun Store."
-id="twitter-description"
-
->
-
-<meta
-name="twitter:image"
-content="https://store.prasunbarua.com/prasun-store-logo.jpeg"
-id="twitter-image"
-
->
+  <link
+    rel="icon"
+    href="/prasun-store-logo.jpeg"
+  >
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html {
@@ -149,8 +35,8 @@ id="twitter-image"
     }
 
     body {
+      margin: 0;
       font-family:
-        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -158,23 +44,9 @@ id="twitter-image"
         Helvetica,
         Arial,
         sans-serif;
-
-      background: #f8fafc;
-      color: #111827;
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    button,
-    input {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
+      background: #f7f7f8;
+      color: #171717;
+      line-height: 1.5;
     }
 
     a {
@@ -182,82 +54,77 @@ id="twitter-image"
       text-decoration: none;
     }
 
-    .container {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
+    button,
+    input,
+    select {
+      font: inherit;
     }
 
-    header {
+    button {
+      border: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid #e5e7eb;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
     }
 
     .header-inner {
-      min-height: 72px;
-
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 70px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 20px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
-
-      font-size: 20px;
-      font-weight: 800;
-      color: #111827;
-
-      white-space: nowrap;
+      gap: 12px;
+      min-width: 0;
     }
 
     .brand img {
-      width: 42px;
-      height: 42px;
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #ffffff;
+    }
 
-      object-fit: cover;
-      border-radius: 10px;
-
-      border: 1px solid #e5e7eb;
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 20px;
     }
 
-    .nav-link {
-      padding: 9px 13px;
-
-      border-radius: 9px;
-
-      color: #4b5563;
-      font-size: 14px;
+    .nav a {
       font-weight: 600;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
+      color: #333333;
     }
 
-    .nav-link:hover {
-      background: #f3f4f6;
-      color: #111827;
+    .nav a:hover {
+      color: #000000;
     }
 
     .cart-link {
       position: relative;
-
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -266,3042 +133,2670 @@ id="twitter-image"
     .cart-count {
       min-width: 20px;
       height: 20px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0 5px;
-
-      background: #111827;
-      color: white;
-
+      padding: 0 6px;
       border-radius: 999px;
-
-      font-size: 11px;
-      font-weight: 800;
+      background: #111111;
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 20px;
+      text-align: center;
+      font-weight: 700;
     }
 
-    .breadcrumbs {
-      padding: 22px 0 12px;
-
-      color: #6b7280;
-      font-size: 13px;
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
     }
 
-    .breadcrumbs a {
-      color: #4b5563;
+    .breadcrumb {
+      margin-bottom: 22px;
+      font-size: 14px;
+      color: #707070;
     }
 
-    .breadcrumbs a:hover {
-      text-decoration: underline;
-    }
-
-    .breadcrumb-separator {
-      margin: 0 7px;
-      color: #9ca3af;
-    }
-
-    main {
-      padding-bottom: 70px;
-    }
-
-    .product-wrapper {
-      background: #ffffff;
-
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 8px 30px rgba(15, 23, 42, 0.05);
+    .breadcrumb a {
+      color: #555555;
+      font-weight: 600;
     }
 
     .product-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 0;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 42px;
+      align-items: start;
     }
 
-    .gallery {
-      padding: 28px;
-
-      border-right: 1px solid #e5e7eb;
-
+    .gallery-card,
+    .product-info {
       background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+    }
+
+    .gallery-card {
+      padding: 20px;
     }
 
     .main-image-wrap {
       position: relative;
-
       width: 100%;
       aspect-ratio: 1 / 1;
-
-      background: #f8fafc;
-
-      border: 1px solid #e5e7eb;
       border-radius: 14px;
-
       overflow: hidden;
-
+      background: #f7f7f7;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .main-image {
+      display: block;
       width: 100%;
       height: 100%;
-
-      display: block;
-
       object-fit: contain;
-      padding: 18px;
-
-      transition:
-        opacity 0.2s ease,
-        transform 0.3s ease;
-    }
-
-    .main-image:hover {
-      transform: scale(1.02);
+      background: #ffffff;
     }
 
     /*
-      The placeholder is deliberately hidden.
-      We use the store logo only when an image
-      genuinely fails.
+      The old "Product image unavailable" text is
+      deliberately hidden permanently.
     */
-
     .image-placeholder {
       display: none !important;
     }
 
     .thumbnail-list {
       display: grid;
-
-      grid-template-columns:
-        repeat(6, minmax(0, 1fr));
-
-      gap: 9px;
-
-      margin-top: 13px;
+      grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .thumbnail {
-      width: 100%;
+      padding: 0;
       aspect-ratio: 1 / 1;
-
-      border: 1px solid #e5e7eb;
-      border-radius: 9px;
-
-      background: #ffffff;
-
+      border: 2px solid transparent;
+      border-radius: 10px;
       overflow: hidden;
-
-      padding: 4px;
-
-      transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+      background: #f7f7f7;
+      cursor: pointer;
     }
 
     .thumbnail:hover {
-      border-color: #9ca3af;
+      border-color: #aaaaaa;
     }
 
     .thumbnail.active {
-      border-color: #111827;
-
-      box-shadow:
-        0 0 0 2px rgba(17, 24, 39, 0.08);
+      border-color: #111111;
     }
 
     .thumbnail img {
       width: 100%;
       height: 100%;
-
-      display: block;
-
       object-fit: contain;
+      display: block;
+      background: #ffffff;
     }
 
     .product-info {
-      padding: 34px;
+      padding: 30px;
     }
 
-    .category {
-      display: inline-flex;
-
-      padding: 5px 9px;
-
-      background: #f3f4f6;
-      color: #4b5563;
-
-      border-radius: 7px;
-
-      font-size: 11px;
+    .product-category {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #666666;
+      font-size: 13px;
       font-weight: 700;
-
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
     }
 
     .product-title {
-      margin-top: 14px;
-
-      font-size: clamp(25px, 3vw, 36px);
-      line-height: 1.2;
-
-      color: #111827;
-      font-weight: 800;
-      letter-spacing: -0.025em;
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
     }
 
-    .product-meta {
-      margin-top: 15px;
-
+    .rating-row {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-
-      gap: 12px;
-    }
-
-    .rating {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-
-      color: #374151;
-
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #555555;
       font-size: 14px;
-      font-weight: 600;
     }
 
     .stars {
-      letter-spacing: 1px;
       color: #f59e0b;
-    }
-
-    .sales {
-      color: #6b7280;
-      font-size: 13px;
-    }
-
-    .sku {
-      color: #9ca3af;
-      font-size: 12px;
-    }
-
-    .price-box {
-      margin-top: 24px;
-
-      padding: 18px;
-
-      background: #f8fafc;
-
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+      letter-spacing: 1px;
+      font-size: 17px;
     }
 
     .price-row {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-
       gap: 10px;
+      margin-bottom: 16px;
     }
 
     .current-price {
-      color: #111827;
-
-      font-size: 30px;
-      font-weight: 850;
-      line-height: 1;
+      font-size: 32px;
+      font-weight: 800;
+      color: #111111;
     }
 
     .original-price {
-      color: #9ca3af;
-
-      font-size: 16px;
+      font-size: 18px;
+      color: #999999;
       text-decoration: line-through;
     }
 
-    .price-note {
-      margin-top: 7px;
-
-      color: #6b7280;
-      font-size: 12px;
-    }
-
     .stock-status {
-      margin-top: 17px;
-
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-
-      font-size: 13px;
+      margin-bottom: 20px;
+      font-size: 14px;
       font-weight: 700;
     }
 
-    .stock-dot {
-      width: 8px;
-      height: 8px;
-
-      border-radius: 50%;
-
-      background: #10b981;
+    .stock-status.in-stock {
+      color: #16803c;
     }
 
-    .stock-status.low {
-      color: #b45309;
+    .stock-status.out-of-stock {
+      color: #c62828;
     }
 
-    .stock-status.low .stock-dot {
-      background: #f59e0b;
+    .description {
+      margin: 20px 0 26px;
+      color: #444444;
+      overflow-wrap: anywhere;
     }
 
-    .stock-status.out {
-      color: #b91c1c;
+    .description p:first-child {
+      margin-top: 0;
     }
 
-    .stock-status.out .stock-dot {
-      background: #ef4444;
+    .description p:last-child {
+      margin-bottom: 0;
     }
 
-    .stock-status.unknown {
-      color: #6b7280;
+    .description img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
-    .stock-status.unknown .stock-dot {
-      background: #9ca3af;
-    }
-
-    .variants {
-      margin-top: 27px;
+    .variants-section {
+      margin: 24px 0;
+      padding-top: 22px;
+      border-top: 1px solid #e8e8e8;
     }
 
     .variant-group {
       margin-bottom: 20px;
     }
 
+    .variant-group:last-child {
+      margin-bottom: 0;
+    }
+
     .variant-label {
+      display: block;
       margin-bottom: 9px;
-
-      color: #111827;
-
-      font-size: 14px;
-      font-weight: 750;
+      font-weight: 700;
+      color: #222222;
     }
 
     .variant-options {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 9px;
     }
 
     .variant-option {
-      min-height: 38px;
-
-      padding: 8px 12px;
-
+      min-width: 44px;
+      min-height: 40px;
+      padding: 8px 13px;
+      border: 1px solid #cccccc;
+      border-radius: 9px;
       background: #ffffff;
-      color: #374151;
-
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-
-      font-size: 13px;
-      font-weight: 600;
-
+      color: #222222;
+      cursor: pointer;
       transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease,
-        opacity 0.2s ease;
+        border-color 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
     }
 
     .variant-option:hover:not(:disabled) {
-      border-color: #6b7280;
+      border-color: #111111;
     }
 
     .variant-option.selected {
-      background: #111827;
-      border-color: #111827;
+      border-color: #111111;
+      background: #111111;
       color: #ffffff;
     }
 
-    .variant-option:disabled {
-      cursor: not-allowed;
+    .variant-option.unavailable {
       opacity: 0.38;
       text-decoration: line-through;
     }
 
-    .selection-message {
-      min-height: 20px;
-
-      margin-top: 6px;
-
-      color: #b45309;
-      font-size: 12px;
-      font-weight: 600;
+    .variant-option:disabled {
+      cursor: not-allowed;
     }
 
     .quantity-section {
-      margin-top: 22px;
+      margin: 25px 0;
     }
 
     .quantity-label {
-      margin-bottom: 8px;
-
-      color: #111827;
-
-      font-size: 14px;
-      font-weight: 750;
+      display: block;
+      margin-bottom: 9px;
+      font-weight: 700;
     }
 
     .quantity-control {
       display: inline-flex;
       align-items: center;
-
-      height: 44px;
-
-      border: 1px solid #d1d5db;
-      border-radius: 9px;
-
+      border: 1px solid #cccccc;
+      border-radius: 10px;
       overflow: hidden;
-
       background: #ffffff;
     }
 
-    .quantity-btn {
+    .quantity-button {
       width: 42px;
-      height: 100%;
-
-      border: 0;
-      background: #f9fafb;
-
-      color: #374151;
-
-      font-size: 18px;
-      font-weight: 700;
+      height: 42px;
+      background: #ffffff;
+      color: #111111;
+      cursor: pointer;
+      font-size: 20px;
     }
 
-    .quantity-btn:hover {
-      background: #f3f4f6;
+    .quantity-button:hover:not(:disabled) {
+      background: #f3f3f3;
+    }
+
+    .quantity-button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
     }
 
     .quantity-input {
       width: 55px;
-      height: 100%;
-
+      height: 42px;
+      padding: 0;
       border: 0;
-
+      border-left: 1px solid #dddddd;
+      border-right: 1px solid #dddddd;
       text-align: center;
-
-      color: #111827;
-      font-size: 14px;
-      font-weight: 700;
-
       outline: none;
+      background: #ffffff;
     }
 
-    .quantity-input::-webkit-outer-spin-button,
-    .quantity-input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    .quantity-input[type="number"] {
-      -moz-appearance: textfield;
-    }
-
-    .actions {
+    .action-buttons {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
-      gap: 10px;
-
+      gap: 12px;
       margin-top: 25px;
     }
 
     .btn {
-      min-height: 48px;
-
-      padding: 11px 17px;
-
-      border-radius: 9px;
-
-      font-size: 14px;
-      font-weight: 750;
-
-      border: 1px solid transparent;
-
+      min-height: 52px;
+      padding: 13px 18px;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
       transition:
         transform 0.15s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+        opacity 0.15s ease,
+        background 0.15s ease;
     }
 
-    .btn:active {
-      transform: translateY(1px);
+    .btn:hover:not(:disabled) {
+      transform: translateY(-1px);
     }
 
     .btn-primary {
-      background: #111827;
+      background: #111111;
       color: #ffffff;
     }
 
     .btn-primary:hover:not(:disabled) {
-      background: #1f2937;
+      background: #2a2a2a;
     }
 
     .btn-secondary {
       background: #ffffff;
-      color: #111827;
-
-      border-color: #d1d5db;
+      color: #111111;
+      border: 1px solid #111111;
     }
 
     .btn-secondary:hover:not(:disabled) {
-      background: #f9fafb;
+      background: #f4f4f4;
     }
 
     .btn:disabled {
       cursor: not-allowed;
       opacity: 0.45;
+      transform: none !important;
     }
 
-    .cart-message {
-      min-height: 22px;
-
-      margin-top: 12px;
-
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    .cart-message.success {
-      color: #047857;
-    }
-
-    .cart-message.error {
-      color: #b91c1c;
-    }
-
-    .quick-info {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-      gap: 9px;
-
-      margin-top: 25px;
-    }
-
-    .quick-info-card {
-      padding: 12px;
-
-      background: #f9fafb;
-
-      border: 1px solid #e5e7eb;
+    .message {
+      margin-top: 14px;
+      padding: 12px 14px;
       border-radius: 9px;
-
-      text-align: center;
+      font-size: 14px;
+      display: none;
     }
 
-    .quick-info-title {
-      color: #111827;
-
-      font-size: 12px;
-      font-weight: 750;
+    .message.show {
+      display: block;
     }
 
-    .quick-info-text {
-      margin-top: 3px;
-
-      color: #6b7280;
-      font-size: 11px;
+    .message.success {
+      background: #e9f8ef;
+      color: #176b35;
+      border: 1px solid #bce8cb;
     }
 
-    .description-section {
-      padding: 32px;
-
-      border-top: 1px solid #e5e7eb;
+    .message.error {
+      background: #fff0f0;
+      color: #9f1d1d;
+      border: 1px solid #f0c0c0;
     }
 
-    .section-title {
-      font-size: 21px;
-      font-weight: 800;
-      color: #111827;
-    }
-
-    .description {
-      margin-top: 16px;
-
-      color: #4b5563;
-
-      font-size: 15px;
-      line-height: 1.8;
-
-      overflow-wrap: anywhere;
-    }
-
-    .description p {
-      margin-bottom: 13px;
-    }
-
-    .description ul,
-    .description ol {
-      margin: 10px 0 15px 22px;
-    }
-
-    .description li {
-      margin-bottom: 6px;
-    }
-
-    .description img {
-      max-width: 100%;
-      height: auto;
-
-      border-radius: 9px;
-    }
-
-    .description a {
-      color: #2563eb;
-      text-decoration: underline;
-    }
-
-    .state {
-      min-height: 420px;
-
+    .loading {
+      min-height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #666666;
+      font-size: 16px;
+    }
 
-      padding: 40px;
-
+    .error-state {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 40px 25px;
       text-align: center;
     }
 
-    .state-inner {
-      max-width: 460px;
+    .error-state h1 {
+      margin-top: 0;
     }
 
-    .spinner {
-      width: 38px;
-      height: 38px;
-
-      margin: 0 auto 16px;
-
-      border: 4px solid #e5e7eb;
-      border-top-color: #111827;
-
-      border-radius: 50%;
-
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .state-title {
-      color: #111827;
-
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    .state-text {
-      margin-top: 7px;
-
-      color: #6b7280;
-
-      font-size: 14px;
-    }
-
-    .error-button {
-      margin-top: 18px;
-
-      min-height: 42px;
-
-      padding: 9px 15px;
-
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-
-      background: #ffffff;
-
-      color: #111827;
-
-      font-size: 13px;
+    .back-button {
+      display: inline-flex;
+      margin-top: 15px;
+      padding: 11px 16px;
+      border-radius: 9px;
+      background: #111111;
+      color: #ffffff;
       font-weight: 700;
     }
 
-    .error-button:hover {
-      background: #f9fafb;
+    .hidden {
+      display: none !important;
     }
 
-    footer {
-      border-top: 1px solid #e5e7eb;
-
-      background: #ffffff;
+    .sku-info {
+      margin-top: 18px;
+      color: #777777;
+      font-size: 13px;
     }
 
-    .footer-inner {
-      min-height: 90px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-    .footer-copy {
-      color: #6b7280;
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .footer-links a {
-      color: #6b7280;
-      font-size: 12px;
-    }
-
-    .footer-links a:hover {
-      color: #111827;
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 850px) {
       .product-layout {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .gallery {
-        border-right: 0;
-        border-bottom: 1px solid #e5e7eb;
+      .product-info {
+        padding: 22px;
+      }
+
+      .gallery-card {
+        padding: 14px;
       }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 22px, 1180px);
-      }
-
+    @media (max-width: 600px) {
       .header-inner {
-        min-height: 64px;
+        padding: 9px 14px;
       }
 
-      .brand {
+      .brand-name {
         font-size: 17px;
       }
 
       .brand img {
-        width: 37px;
-        height: 37px;
+        width: 42px;
+        height: 42px;
       }
 
       .nav {
-        gap: 3px;
+        gap: 12px;
+        font-size: 14px;
       }
 
-      .nav-link {
-        padding: 8px 8px;
-        font-size: 12px;
+      .page {
+        padding: 20px 12px 45px;
       }
 
-      .breadcrumbs {
-        padding-top: 16px;
-      }
-
-      .gallery {
-        padding: 14px;
-      }
-
-      .product-info {
-        padding: 22px 18px 25px;
-      }
-
-      .description-section {
-        padding: 23px 18px;
+      .action-buttons {
+        grid-template-columns: 1fr;
       }
 
       .product-title {
-        font-size: 26px;
+        font-size: 30px;
       }
 
       .current-price {
-        font-size: 27px;
-      }
-
-      .thumbnail-list {
-        grid-template-columns:
-          repeat(5, minmax(0, 1fr));
-      }
-
-      .actions {
-        grid-template-columns: 1fr;
-      }
-
-      .quick-info {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-inner {
-        padding: 22px 0;
-
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .brand span {
-        display: none;
-      }
-
-      .product-title {
-        font-size: 23px;
-      }
-
-      .thumbnail-list {
-        grid-template-columns:
-          repeat(4, minmax(0, 1fr));
+        font-size: 28px;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-<header>
-  <div class="container header-inner">
+  <header class="site-header">
+    <div class="header-inner">
 
-```
-<a
-  class="brand"
-  href="/"
-  aria-label="Prasun Store home"
->
-  <img
-    src="/prasun-store-logo.jpeg"
-    alt="Prasun Store logo"
-    width="42"
-    height="42"
-  >
-
-  <span>Prasun Store</span>
-</a>
-
-<nav
-  class="nav"
-  aria-label="Main navigation"
->
-  <a
-    class="nav-link"
-    href="/"
-  >
-    Shop
-  </a>
-
-  <a
-    class="nav-link cart-link"
-    href="/cart.html"
-    aria-label="Shopping cart"
-  >
-    Cart
-
-    <span
-      class="cart-count"
-      id="cart-count"
-    >
-      0
-    </span>
-  </a>
-</nav>
-```
-
-  </div>
-</header>
-
-<main>
-
-  <div class="container">
-
-```
-<div class="breadcrumbs">
-
-  <a href="/">Home</a>
-
-  <span class="breadcrumb-separator">/</span>
-
-  <span id="breadcrumb-product">
-    Product
-  </span>
-
-</div>
-
-<section
-  class="product-wrapper"
-  id="loading-state"
->
-  <div class="state">
-
-    <div class="state-inner">
-
-      <div
-        class="spinner"
-        aria-hidden="true"
-      ></div>
-
-      <div class="state-title">
-        Loading product...
-      </div>
-
-      <div class="state-text">
-        Please wait while we load the product details.
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section
-  class="product-wrapper"
-  id="error-state"
-  hidden
->
-
-  <div class="state">
-
-    <div class="state-inner">
-
-      <div class="state-title">
-        Product unavailable
-      </div>
-
-      <div
-        class="state-text"
-        id="error-message"
+      <a
+        href="/"
+        class="brand"
+        aria-label="Prasun Store Home"
       >
-        We couldn't load this product.
-      </div>
-
-      <button
-        type="button"
-        class="error-button"
-        id="retry-button"
-      >
-        Try Again
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section
-  class="product-wrapper"
-  id="product-container"
-  hidden
->
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <div class="main-image-wrap">
-
         <img
-          id="main-product-image"
-          class="main-image"
           src="/prasun-store-logo.jpeg"
-          alt="Product image"
-          width="800"
-          height="800"
-          loading="eager"
-          decoding="async"
+          alt="Prasun Store"
+          width="48"
+          height="48"
         >
 
-        <div
-          class="image-placeholder"
-          id="image-placeholder"
-          hidden
+        <span class="brand-name">
+          Prasun Store
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+
+        <a href="/">
+          Shop
+        </a>
+
+        <a
+          href="/cart.html"
+          class="cart-link"
         >
-          Product image unavailable
+          Cart
+          <span
+            id="cart-count"
+            class="cart-count"
+          >
+            0
+          </span>
+        </a>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="page">
+
+    <div class="breadcrumb">
+      <a href="/">Shop</a>
+      <span> / </span>
+      <span id="breadcrumb-title">Product</span>
+    </div>
+
+
+    <div id="loading-state" class="loading">
+      Loading product...
+    </div>
+
+
+    <div
+      id="error-state"
+      class="error-state hidden"
+    >
+      <h1>Product Not Found</h1>
+
+      <p id="error-message">
+        We could not load this product.
+      </p>
+
+      <a
+        href="/"
+        class="back-button"
+      >
+        Back to Shop
+      </a>
+    </div>
+
+
+    <section
+      id="product-layout"
+      class="product-layout hidden"
+    >
+
+      <!-- ======================================================
+           PRODUCT GALLERY
+           ====================================================== -->
+
+      <div class="gallery-card">
+
+        <div class="main-image-wrap">
+
+          <img
+            id="main-product-image"
+            class="main-image"
+            src="/prasun-store-logo.jpeg"
+            alt="Prasun Store product image"
+            width="800"
+            height="800"
+            loading="eager"
+            decoding="async"
+          >
+
+          <!--
+            Intentionally empty.
+            It is hidden permanently so the old
+            "Product image unavailable" text never appears.
+          -->
+          <div
+            id="image-placeholder"
+            class="image-placeholder"
+            hidden
+            aria-hidden="true"
+          ></div>
+
         </div>
 
-      </div>
-
-      <div
-        class="thumbnail-list"
-        id="thumbnail-list"
-        aria-label="Product images"
-      ></div>
-
-    </div>
-
-    <div class="product-info">
-
-      <div
-        class="category"
-        id="product-category"
-        hidden
-      ></div>
-
-      <h1
-        class="product-title"
-        id="product-title"
-      >
-        Product
-      </h1>
-
-      <div class="product-meta">
 
         <div
-          class="rating"
-          id="product-rating"
-        ></div>
-
-        <div
-          class="sales"
-          id="product-sales"
-        ></div>
-
-        <div
-          class="sku"
-          id="product-sku"
+          id="thumbnail-list"
+          class="thumbnail-list"
         ></div>
 
       </div>
 
-      <div class="price-box">
+
+      <!-- ======================================================
+           PRODUCT INFORMATION
+           ====================================================== -->
+
+      <div class="product-info">
+
+        <div
+          id="product-category"
+          class="product-category"
+        ></div>
+
+
+        <h1
+          id="product-title"
+          class="product-title"
+        >
+          Product
+        </h1>
+
+
+        <div class="rating-row">
+
+          <span
+            id="rating-stars"
+            class="stars"
+          >
+            ★★★★★
+          </span>
+
+          <span
+            id="rating-text"
+          >
+            No reviews
+          </span>
+
+        </div>
+
 
         <div class="price-row">
 
           <span
-            class="current-price"
             id="current-price"
+            class="current-price"
           >
-            $0.00
+            —
           </span>
 
           <span
-            class="original-price"
             id="original-price"
-            hidden
+            class="original-price hidden"
           ></span>
 
         </div>
 
-        <div class="price-note">
-          Final price is shown in USD.
-        </div>
-
-      </div>
-
-      <div
-        class="stock-status unknown"
-        id="stock-status"
-      >
-
-        <span
-          class="stock-dot"
-          aria-hidden="true"
-        ></span>
-
-        <span id="stock-text">
-          Availability checking...
-        </span>
-
-      </div>
-
-      <div
-        class="variants"
-        id="variants-section"
-        hidden
-      >
-
-        <div id="variant-groups"></div>
 
         <div
-          class="selection-message"
-          id="selection-message"
+          id="stock-status"
+          class="stock-status"
+        ></div>
+
+
+        <!-- ====================================================
+             VARIANTS
+             ==================================================== -->
+
+        <section
+          id="variants-section"
+          class="variants-section"
+          hidden
+        >
+
+          <div id="variants-container"></div>
+
+        </section>
+
+
+        <!-- ====================================================
+             DESCRIPTION
+             ==================================================== -->
+
+        <div
+          id="product-description"
+          class="description"
+        ></div>
+
+
+        <!-- ====================================================
+             QUANTITY
+             ==================================================== -->
+
+        <div class="quantity-section">
+
+          <label
+            class="quantity-label"
+            for="quantity-input"
+          >
+            Quantity
+          </label>
+
+          <div class="quantity-control">
+
+            <button
+              type="button"
+              id="quantity-minus"
+              class="quantity-button"
+              aria-label="Decrease quantity"
+            >
+              −
+            </button>
+
+            <input
+              type="number"
+              id="quantity-input"
+              class="quantity-input"
+              value="1"
+              min="1"
+              max="999"
+              inputmode="numeric"
+              aria-label="Quantity"
+            >
+
+            <button
+              type="button"
+              id="quantity-plus"
+              class="quantity-button"
+              aria-label="Increase quantity"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ====================================================
+             ACTION BUTTONS
+             ==================================================== -->
+
+        <div class="action-buttons">
+
+          <button
+            type="button"
+            id="add-to-cart-button"
+            class="btn btn-secondary"
+          >
+            Add to Cart
+          </button>
+
+          <button
+            type="button"
+            id="buy-now-button"
+            class="btn btn-primary"
+          >
+            Buy Now
+          </button>
+
+        </div>
+
+
+        <div
+          id="action-message"
+          class="message"
+          role="status"
           aria-live="polite"
+        ></div>
+
+
+        <div
+          id="sku-info"
+          class="sku-info hidden"
         ></div>
 
       </div>
 
-      <div class="quantity-section">
-
-        <div class="quantity-label">
-          Quantity
-        </div>
-
-        <div class="quantity-control">
+    </section>
 
-          <button
-            type="button"
-            class="quantity-btn"
-            id="quantity-minus"
-            aria-label="Decrease quantity"
-          >
-            −
-          </button>
+  </main>
 
-          <input
-            class="quantity-input"
-            id="quantity"
-            type="number"
-            min="1"
-            max="999"
-            value="1"
-            inputmode="numeric"
-            aria-label="Quantity"
-          >
 
-          <button
-            type="button"
-            class="quantity-btn"
-            id="quantity-plus"
-            aria-label="Increase quantity"
-          >
-            +
-          </button>
+  <script>
+    "use strict";
 
-        </div>
 
-      </div>
+    /* ============================================================
+       CONFIGURATION
+       ============================================================ */
 
-      <div class="actions">
+    const API_BASE =
+      "https://prasun-store.prasun301.workers.dev";
 
-        <button
-          type="button"
-          class="btn btn-secondary"
-          id="add-to-cart"
-        >
-          Add to Cart
-        </button>
+    const CART_STORAGE_KEY =
+      "prasun_cart";
 
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="buy-now"
-        >
-          Buy Now
-        </button>
+    const LEGACY_CART_KEY =
+      "cart";
 
-      </div>
+    const BUY_NOW_STORAGE_KEY =
+      "prasun_buy_now";
 
-      <div
-        class="cart-message"
-        id="cart-message"
-        aria-live="polite"
-      ></div>
+    const DEFAULT_IMAGE =
+      "/prasun-store-logo.jpeg";
 
-      <div class="quick-info">
 
-        <div class="quick-info-card">
+    const PRODUCT_ID =
+      new URLSearchParams(window.location.search).get("id");
 
-          <div class="quick-info-title">
-            Secure Shopping
-          </div>
 
-          <div class="quick-info-text">
-            Protected checkout
-          </div>
+    /* ============================================================
+       DOM ELEMENTS
+       ============================================================ */
 
-        </div>
+    const loadingState =
+      document.getElementById("loading-state");
 
-        <div class="quick-info-card">
+    const errorState =
+      document.getElementById("error-state");
 
-          <div class="quick-info-title">
-            Product Options
-          </div>
+    const errorMessage =
+      document.getElementById("error-message");
 
-          <div class="quick-info-text">
-            Select available variants
-          </div>
+    const productLayout =
+      document.getElementById("product-layout");
 
-        </div>
+    const breadcrumbTitle =
+      document.getElementById("breadcrumb-title");
 
-        <div class="quick-info-card">
+    const productCategory =
+      document.getElementById("product-category");
 
-          <div class="quick-info-title">
-            Support
-          </div>
+    const productTitle =
+      document.getElementById("product-title");
 
-          <div class="quick-info-text">
-            Customer assistance
-          </div>
+    const ratingStars =
+      document.getElementById("rating-stars");
 
-        </div>
+    const ratingText =
+      document.getElementById("rating-text");
 
-      </div>
+    const currentPrice =
+      document.getElementById("current-price");
 
-    </div>
+    const originalPrice =
+      document.getElementById("original-price");
 
-  </div>
+    const stockStatus =
+      document.getElementById("stock-status");
 
-  <div class="description-section">
+    const variantsSection =
+      document.getElementById("variants-section");
 
-    <h2 class="section-title">
-      Product Description
-    </h2>
+    const variantsContainer =
+      document.getElementById("variants-container");
 
-    <div
-      class="description"
-      id="product-description"
-    >
-      Product information will appear here.
-    </div>
+    const productDescription =
+      document.getElementById("product-description");
 
-  </div>
+    const mainProductImage =
+      document.getElementById("main-product-image");
 
-</section>
-```
+    const imagePlaceholder =
+      document.getElementById("image-placeholder");
 
-  </div>
+    const thumbnailList =
+      document.getElementById("thumbnail-list");
 
-</main>
+    const quantityMinus =
+      document.getElementById("quantity-minus");
 
-<footer>
+    const quantityPlus =
+      document.getElementById("quantity-plus");
 
-  <div class="container footer-inner">
+    const quantityInput =
+      document.getElementById("quantity-input");
 
-```
-<div class="footer-copy">
-  © <span id="footer-year"></span> Prasun Store. All rights reserved.
-</div>
+    const addToCartButton =
+      document.getElementById("add-to-cart-button");
 
-<div class="footer-links">
+    const buyNowButton =
+      document.getElementById("buy-now-button");
 
-  <a href="/">
-    Home
-  </a>
+    const actionMessage =
+      document.getElementById("action-message");
 
-  <a href="/cart.html">
-    Cart
-  </a>
+    const skuInfo =
+      document.getElementById("sku-info");
 
-  <a href="/checkout.html">
-    Checkout
-  </a>
+    const cartCount =
+      document.getElementById("cart-count");
 
-</div>
-```
 
-  </div>
+    /* ============================================================
+       APPLICATION STATE
+       ============================================================ */
 
-</footer>
+    let product = null;
 
-<script>
-"use strict";
+    let selectedProperties = {};
 
-/* ============================================================
-   CONFIGURATION
-   ============================================================ */
+    let selectedSku = null;
 
-/*
-  IMPORTANT:
+    let currentImageIndex = 0;
 
-  Your GitHub Pages site is NOT currently routing
-  /api/* through the Cloudflare Worker.
 
-  Therefore product.html must call the Worker directly.
+    /* ============================================================
+       BASIC HELPERS
+       ============================================================ */
 
-  Working Worker:
-  https://prasun-store.prasun301.workers.dev
-*/
+    function escapeHtml(value) {
 
-const API_BASE =
-  "https://prasun-store.prasun301.workers.dev";
+      if (value === null || value === undefined) {
+        return "";
+      }
 
-const CART_STORAGE_KEY =
-  "prasun_cart";
-
-const LEGACY_CART_KEY =
-  "cart";
-
-const BUY_NOW_KEY =
-  "prasun_buy_now";
-
-const MAX_CART_QUANTITY =
-  999;
-
-const DEFAULT_IMAGE =
-  "/prasun-store-logo.jpeg";
-
-const PRODUCT_ID =
-  new URLSearchParams(
-    window.location.search
-  ).get("id");
-
-
-/* ============================================================
-   GLOBAL STATE
-   ============================================================ */
-
-let product = null;
-
-let selectedProperties = {};
-
-let selectedSku = null;
-
-let currentImageIndex = 0;
-
-
-/* ============================================================
-   DOM HELPERS
-   ============================================================ */
-
-const $ =
-  selector =>
-    document.querySelector(selector);
-
-const loadingState =
-  $("#loading-state");
-
-const errorState =
-  $("#error-state");
-
-const errorMessage =
-  $("#error-message");
-
-const retryButton =
-  $("#retry-button");
-
-const productContainer =
-  $("#product-container");
-
-const mainProductImage =
-  $("#main-product-image");
-
-const imagePlaceholder =
-  $("#image-placeholder");
-
-const thumbnailList =
-  $("#thumbnail-list");
-
-const productTitle =
-  $("#product-title");
-
-const productCategory =
-  $("#product-category");
-
-const productRating =
-  $("#product-rating");
-
-const productSales =
-  $("#product-sales");
-
-const productSku =
-  $("#product-sku");
-
-const currentPrice =
-  $("#current-price");
-
-const originalPrice =
-  $("#original-price");
-
-const stockStatus =
-  $("#stock-status");
-
-const stockText =
-  $("#stock-text");
-
-const variantsSection =
-  $("#variants-section");
-
-const variantGroups =
-  $("#variant-groups");
-
-const selectionMessage =
-  $("#selection-message");
-
-const quantityInput =
-  $("#quantity");
-
-const quantityMinus =
-  $("#quantity-minus");
-
-const quantityPlus =
-  $("#quantity-plus");
-
-const addToCartButton =
-  $("#add-to-cart");
-
-const buyNowButton =
-  $("#buy-now");
-
-const cartMessage =
-  $("#cart-message");
-
-
-/* ============================================================
-   BASIC UTILITIES
-   ============================================================ */
-
-function escapeHtml(value) {
-
-  const div =
-    document.createElement(
-      "div"
-    );
-
-  div.textContent =
-    String(value ?? "");
-
-  return div.innerHTML;
-}
-
-
-function firstValid(...values) {
-
-  for (
-    const value
-    of values
-  ) {
-
-    if (
-      value !== undefined &&
-      value !== null &&
-      value !== ""
-    ) {
-      return value;
-    }
-  }
-
-  return null;
-}
-
-
-function toNumber(
-  value,
-  fallback = 0
-) {
-
-  if (
-    value === null ||
-    value === undefined ||
-    value === ""
-  ) {
-    return fallback;
-  }
-
-  const cleaned =
-    String(value)
-      .replace(/[$,\s]/g, "");
-
-  const number =
-    Number(cleaned);
-
-  return Number.isFinite(number)
-    ? number
-    : fallback;
-}
-
-
-function parseNullableNumber(
-  value
-) {
-
-  if (
-    value === null ||
-    value === undefined ||
-    value === ""
-  ) {
-    return null;
-  }
-
-  const number =
-    Number(
-      String(value)
-        .replace(/[$,\s]/g, "")
-    );
-
-  return Number.isFinite(number)
-    ? number
-    : null;
-}
-
-
-function formatPrice(value) {
-
-  const amount =
-    toNumber(
-      value,
-      0
-    );
-
-  return new Intl.NumberFormat(
-    "en-US",
-    {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }
-  ).format(amount);
-}
-
-
-function clamp(
-  value,
-  min,
-  max
-) {
-
-  return Math.min(
-    max,
-    Math.max(
-      min,
-      value
-    )
-  );
-}
-
-
-/* ============================================================
-   IMAGE URL HANDLING
-   ============================================================ */
-
-/*
-  CJ provides HTTPS CDN image URLs.
-
-  We intentionally do NOT route every image through
-  /api/image from this page.
-
-  Direct CJ CDN URLs are faster and avoid the image
-  proxy being responsible for page functionality.
-*/
-
-function normalizeImageUrl(
-  value
-) {
-
-  if (
-    typeof value !== "string"
-  ) {
-    return "";
-  }
-
-  const raw =
-    value.trim();
-
-  if (!raw) {
-    return "";
-  }
-
-  /*
-    CJ sometimes returns protocol-relative URLs.
-  */
-
-  if (
-    raw.startsWith("//")
-  ) {
-    return "https:" + raw;
-  }
-
-  /*
-    Some API data can contain escaped URLs.
-  */
-
-  const cleaned =
-    raw
-      .replace(/&amp;/gi, "&")
-      .replace(/\\\//g, "/");
-
-  try {
-
-    const url =
-      new URL(
-        cleaned,
-        window.location.origin
-      );
-
-    if (
-      url.protocol !== "http:" &&
-      url.protocol !== "https:"
-    ) {
-      return "";
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
     }
 
-    return url.href;
 
-  } catch {
+    function firstValid(...values) {
 
-    return "";
-  }
-}
+      for (const value of values) {
 
+        if (
+          value !== null &&
+          value !== undefined &&
+          String(value).trim() !== ""
+        ) {
+          return value;
+        }
 
-function safeImageUrl(
-  value
-) {
+      }
 
-  const url =
-    normalizeImageUrl(
-      value
-    );
-
-  return url ||
-    DEFAULT_IMAGE;
-}
+      return null;
+    }
 
 
-/* ============================================================
-   DESCRIPTION SANITIZATION
-   ============================================================ */
-
-function sanitizeDescriptionHtml(
-  html
-) {
-
-  if (!html) {
-    return "";
-  }
-
-  const parser =
-    new DOMParser();
-
-  const doc =
-    parser.parseFromString(
-      String(html),
-      "text/html"
-    );
-
-  /*
-    Remove only genuinely dangerous elements.
-
-    We intentionally do not perform expensive
-    processing on every DOM node.
-  */
-
-  doc.querySelectorAll(
-    "script,iframe,object,embed,form,style,link,meta"
-  ).forEach(
-    element =>
-      element.remove()
-  );
-
-  doc.querySelectorAll(
-    "*"
-  ).forEach(
-    element => {
-
-      [...element.attributes]
-        .forEach(
-          attribute => {
-
-            if (
-              attribute.name
-                .toLowerCase()
-                .startsWith("on")
-            ) {
-
-              element.removeAttribute(
-                attribute.name
-              );
-            }
-
-          }
-        );
+    function toNumber(value, fallback = null) {
 
       if (
-        element.hasAttribute(
-          "href"
-        )
+        value === null ||
+        value === undefined ||
+        value === ""
       ) {
+        return fallback;
+      }
 
-        const href =
-          element.getAttribute(
-            "href"
-          ) || "";
+      const number =
+        Number(
+          String(value)
+            .replace(/,/g, "")
+            .replace(/[$€£¥]/g, "")
+            .trim()
+        );
 
-        try {
+      return Number.isFinite(number)
+        ? number
+        : fallback;
+    }
 
-          const url =
-            new URL(
-              href,
-              window.location.origin
-            );
 
-          if (
-            url.protocol !== "http:" &&
-            url.protocol !== "https:"
-          ) {
+    function formatPrice(value) {
 
-            element.removeAttribute(
-              "href"
-            );
-          } else {
+      const number =
+        toNumber(value, 0);
 
-            element.setAttribute(
-              "target",
-              "_blank"
-            );
-
-            element.setAttribute(
-              "rel",
-              "noopener noreferrer nofollow"
-            );
-          }
-
-        } catch {
-
-          element.removeAttribute(
-            "href"
-          );
+      return new Intl.NumberFormat(
+        "en-US",
+        {
+          style: "currency",
+          currency: "USD"
         }
+      ).format(number);
+
+    }
+
+
+    function clamp(value, min, max) {
+
+      return Math.min(
+        Math.max(value, min),
+        max
+      );
+
+    }
+
+
+    /* ============================================================
+       URL / IMAGE HELPERS
+       ============================================================ */
+
+    function normalizeUrl(value) {
+
+      if (
+        value === null ||
+        value === undefined
+      ) {
+        return null;
+      }
+
+      let url =
+        String(value).trim();
+
+      if (!url) {
+        return null;
       }
 
       /*
-        Product description images are allowed
-        if they contain valid HTTP/HTTPS URLs.
+        Handle protocol-relative URLs.
       */
-
-      if (
-        element.hasAttribute(
-          "src"
-        )
-      ) {
-
-        const src =
-          element.getAttribute(
-            "src"
-          ) || "";
-
-        const safeSrc =
-          normalizeImageUrl(
-            src
-          );
-
-        if (
-          safeSrc
-        ) {
-
-          element.setAttribute(
-            "src",
-            safeSrc
-          );
-
-          element.setAttribute(
-            "loading",
-            "lazy"
-          );
-
-          element.setAttribute(
-            "decoding",
-            "async"
-          );
-
-        } else {
-
-          element.removeAttribute(
-            "src"
-          );
-        }
+      if (url.startsWith("//")) {
+        url = "https:" + url;
       }
 
-    }
-  );
-
-  return doc.body.innerHTML;
-}
-
-
-/* ============================================================
-   IMAGE NORMALIZATION
-   ============================================================ */
-
-function normalizeImages(
-  data
-) {
-
-  const images = [];
-
-  const addImage =
-    value => {
+      /*
+        Ignore obvious non-image placeholders.
+      */
+      const lower =
+        url.toLowerCase();
 
       if (
-        typeof value !== "string"
+        lower === "null" ||
+        lower === "undefined" ||
+        lower === "n/a" ||
+        lower === "none"
+      ) {
+        return null;
+      }
+
+      return url;
+    }
+
+
+    function safeImageUrl(value) {
+
+      const url =
+        normalizeUrl(value);
+
+      return url || DEFAULT_IMAGE;
+    }
+
+
+    function extractImageValue(value) {
+
+      if (
+        value === null ||
+        value === undefined
+      ) {
+        return null;
+      }
+
+      if (typeof value === "string") {
+        return value.trim();
+      }
+
+      if (typeof value === "object") {
+
+        return firstValid(
+
+          value.url,
+
+          value.src,
+
+          value.image,
+
+          value.imageUrl,
+
+          value.imageURL,
+
+          value.image_url,
+
+          value.img,
+
+          value.imgUrl,
+
+          value.img_url,
+
+          value.productImg,
+
+          value.product_img,
+
+          value.mainImage,
+
+          value.main_image,
+
+          value.mainImageUrl,
+
+          value.main_image_url
+
+        );
+
+      }
+
+      return null;
+    }
+
+
+    function addImageCandidate(
+      images,
+      value
+    ) {
+
+      if (
+        value === null ||
+        value === undefined
       ) {
         return;
       }
 
-      const url =
-        normalizeImageUrl(
-          value
-        );
 
-      if (
-        url &&
-        !images.includes(url)
-      ) {
-
-        images.push(
-          url
-        );
-      }
-    };
-
-  const directFields = [
-    data?.image,
-    data?.image_url,
-    data?.imageUrl,
-    data?.productImage,
-    data?.product_image,
-    data?.bigImage,
-    data?.bigImageUrl,
-    data?.bigimg,
-    data?.mainImage,
-    data?.main_image,
-    data?.itemMainPic,
-    data?.item_main_pic
-  ];
-
-  directFields.forEach(
-    addImage
-  );
-
-  const collections = [
-    data?.images,
-    data?.productImageSet,
-    data?.product_image_set,
-    data?.imageList,
-    data?.image_list,
-    data?.imageSet
-  ];
-
-  for (
-    const collection
-    of collections
-  ) {
-
-    if (
-      !Array.isArray(
-        collection
-      )
-    ) {
-      continue;
-    }
-
-    for (
-      const item
-      of collection
-    ) {
-
-      if (
-        typeof item === "string"
-      ) {
-
-        addImage(
-          item
-        );
-
-        continue;
-      }
-
-      if (
-        item &&
-        typeof item === "object"
-      ) {
-
-        addImage(
-          firstValid(
-            item.url,
-            item.image,
-            item.imageUrl,
-            item.image_url,
-            item.bigImage,
-            item.bigImageUrl,
-            item.bigimg,
-            item.src
-          )
-        );
-      }
-    }
-  }
-
-  return images.length
-    ? images
-    : [DEFAULT_IMAGE];
-}
-
-
-/* ============================================================
-   VARIANT ARRAY
-   ============================================================ */
-
-function getVariantArray(
-  data
-) {
-
-  const candidates = [
-
-    data?.variants,
-
-    data?.variantList,
-
-    data?.variant_list,
-
-    data?.skus,
-
-    data?.skuList,
-
-    data?.sku_list,
-
-    data?.variantInventory,
-
-    data?.variantData,
-
-    data?.variant_data
-
-  ];
-
-  for (
-    const candidate
-    of candidates
-  ) {
-
-    if (
-      Array.isArray(candidate) &&
-      candidate.length
-    ) {
-
-      return candidate;
-    }
-  }
-
-  return [];
-}
-
-
-/* ============================================================
-   VARIANT KEY PARSER
-   ============================================================ */
-
-function parseVariantKey(
-  variantKey,
-  variantName
-) {
-
-  const result = [];
-
-  const key =
-    String(
-      variantKey ?? ""
-    ).trim();
-
-  const name =
-    String(
-      variantName ?? ""
-    ).trim();
-
-  if (!key) {
-
-    if (name) {
-
-      result.push({
-        groupName: "Option",
-        valueName: name
-      });
-
-    }
-
-    return result;
-  }
-
-  /*
-    CJ may return variant keys such as:
-
-    Color:Black;Size:M
-    Color=Black|Size=M
-  */
-
-  const parts =
-    key
-      .split(/[;|]/)
-      .map(
-        part =>
-          part.trim()
-      )
-      .filter(Boolean);
-
-  for (
-    const part
-    of parts
-  ) {
-
-    let separator = null;
-
-    if (
-      part.includes(":")
-    ) {
-      separator = ":";
-    } else if (
-      part.includes("=")
-    ) {
-      separator = "=";
-    }
-
-    if (!separator) {
-      continue;
-    }
-
-    const index =
-      part.indexOf(
-        separator
-      );
-
-    const groupName =
-      part
-        .slice(
-          0,
-          index
-        )
-        .trim();
-
-    const valueName =
-      part
-        .slice(
-          index + 1
-        )
-        .trim();
-
-    if (
-      groupName &&
-      valueName
-    ) {
-
-      result.push({
-        groupName,
-        valueName
-      });
-    }
-  }
-
-  if (
-    !result.length &&
-    name
-  ) {
-
-    result.push({
-      groupName: "Option",
-      valueName: name
-    });
-  }
-
-  return result;
-}
-
-
-/* ============================================================
-   VARIANT NORMALIZATION
-   ============================================================ */
-
-function normalizeVariant(
-  variant,
-  index
-) {
-
-  if (
-    !variant ||
-    typeof variant !== "object"
-  ) {
-    return null;
-  }
-
-  const variantId =
-    String(
-      firstValid(
-        variant.vid,
-        variant.VID,
-        variant.variantId,
-        variant.variant_id,
-        variant.id,
-        variant.skuId,
-        variant.sku_id
-      ) ??
-      `variant-${index}`
-    );
-
-  const sku =
-    String(
-      firstValid(
-        variant.variantSku,
-        variant.variantSKU,
-        variant.sku,
-        variant.SKU,
-        variant.variant_sku
-      ) ??
-      variantId
-    );
-
-  const name =
-    String(
-      firstValid(
-        variant.variantNameEn,
-        variant.variant_name_en,
-        variant.variantName,
-        variant.variant_name,
-        variant.nameEn,
-        variant.name,
-        variant.value_name,
-        variant.valueName
-      ) ??
-      ""
-    ).trim();
-
-  const key =
-    String(
-      firstValid(
-        variant.variantKey,
-        variant.variant_key,
-        variant.key
-      ) ??
-      ""
-    ).trim();
-
-  const price =
-    parseNullableNumber(
-      firstValid(
-        variant.variantSellPrice,
-        variant.variant_sell_price,
-        variant.sellPrice,
-        variant.sellprice,
-        variant.price,
-        variant.salePrice,
-        variant.targetSalePrice,
-        variant.target_sale_price
-      )
-    );
-
-  /*
-    IMPORTANT STOCK FIX:
-
-    null means UNKNOWN.
-
-    We do NOT convert missing inventory to 0.
-
-    This prevents CJ products from incorrectly
-    becoming "Out of stock".
-  */
-
-  let stock = null;
-
-  const stockValue =
-    firstValid(
-      variant.stock,
-      variant.inventory,
-      variant.quantity,
-      variant.variantQuantity,
-      variant.variant_quantity,
-      variant.variantInventory,
-      variant.variant_inventory,
-      variant.totalInventory,
-      variant.total_inventory
-    );
-
-  const parsedStock =
-    parseNullableNumber(
-      stockValue
-    );
-
-  if (
-    parsedStock !== null
-  ) {
-
-    stock =
-      Math.max(
-        0,
-        Math.floor(
-          parsedStock
-        )
-      );
-  }
-
-  const image =
-    normalizeImageUrl(
-      firstValid(
-        variant.variantImage,
-        variant.variant_image,
-        variant.image,
-        variant.imageUrl,
-        variant.image_url
-      )
-    );
-
-  const properties = [];
-
-  /*
-    Normalized property arrays.
-  */
-
-  const propertyCollections = [
-    variant.properties,
-    variant.propertyList,
-    variant.property_list,
-    variant.options
-  ];
-
-  for (
-    const collection
-    of propertyCollections
-  ) {
-
-    if (
-      !Array.isArray(
-        collection
-      )
-    ) {
-      continue;
-    }
-
-    for (
-      const property
-      of collection
-    ) {
-
-      if (
-        !property ||
-        typeof property !== "object"
-      ) {
-        continue;
-      }
-
-      const groupName =
-        String(
-          firstValid(
-            property.group_name,
-            property.groupName,
-            property.name,
-            property.option,
-            property.label
-          ) ??
-          ""
-        ).trim();
-
-      const valueName =
-        String(
-          firstValid(
-            property.value_name,
-            property.valueName,
-            property.value,
-            property.text
-          ) ??
-          ""
-        ).trim();
-
-      const valueId =
-        String(
-          firstValid(
-            property.value_id,
-            property.valueId,
-            property.id
-          ) ??
-          valueName
-        ).trim();
-
-      if (
-        groupName &&
-        valueName
-      ) {
-
-        properties.push({
-          groupName,
-          valueName,
-          valueId
-        });
-      }
-    }
-  }
-
-  /*
-    Direct normalized property.
-  */
-
-  const directGroup =
-    firstValid(
-      variant.group_name,
-      variant.groupName
-    );
-
-  if (
-    directGroup
-  ) {
-
-    const groupName =
-      String(
-        directGroup
-      ).trim();
-
-    const valueName =
-      String(
-        firstValid(
-          variant.value_name,
-          variant.valueName,
-          name
-        ) ??
-        ""
-      ).trim();
-
-    const valueId =
-      String(
-        firstValid(
-          variant.value_id,
-          variant.valueId,
-          valueName
-        ) ??
-        ""
-      ).trim();
-
-    if (
-      groupName &&
-      valueName
-    ) {
-
-      properties.push({
-        groupName,
-        valueName,
-        valueId
-      });
-    }
-  }
-
-  /*
-    CJ variantKey fallback.
-  */
-
-  if (
-    !properties.length
-  ) {
-
-    const parsed =
-      parseVariantKey(
-        key,
-        name
-      );
-
-    parsed.forEach(
-      property => {
-
-        properties.push({
-          groupName:
-            property.groupName,
-
-          valueName:
-            property.valueName,
-
-          valueId:
-            property.valueName
-        });
-
-      }
-    );
-  }
-
-  /*
-    Remove duplicate properties.
-  */
-
-  const uniqueProperties = [];
-
-  for (
-    const property
-    of properties
-  ) {
-
-    const duplicate =
-      uniqueProperties.some(
-        existing =>
-          existing.groupName ===
-            property.groupName &&
-          existing.valueName ===
-            property.valueName
-      );
-
-    if (
-      !duplicate
-    ) {
-
-      uniqueProperties.push(
-        property
-      );
-    }
-  }
-
-  return {
-
-    id:
-      variantId,
-
-    vid:
-      variantId,
-
-    sku,
-
-    name,
-
-    key,
-
-    price,
-
-    stock,
-
-    image,
-
-    properties:
-      uniqueProperties
-
-  };
-}
-
-
-/* ============================================================
-   PRODUCT NORMALIZATION
-   ============================================================ */
-
-function normalizeProduct(
-  data
-) {
-
-  /*
-    Worker currently returns the normalized
-    product directly under data.
-
-    These fallbacks maintain compatibility.
-  */
-
-  const raw =
-    data?.product ||
-    data?.data?.product ||
-    data?.data ||
-    data;
-
-  const variantsRaw =
-    getVariantArray(
-      raw
-    );
-
-  const variants =
-    variantsRaw
-      .map(
-        normalizeVariant
-      )
-      .filter(Boolean);
-
-  const images =
-    normalizeImages({
-      ...raw,
-      variants
-    });
-
-  const productId =
-    String(
-      firstValid(
-        raw?.product_id,
-        raw?.productId,
-        raw?.pid,
-        raw?.id,
-        PRODUCT_ID
-      ) ??
-      ""
-    );
-
-  const title =
-    String(
-      firstValid(
-        raw?.title,
-        raw?.productNameEn,
-        raw?.product_name_en,
-        raw?.nameEn,
-        raw?.nameen,
-        raw?.productName,
-        raw?.name,
-        "Product"
-      )
-    ).trim();
-
-  const category =
-    String(
-      firstValid(
-        raw?.categoryName,
-        raw?.category_name,
-        raw?.category,
-        raw?.categoryNameEn
-      ) ??
-      ""
-    ).trim();
-
-  const rating =
-    toNumber(
-      firstValid(
-        raw?.rating,
-        raw?.avgRating,
-        raw?.averageRating,
-        raw?.score
-      ),
-      0
-    );
-
-  const sales =
-    toNumber(
-      firstValid(
-        raw?.sales,
-        raw?.saleCount,
-        raw?.salesCount,
-        raw?.orders,
-        raw?.orderCount
-      ),
-      0
-    );
-
-  let price =
-    parseNullableNumber(
-      firstValid(
-        raw?.sale_price,
-        raw?.salePrice,
-        raw?.price,
-        raw?.min_price,
-        raw?.minPrice,
-        raw?.targetSalePrice,
-        raw?.target_sale_price,
-        raw?.sellPrice,
-        raw?.sellprice
-      )
-    );
-
-  if (
-    price === null
-  ) {
-    price = 0;
-  }
-
-  const originalPrice =
-    toNumber(
-      firstValid(
-        raw?.original_price,
-        raw?.originalPrice,
-        raw?.regular_price,
-        raw?.regularPrice,
-        raw?.old_price,
-        raw?.oldPrice,
-        raw?.targetOriginalPrice,
-        raw?.target_original_price
-      ),
-      0
-    );
-
-  /*
-    Variant prices are only used if the
-    product-level price is unavailable.
-  */
-
-  if (
-    price <= 0 &&
-    variants.length
-  ) {
-
-    const variantPrices =
-      variants
-        .map(
-          variant =>
-            toNumber(
-              variant.price,
-              0
-            )
-        )
-        .filter(
-          value =>
-            value > 0
-        );
-
-    if (
-      variantPrices.length
-    ) {
-
-      price =
-        Math.min(
-          ...variantPrices
-        );
-    }
-  }
-
-  /*
-    Every variant without a price uses
-    the product price.
-  */
-
-  variants.forEach(
-    variant => {
-
-      if (
-        !variant.price ||
-        variant.price <= 0
-      ) {
-
-        variant.price =
-          price;
-      }
-
-    }
-  );
-
-  /*
-    PRODUCT STOCK FIX
-
-    We preserve null when CJ has not supplied
-    reliable product-level inventory.
-
-    We do not assume missing stock = 0.
-  */
-
-  let stock = null;
-
-  const productStockRaw =
-    firstValid(
-      raw?.stock,
-      raw?.inventory,
-      raw?.totalInventory,
-      raw?.total_inventory,
-      raw?.quantity
-    );
-
-  const parsedProductStock =
-    parseNullableNumber(
-      productStockRaw
-    );
-
-  if (
-    parsedProductStock !== null
-  ) {
-
-    stock =
-      Math.max(
-        0,
-        Math.floor(
-          parsedProductStock
-        )
-      );
-  }
-
-  /*
-    If product stock is unknown, use variant
-    stock only when at least one variant has
-    an explicitly known numeric stock value.
-  */
-
-  if (
-    stock === null &&
-    variants.length
-  ) {
-
-    const knownStocks =
-      variants
-        .map(
-          variant =>
-            variant.stock
-        )
-        .filter(
-          value =>
-            value !== null
-        );
-
-    if (
-      knownStocks.length
-    ) {
-
-      stock =
-        knownStocks.reduce(
-          (
-            total,
-            value
-          ) =>
-            total + value,
-          0
-        );
-    }
-  }
-
-  const descriptionHtml =
-    firstValid(
-      raw?.description_html,
-      raw?.descriptionHtml,
-      raw?.productDetail,
-      raw?.product_detail,
-      raw?.description,
-      raw?.detail
-    ) ??
-    "";
-
-  return {
-
-    id:
-      productId,
-
-    product_id:
-      productId,
-
-    title,
-
-    category,
-
-    rating,
-
-    sales,
-
-    sku:
-      String(
-        firstValid(
-          raw?.sku,
-          raw?.productSku,
-          raw?.product_sku,
-          raw?.spu,
-          raw?.productSpu
-        ) ??
-        ""
-      ),
-
-    price,
-
-    originalPrice,
-
-    stock,
-
-    images,
-
-    descriptionHtml:
-      String(
-        descriptionHtml
-      ),
-
-    variants,
-
-    brand:
-      String(
-        firstValid(
-          raw?.brand,
-          raw?.brandName
-        ) ??
-        ""
-      ),
-
-    source:
-      String(
-        firstValid(
-          raw?.source,
-          "CJdropshipping"
-        )
-      ),
-
-    raw
-
-  };
-}
-
-
-/* ============================================================
-   API
-   ============================================================ */
-
-async function fetchProduct() {
-
-  if (
-    !PRODUCT_ID
-  ) {
-
-    throw new Error(
-      "No product ID was provided."
-    );
-  }
-
-  const url =
-    `${API_BASE}/api/products/` +
-    encodeURIComponent(
-      PRODUCT_ID
-    );
-
-  const response =
-    await fetch(
-      url,
-      {
-        method:
-          "GET",
-
-        headers: {
-          Accept:
-            "application/json"
-        },
-
-        cache:
-          "no-store"
-      }
-    );
-
-  if (
-    !response.ok
-  ) {
-
-    let message =
-      `Request failed (${response.status})`;
-
-    try {
-
-      const body =
-        await response.json();
-
-      if (
-        body?.error
-      ) {
-
-        message =
-          String(
-            body.error
+      /*
+        Direct string.
+      */
+      if (typeof value === "string") {
+
+        const text =
+          value.trim();
+
+        if (!text) {
+          return;
+        }
+
+
+        /*
+          Some APIs return multiple image URLs
+          separated by commas, pipes or line breaks.
+        */
+        const pieces =
+          text.split(
+            /[\n\r|]+/
           );
+
+        for (const piece of pieces) {
+
+          const trimmed =
+            piece.trim();
+
+          if (!trimmed) {
+            continue;
+          }
+
+          const url =
+            normalizeUrl(trimmed);
+
+          if (
+            url &&
+            !images.includes(url)
+          ) {
+            images.push(url);
+          }
+
+        }
+
+        return;
       }
 
-    } catch {
-      /* Ignore invalid error body. */
+
+      /*
+        Object containing an image URL.
+      */
+      const extracted =
+        extractImageValue(value);
+
+      if (extracted) {
+
+        const url =
+          normalizeUrl(extracted);
+
+        if (
+          url &&
+          !images.includes(url)
+        ) {
+          images.push(url);
+        }
+
+      }
+
     }
 
-    throw new Error(
-      message
-    );
-  }
 
-  const data =
-    await response.json();
+    function normalizeImages(data) {
 
-  if (
-    data?.success === false
-  ) {
-
-    throw new Error(
-      data?.error ||
-      "Product could not be loaded."
-    );
-  }
-
-  const normalized =
-    normalizeProduct(
-      data
-    );
-
-  if (
-    !normalized.id
-  ) {
-
-    throw new Error(
-      "The product ID is missing from the product response."
-    );
-  }
-
-  return normalized;
-}
+      const images = [];
 
 
-/* ============================================================
-   CART
-   ============================================================ */
+      const directFields = [
 
-function readCart() {
+        data?.images,
 
-  let cart = [];
+        data?.image,
 
-  try {
+        data?.img,
 
-    const current =
-      localStorage.getItem(
-        CART_STORAGE_KEY
-      );
+        data?.imageUrl,
 
-    if (
-      current
+        data?.imageURL,
+
+        data?.image_url,
+
+        data?.imgUrl,
+
+        data?.img_url,
+
+        data?.productImg,
+
+        data?.product_img,
+
+        data?.productImage,
+
+        data?.product_image,
+
+        data?.mainImage,
+
+        data?.main_image,
+
+        data?.mainImageUrl,
+
+        data?.main_image_url,
+
+        data?.coverImage,
+
+        data?.cover_image,
+
+        data?.thumbnail,
+
+        data?.thumb
+
+      ];
+
+
+      for (
+        const field of directFields
+      ) {
+
+        if (Array.isArray(field)) {
+
+          for (const item of field) {
+
+            addImageCandidate(
+              images,
+              item
+            );
+
+          }
+
+        } else {
+
+          addImageCandidate(
+            images,
+            field
+          );
+
+        }
+
+      }
+
+
+      /*
+        Additional possible image collections.
+      */
+      const collections = [
+
+        data?.imageList,
+
+        data?.image_list,
+
+        data?.imageUrls,
+
+        data?.image_urls,
+
+        data?.gallery,
+
+        data?.galleryImages,
+
+        data?.gallery_images,
+
+        data?.productImages,
+
+        data?.product_images
+
+      ];
+
+
+      for (
+        const collection of collections
+      ) {
+
+        if (
+          Array.isArray(collection)
+        ) {
+
+          for (
+            const item of collection
+          ) {
+
+            addImageCandidate(
+              images,
+              item
+            );
+
+          }
+
+        }
+
+      }
+
+
+      /*
+        Variant images can also be useful.
+      */
+      const variants =
+        getVariantArrayRaw(data);
+
+      for (
+        const variant of variants
+      ) {
+
+        addImageCandidate(
+          images,
+          variant?.image
+        );
+
+        addImageCandidate(
+          images,
+          variant?.imageUrl
+        );
+
+        addImageCandidate(
+          images,
+          variant?.image_url
+        );
+
+        addImageCandidate(
+          images,
+          variant?.img
+        );
+
+        addImageCandidate(
+          images,
+          variant?.imgUrl
+        );
+
+        addImageCandidate(
+          images,
+          variant?.productImg
+        );
+
+        addImageCandidate(
+          images,
+          variant?.product_img
+        );
+
+      }
+
+
+      /*
+        IMPORTANT:
+        Always provide a usable image so the page
+        never displays a broken-image placeholder.
+      */
+      if (!images.length) {
+        images.push(DEFAULT_IMAGE);
+      }
+
+
+      return images;
+
+    }
+
+
+    /* ============================================================
+       DESCRIPTION SANITIZER
+       ============================================================ */
+
+    function sanitizeDescription(html) {
+
+      if (
+        html === null ||
+        html === undefined
+      ) {
+        return "";
+      }
+
+
+      let text =
+        String(html);
+
+
+      /*
+        Remove dangerous elements.
+      */
+      text =
+        text.replace(
+          /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
+          ""
+        );
+
+
+      text =
+        text.replace(
+          /<iframe[\s\S]*?>[\s\S]*?<\/iframe>/gi,
+          ""
+        );
+
+
+      text =
+        text.replace(
+          /<object[\s\S]*?>[\s\S]*?<\/object>/gi,
+          ""
+        );
+
+
+      text =
+        text.replace(
+          /<embed[\s\S]*?>/gi,
+          ""
+        );
+
+
+      /*
+        Remove javascript: URLs.
+      */
+      text =
+        text.replace(
+          /javascript\s*:/gi,
+          ""
+        );
+
+
+      /*
+        Remove inline event handlers.
+      */
+      text =
+        text.replace(
+          /\son[a-z]+\s*=\s*(".*?"|'.*?'|[^\s>]+)/gi,
+          ""
+        );
+
+
+      return text;
+
+    }
+
+
+    /* ============================================================
+       RAW VARIANT ARRAY
+       ============================================================ */
+
+    function getVariantArrayRaw(data) {
+
+      const candidates = [
+
+        data?.variants,
+
+        data?.variantList,
+
+        data?.variant_list,
+
+        data?.skus,
+
+        data?.skuList,
+
+        data?.sku_list,
+
+        data?.SKUList,
+
+        data?.products
+
+      ];
+
+
+      for (
+        const candidate of candidates
+      ) {
+
+        if (
+          Array.isArray(candidate)
+        ) {
+          return candidate;
+        }
+
+      }
+
+
+      return [];
+
+    }
+
+
+    /* ============================================================
+       VARIANT NORMALIZATION
+       ============================================================ */
+
+    function normalizeVariant(
+      variant,
+      index
     ) {
 
-      const parsed =
-        JSON.parse(
-          current
+      if (
+        !variant ||
+        typeof variant !== "object"
+      ) {
+        return null;
+      }
+
+
+      const id =
+        firstValid(
+
+          variant.id,
+
+          variant.skuId,
+
+          variant.sku_id,
+
+          variant.variantId,
+
+          variant.variant_id,
+
+          variant.vid,
+
+          variant.code,
+
+          variant.sku,
+
+          variant.SKU,
+
+          `variant-${index}`
+
         );
 
+
+      const sku =
+        firstValid(
+
+          variant.sku,
+
+          variant.SKU,
+
+          variant.skuCode,
+
+          variant.sku_code,
+
+          variant.code,
+
+          variant.id
+
+        );
+
+
+      const title =
+        firstValid(
+
+          variant.title,
+
+          variant.name,
+
+          variant.variantName,
+
+          variant.variant_name,
+
+          variant.label,
+
+          sku,
+
+          `Variant ${index + 1}`
+
+        );
+
+
+      const price =
+        toNumber(
+
+          firstValid(
+
+            variant.price,
+
+            variant.salePrice,
+
+            variant.sale_price,
+
+            variant.sellPrice,
+
+            variant.sell_price,
+
+            variant.amount,
+
+            variant.currentPrice,
+
+            variant.current_price
+
+          ),
+
+          null
+
+        );
+
+
+      const originalPrice =
+        toNumber(
+
+          firstValid(
+
+            variant.originalPrice,
+
+            variant.original_price,
+
+            variant.compareAtPrice,
+
+            variant.compare_at_price,
+
+            variant.marketPrice,
+
+            variant.market_price,
+
+            variant.retailPrice,
+
+            variant.retail_price
+
+          ),
+
+          null
+
+        );
+
+
+      let stock =
+        toNumber(
+
+          firstValid(
+
+            variant.stock,
+
+            variant.inventory,
+
+            variant.inventoryQty,
+
+            variant.inventory_qty,
+
+            variant.quantity,
+
+            variant.qty,
+
+            variant.stockQuantity,
+
+            variant.stock_quantity,
+
+            variant.availableStock,
+
+            variant.available_stock
+
+          ),
+
+          null
+
+        );
+
+
+      /*
+        Explicit stock flags.
+      */
       if (
-        Array.isArray(
-          parsed
+        stock === null &&
+        (
+          variant.inStock === false ||
+          variant.in_stock === false ||
+          variant.available === false
         )
       ) {
-
-        cart =
-          parsed;
+        stock = 0;
       }
-    }
 
-  } catch {
 
-    cart = [];
-  }
+      const image =
+        firstValid(
 
-  /*
-    Legacy compatibility.
-  */
+          extractImageValue(
+            variant.image
+          ),
 
-  if (
-    !cart.length
-  ) {
+          extractImageValue(
+            variant.imageUrl
+          ),
 
-    try {
+          extractImageValue(
+            variant.image_url
+          ),
 
-      const legacy =
-        localStorage.getItem(
-          LEGACY_CART_KEY
+          extractImageValue(
+            variant.img
+          ),
+
+          extractImageValue(
+            variant.imgUrl
+          ),
+
+          extractImageValue(
+            variant.productImg
+          ),
+
+          extractImageValue(
+            variant.product_img
+          )
+
         );
 
+
+      /*
+        Properties can arrive in many shapes.
+      */
+      let properties = [];
+
+
+      const rawProperties =
+        firstValid(
+
+          variant.properties,
+
+          variant.options,
+
+          variant.attributes,
+
+          variant.variantProperties,
+
+          variant.variant_properties,
+
+          variant.specifications,
+
+          variant.specs
+
+        );
+
+
       if (
-        legacy
+        Array.isArray(rawProperties)
       ) {
 
-        const parsed =
-          JSON.parse(
-            legacy
+        for (
+          const property of rawProperties
+        ) {
+
+          if (
+            property === null ||
+            property === undefined
+          ) {
+            continue;
+          }
+
+
+          if (
+            typeof property === "string"
+          ) {
+
+            const separatorIndex =
+              property.indexOf(":");
+
+
+            if (
+              separatorIndex > 0
+            ) {
+
+              const groupName =
+                property
+                  .slice(0, separatorIndex)
+                  .trim();
+
+              const value =
+                property
+                  .slice(separatorIndex + 1)
+                  .trim();
+
+
+              if (
+                groupName &&
+                value
+              ) {
+
+                properties.push({
+
+                  groupName,
+
+                  valueId: value,
+
+                  valueName: value
+
+                });
+
+              }
+
+            }
+
+            continue;
+          }
+
+
+          if (
+            typeof property === "object"
+          ) {
+
+            const groupName =
+              firstValid(
+
+                property.groupName,
+
+                property.group,
+
+                property.group_name,
+
+                property.name,
+
+                property.attributeName,
+
+                property.attribute_name,
+
+                property.key,
+
+                property.label
+
+              );
+
+
+            const valueId =
+              firstValid(
+
+                property.valueId,
+
+                property.value_id,
+
+                property.id,
+
+                property.optionId,
+
+                property.option_id,
+
+                property.value,
+
+                property.valueName,
+
+                property.value_name,
+
+                property.option,
+
+                property.optionName,
+
+                property.option_name
+
+              );
+
+
+            const valueName =
+              firstValid(
+
+                property.valueName,
+
+                property.value_name,
+
+                property.name,
+
+                property.value,
+
+                property.optionName,
+
+                property.option_name,
+
+                valueId
+
+              );
+
+
+            if (
+              groupName &&
+              valueId !== null &&
+              valueId !== undefined
+            ) {
+
+              properties.push({
+
+                groupName:
+                  String(groupName),
+
+                valueId:
+                  String(valueId),
+
+                valueName:
+                  String(valueName)
+
+              });
+
+            }
+
+          }
+
+        }
+
+      }
+
+
+      /*
+        CJ sometimes provides a variant key such as:
+
+        "Color:Black;Size:M"
+
+        or:
+
+        "Black,M"
+      */
+      const variantKey =
+        firstValid(
+
+          variant.variantKey,
+
+          variant.variant_key,
+
+          variant.key,
+
+          variant.optionKey,
+
+          variant.option_key,
+
+          variant.specKey,
+
+          variant.spec_key
+
+        );
+
+
+      if (
+        !properties.length &&
+        typeof variantKey === "string"
+      ) {
+
+        const chunks =
+          variantKey
+            .split(/[;,|]/)
+            .map(item => item.trim())
+            .filter(Boolean);
+
+
+        for (
+          const chunk of chunks
+        ) {
+
+          const colon =
+            chunk.indexOf(":");
+
+
+          if (
+            colon > 0
+          ) {
+
+            const groupName =
+              chunk
+                .slice(0, colon)
+                .trim();
+
+            const value =
+              chunk
+                .slice(colon + 1)
+                .trim();
+
+
+            if (
+              groupName &&
+              value
+            ) {
+
+              properties.push({
+
+                groupName,
+
+                valueId: value,
+
+                valueName: value
+
+              });
+
+            }
+
+          }
+
+        }
+
+      }
+
+
+      /*
+        Some APIs expose a flat object such as:
+
+        {
+          color: "Black",
+          size: "M"
+        }
+      */
+      if (!properties.length) {
+
+        const excludedKeys =
+          new Set([
+
+            "id",
+            "sku",
+            "SKU",
+            "price",
+            "stock",
+            "inventory",
+            "quantity",
+            "qty",
+            "name",
+            "title",
+            "image",
+            "imageUrl",
+            "image_url",
+            "img",
+            "productImg",
+            "product_img"
+
+          ]);
+
+
+        for (
+          const [
+            key,
+            value
+          ] of Object.entries(variant)
+        ) {
+
+          if (
+            excludedKeys.has(key)
+          ) {
+            continue;
+          }
+
+
+          if (
+            value === null ||
+            value === undefined
+          ) {
+            continue;
+          }
+
+
+          if (
+            typeof value === "string" ||
+            typeof value === "number"
+          ) {
+
+            const lowerKey =
+              key.toLowerCase();
+
+
+            if (
+              lowerKey.includes("color") ||
+              lowerKey.includes("size") ||
+              lowerKey.includes("style") ||
+              lowerKey.includes("material") ||
+              lowerKey.includes("type")
+            ) {
+
+              properties.push({
+
+                groupName: key,
+
+                valueId:
+                  String(value),
+
+                valueName:
+                  String(value)
+
+              });
+
+            }
+
+          }
+
+        }
+
+      }
+
+
+      return {
+
+        ...variant,
+
+        id,
+
+        sku,
+
+        title,
+
+        price,
+
+        originalPrice,
+
+        stock,
+
+        image,
+
+        properties
+
+      };
+
+    }
+
+
+    /* ============================================================
+       PRODUCT NORMALIZATION
+       ============================================================ */
+
+    function normalizeProduct(data) {
+
+      let source =
+        data;
+
+
+      /*
+        Unwrap common Worker/API response structures.
+      */
+      if (
+        source?.product
+      ) {
+        source =
+          source.product;
+      } else if (
+        source?.data?.product
+      ) {
+        source =
+          source.data.product;
+      } else if (
+        source?.data?.data
+      ) {
+        source =
+          source.data.data;
+      } else if (
+        source?.result?.product
+      ) {
+        source =
+          source.result.product;
+      } else if (
+        source?.result
+      ) {
+        source =
+          source.result;
+      } else if (
+        source?.data
+      ) {
+        source =
+          source.data;
+      }
+
+
+      if (
+        !source ||
+        typeof source !== "object"
+      ) {
+        throw new Error(
+          "Invalid product response."
+        );
+      }
+
+
+      const variantsRaw =
+        getVariantArrayRaw(source);
+
+
+      const variants =
+        variantsRaw
+          .map(
+            normalizeVariant
+          )
+          .filter(Boolean);
+
+
+      const title =
+        firstValid(
+
+          source.title,
+
+          source.name,
+
+          source.productName,
+
+          source.product_name,
+
+          "Product"
+
+        );
+
+
+      const id =
+        firstValid(
+
+          source.id,
+
+          source.productId,
+
+          source.product_id,
+
+          source.pid,
+
+          PRODUCT_ID
+
+        );
+
+
+      const category =
+        firstValid(
+
+          source.category,
+
+          source.categoryName,
+
+          source.category_name,
+
+          source.type,
+
+          ""
+
+        );
+
+
+      const rating =
+        toNumber(
+
+          firstValid(
+
+            source.rating,
+
+            source.averageRating,
+
+            source.average_rating,
+
+            source.avgRating,
+
+            source.avg_rating
+
+          ),
+
+          0
+
+        );
+
+
+      const sales =
+        toNumber(
+
+          firstValid(
+
+            source.sales,
+
+            source.sold,
+
+            source.soldCount,
+
+            source.sold_count,
+
+            source.totalSales,
+
+            source.total_sales
+
+          ),
+
+          0
+
+        );
+
+
+      let price =
+        toNumber(
+
+          firstValid(
+
+            source.price,
+
+            source.salePrice,
+
+            source.sale_price,
+
+            source.sellPrice,
+
+            source.sell_price,
+
+            source.currentPrice,
+
+            source.current_price,
+
+            source.amount
+
+          ),
+
+          null
+
+        );
+
+
+      const originalPrice =
+        toNumber(
+
+          firstValid(
+
+            source.originalPrice,
+
+            source.original_price,
+
+            source.compareAtPrice,
+
+            source.compare_at_price,
+
+            source.marketPrice,
+
+            source.market_price,
+
+            source.retailPrice,
+
+            source.retail_price
+
+          ),
+
+          null
+
+        );
+
+
+      let stock =
+        toNumber(
+
+          firstValid(
+
+            source.stock,
+
+            source.inventory,
+
+            source.inventoryQty,
+
+            source.inventory_qty,
+
+            source.quantity,
+
+            source.qty,
+
+            source.stockQuantity,
+
+            source.stock_quantity,
+
+            source.availableStock,
+
+            source.available_stock
+
+          ),
+
+          null
+
+        );
+
+
+      if (
+        stock === null &&
+        (
+          source.inStock === false ||
+          source.in_stock === false ||
+          source.available === false
+        )
+      ) {
+        stock = 0;
+      }
+
+
+      /*
+        If product-level price is absent,
+        use the first variant price.
+      */
+      if (
+        price === null &&
+        variants.length
+      ) {
+
+        const firstVariantPrice =
+          variants.find(
+            variant =>
+              variant.price !== null
           );
 
         if (
-          Array.isArray(
-            parsed
-          )
+          firstVariantPrice
         ) {
-
-          cart =
-            parsed;
+          price =
+            firstVariantPrice.price;
         }
+
       }
 
-    } catch {
 
-      /* Ignore legacy errors. */
+      /*
+        If product-level stock is absent,
+        and there are no real selectable variants,
+        use the first variant stock where sensible.
+      */
+      if (
+        stock === null &&
+        variants.length === 1 &&
+        variants[0].stock !== null
+      ) {
+
+        stock =
+          variants[0].stock;
+
+      }
+
+
+      const description =
+        firstValid(
+
+          source.description,
+
+          source.descriptionHtml,
+
+          source.description_html,
+
+          source.detail,
+
+          source.productDetail,
+
+          source.product_detail,
+
+          source.content,
+
+          source.body,
+
+          ""
+
+        );
+
+
+      return {
+
+        ...source,
+
+        id,
+
+        title: String(title),
+
+        category:
+          category
+            ? String(category)
+            : "",
+
+        rating,
+
+        sales,
+
+        price,
+
+        originalPrice,
+
+        stock,
+
+        description:
+          String(description || ""),
+
+        images:
+          normalizeImages(source),
+
+        variants
+
+      };
+
     }
-  }
-
-  return Array.isArray(
-    cart
-  )
-    ? cart
-    : [];
-}
 
 
-function saveCart(
-  cart
-) {
+    /* ============================================================
+       FETCH PRODUCT
+       ============================================================ */
 
-  try {
+    async function fetchProduct() {
 
-    const serialized =
-      JSON.stringify(
-        cart
+      if (!PRODUCT_ID) {
+
+        throw new Error(
+          "No product ID was provided in the URL."
+        );
+
+      }
+
+
+      const url =
+        `${API_BASE}/api/products/${encodeURIComponent(PRODUCT_ID)}`;
+
+
+      const response =
+        await fetch(
+          url,
+          {
+            method: "GET",
+            headers: {
+              "Accept":
+                "application/json"
+            },
+            cache: "no-store"
+          }
+        );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          `Product request failed (${response.status}).`
+        );
+
+      }
+
+
+      const data =
+        await response.json();
+
+
+      return normalizeProduct(
+        data
       );
 
-    localStorage.setItem(
-      CART_STORAGE_KEY,
-      serialized
-    );
-
-    /*
-      Keep existing cart.html compatible.
-    */
-
-    localStorage.setItem(
-      LEGACY_CART_KEY,
-      serialized
-    );
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Cart storage error:",
-      error
-    );
-
-    throw new Error(
-      "Your browser could not save the cart."
-    );
-  }
-
-  updateCartCount();
-}
+    }
 
 
-function cartItemKey(
-  item
-) {
+    /* ============================================================
+       CART FUNCTIONS
+       ============================================================ */
 
-  const productId =
-    String(
-      item?.product_id ||
-      item?.productId ||
-      item?.id ||
-      ""
-    );
+    function readStorageArray(key) {
 
-  const sku =
-    String(
-      item?.selectedSku ||
-      item?.sku ||
-      ""
-    );
+      try {
 
-  const properties =
-    Array.isArray(
-      item?.selectedProperties
-    )
-      ? item.selectedProperties
-          .map(
-            property =>
-              `${property.groupName}:${property.valueId || property.valueName}`
-          )
+        const raw =
+          localStorage.getItem(key);
+
+
+        if (!raw) {
+          return [];
+        }
+
+
+        const parsed =
+          JSON.parse(raw);
+
+
+        return Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      } catch (error) {
+
+        console.warn(
+          `Could not read ${key}:`,
+          error
+        );
+
+        return [];
+
+      }
+
+    }
+
+
+    function readCart() {
+
+      const current =
+        readStorageArray(
+          CART_STORAGE_KEY
+        );
+
+
+      if (current.length) {
+        return current;
+      }
+
+
+      const legacy =
+        readStorageArray(
+          LEGACY_CART_KEY
+        );
+
+
+      return legacy;
+
+    }
+
+
+    function saveCart(cart) {
+
+      const serialized =
+        JSON.stringify(cart);
+
+
+      localStorage.setItem(
+        CART_STORAGE_KEY,
+        serialized
+      );
+
+
+      /*
+        Keep the old cart key synchronized
+        for compatibility with the existing site.
+      */
+      localStorage.setItem(
+        LEGACY_CART_KEY,
+        serialized
+      );
+
+
+      updateCartCount();
+
+    }
+
+
+    function cartItemKey(item) {
+
+      const productId =
+        item.product_id ||
+        item.productId ||
+        item.id ||
+        "";
+
+
+      const sku =
+        item.sku ||
+        item.variantId ||
+        item.variant_id ||
+        "";
+
+
+      const properties =
+        item.selectedProperties || {};
+
+
+      const propertyString =
+        Object.keys(properties)
           .sort()
-          .join("|")
-      : "";
-
-  return [
-    productId,
-    sku,
-    properties
-  ].join("::");
-}
+          .map(
+            key =>
+              `${key}:${properties[key]}`
+          )
+          .join("|");
 
 
-function updateCartCount() {
+      return [
+        String(productId),
+        String(sku),
+        propertyString
+      ].join("::");
 
-  const cart =
-    readCart();
+    }
 
-  const count =
-    cart.reduce(
-      (
-        total,
-        item
-      ) => {
+
+    function updateCartCount() {
+
+      const cart =
+        readCart();
+
+
+      let count = 0;
+
+
+      for (
+        const item of cart
+      ) {
 
         const quantity =
           toNumber(
@@ -3309,119 +2804,183 @@ function updateCartCount() {
             0
           );
 
-        return (
-          total +
-          clamp(
-            Math.floor(
-              quantity
-            ),
-            0,
-            MAX_CART_QUANTITY
-          )
-        );
-      },
-      0
-    );
 
-  const counter =
-    $("#cart-count");
+        if (
+          quantity > 0
+        ) {
+          count += quantity;
+        }
 
-  if (
-    counter
-  ) {
-
-    counter.textContent =
-      String(
-        count
-      );
-  }
-}
-
-
-/* ============================================================
-   GALLERY
-   ============================================================ */
-
-function renderGallery() {
-
-  const images =
-    Array.isArray(
-      product.images
-    ) &&
-    product.images.length
-      ? product.images
-      : [DEFAULT_IMAGE];
-
-  currentImageIndex =
-    clamp(
-      currentImageIndex,
-      0,
-      images.length - 1
-    );
-
-  thumbnailList.innerHTML =
-    "";
-
-  images.forEach(
-    (
-      image,
-      index
-    ) => {
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-      button.type =
-        "button";
-
-      button.className =
-        "thumbnail";
-
-      button.setAttribute(
-        "aria-label",
-        `View product image ${index + 1}`
-      );
-
-      if (
-        index ===
-        currentImageIndex
-      ) {
-
-        button.classList.add(
-          "active"
-        );
       }
 
-      const img =
-        document.createElement(
-          "img"
+
+      cartCount.textContent =
+        String(count);
+
+    }
+
+
+    /* ============================================================
+       GALLERY
+       ============================================================ */
+
+    function renderGallery() {
+
+      const images =
+        Array.isArray(product.images) &&
+        product.images.length
+          ? product.images
+          : [DEFAULT_IMAGE];
+
+
+      currentImageIndex =
+        clamp(
+          currentImageIndex,
+          0,
+          images.length - 1
         );
 
-      img.src =
-        safeImageUrl(
-          image
+
+      thumbnailList.innerHTML =
+        "";
+
+
+      images.forEach(
+        (image, index) => {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+
+          button.type =
+            "button";
+
+
+          button.className =
+            "thumbnail";
+
+
+          button.setAttribute(
+            "aria-label",
+            `View product image ${index + 1}`
+          );
+
+
+          const img =
+            document.createElement(
+              "img"
+            );
+
+
+          img.src =
+            safeImageUrl(image);
+
+
+          img.alt =
+            `${product.title} image ${index + 1}`;
+
+
+          img.loading =
+            index === 0
+              ? "eager"
+              : "lazy";
+
+
+          img.decoding =
+            "async";
+
+
+          img.onerror =
+            function () {
+
+              this.onerror =
+                null;
+
+              this.src =
+                DEFAULT_IMAGE;
+
+            };
+
+
+          button.appendChild(
+            img
+          );
+
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              currentImageIndex =
+                index;
+
+              renderMainImage();
+
+            }
+          );
+
+
+          thumbnailList.appendChild(
+            button
+          );
+
+        }
+      );
+
+
+      renderMainImage();
+
+    }
+
+
+    function renderMainImage() {
+
+      const images =
+        Array.isArray(product.images) &&
+        product.images.length
+          ? product.images
+          : [DEFAULT_IMAGE];
+
+
+      currentImageIndex =
+        clamp(
+          currentImageIndex,
+          0,
+          images.length - 1
         );
 
-      img.alt =
-        `${product.title} image ${index + 1}`;
 
-      img.loading =
-        index === 0
-          ? "eager"
-          : "lazy";
+      const image =
+        images[currentImageIndex] ||
+        DEFAULT_IMAGE;
 
-      img.decoding =
-        "async";
 
       /*
-        Thumbnail failure simply falls back
-        to the store logo. It never creates
-        an overlay.
+        Never show the old placeholder.
       */
+      imagePlaceholder.hidden =
+        true;
 
-      img.onerror =
+      imagePlaceholder.style.display =
+        "none";
+
+
+      mainProductImage.hidden =
+        false;
+
+      mainProductImage.style.display =
+        "block";
+
+
+      mainProductImage.alt =
+        product.title
+          ? `${product.title} product image`
+          : "Prasun Store product image";
+
+
+      mainProductImage.onerror =
         function () {
 
           this.onerror =
@@ -3429,433 +2988,111 @@ function renderGallery() {
 
           this.src =
             DEFAULT_IMAGE;
+
+          this.alt =
+            "Prasun Store product image";
+
         };
 
-      button.appendChild(
-        img
-      );
 
-      button.addEventListener(
-        "click",
-        () => {
+      mainProductImage.src =
+        safeImageUrl(image);
 
-          currentImageIndex =
-            index;
 
-          renderMainImage();
-        }
-      );
-
-      thumbnailList.appendChild(
-        button
-      );
-
-    }
-  );
-
-  renderMainImage();
-}
-
-
-function renderMainImage() {
-
-  const images =
-    product.images?.length
-      ? product.images
-      : [DEFAULT_IMAGE];
-
-  const image =
-    images[
-      currentImageIndex
-    ] ||
-    DEFAULT_IMAGE;
-
-  mainProductImage.onerror =
-    null;
-
-  mainProductImage.src =
-    safeImageUrl(
-      image
-    );
-
-  mainProductImage.alt =
-    product.title
-      ? `${product.title} product image`
-      : "Product image";
-
-  /*
-    If the selected CJ image genuinely fails,
-    use the store logo silently.
-  */
-
-  mainProductImage.onerror =
-    function () {
-
-      this.onerror =
-        null;
-
-      this.src =
-        DEFAULT_IMAGE;
-    };
-
-  imagePlaceholder.hidden =
-    true;
-
-  thumbnailList
-    .querySelectorAll(
-      ".thumbnail"
-    )
-    .forEach(
-      (
-        thumbnail,
-        index
-      ) => {
-
-        thumbnail.classList.toggle(
-          "active",
-          index ===
-            currentImageIndex
-        );
-
-      }
-    );
-}
-
-
-/* ============================================================
-   RATING
-   ============================================================ */
-
-function renderRating() {
-
-  productRating.innerHTML =
-    "";
-
-  const rating =
-    clamp(
-      toNumber(
-        product.rating,
-        0
-      ),
-      0,
-      5
-    );
-
-  if (
-    rating <= 0
-  ) {
-
-    productRating.textContent =
-      "No rating yet";
-
-    return;
-  }
-
-  const stars =
-    document.createElement(
-      "span"
-    );
-
-  stars.className =
-    "stars";
-
-  stars.textContent =
-    "★★★★★";
-
-  const text =
-    document.createElement(
-      "span"
-    );
-
-  text.textContent =
-    `${rating.toFixed(1)} / 5`;
-
-  productRating.appendChild(
-    stars
-  );
-
-  productRating.appendChild(
-    text
-  );
-}
-
-
-/* ============================================================
-   STOCK
-   ============================================================ */
-
-function getSelectedStock() {
-
-  /*
-    Explicit selected SKU stock has priority.
-  */
-
-  if (
-    selectedSku &&
-    selectedSku.stock !== null &&
-    selectedSku.stock !== undefined
-  ) {
-
-    return selectedSku.stock;
-  }
-
-  /*
-    Product stock.
-
-    null means unknown.
-  */
-
-  if (
-    product &&
-    product.stock !== null &&
-    product.stock !== undefined
-  ) {
-
-    return product.stock;
-  }
-
-  return null;
-}
-
-
-function renderStock() {
-
-  const stock =
-    getSelectedStock();
-
-  stockStatus.className =
-    "stock-status";
-
-  /*
-    UNKNOWN STOCK IS NOT OUT OF STOCK.
-
-    This is one of the main CJ fixes.
-  */
-
-  if (
-    stock === null ||
-    stock === undefined
-  ) {
-
-    stockStatus.classList.add(
-      "unknown"
-    );
-
-    stockText.textContent =
-      "Available to order";
-
-    return;
-  }
-
-  if (
-    stock <= 0
-  ) {
-
-    stockStatus.classList.add(
-      "out"
-    );
-
-    stockText.textContent =
-      "Out of stock";
-
-    return;
-  }
-
-  if (
-    stock <= 10
-  ) {
-
-    stockStatus.classList.add(
-      "low"
-    );
-
-    stockText.textContent =
-      `Only ${stock} left`;
-
-    return;
-  }
-
-  stockText.textContent =
-    "In stock";
-}
-
-
-/* ============================================================
-   VARIANT GROUPS
-   ============================================================ */
-
-function buildVariantGroups() {
-
-  const groups =
-    new Map();
-
-  for (
-    const variant
-    of product.variants
-  ) {
-
-    for (
-      const property
-      of variant.properties
-    ) {
-
-      if (
-        !property.groupName ||
-        !property.valueName
-      ) {
-
-        continue;
-      }
-
-      if (
-        !groups.has(
-          property.groupName
+      thumbnailList
+        .querySelectorAll(
+          ".thumbnail"
         )
-      ) {
+        .forEach(
+          (
+            thumbnail,
+            index
+          ) => {
 
-        groups.set(
-          property.groupName,
-          new Map()
-        );
-      }
+            thumbnail.classList.toggle(
+              "active",
+              index === currentImageIndex
+            );
 
-      const values =
-        groups.get(
-          property.groupName
-        );
-
-      if (
-        !values.has(
-          property.valueId
-        )
-      ) {
-
-        values.set(
-          property.valueId,
-          {
-            valueId:
-              property.valueId,
-
-            valueName:
-              property.valueName
           }
         );
+
+    }
+
+
+    /* ============================================================
+       RATING
+       ============================================================ */
+
+    function renderRating() {
+
+      const rating =
+        clamp(
+          toNumber(
+            product.rating,
+            0
+          ),
+          0,
+          5
+        );
+
+
+      const rounded =
+        Math.round(rating);
+
+
+      ratingStars.textContent =
+        "★".repeat(rounded) +
+        "☆".repeat(5 - rounded);
+
+
+      if (
+        rating > 0
+      ) {
+
+        ratingText.textContent =
+          rating.toFixed(1);
+
+      } else {
+
+        ratingText.textContent =
+          "No reviews";
+
       }
-    }
-  }
 
-  return groups;
-}
-
-
-/* ============================================================
-   VARIANT MATCHING
-   ============================================================ */
-
-function variantMatchesSelection(
-  variant,
-  selection,
-  ignoreGroup = null
-) {
-
-  for (
-    const property
-    of variant.properties
-  ) {
-
-    const group =
-      property.groupName;
-
-    if (
-      group ===
-      ignoreGroup
-    ) {
-
-      continue;
     }
 
-    const selected =
-      selection[
-        group
-      ];
 
-    if (
-      selected &&
-      selected !==
-        property.valueId
-    ) {
+    /* ============================================================
+       VARIANT GROUPS
+       ============================================================ */
 
-      return false;
-    }
-  }
+    function buildVariantGroups() {
 
-  return true;
-}
+      const groups =
+        new Map();
 
 
-/* ============================================================
-   EXACT SKU
-   ============================================================ */
+      if (
+        !product ||
+        !Array.isArray(product.variants)
+      ) {
+        return groups;
+      }
 
-function findExactSku() {
 
-  if (
-    !product.variants.length
-  ) {
+      for (
+        const variant of product.variants
+      ) {
 
-    return null;
-  }
+        if (
+          !Array.isArray(
+            variant.properties
+          )
+        ) {
+          continue;
+        }
 
-  const groups =
-    buildVariantGroups();
-
-  /*
-    If the Worker supplied variants without
-    usable option groups, automatically use
-    the first variant.
-
-    This prevents Add to Cart / Buy Now
-    from freezing on CJ products with simple
-    SKU structures.
-  */
-
-  if (
-    !groups.size
-  ) {
-
-    return (
-      product.variants.find(
-        variant =>
-          variant.stock === null ||
-          variant.stock > 0
-      ) ||
-      product.variants[0] ||
-      null
-    );
-  }
-
-  /*
-    Require all groups to be selected.
-  */
-
-  for (
-    const groupName
-    of groups.keys()
-  ) {
-
-    if (
-      !selectedProperties[
-        groupName
-      ]
-    ) {
-
-      return null;
-    }
-  }
-
-  return (
-    product.variants.find(
-      variant => {
 
         for (
           const property
@@ -3863,1697 +3100,1674 @@ function findExactSku() {
         ) {
 
           if (
-            selectedProperties[
+            !property?.groupName ||
+            property.valueId === null ||
+            property.valueId === undefined
+          ) {
+            continue;
+          }
+
+
+          const groupName =
+            String(
               property.groupName
-            ] !==
-            property.valueId
+            );
+
+
+          if (
+            !groups.has(groupName)
           ) {
 
-            return false;
+            groups.set(
+              groupName,
+              new Map()
+            );
+
           }
+
+
+          const values =
+            groups.get(
+              groupName
+            );
+
+
+          const valueId =
+            String(
+              property.valueId
+            );
+
+
+          if (
+            !values.has(valueId)
+          ) {
+
+            values.set(
+              valueId,
+              {
+
+                id:
+                  valueId,
+
+                name:
+                  String(
+                    property.valueName ??
+                    valueId
+                  )
+
+              }
+            );
+
+          }
+
         }
 
-        return true;
       }
-    ) ||
-    null
-  );
-}
 
 
-/* ============================================================
-   OPTION AVAILABILITY
-   ============================================================ */
+      return groups;
 
-function isOptionAvailable(
-  groupName,
-  valueId
-) {
+    }
 
-  return product.variants.some(
-    variant => {
 
-      const property =
-        variant.properties.find(
-          item =>
-            item.groupName ===
-              groupName &&
-            item.valueId ===
-              valueId
-        );
+    /* ============================================================
+       EXACT SKU MATCH
+       ============================================================ */
+
+    function findExactSku() {
 
       if (
-        !property
+        !product ||
+        !product.variants.length
       ) {
-
-        return false;
+        return null;
       }
 
-      if (
-        !variantMatchesSelection(
-          variant,
-          selectedProperties,
-          groupName
-        )
-      ) {
 
-        return false;
-      }
+      const groups =
+        buildVariantGroups();
+
 
       /*
-        IMPORTANT:
+        IMPORTANT FIX:
 
-        Unknown stock = potentially available.
+        If there are variants but no actual selectable
+        property groups, do not force the customer to
+        select a non-existent option.
 
-        Only explicit numeric 0 makes
-        the option unavailable.
+        Use the first usable variant instead.
       */
-
       if (
-        variant.stock !== null &&
-        variant.stock !== undefined
+        !groups.size
       ) {
 
-        return (
-          variant.stock > 0
-        );
+        if (
+          product.variants.length === 1
+        ) {
+          return product.variants[0];
+        }
+
+
+        /*
+          Multiple SKU records without selectable
+          properties. Prefer a usable in-stock SKU.
+        */
+        const usable =
+          product.variants.find(
+            variant =>
+              variant.stock === null ||
+              variant.stock > 0
+          );
+
+
+        return usable ||
+          product.variants[0] ||
+          null;
+
       }
 
-      return true;
+
+      /*
+        Real selectable variants:
+        every group must have a selection.
+      */
+      for (
+        const groupName
+        of groups.keys()
+      ) {
+
+        if (
+          !selectedProperties[groupName]
+        ) {
+          return null;
+        }
+
+      }
+
+
+      return (
+        product.variants.find(
+          variant => {
+
+            for (
+              const property
+              of variant.properties
+            ) {
+
+              if (
+                selectedProperties[
+                  property.groupName
+                ] !==
+                String(
+                  property.valueId
+                )
+              ) {
+
+                return false;
+
+              }
+
+            }
+
+
+            return true;
+
+          }
+        ) ||
+        null
+      );
+
     }
-  );
-}
 
 
-/* ============================================================
-   RENDER VARIANTS
-   ============================================================ */
+    /* ============================================================
+       OPTION AVAILABILITY
+       ============================================================ */
 
-function renderVariants() {
-
-  variantGroups.innerHTML =
-    "";
-
-  if (
-    !product.variants.length
-  ) {
-
-    variantsSection.hidden =
-      true;
-
-    return;
-  }
-
-  const groups =
-    buildVariantGroups();
-
-  /*
-    CJ simple products may have a SKU
-    but no option groups.
-  */
-
-  if (
-    !groups.size
-  ) {
-
-    variantsSection.hidden =
-      true;
-
-    selectedSku =
-      findExactSku();
-
-    selectionMessage.textContent =
-      "";
-
-    renderSelectedPrice();
-    renderStock();
-    updateActionButtons();
-
-    return;
-  }
-
-  variantsSection.hidden =
-    false;
-
-  for (
-    const [
+    function isOptionAvailable(
       groupName,
-      values
-    ]
-    of groups
-  ) {
-
-    const group =
-      document.createElement(
-        "div"
-      );
-
-    group.className =
-      "variant-group";
-
-    const label =
-      document.createElement(
-        "div"
-      );
-
-    label.className =
-      "variant-label";
-
-    label.textContent =
-      groupName;
-
-    group.appendChild(
-      label
-    );
-
-    const options =
-      document.createElement(
-        "div"
-      );
-
-    options.className =
-      "variant-options";
-
-    for (
-      const value
-      of values.values()
+      valueId
     ) {
 
-      const button =
-        document.createElement(
-          "button"
-        );
-
-      button.type =
-        "button";
-
-      button.className =
-        "variant-option";
-
-      button.textContent =
-        value.valueName;
-
-      const selected =
-        selectedProperties[
-          groupName
-        ] ===
-        value.valueId;
-
-      if (
-        selected
-      ) {
-
-        button.classList.add(
-          "selected"
-        );
-      }
-
-      const available =
-        isOptionAvailable(
-          groupName,
-          value.valueId
-        );
-
-      button.disabled =
-        !available;
-
-      button.setAttribute(
-        "aria-pressed",
-        selected
-          ? "true"
-          : "false"
-      );
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          selectedProperties[
-            groupName
-          ] =
-            value.valueId;
-
-          updateVariantState();
-
-          /*
-            Re-render option states after
-            the selection changes.
-          */
-
-          renderVariantOptionsOnly();
-        }
-      );
-
-      options.appendChild(
-        button
-      );
-    }
-
-    group.appendChild(
-      options
-    );
-
-    variantGroups.appendChild(
-      group
-    );
-  }
-
-  updateVariantState();
-}
-
-
-/* ============================================================
-   RE-RENDER VARIANT OPTIONS
-   ============================================================ */
-
-function renderVariantOptionsOnly() {
-
-  const groups =
-    buildVariantGroups();
-
-  const groupElements =
-    variantGroups.querySelectorAll(
-      ".variant-group"
-    );
-
-  groupElements.forEach(
-    (
-      groupElement,
-      groupIndex
-    ) => {
-
-      const groupName =
-        [...groups.keys()][
-          groupIndex
-        ];
-
-      if (
-        !groupName
-      ) {
-        return;
-      }
-
-      const values =
-        groups.get(
-          groupName
-        );
-
-      const buttons =
-        groupElement.querySelectorAll(
-          ".variant-option"
-        );
-
-      [...values.values()]
-        .forEach(
-          (
-            value,
-            valueIndex
-          ) => {
-
-            const button =
-              buttons[
-                valueIndex
-              ];
+      const variants =
+        product.variants.filter(
+          variant => {
 
             if (
-              !button
+              !Array.isArray(
+                variant.properties
+              )
             ) {
-              return;
+              return false;
             }
+
+
+            return variant.properties.some(
+              property =>
+                String(
+                  property.groupName
+                ) ===
+                  String(groupName) &&
+                String(
+                  property.valueId
+                ) ===
+                  String(valueId)
+            );
+
+          }
+        );
+
+
+      if (!variants.length) {
+        return false;
+      }
+
+
+      /*
+        If stock is unknown, treat the option
+        as potentially available.
+      */
+      return variants.some(
+        variant =>
+          variant.stock === null ||
+          variant.stock > 0
+      );
+
+    }
+
+
+    /* ============================================================
+       RENDER VARIANTS
+       ============================================================ */
+
+    function renderVariants() {
+
+      variantsContainer.innerHTML =
+        "";
+
+
+      const groups =
+        buildVariantGroups();
+
+
+      /*
+        IMPORTANT FIX:
+
+        Products can contain a variants array even when
+        there are no real selectable options.
+
+        In that case, hide the variant UI and allow
+        normal purchasing.
+      */
+      if (
+        !groups ||
+        !groups.size
+      ) {
+
+        variantsSection.hidden =
+          true;
+
+        selectedProperties =
+          {};
+
+        selectedSku =
+          null;
+
+        updateVariantState();
+
+        return;
+
+      }
+
+
+      variantsSection.hidden =
+        false;
+
+
+      for (
+        const [
+          groupName,
+          values
+        ] of groups.entries()
+      ) {
+
+        const group =
+          document.createElement(
+            "div"
+          );
+
+
+        group.className =
+          "variant-group";
+
+
+        const label =
+          document.createElement(
+            "span"
+          );
+
+
+        label.className =
+          "variant-label";
+
+
+        label.textContent =
+          groupName;
+
+
+        group.appendChild(
+          label
+        );
+
+
+        const options =
+          document.createElement(
+            "div"
+          );
+
+
+        options.className =
+          "variant-options";
+
+
+        for (
+          const [
+            valueId,
+            value
+          ] of values.entries()
+        ) {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+
+          button.type =
+            "button";
+
+
+          button.className =
+            "variant-option";
+
+
+          button.dataset.group =
+            groupName;
+
+
+          button.dataset.value =
+            valueId;
+
+
+          button.textContent =
+            value.name;
+
+
+          const available =
+            isOptionAvailable(
+              groupName,
+              valueId
+            );
+
+
+          if (!available) {
+
+            button.disabled =
+              true;
+
+            button.classList.add(
+              "unavailable"
+            );
+
+          }
+
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              selectedProperties[
+                groupName
+              ] =
+                valueId;
+
+
+              updateVariantState();
+
+            }
+          );
+
+
+          options.appendChild(
+            button
+          );
+
+        }
+
+
+        group.appendChild(
+          options
+        );
+
+
+        variantsContainer.appendChild(
+          group
+        );
+
+      }
+
+
+      updateVariantState();
+
+    }
+
+
+    /* ============================================================
+       UPDATE VARIANT STATE
+       ============================================================ */
+
+    function updateVariantState() {
+
+      /*
+        Mark selected options.
+      */
+      variantsContainer
+        .querySelectorAll(
+          ".variant-option"
+        )
+        .forEach(
+          button => {
 
             const selected =
               selectedProperties[
-                groupName
+                button.dataset.group
               ] ===
-              value.valueId;
+              button.dataset.value;
+
 
             button.classList.toggle(
               "selected",
               selected
             );
 
-            button.disabled =
-              !isOptionAvailable(
-                groupName,
-                value.valueId
-              );
-
-            button.setAttribute(
-              "aria-pressed",
-              selected
-                ? "true"
-                : "false"
-            );
           }
         );
-    }
-  );
-}
 
 
-/* ============================================================
-   VARIANT STATE
-   ============================================================ */
+      selectedSku =
+        findExactSku();
 
-function updateVariantState() {
 
-  selectedSku =
-    findExactSku();
-
-  if (
-    selectedSku
-  ) {
-
-    selectionMessage.textContent =
-      "";
-
-    /*
-      Variant image.
-
-      Add it to the gallery only if it is
-      a real URL and isn't already there.
-    */
-
-    if (
-      selectedSku.image &&
-      selectedSku.image !==
-        DEFAULT_IMAGE
-    ) {
-
-      const imageIndex =
-        product.images.indexOf(
-          selectedSku.image
-        );
-
+      /*
+        If the selected SKU has its own image,
+        use it.
+      */
       if (
-        imageIndex >= 0
+        selectedSku?.image
       ) {
 
-        currentImageIndex =
-          imageIndex;
+        const variantImage =
+          safeImageUrl(
+            selectedSku.image
+          );
+
+
+        const index =
+          product.images.indexOf(
+            variantImage
+          );
+
+
+        if (
+          index >= 0
+        ) {
+
+          currentImageIndex =
+            index;
+
+          renderMainImage();
+
+        }
+
+      }
+
+
+      updateDisplayedPrice();
+
+      updateStockStatus();
+
+      updateActionButtons();
+
+    }
+
+
+    /* ============================================================
+       PRICE
+       ============================================================ */
+
+    function updateDisplayedPrice() {
+
+      let price =
+        product.price;
+
+
+      let comparePrice =
+        product.originalPrice;
+
+
+      /*
+        If a real SKU is selected,
+        use its price.
+      */
+      if (
+        selectedSku
+      ) {
+
+        if (
+          selectedSku.price !== null
+        ) {
+
+          price =
+            selectedSku.price;
+
+        }
+
+
+        if (
+          selectedSku.originalPrice !== null
+        ) {
+
+          comparePrice =
+            selectedSku.originalPrice;
+
+        }
+
+      }
+
+
+      /*
+        If no product price exists, find the first
+        usable variant price.
+      */
+      if (
+        price === null ||
+        price === undefined
+      ) {
+
+        const pricedVariant =
+          product.variants.find(
+            variant =>
+              variant.price !== null
+          );
+
+
+        if (
+          pricedVariant
+        ) {
+
+          price =
+            pricedVariant.price;
+
+        }
+
+      }
+
+
+      currentPrice.textContent =
+        price !== null &&
+        price !== undefined
+          ? formatPrice(price)
+          : "Price unavailable";
+
+
+      if (
+        comparePrice !== null &&
+        comparePrice !== undefined &&
+        price !== null &&
+        comparePrice > price
+      ) {
+
+        originalPrice.textContent =
+          formatPrice(
+            comparePrice
+          );
+
+        originalPrice.classList.remove(
+          "hidden"
+        );
 
       } else {
 
-        product.images.push(
-          selectedSku.image
+        originalPrice.textContent =
+          "";
+
+        originalPrice.classList.add(
+          "hidden"
         );
 
-        currentImageIndex =
-          product.images.length - 1;
       }
 
-      renderGallery();
     }
 
-  } else {
 
-    const groups =
-      buildVariantGroups();
+    /* ============================================================
+       STOCK
+       ============================================================ */
 
-    const missingGroups =
-      [];
+    function getCurrentStock() {
 
-    for (
-      const groupName
-      of groups.keys()
+      /*
+        Real selected SKU.
+      */
+      if (
+        selectedSku &&
+        selectedSku.stock !== null
+      ) {
+
+        return selectedSku.stock;
+
+      }
+
+
+      /*
+        Product-level stock.
+      */
+      if (
+        product.stock !== null
+      ) {
+
+        return product.stock;
+
+      }
+
+
+      /*
+        If variants exist but there are no selectable
+        groups, use a usable variant's stock.
+      */
+      const groups =
+        buildVariantGroups();
+
+
+      if (
+        product.variants.length &&
+        !groups.size
+      ) {
+
+        const variant =
+          selectedSku ||
+          product.variants.find(
+            item =>
+              item.stock !== null
+          );
+
+
+        if (
+          variant &&
+          variant.stock !== null
+        ) {
+
+          return variant.stock;
+
+        }
+
+      }
+
+
+      return null;
+
+    }
+
+
+    function updateStockStatus() {
+
+      const stock =
+        getCurrentStock();
+
+
+      if (
+        stock === null
+      ) {
+
+        stockStatus.textContent =
+          "Available";
+
+        stockStatus.className =
+          "stock-status in-stock";
+
+        return;
+
+      }
+
+
+      if (
+        stock <= 0
+      ) {
+
+        stockStatus.textContent =
+          "Out of stock";
+
+        stockStatus.className =
+          "stock-status out-of-stock";
+
+        return;
+
+      }
+
+
+      if (
+        stock <= 5
+      ) {
+
+        stockStatus.textContent =
+          `Only ${stock} left in stock`;
+
+      } else {
+
+        stockStatus.textContent =
+          "In stock";
+
+      }
+
+
+      stockStatus.className =
+        "stock-status in-stock";
+
+    }
+
+
+    /* ============================================================
+       PURCHASE AVAILABILITY
+       ============================================================ */
+
+    function canPurchase() {
+
+      if (
+        !product
+      ) {
+        return false;
+      }
+
+
+      const variantGroupsMap =
+        buildVariantGroups();
+
+
+      const hasSelectableVariants =
+        variantGroupsMap &&
+        variantGroupsMap.size > 0;
+
+
+      /*
+        REAL VARIANTS:
+        Customer must choose all required options.
+      */
+      if (
+        hasSelectableVariants
+      ) {
+
+        if (
+          !selectedSku
+        ) {
+          return false;
+        }
+
+
+        if (
+          selectedSku.stock !== null &&
+          selectedSku.stock <= 0
+        ) {
+          return false;
+        }
+
+
+        return true;
+
+      }
+
+
+      /*
+        NO SELECTABLE VARIANTS:
+
+        This is the important fix.
+
+        Do NOT require selectedSku merely because
+        the API returned a "variants" array.
+      */
+      if (
+        product.stock !== null &&
+        product.stock <= 0
+      ) {
+
+        return false;
+
+      }
+
+
+      /*
+        If there is a single variant with known
+        zero stock, respect it.
+      */
+      if (
+        product.variants.length === 1 &&
+        product.variants[0].stock !== null &&
+        product.variants[0].stock <= 0
+      ) {
+
+        return false;
+
+      }
+
+
+      /*
+        Unknown stock means purchase is allowed.
+      */
+      return true;
+
+    }
+
+
+    /* ============================================================
+       ACTION BUTTONS
+       ============================================================ */
+
+    function updateActionButtons() {
+
+      const available =
+        canPurchase();
+
+
+      addToCartButton.disabled =
+        !available;
+
+
+      buyNowButton.disabled =
+        !available;
+
+
+      /*
+        Quantity controls follow purchase availability.
+      */
+      quantityMinus.disabled =
+        !available;
+
+
+      quantityPlus.disabled =
+        !available;
+
+
+      quantityInput.disabled =
+        !available;
+
+    }
+
+
+    /* ============================================================
+       QUANTITY
+       ============================================================ */
+
+    function getQuantity() {
+
+      let quantity =
+        parseInt(
+          quantityInput.value,
+          10
+        );
+
+
+      if (
+        !Number.isFinite(quantity) ||
+        quantity < 1
+      ) {
+
+        quantity = 1;
+
+      }
+
+
+      const stock =
+        getCurrentStock();
+
+
+      if (
+        stock !== null &&
+        stock > 0
+      ) {
+
+        quantity =
+          Math.min(
+            quantity,
+            stock
+          );
+
+      }
+
+
+      quantity =
+        clamp(
+          quantity,
+          1,
+          999
+        );
+
+
+      quantityInput.value =
+        String(quantity);
+
+
+      return quantity;
+
+    }
+
+
+    function changeQuantity(
+      delta
     ) {
 
       if (
-        !selectedProperties[
-          groupName
-        ]
+        !canPurchase()
+      ) {
+        return;
+      }
+
+
+      let quantity =
+        parseInt(
+          quantityInput.value,
+          10
+        );
+
+
+      if (
+        !Number.isFinite(quantity)
+      ) {
+        quantity = 1;
+      }
+
+
+      quantity +=
+        delta;
+
+
+      const stock =
+        getCurrentStock();
+
+
+      if (
+        stock !== null &&
+        stock > 0
       ) {
 
-        missingGroups.push(
-          groupName
+        quantity =
+          Math.min(
+            quantity,
+            stock
+          );
+
+      }
+
+
+      quantity =
+        clamp(
+          quantity,
+          1,
+          999
         );
-      }
+
+
+      quantityInput.value =
+        String(quantity);
+
     }
 
-    if (
-      missingGroups.length
-    ) {
 
-      selectionMessage.textContent =
-        `Please select: ${missingGroups.join(", ")}`;
-
-    } else {
-
-      selectionMessage.textContent =
-        "This combination is currently unavailable.";
-    }
-  }
-
-  renderSelectedPrice();
-
-  renderStock();
-
-  updateActionButtons();
-}
-
-
-/* ============================================================
-   PRICE
-   ============================================================ */
-
-function renderSelectedPrice() {
-
-  let price =
-    product.price;
-
-  if (
-    selectedSku &&
-    selectedSku.price !== null &&
-    selectedSku.price > 0
-  ) {
-
-    price =
-      selectedSku.price;
-  }
-
-  currentPrice.textContent =
-    formatPrice(
-      price
-    );
-
-  const oldPrice =
-    toNumber(
-      product.originalPrice,
-      0
-    );
-
-  if (
-    oldPrice > price &&
-    price > 0
-  ) {
-
-    originalPrice.hidden =
-      false;
-
-    originalPrice.textContent =
-      formatPrice(
-        oldPrice
-      );
-
-  } else {
-
-    originalPrice.hidden =
-      true;
-
-    originalPrice.textContent =
-      "";
-  }
-}
-
-
-/* ============================================================
-   PURCHASE AVAILABILITY
-   ============================================================ */
-
-function canPurchase() {
-
-  /*
-    Product with variants.
-  */
-
-  if (
-    product.variants.length
-  ) {
-
-    /*
-      If variant groups exist, the user must
-      select a valid combination.
-    */
-
-    const groups =
-      buildVariantGroups();
-
-    if (
-      groups.size &&
-      !selectedSku
-    ) {
-
-      return false;
-    }
-
-    /*
-      If a SKU exists and stock is explicitly
-      zero, disable purchase.
-
-      UNKNOWN stock is allowed.
-    */
-
-    if (
-      selectedSku &&
-      selectedSku.stock !== null &&
-      selectedSku.stock !== undefined &&
-      selectedSku.stock <= 0
-    ) {
-
-      return false;
-    }
-
-    return true;
-  }
-
-  /*
-    Simple product.
-  */
-
-  if (
-    product.stock !== null &&
-    product.stock !== undefined &&
-    product.stock <= 0
-  ) {
-
-    return false;
-  }
-
-  /*
-    Unknown stock is purchasable.
-  */
-
-  return true;
-}
-
-
-function updateActionButtons() {
-
-  const available =
-    canPurchase();
-
-  addToCartButton.disabled =
-    !available;
-
-  buyNowButton.disabled =
-    !available;
-}
-
-
-/* ============================================================
-   QUANTITY
-   ============================================================ */
-
-function getQuantity() {
-
-  let quantity =
-    parseInt(
-      quantityInput.value,
-      10
-    );
-
-  if (
-    !Number.isFinite(
-      quantity
-    )
-  ) {
-
-    quantity = 1;
-  }
-
-  quantity =
-    clamp(
-      quantity,
-      1,
-      MAX_CART_QUANTITY
-    );
-
-  const stock =
-    getSelectedStock();
-
-  /*
-    Only limit quantity when stock is
-    explicitly known and positive.
-  */
-
-  if (
-    stock !== null &&
-    stock !== undefined &&
-    stock > 0
-  ) {
-
-    quantity =
-      Math.min(
-        quantity,
-        stock
-      );
-  }
-
-  quantityInput.value =
-    String(
-      quantity
-    );
-
-  return quantity;
-}
-
-
-function changeQuantity(
-  amount
-) {
-
-  let quantity =
-    parseInt(
-      quantityInput.value,
-      10
-    );
-
-  if (
-    !Number.isFinite(
-      quantity
-    )
-  ) {
-
-    quantity = 1;
-  }
-
-  quantity +=
-    amount;
-
-  quantity =
-    clamp(
-      quantity,
-      1,
-      MAX_CART_QUANTITY
-    );
-
-  const stock =
-    getSelectedStock();
-
-  if (
-    stock !== null &&
-    stock !== undefined &&
-    stock > 0
-  ) {
-
-    quantity =
-      Math.min(
-        quantity,
-        stock
-      );
-  }
-
-  quantityInput.value =
-    String(
-      quantity
-    );
-}
-
-
-quantityMinus.addEventListener(
-  "click",
-  () => {
-    changeQuantity(-1);
-  }
-);
-
-
-quantityPlus.addEventListener(
-  "click",
-  () => {
-    changeQuantity(1);
-  }
-);
-
-
-quantityInput.addEventListener(
-  "input",
-  () => {
-    getQuantity();
-  }
-);
-
-
-quantityInput.addEventListener(
-  "blur",
-  () => {
-    getQuantity();
-  }
-);
-
-
-/* ============================================================
-   CART ITEM
-   ============================================================ */
-
-function buildCartItem() {
-
-  const quantity =
-    getQuantity();
-
-  const price =
-    selectedSku &&
-    selectedSku.price > 0
-      ? selectedSku.price
-      : product.price;
-
-  const selectedPropertiesArray =
-    Object.entries(
-      selectedProperties
-    ).map(
-      (
-        [
-          groupName,
-          valueId
-        ]
-      ) => {
-
-        const property =
-          product.variants
-            .flatMap(
-              variant =>
-                variant.properties
-            )
-            .find(
-              item =>
-                item.groupName ===
-                  groupName &&
-                item.valueId ===
-                  valueId
-            );
-
-        return {
-
-          groupName,
-
-          valueId,
-
-          valueName:
-            property?.valueName ||
-            valueId
-
-        };
+    quantityMinus.addEventListener(
+      "click",
+      () => {
+        changeQuantity(-1);
       }
     );
 
-  return {
 
-    id:
-      product.id,
-
-    product_id:
-      product.id,
-
-    productId:
-      product.id,
-
-    title:
-      product.title,
-
-    name:
-      product.title,
-
-    image:
-      selectedSku?.image ||
-      product.images?.[0] ||
-      DEFAULT_IMAGE,
-
-    image_url:
-      selectedSku?.image ||
-      product.images?.[0] ||
-      DEFAULT_IMAGE,
-
-    price:
-      Number(
-        toNumber(
-          price,
-          0
-        ).toFixed(2)
-      ),
-
-    quantity,
-
-    sku:
-      selectedSku?.sku ||
-      product.sku ||
-      "",
-
-    selectedSku:
-      selectedSku?.vid ||
-      selectedSku?.id ||
-      selectedSku?.sku ||
-      product.sku ||
-      "",
-
-    selectedProperties:
-      selectedPropertiesArray,
-
-    category:
-      product.category,
-
-    source:
-      product.source,
-
-    supplier:
-      "CJdropshipping",
-
-    addedAt:
-      Date.now()
-
-  };
-}
-
-
-/* ============================================================
-   CART MESSAGE
-   ============================================================ */
-
-let messageTimer =
-  null;
-
-
-function showCartMessage(
-  message,
-  type
-) {
-
-  clearTimeout(
-    messageTimer
-  );
-
-  cartMessage.textContent =
-    message;
-
-  cartMessage.className =
-    "cart-message " +
-    (
-      type === "success"
-        ? "success"
-        : "error"
+    quantityPlus.addEventListener(
+      "click",
+      () => {
+        changeQuantity(1);
+      }
     );
 
-  messageTimer =
-    setTimeout(
+
+    quantityInput.addEventListener(
+      "change",
+      () => {
+        getQuantity();
+      }
+    );
+
+
+    quantityInput.addEventListener(
+      "input",
       () => {
 
-        cartMessage.textContent =
-          "";
-
-        cartMessage.className =
-          "cart-message";
-
-      },
-      3500
-    );
-}
+        const value =
+          quantityInput.value;
 
 
-/* ============================================================
-   ADD TO CART
-   ============================================================ */
+        if (
+          value === ""
+        ) {
+          return;
+        }
 
-function addCurrentProductToCart(
-  redirectAfter = false
-) {
 
-  if (
-    !canPurchase()
-  ) {
+        getQuantity();
 
-    showCartMessage(
-      "Please select an available product option first.",
-      "error"
+      }
     );
 
-    return false;
-  }
 
-  let item;
+    /* ============================================================
+       CART ITEM
+       ============================================================ */
 
-  try {
+    function buildCartItem() {
 
-    item =
-      buildCartItem();
+      const quantity =
+        getQuantity();
 
-  } catch (
-    error
-  ) {
 
-    console.error(
-      "Cart item error:",
-      error
-    );
+      let price =
+        product.price;
 
-    showCartMessage(
-      "Unable to prepare this product.",
-      "error"
-    );
 
-    return false;
-  }
+      if (
+        selectedSku &&
+        selectedSku.price !== null
+      ) {
 
-  const cart =
-    readCart();
+        price =
+          selectedSku.price;
 
-  const key =
-    cartItemKey(
-      item
-    );
+      }
 
-  const existingIndex =
-    cart.findIndex(
-      existing =>
-        cartItemKey(
-          existing
-        ) === key
-    );
 
-  if (
-    existingIndex >= 0
-  ) {
+      const item = {
 
-    const existing =
-      cart[
-        existingIndex
-      ];
+        id:
+          product.id,
 
-    const existingQuantity =
-      clamp(
-        Math.floor(
+        product_id:
+          product.id,
+
+        productId:
+          product.id,
+
+        title:
+          product.title,
+
+        name:
+          product.title,
+
+        image:
+          safeImageUrl(
+            selectedSku?.image ||
+            product.images?.[0] ||
+            DEFAULT_IMAGE
+          ),
+
+        price:
+          toNumber(
+            price,
+            0
+          ),
+
+        quantity,
+
+        sku:
+          selectedSku?.sku ||
+          selectedSku?.id ||
+          product.sku ||
+          null,
+
+        selectedSku:
+          selectedSku
+            ? {
+                ...selectedSku
+              }
+            : null,
+
+        selectedProperties:
+          {
+            ...selectedProperties
+          },
+
+        category:
+          product.category || "",
+
+        source:
+          product.source ||
+          product.platform ||
+          "CJdropshipping",
+
+        addedAt:
+          new Date().toISOString()
+
+      };
+
+
+      return item;
+
+    }
+
+
+    /* ============================================================
+       ACTION MESSAGE
+       ============================================================ */
+
+    function showMessage(
+      message,
+      type = "success"
+    ) {
+
+      actionMessage.textContent =
+        message;
+
+
+      actionMessage.className =
+        `message show ${type}`;
+
+
+      window.clearTimeout(
+        showMessage.timeout
+      );
+
+
+      showMessage.timeout =
+        window.setTimeout(
+          () => {
+
+            actionMessage.className =
+              "message";
+
+          },
+          3500
+        );
+
+    }
+
+
+    /* ============================================================
+       ADD TO CART
+       ============================================================ */
+
+    function addCurrentProductToCart() {
+
+      if (
+        !canPurchase()
+      ) {
+
+        showMessage(
+          "Please select an available product option.",
+          "error"
+        );
+
+        return false;
+
+      }
+
+
+      const item =
+        buildCartItem();
+
+
+      const cart =
+        readCart();
+
+
+      const newKey =
+        cartItemKey(item);
+
+
+      const existingIndex =
+        cart.findIndex(
+          existing =>
+            cartItemKey(existing) ===
+            newKey
+        );
+
+
+      if (
+        existingIndex >= 0
+      ) {
+
+        const existing =
+          cart[existingIndex];
+
+
+        const stock =
+          getCurrentStock();
+
+
+        let newQuantity =
           toNumber(
             existing.quantity,
             0
-          )
-        ),
-        0,
-        MAX_CART_QUANTITY
+          ) +
+          item.quantity;
+
+
+        if (
+          stock !== null &&
+          stock > 0
+        ) {
+
+          newQuantity =
+            Math.min(
+              newQuantity,
+              stock
+            );
+
+        }
+
+
+        existing.quantity =
+          newQuantity;
+
+
+        cart[existingIndex] =
+          existing;
+
+      } else {
+
+        cart.push(
+          item
+        );
+
+      }
+
+
+      saveCart(
+        cart
       );
 
-    let newQuantity =
-      existingQuantity +
-      item.quantity;
 
-    const stock =
-      getSelectedStock();
+      showMessage(
+        "Product added to your cart.",
+        "success"
+      );
 
-    /*
-      Only enforce a quantity limit if
-      stock is actually known.
-    */
 
-    if (
-      stock !== null &&
-      stock !== undefined &&
-      stock > 0
-    ) {
+      return true;
 
-      newQuantity =
-        Math.min(
-          newQuantity,
-          stock
-        );
     }
 
-    existing.quantity =
-      clamp(
-        newQuantity,
-        1,
-        MAX_CART_QUANTITY
+
+    addToCartButton.addEventListener(
+      "click",
+      () => {
+
+        addCurrentProductToCart();
+
+      }
+    );
+
+
+    /* ============================================================
+       BUY NOW
+       ============================================================ */
+
+    buyNowButton.addEventListener(
+      "click",
+      () => {
+
+        if (
+          !canPurchase()
+        ) {
+
+          showMessage(
+            "Please select an available product option.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        const item =
+          buildCartItem();
+
+
+        /*
+          Buy Now is stored separately so checkout
+          can use only this item.
+        */
+        sessionStorage.setItem(
+          BUY_NOW_STORAGE_KEY,
+          JSON.stringify([
+            item
+          ])
+        );
+
+
+        /*
+          Also keep a simple compatibility key.
+        */
+        sessionStorage.setItem(
+          "buy_now",
+          JSON.stringify([
+            item
+          ])
+        );
+
+
+        window.location.href =
+          "/checkout.html?buy_now=1";
+
+      }
+    );
+
+
+    /* ============================================================
+       RENDER PRODUCT
+       ============================================================ */
+
+    function renderProduct() {
+
+      breadcrumbTitle.textContent =
+        product.title;
+
+
+      productCategory.textContent =
+        product.category;
+
+
+      productCategory.hidden =
+        !product.category;
+
+
+      productTitle.textContent =
+        product.title;
+
+
+      document.title =
+        `${product.title} | Prasun Store`;
+
+
+      renderRating();
+
+
+      renderGallery();
+
+
+      /*
+        Reset selection when a new product is rendered.
+      */
+      selectedProperties =
+        {};
+
+      selectedSku =
+        null;
+
+
+      renderVariants();
+
+
+      updateDisplayedPrice();
+
+
+      updateStockStatus();
+
+
+      productDescription.innerHTML =
+        sanitizeDescription(
+          product.description
+        );
+
+
+      if (
+        !product.description.trim()
+      ) {
+
+        productDescription.innerHTML =
+          "<p>Product details are available at Prasun Store.</p>";
+
+      }
+
+
+      if (
+        product.sku
+      ) {
+
+        skuInfo.textContent =
+          `SKU: ${product.sku}`;
+
+        skuInfo.classList.remove(
+          "hidden"
+        );
+
+      } else {
+
+        skuInfo.classList.add(
+          "hidden"
+        );
+
+      }
+
+
+      quantityInput.value =
+        "1";
+
+
+      /*
+        IMPORTANT:
+        Run this after variants are rendered.
+        Products without selectable variants will
+        now have active buttons.
+      */
+      updateActionButtons();
+
+
+      /*
+        Basic Product structured data.
+      */
+      updateProductSchema();
+
+    }
+
+
+    /* ============================================================
+       PRODUCT SCHEMA
+       ============================================================ */
+
+    function updateProductSchema() {
+
+      const existing =
+        document.getElementById(
+          "product-schema"
+        );
+
+
+      if (
+        existing
+      ) {
+
+        existing.remove();
+
+      }
+
+
+      const price =
+        selectedSku?.price ??
+        product.price;
+
+
+      if (
+        price === null ||
+        price === undefined
+      ) {
+        return;
+      }
+
+
+      const image =
+        safeImageUrl(
+          product.images?.[0]
+        );
+
+
+      const schema = {
+
+        "@context":
+          "https://schema.org",
+
+        "@type":
+          "Product",
+
+        name:
+          product.title,
+
+        image:
+          [image],
+
+        description:
+          productDescription.textContent
+            .trim()
+            .slice(0, 1000),
+
+        sku:
+          selectedSku?.sku ||
+          product.sku ||
+          String(product.id),
+
+        offers: {
+
+          "@type":
+            "Offer",
+
+          priceCurrency:
+            "USD",
+
+          price:
+            String(price),
+
+          availability:
+            canPurchase()
+              ? "https://schema.org/InStock"
+              : "https://schema.org/OutOfStock",
+
+          url:
+            window.location.href
+
+        }
+
+      };
+
+
+      if (
+        product.rating > 0
+      ) {
+
+        schema.aggregateRating = {
+
+          "@type":
+            "AggregateRating",
+
+          ratingValue:
+            String(product.rating),
+
+          reviewCount:
+            String(
+              Math.max(
+                1,
+                product.sales || 1
+              )
+            )
+
+        };
+
+      }
+
+
+      const script =
+        document.createElement(
+          "script"
+        );
+
+
+      script.id =
+        "product-schema";
+
+
+      script.type =
+        "application/ld+json";
+
+
+      script.textContent =
+        JSON.stringify(
+          schema
+        );
+
+
+      document.head.appendChild(
+        script
       );
 
-    /*
-      Refresh image/price information.
-    */
+    }
 
-    existing.price =
-      item.price;
 
-    existing.image =
-      item.image;
+    /* ============================================================
+       INITIALIZATION
+       ============================================================ */
 
-    existing.image_url =
-      item.image_url;
+    async function initialize() {
 
-  } else {
+      updateCartCount();
 
-    cart.push(
-      item
-    );
-  }
 
-  try {
+      /*
+        Disable buttons only while the product is
+        actually loading.
 
-    saveCart(
-      cart
-    );
+        Once the product loads, updateActionButtons()
+        determines the correct state.
+      */
+      addToCartButton.disabled =
+        true;
 
-  } catch (
-    error
-  ) {
+      buyNowButton.disabled =
+        true;
 
-    showCartMessage(
-      error.message ||
-      "Unable to add the product to your cart.",
-      "error"
-    );
-
-    return false;
-  }
-
-  if (
-    redirectAfter
-  ) {
-
-    window.location.href =
-      "/checkout.html?buy_now=1";
-
-    return true;
-  }
-
-  showCartMessage(
-    "Product added to your cart.",
-    "success"
-  );
-
-  return true;
-}
-
-
-/* ============================================================
-   BUY NOW
-   ============================================================ */
-
-function buyNow() {
-
-  if (
-    !canPurchase()
-  ) {
-
-    showCartMessage(
-      "Please select an available product option first.",
-      "error"
-    );
-
-    return;
-  }
-
-  let item;
-
-  try {
-
-    item =
-      buildCartItem();
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Buy Now item error:",
-      error
-    );
-
-    showCartMessage(
-      "Unable to prepare checkout.",
-      "error"
-    );
-
-    return;
-  }
-
-  try {
-
-    sessionStorage.setItem(
-      BUY_NOW_KEY,
-      JSON.stringify(
-        item
-      )
-    );
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Buy Now storage error:",
-      error
-    );
-
-    showCartMessage(
-      "Unable to prepare checkout.",
-      "error"
-    );
-
-    return;
-  }
-
-  /*
-    Also preserve the current cart behavior
-    expected by the existing checkout flow.
-  */
-
-  window.location.href =
-    "/checkout.html?buy_now=1";
-}
-
-
-/* ============================================================
-   BUTTON EVENTS
-   ============================================================ */
-
-addToCartButton.addEventListener(
-  "click",
-  () => {
-
-    addCurrentProductToCart(
-      false
-    );
-
-  }
-);
-
-
-buyNowButton.addEventListener(
-  "click",
-  () => {
-
-    buyNow();
-
-  }
-);
-
-
-/* ============================================================
-   RENDER PRODUCT
-   ============================================================ */
-
-function renderProduct() {
-
-  document.title =
-    `${product.title} | Prasun Store`;
-
-  /*
-    SEO.
-  */
-
-  const canonicalUrl =
-    `${window.location.origin}/product.html?id=${encodeURIComponent(product.id)}`;
-
-  $("#canonical-link")
-    .setAttribute(
-      "href",
-      canonicalUrl
-    );
-
-  $("#og-title")
-    .setAttribute(
-      "content",
-      product.title
-    );
-
-  $("#og-description")
-    .setAttribute(
-      "content",
-      `Shop ${product.title} at Prasun Store.`
-    );
-
-  $("#og-url")
-    .setAttribute(
-      "content",
-      canonicalUrl
-    );
-
-  $("#twitter-title")
-    .setAttribute(
-      "content",
-      product.title
-    );
-
-  $("#twitter-description")
-    .setAttribute(
-      "content",
-      `Shop ${product.title} at Prasun Store.`
-    );
-
-  if (
-    product.images?.[0]
-  ) {
-
-    $("#og-image")
-      .setAttribute(
-        "content",
-        product.images[0]
-      );
-
-    $("#twitter-image")
-      .setAttribute(
-        "content",
-        product.images[0]
-      );
-  }
-
-  $("#breadcrumb-product")
-    .textContent =
-    product.title;
-
-  if (
-    product.category
-  ) {
-
-    productCategory.hidden =
-      false;
-
-    productCategory.textContent =
-      product.category;
-
-  } else {
-
-    productCategory.hidden =
-      true;
-  }
-
-  productTitle.textContent =
-    product.title;
-
-  renderRating();
-
-  if (
-    product.sales > 0
-  ) {
-
-    productSales.textContent =
-      `${product.sales.toLocaleString()} sold`;
-
-  } else {
-
-    productSales.textContent =
-      "";
-  }
-
-  if (
-    product.sku
-  ) {
-
-    productSku.textContent =
-      `SKU: ${product.sku}`;
-
-  } else {
-
-    productSku.textContent =
-      "";
-  }
-
-  /*
-    Gallery.
-  */
-
-  renderGallery();
-
-  /*
-    Reset selections.
-  */
-
-  selectedProperties =
-    {};
-
-  selectedSku =
-    null;
-
-  /*
-    Variants.
-  */
-
-  renderVariants();
-
-  /*
-    Price / stock.
-  */
-
-  renderSelectedPrice();
-
-  renderStock();
-
-  /*
-    Do NOT process a potentially huge CJ
-    description before the product becomes
-    interactive.
-
-    Render the product first, then process
-    description asynchronously.
-  */
-
-  const descriptionElement =
-    $("#product-description");
-
-  descriptionElement.textContent =
-    "Loading product description...";
-
-  setTimeout(
-    () => {
 
       try {
 
-        const safeDescription =
-          sanitizeDescriptionHtml(
-            product.descriptionHtml
-          );
+        product =
+          await fetchProduct();
+
 
         if (
-          safeDescription.trim()
+          !product
         ) {
 
-          descriptionElement.innerHTML =
-            safeDescription;
+          throw new Error(
+            "Product data was empty."
+          );
 
-        } else {
-
-          descriptionElement.textContent =
-            "Product description is currently unavailable.";
         }
 
-      } catch (
-        error
-      ) {
 
-        console.warn(
-          "Description rendering error:",
+        renderProduct();
+
+
+        loadingState.classList.add(
+          "hidden"
+        );
+
+
+        productLayout.classList.remove(
+          "hidden"
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          "Product loading error:",
           error
         );
 
-        descriptionElement.textContent =
-          "Product description is currently unavailable.";
+
+        loadingState.classList.add(
+          "hidden"
+        );
+
+
+        productLayout.classList.add(
+          "hidden"
+        );
+
+
+        errorMessage.textContent =
+          error?.message ||
+          "We could not load this product.";
+
+
+        errorState.classList.remove(
+          "hidden"
+        );
+
       }
 
-    },
-    0
-  );
-
-  updateActionButtons();
-
-  addProductStructuredData();
-}
-
-
-/* ============================================================
-   PRODUCT STRUCTURED DATA
-   ============================================================ */
-
-function addProductStructuredData() {
-
-  const existing =
-    document.getElementById(
-      "product-schema"
-    );
-
-  if (
-    existing
-  ) {
-
-    existing.remove();
-  }
-
-  const price =
-    selectedSku?.price > 0
-      ? selectedSku.price
-      : product.price;
-
-  /*
-    Unknown stock is treated as InStock for
-    SEO rather than incorrectly publishing
-    OutOfStock.
-
-    Explicit stock 0 remains OutOfStock.
-  */
-
-  const selectedStock =
-    selectedSku?.stock;
-
-  let outOfStock =
-    false;
-
-  if (
-    selectedStock !== null &&
-    selectedStock !== undefined
-  ) {
-
-    outOfStock =
-      selectedStock <= 0;
-
-  } else if (
-    product.stock !== null &&
-    product.stock !== undefined
-  ) {
-
-    outOfStock =
-      product.stock <= 0;
-  }
-
-  const schema = {
-
-    "@context":
-      "https://schema.org",
-
-    "@type":
-      "Product",
-
-    name:
-      product.title,
-
-    description:
-      stripHtml(
-        product.descriptionHtml
-      ).slice(
-        0,
-        5000
-      ),
-
-    sku:
-      product.sku ||
-      product.id,
-
-    brand:
-      product.brand
-        ? {
-            "@type":
-              "Brand",
-
-            name:
-              product.brand
-          }
-        : undefined,
-
-    image:
-      product.images,
-
-    offers: {
-
-      "@type":
-        "Offer",
-
-      url:
-        `${window.location.origin}/product.html?id=${encodeURIComponent(product.id)}`,
-
-      priceCurrency:
-        "USD",
-
-      price:
-        toNumber(
-          price,
-          0
-        ).toFixed(2),
-
-      availability:
-        outOfStock
-          ? "https://schema.org/OutOfStock"
-          : "https://schema.org/InStock",
-
-      itemCondition:
-        "https://schema.org/NewCondition"
-    }
-  };
-
-  const cleanSchema =
-    JSON.parse(
-      JSON.stringify(
-        schema
-      )
-    );
-
-  const script =
-    document.createElement(
-      "script"
-    );
-
-  script.type =
-    "application/ld+json";
-
-  script.id =
-    "product-schema";
-
-  script.textContent =
-    JSON.stringify(
-      cleanSchema
-    );
-
-  document.head.appendChild(
-    script
-  );
-}
-
-
-/* ============================================================
-   STRIP HTML
-   ============================================================ */
-
-function stripHtml(
-  html
-) {
-
-  if (
-    !html
-  ) {
-
-    return "";
-  }
-
-  const div =
-    document.createElement(
-      "div"
-    );
-
-  div.innerHTML =
-    sanitizeDescriptionHtml(
-      html
-    );
-
-  return (
-    div.textContent ||
-    div.innerText ||
-    ""
-  )
-    .replace(
-      /\s+/g,
-      " "
-    )
-    .trim();
-}
-
-
-/* ============================================================
-   LOAD PRODUCT
-   ============================================================ */
-
-async function loadProduct() {
-
-  loadingState.hidden =
-    false;
-
-  errorState.hidden =
-    true;
-
-  productContainer.hidden =
-    true;
-
-  try {
-
-    product =
-      await fetchProduct();
-
-    if (
-      !product.id
-    ) {
-
-      throw new Error(
-        "The product ID is missing."
-      );
     }
 
-    renderProduct();
 
-    /*
-      Make the page visible only after the
-      basic product UI is ready.
-    */
+    /* ============================================================
+       START
+       ============================================================ */
 
-    loadingState.hidden =
-      true;
+    initialize();
 
-    productContainer.hidden =
-      false;
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Product loading error:",
-      error
-    );
-
-    loadingState.hidden =
-      true;
-
-    productContainer.hidden =
-      true;
-
-    errorState.hidden =
-      false;
-
-    errorMessage.textContent =
-      error?.message ||
-      "Unable to load this product.";
-  }
-}
-
-
-/* ============================================================
-   RETRY
-   ============================================================ */
-
-retryButton.addEventListener(
-  "click",
-  () => {
-
-    loadProduct();
-
-  }
-);
-
-
-/* ============================================================
-   CART COUNT
-   ============================================================ */
-
-window.addEventListener(
-  "storage",
-  updateCartCount
-);
-
-document.addEventListener(
-  "visibilitychange",
-  () => {
-
-    if (
-      !document.hidden
-    ) {
-
-      updateCartCount();
-    }
-  }
-);
-
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-$("#footer-year")
-  .textContent =
-  String(
-    new Date()
-      .getFullYear()
-  );
-
-
-/* ============================================================
-   INITIALIZATION
-   ============================================================ */
-
-updateCartCount();
-
-loadProduct();
-
-</script>
+  </script>
 
 </body>
 </html>
