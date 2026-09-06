@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Prasun Store | Smart Products for Modern Living</title>
 
   <meta
     name="description"
     content="Shop practical solar, lighting, electronics, home improvement, technology and lifestyle products at Prasun Store."
-  />
+  >
 
   <meta
     name="theme-color"
     content="#ffffff"
-  />
+  >
 
   <style>
     :root {
       --black: #111111;
-      --black-2: #1f1f1f;
+      --black-2: #202124;
       --text: #171717;
       --muted: #6b7280;
       --muted-2: #9ca3af;
       --border: #e5e7eb;
-      --border-dark: #d1d5db;
-      --bg: #ffffff;
+      --border-dark: #cfd3d8;
       --surface: #f7f7f8;
-      --surface-2: #f1f2f4;
+      --surface-2: #f0f1f3;
+      --white: #ffffff;
       --green: #087443;
       --green-bg: #ecfdf3;
       --red: #c62828;
-      --orange: #f59e0b;
-      --radius: 14px;
-      --radius-lg: 20px;
-      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.14);
+      --yellow: #f59e0b;
+
+      --radius-sm: 9px;
+      --radius-md: 13px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+
+      --shadow-sm:
+        0 2px 10px rgba(0, 0, 0, 0.06);
+
+      --shadow:
+        0 18px 60px rgba(0, 0, 0, 0.15);
+
       --max-width: 1280px;
     }
 
@@ -49,7 +60,7 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background: var(--white);
       color: var(--text);
       font-family:
         -apple-system,
@@ -71,7 +82,8 @@
 
     button,
     input,
-    select {
+    select,
+    textarea {
       font: inherit;
     }
 
@@ -93,7 +105,10 @@
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 36px));
+      width: min(
+        var(--max-width),
+        calc(100% - 36px)
+      );
       margin: 0 auto;
     }
 
@@ -101,13 +116,13 @@
       display: none !important;
     }
 
-    /* =========================================
+    /* =========================================================
        TOP BAR
-    ========================================= */
+    ========================================================= */
 
     .top-bar {
-      background: #111111;
-      color: #ffffff;
+      background: var(--black);
+      color: var(--white);
       font-size: 12px;
     }
 
@@ -126,29 +141,46 @@
       gap: 18px;
     }
 
-    .top-bar a {
-      color: #ffffff;
+    .top-bar a,
+    .top-bar button {
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--white);
+      font-size: 12px;
       text-decoration: none;
       opacity: 0.9;
     }
 
-    .top-bar a:hover {
+    .top-bar a:hover,
+    .top-bar button:hover {
       opacity: 1;
       text-decoration: underline;
     }
 
-    /* =========================================
+    /* =========================================================
        HEADER
-    ========================================= */
+    ========================================================= */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 80;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(
+        255,
+        255,
+        255,
+        0.96
+      );
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+      border-bottom:
+        1px solid rgba(
+          229,
+          231,
+          235,
+          0.92
+        );
     }
 
     .header-main {
@@ -160,34 +192,36 @@
 
     .brand {
       flex-shrink: 0;
-      text-decoration: none;
       color: var(--black);
+      text-decoration: none;
       font-size: 21px;
-      font-weight: 750;
-      letter-spacing: -0.6px;
+      font-weight: 760;
+      letter-spacing: -0.7px;
       white-space: nowrap;
     }
 
-    .brand span {
-      font-weight: 400;
-    }
-
     .header-search {
+      position: relative;
       flex: 1;
       max-width: 620px;
       margin: 0 auto;
-      position: relative;
     }
 
     .search-input {
       width: 100%;
       height: 44px;
-      border: 1px solid var(--border);
+      padding:
+        0
+        44px
+        0
+        44px;
+      border:
+        1px solid
+        var(--border);
       border-radius: 999px;
       background: var(--surface);
-      padding: 0 46px 0 44px;
-      outline: none;
       color: var(--text);
+      outline: none;
       transition:
         border-color 0.2s ease,
         background 0.2s ease,
@@ -195,9 +229,16 @@
     }
 
     .search-input:focus {
-      background: #ffffff;
+      background: var(--white);
       border-color: #9ca3af;
-      box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+      box-shadow:
+        0 0 0 3px
+        rgba(
+          17,
+          17,
+          17,
+          0.06
+        );
     }
 
     .search-icon {
@@ -206,17 +247,17 @@
       top: 50%;
       width: 18px;
       height: 18px;
-      transform: translateY(-50%);
       color: var(--muted);
+      transform: translateY(-50%);
       pointer-events: none;
     }
 
     .search-clear {
       position: absolute;
-      right: 8px;
+      right: 7px;
       top: 50%;
-      width: 30px;
-      height: 30px;
+      width: 31px;
+      height: 31px;
       transform: translateY(-50%);
       border: 0;
       border-radius: 50%;
@@ -233,10 +274,12 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
+      flex-shrink: 0;
     }
 
     .header-action {
+      position: relative;
       width: 42px;
       height: 42px;
       border: 0;
@@ -245,7 +288,6 @@
       color: var(--black);
       display: grid;
       place-items: center;
-      position: relative;
     }
 
     .header-action:hover {
@@ -259,29 +301,34 @@
       min-width: 19px;
       height: 19px;
       padding: 0 5px;
+      border:
+        2px solid
+        var(--white);
       border-radius: 999px;
-      background: #111111;
-      color: #ffffff;
-      border: 2px solid #ffffff;
+      background: var(--black);
+      color: var(--white);
       font-size: 10px;
-      font-weight: 750;
       line-height: 15px;
+      font-weight: 750;
       text-align: center;
     }
 
-    /* =========================================
-       NAVIGATION
-    ========================================= */
+    /* =========================================================
+       CATEGORY NAV
+    ========================================================= */
 
     .category-nav {
-      border-top: 1px solid #f0f0f0;
-      background: #ffffff;
+      border-top:
+        1px solid
+        #f1f1f1;
+      background: var(--white);
     }
 
     .category-nav-inner {
       min-height: 48px;
       display: flex;
       align-items: center;
+      gap: 2px;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -293,7 +340,9 @@
     .category-button {
       flex-shrink: 0;
       height: 34px;
-      padding: 0 14px;
+      padding:
+        0
+        14px;
       border: 0;
       border-radius: 999px;
       background: transparent;
@@ -310,66 +359,85 @@
 
     .category-button.active {
       background: var(--black);
-      color: #ffffff;
+      color: var(--white);
     }
 
-    /* =========================================
+    /* =========================================================
        HERO
-    ========================================= */
+    ========================================================= */
 
     .hero {
-      padding: 64px 0 42px;
+      padding:
+        64px
+        0
+        42px;
       background:
         radial-gradient(
-          circle at 20% 20%,
-          rgba(0, 0, 0, 0.035),
+          circle at 18% 20%,
+          rgba(
+            0,
+            0,
+            0,
+            0.04
+          ),
           transparent 30%
         ),
-        #ffffff;
+        var(--white);
     }
 
     .hero-inner {
-      text-align: center;
-      max-width: 850px;
+      max-width: 860px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      margin-bottom: 15px;
-      color: #555555;
+      color: #555;
       font-size: 13px;
       font-weight: 650;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.25px;
     }
 
     .hero-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #111111;
+      background: var(--black);
     }
 
     .hero h1 {
-      margin: 0;
-      font-size: clamp(36px, 5.5vw, 64px);
+      margin:
+        16px
+        0
+        0;
+      color: var(--black);
+      font-size:
+        clamp(
+          38px,
+          5.5vw,
+          64px
+        );
       line-height: 1.02;
       letter-spacing: -3px;
-      font-weight: 760;
+      font-weight: 770;
     }
 
     .hero p {
       max-width: 680px;
-      margin: 20px auto 0;
+      margin:
+        19px
+        auto
+        0;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.65;
     }
 
     .hero-actions {
-      margin-top: 26px;
+      margin-top: 27px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -377,57 +445,70 @@
     }
 
     .hero-button {
-      min-height: 44px;
-      padding: 0 21px;
+      min-height: 45px;
+      padding:
+        0
+        21px;
       border-radius: 999px;
-      font-size: 14px;
-      font-weight: 650;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: none;
     }
 
     .hero-button.primary {
-      background: #111111;
-      color: #ffffff;
+      border: 0;
+      background: var(--black);
+      color: var(--white);
     }
 
     .hero-button.secondary {
-      border: 1px solid var(--border);
-      background: #ffffff;
-      color: #111111;
+      border:
+        1px solid
+        var(--border);
+      background: var(--white);
+      color: var(--black);
     }
 
     .hero-button.secondary:hover {
       background: var(--surface);
     }
 
-    /* =========================================
+    /* =========================================================
        TRUST STRIP
-    ========================================= */
+    ========================================================= */
 
     .trust-strip {
-      padding: 0 0 38px;
+      padding-bottom: 40px;
     }
 
     .trust-grid {
       display: grid;
       grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-      border: 1px solid var(--border);
-      border-radius: 16px;
+        repeat(
+          4,
+          minmax(0, 1fr)
+        );
       overflow: hidden;
-      background: #ffffff;
+      border:
+        1px solid
+        var(--border);
+      border-radius: 16px;
     }
 
     .trust-item {
       min-height: 82px;
-      padding: 15px 20px;
+      padding:
+        15px
+        20px;
       display: flex;
       align-items: center;
-      gap: 13px;
-      border-right: 1px solid var(--border);
+      gap: 12px;
+      border-right:
+        1px solid
+        var(--border);
     }
 
     .trust-item:last-child {
@@ -446,7 +527,7 @@
 
     .trust-copy strong {
       display: block;
-      color: #111111;
+      color: var(--black);
       font-size: 13px;
       font-weight: 700;
     }
@@ -458,31 +539,38 @@
       font-size: 12px;
     }
 
-    /* =========================================
+    /* =========================================================
        PRODUCTS
-    ========================================= */
+    ========================================================= */
 
     .products-section {
-      padding: 10px 0 85px;
+      padding:
+        10px
+        0
+        90px;
     }
 
     .section-top {
+      margin-bottom: 22px;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       gap: 20px;
-      margin-bottom: 22px;
     }
 
     .section-heading h2 {
       margin: 0;
+      color: var(--black);
       font-size: 24px;
       line-height: 1.2;
       letter-spacing: -0.7px;
     }
 
     .section-heading p {
-      margin: 5px 0 0;
+      margin:
+        5px
+        0
+        0;
       color: var(--muted);
       font-size: 13px;
     }
@@ -496,8 +584,13 @@
     .product-grid {
       display: grid;
       grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-      gap: 27px 20px;
+        repeat(
+          4,
+          minmax(0, 1fr)
+        );
+      gap:
+        29px
+        20px;
     }
 
     .product-card {
@@ -507,15 +600,17 @@
     }
 
     .product-card:focus-visible {
-      outline: 2px solid #111111;
+      outline:
+        2px solid
+        var(--black);
       outline-offset: 6px;
       border-radius: 16px;
     }
 
     .product-image-wrap {
       position: relative;
-      overflow: hidden;
       aspect-ratio: 1 / 1;
+      overflow: hidden;
       border-radius: 16px;
       background: var(--surface);
     }
@@ -537,17 +632,21 @@
       left: 10px;
       top: 10px;
       z-index: 2;
-      padding: 5px 8px;
+      padding:
+        5px
+        8px;
       border-radius: 999px;
-      background: #111111;
-      color: #ffffff;
+      background: var(--black);
+      color: var(--white);
       font-size: 10px;
       font-weight: 750;
-      letter-spacing: 0.2px;
     }
 
     .product-info {
-      padding: 12px 2px 0;
+      padding:
+        12px
+        2px
+        0;
     }
 
     .product-category {
@@ -555,13 +654,14 @@
       margin-bottom: 4px;
       color: var(--muted);
       font-size: 11px;
+      line-height: 1.4;
       text-transform: uppercase;
       letter-spacing: 0.55px;
     }
 
     .product-title {
-      margin: 0;
       min-height: 42px;
+      margin: 0;
       color: #171717;
       font-size: 15px;
       line-height: 1.4;
@@ -577,25 +677,25 @@
       margin-top: 5px;
       display: flex;
       align-items: center;
-      gap: 5px;
-      color: #666666;
-      font-size: 12px;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 11px;
     }
 
     .stars {
+      color: var(--black);
       letter-spacing: 1px;
-      color: #111111;
     }
 
     .product-price {
       margin-top: 7px;
-      color: #111111;
+      color: var(--black);
       font-size: 16px;
-      font-weight: 750;
+      font-weight: 760;
     }
 
     .product-price-old {
-      margin-left: 6px;
+      margin-left: 7px;
       color: var(--muted-2);
       font-size: 12px;
       font-weight: 450;
@@ -609,24 +709,33 @@
       font-weight: 700;
     }
 
-    /* =========================================
-       LOADING
-    ========================================= */
+    /* =========================================================
+       LOADING / EMPTY
+    ========================================================= */
 
     .loading {
-      padding: 100px 20px;
-      text-align: center;
+      padding:
+        100px
+        20px;
       color: var(--muted);
+      text-align: center;
     }
 
     .spinner {
       width: 30px;
       height: 30px;
-      margin: 0 auto 16px;
-      border: 3px solid #e5e7eb;
-      border-top-color: #111111;
+      margin:
+        0
+        auto
+        16px;
+      border:
+        3px solid
+        #e5e7eb;
+      border-top-color:
+        var(--black);
       border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+      animation:
+        spin 0.8s linear infinite;
     }
 
     @keyframes spin {
@@ -637,21 +746,23 @@
 
     .empty-state {
       grid-column: 1 / -1;
-      padding: 90px 20px;
-      text-align: center;
+      padding:
+        90px
+        20px;
       color: var(--muted);
+      text-align: center;
     }
 
     .empty-state strong {
       display: block;
       margin-bottom: 7px;
-      color: #111111;
+      color: var(--black);
       font-size: 19px;
     }
 
-    /* =========================================
+    /* =========================================================
        PRODUCT MODAL
-    ========================================= */
+    ========================================================= */
 
     .modal-overlay {
       position: fixed;
@@ -661,7 +772,13 @@
       align-items: center;
       justify-content: center;
       padding: 22px;
-      background: rgba(0, 0, 0, 0.48);
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          0.48
+        );
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
@@ -671,45 +788,57 @@
     }
 
     .product-modal {
-      width: min(1120px, 100%);
-      max-height: calc(100vh - 44px);
+      width: min(
+        1120px,
+        100%
+      );
+      max-height:
+        calc(
+          100vh - 44px
+        );
       overflow-y: auto;
-      overscroll-behavior: contain;
-      background: #ffffff;
+      position: relative;
+      background: var(--white);
       border-radius: 24px;
       box-shadow: var(--shadow);
-      position: relative;
+      overscroll-behavior: contain;
     }
 
     .modal-close {
       position: absolute;
-      right: 16px;
-      top: 16px;
-      z-index: 20;
+      top: 15px;
+      right: 15px;
+      z-index: 25;
       width: 40px;
       height: 40px;
       border: 0;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.95
+        );
+      box-shadow: var(--shadow-sm);
       display: grid;
       place-items: center;
     }
 
     .modal-close:hover {
-      background: #ffffff;
+      background: var(--white);
     }
 
     .modal-content {
       display: grid;
       grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(420px, 0.95fr);
+        minmax(0, 1.04fr)
+        minmax(420px, 0.96fr);
     }
 
-    /* =========================================
-       PRODUCT GALLERY
-    ========================================= */
+    /* =========================================================
+       GALLERY
+    ========================================================= */
 
     .gallery-panel {
       min-width: 0;
@@ -719,10 +848,10 @@
 
     .gallery-main {
       position: relative;
+      overflow: hidden;
       aspect-ratio: 1 / 1;
       border-radius: 16px;
-      overflow: hidden;
-      background: #ffffff;
+      background: var(--white);
       cursor: zoom-in;
     }
 
@@ -740,7 +869,13 @@
       height: 36px;
       border: 0;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.95
+        );
       box-shadow: var(--shadow-sm);
       display: grid;
       place-items: center;
@@ -763,14 +898,18 @@
       height: 66px;
       flex-shrink: 0;
       padding: 2px;
-      border: 1px solid var(--border);
+      border:
+        1px solid
+        var(--border);
       border-radius: 10px;
-      background: #ffffff;
+      background: var(--white);
       overflow: hidden;
     }
 
     .gallery-thumb.active {
-      border: 2px solid #111111;
+      border:
+        2px solid
+        var(--black);
     }
 
     .gallery-thumb img {
@@ -780,12 +919,15 @@
       border-radius: 7px;
     }
 
-    /* =========================================
-       PRODUCT DETAILS
-    ========================================= */
+    /* =========================================================
+       MODAL DETAILS
+    ========================================================= */
 
     .modal-details {
-      padding: 44px 42px 40px;
+      padding:
+        43px
+        42px
+        40px;
     }
 
     .modal-category {
@@ -800,8 +942,13 @@
     .modal-title {
       margin: 0;
       padding-right: 28px;
-      color: #111111;
-      font-size: clamp(26px, 3vw, 36px);
+      color: var(--black);
+      font-size:
+        clamp(
+          26px,
+          3vw,
+          36px
+        );
       line-height: 1.14;
       letter-spacing: -1.1px;
     }
@@ -816,7 +963,7 @@
     }
 
     .modal-rating-stars {
-      color: #111111;
+      color: var(--black);
       letter-spacing: 1px;
     }
 
@@ -829,7 +976,7 @@
     }
 
     .modal-price {
-      color: #111111;
+      color: var(--black);
       font-size: 28px;
       font-weight: 780;
       letter-spacing: -0.8px;
@@ -851,17 +998,20 @@
       margin-top: 5px;
       color: var(--muted);
       font-size: 12px;
+      line-height: 1.5;
     }
 
     .product-divider {
       height: 1px;
-      margin: 22px 0;
+      margin:
+        22px
+        0;
       background: var(--border);
     }
 
-    /* =========================================
-       VARIATIONS
-    ========================================= */
+    /* =========================================================
+       VARIANTS
+    ========================================================= */
 
     .variant-groups {
       display: flex;
@@ -875,14 +1025,9 @@
 
     .variant-group-label {
       margin-bottom: 9px;
-      color: #111111;
+      color: var(--black);
       font-size: 14px;
       font-weight: 700;
-    }
-
-    .variant-group-label span {
-      color: var(--muted);
-      font-weight: 450;
     }
 
     .variant-options {
@@ -893,11 +1038,15 @@
 
     .variant-option {
       min-height: 40px;
-      padding: 0 14px;
-      border: 1px solid var(--border-dark);
+      padding:
+        0
+        14px;
+      border:
+        1px solid
+        var(--border-dark);
       border-radius: 9px;
-      background: #ffffff;
-      color: #222222;
+      background: var(--white);
+      color: #222;
       font-size: 13px;
       font-weight: 600;
       transition:
@@ -907,59 +1056,82 @@
     }
 
     .variant-option:hover:not(:disabled) {
-      border-color: #555555;
+      border-color: #555;
     }
 
     .variant-option.selected {
-      border-color: #111111;
-      background: #111111;
-      color: #ffffff;
-      box-shadow: 0 0 0 1px #111111;
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+      box-shadow:
+        0 0 0 1px
+        var(--black);
     }
 
-    .variant-option.disabled,
     .variant-option:disabled {
       opacity: 0.38;
       text-decoration: line-through;
     }
 
-    .variant-fallback {
+    .variant-fallback-select {
       width: 100%;
-      height: 44px;
-      border: 1px solid var(--border);
+      height: 45px;
+      padding:
+        0
+        12px;
+      border:
+        1px solid
+        var(--border);
       border-radius: 10px;
-      background: #ffffff;
-      padding: 0 12px;
+      background: var(--white);
+      color: var(--black);
       outline: none;
     }
 
-    /* =========================================
+    .variant-fallback-select:focus {
+      border-color: #888;
+    }
+
+    /* =========================================================
        QUANTITY
-    ========================================= */
+    ========================================================= */
+
+    .purchase-area {
+      margin-top: 22px;
+    }
+
+    .purchase-label {
+      margin-bottom: 8px;
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 700;
+    }
 
     .purchase-row {
-      margin-top: 22px;
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 124px minmax(0, 1fr);
       gap: 10px;
     }
 
     .quantity-selector {
-      height: 48px;
+      height: 50px;
       display: inline-flex;
       align-items: center;
-      border: 1px solid var(--border-dark);
-      border-radius: 10px;
+      justify-content: center;
       overflow: hidden;
-      background: #ffffff;
+      border:
+        1px solid
+        var(--border-dark);
+      border-radius: 10px;
+      background: var(--white);
     }
 
     .quantity-button {
-      width: 42px;
+      width: 40px;
       height: 48px;
       border: 0;
-      background: #ffffff;
-      color: #111111;
+      background: var(--white);
+      color: var(--black);
       font-size: 20px;
     }
 
@@ -968,30 +1140,28 @@
     }
 
     .quantity-input {
-      width: 45px;
+      width: 42px;
       height: 48px;
       padding: 0;
       border: 0;
-      outline: none;
+      outline: 0;
+      color: var(--black);
+      background: var(--white);
       text-align: center;
-      color: #111111;
       font-size: 14px;
       font-weight: 700;
+      -moz-appearance: textfield;
     }
 
     .quantity-input::-webkit-inner-spin-button,
     .quantity-input::-webkit-outer-spin-button {
-      -webkit-appearance: none;
       margin: 0;
+      -webkit-appearance: none;
     }
 
-    .quantity-input {
-      -moz-appearance: textfield;
-    }
-
-    /* =========================================
+    /* =========================================================
        PURCHASE BUTTONS
-    ========================================= */
+    ========================================================= */
 
     .purchase-buttons {
       display: grid;
@@ -999,54 +1169,51 @@
       gap: 10px;
     }
 
-    .add-button,
-    .buy-button {
+    .purchase-button {
       min-height: 50px;
       border-radius: 10px;
       font-size: 14px;
       font-weight: 750;
       transition:
-        opacity 0.2s ease,
+        opacity 0.18s ease,
         transform 0.1s ease;
     }
 
     .add-button {
-      border: 1px solid #111111;
-      background: #ffffff;
-      color: #111111;
+      border:
+        1px solid
+        var(--black);
+      background: var(--white);
+      color: var(--black);
     }
 
     .buy-button {
       border: 0;
-      background: #111111;
-      color: #ffffff;
+      background: var(--black);
+      color: var(--white);
     }
 
-    .add-button:hover:not(:disabled),
-    .buy-button:hover:not(:disabled) {
-      opacity: 0.86;
+    .purchase-button:hover:not(:disabled) {
+      opacity: 0.84;
     }
 
-    .add-button:active:not(:disabled),
-    .buy-button:active:not(:disabled) {
-      transform: scale(0.99);
+    .purchase-button:active:not(:disabled) {
+      transform: scale(0.985);
     }
 
-    .add-button:disabled,
-    .buy-button:disabled {
+    .purchase-button:disabled {
       opacity: 0.42;
-      cursor: not-allowed;
     }
 
     .selection-message {
-      min-height: 20px;
+      min-height: 19px;
       margin-top: 9px;
       color: var(--red);
       font-size: 12px;
     }
 
     .stock-status {
-      margin-top: 8px;
+      margin-top: 4px;
       display: flex;
       align-items: center;
       gap: 7px;
@@ -1070,14 +1237,16 @@
       background: var(--red);
     }
 
-    /* =========================================
-       DELIVERY INFO
-    ========================================= */
+    /* =========================================================
+       DELIVERY
+    ========================================================= */
 
     .delivery-box {
-      margin-top: 22px;
+      margin-top: 20px;
       padding: 15px;
-      border: 1px solid var(--border);
+      border:
+        1px solid
+        var(--border);
       border-radius: 12px;
       background: #fafafa;
     }
@@ -1093,18 +1262,18 @@
     }
 
     .delivery-icon {
-      flex-shrink: 0;
       width: 28px;
       height: 28px;
+      flex-shrink: 0;
       border-radius: 50%;
-      background: #ffffff;
+      background: var(--white);
       display: grid;
       place-items: center;
     }
 
     .delivery-text strong {
       display: block;
-      color: #111111;
+      color: var(--black);
       font-size: 12px;
     }
 
@@ -1127,22 +1296,25 @@
       padding: 0;
       border: 0;
       background: none;
-      color: #555555;
+      color: #555;
       font-size: 11px;
       text-decoration: underline;
     }
 
     .policy-links button:hover {
-      color: #111111;
+      color: var(--black);
     }
 
-    /* =========================================
+    /* =========================================================
        DESCRIPTION
-    ========================================= */
+    ========================================================= */
 
     .description-heading {
-      margin: 26px 0 10px;
-      color: #111111;
+      margin:
+        27px
+        0
+        10px;
+      color: var(--black);
       font-size: 16px;
       font-weight: 750;
     }
@@ -1150,12 +1322,15 @@
     .modal-description {
       color: #4b5563;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .modal-description h3 {
-      margin: 23px 0 9px;
-      color: #111111;
+      margin:
+        23px
+        0
+        9px;
+      color: var(--black);
       font-size: 16px;
       line-height: 1.35;
       font-weight: 750;
@@ -1166,12 +1341,18 @@
     }
 
     .modal-description p {
-      margin: 0 0 12px;
+      margin:
+        0
+        0
+        12px;
     }
 
     .modal-description ul,
     .modal-description ol {
-      margin: 8px 0 17px;
+      margin:
+        8px
+        0
+        17px;
       padding-left: 20px;
     }
 
@@ -1182,20 +1363,26 @@
 
     .modal-description strong,
     .modal-description b {
-      color: #111111;
+      color: var(--black);
       font-weight: 700;
     }
 
-    /* =========================================
+    /* =========================================================
        CART DRAWER
-    ========================================= */
+    ========================================================= */
 
     .drawer-overlay {
       position: fixed;
       inset: 0;
       z-index: 120;
       display: none;
-      background: rgba(0, 0, 0, 0.42);
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          0.42
+        );
     }
 
     .drawer-overlay.open {
@@ -1204,17 +1391,30 @@
 
     .cart-drawer {
       position: fixed;
-      z-index: 121;
       top: 0;
       right: 0;
-      width: min(460px, 100%);
+      z-index: 121;
+      width: min(
+        460px,
+        100%
+      );
       height: 100%;
-      background: #ffffff;
-      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.16);
-      transform: translateX(100%);
-      transition: transform 0.25s ease;
       display: flex;
       flex-direction: column;
+      background: var(--white);
+      box-shadow:
+        -20px
+        0
+        60px
+        rgba(
+          0,
+          0,
+          0,
+          0.16
+        );
+      transform: translateX(100%);
+      transition:
+        transform 0.25s ease;
     }
 
     .cart-drawer.open {
@@ -1223,8 +1423,12 @@
 
     .drawer-header {
       min-height: 72px;
-      padding: 0 22px;
-      border-bottom: 1px solid var(--border);
+      padding:
+        0
+        22px;
+      border-bottom:
+        1px solid
+        var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1233,6 +1437,7 @@
 
     .drawer-title {
       margin: 0;
+      color: var(--black);
       font-size: 20px;
       letter-spacing: -0.4px;
     }
@@ -1261,16 +1466,25 @@
     .drawer-items {
       flex: 1;
       overflow-y: auto;
-      padding: 8px 22px 22px;
+      padding:
+        8px
+        22px
+        22px;
       overscroll-behavior: contain;
     }
 
     .cart-item {
       display: grid;
-      grid-template-columns: 84px minmax(0, 1fr);
+      grid-template-columns:
+        84px
+        minmax(0, 1fr);
       gap: 14px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
+      padding:
+        16px
+        0;
+      border-bottom:
+        1px solid
+        var(--border);
     }
 
     .cart-item-image {
@@ -1283,7 +1497,7 @@
 
     .cart-item-title {
       margin: 0;
-      color: #111111;
+      color: var(--black);
       font-size: 14px;
       line-height: 1.4;
       font-weight: 650;
@@ -1293,12 +1507,12 @@
       margin-top: 5px;
       color: var(--muted);
       font-size: 11px;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .cart-item-price {
       margin-top: 7px;
-      color: #111111;
+      color: var(--black);
       font-size: 14px;
       font-weight: 750;
     }
@@ -1314,17 +1528,20 @@
     .drawer-quantity {
       display: inline-flex;
       align-items: center;
-      border: 1px solid var(--border);
-      border-radius: 8px;
       overflow: hidden;
+      border:
+        1px solid
+        var(--border);
+      border-radius: 8px;
     }
 
     .drawer-quantity button {
       width: 31px;
       height: 31px;
       border: 0;
-      background: #ffffff;
-      color: #111111;
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
     }
 
     .drawer-quantity button:hover {
@@ -1333,6 +1550,7 @@
 
     .drawer-quantity span {
       min-width: 31px;
+      color: var(--black);
       text-align: center;
       font-size: 12px;
       font-weight: 700;
@@ -1352,15 +1570,20 @@
     }
 
     .drawer-empty {
-      padding: 100px 20px;
-      text-align: center;
+      padding:
+        100px
+        20px;
       color: var(--muted);
+      text-align: center;
     }
 
     .drawer-empty-icon {
       width: 60px;
       height: 60px;
-      margin: 0 auto 15px;
+      margin:
+        0
+        auto
+        15px;
       border-radius: 50%;
       background: var(--surface);
       display: grid;
@@ -1369,16 +1592,21 @@
 
     .drawer-empty strong {
       display: block;
-      color: #111111;
-      font-size: 17px;
       margin-bottom: 5px;
+      color: var(--black);
+      font-size: 17px;
     }
 
     .drawer-footer {
       flex-shrink: 0;
-      padding: 17px 22px 22px;
-      border-top: 1px solid var(--border);
-      background: #ffffff;
+      padding:
+        17px
+        22px
+        22px;
+      border-top:
+        1px solid
+        var(--border);
+      background: var(--white);
     }
 
     .drawer-total-row {
@@ -1386,21 +1614,24 @@
       align-items: center;
       justify-content: space-between;
       gap: 15px;
-      margin-bottom: 6px;
     }
 
     .drawer-total-label {
+      color: var(--black);
       font-size: 14px;
     }
 
     .drawer-total {
-      color: #111111;
+      color: var(--black);
       font-size: 20px;
       font-weight: 780;
     }
 
     .drawer-note {
-      margin-bottom: 15px;
+      margin:
+        6px
+        0
+        15px;
       color: var(--muted);
       font-size: 11px;
       line-height: 1.5;
@@ -1411,23 +1642,23 @@
       min-height: 50px;
       border: 0;
       border-radius: 10px;
-      background: #111111;
-      color: #ffffff;
+      background: var(--black);
+      color: var(--white);
       font-size: 14px;
       font-weight: 750;
     }
 
     .checkout-button:hover:not(:disabled) {
-      opacity: 0.88;
+      opacity: 0.87;
     }
 
     .checkout-button:disabled {
-      opacity: 0.4;
+      opacity: 0.42;
     }
 
-    /* =========================================
+    /* =========================================================
        POLICY MODAL
-    ========================================= */
+    ========================================================= */
 
     .policy-overlay {
       position: fixed;
@@ -1437,7 +1668,13 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.48);
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          0.48
+        );
       backdrop-filter: blur(7px);
       -webkit-backdrop-filter: blur(7px);
     }
@@ -1447,11 +1684,17 @@
     }
 
     .policy-modal {
-      width: min(760px, 100%);
-      max-height: min(760px, calc(100vh - 40px));
+      width: min(
+        760px,
+        100%
+      );
+      max-height:
+        calc(
+          100vh - 40px
+        );
       overflow-y: auto;
       border-radius: 20px;
-      background: #ffffff;
+      background: var(--white);
       box-shadow: var(--shadow);
     }
 
@@ -1460,9 +1703,19 @@
       top: 0;
       z-index: 2;
       min-height: 68px;
-      padding: 0 22px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.96);
+      padding:
+        0
+        22px;
+      border-bottom:
+        1px solid
+        var(--border);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.96
+        );
       backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
@@ -1471,6 +1724,7 @@
 
     .policy-title {
       margin: 0;
+      color: var(--black);
       font-size: 19px;
     }
 
@@ -1492,8 +1746,11 @@
     }
 
     .policy-body h3 {
-      margin: 22px 0 7px;
-      color: #111111;
+      margin:
+        22px
+        0
+        7px;
+      color: var(--black);
       font-size: 15px;
     }
 
@@ -1502,110 +1759,28 @@
     }
 
     .policy-body p {
-      margin: 0 0 12px;
+      margin:
+        0
+        0
+        12px;
     }
 
     .policy-body ul {
-      margin: 7px 0 15px;
+      margin:
+        7px
+        0
+        15px;
       padding-left: 20px;
     }
 
-    /* =========================================
-       FOOTER
-    ========================================= */
-
-    .site-footer {
-      background: #111111;
-      color: #d1d5db;
-      padding: 58px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns:
-        1.5fr
-        repeat(3, 1fr);
-      gap: 42px;
-      padding-bottom: 44px;
-    }
-
-    .footer-brand {
-      color: #ffffff;
-      font-size: 21px;
-      font-weight: 750;
-      letter-spacing: -0.5px;
-    }
-
-    .footer-description {
-      max-width: 360px;
-      margin-top: 12px;
-      color: #9ca3af;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .footer-heading {
-      margin: 0 0 14px;
-      color: #ffffff;
-      font-size: 13px;
+    .policy-body a {
+      color: var(--black);
       font-weight: 700;
     }
 
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .footer-links button,
-    .footer-links a {
-      width: fit-content;
-      padding: 0;
-      border: 0;
-      background: none;
-      color: #9ca3af;
-      font-size: 12px;
-      text-decoration: none;
-    }
-
-    .footer-links button:hover,
-    .footer-links a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
-    .footer-bottom {
-      padding-top: 22px;
-      border-top: 1px solid #292929;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      color: #888888;
-      font-size: 11px;
-    }
-
-    .footer-bottom-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .footer-bottom-links button {
-      padding: 0;
-      border: 0;
-      background: none;
-      color: #888888;
-      font-size: 11px;
-    }
-
-    .footer-bottom-links button:hover {
-      color: #ffffff;
-    }
-
-    /* =========================================
+    /* =========================================================
        TOAST
-    ========================================= */
+    ========================================================= */
 
     .toast-container {
       position: fixed;
@@ -1617,13 +1792,27 @@
     }
 
     .toast {
+      max-width:
+        calc(
+          100vw - 30px
+        );
       min-width: 260px;
-      max-width: calc(100vw - 30px);
-      padding: 13px 17px;
+      padding:
+        13px
+        17px;
       border-radius: 11px;
-      background: #111111;
-      color: #ffffff;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+      background: var(--black);
+      color: var(--white);
+      box-shadow:
+        0
+        12px
+        35px
+        rgba(
+          0,
+          0,
+          0,
+          0.2
+        );
       font-size: 13px;
       font-weight: 600;
       text-align: center;
@@ -1639,14 +1828,137 @@
       transform: translateY(0);
     }
 
-    /* =========================================
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .site-footer {
+      padding:
+        58px
+        0
+        25px;
+      background: var(--black);
+      color: #d1d5db;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns:
+        1.45fr
+        repeat(
+          3,
+          1fr
+        );
+      gap: 42px;
+      padding-bottom: 44px;
+    }
+
+    .footer-brand {
+      color: var(--white);
+      font-size: 21px;
+      font-weight: 760;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-description {
+      max-width: 370px;
+      margin-top: 12px;
+      color: #9ca3af;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      margin:
+        0
+        0
+        14px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer-links a,
+    .footer-links button {
+      width: fit-content;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: #9ca3af;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover,
+    .footer-links button:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    .footer-contact {
+      margin-top: 18px;
+      color: #9ca3af;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-contact a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      border-top:
+        1px solid
+        #292929;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #888;
+      font-size: 11px;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-bottom-links button {
+      padding: 0;
+      border: 0;
+      background: none;
+      color: #888;
+      font-size: 11px;
+    }
+
+    .footer-bottom-links button:hover {
+      color: var(--white);
+    }
+
+    /* =========================================================
        RESPONSIVE
-    ========================================= */
+    ========================================================= */
 
     @media (max-width: 1050px) {
       .product-grid {
         grid-template-columns:
-          repeat(3, minmax(0, 1fr));
+          repeat(
+            3,
+            minmax(0, 1fr)
+          );
       }
 
       .modal-content {
@@ -1656,7 +1968,9 @@
       }
 
       .modal-details {
-        padding: 35px 30px;
+        padding:
+          35px
+          30px;
       }
     }
 
@@ -1683,7 +1997,10 @@
 
       .trust-grid {
         grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
       }
 
       .trust-item:nth-child(2) {
@@ -1691,12 +2008,17 @@
       }
 
       .trust-item:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--border);
+        border-bottom:
+          1px solid
+          var(--border);
       }
 
       .product-grid {
         grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
       }
 
       .modal-overlay {
@@ -1718,11 +2040,24 @@
       .gallery-main-image {
         max-height: 430px;
       }
+
+      .footer-grid {
+        grid-template-columns:
+          1fr
+          1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: 1 / -1;
+      }
     }
 
     @media (max-width: 600px) {
       .container {
-        width: calc(100% - 24px);
+        width:
+          calc(
+            100% - 24px
+          );
       }
 
       .top-bar {
@@ -1743,8 +2078,8 @@
 
       .search-input {
         height: 39px;
-        font-size: 13px;
         padding-left: 38px;
+        font-size: 13px;
       }
 
       .search-icon {
@@ -1763,7 +2098,10 @@
       }
 
       .hero {
-        padding: 44px 0 32px;
+        padding:
+          44px
+          0
+          32px;
       }
 
       .hero h1 {
@@ -1794,7 +2132,9 @@
 
       .trust-item {
         border-right: 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom:
+          1px solid
+          var(--border);
       }
 
       .trust-item:last-child {
@@ -1810,7 +2150,9 @@
       }
 
       .product-grid {
-        gap: 24px 11px;
+        gap:
+          24px
+          11px;
       }
 
       .product-title {
@@ -1829,16 +2171,23 @@
       .product-modal {
         width: 100%;
         max-height: 96vh;
-        border-radius: 22px 22px 0 0;
+        border-radius:
+          22px
+          22px
+          0
+          0;
       }
 
       .modal-close {
-        top: 11px;
-        right: 11px;
+        top: 10px;
+        right: 10px;
       }
 
       .gallery-panel {
-        padding: 10px 10px 0;
+        padding:
+          10px
+          10px
+          0;
       }
 
       .gallery-main {
@@ -1846,11 +2195,17 @@
       }
 
       .gallery-thumbnails {
-        padding: 8px 3px 3px;
+        padding:
+          8px
+          3px
+          3px;
       }
 
       .modal-details {
-        padding: 22px 18px 28px;
+        padding:
+          22px
+          18px
+          28px;
       }
 
       .modal-title {
@@ -1867,7 +2222,6 @@
 
       .quantity-selector {
         width: 100%;
-        justify-content: center;
       }
 
       .purchase-buttons {
@@ -1875,12 +2229,12 @@
       }
 
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 25px;
+        grid-template-columns: 1fr;
+        gap: 34px;
       }
 
       .footer-grid > :first-child {
-        grid-column: 1 / -1;
+        grid-column: auto;
       }
 
       .footer-bottom {
@@ -1901,60 +2255,54 @@
       .hero h1 {
         font-size: 34px;
       }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid > :first-child {
-        grid-column: auto;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================================
+  <!-- ========================================================
        TOP BAR
-  ========================================== -->
+  ========================================================= -->
 
   <div class="top-bar">
     <div class="container top-bar-inner">
 
       <div class="top-bar-left">
-        <span>Smart products for modern living</span>
-        <a href="#products">Shop Products</a>
+        <span>
+          Smart products for modern living
+        </span>
+
+        <a href="#products">
+          Shop Products
+        </a>
       </div>
 
       <div class="top-bar-right">
-        <a href="mailto:contact@prasunbarua.com">
+
+        <button
+          type="button"
+          data-policy="contact"
+        >
           Contact
-        </a>
+        </button>
 
         <button
           type="button"
           data-policy="shipping"
-          style="
-            border:0;
-            background:none;
-            color:#fff;
-            padding:0;
-            cursor:pointer;
-            font-size:12px;
-          "
         >
           Shipping
         </button>
+
       </div>
 
     </div>
   </div>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        HEADER
-  ========================================== -->
+  ========================================================= -->
 
   <header class="site-header">
 
@@ -1967,6 +2315,7 @@
       >
         Prasun Store
       </a>
+
 
       <div class="header-search">
 
@@ -1984,19 +2333,19 @@
             r="7"
           ></circle>
 
-          <path
-            d="m20 20-4-4"
-          ></path>
+          <path d="m20 20-4-4"></path>
         </svg>
+
 
         <input
           id="searchInput"
           class="search-input"
           type="search"
+          placeholder="Search products"
           autocomplete="off"
-          placeholder="Search products, categories and more"
           aria-label="Search products"
-        />
+        >
+
 
         <button
           id="searchClear"
@@ -2017,6 +2366,7 @@
         </button>
 
       </div>
+
 
       <div class="header-actions">
 
@@ -2041,6 +2391,7 @@
           </svg>
         </button>
 
+
         <button
           id="cartButton"
           class="header-action"
@@ -2048,6 +2399,7 @@
           aria-label="Open shopping cart"
           title="Cart"
         >
+
           <svg
             width="21"
             height="21"
@@ -2066,6 +2418,7 @@
           >
             0
           </span>
+
         </button>
 
       </div>
@@ -2073,30 +2426,26 @@
     </div>
 
 
-    <!-- =======================================
-         CATEGORY NAV
-    ======================================== -->
-
     <nav
       class="category-nav"
       aria-label="Product categories"
     >
+
       <div
         id="categories"
         class="container category-nav-inner"
       ></div>
+
     </nav>
 
   </header>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        MAIN
-  ========================================== -->
+  ========================================================= -->
 
   <main>
-
-    <!-- HERO -->
 
     <section class="hero">
 
@@ -2107,15 +2456,18 @@
           Curated products for everyday life
         </div>
 
+
         <h1>
           Smart products for modern living.
         </h1>
+
 
         <p>
           Discover practical products for solar energy,
           lighting, electronics, home improvement,
           technology and everyday life.
         </p>
+
 
         <div class="hero-actions">
 
@@ -2125,6 +2477,7 @@
           >
             Shop Products
           </a>
+
 
           <button
             class="hero-button secondary"
@@ -2140,8 +2493,6 @@
 
     </section>
 
-
-    <!-- TRUST -->
 
     <section class="trust-strip">
 
@@ -2163,11 +2514,13 @@
                 <path
                   d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"
                 ></path>
+
                 <circle
                   cx="7"
                   cy="19"
                   r="1.5"
                 ></circle>
+
                 <circle
                   cx="18"
                   cy="19"
@@ -2176,9 +2529,17 @@
               </svg>
             </div>
 
+
             <div class="trust-copy">
-              <strong>Shipping Options</strong>
-              <span>Available at checkout</span>
+
+              <strong>
+                Shipping Options
+              </strong>
+
+              <span>
+                Available at checkout
+              </span>
+
             </div>
 
           </div>
@@ -2198,15 +2559,22 @@
                 <path
                   d="M12 3 5 6v5c0 4.7 2.9 8.1 7 10 4.1-1.9 7-5.3 7-10V6l-7-3Z"
                 ></path>
-                <path
-                  d="m9 12 2 2 4-4"
-                ></path>
+
+                <path d="m9 12 2 2 4-4"></path>
               </svg>
             </div>
 
+
             <div class="trust-copy">
-              <strong>Secure Checkout</strong>
-              <span>Protected order process</span>
+
+              <strong>
+                Secure Checkout
+              </strong>
+
+              <span>
+                Protected order process
+              </span>
+
             </div>
 
           </div>
@@ -2226,15 +2594,22 @@
                 <path
                   d="M20 11a8 8 0 1 1-2.34-5.66"
                 ></path>
-                <path
-                  d="M20 4v6h-6"
-                ></path>
+
+                <path d="M20 4v6h-6"></path>
               </svg>
             </div>
 
+
             <div class="trust-copy">
-              <strong>Customer Support</strong>
-              <span>We're here to help</span>
+
+              <strong>
+                Customer Support
+              </strong>
+
+              <span>
+                We're here to help
+              </span>
+
             </div>
 
           </div>
@@ -2251,20 +2626,29 @@
                 stroke="currentColor"
                 stroke-width="1.8"
               >
-                <path
-                  d="M12 3v18M3 12h18"
-                ></path>
                 <circle
                   cx="12"
                   cy="12"
                   r="8"
                 ></circle>
+
+                <path
+                  d="M12 8v8M8 12h8"
+                ></path>
               </svg>
             </div>
 
+
             <div class="trust-copy">
-              <strong>Practical Products</strong>
-              <span>Selected for everyday use</span>
+
+              <strong>
+                Practical Products
+              </strong>
+
+              <span>
+                Selected for everyday use
+              </span>
+
             </div>
 
           </div>
@@ -2275,8 +2659,6 @@
 
     </section>
 
-
-    <!-- PRODUCTS -->
 
     <section
       id="products"
@@ -2298,6 +2680,7 @@
             </p>
 
           </div>
+
 
           <span
             id="productCount"
@@ -2332,9 +2715,9 @@
   </main>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        PRODUCT MODAL
-  ========================================== -->
+  ========================================================= -->
 
   <div
     id="modalOverlay"
@@ -2356,6 +2739,7 @@
         type="button"
         aria-label="Close product"
       >
+
         <svg
           width="20"
           height="20"
@@ -2366,12 +2750,11 @@
         >
           <path d="M6 6l12 12M18 6 6 18"></path>
         </svg>
+
       </button>
 
 
       <div class="modal-content">
-
-        <!-- GALLERY -->
 
         <div class="gallery-panel">
 
@@ -2385,14 +2768,16 @@
               class="gallery-main-image"
               src=""
               alt=""
-            />
+            >
+
 
             <button
               id="galleryZoom"
               class="gallery-zoom"
               type="button"
-              aria-label="Zoom product image"
+              aria-label="Open product image"
             >
+
               <svg
                 width="17"
                 height="17"
@@ -2406,9 +2791,16 @@
                   cy="10.8"
                   r="6.8"
                 ></circle>
-                <path d="m16 16 5 5"></path>
-                <path d="M10.8 7.8v6M7.8 10.8h6"></path>
+
+                <path
+                  d="m16 16 5 5"
+                ></path>
+
+                <path
+                  d="M10.8 7.8v6M7.8 10.8h6"
+                ></path>
               </svg>
+
             </button>
 
           </div>
@@ -2421,8 +2813,6 @@
 
         </div>
 
-
-        <!-- DETAILS -->
 
         <div class="modal-details">
 
@@ -2472,14 +2862,12 @@
 
 
           <div class="modal-tax-note">
-            Final shipping charges are calculated at checkout.
+            Shipping options and applicable charges are calculated at checkout.
           </div>
 
 
           <div class="product-divider"></div>
 
-
-          <!-- VARIANTS -->
 
           <div
             id="variantGroups"
@@ -2487,92 +2875,99 @@
           ></div>
 
 
-          <div
-            id="variantFallback"
-            class="hidden"
-          ></div>
+          <div class="purchase-area">
+
+            <div class="purchase-label">
+              Quantity
+            </div>
 
 
-          <!-- QUANTITY + PURCHASE -->
+            <div class="purchase-row">
 
-          <div class="purchase-row">
+              <div
+                class="quantity-selector"
+                aria-label="Product quantity"
+              >
+
+                <button
+                  id="modalQuantityMinus"
+                  class="quantity-button"
+                  type="button"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+
+
+                <input
+                  id="modalQuantity"
+                  class="quantity-input"
+                  type="number"
+                  min="1"
+                  max="99"
+                  value="1"
+                  inputmode="numeric"
+                  aria-label="Quantity"
+                >
+
+
+                <button
+                  id="modalQuantityPlus"
+                  class="quantity-button"
+                  type="button"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+
+              </div>
+
+
+              <div class="purchase-buttons">
+
+                <button
+                  id="addToCartButton"
+                  class="purchase-button add-button"
+                  type="button"
+                >
+                  Add to Cart
+                </button>
+
+
+                <button
+                  id="buyNowButton"
+                  class="purchase-button buy-button"
+                  type="button"
+                >
+                  Buy Now
+                </button>
+
+              </div>
+
+            </div>
+
 
             <div
-              class="quantity-selector"
-              aria-label="Quantity"
+              id="selectionMessage"
+              class="selection-message"
+            ></div>
+
+
+            <div
+              id="stockStatus"
+              class="stock-status"
             >
 
-              <button
-                id="modalQuantityMinus"
-                class="quantity-button"
-                type="button"
-                aria-label="Decrease quantity"
-              >
-                −
-              </button>
+              <span class="stock-dot"></span>
 
-              <input
-                id="modalQuantity"
-                class="quantity-input"
-                type="number"
-                min="1"
-                max="99"
-                value="1"
-                inputmode="numeric"
-                aria-label="Product quantity"
-              />
-
-              <button
-                id="modalQuantityPlus"
-                class="quantity-button"
-                type="button"
-                aria-label="Increase quantity"
-              >
-                +
-              </button>
-
-            </div>
-
-
-            <div class="purchase-buttons">
-
-              <button
-                id="addToCartButton"
-                class="add-button"
-                type="button"
-              >
-                Add to Cart
-              </button>
-
-              <button
-                id="buyNowButton"
-                class="buy-button"
-                type="button"
-              >
-                Buy Now
-              </button>
+              <span id="stockText">
+                Available
+              </span>
 
             </div>
 
           </div>
 
-
-          <div
-            id="selectionMessage"
-            class="selection-message"
-          ></div>
-
-
-          <div
-            id="stockStatus"
-            class="stock-status"
-          >
-            <span class="stock-dot"></span>
-            <span id="stockText">Available</span>
-          </div>
-
-
-          <!-- DELIVERY -->
 
           <div class="delivery-box">
 
@@ -2590,11 +2985,13 @@
                   <path
                     d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"
                   ></path>
+
                   <circle
                     cx="7"
                     cy="19"
                     r="1.4"
                   ></circle>
+
                   <circle
                     cx="18"
                     cy="19"
@@ -2603,11 +3000,17 @@
                 </svg>
               </div>
 
+
               <div class="delivery-text">
-                <strong>Shipping</strong>
+
+                <strong>
+                  Shipping
+                </strong>
+
                 <span>
-                  Shipping options and costs are calculated based on your destination at checkout.
+                  Shipping availability and cost are calculated according to your destination at checkout.
                 </span>
+
               </div>
 
             </div>
@@ -2627,17 +3030,24 @@
                   <path
                     d="M20 11a8 8 0 1 1-2.34-5.66"
                   ></path>
+
                   <path
                     d="M20 4v6h-6"
                   ></path>
                 </svg>
               </div>
 
+
               <div class="delivery-text">
-                <strong>Returns</strong>
+
+                <strong>
+                  Returns
+                </strong>
+
                 <span>
-                  Please review our return policy before placing your order.
+                  Review our return policy before completing your purchase.
                 </span>
+
               </div>
 
             </div>
@@ -2671,11 +3081,10 @@
           </div>
 
 
-          <!-- DESCRIPTION -->
-
           <h3 class="description-heading">
             About this product
           </h3>
+
 
           <div
             id="modalDescription"
@@ -2691,9 +3100,9 @@
   </div>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        CART DRAWER
-  ========================================== -->
+  ========================================================= -->
 
   <div
     id="drawerOverlay"
@@ -2710,14 +3119,18 @@
     <div class="drawer-header">
 
       <h2 class="drawer-title">
+
         Shopping Cart
+
         <span
           id="drawerItemCount"
           class="drawer-subtitle"
         >
           0 items
         </span>
+
       </h2>
+
 
       <button
         id="drawerClose"
@@ -2725,6 +3138,7 @@
         type="button"
         aria-label="Close cart"
       >
+
         <svg
           width="20"
           height="20"
@@ -2735,6 +3149,7 @@
         >
           <path d="M6 6l12 12M18 6 6 18"></path>
         </svg>
+
       </button>
 
     </div>
@@ -2763,9 +3178,11 @@
 
       </div>
 
+
       <div class="drawer-note">
-        Shipping charges and any applicable taxes are calculated during checkout.
+        Shipping charges and applicable taxes are calculated during checkout.
       </div>
+
 
       <button
         id="checkoutButton"
@@ -2781,9 +3198,9 @@
   </aside>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        POLICY MODAL
-  ========================================== -->
+  ========================================================= -->
 
   <div
     id="policyOverlay"
@@ -2807,12 +3224,14 @@
           Store Policy
         </h2>
 
+
         <button
           id="policyClose"
           class="policy-close"
           type="button"
           aria-label="Close policy"
         >
+
           <svg
             width="19"
             height="19"
@@ -2823,6 +3242,7 @@
           >
             <path d="M6 6l12 12M18 6 6 18"></path>
           </svg>
+
         </button>
 
       </div>
@@ -2838,23 +3258,25 @@
   </div>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        TOAST
-  ========================================== -->
+  ========================================================= -->
 
   <div class="toast-container">
+
     <div
       id="toast"
       class="toast"
       role="status"
       aria-live="polite"
     ></div>
+
   </div>
 
 
-  <!-- =========================================
+  <!-- ========================================================
        FOOTER
-  ========================================== -->
+  ========================================================= -->
 
   <footer class="site-footer">
 
@@ -2868,27 +3290,22 @@
             Prasun Store
           </div>
 
+
           <div class="footer-description">
             Practical products for modern living, including
             solar energy, lighting, electronics, home improvement,
             technology and lifestyle products.
           </div>
 
-          <div
-            style="
-              margin-top:18px;
-              color:#9ca3af;
-              font-size:12px;
-              line-height:1.6;
-            "
-          >
+
+          <div class="footer-contact">
+
             Need help?
-            <a
-              href="mailto:contact@prasunbarua.com"
-              style="color:#fff;text-decoration:none;"
-            >
+
+            <a href="mailto:contact@prasunbarua.com">
               contact@prasunbarua.com
             </a>
+
           </div>
 
         </div>
@@ -2899,6 +3316,7 @@
           <h3 class="footer-heading">
             Shop
           </h3>
+
 
           <div class="footer-links">
 
@@ -2928,6 +3346,7 @@
           <h3 class="footer-heading">
             Customer Service
           </h3>
+
 
           <div class="footer-links">
 
@@ -2970,6 +3389,7 @@
             Legal
           </h3>
 
+
           <div class="footer-links">
 
             <button
@@ -3010,9 +3430,13 @@
       <div class="footer-bottom">
 
         <div>
-          © <span id="copyrightYear">2026</span>
+          ©
+          <span id="copyrightYear">
+            2026
+          </span>
           Prasun Store. All rights reserved.
         </div>
+
 
         <div class="footer-bottom-links">
 
@@ -3063,7 +3487,6 @@
   <script>
     "use strict";
 
-
     /* =========================================================
        CONFIGURATION
     ========================================================= */
@@ -3088,10 +3511,13 @@
 
     const state = {
       products: [],
+
       category: "",
+
       search: "",
 
       selectedProduct: null,
+
       selectedVariant: null,
 
       selectedAttributes: {},
@@ -3109,7 +3535,6 @@
     ========================================================= */
 
     const elements = {
-
       searchInput:
         document.getElementById(
           "searchInput"
@@ -3213,11 +3638,6 @@
       variantGroups:
         document.getElementById(
           "variantGroups"
-        ),
-
-      variantFallback:
-        document.getElementById(
-          "variantFallback"
         ),
 
       modalQuantityMinus:
@@ -3333,14 +3753,16 @@
 
 
     /* =========================================================
-       GENERAL UTILITIES
+       UTILITIES
     ========================================================= */
 
     function normalizeQuantity(
       value
     ) {
       const number =
-        Number(value);
+        Number(
+          value
+        );
 
       if (
         !Number.isFinite(
@@ -3354,7 +3776,9 @@
         MAX_ITEM_QUANTITY,
         Math.max(
           1,
-          Math.floor(number)
+          Math.floor(
+            number
+          )
         )
       );
     }
@@ -3365,7 +3789,9 @@
       currency = STORE_CURRENCY
     ) {
       const number =
-        Number(value);
+        Number(
+          value
+        );
 
       if (
         !Number.isFinite(
@@ -3384,40 +3810,17 @@
               currency ||
               STORE_CURRENCY
           }
-        ).format(number);
-      } catch {
-        return "$" +
-          number.toFixed(2);
-      }
-    }
-
-
-    function escapeHtml(
-      value
-    ) {
-      return String(
-        value ?? ""
-      )
-        .replace(
-          /&/g,
-          "&amp;"
-        )
-        .replace(
-          /</g,
-          "&lt;"
-        )
-        .replace(
-          />/g,
-          "&gt;"
-        )
-        .replace(
-          /"/g,
-          "&quot;"
-        )
-        .replace(
-          /'/g,
-          "&#039;"
+        ).format(
+          number
         );
+      } catch {
+        return (
+          "$" +
+          number.toFixed(
+            2
+          )
+        );
+      }
     }
 
 
@@ -3447,30 +3850,6 @@
     }
 
 
-    function getProductImageUrl(
-      url
-    ) {
-      if (!url) {
-        return "";
-      }
-
-      const value =
-        String(url).trim();
-
-      if (!value) {
-        return "";
-      }
-
-      return (
-        API_BASE +
-        "/api/image?url=" +
-        encodeURIComponent(
-          value
-        )
-      );
-    }
-
-
     function getRawImageUrl(
       product
     ) {
@@ -3497,11 +3876,43 @@
     }
 
 
+    function getProductImageUrl(
+      url
+    ) {
+      if (!url) {
+        return "";
+      }
+
+      const value =
+        String(
+          url
+        ).trim();
+
+      if (!value) {
+        return "";
+      }
+
+      return (
+        API_BASE +
+        "/api/image?url=" +
+        encodeURIComponent(
+          value
+        )
+      );
+    }
+
+
+    /* =========================================================
+       CATEGORIES
+    ========================================================= */
+
     function normalizeCategories(
       value
     ) {
       if (
-        Array.isArray(value)
+        Array.isArray(
+          value
+        )
       ) {
         return value
           .map(
@@ -3525,10 +3936,13 @@
           .map(
             item =>
               String(
-                item ?? ""
+                item ??
+                  ""
               ).trim()
           )
-          .filter(Boolean);
+          .filter(
+            Boolean
+          );
       }
 
 
@@ -3546,16 +3960,20 @@
           .map(
             item =>
               String(
-                item ?? ""
+                item ??
+                  ""
               ).trim()
           )
-          .filter(Boolean);
+          .filter(
+            Boolean
+          );
       }
 
 
       const text =
         String(
-          value ?? ""
+          value ??
+            ""
         ).trim();
 
       if (!text) {
@@ -3565,7 +3983,9 @@
 
       try {
         const parsed =
-          JSON.parse(text);
+          JSON.parse(
+            text
+          );
 
         if (
           Array.isArray(
@@ -3597,37 +4017,47 @@
           item =>
             item.trim()
         )
-        .filter(Boolean);
+        .filter(
+          Boolean
+        );
     }
 
 
     function getProductCategories(
       product
     ) {
-      const categories = [
+      const combined = [
         ...normalizeCategories(
           product?.store_categories
         ),
+
         ...normalizeCategories(
           product?.category
         )
       ];
 
+
       const seen =
         new Set();
 
-      return categories.filter(
+
+      return combined.filter(
         category => {
           const key =
-            category.toLowerCase();
+            category
+              .toLowerCase();
 
           if (
-            seen.has(key)
+            seen.has(
+              key
+            )
           ) {
             return false;
           }
 
-          seen.add(key);
+          seen.add(
+            key
+          );
 
           return true;
         }
@@ -3644,59 +4074,64 @@
     ) {
       let value =
         String(
-          text ?? ""
+          text ??
+            ""
         );
 
-      value = value
-        .replace(
-          /\u00a0/g,
-          " "
-        )
-        .replace(
-          /\r/g,
-          ""
-        )
-        .replace(
-          /[ \t]+/g,
-          " "
-        )
-        .trim();
+      value =
+        value
+          .replace(
+            /\u00a0/g,
+            " "
+          )
+          .replace(
+            /\r/g,
+            ""
+          )
+          .replace(
+            /[ \t]+/g,
+            " "
+          )
+          .trim();
 
-      value = value
-        .replace(
-          /^\s*#{1,6}\s*/g,
-          ""
-        )
-        .replace(
-          /^\s*\*+\s*/g,
-          ""
-        )
-        .replace(
-          /\s*\*+\s*$/g,
-          ""
-        )
-        .replace(
-          /^\s*_+\s*/g,
-          ""
-        )
-        .replace(
-          /\s*_+\s*$/g,
-          ""
-        )
-        .replace(
-          /【/g,
-          ""
-        )
-        .replace(
-          /】/g,
-          ""
-        );
+
+      value =
+        value
+          .replace(
+            /^\s*#{1,6}\s*/g,
+            ""
+          )
+          .replace(
+            /^\s*\*+\s*/g,
+            ""
+          )
+          .replace(
+            /\s*\*+\s*$/g,
+            ""
+          )
+          .replace(
+            /^\s*_+\s*/g,
+            ""
+          )
+          .replace(
+            /\s*_+\s*$/g,
+            ""
+          )
+          .replace(
+            /【/g,
+            ""
+          )
+          .replace(
+            /】/g,
+            ""
+          );
+
 
       return value.trim();
     }
 
 
-    function isHeadingText(
+    function isDescriptionHeading(
       text
     ) {
       const value =
@@ -3709,6 +4144,7 @@
           )
           .trim()
           .toLowerCase();
+
 
       return [
         "features",
@@ -3721,11 +4157,13 @@
         "package lists",
         "package contents",
         "package content"
-      ].includes(value);
+      ].includes(
+        value
+      );
     }
 
 
-    function headingLabel(
+    function normalizeDescriptionHeading(
       text
     ) {
       const value =
@@ -3739,6 +4177,7 @@
           .trim()
           .toLowerCase();
 
+
       if (
         value.includes(
           "package"
@@ -3746,6 +4185,7 @@
       ) {
         return "Package Contents";
       }
+
 
       if (
         value ===
@@ -3756,6 +4196,7 @@
         return "Features";
       }
 
+
       if (
         value.includes(
           "specification"
@@ -3763,6 +4204,7 @@
       ) {
         return "Specifications";
       }
+
 
       if (
         value.includes(
@@ -3772,13 +4214,14 @@
         return "Easy Operation";
       }
 
+
       return cleanDescriptionText(
         text
       );
     }
 
 
-    function createCleanNode(
+    function createCleanDescriptionNode(
       sourceNode,
       targetParent
     ) {
@@ -3839,20 +4282,23 @@
 
 
       if (
-        blocked.has(tag)
+        blocked.has(
+          tag
+        )
       ) {
         return;
       }
 
 
       if (
-        tag === "font"
+        tag ===
+        "font"
       ) {
         Array.from(
           sourceNode.childNodes
         ).forEach(
           child =>
-            createCleanNode(
+            createCleanDescriptionNode(
               child,
               targetParent
             )
@@ -3862,13 +4308,14 @@
       }
 
 
-      const directText =
+      const text =
         sourceNode.textContent
           ?.replace(
             /\s+/g,
             " "
           )
-          .trim() || "";
+          .trim() ||
+        "";
 
 
       if (
@@ -3881,9 +4328,11 @@
           "u",
           "i",
           "em"
-        ].includes(tag) &&
-        isHeadingText(
-          directText
+        ].includes(
+          tag
+        ) &&
+        isDescriptionHeading(
+          text
         )
       ) {
         const heading =
@@ -3892,8 +4341,8 @@
           );
 
         heading.textContent =
-          headingLabel(
-            directText
+          normalizeDescriptionHeading(
+            text
           );
 
         targetParent.appendChild(
@@ -3921,8 +4370,10 @@
         ]);
 
 
-      let targetTag =
-        allowed.has(tag)
+      const targetTag =
+        allowed.has(
+          tag
+        )
           ? tag
           : "span";
 
@@ -3937,7 +4388,7 @@
         sourceNode.childNodes
       ).forEach(
         child =>
-          createCleanNode(
+          createCleanDescriptionNode(
             child,
             target
           )
@@ -3945,7 +4396,8 @@
 
 
       if (
-        targetTag === "span" &&
+        targetTag ===
+          "span" &&
         !target.textContent.trim()
       ) {
         return;
@@ -3965,14 +4417,19 @@
         return "";
       }
 
+
       const parser =
         new DOMParser();
 
+
       const sourceDocument =
         parser.parseFromString(
-          String(source),
+          String(
+            source
+          ),
           "text/html"
         );
+
 
       const output =
         document.createElement(
@@ -3984,7 +4441,7 @@
         sourceDocument.body.childNodes
       ).forEach(
         node =>
-          createCleanNode(
+          createCleanDescriptionNode(
             node,
             output
           )
@@ -4023,15 +4480,18 @@
       let totalStock =
         null;
 
+
       const rawStock =
         product?.total_available_stock;
+
 
       if (
         rawStock !==
           undefined &&
         rawStock !==
           null &&
-        rawStock !== ""
+        rawStock !==
+          ""
       ) {
         const numeric =
           Number(
@@ -4110,7 +4570,8 @@
           ),
 
         original_price:
-          product?.original_price,
+          product?.original_price ??
+          null,
 
         skus:
           Array.isArray(
@@ -4126,7 +4587,7 @@
 
 
     /* =========================================================
-       FETCH PRODUCTS
+       API
     ========================================================= */
 
     async function fetchProducts() {
@@ -4144,15 +4605,20 @@
           }
         );
 
-      if (!response.ok) {
+
+      if (
+        !response.ok
+      ) {
         throw new Error(
           "Products request failed: " +
           response.status
         );
       }
 
+
       const data =
         await response.json();
+
 
       if (
         Array.isArray(
@@ -4161,6 +4627,7 @@
       ) {
         return data;
       }
+
 
       if (
         data &&
@@ -4171,6 +4638,7 @@
         return data.products;
       }
 
+
       if (
         data &&
         Array.isArray(
@@ -4179,6 +4647,7 @@
       ) {
         return data.data;
       }
+
 
       return [];
     }
@@ -4250,7 +4719,8 @@
 
         price:
           Number(
-            item?.price ?? 0
+            item?.price ??
+            0
           ),
 
         currency:
@@ -4272,7 +4742,8 @@
         .filter(
           item =>
             item.product_id &&
-            item.quantity > 0
+            item.quantity >
+              0
         );
     }
 
@@ -4287,14 +4758,17 @@
               key
             );
 
+
           if (!raw) {
             continue;
           }
+
 
           const parsed =
             JSON.parse(
               raw
             );
+
 
           if (
             Array.isArray(
@@ -4317,6 +4791,7 @@
         }
       }
 
+
       return [];
     }
 
@@ -4327,29 +4802,32 @@
           state.cart
         );
 
+
       const serialized =
         JSON.stringify(
           state.cart
         );
 
-      CART_KEYS.forEach(
-        key => {
-          try {
-            localStorage.setItem(
-              key,
-              serialized
-            );
-          } catch (
+
+      for (
+        const key of CART_KEYS
+      ) {
+        try {
+          localStorage.setItem(
+            key,
+            serialized
+          );
+        } catch (
+          error
+        ) {
+          console.warn(
+            "Could not save cart:",
+            key,
             error
-          ) {
-            console.warn(
-              "Could not save cart:",
-              key,
-              error
-            );
-          }
+          );
         }
-      );
+      }
+
 
       updateCartUI();
     }
@@ -4362,15 +4840,20 @@
     ) {
       return [
         String(
-          productId || ""
+          productId ||
+            ""
         ),
         String(
-          variantId || ""
+          variantId ||
+            ""
         ),
         String(
-          sku || ""
+          sku ||
+            ""
         )
-      ].join("::");
+      ].join(
+        "::"
+      );
     }
 
 
@@ -4394,223 +4877,28 @@
         (
           total,
           item
-        ) =>
-          total +
-          (
+        ) => {
+          const price =
             Number(
               item.price
-            ) || 0
-          ) *
-            normalizeQuantity(
-              item.quantity
-            ),
+            ) || 0;
+
+
+          return (
+            total +
+            price *
+              normalizeQuantity(
+                item.quantity
+              )
+          );
+        },
         0
       );
     }
 
 
-    function addProductToCart(
-      product,
-      variant,
-      quantity
-    ) {
-      if (
-        !product ||
-        !product.product_id
-      ) {
-        showToast(
-          "This product cannot be added to the cart."
-        );
-
-        return false;
-      }
-
-
-      if (
-        !variant
-      ) {
-        showToast(
-          "Please select all required options."
-        );
-
-        return false;
-      }
-
-
-      const stock =
-        getVariantStock(
-          variant
-        );
-
-
-      if (
-        stock.known &&
-        stock.value <= 0
-      ) {
-        showToast(
-          "This option is currently out of stock."
-        );
-
-        return false;
-      }
-
-
-      const requestedQuantity =
-        normalizeQuantity(
-          quantity
-        );
-
-
-      if (
-        stock.known &&
-        requestedQuantity >
-          stock.value
-      ) {
-        showToast(
-          `Only ${stock.value} available.`
-        );
-
-        return false;
-      }
-
-
-      const variantId =
-        getVariantId(
-          variant
-        );
-
-
-      const sku =
-        String(
-          variant?.sku ||
-          ""
-        ).trim();
-
-
-      const item =
-        normalizeCartItem({
-          product_id:
-            product.product_id,
-
-          variant_id:
-            variantId,
-
-          sku:
-            sku,
-
-          title:
-            product.title,
-
-          variant_name:
-            getVariantDisplayName(
-              variant
-            ),
-
-          image:
-            variant?.image ||
-            getRawImageUrl(
-              product
-            ),
-
-          quantity:
-            requestedQuantity,
-
-          price:
-            variant?.price ??
-            product.sale_price ??
-            product.price ??
-            0,
-
-          currency:
-            product.currency ||
-            STORE_CURRENCY
-        });
-
-
-      const key =
-        cartItemKey(
-          item.product_id,
-          item.variant_id,
-          item.sku
-        );
-
-
-      const existingIndex =
-        state.cart.findIndex(
-          cartItem =>
-            cartItemKey(
-              cartItem.product_id,
-              cartItem.variant_id,
-              cartItem.sku
-            ) === key
-        );
-
-
-      if (
-        existingIndex >= 0
-      ) {
-        const existing =
-          state.cart[
-            existingIndex
-          ];
-
-        let nextQuantity =
-          normalizeQuantity(
-            existing.quantity
-          ) +
-          requestedQuantity;
-
-
-        if (
-          stock.known
-        ) {
-          nextQuantity =
-            Math.min(
-              nextQuantity,
-              stock.value
-            );
-        }
-
-
-        nextQuantity =
-          Math.min(
-            MAX_ITEM_QUANTITY,
-            nextQuantity
-          );
-
-
-        existing.quantity =
-          nextQuantity;
-
-        existing.price =
-          item.price;
-
-        existing.currency =
-          item.currency;
-
-        existing.title =
-          item.title;
-
-        existing.image =
-          item.image;
-
-        existing.variant_name =
-          item.variant_name;
-      } else {
-        state.cart.push(
-          item
-        );
-      }
-
-
-      saveCart();
-
-      return true;
-    }
-
-
     /* =========================================================
-       VARIANT HELPERS
+       VARIANT ENGINE
     ========================================================= */
 
     function getVariants(
@@ -4624,14 +4912,28 @@
         return [];
       }
 
+
       return product.skus.filter(
-        variant =>
-          variant &&
-          (
-            variant.cj_variant_id ||
-            variant.variant_id ||
-            variant.sku
-          )
+        variant => {
+          if (
+            !variant ||
+            typeof variant !==
+              "object"
+          ) {
+            return false;
+          }
+
+
+          return Boolean(
+            String(
+              variant.cj_variant_id ??
+              variant.variant_id ??
+              variant.vid ??
+              variant.sku ??
+              ""
+            ).trim()
+          );
+        }
       );
     }
 
@@ -4642,6 +4944,7 @@
       return String(
         variant?.cj_variant_id ??
         variant?.variant_id ??
+        variant?.vid ??
         variant?.sku ??
         ""
       ).trim();
@@ -4651,15 +4954,25 @@
     function getVariantStock(
       variant
     ) {
+      if (!variant) {
+        return {
+          known: false,
+          value: null
+        };
+      }
+
+
       const raw =
-        variant?.stock;
+        variant.stock;
+
 
       if (
         raw ===
           undefined ||
         raw ===
           null ||
-        raw === ""
+        raw ===
+          ""
       ) {
         return {
           known: false,
@@ -4667,8 +4980,12 @@
         };
       }
 
+
       const value =
-        Number(raw);
+        Number(
+          raw
+        );
+
 
       if (
         !Number.isFinite(
@@ -4681,6 +4998,7 @@
         };
       }
 
+
       return {
         known: true,
         value
@@ -4692,7 +5010,8 @@
       value
     ) {
       return String(
-        value ?? ""
+        value ??
+          ""
       )
         .trim()
         .toLowerCase()
@@ -4712,7 +5031,8 @@
     ) {
       const text =
         String(
-          value ?? ""
+          value ??
+            ""
         )
           .trim()
           .replace(
@@ -4724,93 +5044,101 @@
             " "
           );
 
+
       if (!text) {
         return "Option";
       }
 
+
       return text
-        .split(" ")
+        .split(
+          " "
+        )
         .map(
           word =>
-            word.charAt(0).toUpperCase() +
-            word.slice(1)
+            word.charAt(
+              0
+            ).toUpperCase() +
+            word.slice(
+              1
+            )
         )
-        .join(" ");
+        .join(
+          " "
+        );
     }
 
 
-    function splitOptionPairs(
+    function parseDelimitedOptions(
       text
     ) {
       const value =
         String(
-          text ?? ""
+          text ??
+            ""
         ).trim();
+
 
       if (!value) {
         return [];
       }
 
 
-      /*
-       * Supports:
-       *
-       * Color: Black, Size: M
-       * Color=Black; Size=M
-       * Color:Black | Size:M
-       * Black / M
-       */
+      const result =
+        [];
 
-      const matches =
-        value.match(
-          /([^,:;|\/]+)\s*[:=]\s*([^,;|\/]+)/g
+
+      const pieces =
+        value.split(
+          /[,;|]+/
         );
 
 
-      if (
-        matches &&
-        matches.length
+      for (
+        const piece of pieces
       ) {
-        return matches
-          .map(
-            part => {
-              const separator =
-                part.includes("=")
-                  ? "="
-                  : ":";
+        const part =
+          piece.trim();
 
-              const index =
-                part.indexOf(
-                  separator
-                );
 
-              return {
-                name:
-                  part
-                    .slice(
-                      0,
-                      index
-                    )
-                    .trim(),
+        if (!part) {
+          continue;
+        }
 
-                value:
-                  part
-                    .slice(
-                      index + 1
-                    )
-                    .trim()
-              };
-            }
-          )
-          .filter(
-            item =>
-              item.name &&
-              item.value
+
+        const match =
+          part.match(
+            /^(.+?)\s*[:=]\s*(.+)$/
           );
+
+
+        if (
+          match
+        ) {
+          const name =
+            match[1]
+              .trim();
+
+          const optionValue =
+            match[2]
+              .trim();
+
+
+          if (
+            name &&
+            optionValue
+          ) {
+            result.push({
+              name,
+              value:
+                optionValue
+            });
+          }
+        }
       }
 
 
-      return [];
+      return result;
     }
 
 
@@ -4828,6 +5156,7 @@
       for (
         const candidate of candidates
       ) {
+
         if (
           candidate &&
           typeof candidate ===
@@ -4854,7 +5183,8 @@
 
                   value:
                     String(
-                      value ?? ""
+                      value ??
+                        ""
                     ).trim()
                 })
               )
@@ -4863,6 +5193,7 @@
                   item.name &&
                   item.value
               );
+
 
           if (
             entries.length
@@ -4880,6 +5211,7 @@
           const entries =
             [];
 
+
           candidate.forEach(
             item => {
               if (
@@ -4894,10 +5226,12 @@
                   item.option ??
                   item.attribute;
 
+
                 const value =
                   item.value ??
                   item.text ??
                   item.selected;
+
 
                 if (
                   name &&
@@ -4920,6 +5254,7 @@
             }
           );
 
+
           if (
             entries.length
           ) {
@@ -4933,9 +5268,10 @@
             "string"
         ) {
           const parsed =
-            splitOptionPairs(
+            parseDelimitedOptions(
               candidate
             );
+
 
           if (
             parsed.length
@@ -4943,11 +5279,13 @@
             return parsed;
           }
 
+
           try {
             const json =
               JSON.parse(
                 candidate
               );
+
 
             if (
               json &&
@@ -4972,7 +5310,8 @@
 
                       value:
                         String(
-                          value ?? ""
+                          value ??
+                            ""
                         ).trim()
                     })
                   )
@@ -4981,6 +5320,7 @@
                       item.name &&
                       item.value
                   );
+
 
               if (
                 entries.length
@@ -4996,34 +5336,12 @@
 
 
       /*
-       * Try the variant name itself.
+       * Common explicit CJ fields.
        */
-      const nameText =
-        String(
-          variant?.name ??
-          ""
-        ).trim();
+      const explicit =
+        [];
 
-
-      const fromName =
-        splitOptionPairs(
-          nameText
-        );
-
-
-      if (
-        fromName.length
-      ) {
-        return fromName;
-      }
-
-
-      /*
-       * Try common explicit fields.
-       */
-      const explicit = [];
-
-      const explicitFields = [
+      const fields = [
         [
           "Color",
           variant?.color
@@ -5043,39 +5361,68 @@
         [
           "Model",
           variant?.model
+        ],
+        [
+          "Length",
+          variant?.length
+        ],
+        [
+          "Weight",
+          variant?.weight
         ]
       ];
 
 
-      explicitFields.forEach(
-        (
-          [
-            name,
+      for (
+        const [
+          name,
+          value
+        ] of fields
+      ) {
+        if (
+          value !==
+            undefined &&
+          value !==
+            null &&
+          String(
             value
-          ]
-        ) => {
-          if (
-            value !==
-              undefined &&
-            value !==
-              null &&
-            String(
-              value
-            ).trim()
-          ) {
-            explicit.push({
-              name,
-              value:
-                String(
-                  value
-                ).trim()
-            });
-          }
+          ).trim()
+        ) {
+          explicit.push({
+            name,
+            value:
+              String(
+                value
+              ).trim()
+          });
         }
-      );
+      }
 
 
-      return explicit;
+      if (
+        explicit.length
+      ) {
+        return explicit;
+      }
+
+
+      /*
+       * Last attempt: parse variant name.
+       */
+      const nameParsed =
+        parseDelimitedOptions(
+          variant?.name
+        );
+
+
+      if (
+        nameParsed.length
+      ) {
+        return nameParsed;
+      }
+
+
+      return [];
     }
 
 
@@ -5098,7 +5445,9 @@
                 option.name
               )}: ${option.value}`
           )
-          .join(" · ");
+          .join(
+            " · "
+          );
       }
 
 
@@ -5106,129 +5455,117 @@
         variant?.name ??
         variant?.variant_options ??
         variant?.sku ??
-        "Standard"
+        "Option"
       ).trim();
     }
 
 
-    function buildVariantAttributeMap(
+    function buildVariantGroups(
       variants
     ) {
       const groups =
         new Map();
 
 
-      variants.forEach(
-        variant => {
-          const options =
-            parseVariantOptions(
-              variant
+      for (
+        const variant of variants
+      ) {
+        const options =
+          parseVariantOptions(
+            variant
+          );
+
+
+        for (
+          const option of options
+        ) {
+          const key =
+            normalizeOptionKey(
+              option.name
             );
 
 
-          options.forEach(
-            option => {
-              const key =
-                normalizeOptionKey(
-                  option.name
-                );
+          if (!key) {
+            continue;
+          }
 
 
-              if (!key) {
-                return;
+          if (
+            !groups.has(
+              key
+            )
+          ) {
+            groups.set(
+              key,
+              {
+                key,
+                name:
+                  prettifyOptionName(
+                    option.name
+                  ),
+                values:
+                  new Map()
               }
+            );
+          }
 
 
-              if (
-                !groups.has(
-                  key
-                )
-              ) {
-                groups.set(
-                  key,
-                  {
-                    name:
-                      prettifyOptionName(
-                        option.name
-                      ),
+          const group =
+            groups.get(
+              key
+            );
 
-                    values:
-                      new Map()
-                  }
-                );
+
+          const value =
+            String(
+              option.value
+            ).trim();
+
+
+          const valueKey =
+            value.toLowerCase();
+
+
+          if (
+            !group.values.has(
+              valueKey
+            )
+          ) {
+            group.values.set(
+              valueKey,
+              {
+                value,
+                variants: []
               }
+            );
+          }
 
 
-              const group =
-                groups.get(
-                  key
-                );
-
-
-              const valueKey =
-                String(
-                  option.value
-                )
-                  .trim()
-                  .toLowerCase();
-
-
-              if (
-                !group.values.has(
-                  valueKey
-                )
-              ) {
-                group.values.set(
-                  valueKey,
-                  {
-                    value:
-                      String(
-                        option.value
-                      ).trim(),
-
-                    variants:
-                      []
-                  }
-                );
-              }
-
-
-              group.values
-                .get(
-                  valueKey
-                )
-                .variants.push(
-                  variant
-                );
-            }
-          );
+          group.values
+            .get(
+              valueKey
+            )
+            .variants.push(
+              variant
+            );
         }
-      );
+      }
 
 
       return groups;
     }
 
 
-    function variantMatchesSelection(
-      variant
+    function variantMatchesAttributes(
+      variant,
+      selections
     ) {
-      const selected =
-        state.selectedAttributes;
-
-
       const options =
         parseVariantOptions(
           variant
         );
 
 
-      /*
-       * If this variant has no
-       * structured options, don't
-       * match it against structured
-       * selections.
-       */
       if (
         !options.length
       ) {
@@ -5237,12 +5574,12 @@
 
 
       return Object.entries(
-        selected
+        selections
       ).every(
         (
           [
             key,
-            value
+            selectedValue
           ]
         ) => {
           const found =
@@ -5254,136 +5591,34 @@
                   key
             );
 
+
           return (
-            found &&
+            Boolean(
+              found
+            ) &&
             String(
               found.value
             )
               .trim()
               .toLowerCase() ===
-              String(
-                value
-              )
-                .trim()
-                .toLowerCase()
+            String(
+              selectedValue
+            )
+              .trim()
+              .toLowerCase()
           );
         }
       );
     }
 
 
-    function findSelectedVariant() {
-      const product =
-        state.selectedProduct;
-
-      if (!product) {
-        return null;
-      }
-
-
-      const variants =
-        getVariants(
-          product
-        );
-
-
-      if (
-        variants.length ===
-        1
-      ) {
-        return variants[0];
-      }
-
-
-      const groups =
-        buildVariantAttributeMap(
-          variants
-        );
-
-
-      if (
-        !groups.size
-      ) {
-        return null;
-      }
-
-
-      /*
-       * A complete combination must
-       * select a value in every
-       * available attribute group.
-       */
-      const groupKeys =
-        Array.from(
-          groups.keys()
-        );
-
-
-      const allSelected =
-        groupKeys.every(
-          key =>
-            state.selectedAttributes[
-              key
-            ]
-        );
-
-
-      if (
-        !allSelected
-      ) {
-        return null;
-      }
-
-
-      return (
-        variants.find(
-          variant => {
-            const options =
-              parseVariantOptions(
-                variant
-              );
-
-            return groupKeys.every(
-              groupKey => {
-                const option =
-                  options.find(
-                    item =>
-                      normalizeOptionKey(
-                        item.name
-                      ) ===
-                      groupKey
-                  );
-
-                return (
-                  option &&
-                  String(
-                    option.value
-                  )
-                    .trim()
-                    .toLowerCase() ===
-                    String(
-                      state
-                        .selectedAttributes[
-                        groupKey
-                      ]
-                    )
-                      .trim()
-                      .toLowerCase()
-                );
-              }
-            );
-          }
-        ) || null
-      );
-    }
-
-
-    function isOptionAvailable(
+    function isAttributeValueAvailable(
       groupKey,
       value
     ) {
       const product =
         state.selectedProduct;
+
 
       if (!product) {
         return false;
@@ -5404,35 +5639,33 @@
             );
 
 
-          const ownOption =
+          const ownValue =
             options.find(
               option =>
                 normalizeOptionKey(
                   option.name
                 ) ===
-                  groupKey &&
-                String(
-                  option.value
-                )
-                  .trim()
-                  .toLowerCase() ===
-                  String(
-                    value
-                  )
-                    .trim()
-                    .toLowerCase()
+                  groupKey
             );
 
 
-          if (!ownOption) {
+          if (
+            !ownValue ||
+            String(
+              ownValue.value
+            )
+              .trim()
+              .toLowerCase() !==
+              String(
+                value
+              )
+                .trim()
+                .toLowerCase()
+          ) {
             return false;
           }
 
 
-          /*
-           * Check the other selected
-           * attributes.
-           */
           return Object.entries(
             state.selectedAttributes
           ).every(
@@ -5450,7 +5683,7 @@
               }
 
 
-              const found =
+              const match =
                 options.find(
                   option =>
                     normalizeOptionKey(
@@ -5461,17 +5694,19 @@
 
 
               return (
-                found &&
+                Boolean(
+                  match
+                ) &&
                 String(
-                  found.value
+                  match.value
                 )
                   .trim()
                   .toLowerCase() ===
-                  String(
-                    selectedValue
-                  )
-                    .trim()
-                    .toLowerCase()
+                String(
+                  selectedValue
+                )
+                  .trim()
+                  .toLowerCase()
               );
             }
           );
@@ -5480,23 +5715,134 @@
     }
 
 
+    function getSelectedVariant() {
+      const product =
+        state.selectedProduct;
+
+
+      if (!product) {
+        return null;
+      }
+
+
+      const variants =
+        getVariants(
+          product
+        );
+
+
+      /*
+       * Zero CJ variants:
+       * the product itself is purchasable.
+       */
+      if (
+        variants.length ===
+        0
+      ) {
+        return {
+          productFallback:
+            true,
+
+          price:
+            product.sale_price ??
+            product.price ??
+            0,
+
+          stock:
+            product.total_available_stock,
+
+          image:
+            getRawImageUrl(
+              product
+            ),
+
+          name:
+            "Standard"
+        };
+      }
+
+
+      /*
+       * One CJ variant.
+       */
+      if (
+        variants.length ===
+        1
+      ) {
+        return variants[0];
+      }
+
+
+      /*
+       * If user selected structured
+       * attributes, find exact match.
+       */
+      const groups =
+        buildVariantGroups(
+          variants
+        );
+
+
+      if (
+        groups.size
+      ) {
+        const groupKeys =
+          Array.from(
+            groups.keys()
+          );
+
+
+        const allSelected =
+          groupKeys.every(
+            key =>
+              state.selectedAttributes[
+                key
+              ]
+          );
+
+
+        if (
+          allSelected
+        ) {
+          return (
+            variants.find(
+              variant =>
+                variantMatchesAttributes(
+                  variant,
+                  state.selectedAttributes
+                )
+            ) ||
+            null
+          );
+        }
+
+
+        return null;
+      }
+
+
+      /*
+       * Unstructured variants:
+       * preserve manually selected SKU.
+       */
+      return (
+        state.selectedVariant ||
+        null
+      );
+    }
+
+
     /* =========================================================
-       MODAL VARIATIONS
+       VARIANT UI
     ========================================================= */
 
     function renderVariantControls() {
       const product =
         state.selectedProduct;
 
+
       elements.variantGroups.innerHTML =
         "";
-
-      elements.variantFallback.innerHTML =
-        "";
-
-      elements.variantFallback.classList.add(
-        "hidden"
-      );
 
 
       if (!product) {
@@ -5510,23 +5856,42 @@
         );
 
 
-      if (!variants.length) {
+      /*
+       * No variants.
+       */
+      if (
+        variants.length ===
+        0
+      ) {
         state.selectedVariant =
           {
             productFallback:
               true,
+
             price:
               product.sale_price ??
               product.price ??
               0,
+
             stock:
-              product.total_available_stock
+              product.total_available_stock,
+
+            image:
+              getRawImageUrl(
+                product
+              ),
+
+            name:
+              "Standard"
           };
 
         return;
       }
 
 
+      /*
+       * Single variant.
+       */
       if (
         variants.length ===
         1
@@ -5539,26 +5904,21 @@
 
 
       const groups =
-        buildVariantAttributeMap(
+        buildVariantGroups(
           variants
         );
 
 
       /*
-       * CJ variants that contain
-       * structured Color/Size/etc.
+       * Structured attributes:
+       * Color, Size, Style, etc.
        */
       if (
         groups.size
       ) {
-        elements.variantGroups.innerHTML =
-          "";
-
-
         groups.forEach(
           (
-            group,
-            groupKey
+            group
           ) => {
             const wrapper =
               document.createElement(
@@ -5581,12 +5941,6 @@
               group.name;
 
 
-            const selectedValue =
-              state.selectedAttributes[
-                groupKey
-              ] || "";
-
-
             const options =
               document.createElement(
                 "div"
@@ -5594,6 +5948,15 @@
 
             options.className =
               "variant-options";
+
+
+            const selected =
+              String(
+                state.selectedAttributes[
+                  group.key
+                ] ??
+                ""
+              ).trim();
 
 
             group.values.forEach(
@@ -5609,16 +5972,19 @@
                 button.className =
                   "variant-option";
 
+                button.textContent =
+                  item.value;
+
 
                 const available =
-                  isOptionAvailable(
-                    groupKey,
+                  isAttributeValueAvailable(
+                    group.key,
                     item.value
                   );
 
 
                 if (
-                  selectedValue
+                  selected
                     .toLowerCase() ===
                   item.value
                     .toLowerCase()
@@ -5629,29 +5995,38 @@
                 }
 
 
+                /*
+                 * Don't disable a selected
+                 * value just because current
+                 * combinations changed.
+                 */
                 button.disabled =
-                  !available;
-
-
-                button.textContent =
-                  item.value;
+                  !available &&
+                  !(
+                    selected
+                      .toLowerCase() ===
+                    item.value
+                      .toLowerCase()
+                  );
 
 
                 button.addEventListener(
                   "click",
-                  () => {
-                    state
-                      .selectedAttributes[
-                      groupKey
+                  event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+
+                    state.selectedAttributes[
+                      group.key
                     ] =
                       item.value;
 
 
                     /*
-                     * If another selected
-                     * value makes this
-                     * combination impossible,
-                     * clear that value.
+                     * Remove now-invalid
+                     * selections in other
+                     * groups.
                      */
                     Object.keys(
                       state.selectedAttributes
@@ -5659,7 +6034,7 @@
                       otherKey => {
                         if (
                           otherKey ===
-                          groupKey
+                          group.key
                         ) {
                           return;
                         }
@@ -5680,7 +6055,7 @@
 
 
                         if (
-                          !isOptionAvailable(
+                          !isAttributeValueAvailable(
                             otherKey,
                             current
                           )
@@ -5694,9 +6069,11 @@
                     );
 
 
-                    renderVariantControls();
+                    state.selectedVariant =
+                      getSelectedVariant();
 
-                    updateSelectedVariant();
+
+                    renderVariantControls();
 
                     updateModalPricing();
 
@@ -5720,6 +6097,7 @@
               options
             );
 
+
             elements.variantGroups.appendChild(
               wrapper
             );
@@ -5732,17 +6110,37 @@
 
 
       /*
-       * Fallback for unusual CJ
-       * data where variants cannot be
-       * parsed into attributes.
+       * Unstructured CJ variant list.
+       * Use a guaranteed select.
        */
+      const wrapper =
+        document.createElement(
+          "div"
+        );
+
+      wrapper.className =
+        "variant-group";
+
+
+      const label =
+        document.createElement(
+          "div"
+        );
+
+      label.className =
+        "variant-group-label";
+
+      label.textContent =
+        "Select Option";
+
+
       const select =
         document.createElement(
           "select"
         );
 
       select.className =
-        "variant-fallback";
+        "variant-fallback-select";
 
 
       const placeholder =
@@ -5754,7 +6152,7 @@
         "";
 
       placeholder.textContent =
-        "Select an option";
+        "Choose an option";
 
       placeholder.disabled =
         true;
@@ -5775,10 +6173,16 @@
               "option"
             );
 
-          option.value =
+
+          const id =
             getVariantId(
               variant
             );
+
+
+          option.value =
+            id;
+
 
           option.textContent =
             getVariantDisplayName(
@@ -5792,9 +6196,17 @@
             );
 
 
-          option.disabled =
+          if (
             stock.known &&
-            stock.value <= 0;
+            stock.value <=
+              0
+          ) {
+            option.disabled =
+              true;
+
+            option.textContent +=
+              " — Out of stock";
+          }
 
 
           if (
@@ -5802,9 +6214,7 @@
             getVariantId(
               state.selectedVariant
             ) ===
-              getVariantId(
-                variant
-              )
+              id
           ) {
             option.selected =
               true;
@@ -5821,6 +6231,10 @@
       select.addEventListener(
         "change",
         event => {
+          event.preventDefault();
+          event.stopPropagation();
+
+
           const selected =
             variants.find(
               variant =>
@@ -5836,10 +6250,6 @@
             null;
 
 
-          state.selectedAttributes =
-            {};
-
-
           updateModalPricing();
 
           updateGalleryForVariant();
@@ -5847,32 +6257,29 @@
       );
 
 
-      elements.variantFallback.appendChild(
+      wrapper.appendChild(
+        label
+      );
+
+      wrapper.appendChild(
         select
       );
 
-      elements.variantFallback.classList.remove(
-        "hidden"
+
+      elements.variantGroups.appendChild(
+        wrapper
       );
-    }
-
-
-    function updateSelectedVariant() {
-      const selected =
-        findSelectedVariant();
-
-      state.selectedVariant =
-        selected;
     }
 
 
     /* =========================================================
-       PRICING / STOCK
+       MODAL PRICING / STOCK
     ========================================================= */
 
     function updateModalPricing() {
       const product =
         state.selectedProduct;
+
 
       if (!product) {
         return;
@@ -5885,32 +6292,22 @@
         );
 
 
+      const variant =
+        getSelectedVariant();
+
+
       if (
-        variants.length ===
-        1
+        variants.length >
+          0 &&
+        variants.length >
+          1
       ) {
         state.selectedVariant =
-          variants[0];
-      } else if (
-        variants.length > 1
-      ) {
-        const structuredGroups =
-          buildVariantAttributeMap(
-            variants
-          );
-
-
-        if (
-          structuredGroups.size
-        ) {
-          state.selectedVariant =
-            findSelectedVariant();
-        }
+          variant;
+      } else {
+        state.selectedVariant =
+          variant;
       }
-
-
-      const variant =
-        state.selectedVariant;
 
 
       const price =
@@ -5949,7 +6346,7 @@
           );
 
 
-        const savings =
+        const percentage =
           Math.round(
             (
               (
@@ -5963,8 +6360,9 @@
 
 
         elements.modalSavings.textContent =
-          savings > 0
-            ? `Save ${savings}%`
+          percentage >
+            0
+            ? `Save ${percentage}%`
             : "";
       } else {
         elements.modalPriceOld.textContent =
@@ -5975,58 +6373,30 @@
       }
 
 
-      let stock = {
-        known: false,
-        value: null
-      };
-
-
-      if (
-        variant
-      ) {
-        stock =
-          getVariantStock(
-            variant
-          );
-      } else if (
-        variants.length <=
-        1
-      ) {
-        const raw =
-          product.total_available_stock;
-
-        if (
-          raw !==
-            null &&
-          raw !==
-            undefined
-        ) {
-          const value =
-            Number(raw);
-
-          if (
-            Number.isFinite(
-              value
-            )
-          ) {
-            stock = {
-              known: true,
-              value
-            };
-          }
-        }
-      }
+      /*
+       * Multiple structured variants
+       * require a valid combination.
+       */
+      const groups =
+        buildVariantGroups(
+          variants
+        );
 
 
       const requiresSelection =
         variants.length >
           1 &&
+        groups.size >
+          0 &&
         !variant;
 
 
       if (
         requiresSelection
       ) {
+        elements.selectionMessage.textContent =
+          "Please select all required options.";
+
         elements.stockStatus.classList.remove(
           "out"
         );
@@ -6034,8 +6404,31 @@
         elements.stockText.textContent =
           "Select options to continue";
 
+        elements.addToCartButton.disabled =
+          true;
+
+        elements.buyNowButton.disabled =
+          true;
+
+        return;
+      }
+
+
+      /*
+       * Multiple unstructured variants
+       * require fallback selection.
+       */
+      if (
+        variants.length >
+          1 &&
+        !groups.size &&
+        !variant
+      ) {
         elements.selectionMessage.textContent =
-          "Please select all required options.";
+          "Please select an option.";
+
+        elements.stockText.textContent =
+          "Select an option to continue";
 
         elements.addToCartButton.disabled =
           true;
@@ -6051,9 +6444,47 @@
         "";
 
 
+      let stock =
+        getVariantStock(
+          variant
+        );
+
+
+      /*
+       * Product-level stock fallback.
+       */
+      if (
+        !stock.known &&
+        variant?.productFallback &&
+        product.total_available_stock !==
+          null &&
+        product.total_available_stock !==
+          undefined
+      ) {
+        const productStock =
+          Number(
+            product.total_available_stock
+          );
+
+
+        if (
+          Number.isFinite(
+            productStock
+          )
+        ) {
+          stock = {
+            known: true,
+            value:
+              productStock
+          };
+        }
+      }
+
+
       if (
         stock.known &&
-        stock.value <= 0
+        stock.value <=
+          0
       ) {
         elements.stockStatus.classList.add(
           "out"
@@ -6083,31 +6514,34 @@
         elements.stockText.textContent =
           `${stock.value} available`;
 
+
+        const maximum =
+          Math.min(
+            MAX_ITEM_QUANTITY,
+            Math.max(
+              1,
+              stock.value
+            )
+          );
+
+
         elements.modalQuantity.max =
           String(
-            Math.min(
-              MAX_ITEM_QUANTITY,
-              Math.max(
-                1,
-                stock.value
-              )
-            )
+            maximum
           );
 
 
         if (
           state.quantity >
-          stock.value
+          maximum
         ) {
           state.quantity =
-            Math.max(
-              1,
-              stock.value
-            );
+            maximum;
         }
       } else {
         elements.stockText.textContent =
           "Available";
+
 
         elements.modalQuantity.max =
           String(
@@ -6137,27 +6571,30 @@
     function getProductImages(
       product
     ) {
-      const images = [];
+      const result =
+        [];
+
 
       const add =
         value => {
           const url =
             String(
-              value ?? ""
+              value ??
+                ""
             ).trim();
 
-          if (
-            !url
-          ) {
+
+          if (!url) {
             return;
           }
 
+
           if (
-            !images.includes(
+            !result.includes(
               url
             )
           ) {
-            images.push(
+            result.push(
               url
             );
           }
@@ -6190,22 +6627,63 @@
       );
 
 
-      return images;
+      return result;
+    }
+
+
+    function setMainGalleryImage(
+      imageUrl
+    ) {
+      if (!imageUrl) {
+        elements.modalImage.removeAttribute(
+          "src"
+        );
+
+        return;
+      }
+
+
+      elements.modalImage.onerror =
+        null;
+
+
+      const proxy =
+        getProductImageUrl(
+          imageUrl
+        );
+
+
+      elements.modalImage.src =
+        proxy;
+
+
+      elements.modalImage.onerror =
+        () => {
+          elements.modalImage.onerror =
+            null;
+
+          elements.modalImage.src =
+            imageUrl;
+        };
+
+
+      elements.modalImage.alt =
+        state.selectedProduct?.title ||
+        "Product";
     }
 
 
     function renderGallery(
-      product,
-      preferredImage = ""
+      product
     ) {
+      elements.galleryThumbnails.innerHTML =
+        "";
+
+
       const images =
         getProductImages(
           product
         );
-
-
-      elements.galleryThumbnails.innerHTML =
-        "";
 
 
       if (
@@ -6220,12 +6698,18 @@
 
 
       let selected =
-        preferredImage &&
-        images.includes(
-          preferredImage
+        state.currentGalleryImage;
+
+
+      if (
+        !selected ||
+        !images.includes(
+          selected
         )
-          ? preferredImage
-          : images[0];
+      ) {
+        selected =
+          images[0];
+      }
 
 
       state.currentGalleryImage =
@@ -6243,6 +6727,7 @@
             document.createElement(
               "button"
             );
+
 
           button.type =
             "button";
@@ -6266,18 +6751,24 @@
               "img"
             );
 
+
           image.alt =
             product.title ||
             "Product";
 
-          const proxied =
+
+          image.dataset.originalSrc =
+            imageUrl;
+
+
+          const proxy =
             getProductImageUrl(
               imageUrl
             );
 
 
           image.src =
-            proxied;
+            proxy;
 
 
           image.onerror =
@@ -6297,9 +6788,14 @@
 
           button.addEventListener(
             "click",
-            () => {
+            event => {
+              event.preventDefault();
+              event.stopPropagation();
+
+
               state.currentGalleryImage =
                 imageUrl;
+
 
               setMainGalleryImage(
                 imageUrl
@@ -6333,57 +6829,14 @@
     }
 
 
-    function setMainGalleryImage(
-      imageUrl
-    ) {
-      if (
-        !imageUrl
-      ) {
-        elements.modalImage.removeAttribute(
-          "src"
-        );
-
-        return;
-      }
-
-
-      elements.modalImage.onerror =
-        null;
-
-
-      const proxied =
-        getProductImageUrl(
-          imageUrl
-        );
-
-
-      elements.modalImage.src =
-        proxied;
-
-
-      elements.modalImage.onerror =
-        () => {
-          elements.modalImage.onerror =
-            null;
-
-          elements.modalImage.src =
-            imageUrl;
-        };
-
-
-      elements.modalImage.alt =
-        state.selectedProduct?.title ||
-        "Product";
-    }
-
-
     function updateGalleryForVariant() {
       const variant =
         state.selectedVariant;
 
 
       if (
-        !variant?.image
+        !variant ||
+        variant.productFallback
       ) {
         return;
       }
@@ -6391,13 +6844,12 @@
 
       const image =
         String(
-          variant.image
+          variant.image ??
+            ""
         ).trim();
 
 
-      if (
-        !image
-      ) {
+      if (!image) {
         return;
       }
 
@@ -6417,26 +6869,21 @@
         )
         .forEach(
           thumb => {
-            const thumbImage =
+            const imageNode =
               thumb.querySelector(
                 "img"
               );
 
-            if (
-              !thumbImage
-            ) {
+
+            if (!imageNode) {
               return;
             }
 
 
-            const original =
-              thumbImage.dataset
-                .originalSrc;
-
-
             thumb.classList.toggle(
               "active",
-              original ===
+              imageNode.dataset
+                .originalSrc ===
                 image
             );
           }
@@ -6445,7 +6892,7 @@
 
 
     /* =========================================================
-       PRODUCT MODAL
+       OPEN PRODUCT
     ========================================================= */
 
     function openProductModal(
@@ -6454,14 +6901,21 @@
       state.selectedProduct =
         product;
 
+
       state.selectedVariant =
         null;
+
 
       state.selectedAttributes =
         {};
 
+
       state.quantity =
         1;
+
+
+      state.currentGalleryImage =
+        "";
 
 
       elements.modalCategory.textContent =
@@ -6491,7 +6945,8 @@
       renderVariantControls();
 
 
-      updateSelectedVariant();
+      state.selectedVariant =
+        getSelectedVariant();
 
 
       updateModalPricing();
@@ -6515,14 +6970,6 @@
       document.body.classList.add(
         "modal-open"
       );
-
-
-      setTimeout(
-        () => {
-          elements.modalClose.focus();
-        },
-        50
-      );
     }
 
 
@@ -6531,10 +6978,12 @@
         "open"
       );
 
+
       elements.modalOverlay.setAttribute(
         "aria-hidden",
         "true"
       );
+
 
       document.body.classList.remove(
         "modal-open"
@@ -6544,86 +6993,349 @@
       state.selectedProduct =
         null;
 
+
       state.selectedVariant =
         null;
+
 
       state.selectedAttributes =
         {};
 
+
       state.quantity =
         1;
+
+      state.currentGalleryImage =
+        "";
     }
 
 
     /* =========================================================
-       QUANTITY
+       ADD TO CART
     ========================================================= */
 
-    function updateModalQuantity(
-      value
+    function addProductToCart(
+      product,
+      variant,
+      quantity
     ) {
-      let next =
-        normalizeQuantity(
-          value
+      if (
+        !product ||
+        !product.product_id
+      ) {
+        showToast(
+          "This product cannot be purchased."
+        );
+
+        return false;
+      }
+
+
+      /*
+       * Critical fallback:
+       * when the product has no CJ SKU,
+       * the product itself is still valid.
+       */
+      if (
+        !variant
+      ) {
+        const variants =
+          getVariants(
+            product
+          );
+
+
+        if (
+          variants.length ===
+          0
+        ) {
+          variant = {
+            productFallback:
+              true,
+
+            price:
+              product.sale_price ??
+              product.price ??
+              0,
+
+            stock:
+              product.total_available_stock,
+
+            image:
+              getRawImageUrl(
+                product
+              ),
+
+            name:
+              "Standard"
+          };
+        }
+      }
+
+
+      /*
+       * Multiple actual variants require
+       * a real selected variant.
+       */
+      if (
+        !variant
+      ) {
+        showToast(
+          "Please select the product options."
+        );
+
+        return false;
+      }
+
+
+      let stock =
+        getVariantStock(
+          variant
         );
 
 
-      const variant =
-        state.selectedVariant;
+      if (
+        !stock.known &&
+        variant.productFallback &&
+        product.total_available_stock !==
+          null &&
+        product.total_available_stock !==
+          undefined &&
+        product.total_available_stock !==
+          ""
+      ) {
+        const productStock =
+          Number(
+            product.total_available_stock
+          );
+
+
+        if (
+          Number.isFinite(
+            productStock
+          )
+        ) {
+          stock = {
+            known: true,
+            value:
+              productStock
+          };
+        }
+      }
+
+
+      const requestedQuantity =
+        normalizeQuantity(
+          quantity
+        );
 
 
       if (
-        variant
+        stock.known &&
+        stock.value <=
+          0
       ) {
-        const stock =
-          getVariantStock(
-            variant
-          );
+        showToast(
+          "This product is currently out of stock."
+        );
+
+        return false;
+      }
+
+
+      if (
+        stock.known &&
+        requestedQuantity >
+          stock.value
+      ) {
+        showToast(
+          `Only ${stock.value} available.`
+        );
+
+        return false;
+      }
+
+
+      const variantId =
+        variant.productFallback
+          ? ""
+          : getVariantId(
+              variant
+            );
+
+
+      const sku =
+        variant.productFallback
+          ? ""
+          : String(
+              variant?.sku ??
+                ""
+            ).trim();
+
+
+      /*
+       * The cart contains the actual
+       * product ID and CJ variant ID.
+       */
+      const item =
+        normalizeCartItem({
+          product_id:
+            product.product_id,
+
+          variant_id:
+            variantId,
+
+          sku:
+            sku,
+
+          title:
+            product.title,
+
+          variant_name:
+            variant.productFallback
+              ? ""
+              : getVariantDisplayName(
+                  variant
+                ),
+
+          image:
+            variant?.image ||
+            getRawImageUrl(
+              product
+            ),
+
+          quantity:
+            requestedQuantity,
+
+          price:
+            variant?.price ??
+            product.sale_price ??
+            product.price ??
+            0,
+
+          currency:
+            product.currency ||
+            STORE_CURRENCY
+        });
+
+
+      const key =
+        cartItemKey(
+          item.product_id,
+          item.variant_id,
+          item.sku
+        );
+
+
+      const existingIndex =
+        state.cart.findIndex(
+          cartItem =>
+            cartItemKey(
+              cartItem.product_id,
+              cartItem.variant_id,
+              cartItem.sku
+            ) ===
+            key
+        );
+
+
+      if (
+        existingIndex >=
+        0
+      ) {
+        const existing =
+          state.cart[
+            existingIndex
+          ];
+
+
+        let combinedQuantity =
+          normalizeQuantity(
+            existing.quantity
+          ) +
+          requestedQuantity;
 
 
         if (
           stock.known
         ) {
-          next =
+          combinedQuantity =
             Math.min(
-              next,
-              Math.max(
-                1,
-                stock.value
-              )
+              combinedQuantity,
+              stock.value
             );
         }
+
+
+        existing.quantity =
+          Math.min(
+            MAX_ITEM_QUANTITY,
+            combinedQuantity
+          );
+
+
+        existing.price =
+          item.price;
+
+
+        existing.currency =
+          item.currency;
+
+
+        existing.title =
+          item.title;
+
+
+        existing.image =
+          item.image;
+
+
+        existing.variant_name =
+          item.variant_name;
+
+      } else {
+
+        state.cart.push(
+          item
+        );
       }
 
 
-      state.quantity =
-        next;
+      saveCart();
 
 
-      elements.modalQuantity.value =
-        String(
-          next
-        );
+      return true;
     }
 
 
     /* =========================================================
-       CART DRAWER
+       CART UI
     ========================================================= */
+
+    function updateCartUI() {
+      elements.cartCount.textContent =
+        String(
+          getCartQuantity()
+        );
+
+
+      renderCartDrawer();
+    }
+
 
     function renderCartDrawer() {
       elements.drawerItems.innerHTML =
         "";
 
 
-      const totalItems =
+      const quantity =
         getCartQuantity();
 
 
       elements.drawerItemCount.textContent =
-        totalItems === 1
+        quantity === 1
           ? "1 item"
-          : `${totalItems} items`;
+          : `${quantity} items`;
 
 
       if (
@@ -6634,6 +7346,7 @@
             "div"
           );
 
+
         empty.className =
           "drawer-empty";
 
@@ -6643,8 +7356,10 @@
             "div"
           );
 
+
         icon.className =
           "drawer-empty-icon";
+
 
         icon.innerHTML =
           `
@@ -6667,29 +7382,33 @@
             "strong"
           );
 
+
         title.textContent =
           "Your cart is empty";
 
 
-        const text =
+        const message =
           document.createElement(
             "div"
           );
 
-        text.textContent =
-          "Add something you love to get started.";
+
+        message.textContent =
+          "Add something you like to get started.";
 
 
         empty.appendChild(
           icon
         );
 
+
         empty.appendChild(
           title
         );
 
+
         empty.appendChild(
-          text
+          message
         );
 
 
@@ -6727,6 +7446,7 @@
               "div"
             );
 
+
           row.className =
             "cart-item";
 
@@ -6736,8 +7456,10 @@
               "img"
             );
 
+
           image.className =
             "cart-item-image";
+
 
           image.alt =
             item.title ||
@@ -6747,14 +7469,14 @@
           if (
             item.image
           ) {
-            const proxied =
+            const proxy =
               getProductImageUrl(
                 item.image
               );
 
 
             image.src =
-              proxied;
+              proxy;
 
 
             image.onerror =
@@ -6779,8 +7501,10 @@
               "p"
             );
 
+
           title.className =
             "cart-item-title";
+
 
           title.textContent =
             item.title ||
@@ -6800,11 +7524,14 @@
                 "div"
               );
 
+
             variant.className =
               "cart-item-variant";
 
+
             variant.textContent =
               item.variant_name;
+
 
             content.appendChild(
               variant
@@ -6817,8 +7544,10 @@
               "div"
             );
 
+
           price.className =
             "cart-item-price";
+
 
           price.textContent =
             formatPrice(
@@ -6844,37 +7573,40 @@
               "div"
             );
 
+
           actions.className =
             "cart-item-actions";
 
 
-          const quantityControl =
+          const controls =
             document.createElement(
               "div"
             );
 
-          quantityControl.className =
+
+          controls.className =
             "drawer-quantity";
 
 
-          const minus =
+          const decrease =
             document.createElement(
               "button"
             );
 
-          minus.type =
+
+          decrease.type =
             "button";
 
-          minus.textContent =
+          decrease.textContent =
             "−";
 
-          minus.setAttribute(
+          decrease.setAttribute(
             "aria-label",
             "Decrease quantity"
           );
 
 
-          minus.addEventListener(
+          decrease.addEventListener(
             "click",
             () =>
               changeCartQuantity(
@@ -6884,12 +7616,13 @@
           );
 
 
-          const quantity =
+          const number =
             document.createElement(
               "span"
             );
 
-          quantity.textContent =
+
+          number.textContent =
             String(
               normalizeQuantity(
                 item.quantity
@@ -6897,24 +7630,25 @@
             );
 
 
-          const plus =
+          const increase =
             document.createElement(
               "button"
             );
 
-          plus.type =
+
+          increase.type =
             "button";
 
-          plus.textContent =
+          increase.textContent =
             "+";
 
-          plus.setAttribute(
+          increase.setAttribute(
             "aria-label",
             "Increase quantity"
           );
 
 
-          plus.addEventListener(
+          increase.addEventListener(
             "click",
             () =>
               changeCartQuantity(
@@ -6924,16 +7658,16 @@
           );
 
 
-          quantityControl.appendChild(
-            minus
+          controls.appendChild(
+            decrease
           );
 
-          quantityControl.appendChild(
-            quantity
+          controls.appendChild(
+            number
           );
 
-          quantityControl.appendChild(
-            plus
+          controls.appendChild(
+            increase
           );
 
 
@@ -6941,6 +7675,7 @@
             document.createElement(
               "button"
             );
+
 
           remove.type =
             "button";
@@ -6962,8 +7697,9 @@
 
 
           actions.appendChild(
-            quantityControl
+            controls
           );
+
 
           actions.appendChild(
             remove
@@ -6978,6 +7714,7 @@
           row.appendChild(
             image
           );
+
 
           row.appendChild(
             content
@@ -7008,22 +7745,15 @@
     }
 
 
-    function updateCartUI() {
-      elements.cartCount.textContent =
-        String(
-          getCartQuantity()
-        );
-
-      renderCartDrawer();
-    }
-
-
     function changeCartQuantity(
       index,
       change
     ) {
       const item =
-        state.cart[index];
+        state.cart[
+          index
+        ];
+
 
       if (!item) {
         return;
@@ -7036,18 +7766,15 @@
         );
 
 
-      let next =
+      item.quantity =
         Math.min(
           MAX_ITEM_QUANTITY,
           Math.max(
             1,
-            current + change
+            current +
+              change
           )
         );
-
-
-      item.quantity =
-        next;
 
 
       saveCart();
@@ -7074,6 +7801,7 @@
 
       saveCart();
 
+
       showToast(
         "Item removed from cart."
       );
@@ -7081,15 +7809,31 @@
 
 
     function openCart() {
-      closeProductModal();
+      elements.modalOverlay.classList.remove(
+        "open"
+      );
+
+
+      elements.modalOverlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
 
       elements.drawerOverlay.classList.add(
         "open"
       );
 
+
       elements.cartDrawer.classList.add(
         "open"
       );
+
 
       document.body.classList.add(
         "drawer-open"
@@ -7102,9 +7846,11 @@
         "open"
       );
 
+
       elements.cartDrawer.classList.remove(
         "open"
       );
+
 
       document.body.classList.remove(
         "drawer-open"
@@ -7137,8 +7883,82 @@
       saveCart();
 
 
+      /*
+       * Existing checkout contract.
+       */
       window.location.href =
         "./checkout.html";
+    }
+
+
+    /* =========================================================
+       PRODUCT FILTERING
+    ========================================================= */
+
+    function filteredProducts() {
+      const query =
+        state.search
+          .trim()
+          .toLowerCase();
+
+
+      return state.products.filter(
+        product => {
+          const productCategories =
+            getProductCategories(
+              product
+            ).map(
+              value =>
+                value.toLowerCase()
+            );
+
+
+          const matchesCategory =
+            !state.category ||
+            productCategories.includes(
+              state.category.toLowerCase()
+            );
+
+
+          const searchable = [
+            product.title,
+            product.original_title,
+            product.category,
+            product.store_categories,
+            product.description
+          ]
+            .map(
+              value =>
+                Array.isArray(
+                  value
+                )
+                  ? value.join(
+                      " "
+                    )
+                  : String(
+                      value ??
+                        ""
+                    )
+            )
+            .join(
+              " "
+            )
+            .toLowerCase();
+
+
+          const matchesSearch =
+            !query ||
+            searchable.includes(
+              query
+            );
+
+
+          return (
+            matchesCategory &&
+            matchesSearch
+          );
+        }
+      );
     }
 
 
@@ -7147,7 +7967,7 @@
     ========================================================= */
 
     function renderCategories() {
-      const map =
+      const categoryMap =
         new Map();
 
 
@@ -7160,12 +7980,13 @@
               const key =
                 category.toLowerCase();
 
+
               if (
-                !map.has(
+                !categoryMap.has(
                   key
                 )
               ) {
-                map.set(
+                categoryMap.set(
                   key,
                   category
                 );
@@ -7184,6 +8005,7 @@
         document.createElement(
           "button"
         );
+
 
       all.type =
         "button";
@@ -7210,7 +8032,7 @@
 
 
       Array.from(
-        map.values()
+        categoryMap.values()
       )
         .sort(
           (
@@ -7228,8 +8050,10 @@
                 "button"
               );
 
+
             button.type =
               "button";
+
 
             button.className =
               "category-button" +
@@ -7241,8 +8065,10 @@
                   : ""
               );
 
+
             button.dataset.category =
               category;
+
 
             button.textContent =
               category;
@@ -7253,76 +8079,6 @@
             );
           }
         );
-    }
-
-
-    /* =========================================================
-       FILTERING
-    ========================================================= */
-
-    function filteredProducts() {
-      const query =
-        state.search
-          .trim()
-          .toLowerCase();
-
-
-      return state.products.filter(
-        product => {
-          const categories =
-            getProductCategories(
-              product
-            ).map(
-              category =>
-                category.toLowerCase()
-            );
-
-
-          const matchesCategory =
-            !state.category ||
-            categories.includes(
-              state.category.toLowerCase()
-            );
-
-
-          const searchable =
-            [
-              product.title,
-              product.original_title,
-              product.category,
-              product.store_categories,
-              product.description
-            ]
-              .map(
-                value =>
-                  Array.isArray(
-                    value
-                  )
-                    ? value.join(
-                        " "
-                      )
-                    : String(
-                        value ??
-                        ""
-                      )
-              )
-              .join(" ")
-              .toLowerCase();
-
-
-          const matchesSearch =
-            !query ||
-            searchable.includes(
-              query
-            );
-
-
-          return (
-            matchesCategory &&
-            matchesSearch
-          );
-        }
-      );
     }
 
 
@@ -7338,8 +8094,10 @@
           "article"
         );
 
+
       card.className =
         "product-card";
+
 
       card.tabIndex =
         0;
@@ -7349,6 +8107,7 @@
         document.createElement(
           "div"
         );
+
 
       imageWrap.className =
         "product-image-wrap";
@@ -7380,11 +8139,14 @@
             "div"
           );
 
+
         badge.className =
           "product-badge";
 
+
         badge.textContent =
           "SALE";
+
 
         imageWrap.appendChild(
           badge
@@ -7397,12 +8159,15 @@
           "img"
         );
 
+
       image.className =
         "product-image";
+
 
       image.alt =
         product.title ||
         "Product";
+
 
       image.loading =
         "lazy";
@@ -7421,6 +8186,7 @@
           getProductImageUrl(
             rawImage
           );
+
 
         image.onerror =
           () => {
@@ -7443,6 +8209,7 @@
           "div"
         );
 
+
       info.className =
         "product-info";
 
@@ -7452,8 +8219,10 @@
           "div"
         );
 
+
       category.className =
         "product-category";
+
 
       category.textContent =
         getProductCategories(
@@ -7467,8 +8236,10 @@
           "h3"
         );
 
+
       title.className =
         "product-title";
+
 
       title.textContent =
         product.title ||
@@ -7480,8 +8251,10 @@
           "div"
         );
 
+
       rating.className =
         "product-rating";
+
 
       rating.innerHTML =
         `
@@ -7495,8 +8268,10 @@
           "div"
         );
 
+
       price.className =
         "product-price";
+
 
       price.textContent =
         formatPrice(
@@ -7517,8 +8292,10 @@
             "span"
           );
 
+
         old.className =
           "product-price-old";
+
 
         old.textContent =
           formatPrice(
@@ -7527,7 +8304,7 @@
           );
 
 
-        const saving =
+        const percentage =
           Math.round(
             (
               (
@@ -7540,17 +8317,20 @@
           );
 
 
-        const savingText =
+        const saving =
           document.createElement(
             "span"
           );
 
-        savingText.className =
+
+        saving.className =
           "product-savings";
 
-        savingText.textContent =
-          saving > 0
-            ? `-${saving}%`
+
+        saving.textContent =
+          percentage >
+            0
+            ? `-${percentage}%`
             : "";
 
 
@@ -7558,8 +8338,9 @@
           old
         );
 
+
         price.appendChild(
-          savingText
+          saving
         );
       }
 
@@ -7650,6 +8431,7 @@
             "div"
           );
 
+
         empty.className =
           "empty-state";
 
@@ -7659,6 +8441,7 @@
             "strong"
           );
 
+
         title.textContent =
           "No products found";
 
@@ -7667,6 +8450,7 @@
           document.createElement(
             "div"
           );
+
 
         message.textContent =
           state.search
@@ -7686,6 +8470,7 @@
         elements.productGrid.appendChild(
           empty
         );
+
 
         return;
       }
@@ -7712,7 +8497,7 @@
 
 
     /* =========================================================
-       POLICY CONTENT
+       POLICIES
     ========================================================= */
 
     const POLICY_CONTENT = {
@@ -7724,33 +8509,37 @@
         html:
           `
             <h3>Shipping</h3>
+
             <p>
-              Prasun Store offers shipping options based on the destination,
-              product availability and the available fulfillment method.
-              The applicable shipping options and charges are calculated
-              during checkout.
+              Prasun Store provides shipping options according
+              to product availability, destination and available
+              fulfillment services. The shipping methods and applicable
+              shipping charges are shown during checkout.
             </p>
 
             <h3>Delivery Estimates</h3>
+
             <p>
-              Delivery times can vary depending on destination, product,
-              warehouse availability, carrier and other circumstances.
-              Any delivery estimate shown during checkout is an estimate
-              and not a guaranteed delivery date.
+              Delivery times may vary according to destination,
+              product availability, carrier, customs processing and
+              other circumstances. Delivery estimates are not a
+              guarantee of a specific delivery date.
             </p>
 
             <h3>Tracking</h3>
+
             <p>
-              Where tracking is available, tracking information may be
-              provided after the order has been processed and handed to
-              the carrier.
+              When tracking is available, tracking information may
+              be provided after an order has been processed and
+              handed to the carrier.
             </p>
 
             <h3>Delays</h3>
+
             <p>
-              Customs processing, weather, carrier disruptions and other
-              circumstances outside our reasonable control may delay a
-              shipment.
+              Carrier disruptions, customs procedures, weather and
+              other circumstances outside our reasonable control may
+              result in shipping delays.
             </p>
           `
       },
@@ -7763,33 +8552,37 @@
         html:
           `
             <h3>Return Requests</h3>
+
             <p>
               If you receive a damaged, defective or incorrect item,
-              please contact Prasun Store as soon as reasonably possible
-              after delivery and provide your order information and
-              supporting photographs where appropriate.
+              please contact Prasun Store as soon as reasonably
+              possible after delivery and provide the order details
+              and supporting photographs where appropriate.
             </p>
 
             <h3>Eligibility</h3>
+
             <p>
-              Return eligibility may depend on the product, its condition,
-              the reason for the return and the applicable fulfillment
+              Return eligibility depends on the product, condition,
+              reason for the return and applicable fulfillment
               requirements.
             </p>
 
             <h3>Refunds</h3>
+
             <p>
-              Approved refunds are processed after the applicable return
-              or verification process has been completed. The time for
-              funds to appear in your payment account may depend on the
-              payment provider or financial institution.
+              Approved refunds are processed after the applicable
+              return or verification process is completed. The time
+              required for the refund to appear in your account may
+              depend on your payment provider or financial institution.
             </p>
 
             <h3>Important</h3>
+
             <p>
-              Please contact us before sending a product back. Do not
-              return merchandise to a supplier or fulfillment facility
-              unless Prasun Store has provided return instructions.
+              Please contact Prasun Store before returning any item.
+              Do not send merchandise to a supplier or fulfillment
+              facility unless you have received return instructions.
             </p>
           `
       },
@@ -7802,37 +8595,46 @@
         html:
           `
             <h3>Information We Collect</h3>
+
             <p>
-              Prasun Store may collect information that you provide when
-              placing an order, contacting customer support or otherwise
-              interacting with the store.
+              Prasun Store may collect information you provide when
+              placing an order, contacting customer support or using
+              the store.
             </p>
 
-            <h3>How Information Is Used</h3>
+            <h3>How We Use Information</h3>
+
             <p>
-              Information may be used to process orders, arrange shipping,
-              provide customer support, communicate about orders and
-              maintain the security and operation of the store.
+              Information may be used to process orders, arrange
+              shipping, provide customer service, communicate about
+              orders, prevent fraud and maintain the security and
+              operation of the store.
             </p>
 
             <h3>Service Providers</h3>
+
             <p>
               Information necessary to fulfill an order may be shared
-              with payment, shipping, fulfillment and technology service
+              with payment, fulfillment, shipping and technology
               providers involved in completing the transaction.
             </p>
 
             <h3>Security</h3>
+
             <p>
-              We take reasonable measures to protect information handled
-              through the store. No internet transmission or electronic
-              storage system can be guaranteed to be completely secure.
+              We use reasonable measures to protect information
+              handled through the store. No electronic transmission
+              or storage system can be guaranteed to be completely
+              secure.
             </p>
 
             <h3>Contact</h3>
+
             <p>
-              For privacy-related questions, please contact
-              contact@prasunbarua.com.
+              Privacy questions can be sent to
+              <a href="mailto:contact@prasunbarua.com">
+                contact@prasunbarua.com
+              </a>.
             </p>
           `
       },
@@ -7844,39 +8646,47 @@
 
         html:
           `
-            <h3>Store Use</h3>
+            <h3>Use of the Store</h3>
+
             <p>
-              By using Prasun Store, you agree to use the website lawfully
-              and not interfere with its operation, security or availability.
+              By using Prasun Store, you agree to use the website
+              lawfully and not interfere with its operation, security
+              or availability.
             </p>
 
             <h3>Product Information</h3>
+
             <p>
-              We make reasonable efforts to display product descriptions,
-              prices, images and availability accurately. Product
-              specifications, availability and pricing may change without
-              notice.
+              We make reasonable efforts to present product
+              descriptions, images, prices and availability accurately.
+              Product specifications, prices and availability may
+              change without notice.
             </p>
 
             <h3>Orders</h3>
+
             <p>
-              An order is subject to product availability, successful
-              payment or payment confirmation, shipping availability and
-              any applicable verification requirements.
+              Orders are subject to product availability, successful
+              payment or payment confirmation, shipping availability
+              and any applicable verification requirements.
             </p>
 
-            <h3>Pricing</h3>
+            <h3>Pricing Errors</h3>
+
             <p>
-              If a significant pricing or product information error is
-              discovered, we reserve the right to correct the error and,
-              where appropriate, cancel the affected order and provide
-              an applicable refund.
+              If a significant pricing or product-information error is
+              discovered, we may correct the information and, where
+              appropriate, cancel the affected order and issue an
+              applicable refund.
             </p>
 
             <h3>Contact</h3>
+
             <p>
               Questions about these terms can be sent to
-              contact@prasunbarua.com.
+              <a href="mailto:contact@prasunbarua.com">
+                contact@prasunbarua.com
+              </a>.
             </p>
           `
       },
@@ -7889,27 +8699,27 @@
         html:
           `
             <h3>Customer Support</h3>
+
             <p>
-              If you have a question about a product, order, shipping,
-              returns or anything else related to Prasun Store, please
-              contact our support team.
+              For questions about products, orders, shipping,
+              returns or other store matters, please contact our
+              support team.
             </p>
 
             <h3>Email</h3>
+
             <p>
-              <a
-                href="mailto:contact@prasunbarua.com"
-                style="color:#111;font-weight:700;"
-              >
+              <a href="mailto:contact@prasunbarua.com">
                 contact@prasunbarua.com
               </a>
             </p>
 
-            <h3>When Contacting Us</h3>
+            <h3>Order Questions</h3>
+
             <p>
-              For an order-related question, please include your order
-              number where available so that we can assist you more
-              efficiently.
+              For an order-related request, please include your
+              order number whenever possible so that we can assist
+              you efficiently.
             </p>
           `
       },
@@ -7921,31 +8731,34 @@
 
         html:
           `
-            <h3>How do I place an order?</h3>
+            <h3>How do I order?</h3>
+
             <p>
-              Select a product, choose the required options and quantity,
-              add it to your cart and continue to checkout.
+              Open a product, select the required options and
+              quantity, click Add to Cart or Buy Now, and continue
+              to checkout.
             </p>
 
-            <h3>Can I change my quantity?</h3>
+            <h3>Can I change quantity?</h3>
+
             <p>
-              Yes. You can select the quantity before adding an item to
-              the cart or change the quantity directly in the cart.
+              Yes. Quantity can be selected before adding an item
+              and adjusted later in the cart.
             </p>
 
-            <h3>How are shipping costs calculated?</h3>
+            <h3>How are shipping charges calculated?</h3>
+
             <p>
-              Shipping availability and cost are calculated based on the
-              products in your order and your delivery destination.
+              Shipping options and applicable charges depend on the
+              products in your order and your destination and are
+              calculated during checkout.
             </p>
 
             <h3>How do I contact support?</h3>
+
             <p>
-              Email us at
-              <a
-                href="mailto:contact@prasunbarua.com"
-                style="color:#111;font-weight:700;"
-              >
+              Email
+              <a href="mailto:contact@prasunbarua.com">
                 contact@prasunbarua.com
               </a>.
             </p>
@@ -8022,10 +8835,12 @@
         state.search =
           event.target.value;
 
+
         elements.searchClear.classList.toggle(
           "hidden",
           !state.search
         );
+
 
         renderProducts();
       }
@@ -8034,18 +8849,26 @@
 
     elements.searchClear.addEventListener(
       "click",
-      () => {
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+
         elements.searchInput.value =
           "";
 
+
         state.search =
           "";
+
 
         elements.searchClear.classList.add(
           "hidden"
         );
 
+
         renderProducts();
+
 
         elements.searchInput.focus();
       }
@@ -8060,6 +8883,7 @@
             ".category-button"
           );
 
+
         if (!button) {
           return;
         }
@@ -8072,6 +8896,7 @@
 
         renderCategories();
 
+
         renderProducts();
       }
     );
@@ -8079,34 +8904,58 @@
 
     elements.cartButton.addEventListener(
       "click",
-      openCart
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        openCart();
+      }
     );
 
 
     elements.contactHeaderButton.addEventListener(
       "click",
-      () =>
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
         openPolicy(
           "contact"
-        )
+        );
+      }
     );
 
 
     elements.drawerClose.addEventListener(
       "click",
-      closeCart
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        closeCart();
+      }
     );
 
 
     elements.drawerOverlay.addEventListener(
       "click",
-      closeCart
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        closeCart();
+      }
     );
 
 
     elements.modalClose.addEventListener(
       "click",
-      closeProductModal
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        closeProductModal();
+      }
     );
 
 
@@ -8123,9 +8972,17 @@
     );
 
 
+    /* =========================================================
+       QUANTITY
+    ========================================================= */
+
     elements.modalQuantityMinus.addEventListener(
       "click",
-      () => {
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+
         updateModalQuantity(
           state.quantity -
           1
@@ -8136,7 +8993,11 @@
 
     elements.modalQuantityPlus.addEventListener(
       "click",
-      () => {
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+
         updateModalQuantity(
           state.quantity +
           1
@@ -8165,13 +9026,71 @@
     );
 
 
+    function updateModalQuantity(
+      value
+    ) {
+      let next =
+        normalizeQuantity(
+          value
+        );
+
+
+      const variant =
+        state.selectedVariant;
+
+
+      const stock =
+        getVariantStock(
+          variant
+        );
+
+
+      if (
+        stock.known
+      ) {
+        next =
+          Math.min(
+            next,
+            Math.max(
+              1,
+              stock.value
+            )
+          );
+      }
+
+
+      next =
+        Math.min(
+          MAX_ITEM_QUANTITY,
+          Math.max(
+            1,
+            next
+          )
+        );
+
+
+      state.quantity =
+        next;
+
+
+      elements.modalQuantity.value =
+        String(
+          next
+        );
+    }
+
+
     /* =========================================================
        ADD TO CART
     ========================================================= */
 
     elements.addToCartButton.addEventListener(
       "click",
-      () => {
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+
         const product =
           state.selectedProduct;
 
@@ -8181,22 +9100,66 @@
         }
 
 
-        updateSelectedVariant();
-
-
-        const variant =
-          state.selectedVariant;
-
-
-        if (!variant) {
-          elements.selectionMessage.textContent =
-            "Please select all required options.";
-
-          showToast(
-            "Please select the product options."
+        const variants =
+          getVariants(
+            product
           );
 
-          return;
+
+        let variant =
+          getSelectedVariant();
+
+
+        /*
+         * Structured variants:
+         * a complete combination is required.
+         */
+        if (
+          variants.length >
+            1
+        ) {
+          const groups =
+            buildVariantGroups(
+              variants
+            );
+
+
+          if (
+            groups.size &&
+            !variant
+          ) {
+            elements.selectionMessage.textContent =
+              "Please select all required options.";
+
+
+            showToast(
+              "Please select the product options."
+            );
+
+
+            return;
+          }
+
+
+          /*
+           * Unstructured variants:
+           * an option must be selected.
+           */
+          if (
+            !groups.size &&
+            !variant
+          ) {
+            elements.selectionMessage.textContent =
+              "Please select an option.";
+
+
+            showToast(
+              "Please select an option."
+            );
+
+
+            return;
+          }
         }
 
 
@@ -8213,14 +9176,15 @@
         }
 
 
-        showToast(
-          "Added to your cart."
-        );
-
-
         closeProductModal();
 
+
         openCart();
+
+
+        showToast(
+          "Added to cart."
+        );
       }
     );
 
@@ -8231,7 +9195,11 @@
 
     elements.buyNowButton.addEventListener(
       "click",
-      () => {
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+
         const product =
           state.selectedProduct;
 
@@ -8241,22 +9209,58 @@
         }
 
 
-        updateSelectedVariant();
-
-
-        const variant =
-          state.selectedVariant;
-
-
-        if (!variant) {
-          elements.selectionMessage.textContent =
-            "Please select all required options.";
-
-          showToast(
-            "Please select the product options."
+        const variants =
+          getVariants(
+            product
           );
 
-          return;
+
+        let variant =
+          getSelectedVariant();
+
+
+        if (
+          variants.length >
+            1
+        ) {
+          const groups =
+            buildVariantGroups(
+              variants
+            );
+
+
+          if (
+            groups.size &&
+            !variant
+          ) {
+            elements.selectionMessage.textContent =
+              "Please select all required options.";
+
+
+            showToast(
+              "Please select the product options."
+            );
+
+
+            return;
+          }
+
+
+          if (
+            !groups.size &&
+            !variant
+          ) {
+            elements.selectionMessage.textContent =
+              "Please select an option.";
+
+
+            showToast(
+              "Please select an option."
+            );
+
+
+            return;
+          }
         }
 
 
@@ -8274,12 +9278,15 @@
 
 
         /*
-         * Save explicitly before
-         * navigating to checkout.
+         * Explicitly persist before
+         * navigation.
          */
         saveCart();
 
 
+        /*
+         * Existing checkout page.
+         */
         window.location.href =
           "./checkout.html";
       }
@@ -8292,17 +9299,26 @@
 
     elements.checkoutButton.addEventListener(
       "click",
-      goToCheckout
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        goToCheckout();
+      }
     );
 
 
     /* =========================================================
-       GALLERY ZOOM
+       GALLERY
     ========================================================= */
 
     elements.galleryZoom.addEventListener(
       "click",
-      () => {
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+
         const image =
           state.currentGalleryImage;
 
@@ -8324,6 +9340,9 @@
     elements.galleryMain.addEventListener(
       "click",
       event => {
+        event.preventDefault();
+
+
         if (
           event.target.closest(
             "#galleryZoom"
@@ -8341,7 +9360,9 @@
             state.currentGalleryImage;
 
 
-          if (image) {
+          if (
+            image
+          ) {
             window.open(
               image,
               "_blank",
@@ -8360,22 +9381,23 @@
     document.addEventListener(
       "click",
       event => {
-        const button =
+        const trigger =
           event.target.closest(
             "[data-policy]"
           );
 
 
-        if (!button) {
+        if (!trigger) {
           return;
         }
 
 
         event.preventDefault();
+        event.stopPropagation();
 
 
         openPolicy(
-          button.dataset.policy
+          trigger.dataset.policy
         );
       }
     );
@@ -8383,7 +9405,12 @@
 
     elements.policyClose.addEventListener(
       "click",
-      closePolicy
+      event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        closePolicy();
+      }
     );
 
 
@@ -8484,6 +9511,7 @@
 
 
       try {
+
         const products =
           await fetchProducts();
 
@@ -8507,6 +9535,7 @@
         elements.loadingState.hidden =
           true;
 
+
         elements.productGrid.hidden =
           false;
 
@@ -8529,6 +9558,7 @@
             "strong"
           );
 
+
         title.textContent =
           "Unable to load products";
 
@@ -8538,8 +9568,10 @@
             "div"
           );
 
+
         message.style.marginTop =
           "8px";
+
 
         message.textContent =
           "Please refresh the page and try again.";
@@ -8548,6 +9580,7 @@
         elements.loadingState.appendChild(
           title
         );
+
 
         elements.loadingState.appendChild(
           message
