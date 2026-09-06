@@ -22,7 +22,6 @@
       --text: #111111;
       --muted: #6b7280;
       --muted-2: #9ca3af;
-      --accent: #111111;
       --danger: #dc2626;
       --radius: 18px;
       --shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
@@ -52,13 +51,23 @@
       text-rendering: optimizeLegibility;
     }
 
+    body.modal-open,
+    body.drawer-open {
+      overflow: hidden;
+    }
+
     button,
-    input {
+    input,
+    select {
       font: inherit;
     }
 
     button {
       cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
     }
 
     img {
@@ -71,7 +80,9 @@
       margin: 0 auto;
     }
 
-    /* Header */
+    /* ================================
+       HEADER
+    ================================= */
 
     .site-header {
       position: sticky;
@@ -125,6 +136,10 @@
       border-color: #b8bcc4;
     }
 
+    .search-input::-webkit-search-cancel-button {
+      cursor: pointer;
+    }
+
     .search-icon {
       position: absolute;
       left: 15px;
@@ -170,7 +185,9 @@
       border: 2px solid #fff;
     }
 
-    /* Hero */
+    /* ================================
+       HERO
+    ================================= */
 
     .hero {
       padding: 64px 0 34px;
@@ -196,7 +213,9 @@
       line-height: 1.65;
     }
 
-    /* Categories */
+    /* ================================
+       CATEGORIES
+    ================================= */
 
     .category-wrapper {
       padding: 12px 0 30px;
@@ -219,6 +238,7 @@
       font-size: 14px;
       font-weight: 500;
       transition: all 0.18s ease;
+      white-space: nowrap;
     }
 
     .category:hover {
@@ -232,7 +252,9 @@
       color: #fff;
     }
 
-    /* Product section */
+    /* ================================
+       PRODUCTS
+    ================================= */
 
     .products-section {
       padding: 10px 0 70px;
@@ -266,6 +288,13 @@
     .product-card {
       min-width: 0;
       cursor: pointer;
+      outline: none;
+    }
+
+    .product-card:focus-visible {
+      outline: 2px solid #111;
+      outline-offset: 5px;
+      border-radius: var(--radius);
     }
 
     .product-image-wrap {
@@ -326,7 +355,9 @@
       text-decoration: line-through;
     }
 
-    /* Loading */
+    /* ================================
+       LOADING / EMPTY
+    ================================= */
 
     .loading {
       padding: 80px 20px;
@@ -364,7 +395,9 @@
       font-size: 18px;
     }
 
-    /* Modal */
+    /* ================================
+       PRODUCT MODAL
+    ================================= */
 
     .modal-overlay {
       position: fixed;
@@ -391,6 +424,7 @@
       border-radius: 24px;
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
       position: relative;
+      overscroll-behavior: contain;
     }
 
     .modal-close {
@@ -407,6 +441,10 @@
       display: grid;
       place-items: center;
       color: #111;
+    }
+
+    .modal-close:hover {
+      background: #fff;
     }
 
     .modal-content {
@@ -459,7 +497,9 @@
       text-decoration: line-through;
     }
 
-    /* Clean product description */
+    /* ================================
+       CLEAN PRODUCT DESCRIPTION
+    ================================= */
 
     .modal-description {
       margin-top: 22px;
@@ -553,8 +593,13 @@
       transition: opacity 0.2s ease;
     }
 
-    .primary-button:hover {
+    .primary-button:hover:not(:disabled) {
       opacity: 0.88;
+    }
+
+    .primary-button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
 
     .secondary-button {
@@ -567,8 +612,13 @@
       font-weight: 600;
     }
 
-    .secondary-button:hover {
+    .secondary-button:hover:not(:disabled) {
       background: var(--surface);
+    }
+
+    .secondary-button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
 
     .stock-note {
@@ -577,7 +627,9 @@
       font-size: 13px;
     }
 
-    /* Cart drawer */
+    /* ================================
+       CART DRAWER
+    ================================= */
 
     .drawer-overlay {
       position: fixed;
@@ -635,10 +687,15 @@
       place-items: center;
     }
 
+    .drawer-close:hover {
+      background: var(--surface-2);
+    }
+
     .drawer-items {
       flex: 1;
       overflow-y: auto;
       padding: 18px 20px;
+      overscroll-behavior: contain;
     }
 
     .cart-item {
@@ -760,12 +817,18 @@
       font-weight: 650;
     }
 
+    .checkout-button:hover:not(:disabled) {
+      opacity: 0.88;
+    }
+
     .checkout-button:disabled {
       opacity: 0.45;
       cursor: not-allowed;
     }
 
-    /* Footer */
+    /* ================================
+       FOOTER
+    ================================= */
 
     .site-footer {
       border-top: 1px solid var(--border);
@@ -786,7 +849,9 @@
       font-weight: 650;
     }
 
-    /* Responsive */
+    /* ================================
+       RESPONSIVE
+    ================================= */
 
     @media (max-width: 1000px) {
       .product-grid {
@@ -968,14 +1033,22 @@
 
 <body>
 
+  <!-- ================================
+       HEADER
+  ================================= -->
+
   <header class="site-header">
     <div class="container header-inner">
 
-      <a class="brand" href="./index.html">
+      <a
+        class="brand"
+        href="./index.html"
+      >
         Prasun Store
       </a>
 
       <div class="header-search">
+
         <svg
           class="search-icon"
           viewBox="0 0 24 24"
@@ -984,8 +1057,15 @@
           stroke-width="2"
           aria-hidden="true"
         >
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="m20 20-4-4"></path>
+          <circle
+            cx="11"
+            cy="11"
+            r="7"
+          ></circle>
+
+          <path
+            d="m20 20-4-4"
+          ></path>
         </svg>
 
         <input
@@ -996,6 +1076,7 @@
           autocomplete="off"
           aria-label="Search products"
         />
+
       </div>
 
       <button
@@ -1004,6 +1085,7 @@
         type="button"
         aria-label="Open shopping cart"
       >
+
         <svg
           width="20"
           height="20"
@@ -1013,32 +1095,59 @@
           stroke-width="1.8"
           aria-hidden="true"
         >
-          <path d="M6 7h12l1 13H5L6 7Z"></path>
-          <path d="M9 7a3 3 0 0 1 6 0"></path>
+          <path
+            d="M6 7h12l1 13H5L6 7Z"
+          ></path>
+
+          <path
+            d="M9 7a3 3 0 0 1 6 0"
+          ></path>
         </svg>
 
-        <span id="cartCount" class="cart-count">0</span>
+        <span
+          id="cartCount"
+          class="cart-count"
+        >
+          0
+        </span>
+
       </button>
 
     </div>
   </header>
 
+
+  <!-- ================================
+       MAIN
+  ================================= -->
+
   <main>
 
     <section class="hero">
       <div class="container hero-inner">
-        <h1>Smart products for modern living.</h1>
+
+        <h1>
+          Smart products for modern living.
+        </h1>
 
         <p>
-          Discover practical products for solar energy, lighting,
-          electronics, home improvement, technology and everyday life.
+          Discover practical products for solar energy,
+          lighting, electronics, home improvement,
+          technology and everyday life.
         </p>
+
       </div>
     </section>
 
+
     <section class="category-wrapper">
       <div class="container">
-        <div id="categories" class="categories">
+
+        <div
+          id="categories"
+          class="categories"
+        >
+
           <button
             class="category active"
             type="button"
@@ -1046,22 +1155,41 @@
           >
             All
           </button>
+
         </div>
+
       </div>
     </section>
+
 
     <section class="products-section">
       <div class="container">
 
         <div class="section-top">
-          <h2 class="section-title">Products</h2>
-          <span id="productCount" class="product-count"></span>
+
+          <h2 class="section-title">
+            Products
+          </h2>
+
+          <span
+            id="productCount"
+            class="product-count"
+          ></span>
+
         </div>
 
-        <div id="loadingState" class="loading">
+
+        <div
+          id="loadingState"
+          class="loading"
+        >
+
           <div class="spinner"></div>
+
           Loading products...
+
         </div>
+
 
         <div
           id="productGrid"
@@ -1074,8 +1202,15 @@
 
   </main>
 
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+
   <footer class="site-footer">
+
     <div class="container footer-inner">
+
       <div class="footer-brand">
         Prasun Store
       </div>
@@ -1083,11 +1218,15 @@
       <div>
         Practical products for modern living.
       </div>
+
     </div>
+
   </footer>
 
 
-  <!-- Product Modal -->
+  <!-- ================================
+       PRODUCT MODAL
+  ================================= -->
 
   <div
     id="modalOverlay"
@@ -1109,6 +1248,7 @@
         type="button"
         aria-label="Close product"
       >
+
         <svg
           width="20"
           height="20"
@@ -1118,20 +1258,27 @@
           stroke-width="2"
           aria-hidden="true"
         >
-          <path d="M6 6l12 12M18 6 6 18"></path>
+          <path
+            d="M6 6l12 12M18 6 6 18"
+          ></path>
         </svg>
+
       </button>
+
 
       <div class="modal-content">
 
         <div class="modal-image-panel">
+
           <img
             id="modalImage"
             class="modal-image"
             src=""
             alt=""
           />
+
         </div>
+
 
         <div class="modal-details">
 
@@ -1140,26 +1287,31 @@
             class="modal-category"
           ></div>
 
+
           <h2
             id="modalTitle"
             class="modal-title"
           ></h2>
+
 
           <div
             id="modalPrice"
             class="modal-price"
           ></div>
 
+
           <div
             id="modalDescription"
             class="modal-description"
           ></div>
+
 
           <div
             id="variantSection"
             class="variant-section"
             hidden
           >
+
             <div class="variant-label">
               Select option
             </div>
@@ -1169,7 +1321,9 @@
               class="variant-select"
               aria-label="Select product option"
             ></select>
+
           </div>
+
 
           <div class="modal-actions">
 
@@ -1191,6 +1345,7 @@
 
           </div>
 
+
           <div
             id="stockNote"
             class="stock-note"
@@ -1199,16 +1354,21 @@
         </div>
 
       </div>
+
     </div>
+
   </div>
 
 
-  <!-- Cart -->
+  <!-- ================================
+       CART DRAWER
+  ================================= -->
 
   <div
     id="drawerOverlay"
     class="drawer-overlay"
   ></div>
+
 
   <aside
     id="cartDrawer"
@@ -1222,12 +1382,14 @@
         Your Cart
       </h2>
 
+
       <button
         id="drawerClose"
         class="drawer-close"
         type="button"
         aria-label="Close cart"
       >
+
         <svg
           width="20"
           height="20"
@@ -1237,23 +1399,38 @@
           stroke-width="2"
           aria-hidden="true"
         >
-          <path d="M6 6l12 12M18 6 6 18"></path>
+          <path
+            d="M6 6l12 12M18 6 6 18"
+          ></path>
         </svg>
+
       </button>
 
     </div>
+
 
     <div
       id="drawerItems"
       class="drawer-items"
     ></div>
 
+
     <div class="drawer-footer">
 
       <div class="drawer-total">
-        <span>Total</span>
-        <strong id="drawerTotal">$0.00</strong>
+
+        <span>
+          Total
+        </span>
+
+        <strong
+          id="drawerTotal"
+        >
+          $0.00
+        </strong>
+
       </div>
+
 
       <button
         id="checkoutButton"
@@ -1272,9 +1449,23 @@
   <script>
     "use strict";
 
+    /* =================================
+       CONFIGURATION
+    ================================= */
+
     const API_BASE =
       "https://prasun-store.prasun301.workers.dev";
 
+    /*
+     * These are the cart keys used by:
+     *
+     * index.html
+     * cart.html
+     * checkout.html
+     *
+     * The same canonical cart is written
+     * to all three keys for compatibility.
+     */
     const CART_KEYS = [
       "prasunCart",
       "cart",
@@ -1282,7 +1473,13 @@
     ];
 
     const MAX_ITEM_QUANTITY = 99;
+
     const STORE_CURRENCY = "USD";
+
+
+    /* =================================
+       STATE
+    ================================= */
 
     const state = {
       products: [],
@@ -1294,94 +1491,141 @@
     };
 
 
+    /* =================================
+       DOM ELEMENTS
+    ================================= */
+
     const elements = {
       searchInput:
-        document.getElementById("searchInput"),
+        document.getElementById(
+          "searchInput"
+        ),
 
       categories:
-        document.getElementById("categories"),
+        document.getElementById(
+          "categories"
+        ),
 
       productGrid:
-        document.getElementById("productGrid"),
+        document.getElementById(
+          "productGrid"
+        ),
 
       loadingState:
-        document.getElementById("loadingState"),
+        document.getElementById(
+          "loadingState"
+        ),
 
       productCount:
-        document.getElementById("productCount"),
+        document.getElementById(
+          "productCount"
+        ),
 
       cartButton:
-        document.getElementById("cartButton"),
+        document.getElementById(
+          "cartButton"
+        ),
 
       cartCount:
-        document.getElementById("cartCount"),
+        document.getElementById(
+          "cartCount"
+        ),
 
       modalOverlay:
-        document.getElementById("modalOverlay"),
+        document.getElementById(
+          "modalOverlay"
+        ),
 
       modalClose:
-        document.getElementById("modalClose"),
+        document.getElementById(
+          "modalClose"
+        ),
 
       modalImage:
-        document.getElementById("modalImage"),
+        document.getElementById(
+          "modalImage"
+        ),
 
       modalCategory:
-        document.getElementById("modalCategory"),
+        document.getElementById(
+          "modalCategory"
+        ),
 
       modalTitle:
-        document.getElementById("modalTitle"),
+        document.getElementById(
+          "modalTitle"
+        ),
 
       modalPrice:
-        document.getElementById("modalPrice"),
+        document.getElementById(
+          "modalPrice"
+        ),
 
       modalDescription:
-        document.getElementById("modalDescription"),
+        document.getElementById(
+          "modalDescription"
+        ),
 
       variantSection:
-        document.getElementById("variantSection"),
+        document.getElementById(
+          "variantSection"
+        ),
 
       variantSelect:
-        document.getElementById("variantSelect"),
+        document.getElementById(
+          "variantSelect"
+        ),
 
       addToCartButton:
-        document.getElementById("addToCartButton"),
+        document.getElementById(
+          "addToCartButton"
+        ),
 
       buyNowButton:
-        document.getElementById("buyNowButton"),
+        document.getElementById(
+          "buyNowButton"
+        ),
 
       stockNote:
-        document.getElementById("stockNote"),
+        document.getElementById(
+          "stockNote"
+        ),
 
       drawerOverlay:
-        document.getElementById("drawerOverlay"),
+        document.getElementById(
+          "drawerOverlay"
+        ),
 
       cartDrawer:
-        document.getElementById("cartDrawer"),
+        document.getElementById(
+          "cartDrawer"
+        ),
 
       drawerClose:
-        document.getElementById("drawerClose"),
+        document.getElementById(
+          "drawerClose"
+        ),
 
       drawerItems:
-        document.getElementById("drawerItems"),
+        document.getElementById(
+          "drawerItems"
+        ),
 
       drawerTotal:
-        document.getElementById("drawerTotal"),
+        document.getElementById(
+          "drawerTotal"
+        ),
 
       checkoutButton:
-        document.getElementById("checkoutButton")
+        document.getElementById(
+          "checkoutButton"
+        )
     };
 
 
-    /* ---------------------------------
-       Utilities
-    --------------------------------- */
-
-    function escapeHtml(value) {
-      const div = document.createElement("div");
-      div.textContent = String(value ?? "");
-      return div.innerHTML;
-    }
-
+    /* =================================
+       GENERAL UTILITIES
+    ================================= */
 
     function normalizeQuantity(value) {
       const number = Number(value);
@@ -1392,12 +1636,18 @@
 
       return Math.min(
         MAX_ITEM_QUANTITY,
-        Math.max(1, Math.floor(number))
+        Math.max(
+          1,
+          Math.floor(number)
+        )
       );
     }
 
 
-    function formatPrice(value, currency = STORE_CURRENCY) {
+    function formatPrice(
+      value,
+      currency = STORE_CURRENCY
+    ) {
       const number = Number(value);
 
       if (!Number.isFinite(number)) {
@@ -1409,7 +1659,9 @@
           undefined,
           {
             style: "currency",
-            currency: currency || STORE_CURRENCY
+            currency:
+              currency ||
+              STORE_CURRENCY
           }
         ).format(number);
       } catch {
@@ -1418,13 +1670,16 @@
     }
 
 
-    function normalizeCategories(value) {
+    function normalizeCategories(
+      value
+    ) {
       if (Array.isArray(value)) {
         return value
           .map(item => {
             if (
               item &&
-              typeof item === "object"
+              typeof item ===
+                "object"
             ) {
               return (
                 item.name ??
@@ -1437,10 +1692,13 @@
             return item;
           })
           .map(item =>
-            String(item ?? "").trim()
+            String(
+              item ?? ""
+            ).trim()
           )
           .filter(Boolean);
       }
+
 
       if (
         value &&
@@ -1453,42 +1711,62 @@
           ""
         ]
           .map(item =>
-            String(item ?? "").trim()
+            String(
+              item ?? ""
+            ).trim()
           )
           .filter(Boolean);
       }
 
-      const text = String(value ?? "").trim();
+
+      const text =
+        String(
+          value ?? ""
+        ).trim();
 
       if (!text) {
         return [];
       }
 
-      try {
-        const parsed = JSON.parse(text);
 
-        if (Array.isArray(parsed)) {
-          return normalizeCategories(parsed);
+      try {
+        const parsed =
+          JSON.parse(text);
+
+        if (
+          Array.isArray(parsed)
+        ) {
+          return normalizeCategories(
+            parsed
+          );
         }
 
         if (
           parsed &&
-          typeof parsed === "object"
+          typeof parsed ===
+            "object"
         ) {
-          return normalizeCategories(parsed);
+          return normalizeCategories(
+            parsed
+          );
         }
       } catch {
-        // Not JSON; continue.
+        // Not JSON.
       }
+
 
       return text
         .split(",")
-        .map(item => item.trim())
+        .map(item =>
+          item.trim()
+        )
         .filter(Boolean);
     }
 
 
-    function getProductCategories(product) {
+    function getProductCategories(
+      product
+    ) {
       const categories = [
         ...normalizeCategories(
           product?.store_categories
@@ -1500,39 +1778,26 @@
 
       const seen = new Set();
 
-      return categories.filter(category => {
-        const key = category.toLowerCase();
+      return categories.filter(
+        category => {
+          const key =
+            category.toLowerCase();
 
-        if (seen.has(key)) {
-          return false;
+          if (seen.has(key)) {
+            return false;
+          }
+
+          seen.add(key);
+
+          return true;
         }
-
-        seen.add(key);
-        return true;
-      });
-    }
-
-
-    function getProductImageUrl(url) {
-      if (!url) {
-        return "";
-      }
-
-      const value = String(url).trim();
-
-      if (!value) {
-        return "";
-      }
-
-      return (
-        API_BASE +
-        "/api/image?url=" +
-        encodeURIComponent(value)
       );
     }
 
 
-    function getRawImageUrl(product) {
+    function getRawImageUrl(
+      product
+    ) {
       return (
         product?.main_image ||
         product?.images?.[0] ||
@@ -1541,48 +1806,118 @@
     }
 
 
-    /* ---------------------------------
-       Product description cleaner
-    --------------------------------- */
+    function getProductImageUrl(
+      url
+    ) {
+      if (!url) {
+        return "";
+      }
 
-    function cleanDescriptionText(text) {
-      let value = String(text ?? "");
+      const value =
+        String(url).trim();
+
+      if (!value) {
+        return "";
+      }
+
+      return (
+        API_BASE +
+        "/api/image?url=" +
+        encodeURIComponent(
+          value
+        )
+      );
+    }
+
+
+    /* =================================
+       DESCRIPTION CLEANER
+    ================================= */
+
+    function cleanDescriptionText(
+      text
+    ) {
+      let value =
+        String(
+          text ?? ""
+        );
 
       value = value
-        .replace(/\u00a0/g, " ")
-        .replace(/\r/g, "")
-        .replace(/[ \t]+/g, " ")
+        .replace(
+          /\u00a0/g,
+          " "
+        )
+        .replace(
+          /\r/g,
+          ""
+        )
+        .replace(
+          /[ \t]+/g,
+          " "
+        )
         .trim();
 
-      /*
-       * Remove supplier-style markdown decoration.
-       * This intentionally keeps meaningful content such as
-       * feature names and specification values.
-       */
-      value = value
-        .replace(/^\s*#{1,6}\s*/g, "")
-        .replace(/^\s*\*+\s*/g, "")
-        .replace(/\s*\*+\s*$/g, "")
-        .replace(/^\s*_+\s*/g, "")
-        .replace(/\s*_+\s*$/g, "");
 
       /*
-       * CJ descriptions often use decorative brackets
-       * around feature headings.
+       * Remove supplier markdown
+       * decoration.
        */
       value = value
-        .replace(/【/g, "")
-        .replace(/】/g, "");
+        .replace(
+          /^\s*#{1,6}\s*/g,
+          ""
+        )
+        .replace(
+          /^\s*\*+\s*/g,
+          ""
+        )
+        .replace(
+          /\s*\*+\s*$/g,
+          ""
+        )
+        .replace(
+          /^\s*_+\s*/g,
+          ""
+        )
+        .replace(
+          /\s*_+\s*$/g,
+          ""
+        );
+
+
+      /*
+       * Remove decorative CJ
+       * brackets while keeping
+       * the actual text.
+       */
+      value = value
+        .replace(
+          /【/g,
+          ""
+        )
+        .replace(
+          /】/g,
+          ""
+        );
+
 
       return value.trim();
     }
 
 
-    function isHeadingText(text) {
-      const value = cleanDescriptionText(text)
-        .replace(/[:：]\s*$/, "")
-        .trim()
-        .toLowerCase();
+    function isHeadingText(
+      text
+    ) {
+      const value =
+        cleanDescriptionText(
+          text
+        )
+          .replace(
+            /[:：]\s*$/,
+            ""
+          )
+          .trim()
+          .toLowerCase();
 
       return [
         "features",
@@ -1599,11 +1934,20 @@
     }
 
 
-    function headingLabel(text) {
-      const value = cleanDescriptionText(text)
-        .replace(/[:：]\s*$/, "")
-        .trim()
-        .toLowerCase();
+    function headingLabel(
+      text
+    ) {
+      const value =
+        cleanDescriptionText(
+          text
+        )
+          .replace(
+            /[:：]\s*$/,
+            ""
+          )
+          .trim()
+          .toLowerCase();
+
 
       if (
         value === "package list" ||
@@ -1614,12 +1958,14 @@
         return "Package Contents";
       }
 
+
       if (
         value === "feature" ||
         value === "features"
       ) {
         return "Features";
       }
+
 
       if (
         value === "specification" ||
@@ -1628,6 +1974,7 @@
         return "Specifications";
       }
 
+
       if (
         value === "easy operation" ||
         value === "easy operations"
@@ -1635,13 +1982,16 @@
         return "Easy Operation";
       }
 
-      return cleanDescriptionText(text);
+
+      return cleanDescriptionText(
+        text
+      );
     }
 
 
     function createCleanNode(
       sourceNode,
-      documentFragment
+      targetParent
     ) {
       if (
         sourceNode.nodeType ===
@@ -1656,12 +2006,15 @@
           return;
         }
 
-        documentFragment.appendChild(
-          document.createTextNode(text)
+        targetParent.appendChild(
+          document.createTextNode(
+            text
+          )
         );
 
         return;
       }
+
 
       if (
         sourceNode.nodeType !==
@@ -1670,39 +2023,44 @@
         return;
       }
 
+
       const tag =
         sourceNode.tagName.toLowerCase();
 
+
       /*
-       * Completely remove unsafe / irrelevant
-       * supplier elements.
+       * Never allow unsafe supplier
+       * content into the page.
        */
-      const blocked = new Set([
-        "script",
-        "style",
-        "iframe",
-        "object",
-        "embed",
-        "svg",
-        "form",
-        "input",
-        "button",
-        "textarea",
-        "select",
-        "video",
-        "audio",
-        "canvas",
-        "link",
-        "meta"
-      ]);
+      const blocked =
+        new Set([
+          "script",
+          "style",
+          "iframe",
+          "object",
+          "embed",
+          "svg",
+          "form",
+          "input",
+          "button",
+          "textarea",
+          "select",
+          "video",
+          "audio",
+          "canvas",
+          "link",
+          "meta"
+        ]);
+
 
       if (blocked.has(tag)) {
         return;
       }
 
+
       /*
-       * FONT tags are removed but their contents
-       * are preserved.
+       * Remove <font> but preserve
+       * everything inside it.
        */
       if (tag === "font") {
         Array.from(
@@ -1710,70 +2068,98 @@
         ).forEach(child => {
           createCleanNode(
             child,
-            documentFragment
+            targetParent
           );
         });
 
         return;
       }
 
-      /*
-       * Supplier heading detection.
-       */
+
       const directText =
         sourceNode.textContent
-          ?.replace(/\s+/g, " ")
+          ?.replace(
+            /\s+/g,
+            " "
+          )
           .trim() || "";
 
+
+      /*
+       * Convert supplier heading
+       * structures to clean h3.
+       */
       if (
-        ["p", "div", "span", "b", "strong", "u", "i", "em"].includes(tag) &&
-        isHeadingText(directText)
+        [
+          "p",
+          "div",
+          "span",
+          "b",
+          "strong",
+          "u",
+          "i",
+          "em"
+        ].includes(tag) &&
+        isHeadingText(
+          directText
+        )
       ) {
         const heading =
-          document.createElement("h3");
+          document.createElement(
+            "h3"
+          );
 
         heading.textContent =
-          headingLabel(directText);
+          headingLabel(
+            directText
+          );
 
-        documentFragment.appendChild(
+        targetParent.appendChild(
           heading
         );
 
         return;
       }
 
-      let targetTag = tag;
 
-      const allowed = new Set([
-        "p",
-        "ul",
-        "ol",
-        "li",
-        "strong",
-        "b",
-        "em",
-        "i",
-        "h3",
-        "br",
-        "div",
-        "span"
-      ]);
+      const allowed =
+        new Set([
+          "p",
+          "ul",
+          "ol",
+          "li",
+          "strong",
+          "b",
+          "em",
+          "i",
+          "h3",
+          "br",
+          "div",
+          "span"
+        ]);
 
-      if (!allowed.has(tag)) {
+
+      let targetTag =
+        tag;
+
+
+      if (
+        !allowed.has(tag)
+      ) {
         targetTag = "span";
       }
+
 
       const target =
         document.createElement(
           targetTag
         );
 
-      /*
-       * No attributes are copied.
-       * This removes supplier fonts,
-       * colors, sizes, inline CSS and links.
-       */
 
+      /*
+       * Deliberately copy NO
+       * supplier attributes or CSS.
+       */
       Array.from(
         sourceNode.childNodes
       ).forEach(child => {
@@ -1783,11 +2169,7 @@
         );
       });
 
-      /*
-       * Convert generic span/div wrappers
-       * that have no meaningful structure into
-       * their contents.
-       */
+
       if (
         targetTag === "span" &&
         !target.textContent.trim()
@@ -1795,21 +2177,31 @@
         return;
       }
 
-      documentFragment.appendChild(
+
+      targetParent.appendChild(
         target
       );
     }
 
 
-    function normalizeListStructure(root) {
+    function normalizeListStructure(
+      root
+    ) {
       const lists =
-        root.querySelectorAll("ul, ol");
+        root.querySelectorAll(
+          "ul, ol"
+        );
+
 
       lists.forEach(list => {
         const children =
-          Array.from(list.childNodes);
+          Array.from(
+            list.childNodes
+          );
 
-        let textBuffer = "";
+        let textBuffer =
+          "";
+
 
         children.forEach(node => {
           if (
@@ -1818,17 +2210,24 @@
           ) {
             const text =
               node.textContent
-                .replace(/\s+/g, " ")
+                .replace(
+                  /\s+/g,
+                  " "
+                )
                 .trim();
 
             if (text) {
               textBuffer +=
-                (textBuffer ? " " : "") +
-                text;
+                (
+                  textBuffer
+                    ? " "
+                    : ""
+                ) + text;
             }
 
             return;
           }
+
 
           if (
             node.nodeType ===
@@ -1838,7 +2237,9 @@
           ) {
             if (textBuffer) {
               const li =
-                document.createElement("li");
+                document.createElement(
+                  "li"
+                );
 
               li.textContent =
                 cleanDescriptionText(
@@ -1850,11 +2251,13 @@
                 node
               );
 
-              textBuffer = "";
+              textBuffer =
+                "";
             }
 
             return;
           }
+
 
           if (
             node.nodeType ===
@@ -1862,12 +2265,17 @@
           ) {
             const text =
               node.textContent
-                .replace(/\s+/g, " ")
+                .replace(
+                  /\s+/g,
+                  " "
+                )
                 .trim();
 
             if (text) {
               const li =
-                document.createElement("li");
+                document.createElement(
+                  "li"
+                );
 
               li.textContent =
                 cleanDescriptionText(
@@ -1884,45 +2292,59 @@
           }
         });
 
+
         if (textBuffer) {
           const li =
-            document.createElement("li");
+            document.createElement(
+              "li"
+            );
 
           li.textContent =
             cleanDescriptionText(
               textBuffer
             );
 
-          list.appendChild(li);
+          list.appendChild(
+            li
+          );
         }
       });
     }
 
 
-    function removeEmptyDescriptionNodes(root) {
+    function removeEmptyDescriptionNodes(
+      root
+    ) {
       const elements =
         root.querySelectorAll(
           "p, div, span, ul, ol, li, strong, b, em, i, h3"
         );
 
-      elements.forEach(element => {
-        const hasText =
-          element.textContent
-            .replace(/\s+/g, "")
-            .length > 0;
 
-        const hasUsefulChildren =
-          element.querySelector(
-            "img, br, ul, ol, li"
-          );
+      elements.forEach(
+        element => {
+          const hasText =
+            element.textContent
+              .replace(
+                /\s+/g,
+                ""
+              )
+              .length > 0;
 
-        if (
-          !hasText &&
-          !hasUsefulChildren
-        ) {
-          element.remove();
+          const hasUsefulChildren =
+            element.querySelector(
+              "br, ul, ol, li"
+            );
+
+
+          if (
+            !hasText &&
+            !hasUsefulChildren
+          ) {
+            element.remove();
+          }
         }
-      });
+      );
     }
 
 
@@ -1933,8 +2355,10 @@
         return "";
       }
 
+
       const parser =
         new DOMParser();
+
 
       const sourceDocument =
         parser.parseFromString(
@@ -1942,8 +2366,12 @@
           "text/html"
         );
 
+
       const output =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       Array.from(
         sourceDocument.body.childNodes
@@ -1954,31 +2382,37 @@
         );
       });
 
+
       normalizeListStructure(
         output
       );
+
 
       removeEmptyDescriptionNodes(
         output
       );
 
-      /*
-       * Remove empty whitespace between blocks.
-       */
+
       output.innerHTML =
         output.innerHTML
-          .replace(/>\s+</g, "><")
+          .replace(
+            />\s+</g,
+            "><"
+          )
           .trim();
+
 
       return output.innerHTML;
     }
 
 
-    /* ---------------------------------
-       Cart
-    --------------------------------- */
+    /* =================================
+       CART
+    ================================= */
 
-    function normalizeCartItem(item) {
+    function normalizeCartItem(
+      item
+    ) {
       return {
         product_id: String(
           item?.product_id ??
@@ -2042,9 +2476,13 @@
     }
 
 
-    function cleanCart(items) {
+    function cleanCart(
+      items
+    ) {
       return items
-        .map(normalizeCartItem)
+        .map(
+          normalizeCartItem
+        )
         .filter(
           item =>
             item.product_id &&
@@ -2054,23 +2492,31 @@
 
 
     function readCart() {
-      for (const key of CART_KEYS) {
+      for (
+        const key of CART_KEYS
+      ) {
         try {
           const raw =
-            localStorage.getItem(key);
+            localStorage.getItem(
+              key
+            );
 
           if (!raw) {
             continue;
           }
 
+
           const parsed =
             JSON.parse(raw);
+
 
           if (
             Array.isArray(parsed) &&
             parsed.length
           ) {
-            return cleanCart(parsed);
+            return cleanCart(
+              parsed
+            );
           }
         } catch (error) {
           console.warn(
@@ -2081,33 +2527,49 @@
         }
       }
 
+
       return [];
     }
 
 
     function saveCart() {
       const canonical =
-        cleanCart(state.cart);
+        cleanCart(
+          state.cart
+        );
 
-      state.cart = canonical;
+
+      state.cart =
+        canonical;
+
 
       const serialized =
-        JSON.stringify(canonical);
+        JSON.stringify(
+          canonical
+        );
 
-      CART_KEYS.forEach(key => {
-        try {
-          localStorage.setItem(
-            key,
-            serialized
-          );
-        } catch (error) {
-          console.warn(
-            "Could not save cart:",
-            key,
-            error
-          );
+
+      /*
+       * Keep all cart keys
+       * synchronized.
+       */
+      CART_KEYS.forEach(
+        key => {
+          try {
+            localStorage.setItem(
+              key,
+              serialized
+            );
+          } catch (error) {
+            console.warn(
+              "Could not save cart:",
+              key,
+              error
+            );
+          }
         }
-      });
+      );
+
 
       updateCartUI();
     }
@@ -2119,9 +2581,15 @@
       sku
     ) {
       return [
-        String(productId || ""),
-        String(variantId || ""),
-        String(sku || "")
+        String(
+          productId || ""
+        ),
+        String(
+          variantId || ""
+        ),
+        String(
+          sku || ""
+        )
       ].join("::");
     }
 
@@ -2131,52 +2599,144 @@
       variant,
       quantity = 1
     ) {
-      if (!product?.product_id) {
+      if (
+        !product?.product_id
+      ) {
         alert(
           "This product cannot be added to the cart."
         );
 
-        return;
+        return false;
       }
 
-      const item = normalizeCartItem({
-        product_id:
-          product.product_id,
 
-        variant_id:
-          variant?.cj_variant_id ||
-          variant?.variant_id ||
-          "",
+      const variants =
+        getVariants(
+          product
+        );
 
-        sku:
-          variant?.sku ||
-          "",
 
-        title:
-          product.title ||
-          "Product",
+      /*
+       * Multi-variant products
+       * require a selection.
+       */
+      if (
+        variants.length > 1 &&
+        !variant
+      ) {
+        alert(
+          "Please select an option."
+        );
 
-        variant_name:
-          variant?.name ||
-          variant?.variant_options ||
-          "",
+        return false;
+      }
 
-        image:
-          variant?.image ||
-          getRawImageUrl(product),
 
-        quantity,
+      /*
+       * Only reject if stock is
+       * explicitly known to be zero.
+       *
+       * Missing stock is NOT treated
+       * as out of stock.
+       */
+      if (variant) {
+        const variantStock =
+          Number(
+            variant.stock
+          );
 
-        price:
-          variant?.price ??
-          product.sale_price ??
-          product.price ??
-          0,
 
-        currency:
-          product.currency ||
-          STORE_CURRENCY
-      });
+        if (
+          variant.stock !==
+            undefined &&
+          variant.stock !==
+            null &&
+          variant.stock !==
+            "" &&
+          Number.isFinite(
+            variantStock
+          ) &&
+          variantStock <= 0
+        ) {
+          alert(
+            "This option is currently out of stock."
+          );
+
+          return false;
+        }
+      } else {
+        const productStock =
+          Number(
+            product.total_available_stock
+          );
+
+
+        if (
+          product.total_available_stock !==
+            undefined &&
+          product.total_available_stock !==
+            null &&
+          product.total_available_stock !==
+            "" &&
+          Number.isFinite(
+            productStock
+          ) &&
+          productStock <= 0
+        ) {
+          alert(
+            "This product is currently out of stock."
+          );
+
+          return false;
+        }
+      }
+
+
+      const item =
+        normalizeCartItem({
+          product_id:
+            product.product_id,
+
+          variant_id:
+            variant?.cj_variant_id ||
+            variant?.variant_id ||
+            "",
+
+          sku:
+            variant?.sku ||
+            "",
+
+          title:
+            product.title ||
+            "Product",
+
+          variant_name:
+            variant?.name ||
+            variant?.variant_options ||
+            "",
+
+          image:
+            variant?.image ||
+            getRawImageUrl(
+              product
+            ),
+
+          quantity:
+            normalizeQuantity(
+              quantity
+            ),
+
+          price:
+            variant?.price ??
+            product.sale_price ??
+            product.price ??
+            0,
+
+          currency:
+            product.currency ||
+            STORE_CURRENCY
+        });
+
 
       const key =
         cartItemKey(
@@ -2184,6 +2744,7 @@
           item.variant_id,
           item.sku
         );
+
 
       const existingIndex =
         state.cart.findIndex(
@@ -2195,28 +2756,64 @@
             ) === key
         );
 
-      if (existingIndex >= 0) {
-        state.cart[
-          existingIndex
-        ].quantity =
+
+      if (
+        existingIndex >= 0
+      ) {
+        const existing =
+          state.cart[
+            existingIndex
+          ];
+
+
+        existing.quantity =
           Math.min(
             MAX_ITEM_QUANTITY,
-            state.cart[
-              existingIndex
-            ].quantity +
+            normalizeQuantity(
+              existing.quantity
+            ) +
               item.quantity
           );
+
+
+        /*
+         * Refresh current product
+         * information.
+         */
+        existing.price =
+          item.price;
+
+        existing.currency =
+          item.currency;
+
+        existing.title =
+          item.title;
+
+        existing.image =
+          item.image;
+
+        existing.variant_name =
+          item.variant_name;
       } else {
-        state.cart.push(item);
+        state.cart.push(
+          item
+        );
       }
 
+
       saveCart();
+
+
+      return true;
     }
 
 
     function getCartQuantity() {
       return state.cart.reduce(
-        (total, item) =>
+        (
+          total,
+          item
+        ) =>
           total +
           normalizeQuantity(
             item.quantity
@@ -2228,9 +2825,14 @@
 
     function getCartTotal() {
       return state.cart.reduce(
-        (total, item) => {
+        (
+          total,
+          item
+        ) => {
           const price =
-            Number(item.price) || 0;
+            Number(
+              item.price
+            ) || 0;
 
           const quantity =
             normalizeQuantity(
@@ -2257,9 +2859,9 @@
     }
 
 
-    /* ---------------------------------
-       Product data
-    --------------------------------- */
+    /* =================================
+       PRODUCT DATA
+    ================================= */
 
     async function fetchProducts() {
       const response =
@@ -2276,6 +2878,7 @@
           }
         );
 
+
       if (!response.ok) {
         throw new Error(
           "Products request failed: " +
@@ -2283,32 +2886,82 @@
         );
       }
 
+
       const data =
         await response.json();
 
-      if (Array.isArray(data)) {
+
+      if (
+        Array.isArray(data)
+      ) {
         return data;
       }
 
+
       if (
         data &&
-        Array.isArray(data.products)
+        Array.isArray(
+          data.products
+        )
       ) {
         return data.products;
       }
 
+
       if (
         data &&
-        Array.isArray(data.data)
+        Array.isArray(
+          data.data
+        )
       ) {
         return data.data;
       }
+
 
       return [];
     }
 
 
-    function normalizeProduct(product) {
+    function normalizeProduct(
+      product
+    ) {
+      const rawStock =
+        product?.total_available_stock;
+
+
+      let totalStock =
+        null;
+
+
+      /*
+       * IMPORTANT:
+       * Missing stock remains null.
+       * It is NOT converted to zero.
+       */
+      if (
+        rawStock !==
+          undefined &&
+        rawStock !==
+          null &&
+        rawStock !==
+          ""
+      ) {
+        const numericStock =
+          Number(
+            rawStock
+          );
+
+        if (
+          Number.isFinite(
+            numericStock
+          )
+        ) {
+          totalStock =
+            numericStock;
+        }
+      }
+
+
       return {
         ...product,
 
@@ -2325,7 +2978,8 @@
         ).trim(),
 
         description:
-          product?.description || "",
+          product?.description ||
+          "",
 
         images:
           Array.isArray(
@@ -2340,7 +2994,8 @@
           "",
 
         category:
-          product?.category || "",
+          product?.category ||
+          "",
 
         store_categories:
           product?.store_categories ??
@@ -2352,7 +3007,8 @@
 
         price:
           Number(
-            product?.price ?? 0
+            product?.price ??
+            0
           ),
 
         sale_price:
@@ -2370,53 +3026,64 @@
             : [],
 
         total_available_stock:
-          Number(
-            product?.total_available_stock ??
-            0
-          )
+          totalStock
       };
     }
 
 
-    /* ---------------------------------
-       Categories
-    --------------------------------- */
+    /* =================================
+       CATEGORIES
+    ================================= */
 
     function renderCategories() {
       const categoryMap =
         new Map();
 
+
       state.products.forEach(
         product => {
           getProductCategories(
             product
-          ).forEach(category => {
-            const key =
-              category.toLowerCase();
+          ).forEach(
+            category => {
+              const key =
+                category.toLowerCase();
 
-            if (!categoryMap.has(key)) {
-              categoryMap.set(
-                key,
-                category
-              );
+
+              if (
+                !categoryMap.has(
+                  key
+                )
+              ) {
+                categoryMap.set(
+                  key,
+                  category
+                );
+              }
             }
-          });
+          );
         }
       );
 
+
       elements.categories.innerHTML =
         "";
+
 
       const allButton =
         document.createElement(
           "button"
         );
 
-      allButton.type = "button";
+
+      allButton.type =
+        "button";
+
       allButton.className =
         "category" +
         (
-          state.category === ""
+          state.category ===
+          ""
             ? " active"
             : ""
         );
@@ -2427,44 +3094,54 @@
       allButton.textContent =
         "All";
 
+
       elements.categories.appendChild(
         allButton
       );
 
+
       Array.from(
         categoryMap.values()
       )
-        .sort((a, b) =>
-          a.localeCompare(b)
+        .sort(
+          (a, b) =>
+            a.localeCompare(
+              b
+            )
         )
-        .forEach(category => {
-          const button =
-            document.createElement(
-              "button"
+        .forEach(
+          category => {
+            const button =
+              document.createElement(
+                "button"
+              );
+
+
+            button.type =
+              "button";
+
+            button.className =
+              "category" +
+              (
+                state.category
+                  .toLowerCase() ===
+                category.toLowerCase()
+                  ? " active"
+                  : ""
+              );
+
+            button.dataset.category =
+              category;
+
+            button.textContent =
+              category;
+
+
+            elements.categories.appendChild(
+              button
             );
-
-          button.type = "button";
-
-          button.className =
-            "category" +
-            (
-              state.category
-                .toLowerCase() ===
-              category.toLowerCase()
-                ? " active"
-                : ""
-            );
-
-          button.dataset.category =
-            category;
-
-          button.textContent =
-            category;
-
-          elements.categories.appendChild(
-            button
-          );
-        });
+          }
+        );
     }
 
 
@@ -2474,20 +3151,24 @@
           .trim()
           .toLowerCase();
 
+
       return state.products.filter(
         product => {
           const productCategories =
             getProductCategories(
               product
-            ).map(category =>
-              category.toLowerCase()
+            ).map(
+              category =>
+                category.toLowerCase()
             );
+
 
           const matchesCategory =
             !state.category ||
             productCategories.includes(
               state.category.toLowerCase()
             );
+
 
           const searchable = [
             product.title,
@@ -2496,21 +3177,29 @@
             product.store_categories,
             product.description
           ]
-            .map(value =>
-              Array.isArray(value)
-                ? value.join(" ")
-                : String(
-                    value ?? ""
-                  )
+            .map(
+              value =>
+                Array.isArray(
+                  value
+                )
+                  ? value.join(
+                      " "
+                    )
+                  : String(
+                      value ??
+                        ""
+                    )
             )
             .join(" ")
             .toLowerCase();
+
 
           const matchesSearch =
             !query ||
             searchable.includes(
               query
             );
+
 
           return (
             matchesCategory &&
@@ -2521,9 +3210,9 @@
     }
 
 
-    /* ---------------------------------
-       Product cards
-    --------------------------------- */
+    /* =================================
+       PRODUCT CARDS
+    ================================= */
 
     function createProductCard(
       product
@@ -2533,10 +3222,13 @@
           "article"
         );
 
+
       card.className =
         "product-card";
 
-      card.tabIndex = 0;
+      card.tabIndex =
+        0;
+
 
       const imageWrap =
         document.createElement(
@@ -2545,6 +3237,7 @@
 
       imageWrap.className =
         "product-image-wrap";
+
 
       const image =
         document.createElement(
@@ -2558,16 +3251,22 @@
         product.title ||
         "Product";
 
-      image.loading = "lazy";
+      image.loading =
+        "lazy";
+
 
       const rawImage =
-        getRawImageUrl(product);
+        getRawImageUrl(
+          product
+        );
+
 
       if (rawImage) {
         image.src =
           getProductImageUrl(
             rawImage
           );
+
 
         image.onerror =
           () => {
@@ -2581,9 +3280,11 @@
           };
       }
 
+
       imageWrap.appendChild(
         image
       );
+
 
       const info =
         document.createElement(
@@ -2593,10 +3294,12 @@
       info.className =
         "product-info";
 
+
       const categories =
         getProductCategories(
           product
         );
+
 
       const category =
         document.createElement(
@@ -2610,6 +3313,7 @@
         categories[0] ||
         "";
 
+
       const title =
         document.createElement(
           "h3"
@@ -2622,6 +3326,7 @@
         product.title ||
         "Product";
 
+
       const price =
         document.createElement(
           "div"
@@ -2630,6 +3335,7 @@
       price.className =
         "product-price";
 
+
       const salePrice =
         Number(
           product.sale_price ??
@@ -2637,16 +3343,19 @@
           0
         );
 
+
       price.textContent =
         formatPrice(
           salePrice,
           product.currency
         );
 
+
       const originalPrice =
         Number(
           product.original_price
         );
+
 
       if (
         Number.isFinite(
@@ -2660,6 +3369,7 @@
             "span"
           );
 
+
         old.className =
           "product-price-old";
 
@@ -2669,10 +3379,12 @@
             product.currency
           );
 
+
         price.appendChild(
           old
         );
       }
+
 
       info.appendChild(
         category
@@ -2686,6 +3398,7 @@
         price
       );
 
+
       card.appendChild(
         imageWrap
       );
@@ -2694,16 +3407,19 @@
         info
       );
 
+
       const open =
         () =>
           openProductModal(
             product
           );
 
+
       card.addEventListener(
         "click",
         open
       );
+
 
       card.addEventListener(
         "keydown",
@@ -2715,10 +3431,12 @@
               " "
           ) {
             event.preventDefault();
+
             open();
           }
         }
       );
+
 
       return card;
     }
@@ -2728,24 +3446,32 @@
       const products =
         filteredProducts();
 
+
       elements.productGrid.innerHTML =
         "";
 
+
       elements.productCount.textContent =
         `${products.length} ${
-          products.length === 1
+          products.length ===
+          1
             ? "product"
             : "products"
         }`;
 
-      if (!products.length) {
+
+      if (
+        !products.length
+      ) {
         const empty =
           document.createElement(
             "div"
           );
 
+
         empty.className =
           "empty-state";
+
 
         const title =
           document.createElement(
@@ -2755,15 +3481,18 @@
         title.textContent =
           "No products found";
 
+
         const message =
           document.createElement(
             "div"
           );
 
+
         message.textContent =
           state.search
             ? "Try a different search term."
             : "There are no products in this category.";
+
 
         empty.appendChild(
           title
@@ -2773,15 +3502,19 @@
           message
         );
 
+
         elements.productGrid.appendChild(
           empty
         );
 
+
         return;
       }
 
+
       const fragment =
         document.createDocumentFragment();
+
 
       products.forEach(
         product => {
@@ -2793,17 +3526,20 @@
         }
       );
 
+
       elements.productGrid.appendChild(
         fragment
       );
     }
 
 
-    /* ---------------------------------
-       Product modal
-    --------------------------------- */
+    /* =================================
+       VARIANTS
+    ================================= */
 
-    function getVariants(product) {
+    function getVariants(
+      product
+    ) {
       if (
         !Array.isArray(
           product?.skus
@@ -2811,6 +3547,7 @@
       ) {
         return [];
       }
+
 
       return product.skus.filter(
         variant =>
@@ -2828,154 +3565,91 @@
       product
     ) {
       const variants =
-        getVariants(product);
+        getVariants(
+          product
+        );
+
 
       if (
-        state.selectedVariant &&
-        variants.some(
-          variant =>
-            String(
-              variant.cj_variant_id ??
-              variant.variant_id ??
-              ""
-            ) ===
-            String(
-              state.selectedVariant
-                .cj_variant_id ??
-              state.selectedVariant
-                .variant_id ??
-              ""
-            )
-        )
+        state.selectedVariant
       ) {
-        return (
-          state.selectedVariant
-        );
+        const selectedId =
+          String(
+            state.selectedVariant
+              .cj_variant_id ??
+            state.selectedVariant
+              .variant_id ??
+            state.selectedVariant
+              .sku ??
+            ""
+          );
+
+
+        const matching =
+          variants.find(
+            variant =>
+              String(
+                variant.cj_variant_id ??
+                variant.variant_id ??
+                variant.sku ??
+                ""
+              ) ===
+              selectedId
+          );
+
+
+        if (matching) {
+          return matching;
+        }
       }
 
+
       /*
-       * Only automatically use a variant
-       * when there is exactly one.
-       *
-       * Never arbitrarily select the
-       * first variant of a multi-variant
-       * product.
+       * Automatically select only
+       * when exactly one variant
+       * exists.
        */
       if (
-        variants.length === 1
+        variants.length ===
+        1
       ) {
         return variants[0];
       }
+
 
       return null;
     }
 
 
-    function renderVariantSelector(
-      product
-    ) {
-      const variants =
-        getVariants(product);
-
-      elements.variantSelect.innerHTML =
-        "";
-
-      if (
-        variants.length <= 1
-      ) {
-        elements.variantSection.hidden =
-          true;
-
-        state.selectedVariant =
-          variants.length === 1
-            ? variants[0]
-            : null;
-
-        return;
-      }
-
-      elements.variantSection.hidden =
-        false;
-
-      const placeholder =
-        document.createElement(
-          "option"
-        );
-
-      placeholder.value =
-        "";
-
-      placeholder.textContent =
-        "Select an option";
-
-      placeholder.disabled =
-        true;
-
-      placeholder.selected =
-        true;
-
-      elements.variantSelect.appendChild(
-        placeholder
-      );
-
-      variants.forEach(
-        variant => {
-          const option =
-            document.createElement(
-              "option"
-            );
-
-          option.value =
-            String(
-              variant.cj_variant_id ??
-              variant.variant_id ??
-              variant.sku ??
-              ""
-            );
-
-          const optionName =
-            variant.name ||
-            variant.variant_options ||
-            variant.sku ||
-            "Option";
-
-          const stock =
-            Number(
-              variant.stock ??
-              0
-            );
-
-          option.textContent =
-            stock > 0
-              ? optionName
-              : `${optionName} — Out of stock`;
-
-          option.disabled =
-            stock <= 0;
-
-          elements.variantSelect.appendChild(
-            option
-          );
-        }
-      );
-    }
-
+    /* =================================
+       MODAL PRICING / STOCK
+    ================================= */
 
     function updateModalPricing() {
       const product =
         state.selectedProduct;
 
+
       if (!product) {
         return;
       }
+
+
+      const variants =
+        getVariants(
+          product
+        );
+
 
       const variant =
         getSelectedVariant(
           product
         );
 
+
       state.selectedVariant =
         variant;
+
 
       const price =
         Number(
@@ -2985,45 +3659,280 @@
           0
         );
 
+
       elements.modalPrice.textContent =
         formatPrice(
           price,
           product.currency
         );
 
-      const stock =
-        Number(
-          variant?.stock ??
-          product.total_available_stock ??
-          0
-        );
 
-      if (
-        Number.isFinite(stock)
+      /*
+       * Stock handling:
+       *
+       * Known 0 = out of stock
+       * Known > 0 = available
+       * Unknown = available unless
+       * the backend explicitly says
+       * otherwise.
+       */
+      let stockKnown =
+        false;
+
+      let stock =
+        null;
+
+
+      if (variant) {
+        if (
+          variant.stock !==
+            undefined &&
+          variant.stock !==
+            null &&
+          variant.stock !==
+            ""
+        ) {
+          const numericStock =
+            Number(
+              variant.stock
+            );
+
+
+          if (
+            Number.isFinite(
+              numericStock
+            )
+          ) {
+            stock =
+              numericStock;
+
+            stockKnown =
+              true;
+          }
+        }
+      } else if (
+        product.total_available_stock !==
+          undefined &&
+        product.total_available_stock !==
+          null
       ) {
+        const numericStock =
+          Number(
+            product.total_available_stock
+          );
+
+
+        if (
+          Number.isFinite(
+            numericStock
+          )
+        ) {
+          stock =
+            numericStock;
+
+          stockKnown =
+            true;
+        }
+      }
+
+
+      const definitelyOutOfStock =
+        stockKnown &&
+        stock <= 0;
+
+
+      if (stockKnown) {
         elements.stockNote.textContent =
           stock > 0
             ? `${stock} available`
             : "Out of stock";
       } else {
         elements.stockNote.textContent =
-          "";
+          "Available";
       }
 
-      const unavailable =
-        stock <= 0;
+
+      const requiresVariant =
+        variants.length >
+        1;
+
+
+      const noVariantSelected =
+        requiresVariant &&
+        !variant;
+
+
+      const disabled =
+        definitelyOutOfStock ||
+        noVariantSelected;
+
 
       elements.addToCartButton.disabled =
-        unavailable ||
-        (
-          getVariants(product).length > 1 &&
-          !variant
-        );
+        disabled;
+
 
       elements.buyNowButton.disabled =
-        elements.addToCartButton.disabled;
+        disabled;
     }
 
+
+    function renderVariantSelector(
+      product
+    ) {
+      const variants =
+        getVariants(
+          product
+        );
+
+
+      elements.variantSelect.innerHTML =
+        "";
+
+
+      if (
+        variants.length <=
+        1
+      ) {
+        elements.variantSection.hidden =
+          true;
+
+
+        state.selectedVariant =
+          variants.length ===
+          1
+            ? variants[0]
+            : null;
+
+
+        return;
+      }
+
+
+      elements.variantSection.hidden =
+        false;
+
+
+      const placeholder =
+        document.createElement(
+          "option"
+        );
+
+
+      placeholder.value =
+        "";
+
+
+      placeholder.textContent =
+        "Select an option";
+
+
+      placeholder.disabled =
+        true;
+
+
+      placeholder.selected =
+        true;
+
+
+      elements.variantSelect.appendChild(
+        placeholder
+      );
+
+
+      variants.forEach(
+        variant => {
+          const option =
+            document.createElement(
+              "option"
+            );
+
+
+          option.value =
+            String(
+              variant.cj_variant_id ??
+              variant.variant_id ??
+              variant.sku ??
+              ""
+            );
+
+
+          const optionName =
+            variant.name ||
+            variant.variant_options ||
+            variant.sku ||
+            "Option";
+
+
+          const rawStock =
+            variant.stock;
+
+
+          let stockKnown =
+            false;
+
+          let stock =
+            null;
+
+
+          if (
+            rawStock !==
+              undefined &&
+            rawStock !==
+              null &&
+            rawStock !==
+              ""
+          ) {
+            const numericStock =
+              Number(
+                rawStock
+              );
+
+
+            if (
+              Number.isFinite(
+                numericStock
+              )
+            ) {
+              stock =
+                numericStock;
+
+              stockKnown =
+                true;
+            }
+          }
+
+
+          option.textContent =
+            stockKnown &&
+            stock <= 0
+              ? `${optionName} — Out of stock`
+              : optionName;
+
+
+          /*
+           * Only disable when CJ
+           * explicitly reports zero.
+           */
+          option.disabled =
+            stockKnown &&
+            stock <= 0;
+
+
+          elements.variantSelect.appendChild(
+            option
+          );
+        }
+      );
+
+
+      state.selectedVariant =
+        null;
+    }
+
+
+    /* =================================
+       PRODUCT MODAL
+    ================================= */
 
     function openProductModal(
       product
@@ -3031,24 +3940,42 @@
       state.selectedProduct =
         product;
 
+
       state.selectedVariant =
         null;
 
+
       const image =
-        getRawImageUrl(product);
+        getRawImageUrl(
+          product
+        );
+
 
       elements.modalImage.alt =
         product.title ||
         "Product";
 
+
+      elements.modalImage.onerror =
+        null;
+
+
       if (image) {
-        elements.modalImage.src =
+        const proxied =
           getProductImageUrl(
             image
           );
 
+
+        elements.modalImage.src =
+          proxied;
+
+
         elements.modalImage.onerror =
           () => {
+            elements.modalImage.onerror =
+              null;
+
             elements.modalImage.src =
               image;
           };
@@ -3058,46 +3985,61 @@
         );
       }
 
+
       const categories =
         getProductCategories(
           product
         );
 
+
       elements.modalCategory.textContent =
-        categories.join(" · ");
+        categories.join(
+          " · "
+        );
+
 
       elements.modalTitle.textContent =
         product.title ||
         "Product";
 
+
       /*
        * IMPORTANT:
-       * The supplier description is cleaned
-       * and sanitized before being inserted
-       * into the page.
+       *
+       * Supplier HTML is NEVER inserted
+       * directly into innerHTML.
+       *
+       * It is first sanitized and
+       * normalized by cleanProductDescription().
        */
       elements.modalDescription.innerHTML =
         cleanProductDescription(
           product.description
         );
 
+
       renderVariantSelector(
         product
       );
 
+
       updateModalPricing();
+
 
       elements.modalOverlay.classList.add(
         "open"
       );
+
 
       elements.modalOverlay.setAttribute(
         "aria-hidden",
         "false"
       );
 
-      document.body.style.overflow =
-        "hidden";
+
+      document.body.classList.add(
+        "modal-open"
+      );
     }
 
 
@@ -3106,45 +4048,57 @@
         "open"
       );
 
+
       elements.modalOverlay.setAttribute(
         "aria-hidden",
         "true"
       );
 
-      document.body.style.overflow =
-        "";
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
 
       state.selectedProduct =
         null;
+
 
       state.selectedVariant =
         null;
     }
 
 
-    /* ---------------------------------
-       Cart drawer
-    --------------------------------- */
+    /* =================================
+       CART DRAWER
+    ================================= */
 
     function renderCartDrawer() {
       elements.drawerItems.innerHTML =
         "";
 
-      if (!state.cart.length) {
+
+      if (
+        !state.cart.length
+      ) {
         const empty =
           document.createElement(
             "div"
           );
 
+
         empty.className =
           "drawer-empty";
+
 
         empty.textContent =
           "Your cart is empty.";
 
+
         elements.drawerItems.appendChild(
           empty
         );
+
 
         elements.drawerTotal.textContent =
           formatPrice(
@@ -3152,70 +4106,102 @@
             STORE_CURRENCY
           );
 
+
         elements.checkoutButton.disabled =
           true;
+
 
         return;
       }
 
+
       const fragment =
         document.createDocumentFragment();
 
+
       state.cart.forEach(
-        (item, index) => {
+        (
+          item,
+          index
+        ) => {
           const row =
             document.createElement(
               "div"
             );
 
+
           row.className =
             "cart-item";
+
 
           const image =
             document.createElement(
               "img"
             );
 
+
           image.className =
             "cart-item-image";
+
 
           image.alt =
             item.title ||
             "Product";
 
-          if (item.image) {
-            image.src =
+
+          image.onerror =
+            null;
+
+
+          if (
+            item.image
+          ) {
+            const proxied =
               getProductImageUrl(
                 item.image
               );
 
+
+            image.src =
+              proxied;
+
+
             image.onerror =
               () => {
+                image.onerror =
+                  null;
+
                 image.src =
                   item.image;
               };
           }
+
 
           const content =
             document.createElement(
               "div"
             );
 
+
           const title =
             document.createElement(
               "p"
             );
 
+
           title.className =
             "cart-item-title";
+
 
           title.textContent =
             item.title ||
             "Product";
 
+
           content.appendChild(
             title
           );
+
 
           if (
             item.variant_name
@@ -3225,32 +4211,40 @@
                 "div"
               );
 
+
             variant.className =
               "cart-item-variant";
 
+
             variant.textContent =
               item.variant_name;
+
 
             content.appendChild(
               variant
             );
           }
 
+
           const bottom =
             document.createElement(
               "div"
             );
 
+
           bottom.className =
             "cart-item-bottom";
+
 
           const price =
             document.createElement(
               "div"
             );
 
+
           price.className =
             "cart-item-price";
+
 
           price.textContent =
             formatPrice(
@@ -3263,28 +4257,37 @@
               item.currency
             );
 
+
           const quantityControl =
             document.createElement(
               "div"
             );
 
+
           quantityControl.className =
             "quantity-control";
+
 
           const decrease =
             document.createElement(
               "button"
             );
 
-          decrease.type = "button";
+
+          decrease.type =
+            "button";
+
           decrease.className =
             "quantity-button";
+
           decrease.textContent =
             "−";
+
           decrease.setAttribute(
             "aria-label",
             "Decrease quantity"
           );
+
 
           decrease.addEventListener(
             "click",
@@ -3295,13 +4298,16 @@
               )
           );
 
+
           const quantity =
             document.createElement(
               "span"
             );
 
+
           quantity.className =
             "quantity-value";
+
 
           quantity.textContent =
             String(
@@ -3310,20 +4316,27 @@
               )
             );
 
+
           const increase =
             document.createElement(
               "button"
             );
 
-          increase.type = "button";
+
+          increase.type =
+            "button";
+
           increase.className =
             "quantity-button";
+
           increase.textContent =
             "+";
+
           increase.setAttribute(
             "aria-label",
             "Increase quantity"
           );
+
 
           increase.addEventListener(
             "click",
@@ -3333,6 +4346,7 @@
                 1
               )
           );
+
 
           quantityControl.appendChild(
             decrease
@@ -3346,6 +4360,7 @@
             increase
           );
 
+
           bottom.appendChild(
             price
           );
@@ -3354,20 +4369,27 @@
             quantityControl
           );
 
+
           content.appendChild(
             bottom
           );
+
 
           const remove =
             document.createElement(
               "button"
             );
 
-          remove.type = "button";
+
+          remove.type =
+            "button";
+
           remove.className =
             "remove-item";
+
           remove.textContent =
             "Remove";
+
 
           remove.addEventListener(
             "click",
@@ -3377,9 +4399,11 @@
               )
           );
 
+
           content.appendChild(
             remove
           );
+
 
           row.appendChild(
             image
@@ -3389,21 +4413,25 @@
             content
           );
 
+
           fragment.appendChild(
             row
           );
         }
       );
 
+
       elements.drawerItems.appendChild(
         fragment
       );
+
 
       elements.drawerTotal.textContent =
         formatPrice(
           getCartTotal(),
           STORE_CURRENCY
         );
+
 
       elements.checkoutButton.disabled =
         false;
@@ -3420,11 +4448,14 @@
         return;
       }
 
+
       const current =
         normalizeQuantity(
-          state.cart[index]
-            .quantity
+          state.cart[
+            index
+          ].quantity
         );
+
 
       const next =
         Math.min(
@@ -3435,8 +4466,12 @@
           )
         );
 
-      state.cart[index].quantity =
+
+      state.cart[
+        index
+      ].quantity =
         next;
+
 
       saveCart();
     }
@@ -3453,10 +4488,12 @@
         return;
       }
 
+
       state.cart.splice(
         index,
         1
       );
+
 
       saveCart();
     }
@@ -3467,8 +4504,14 @@
         "open"
       );
 
+
       elements.cartDrawer.classList.add(
         "open"
+      );
+
+
+      document.body.classList.add(
+        "drawer-open"
       );
     }
 
@@ -3478,25 +4521,58 @@
         "open"
       );
 
+
       elements.cartDrawer.classList.remove(
         "open"
+      );
+
+
+      document.body.classList.remove(
+        "drawer-open"
       );
     }
 
 
+    /* =================================
+       CHECKOUT
+    ================================= */
+
     function goToCheckout() {
-      if (!state.cart.length) {
+      /*
+       * Make sure the latest cart
+       * is synchronized before leaving
+       * the store page.
+       */
+      state.cart =
+        cleanCart(
+          state.cart
+        );
+
+
+      if (
+        !state.cart.length
+      ) {
         return;
       }
 
+
+      saveCart();
+
+
+      /*
+       * IMPORTANT:
+       *
+       * checkout.html is in the same
+       * directory as index.html.
+       */
       window.location.href =
         "./checkout.html";
     }
 
 
-    /* ---------------------------------
-       Events
-    --------------------------------- */
+    /* =================================
+       EVENT HANDLERS
+    ================================= */
 
     elements.searchInput.addEventListener(
       "input",
@@ -3517,15 +4593,19 @@
             ".category"
           );
 
+
         if (!button) {
           return;
         }
+
 
         state.category =
           button.dataset.category ||
           "";
 
+
         renderCategories();
+
         renderProducts();
       }
     );
@@ -3533,25 +4613,33 @@
 
     elements.cartButton.addEventListener(
       "click",
-      openCart
+      () => {
+        openCart();
+      }
     );
 
 
     elements.drawerClose.addEventListener(
       "click",
-      closeCart
+      () => {
+        closeCart();
+      }
     );
 
 
     elements.drawerOverlay.addEventListener(
       "click",
-      closeCart
+      () => {
+        closeCart();
+      }
     );
 
 
     elements.modalClose.addEventListener(
       "click",
-      closeProductModal
+      () => {
+        closeProductModal();
+      }
     );
 
 
@@ -3574,12 +4662,17 @@
         const product =
           state.selectedProduct;
 
+
         if (!product) {
           return;
         }
 
+
         const variants =
-          getVariants(product);
+          getVariants(
+            product
+          );
+
 
         state.selectedVariant =
           variants.find(
@@ -3593,10 +4686,19 @@
               event.target.value
           ) || null;
 
+
+        /*
+         * Immediately update price,
+         * stock and button state.
+         */
         updateModalPricing();
       }
     );
 
+
+    /* =================================
+       ADD TO CART
+    ================================= */
 
     elements.addToCartButton.addEventListener(
       "click",
@@ -3604,58 +4706,41 @@
         const product =
           state.selectedProduct;
 
+
         if (!product) {
           return;
         }
+
 
         const variant =
           getSelectedVariant(
             product
           );
 
-        const variants =
-          getVariants(product);
 
-        if (
-          variants.length > 1 &&
-          !variant
-        ) {
-          alert(
-            "Please select an option."
+        const added =
+          addProductToCart(
+            product,
+            variant,
+            1
           );
 
+
+        if (!added) {
           return;
         }
 
-        const stock =
-          Number(
-            variant?.stock ??
-            product.total_available_stock ??
-            0
-          );
-
-        if (
-          Number.isFinite(stock) &&
-          stock <= 0
-        ) {
-          alert(
-            "This product is currently out of stock."
-          );
-
-          return;
-        }
-
-        addProductToCart(
-          product,
-          variant,
-          1
-        );
 
         closeProductModal();
+
         openCart();
       }
     );
 
+
+    /* =================================
+       BUY NOW
+    ================================= */
 
     elements.buyNowButton.addEventListener(
       "click",
@@ -3663,91 +4748,94 @@
         const product =
           state.selectedProduct;
 
+
         if (!product) {
           return;
         }
+
 
         const variant =
           getSelectedVariant(
             product
           );
 
-        const variants =
-          getVariants(product);
 
-        if (
-          variants.length > 1 &&
-          !variant
-        ) {
-          alert(
-            "Please select an option."
+        const added =
+          addProductToCart(
+            product,
+            variant,
+            1
           );
 
+
+        if (!added) {
           return;
         }
 
-        const stock =
-          Number(
-            variant?.stock ??
-            product.total_available_stock ??
-            0
-          );
 
-        if (
-          Number.isFinite(stock) &&
-          stock <= 0
-        ) {
-          alert(
-            "This product is currently out of stock."
-          );
+        closeProductModal();
 
-          return;
-        }
 
-        addProductToCart(
-          product,
-          variant,
-          1
-        );
-
+        /*
+         * Go directly to the
+         * real checkout page.
+         */
         window.location.href =
           "./checkout.html";
       }
     );
 
 
+    /* =================================
+       CART CHECKOUT BUTTON
+    ================================= */
+
     elements.checkoutButton.addEventListener(
       "click",
-      goToCheckout
+      () => {
+        goToCheckout();
+      }
     );
 
+
+    /* =================================
+       ESCAPE KEY
+    ================================= */
 
     document.addEventListener(
       "keydown",
       event => {
         if (
-          event.key ===
+          event.key !==
           "Escape"
         ) {
-          if (
-            elements.modalOverlay.classList.contains(
-              "open"
-            )
-          ) {
-            closeProductModal();
-          }
+          return;
+        }
 
-          if (
-            elements.cartDrawer.classList.contains(
-              "open"
-            )
-          ) {
-            closeCart();
-          }
+
+        if (
+          elements.modalOverlay.classList.contains(
+            "open"
+          )
+        ) {
+          closeProductModal();
+        }
+
+
+        if (
+          elements.cartDrawer.classList.contains(
+            "open"
+          )
+        ) {
+          closeCart();
         }
       }
     );
 
+
+    /* =================================
+       CROSS-TAB CART SYNC
+    ================================= */
 
     window.addEventListener(
       "storage",
@@ -3760,19 +4848,25 @@
     );
 
 
-    /* ---------------------------------
-       Initialization
-    --------------------------------- */
+    /* =================================
+       INITIALIZATION
+    ================================= */
 
     async function initialize() {
+      /*
+       * Load existing cart first.
+       */
       state.cart =
         readCart();
 
+
       updateCartUI();
+
 
       try {
         const products =
           await fetchProducts();
+
 
         state.products =
           products
@@ -3784,11 +4878,15 @@
                 product.product_id
             );
 
+
         renderCategories();
+
         renderProducts();
+
 
         elements.loadingState.hidden =
           true;
+
 
         elements.productGrid.hidden =
           false;
@@ -3798,31 +4896,39 @@
           error
         );
 
+
         elements.loadingState.innerHTML =
           "";
+
 
         const title =
           document.createElement(
             "strong"
           );
 
+
         title.textContent =
           "Unable to load products";
+
 
         const message =
           document.createElement(
             "div"
           );
 
+
         message.style.marginTop =
           "8px";
+
 
         message.textContent =
           "Please refresh the page and try again.";
 
+
         elements.loadingState.appendChild(
           title
         );
+
 
         elements.loadingState.appendChild(
           message
