@@ -1,59 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Shopping Cart | Prasun Store</title>
 
   <meta
     name="description"
-    content="Review your selected products and proceed securely to checkout at Prasun Store."
-  >
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="application-name" content="Prasun Store">
-  <meta name="apple-mobile-web-app-title" content="Prasun Store">
+    content="Review your shopping cart and proceed securely to checkout at Prasun Store."
+  />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Shopping Cart | Prasun Store">
   <meta
-    property="og:description"
-    content="Review your selected products and proceed to checkout at Prasun Store."
-  >
-  <meta property="og:url" content="https://store.prasunbarua.com/cart.html">
-  <meta property="og:image" content="https://store.prasunbarua.com/prasun-store-logo.jpeg">
-  <meta property="og:site_name" content="Prasun Store">
+    name="robots"
+    content="noindex, follow"
+  />
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Shopping Cart | Prasun Store">
-  <meta
-    name="twitter:description"
-    content="Review your selected products and proceed to checkout at Prasun Store."
-  >
-  <meta name="twitter:image" content="https://store.prasunbarua.com/prasun-store-logo.jpeg">
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link
+    rel="canonical"
+    href="https://store.prasunbarua.com/cart.html"
+  />
 
   <style>
-    /* =========================================================
-       RESET & BASE
-       ========================================================= */
+    :root {
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --border: #d2d2d7;
+      --soft-border: #e8e8ed;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --danger: #d70015;
+      --success: #1d8348;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius: 18px;
+      --max-width: 1180px;
+    }
 
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html {
@@ -61,8 +51,11 @@
     }
 
     body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
       font-family:
-        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -70,12 +63,19 @@
         Helvetica,
         Arial,
         sans-serif;
-      background: #f7f8fa;
-      color: #111827;
-      line-height: 1.55;
-      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+    }
+
+    button,
+    input,
+    a {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     a {
@@ -83,259 +83,145 @@
       text-decoration: none;
     }
 
-    button,
-    input {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
     img {
+      display: block;
       max-width: 100%;
     }
 
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.30);
-      outline-offset: 3px;
-    }
-
-    .container {
-      width: min(1200px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .is-hidden {
-      display: none !important;
-    }
-
-
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
-    .top-header {
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e5e7eb;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(210, 210, 215, 0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
     }
 
     .header-inner {
-      min-height: 72px;
+      width: min(100% - 32px, var(--max-width));
+      min-height: 64px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
-
-    /* BRAND */
-
     .brand {
-      flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       min-width: 0;
-      border-radius: 10px;
-      color: #111827;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
       white-space: nowrap;
-      transition:
-        opacity 0.2s ease,
-        transform 0.1s ease;
     }
 
     .brand-logo {
-      display: block;
-      width: auto;
-      height: 44px;
-      max-width: 180px;
-      object-fit: contain;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: #111111;
+      color: #ffffff;
       flex: 0 0 auto;
     }
 
-    .brand-name {
-      font-size: 23px;
-      font-weight: 850;
-      letter-spacing: -0.65px;
-      white-space: nowrap;
-      line-height: 1;
+    .brand-logo svg {
+      width: 20px;
+      height: 20px;
     }
-
-    .brand-name span {
-      color: #2563eb;
-    }
-
-    .brand:hover {
-      opacity: 0.90;
-    }
-
-    .brand:active {
-      transform: translateY(1px);
-    }
-
-
-    /* SEARCH */
-
-    .search-wrap {
-      flex: 1;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .search-form {
-      display: flex;
-      width: 100%;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      overflow: hidden;
-      transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
-    }
-
-    .search-form:focus-within {
-      border-color: #93c5fd;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
-    }
-
-    .search-input {
-      width: 100%;
-      min-width: 0;
-      border: 0;
-      outline: 0;
-      background: transparent;
-      color: #111827;
-      padding: 12px 14px;
-    }
-
-    .search-input::placeholder {
-      color: #9ca3af;
-    }
-
-    .search-input:focus {
-      background: #ffffff;
-    }
-
-    .search-button {
-      flex-shrink: 0;
-      border: 0;
-      background: #111827;
-      color: #ffffff;
-      padding: 0 20px;
-      font-weight: 800;
-      transition: background 0.15s ease;
-    }
-
-    .search-button:hover {
-      background: #000000;
-    }
-
-
-    /* HEADER ACTIONS */
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
+      gap: 10px;
     }
 
     .header-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 13px;
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .header-link:hover {
+      background: #f0f0f2;
+    }
+
+    .cart-link {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
-      min-height: 42px;
-      padding: 8px 12px;
-      border: 1px solid transparent;
-      border-radius: 10px;
-      color: #374151;
-      font-weight: 700;
-      white-space: nowrap;
-      transition:
-        background 0.15s ease,
-        border-color 0.15s ease,
-        color 0.15s ease;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      transition: background 0.2s ease;
     }
 
-    .header-link:hover {
-      background: #f3f4f6;
-      border-color: #e5e7eb;
-      color: #111827;
+    .cart-link:hover {
+      background: #f0f0f2;
     }
 
-    .header-icon {
-      width: 18px;
+    .cart-link svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: 1px;
+      right: 0;
+      min-width: 18px;
       height: 18px;
-      flex: 0 0 auto;
-      display: block;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .cart-badge {
-      min-width: 20px;
-      height: 20px;
-      padding: 0 6px;
+      padding: 0 5px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: #2563eb;
+      background: #111111;
       color: #ffffff;
       font-size: 11px;
-      font-weight: 800;
       line-height: 1;
+      font-weight: 700;
     }
 
-
-    /* =========================================================
-       PAGE
-       ========================================================= */
-
-    .page {
-      padding: 32px 0 60px;
-      min-height: calc(100vh - 190px);
+    .main {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 52px 0 80px;
     }
 
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #6b7280;
-      font-size: 13px;
-      margin-bottom: 18px;
+    .page-heading {
+      margin-bottom: 28px;
     }
 
-    .breadcrumb a:hover {
-      color: #111827;
+    .page-heading h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 750;
     }
 
-    .page-title {
-      font-size: 34px;
-      line-height: 1.2;
-      letter-spacing: -0.8px;
-      color: #111827;
-      margin-bottom: 24px;
+    .page-heading p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
     }
-
-
-    /* =========================================================
-       CART LAYOUT
-       ========================================================= */
 
     .cart-layout {
       display: grid;
@@ -344,145 +230,112 @@
       align-items: start;
     }
 
+    .cart-panel,
+    .summary-panel {
+      background: var(--surface);
+      border: 1px solid var(--soft-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
     .cart-panel {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
       overflow: hidden;
     }
 
-    .cart-panel-header {
-      padding: 18px 20px;
-      border-bottom: 1px solid #e5e7eb;
-      font-size: 17px;
-      font-weight: 900;
-      color: #111827;
+    .cart-items {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      flex-direction: column;
     }
-
-    .cart-panel-count {
-      color: #6b7280;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-
-    /* =========================================================
-       CART ITEM
-       ========================================================= */
 
     .cart-item {
       display: grid;
-      grid-template-columns: 110px minmax(0, 1fr) auto;
+      grid-template-columns: 112px minmax(0, 1fr) auto;
       gap: 18px;
-      padding: 20px;
-      border-bottom: 1px solid #e5e7eb;
+      align-items: center;
+      padding: 22px;
+      border-bottom: 1px solid var(--soft-border);
     }
 
     .cart-item:last-child {
       border-bottom: 0;
     }
 
-    .cart-image-wrap {
-      width: 110px;
-      height: 110px;
-      background: #f8fafc;
-      border: 1px solid #eef2f7;
-      border-radius: 12px;
+    .item-image-wrap {
+      width: 112px;
+      height: 112px;
+      border-radius: 14px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #f5f5f7;
+      border: 1px solid var(--soft-border);
+      display: grid;
+      place-items: center;
     }
 
-    .cart-image {
+    .item-image {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      padding: 5px;
-      display: block;
+      object-fit: cover;
     }
 
-    .image-fallback {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      background: #f8fafc;
+    .item-image-placeholder {
+      width: 42px;
+      height: 42px;
+      color: #8e8e93;
     }
 
-    .image-fallback svg {
-      width: 34px;
-      height: 34px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .cart-info {
+    .item-info {
       min-width: 0;
     }
 
-    .cart-title {
-      display: block;
-      color: #111827;
-      font-size: 16px;
-      font-weight: 800;
-      line-height: 1.4;
-      margin-bottom: 7px;
-      overflow-wrap: anywhere;
-      transition: color 0.15s ease;
-    }
-
-    .cart-title:hover {
-      color: #2563eb;
-    }
-
-    .cart-variant {
-      color: #6b7280;
-      font-size: 13px;
-      margin-bottom: 8px;
+    .item-title {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 650;
+      letter-spacing: -0.01em;
       overflow-wrap: anywhere;
     }
 
-    .cart-unit-price {
-      color: #374151;
+    .item-variant {
+      margin-top: 6px;
+      color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
     }
 
-    .cart-controls {
+    .item-sku {
+      margin-top: 5px;
+      color: #8e8e93;
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .item-price {
+      margin-top: 12px;
+      font-size: 15px;
+      font-weight: 650;
+    }
+
+    .item-actions {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: flex-end;
-      gap: 12px;
+      gap: 13px;
     }
 
     .item-total {
-      color: #111827;
-      font-size: 18px;
-      font-weight: 900;
+      font-size: 16px;
+      font-weight: 700;
       white-space: nowrap;
     }
-
-
-    /* =========================================================
-       QUANTITY CONTROL
-       ========================================================= */
 
     .quantity-control {
       display: inline-flex;
       align-items: center;
-      border: 1px solid #d1d5db;
-      border-radius: 99px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
       background: #ffffff;
     }
@@ -490,444 +343,408 @@
     .quantity-button {
       width: 36px;
       height: 36px;
+      padding: 0;
       border: 0;
-      background: #f9fafb;
-      color: #111827;
-      font-size: 19px;
-      line-height: 1;
+      background: transparent;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
       transition: background 0.15s ease;
     }
 
-    .quantity-button:hover {
-      background: #f3f4f6;
+    .quantity-button:hover:not(:disabled) {
+      background: #f2f2f4;
     }
 
     .quantity-button:disabled {
+      color: #c7c7cc;
       cursor: not-allowed;
-      opacity: 0.45;
+    }
+
+    .quantity-button svg {
+      width: 15px;
+      height: 15px;
     }
 
     .quantity-value {
-      min-width: 40px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-left: 1px solid #e5e7eb;
-      border-right: 1px solid #e5e7eb;
-      color: #111827;
-      font-size: 13px;
-      font-weight: 900;
+      min-width: 34px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 650;
+      user-select: none;
     }
 
     .remove-button {
       border: 0;
+      padding: 0;
       background: transparent;
-      color: #dc2626;
+      color: var(--muted);
       font-size: 13px;
-      font-weight: 800;
-      padding: 3px 0;
+      cursor: pointer;
+      transition: color 0.15s ease;
     }
 
     .remove-button:hover {
-      text-decoration: underline;
+      color: var(--danger);
     }
 
+    .cart-note {
+      padding: 16px 22px;
+      border-top: 1px solid var(--soft-border);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      background: #fafafa;
+    }
 
-    /* =========================================================
-       SUMMARY
-       ========================================================= */
-
-    .summary {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 22px;
+    .summary-panel {
       position: sticky;
-      top: 100px;
+      top: 88px;
+      padding: 24px;
     }
 
     .summary-title {
-      color: #111827;
+      margin: 0 0 20px;
       font-size: 20px;
-      font-weight: 900;
-      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     .summary-row {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 8px 0;
-      color: #4b5563;
+      margin-bottom: 14px;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .summary-row span:last-child {
-      text-align: right;
+    .summary-row strong {
+      color: var(--text);
+      font-weight: 650;
     }
 
-    .summary-row.total {
-      color: #111827;
-      font-size: 21px;
-      font-weight: 900;
-      padding-top: 16px;
-      margin-top: 8px;
-      border-top: 1px solid #e5e7eb;
+    .summary-total {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--soft-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .shipping-note {
-      color: #6b7280;
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 13px;
+    .summary-total span {
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    .summary-total strong {
+      font-size: 23px;
+      letter-spacing: -0.03em;
     }
 
     .checkout-button {
-      display: flex;
       width: 100%;
       min-height: 50px;
+      margin-top: 22px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #ffffff;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;
-      border: 1px solid #2563eb;
-      border-radius: 11px;
-      background: #2563eb;
-      color: #ffffff;
-      font-weight: 900;
-      transition: background 0.15s ease;
+      gap: 9px;
+      font-size: 15px;
+      font-weight: 650;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        opacity 0.2s ease;
     }
 
-    .checkout-button:hover {
-      background: #1d4ed8;
+    .checkout-button:hover:not(.disabled) {
+      background: var(--accent-hover);
+    }
+
+    .checkout-button:active:not(.disabled) {
+      transform: scale(0.985);
     }
 
     .checkout-button.disabled {
-      pointer-events: none;
       opacity: 0.45;
       cursor: not-allowed;
     }
 
-    .continue-button {
-      display: flex;
+    .checkout-button svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .continue-shopping {
       width: 100%;
-      min-height: 46px;
+      min-height: 44px;
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #ffffff;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-top: 10px;
-      border: 1px solid #d1d5db;
-      border-radius: 11px;
-      background: #ffffff;
-      color: #111827;
-      font-weight: 800;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
       transition:
-        background 0.15s ease,
-        border-color 0.15s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
-    .continue-button:hover {
-      background: #f3f4f6;
-      border-color: #cbd5e1;
+    .continue-shopping:hover {
+      background: #f7f7f8;
+      border-color: #b8b8bd;
     }
 
-    .cart-security-note {
+    .secure-note {
+      margin-top: 18px;
       display: flex;
       align-items: flex-start;
       gap: 9px;
-      margin-top: 18px;
-      padding: 12px 13px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      color: #6b7280;
+      color: var(--muted);
       font-size: 12px;
       line-height: 1.5;
     }
 
-    .cart-security-note svg {
-      width: 17px;
-      height: 17px;
+    .secure-note svg {
+      width: 16px;
+      height: 16px;
       flex: 0 0 auto;
       margin-top: 1px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
     }
 
-
-    /* =========================================================
-       EMPTY CART
-       ========================================================= */
-
     .empty-cart {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 60px 24px;
+      display: none;
       text-align: center;
+      padding: 72px 24px;
+    }
+
+    .empty-cart.visible {
+      display: block;
     }
 
     .empty-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #6b7280;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 20px;
       border-radius: 50%;
-      background: #f3f4f6;
+      background: #f0f0f2;
+      display: grid;
+      place-items: center;
+      color: #6e6e73;
     }
 
     .empty-icon svg {
-      width: 32px;
-      height: 32px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      width: 31px;
+      height: 31px;
     }
 
-    .empty-title {
-      color: #111827;
+    .empty-cart h2 {
+      margin: 0;
       font-size: 24px;
-      font-weight: 900;
-      margin-bottom: 7px;
+      letter-spacing: -0.025em;
     }
 
-    .empty-text {
-      color: #6b7280;
-      margin-bottom: 20px;
+    .empty-cart p {
+      max-width: 470px;
+      margin: 10px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .shop-button {
+    .empty-button {
       display: inline-flex;
-      min-height: 46px;
       align-items: center;
       justify-content: center;
-      padding: 0 18px;
-      border-radius: 10px;
-      background: #111827;
+      min-height: 46px;
+      margin-top: 24px;
+      padding: 0 22px;
+      border-radius: 11px;
+      background: var(--accent);
       color: #ffffff;
-      font-weight: 900;
-    }
-
-    .shop-button:hover {
-      background: #000000;
-    }
-
-
-    /* =========================================================
-       TOAST
-       ========================================================= */
-
-    .toast {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 2000;
-      width: min(360px, calc(100vw - 40px));
-      padding: 14px 16px;
-      background: #111827;
-      color: #ffffff;
-      border-radius: 12px;
       font-size: 14px;
-      font-weight: 700;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(12px);
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
+      font-weight: 650;
+      transition: background 0.2s ease;
     }
 
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
+    .empty-button:hover {
+      background: var(--accent-hover);
     }
 
+    .status-message {
+      display: none;
+      margin-bottom: 20px;
+      padding: 13px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
+    .status-message.visible {
+      display: block;
+    }
 
-    footer {
-      background: #111827;
-      color: #ffffff;
-      margin-top: 30px;
+    .status-message.warning {
+      background: #fff8e1;
+      color: #6b4e00;
+      border: 1px solid #f1df9d;
+    }
+
+    .status-message.success {
+      background: #edf8f1;
+      color: var(--success);
+      border: 1px solid #c7e8d1;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--soft-border);
+      background: #ffffff;
     }
 
     .footer-inner {
-      padding: 36px 0;
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 28px 0;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 24px;
-    }
-
-    .footer-brand {
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    .footer-brand span {
-      color: #60a5fa;
-    }
-
-    .footer-text {
-      margin-top: 8px;
-      color: #9ca3af;
-      max-width: 500px;
-      font-size: 14px;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .footer-links {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
-      color: #d1d5db;
-      font-size: 14px;
+      gap: 16px;
     }
 
     .footer-links a:hover {
-      color: #ffffff;
+      color: var(--text);
     }
-
-    .copyright {
-      border-top: 1px solid #1f2937;
-      padding: 16px 0;
-      color: #9ca3af;
-      font-size: 13px;
-    }
-
-
-    /* =========================================================
-       MEDIA QUERIES
-       ========================================================= */
 
     @media (max-width: 900px) {
       .cart-layout {
         grid-template-columns: 1fr;
       }
 
-      .summary {
+      .summary-panel {
         position: static;
       }
     }
 
-    @media (max-width: 650px) {
-      .container {
-        width: min(100% - 20px, 1200px);
+    @media (max-width: 680px) {
+      .header-inner,
+      .main,
+      .footer-inner {
+        width: min(100% - 24px, var(--max-width));
       }
 
-      .header-inner {
-        flex-wrap: wrap;
-        padding: 11px 0;
-        gap: 10px;
+      .main {
+        padding: 34px 0 60px;
       }
 
-      .brand {
-        flex: 1 1 auto;
-        gap: 7px;
+      .page-heading {
+        margin-bottom: 20px;
       }
 
-      .brand-logo {
-        height: 39px;
-        max-width: 145px;
+      .page-heading h1 {
+        font-size: 34px;
       }
 
-      .brand-name {
-        font-size: 20px;
-      }
-
-      .header-actions {
-        margin-left: auto;
-        gap: 5px;
-      }
-
-      .header-link {
-        padding: 8px 9px;
-      }
-
-      .header-link span:not(.cart-badge) {
-        display: none;
-      }
-
-      .search-wrap {
-        flex-basis: 100%;
-        order: 3;
-        margin: 0;
+      .page-heading p {
+        font-size: 14px;
       }
 
       .cart-item {
-        grid-template-columns: 82px minmax(0, 1fr);
+        grid-template-columns: 84px minmax(0, 1fr);
         gap: 14px;
         padding: 16px;
       }
 
-      .cart-image-wrap {
-        width: 82px;
-        height: 82px;
+      .item-image-wrap {
+        width: 84px;
+        height: 84px;
       }
 
-      .cart-controls {
+      .item-actions {
         grid-column: 1 / -1;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        padding-left: 98px;
+      }
+
+      .item-total {
+        order: 1;
+      }
+
+      .quantity-control {
+        order: 2;
+      }
+
+      .remove-button {
+        order: 3;
+      }
+
+      .cart-note {
+        padding: 14px 16px;
+      }
+
+      .summary-panel {
+        padding: 20px;
       }
 
       .footer-inner {
         flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-    @media (max-width: 420px) {
-      .page {
-        padding-top: 24px;
+    @media (max-width: 440px) {
+      .brand {
+        font-size: 18px;
       }
 
-      .page-title {
-        font-size: 29px;
+      .header-link {
+        display: none;
       }
 
       .cart-item {
         grid-template-columns: 72px minmax(0, 1fr);
-        gap: 12px;
       }
 
-      .cart-image-wrap {
+      .item-image-wrap {
         width: 72px;
         height: 72px;
       }
 
-      .cart-title {
+      .item-title {
         font-size: 15px;
       }
 
-      .cart-unit-price {
-        font-size: 13px;
+      .item-actions {
+        padding-left: 86px;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
       .item-total {
-        font-size: 16px;
-      }
-
-      .summary {
-        padding: 18px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+        width: 100%;
       }
     }
   </style>
@@ -935,414 +752,318 @@
 
 <body>
 
-  <!-- =======================================================
-       HEADER
-       ======================================================= -->
-
-  <header class="top-header">
-    <div class="container header-inner">
+  <header class="site-header">
+    <div class="header-inner">
 
       <a
-        href="./index.html"
         class="brand"
+        href="./index.html"
         aria-label="Prasun Store home"
-        title="Prasun Store"
       >
-        <img
-          src="./prasun-store-logo.jpeg"
-          alt="Prasun Store logo"
-          class="brand-logo"
-          width="180"
-          height="44"
-          decoding="async"
-        >
-
-        <span class="brand-name">
-          Prasun<span>Store</span>
+        <span class="brand-logo" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 8.5h14l-1 11H6l-1-11Z"></path>
+            <path d="M9 9V6a3 3 0 0 1 6 0v3"></path>
+          </svg>
         </span>
+
+        <span>PrasunStore</span>
       </a>
 
-
-      <div class="search-wrap">
-        <form
-          id="searchForm"
-          class="search-form"
-          role="search"
-        >
-          <input
-            id="searchInput"
-            class="search-input"
-            type="search"
-            placeholder="Search products..."
-            autocomplete="off"
-            enterkeyhint="search"
-            aria-label="Search products"
-          >
-
-          <button
-            type="submit"
-            class="search-button"
-          >
-            Search
-          </button>
-        </form>
-      </div>
-
-
-      <div class="header-actions">
+      <nav class="header-actions" aria-label="Main navigation">
 
         <a
-          href="./index.html#products"
           class="header-link"
-          aria-label="View products"
+          href="./index.html"
         >
-          <svg
-            class="header-icon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path d="M4 10v9h16v-9"></path>
-            <path d="M3 10l2-6h14l2 6"></path>
-            <path d="M3 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
-            <path d="M7 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
-            <path d="M11 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
-            <path d="M15 10c0 1.1.9 2 2 2s2-.9 2-2"></path>
-            <path d="M8 19v-4h8v4"></path>
-          </svg>
-
-          <span>Products</span>
+          Store
         </a>
 
-
         <a
+          class="cart-link"
           href="./cart.html"
-          class="header-link"
           aria-label="Shopping cart"
-          aria-current="page"
         >
           <svg
-            class="header-icon"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
             aria-hidden="true"
           >
-            <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
-            <circle cx="10" cy="20" r="1.3"></circle>
-            <circle cx="18" cy="20" r="1.3"></circle>
+            <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"></path>
+            <circle cx="10" cy="20" r="1.2"></circle>
+            <circle cx="18" cy="20" r="1.2"></circle>
           </svg>
-
-          <span>Cart</span>
 
           <span
             id="cartCount"
-            class="cart-badge"
+            class="cart-count"
             aria-label="0 items in cart"
           >
             0
           </span>
         </a>
 
-      </div>
+      </nav>
     </div>
   </header>
 
 
-  <!-- =======================================================
-       MAIN
-       ======================================================= -->
+  <main class="main">
 
-  <main class="page">
+    <div class="page-heading">
+      <h1>Your Cart</h1>
+      <p>Review your items before proceeding to checkout.</p>
+    </div>
 
-    <div class="container">
-
-      <nav
-        class="breadcrumb"
-        aria-label="Breadcrumb"
-      >
-        <a href="./index.html">Home</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Cart</span>
-      </nav>
+    <div
+      id="statusMessage"
+      class="status-message"
+      role="status"
+      aria-live="polite"
+    ></div>
 
 
-      <h1 class="page-title">
-        Shopping Cart
-      </h1>
-
-
-      <!-- EMPTY CART -->
+    <div
+      id="cartContent"
+      class="cart-layout"
+    >
 
       <section
-        id="emptyCart"
-        class="empty-cart is-hidden"
-        aria-labelledby="emptyCartTitle"
+        class="cart-panel"
+        aria-label="Shopping cart items"
       >
+
         <div
-          class="empty-icon"
-          aria-hidden="true"
+          id="cartItems"
+          class="cart-items"
+        ></div>
+
+        <div
+          id="cartNote"
+          class="cart-note"
         >
-          <svg viewBox="0 0 24 24">
-            <path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path>
-            <circle cx="10" cy="20" r="1.3"></circle>
-            <circle cx="18" cy="20" r="1.3"></circle>
-          </svg>
+          Product prices are shown as a current cart estimate. Final product availability and pricing are verified again during checkout.
         </div>
 
-        <h2
-          id="emptyCartTitle"
-          class="empty-title"
-        >
-          Your cart is empty
+      </section>
+
+
+      <aside
+        class="summary-panel"
+        aria-label="Order summary"
+      >
+
+        <h2 class="summary-title">
+          Order Summary
         </h2>
 
-        <p class="empty-text">
-          Add some products before proceeding to checkout.
-        </p>
+        <div class="summary-row">
+          <span>Items</span>
+          <strong id="summaryItemCount">0</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="summarySubtotal">$0.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong>Calculated at checkout</strong>
+        </div>
+
+        <div class="summary-total">
+          <span>Estimated total</span>
+          <strong id="summaryTotal">$0.00</strong>
+        </div>
 
         <a
-          href="./index.html#products"
-          class="shop-button"
+          id="checkoutButton"
+          class="checkout-button disabled"
+          href="./checkout.html"
+          aria-disabled="true"
+        >
+          <span>Proceed to Checkout</span>
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m13 6 6 6-6 6"></path>
+          </svg>
+        </a>
+
+        <a
+          class="continue-shopping"
+          href="./index.html"
         >
           Continue Shopping
         </a>
-      </section>
 
+        <div class="secure-note">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect
+              x="5"
+              y="10"
+              width="14"
+              height="10"
+              rx="2"
+            ></rect>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            <circle
+              cx="12"
+              cy="15"
+              r="1"
+            ></circle>
+          </svg>
 
-      <!-- CART LAYOUT -->
-
-      <section
-        id="cartLayout"
-        class="cart-layout is-hidden"
-        aria-label="Shopping cart"
-      >
-
-        <div class="cart-panel">
-
-          <div class="cart-panel-header">
-            <span>Your Items</span>
-
-            <span
-              id="cartPanelCount"
-              class="cart-panel-count"
-            >
-              0 items
-            </span>
-          </div>
-
-          <div id="cartItems"></div>
-
+          <span>
+            Your cart is stored securely in your browser. Checkout verifies product information and pricing with the store server.
+          </span>
         </div>
 
-
-        <!-- ORDER SUMMARY -->
-
-        <aside
-          class="summary"
-          aria-label="Order summary"
-        >
-
-          <h2 class="summary-title">
-            Order Summary
-          </h2>
-
-
-          <div class="summary-row">
-            <span>Items</span>
-            <span id="summaryItems">0</span>
-          </div>
-
-
-          <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="summarySubtotal">$0.00</span>
-          </div>
-
-
-          <div class="summary-row">
-            <span>Shipping</span>
-            <span>Calculated at checkout</span>
-          </div>
-
-
-          <div class="summary-row total">
-            <span>Total</span>
-            <span id="summaryTotal">$0.00</span>
-          </div>
-
-
-          <p class="shipping-note">
-            Final product prices, availability, shipping charges,
-            and order totals are securely verified during checkout.
-          </p>
-
-
-          <a
-            href="./checkout.html"
-            id="checkoutButton"
-            class="checkout-button"
-          >
-            Proceed to Checkout
-          </a>
-
-
-          <a
-            href="./index.html#products"
-            class="continue-button"
-          >
-            Continue Shopping
-          </a>
-
-
-          <div class="cart-security-note">
-
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <rect
-                x="4"
-                y="10"
-                width="16"
-                height="11"
-                rx="2"
-              ></rect>
-
-              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
-            </svg>
-
-            <span>
-              Your cart is saved on this device.
-              Final prices and product availability are verified
-              again before your order is accepted.
-            </span>
-
-          </div>
-
-        </aside>
-
-      </section>
+      </aside>
 
     </div>
+
+
+    <section
+      id="emptyCart"
+      class="empty-cart"
+      aria-live="polite"
+    >
+
+      <div
+        class="empty-icon"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.5L21 8H6"></path>
+          <circle cx="10" cy="20" r="1.2"></circle>
+          <circle cx="18" cy="20" r="1.2"></circle>
+        </svg>
+      </div>
+
+      <h2>Your cart is empty</h2>
+
+      <p>
+        You haven't added anything to your cart yet. Browse the store and find something you like.
+      </p>
+
+      <a
+        class="empty-button"
+        href="./index.html"
+      >
+        Start Shopping
+      </a>
+
+    </section>
+
   </main>
 
 
-  <!-- =======================================================
-       TOAST
-       ======================================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
 
-  <div
-    id="toast"
-    class="toast"
-    role="status"
-    aria-live="polite"
-    aria-atomic="true"
-  ></div>
-
-
-  <!-- =======================================================
-       FOOTER
-       ======================================================= -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-inner">
-
-        <div>
-
-          <div class="footer-brand">
-            Prasun<span>Store</span>
-          </div>
-
-          <div class="footer-text">
-            Practical products and useful solutions for technology,
-            home, lifestyle, solar energy and more.
-          </div>
-
-        </div>
-
-
-        <nav
-          class="footer-links"
-          aria-label="Footer navigation"
-        >
-          <a href="./index.html">Home</a>
-          <a href="./index.html#products">Products</a>
-          <a
-            href="./cart.html"
-            aria-current="page"
-          >
-            Cart
-          </a>
-        </nav>
-
+      <div>
+        © <span id="currentYear"></span> Prasun Store
       </div>
 
+      <nav
+        class="footer-links"
+        aria-label="Footer navigation"
+      >
+        <a href="./index.html">
+          Store
+        </a>
 
-      <div class="copyright">
-        © <span id="currentYear"></span>
-        Prasun Store. All rights reserved.
-      </div>
+        <a href="./checkout.html">
+          Checkout
+        </a>
+      </nav>
 
     </div>
-
   </footer>
 
-
-  <!-- =======================================================
-       JAVASCRIPT
-       ======================================================= -->
 
   <script>
     "use strict";
 
-
-    /* =========================================================
-       CONFIGURATION
-       ========================================================= */
-
-    const CART_STORAGE_KEY = "prasunCart";
-
     /*
-      Older/alternate keys are still supported so an existing
-      customer's cart is not lost during the transition.
-    */
-    const POSSIBLE_STORAGE_KEYS = [
+     * ============================================================
+     * CART STORAGE CONTRACT
+     * ============================================================
+     *
+     * These keys intentionally match checkout.html exactly.
+     *
+     * checkout.html:
+     *
+     * const CART_KEYS = [
+     *   "prasunCart",
+     *   "cart",
+     *   "shoppingCart"
+     * ];
+     *
+     * Do not change these keys unless checkout.html is changed too.
+     */
+
+    const CART_KEYS = [
       "prasunCart",
       "cart",
-      "shoppingCart",
-      "prasun_cart",
-      "prasun_store_cart"
+      "shoppingCart"
     ];
 
     const STORE_CURRENCY = "USD";
-
     const MAX_ITEM_QUANTITY = 99;
-    const MAX_TOTAL_QUANTITY = 100;
-    const MAX_TITLE_LENGTH = 500;
 
 
-    /* =========================================================
-       DOM REFERENCES
-       ========================================================= */
+    /*
+     * ============================================================
+     * DOM ELEMENTS
+     * ============================================================
+     */
 
-    const cartItemsElement =
-      document.getElementById("cartItems");
+    const cartContent = document.getElementById("cartContent");
+    const cartItemsElement = document.getElementById("cartItems");
+    const cartNote = document.getElementById("cartNote");
+    const emptyCart = document.getElementById("emptyCart");
 
-    const cartLayout =
-      document.getElementById("cartLayout");
+    const cartCount = document.getElementById("cartCount");
 
-    const emptyCart =
-      document.getElementById("emptyCart");
-
-    const cartCount =
-      document.getElementById("cartCount");
-
-    const cartPanelCount =
-      document.getElementById("cartPanelCount");
-
-    const summaryItems =
-      document.getElementById("summaryItems");
+    const summaryItemCount =
+      document.getElementById("summaryItemCount");
 
     const summarySubtotal =
       document.getElementById("summarySubtotal");
@@ -1353,189 +1074,135 @@
     const checkoutButton =
       document.getElementById("checkoutButton");
 
-    const toast =
-      document.getElementById("toast");
+    const statusMessage =
+      document.getElementById("statusMessage");
+
+    const currentYear =
+      document.getElementById("currentYear");
 
 
-    /* =========================================================
-       STATE
-       ========================================================= */
+    /*
+     * ============================================================
+     * STATE
+     * ============================================================
+     */
 
     let cart = [];
-    let toastTimer = null;
 
 
-    /* =========================================================
-       INITIALIZATION
-       ========================================================= */
+    /*
+     * ============================================================
+     * HELPERS
+     * ============================================================
+     */
 
-    document.addEventListener("DOMContentLoaded", function () {
+    function normalizeQuantity(value) {
+      const n = Number(value);
 
-      updateCurrentYear();
-
-      loadCart();
-
-      setupSearch();
-
-      renderCart();
-
-
-      /*
-        Keep this cart page synchronized when another browser
-        tab/window modifies localStorage.
-      */
-      window.addEventListener("storage", function (event) {
-
-        if (
-          !event.key ||
-          POSSIBLE_STORAGE_KEYS.includes(event.key)
-        ) {
-          loadCart();
-          renderCart();
-        }
-
-      });
-
-
-      /*
-        Refresh when the customer returns to this page using
-        browser back/forward navigation.
-      */
-      window.addEventListener("pageshow", function () {
-
-        loadCart();
-        renderCart();
-
-      });
-
-    });
-
-
-    /* =========================================================
-       YEAR
-       ========================================================= */
-
-    function updateCurrentYear() {
-
-      const element =
-        document.getElementById("currentYear");
-
-      if (element) {
-        element.textContent =
-          String(new Date().getFullYear());
+      if (!Number.isFinite(n)) {
+        return 1;
       }
 
+      return Math.min(
+        MAX_ITEM_QUANTITY,
+        Math.max(1, Math.floor(n))
+      );
     }
 
 
-    /* =========================================================
-       LOAD CART
-       ========================================================= */
+    function normalizePrice(value) {
+      const n = Number(value);
 
-    function loadCart() {
-
-      try {
-
-        let raw = null;
-
-        /*
-          Read the official key first, followed by legacy keys.
-        */
-        for (const key of POSSIBLE_STORAGE_KEYS) {
-
-          const value =
-            localStorage.getItem(key);
-
-          if (value) {
-            raw = value;
-            break;
-          }
-
-        }
-
-
-        if (!raw) {
-
-          cart = [];
-
-          return;
-
-        }
-
-
-        let parsed =
-          JSON.parse(raw);
-
-
-        /*
-          Some older implementations may have stored the cart
-          as an object instead of an array.
-        */
-        if (
-          parsed &&
-          typeof parsed === "object" &&
-          !Array.isArray(parsed)
-        ) {
-
-          parsed =
-            Object.values(parsed);
-
-        }
-
-
-        if (!Array.isArray(parsed)) {
-
-          cart = [];
-
-          return;
-
-        }
-
-
-        const sanitized = [];
-
-
-        for (const item of parsed) {
-
-          const normalized =
-            normalizeCartItem(item);
-
-          if (normalized) {
-            sanitized.push(normalized);
-          }
-
-        }
-
-
-        cart =
-          limitTotalCartQuantity(sanitized);
-
-
-        /*
-          Migrate valid existing carts to the official key.
-        */
-        saveCart();
-
-      } catch (error) {
-
-        console.error(
-          "Cart loading error:",
-          error
-        );
-
-        cart = [];
-
+      if (!Number.isFinite(n) || n < 0) {
+        return 0;
       }
 
+      return n;
     }
 
 
-    /* =========================================================
-       NORMALIZE CART ITEM
-       ========================================================= */
+    /*
+     * Convert variant options to a useful display string.
+     *
+     * Checkout only requires variant_name as a string.
+     * This function makes legacy/object variant data readable
+     * while keeping the final stored field name identical.
+     */
+
+    function normalizeVariantName(value) {
+      if (value === null || value === undefined) {
+        return "";
+      }
+
+      if (typeof value === "string") {
+        return value.trim();
+      }
+
+      if (Array.isArray(value)) {
+        return value
+          .map(item => {
+            if (
+              item &&
+              typeof item === "object"
+            ) {
+              const name =
+                item.name ??
+                item.label ??
+                item.value ??
+                "";
+
+              return String(name).trim();
+            }
+
+            return String(item).trim();
+          })
+          .filter(Boolean)
+          .join(", ");
+      }
+
+      if (typeof value === "object") {
+        return Object.entries(value)
+          .map(([key, val]) => {
+            if (
+              val === null ||
+              val === undefined ||
+              String(val).trim() === ""
+            ) {
+              return "";
+            }
+
+            return `${key}: ${val}`;
+          })
+          .filter(Boolean)
+          .join(", ");
+      }
+
+      return String(value).trim();
+    }
+
+
+    /*
+     * ============================================================
+     * CANONICAL CART ITEM
+     * ============================================================
+     *
+     * This follows the same canonical fields used by checkout.html.
+     *
+     * checkout.html normalization:
+     *
+     * product_id
+     * variant_id
+     * sku
+     * title
+     * variant_name
+     * image
+     * quantity
+     *
+     * Price is retained only as a frontend display cache.
+     * checkout.html does NOT trust this price.
+     */
 
     function normalizeCartItem(item) {
-
       if (
         !item ||
         typeof item !== "object"
@@ -1543,259 +1210,744 @@
         return null;
       }
 
+      const productId = String(
+        item?.product_id ??
+        item?.productId ??
+        item?.id ??
+        ""
+      ).trim();
 
       /*
-        A real product ID is required.
-
-        Do NOT generate a fake ID from the product title.
-        The checkout Worker needs the actual product_id to
-        resolve the product securely from PRODUCTS_KV.
-      */
-      const productId =
-        String(
-          item.product_id ||
-          item.productId ||
-          item.productID ||
-          item.pid ||
-          item.id ||
-          item._id ||
-          item.item_id ||
-          item.code ||
-          ""
-        ).trim();
-
+       * IMPORTANT:
+       *
+       * Never create a fake product ID from the title.
+       *
+       * The checkout Worker needs the real product_id so it can
+       * resolve the authoritative product and price.
+       */
 
       if (!productId) {
         return null;
       }
 
 
-      const title =
-        normalizeText(
-          item.title ||
-          item.name ||
-          item.productName ||
-          item.product_name ||
-          "Product",
-          MAX_TITLE_LENGTH
-        );
+      const variantId = String(
+        item?.variant_id ??
+        item?.variantId ??
+        item?.cj_variant_id ??
+        item?.vid ??
+        ""
+      ).trim();
 
 
-      const image =
-        getSafeImageSource(
-          item.image ||
-          item.image_proxy ||
-          item.variantImage ||
-          item.img ||
-          item.thumbnail ||
-          item.src ||
-          item.cover ||
-          ""
-        );
+      const sku = String(
+        item?.sku ??
+        item?.variant_sku ??
+        item?.cj_sku ??
+        ""
+      ).trim();
+
+
+      const title = String(
+        item?.title ??
+        item?.name ??
+        "Product"
+      ).trim();
+
+
+      const rawVariantName =
+        item?.variant_name ??
+        item?.variantName ??
+        item?.variant_options ??
+        item?.variant ??
+        "";
+
+      const variantName =
+        normalizeVariantName(rawVariantName);
+
+
+      const image = String(
+        item?.image ??
+        item?.main_image ??
+        item?.mainImage ??
+        ""
+      ).trim();
+
+
+      const quantity = normalizeQuantity(
+        item?.quantity ??
+        item?.qty ??
+        1
+      );
 
 
       /*
-        Cart price is only for display.
+       * Price is only for cart-page display.
+       *
+       * checkout.html and the Worker should never rely on it
+       * for the final order amount.
+       */
 
-        The checkout Worker does NOT trust this value.
-        It resolves the authoritative selling price from KV.
-      */
-      const price =
-        normalizePrice(
-          item.price ??
-          item.sale_price ??
-          item.selling_price ??
-          item.sellPrice ??
-          item.variantSellPrice ??
-          item.product?.price ??
-          item.unit_price ??
-          0
-        );
+      const price = normalizePrice(
+        item?.price ??
+        item?.sale_price ??
+        item?.selling_price ??
+        item?.unit_price ??
+        0
+      );
 
 
-      const quantity =
-        normalizeQuantity(
-          item.quantity ??
-          item.qty ??
-          item.count ??
-          1
-        );
-
-
-      const normalized = {
-        ...item,
-
+      return {
         product_id: productId,
-
-        title: title || "Product",
-
+        variant_id: variantId,
+        sku: sku,
+        title: title,
+        variant_name: variantName,
         image: image,
-
-        price: price,
-
-        currency: STORE_CURRENCY,
-
-        quantity: quantity
-      };
-
-
-      /*
-        Preserve the CJ variant ID.
-
-        This is important because the checkout Worker uses
-        the CJ variant ID when communicating with CJdropshipping.
-      */
-      const variantId =
-        item.vid ||
-        item.variant_id ||
-        item.variantId ||
-        item.cj_variant_id;
-
-      if (variantId) {
-
-        normalized.variant_id =
-          String(variantId).trim();
-
-      }
-
-
-      /*
-        Preserve SKU where available.
-      */
-      const sku =
-        item.sku ||
-        item.variantSku;
-
-      if (sku) {
-
-        normalized.sku =
-          String(sku).trim();
-
-      }
-
-
-      return normalized;
-
-    }
-
-
-    /* =========================================================
-       SAVE CART
-       ========================================================= */
-
-    function saveCart() {
-
-      try {
-
-        const serialized =
-          JSON.stringify(cart);
-
+        quantity: quantity,
 
         /*
-          Use one official storage key.
+         * Frontend-only display cache.
+         * checkout.html ignores this value.
+         */
+        price: price,
 
-          Checkout.html also supports prasunCart, so both
-          pages now share the same primary key.
-        */
-        localStorage.setItem(
-          CART_STORAGE_KEY,
-          serialized
-        );
-
-      } catch (error) {
-
-        console.error(
-          "Cart save error:",
-          error
-        );
-
-        showToast(
-          "Unable to save your cart on this device."
-        );
-
-      }
-
+        currency: STORE_CURRENCY
+      };
     }
 
 
-    /* =========================================================
-       LIMIT TOTAL QUANTITY
-       ========================================================= */
+    /*
+     * ============================================================
+     * LOAD CART
+     * ============================================================
+     *
+     * Read the exact same three storage keys as checkout.html.
+     *
+     * Priority:
+     *   1. prasunCart
+     *   2. cart
+     *   3. shoppingCart
+     */
 
-    function limitTotalCartQuantity(items) {
+    function loadCart() {
+      for (const key of CART_KEYS) {
+        try {
+          const raw = localStorage.getItem(key);
 
-      let remaining =
-        MAX_TOTAL_QUANTITY;
+          if (!raw) {
+            continue;
+          }
 
-      const result = [];
+          const parsed = JSON.parse(raw);
 
+          if (
+            Array.isArray(parsed) &&
+            parsed.length
+          ) {
+            const normalized = parsed
+              .map(normalizeCartItem)
+              .filter(Boolean);
 
-      for (const item of items) {
-
-        if (remaining <= 0) {
-          break;
-        }
-
-
-        const quantity =
-          Math.min(
-            normalizeQuantity(item.quantity),
-            remaining
+            return normalized;
+          }
+        } catch (error) {
+          console.warn(
+            "Could not read cart key:",
+            key,
+            error
           );
-
-
-        if (quantity <= 0) {
-          continue;
         }
-
-
-        result.push({
-          ...item,
-          quantity: quantity
-        });
-
-
-        remaining -= quantity;
-
       }
 
-
-      return result;
-
+      return [];
     }
 
 
-    /* =========================================================
-       RENDER CART
-       ========================================================= */
+    /*
+     * ============================================================
+     * SAVE CART
+     * ============================================================
+     *
+     * Save the SAME canonical cart array to all three keys.
+     *
+     * This guarantees that:
+     *
+     * cart.html
+     * checkout.html
+     *
+     * see the same cart regardless of which compatible key
+     * they read.
+     */
 
-    function renderCart() {
+    function saveCart() {
+      const canonicalCart = cart
+        .map(normalizeCartItem)
+        .filter(Boolean);
 
-      updateCartBadge();
+      cart = canonicalCart;
+
+      const serialized =
+        JSON.stringify(canonicalCart);
+
+      for (const key of CART_KEYS) {
+        try {
+          localStorage.setItem(
+            key,
+            serialized
+          );
+        } catch (error) {
+          console.warn(
+            "Could not save cart key:",
+            key,
+            error
+          );
+        }
+      }
+    }
+
+
+    /*
+     * ============================================================
+     * IMAGE SAFETY
+     * ============================================================
+     */
+
+    function getSafeImageSource(source) {
+      if (!source) {
+        return "";
+      }
+
+      const value = String(source).trim();
+
+      if (!value) {
+        return "";
+      }
+
+      /*
+       * Allow normal relative image paths.
+       */
+
+      if (
+        value.startsWith("/") ||
+        value.startsWith("./") ||
+        value.startsWith("../")
+      ) {
+        return value;
+      }
+
+      /*
+       * Allow HTTPS and HTTP image URLs.
+       */
+
+      try {
+        const url = new URL(
+          value,
+          window.location.href
+        );
+
+        if (
+          url.protocol === "https:" ||
+          url.protocol === "http:"
+        ) {
+          return url.href;
+        }
+      } catch (error) {
+        return "";
+      }
+
+      return "";
+    }
+
+
+    /*
+     * ============================================================
+     * MONEY
+     * ============================================================
+     */
+
+    function formatMoney(value) {
+      const amount = normalizePrice(value);
+
+      return new Intl.NumberFormat(
+        "en-US",
+        {
+          style: "currency",
+          currency: STORE_CURRENCY,
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      ).format(amount);
+    }
+
+
+    /*
+     * ============================================================
+     * CART TOTALS
+     * ============================================================
+     */
+
+    function getTotalQuantity() {
+      return cart.reduce(
+        (total, item) =>
+          total + normalizeQuantity(item.quantity),
+        0
+      );
+    }
+
+
+    function getSubtotal() {
+      return cart.reduce(
+        (total, item) => {
+          const price =
+            normalizePrice(item.price);
+
+          const quantity =
+            normalizeQuantity(item.quantity);
+
+          return total + price * quantity;
+        },
+        0
+      );
+    }
+
+
+    /*
+     * ============================================================
+     * STATUS
+     * ============================================================
+     */
+
+    function showStatus(
+      message,
+      type = "warning"
+    ) {
+      statusMessage.textContent = message;
+
+      statusMessage.className =
+        "status-message visible " + type;
+    }
+
+
+    function hideStatus() {
+      statusMessage.textContent = "";
+      statusMessage.className =
+        "status-message";
+    }
+
+
+    /*
+     * ============================================================
+     * SVG HELPERS
+     * ============================================================
+     */
+
+    function createPlaceholderSvg() {
+      return `
+        <svg
+          class="item-image-placeholder"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="2"
+          ></rect>
+          <circle
+            cx="8.5"
+            cy="8.5"
+            r="1.5"
+          ></circle>
+          <path d="m21 15-5-5L5 21"></path>
+        </svg>
+      `;
+    }
+
+
+    /*
+     * ============================================================
+     * RENDER CART ITEM
+     * ============================================================
+     */
+
+    function createCartItemElement(
+      item,
+      index
+    ) {
+      const article =
+        document.createElement("article");
+
+      article.className = "cart-item";
+
+      article.dataset.index = String(index);
 
 
       /*
-        EMPTY CART
-      */
+       * Image
+       */
+
+      const imageWrap =
+        document.createElement("div");
+
+      imageWrap.className =
+        "item-image-wrap";
+
+
+      const imageSource =
+        getSafeImageSource(item.image);
+
+
+      if (imageSource) {
+        const image =
+          document.createElement("img");
+
+        image.className = "item-image";
+
+        image.src = imageSource;
+
+        image.alt =
+          item.title || "Product";
+
+        image.loading = "lazy";
+
+        image.decoding = "async";
+
+        image.addEventListener(
+          "error",
+          () => {
+            image.remove();
+
+            imageWrap.innerHTML =
+              createPlaceholderSvg();
+          },
+          {
+            once: true
+          }
+        );
+
+        imageWrap.appendChild(image);
+      } else {
+        imageWrap.innerHTML =
+          createPlaceholderSvg();
+      }
+
+
+      /*
+       * Product information
+       */
+
+      const info =
+        document.createElement("div");
+
+      info.className = "item-info";
+
+
+      const title =
+        document.createElement("h2");
+
+      title.className = "item-title";
+
+      title.textContent =
+        item.title || "Product";
+
+
+      info.appendChild(title);
+
+
+      if (item.variant_name) {
+        const variant =
+          document.createElement("div");
+
+        variant.className =
+          "item-variant";
+
+        variant.textContent =
+          item.variant_name;
+
+        info.appendChild(variant);
+      }
+
+
+      if (item.sku) {
+        const sku =
+          document.createElement("div");
+
+        sku.className =
+          "item-sku";
+
+        sku.textContent =
+          `SKU: ${item.sku}`;
+
+        info.appendChild(sku);
+      }
+
+
+      const price =
+        document.createElement("div");
+
+      price.className =
+        "item-price";
+
+      price.textContent =
+        formatMoney(item.price);
+
+      info.appendChild(price);
+
+
+      /*
+       * Actions
+       */
+
+      const actions =
+        document.createElement("div");
+
+      actions.className =
+        "item-actions";
+
+
+      const itemTotal =
+        document.createElement("div");
+
+      itemTotal.className =
+        "item-total";
+
+      itemTotal.textContent =
+        formatMoney(
+          item.price *
+          item.quantity
+        );
+
+
+      /*
+       * Quantity control
+       */
+
+      const quantityControl =
+        document.createElement("div");
+
+      quantityControl.className =
+        "quantity-control";
+
+
+      const minusButton =
+        document.createElement("button");
+
+      minusButton.type = "button";
+
+      minusButton.className =
+        "quantity-button";
+
+      minusButton.setAttribute(
+        "aria-label",
+        `Decrease quantity of ${item.title || "product"}`
+      );
+
+      minusButton.innerHTML = `
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14"></path>
+        </svg>
+      `;
+
+      minusButton.disabled =
+        item.quantity <= 1;
+
+
+      const quantityValue =
+        document.createElement("span");
+
+      quantityValue.className =
+        "quantity-value";
+
+      quantityValue.textContent =
+        String(item.quantity);
+
+      quantityValue.setAttribute(
+        "aria-label",
+        `Quantity ${item.quantity}`
+      );
+
+
+      const plusButton =
+        document.createElement("button");
+
+      plusButton.type = "button";
+
+      plusButton.className =
+        "quantity-button";
+
+      plusButton.setAttribute(
+        "aria-label",
+        `Increase quantity of ${item.title || "product"}`
+      );
+
+      plusButton.innerHTML = `
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M12 5v14"></path>
+          <path d="M5 12h14"></path>
+        </svg>
+      `;
+
+      plusButton.disabled =
+        item.quantity >= MAX_ITEM_QUANTITY;
+
+
+      minusButton.addEventListener(
+        "click",
+        () => {
+          changeQuantity(
+            index,
+            item.quantity - 1
+          );
+        }
+      );
+
+
+      plusButton.addEventListener(
+        "click",
+        () => {
+          changeQuantity(
+            index,
+            item.quantity + 1
+          );
+        }
+      );
+
+
+      quantityControl.appendChild(
+        minusButton
+      );
+
+      quantityControl.appendChild(
+        quantityValue
+      );
+
+      quantityControl.appendChild(
+        plusButton
+      );
+
+
+      /*
+       * Remove button
+       */
+
+      const removeButton =
+        document.createElement("button");
+
+      removeButton.type = "button";
+
+      removeButton.className =
+        "remove-button";
+
+      removeButton.textContent =
+        "Remove";
+
+      removeButton.setAttribute(
+        "aria-label",
+        `Remove ${item.title || "product"} from cart`
+      );
+
+      removeButton.addEventListener(
+        "click",
+        () => {
+          removeItem(index);
+        }
+      );
+
+
+      actions.appendChild(itemTotal);
+      actions.appendChild(quantityControl);
+      actions.appendChild(removeButton);
+
+
+      article.appendChild(imageWrap);
+      article.appendChild(info);
+      article.appendChild(actions);
+
+
+      return article;
+    }
+
+
+    /*
+     * ============================================================
+     * RENDER
+     * ============================================================
+     */
+
+    function renderCart() {
+      cartItemsElement.innerHTML = "";
+
+      const totalQuantity =
+        getTotalQuantity();
+
+      const subtotal =
+        getSubtotal();
+
+
+      /*
+       * Header count
+       */
+
+      cartCount.textContent =
+        String(totalQuantity);
+
+      cartCount.setAttribute(
+        "aria-label",
+        `${totalQuantity} ${
+          totalQuantity === 1
+            ? "item"
+            : "items"
+        } in cart`
+      );
+
+
+      /*
+       * Summary
+       */
+
+      summaryItemCount.textContent =
+        String(totalQuantity);
+
+      summarySubtotal.textContent =
+        formatMoney(subtotal);
+
+      summaryTotal.textContent =
+        formatMoney(subtotal);
+
+
+      /*
+       * Empty state
+       */
+
       if (!cart.length) {
+        cartContent.style.display =
+          "none";
 
-        cartLayout.classList.add(
-          "is-hidden"
+        emptyCart.classList.add(
+          "visible"
         );
-
-        emptyCart.classList.remove(
-          "is-hidden"
-        );
-
-
-        summaryItems.textContent = "0";
-
-        summarySubtotal.textContent =
-          formatMoney(0);
-
-        summaryTotal.textContent =
-          formatMoney(0);
-
 
         checkoutButton.classList.add(
           "disabled"
@@ -1806,615 +1958,65 @@
           "true"
         );
 
-
-        cartPanelCount.textContent =
-          "0 items";
-
+        cartNote.style.display =
+          "none";
 
         return;
-
       }
 
 
       /*
-        CART HAS ITEMS
-      */
+       * Non-empty state
+       */
 
-      emptyCart.classList.add(
-        "is-hidden"
+      cartContent.style.display =
+        "grid";
+
+      emptyCart.classList.remove(
+        "visible"
       );
 
-      cartLayout.classList.remove(
-        "is-hidden"
-      );
+      cartNote.style.display =
+        "block";
 
 
       checkoutButton.classList.remove(
         "disabled"
       );
 
-      checkoutButton.removeAttribute(
-        "aria-disabled"
+      checkoutButton.setAttribute(
+        "aria-disabled",
+        "false"
       );
 
 
       /*
-        Remove previous rendered items.
-      */
-      while (
-        cartItemsElement.firstChild
-      ) {
-
-        cartItemsElement.removeChild(
-          cartItemsElement.firstChild
-        );
-
-      }
-
-
-      const fragment =
-        document.createDocumentFragment();
-
-
-      cart.forEach(function (item, index) {
-
-        fragment.appendChild(
-          createCartItem(item, index)
-        );
-
-      });
-
-
-      cartItemsElement.appendChild(
-        fragment
-      );
-
-
-      updateSummary();
-
-    }
-
-
-    /* =========================================================
-       CREATE CART ITEM
-       ========================================================= */
-
-    function createCartItem(item, index) {
-
-      const wrapper =
-        document.createElement("article");
-
-      wrapper.className =
-        "cart-item";
-
-
-      /*
-        IMAGE
-      */
-
-      const imageWrap =
-        document.createElement("div");
-
-      imageWrap.className =
-        "cart-image-wrap";
-
-
-      const imageSource =
-        getSafeImageSource(
-          item.image ||
-          item.image_proxy ||
-          ""
-        );
-
-
-      if (imageSource) {
-
-        const image =
-          document.createElement("img");
-
-
-        image.className =
-          "cart-image";
-
-
-        image.alt =
-          item.title || "Product";
-
-
-        image.loading =
-          "lazy";
-
-
-        image.decoding =
-          "async";
-
-
-        image.src =
-          imageSource;
-
-
-        image.addEventListener(
-          "error",
-          function () {
-
-            image.remove();
-
-            createImageFallback(
-              imageWrap
-            );
-
-          },
-          {
-            once: true
-          }
-        );
-
-
-        imageWrap.appendChild(
-          image
-        );
-
-      } else {
-
-        createImageFallback(
-          imageWrap
-        );
-
-      }
-
-
-      wrapper.appendChild(
-        imageWrap
-      );
-
-
-      /*
-        PRODUCT INFORMATION
-      */
-
-      const info =
-        document.createElement("div");
-
-      info.className =
-        "cart-info";
-
-
-      const title =
-        document.createElement("a");
-
-      title.className =
-        "cart-title";
-
-
-      title.textContent =
-        item.title || "Product";
-
-
-      title.href =
-        `./product.html?id=${encodeURIComponent(item.product_id)}`;
-
-
-      title.setAttribute(
-        "aria-label",
-        `View ${item.title || "product"}`
-      );
-
-
-      info.appendChild(
-        title
-      );
-
-
-      /*
-        VARIANT
-      */
-
-      const variantText =
-        formatVariants(item);
-
-
-      if (variantText) {
-
-        const variant =
-          document.createElement("div");
-
-
-        variant.className =
-          "cart-variant";
-
-
-        variant.textContent =
-          variantText;
-
-
-        info.appendChild(
-          variant
-        );
-
-      }
-
-
-      /*
-        UNIT PRICE
-      */
-
-      const unitPrice =
-        document.createElement("div");
-
-
-      unitPrice.className =
-        "cart-unit-price";
-
-
-      unitPrice.textContent =
-        `${formatMoney(item.price)} each`;
-
-
-      info.appendChild(
-        unitPrice
-      );
-
-
-      wrapper.appendChild(
-        info
-      );
-
-
-      /*
-        CONTROLS
-      */
-
-      const controls =
-        document.createElement("div");
-
-      controls.className =
-        "cart-controls";
-
-
-      /*
-        ITEM TOTAL
-      */
-
-      const itemTotal =
-        document.createElement("div");
-
-
-      itemTotal.className =
-        "item-total";
-
-
-      itemTotal.textContent =
-        formatMoney(
-          item.price * item.quantity
-        );
-
-
-      controls.appendChild(
-        itemTotal
-      );
-
-
-      /*
-        QUANTITY CONTROL
-      */
-
-      const quantityControl =
-        document.createElement("div");
-
-      quantityControl.className =
-        "quantity-control";
-
-
-      /*
-        MINUS BUTTON
-      */
-
-      const minus =
-        document.createElement("button");
-
-
-      minus.type =
-        "button";
-
-
-      minus.className =
-        "quantity-button";
-
-
-      minus.textContent =
-        "−";
-
-
-      minus.disabled =
-        item.quantity <= 1;
-
-
-      minus.setAttribute(
-        "aria-label",
-        `Decrease quantity of ${item.title || "product"}`
-      );
-
-
-      minus.addEventListener(
-        "click",
-        function () {
-
-          changeQuantity(
-            index,
-            -1
+       * Render every item.
+       */
+
+      cart.forEach(
+        (item, index) => {
+          cartItemsElement.appendChild(
+            createCartItemElement(
+              item,
+              index
+            )
           );
-
         }
       );
-
-
-      quantityControl.appendChild(
-        minus
-      );
-
-
-      /*
-        QUANTITY VALUE
-      */
-
-      const quantity =
-        document.createElement("span");
-
-
-      quantity.className =
-        "quantity-value";
-
-
-      quantity.textContent =
-        String(item.quantity);
-
-
-      quantity.setAttribute(
-        "aria-label",
-        `Quantity: ${item.quantity}`
-      );
-
-
-      quantityControl.appendChild(
-        quantity
-      );
-
-
-      /*
-        PLUS BUTTON
-      */
-
-      const plus =
-        document.createElement("button");
-
-
-      plus.type =
-        "button";
-
-
-      plus.className =
-        "quantity-button";
-
-
-      plus.textContent =
-        "+";
-
-
-      plus.disabled =
-        item.quantity >= MAX_ITEM_QUANTITY ||
-        getTotalCartQuantity() >= MAX_TOTAL_QUANTITY;
-
-
-      plus.setAttribute(
-        "aria-label",
-        `Increase quantity of ${item.title || "product"}`
-      );
-
-
-      plus.addEventListener(
-        "click",
-        function () {
-
-          changeQuantity(
-            index,
-            1
-          );
-
-        }
-      );
-
-
-      quantityControl.appendChild(
-        plus
-      );
-
-
-      controls.appendChild(
-        quantityControl
-      );
-
-
-      /*
-        REMOVE BUTTON
-      */
-
-      const remove =
-        document.createElement("button");
-
-
-      remove.type =
-        "button";
-
-
-      remove.className =
-        "remove-button";
-
-
-      remove.textContent =
-        "Remove";
-
-
-      remove.setAttribute(
-        "aria-label",
-        `Remove ${item.title || "product"} from cart`
-      );
-
-
-      remove.addEventListener(
-        "click",
-        function () {
-
-          removeItem(index);
-
-        }
-      );
-
-
-      controls.appendChild(
-        remove
-      );
-
-
-      wrapper.appendChild(
-        controls
-      );
-
-
-      return wrapper;
-
     }
 
 
-    /* =========================================================
-       IMAGE FALLBACK
-       ========================================================= */
+    /*
+     * ============================================================
+     * QUANTITY
+     * ============================================================
+     */
 
-    function createImageFallback(container) {
-
-      if (
-        container.querySelector(
-          ".image-fallback"
-        )
-      ) {
-        return;
-      }
-
-
-      const fallback =
-        document.createElement("div");
-
-
-      fallback.className =
-        "image-fallback";
-
-
-      fallback.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-
-      fallback.innerHTML = `
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-          <circle cx="8" cy="9" r="1.5"></circle>
-          <path d="M3 16l4.5-4.5L11 15l2.5-2.5L21 19"></path>
-        </svg>
-      `;
-
-
-      container.appendChild(
-        fallback
-      );
-
-    }
-
-
-    /* =========================================================
-       CHANGE QUANTITY
-       ========================================================= */
-
-    function changeQuantity(index, delta) {
-
-      if (!cart[index]) {
-        return;
-      }
-
-
-      const current =
-        normalizeQuantity(
-          cart[index].quantity
-        );
-
-
-      const next =
-        current + Number(delta);
-
-
-      if (next <= 0) {
-
-        removeItem(index);
-
-        return;
-
-      }
-
-
-      if (
-        next > MAX_ITEM_QUANTITY
-      ) {
-
-        showToast(
-          `Maximum quantity is ${MAX_ITEM_QUANTITY}.`
-        );
-
-        return;
-
-      }
-
-
-      /*
-        For an increase, the current total must still be
-        below the maximum.
-      */
-      if (
-        delta > 0 &&
-        getTotalCartQuantity() >=
-          MAX_TOTAL_QUANTITY
-      ) {
-
-        showToast(
-          `Maximum total cart quantity is ${MAX_TOTAL_QUANTITY}.`
-        );
-
-        return;
-
-      }
-
-
-      cart[index].quantity =
-        next;
-
-
-      cart =
-        limitTotalCartQuantity(
-          cart
-        );
-
-
-      saveCart();
-
-      renderCart();
-
-    }
-
-
-    /* =========================================================
-       REMOVE ITEM
-       ========================================================= */
-
-    function removeItem(index) {
-
+    function changeQuantity(
+      index,
+      newQuantity
+    ) {
       if (
         index < 0 ||
         index >= cart.length
@@ -2423,603 +2025,157 @@
       }
 
 
-      const removed =
+      const quantity =
+        normalizeQuantity(
+          newQuantity
+        );
+
+
+      cart[index].quantity =
+        quantity;
+
+
+      saveCart();
+
+      renderCart();
+    }
+
+
+    /*
+     * ============================================================
+     * REMOVE
+     * ============================================================
+     */
+
+    function removeItem(index) {
+      if (
+        index < 0 ||
+        index >= cart.length
+      ) {
+        return;
+      }
+
+
+      const removedItem =
         cart[index];
 
 
-      cart.splice(
-        index,
-        1
-      );
-
+      cart.splice(index, 1);
 
       saveCart();
 
       renderCart();
 
 
-      showToast(
-        `${removed?.title || "Product"} removed from cart.`
-      );
-
-    }
-
-
-    /* =========================================================
-       SUMMARY
-       ========================================================= */
-
-    function updateSummary() {
-
-      let quantityTotal = 0;
-      let subtotal = 0;
-
-
-      cart.forEach(function (item) {
-
-        const quantity =
-          normalizeQuantity(
-            item.quantity
-          );
-
-
-        const price =
-          normalizePrice(
-            item.price
-          );
-
-
-        quantityTotal +=
-          quantity;
-
-
-        subtotal +=
-          price * quantity;
-
-      });
-
-
-      summaryItems.textContent =
-        String(quantityTotal);
-
-
-      summarySubtotal.textContent =
-        formatMoney(subtotal);
-
-
-      /*
-        Shipping is deliberately not included here.
-
-        CJ shipping is calculated authoritatively on
-        checkout.html through the Cloudflare Worker.
-      */
-      summaryTotal.textContent =
-        formatMoney(subtotal);
-
-
-      cartPanelCount.textContent =
-        `${cart.length} ${
-          cart.length === 1
-            ? "product"
-            : "products"
-        }`;
-
-    }
-
-
-    /* =========================================================
-       CART QUANTITY
-       ========================================================= */
-
-    function getTotalCartQuantity() {
-
-      return cart.reduce(
-        function (total, item) {
-
-          return (
-            total +
-            normalizeQuantity(
-              item.quantity
-            )
-          );
-
-        },
-        0
-      );
-
-    }
-
-
-    /* =========================================================
-       CART BADGE
-       ========================================================= */
-
-    function updateCartBadge() {
-
-      const total =
-        getTotalCartQuantity();
-
-
-      cartCount.textContent =
-        String(total);
-
-
-      cartCount.setAttribute(
-        "aria-label",
-        `${total} ${
-          total === 1
-            ? "item"
-            : "items"
-        } in cart`
-      );
-
-    }
-
-
-    /* =========================================================
-       VARIANT DISPLAY
-       ========================================================= */
-
-    function formatVariants(item) {
-
-      if (
-        !item ||
-        typeof item !== "object"
-      ) {
-        return "";
-      }
-
-
-      const source =
-        item.variants ||
-        item.selected_properties ||
-        item.properties ||
-        item.selectedProperties;
-
-
-      if (Array.isArray(source)) {
-
-        const values =
-          source
-            .map(function (property) {
-
-              if (
-                !property ||
-                typeof property !== "object"
-              ) {
-                return "";
-              }
-
-
-              const name =
-                normalizeText(
-                  property.group_name ||
-                  property.property_name ||
-                  property.name ||
-                  "",
-                  150
-                );
-
-
-              const value =
-                normalizeText(
-                  property.value_name ||
-                  property.property_value_name ||
-                  property.value ||
-                  "",
-                  250
-                );
-
-
-              if (
-                name &&
-                value
-              ) {
-                return `${name}: ${value}`;
-              }
-
-
-              return value || name;
-
-            })
-            .filter(Boolean);
-
-
-        if (values.length) {
-
-          return uniqueStrings(
-            values
-          ).join(" • ");
-
-        }
-
-      }
-
-
-      return normalizeText(
-        item.variantNameEn ||
-        item.variant_name ||
-        item.variantKey ||
-        item.variant ||
-        "",
-        400
-      );
-
-    }
-
-
-    /* =========================================================
-       SEARCH
-       ========================================================= */
-
-    function setupSearch() {
-
-      const form =
-        document.getElementById(
-          "searchForm"
+      if (removedItem) {
+        showStatus(
+          `${removedItem.title || "Product"} was removed from your cart.`,
+          "success"
         );
 
-
-      const input =
-        document.getElementById(
-          "searchInput"
-        );
-
-
-      if (!form || !input) {
-        return;
-      }
-
-
-      form.addEventListener(
-        "submit",
-        function (event) {
-
-          event.preventDefault();
-
-
-          const query =
-            normalizeText(
-              input.value,
-              200
-            );
-
-
-          if (query) {
-
-            window.location.href =
-              `./index.html?q=${encodeURIComponent(query)}#products`;
-
-          } else {
-
-            window.location.href =
-              "./index.html#products";
-
-          }
-
-        }
-      );
-
-    }
-
-
-    /* =========================================================
-       NORMALIZE QUANTITY
-       ========================================================= */
-
-    function normalizeQuantity(value) {
-
-      const quantity =
-        Number(value);
-
-
-      if (
-        !Number.isFinite(quantity) ||
-        quantity < 1
-      ) {
-        return 1;
-      }
-
-
-      return Math.min(
-        MAX_ITEM_QUANTITY,
-        Math.floor(quantity)
-      );
-
-    }
-
-
-    /* =========================================================
-       NORMALIZE PRICE
-       ========================================================= */
-
-    function normalizePrice(value) {
-
-      const number =
-        Number(value);
-
-
-      if (
-        !Number.isFinite(number) ||
-        number < 0
-      ) {
-        return 0;
-      }
-
-
-      /*
-        Prevent malformed localStorage values from producing
-        absurd display totals.
-      */
-      return Math.min(
-        number,
-        100000000
-      );
-
-    }
-
-
-    /* =========================================================
-       NORMALIZE TEXT
-       ========================================================= */
-
-    function normalizeText(
-      value,
-      maxLength = 500
-    ) {
-
-      return String(
-        value ?? ""
-      )
-        .replace(/\s+/g, " ")
-        .trim()
-        .slice(0, maxLength);
-
-    }
-
-
-    /* =========================================================
-       SAFE IMAGE SOURCE
-       ========================================================= */
-
-    function getSafeImageSource(value) {
-
-      const source =
-        String(
-          value || ""
-        ).trim();
-
-
-      if (!source) {
-        return "";
-      }
-
-
-      /*
-        Allow local relative paths.
-      */
-      if (
-        source.startsWith("/") ||
-        source.startsWith("./") ||
-        source.startsWith("../")
-      ) {
-
-        return source;
-
-      }
-
-
-      try {
-
-        const url =
-          new URL(
-            source,
-            window.location.origin
-          );
-
-
-        /*
-          Only HTTP(S) images are allowed.
-        */
-        if (
-          url.protocol === "http:" ||
-          url.protocol === "https:"
-        ) {
-
-          return url.href;
-
-        }
-
-
-        return "";
-
-      } catch (error) {
-
-        return "";
-
-      }
-
-    }
-
-
-    /* =========================================================
-       MONEY FORMAT
-       ========================================================= */
-
-    function formatMoney(value) {
-
-      const number =
-        normalizePrice(value);
-
-
-      try {
-
-        return new Intl.NumberFormat(
-          "en-US",
-          {
-            style: "currency",
-            currency: STORE_CURRENCY
-          }
-        ).format(number);
-
-      } catch (error) {
-
-        return `$${number.toFixed(2)}`;
-
-      }
-
-    }
-
-
-    /* =========================================================
-       UNIQUE STRINGS
-       ========================================================= */
-
-    function uniqueStrings(values) {
-
-      const seen =
-        new Set();
-
-
-      const result =
-        [];
-
-
-      for (
-        const value of values
-      ) {
-
-        const normalized =
-          String(
-            value || ""
-          ).trim();
-
-
-        if (!normalized) {
-          continue;
-        }
-
-
-        const key =
-          normalized.toLowerCase();
-
-
-        if (
-          !seen.has(key)
-        ) {
-
-          seen.add(key);
-
-          result.push(
-            normalized
-          );
-
-        }
-
-      }
-
-
-      return result;
-
-    }
-
-
-    /* =========================================================
-       TOAST
-       ========================================================= */
-
-    function showToast(message) {
-
-      if (!toast) {
-        return;
-      }
-
-
-      toast.textContent =
-        normalizeText(
-          message,
-          300
-        );
-
-
-      toast.classList.add(
-        "show"
-      );
-
-
-      if (toastTimer) {
-
-        clearTimeout(
-          toastTimer
-        );
-
-      }
-
-
-      toastTimer =
-        setTimeout(
-          function () {
-
-            toast.classList.remove(
-              "show"
-            );
-
-          },
+        window.setTimeout(
+          hideStatus,
           2500
         );
-
+      }
     }
 
 
-    /* =========================================================
-       CHECKOUT BUTTON SAFETY
-       ========================================================= */
+    /*
+     * ============================================================
+     * CHECKOUT LINK
+     * ============================================================
+     *
+     * An empty cart cannot navigate to checkout.
+     */
 
     checkoutButton.addEventListener(
       "click",
-      function (event) {
-
+      event => {
         if (!cart.length) {
-
           event.preventDefault();
 
-          showToast(
-            "Your cart is empty."
+          showStatus(
+            "Your cart is empty. Add a product before proceeding to checkout.",
+            "warning"
           );
 
+          return;
         }
 
+        /*
+         * Save one final time immediately before checkout.
+         *
+         * This guarantees checkout receives the latest canonical
+         * cart representation.
+         */
+
+        saveCart();
       }
     );
 
 
-    /* =========================================================
-       OPTIONAL DEBUG API
-       ========================================================= */
+    /*
+     * ============================================================
+     * CROSS-TAB / CROSS-WINDOW SYNC
+     * ============================================================
+     *
+     * If cart data changes in another tab or page, reload the
+     * cart automatically.
+     */
 
-    window.PrasunCartDebug = {
+    window.addEventListener(
+      "storage",
+      event => {
+        if (
+          CART_KEYS.includes(
+            event.key
+          )
+        ) {
+          cart = loadCart();
 
-      getItemCount: function () {
-        return cart.length;
-      },
+          renderCart();
+        }
+      }
+    );
 
-      getTotalQuantity: function () {
-        return getTotalCartQuantity();
-      },
 
-      getCurrency: function () {
-        return STORE_CURRENCY;
-      },
+    /*
+     * ============================================================
+     * BFCache / PAGE RESTORE
+     * ============================================================
+     *
+     * Reload the cart whenever the page is restored from browser
+     * back/forward cache.
+     */
 
-      refresh: function () {
-        loadCart();
+    window.addEventListener(
+      "pageshow",
+      () => {
+        cart = loadCart();
+
         renderCart();
       }
+    );
 
-    };
+
+    /*
+     * ============================================================
+     * INITIALIZE
+     * ============================================================
+     */
+
+    currentYear.textContent =
+      String(
+        new Date().getFullYear()
+      );
+
+
+    cart = loadCart();
+
+    renderCart();
 
   </script>
 
 </body>
 </html>
-
