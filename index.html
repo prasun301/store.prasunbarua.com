@@ -22,7 +22,7 @@
   <style>
     :root {
       --black: #111111;
-      --black-2: #202124;
+      --black-soft: #202124;
       --text: #171717;
       --muted: #6b7280;
       --muted-2: #9ca3af;
@@ -32,21 +32,9 @@
       --surface-2: #f0f1f3;
       --white: #ffffff;
       --green: #087443;
-      --green-bg: #ecfdf3;
       --red: #c62828;
-      --yellow: #f59e0b;
-
-      --radius-sm: 9px;
-      --radius-md: 13px;
-      --radius-lg: 18px;
-      --radius-xl: 24px;
-
-      --shadow-sm:
-        0 2px 10px rgba(0, 0, 0, 0.06);
-
-      --shadow:
-        0 18px 60px rgba(0, 0, 0, 0.15);
-
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
+      --shadow: 0 20px 70px rgba(0, 0, 0, 0.16);
       --max-width: 1280px;
     }
 
@@ -116,9 +104,9 @@
       display: none !important;
     }
 
-    /* =========================================================
+    /* =====================================================
        TOP BAR
-    ========================================================= */
+    ===================================================== */
 
     .top-bar {
       background: var(--black);
@@ -158,29 +146,18 @@
       text-decoration: underline;
     }
 
-    /* =========================================================
+    /* =====================================================
        HEADER
-    ========================================================= */
+    ===================================================== */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 80;
-      background: rgba(
-        255,
-        255,
-        255,
-        0.96
-      );
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom:
-        1px solid rgba(
-          229,
-          231,
-          235,
-          0.92
-        );
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
     }
 
     .header-main {
@@ -203,42 +180,29 @@
     .header-search {
       position: relative;
       flex: 1;
-      max-width: 620px;
+      max-width: 650px;
       margin: 0 auto;
     }
 
     .search-input {
       width: 100%;
       height: 44px;
-      padding:
-        0
-        44px
-        0
-        44px;
-      border:
-        1px solid
-        var(--border);
+      padding: 0 46px 0 44px;
+      border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--surface);
       color: var(--text);
       outline: none;
       transition:
-        border-color 0.2s ease,
         background 0.2s ease,
+        border-color 0.2s ease,
         box-shadow 0.2s ease;
     }
 
     .search-input:focus {
       background: var(--white);
       border-color: #9ca3af;
-      box-shadow:
-        0 0 0 3px
-        rgba(
-          17,
-          17,
-          17,
-          0.06
-        );
+      box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.05);
     }
 
     .search-icon {
@@ -247,8 +211,8 @@
       top: 50%;
       width: 18px;
       height: 18px;
-      color: var(--muted);
       transform: translateY(-50%);
+      color: var(--muted);
       pointer-events: none;
     }
 
@@ -256,8 +220,8 @@
       position: absolute;
       right: 7px;
       top: 50%;
-      width: 31px;
-      height: 31px;
+      width: 30px;
+      height: 30px;
       transform: translateY(-50%);
       border: 0;
       border-radius: 50%;
@@ -301,9 +265,7 @@
       min-width: 19px;
       height: 19px;
       padding: 0 5px;
-      border:
-        2px solid
-        var(--white);
+      border: 2px solid var(--white);
       border-radius: 999px;
       background: var(--black);
       color: var(--white);
@@ -313,14 +275,12 @@
       text-align: center;
     }
 
-    /* =========================================================
+    /* =====================================================
        CATEGORY NAV
-    ========================================================= */
+    ===================================================== */
 
     .category-nav {
-      border-top:
-        1px solid
-        #f1f1f1;
+      border-top: 1px solid #f1f1f1;
       background: var(--white);
     }
 
@@ -340,9 +300,7 @@
     .category-button {
       flex-shrink: 0;
       height: 34px;
-      padding:
-        0
-        14px;
+      padding: 0 14px;
       border: 0;
       border-radius: 999px;
       background: transparent;
@@ -362,31 +320,23 @@
       color: var(--white);
     }
 
-    /* =========================================================
+    /* =====================================================
        HERO
-    ========================================================= */
+    ===================================================== */
 
     .hero {
-      padding:
-        64px
-        0
-        42px;
+      padding: 64px 0 42px;
       background:
         radial-gradient(
           circle at 18% 20%,
-          rgba(
-            0,
-            0,
-            0,
-            0.04
-          ),
-          transparent 30%
+          rgba(0, 0, 0, 0.04),
+          transparent 31%
         ),
         var(--white);
     }
 
     .hero-inner {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
       text-align: center;
     }
@@ -395,10 +345,9 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      color: #555;
+      color: #555555;
       font-size: 13px;
       font-weight: 650;
-      letter-spacing: 0.25px;
     }
 
     .hero-dot {
@@ -409,28 +358,17 @@
     }
 
     .hero h1 {
-      margin:
-        16px
-        0
-        0;
+      margin: 16px 0 0;
       color: var(--black);
-      font-size:
-        clamp(
-          38px,
-          5.5vw,
-          64px
-        );
+      font-size: clamp(38px, 5.5vw, 64px);
       line-height: 1.02;
       letter-spacing: -3px;
       font-weight: 770;
     }
 
     .hero p {
-      max-width: 680px;
-      margin:
-        19px
-        auto
-        0;
+      max-width: 690px;
+      margin: 20px auto 0;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.65;
@@ -446,28 +384,24 @@
 
     .hero-button {
       min-height: 45px;
-      padding:
-        0
-        21px;
+      padding: 0 21px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 14px;
       font-weight: 650;
-      text-decoration: none;
     }
 
     .hero-button.primary {
       border: 0;
       background: var(--black);
       color: var(--white);
+      text-decoration: none;
     }
 
     .hero-button.secondary {
-      border:
-        1px solid
-        var(--border);
+      border: 1px solid var(--border);
       background: var(--white);
       color: var(--black);
     }
@@ -476,9 +410,9 @@
       background: var(--surface);
     }
 
-    /* =========================================================
-       TRUST STRIP
-    ========================================================= */
+    /* =====================================================
+       TRUST
+    ===================================================== */
 
     .trust-strip {
       padding-bottom: 40px;
@@ -487,28 +421,19 @@
     .trust-grid {
       display: grid;
       grid-template-columns:
-        repeat(
-          4,
-          minmax(0, 1fr)
-        );
+        repeat(4, minmax(0, 1fr));
       overflow: hidden;
-      border:
-        1px solid
-        var(--border);
+      border: 1px solid var(--border);
       border-radius: 16px;
     }
 
     .trust-item {
       min-height: 82px;
-      padding:
-        15px
-        20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       gap: 12px;
-      border-right:
-        1px solid
-        var(--border);
+      border-right: 1px solid var(--border);
     }
 
     .trust-item:last-child {
@@ -539,15 +464,12 @@
       font-size: 12px;
     }
 
-    /* =========================================================
+    /* =====================================================
        PRODUCTS
-    ========================================================= */
+    ===================================================== */
 
     .products-section {
-      padding:
-        10px
-        0
-        90px;
+      padding: 10px 0 90px;
     }
 
     .section-top {
@@ -567,10 +489,7 @@
     }
 
     .section-heading p {
-      margin:
-        5px
-        0
-        0;
+      margin: 5px 0 0;
       color: var(--muted);
       font-size: 13px;
     }
@@ -584,13 +503,8 @@
     .product-grid {
       display: grid;
       grid-template-columns:
-        repeat(
-          4,
-          minmax(0, 1fr)
-        );
-      gap:
-        29px
-        20px;
+        repeat(4, minmax(0, 1fr));
+      gap: 29px 20px;
     }
 
     .product-card {
@@ -600,9 +514,7 @@
     }
 
     .product-card:focus-visible {
-      outline:
-        2px solid
-        var(--black);
+      outline: 2px solid var(--black);
       outline-offset: 6px;
       border-radius: 16px;
     }
@@ -619,8 +531,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition:
-        transform 0.4s ease;
+      transition: transform 0.4s ease;
     }
 
     .product-card:hover .product-image {
@@ -632,9 +543,7 @@
       left: 10px;
       top: 10px;
       z-index: 2;
-      padding:
-        5px
-        8px;
+      padding: 5px 8px;
       border-radius: 999px;
       background: var(--black);
       color: var(--white);
@@ -643,10 +552,7 @@
     }
 
     .product-info {
-      padding:
-        12px
-        2px
-        0;
+      padding: 12px 2px 0;
     }
 
     .product-category {
@@ -673,7 +579,7 @@
     }
 
     .product-rating {
-      min-height: 19px;
+      min-height: 18px;
       margin-top: 5px;
       display: flex;
       align-items: center;
@@ -709,14 +615,12 @@
       font-weight: 700;
     }
 
-    /* =========================================================
-       LOADING / EMPTY
-    ========================================================= */
+    /* =====================================================
+       LOADING
+    ===================================================== */
 
     .loading {
-      padding:
-        100px
-        20px;
+      padding: 100px 20px;
       color: var(--muted);
       text-align: center;
     }
@@ -724,18 +628,11 @@
     .spinner {
       width: 30px;
       height: 30px;
-      margin:
-        0
-        auto
-        16px;
-      border:
-        3px solid
-        #e5e7eb;
-      border-top-color:
-        var(--black);
+      margin: 0 auto 16px;
+      border: 3px solid #e5e7eb;
+      border-top-color: var(--black);
       border-radius: 50%;
-      animation:
-        spin 0.8s linear infinite;
+      animation: spin 0.8s linear infinite;
     }
 
     @keyframes spin {
@@ -746,9 +643,7 @@
 
     .empty-state {
       grid-column: 1 / -1;
-      padding:
-        90px
-        20px;
+      padding: 90px 20px;
       color: var(--muted);
       text-align: center;
     }
@@ -760,9 +655,9 @@
       font-size: 19px;
     }
 
-    /* =========================================================
+    /* =====================================================
        PRODUCT MODAL
-    ========================================================= */
+    ===================================================== */
 
     .modal-overlay {
       position: fixed;
@@ -772,13 +667,7 @@
       align-items: center;
       justify-content: center;
       padding: 22px;
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          0.48
-        );
+      background: rgba(0, 0, 0, 0.48);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
@@ -788,38 +677,26 @@
     }
 
     .product-modal {
-      width: min(
-        1120px,
-        100%
-      );
-      max-height:
-        calc(
-          100vh - 44px
-        );
+      width: min(1120px, 100%);
+      max-height: calc(100vh - 44px);
       overflow-y: auto;
-      position: relative;
       background: var(--white);
       border-radius: 24px;
       box-shadow: var(--shadow);
+      position: relative;
       overscroll-behavior: contain;
     }
 
     .modal-close {
       position: absolute;
-      top: 15px;
       right: 15px;
-      z-index: 25;
+      top: 15px;
+      z-index: 30;
       width: 40px;
       height: 40px;
       border: 0;
       border-radius: 50%;
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.95
-        );
+      background: rgba(255,255,255,0.96);
       box-shadow: var(--shadow-sm);
       display: grid;
       place-items: center;
@@ -836,9 +713,9 @@
         minmax(420px, 0.96fr);
     }
 
-    /* =========================================================
+    /* =====================================================
        GALLERY
-    ========================================================= */
+    ===================================================== */
 
     .gallery-panel {
       min-width: 0;
@@ -848,8 +725,8 @@
 
     .gallery-main {
       position: relative;
-      overflow: hidden;
       aspect-ratio: 1 / 1;
+      overflow: hidden;
       border-radius: 16px;
       background: var(--white);
       cursor: zoom-in;
@@ -865,26 +742,20 @@
       position: absolute;
       right: 12px;
       bottom: 12px;
-      width: 36px;
-      height: 36px;
+      width: 37px;
+      height: 37px;
       border: 0;
       border-radius: 50%;
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.95
-        );
+      background: rgba(255,255,255,0.96);
       box-shadow: var(--shadow-sm);
       display: grid;
       place-items: center;
     }
 
     .gallery-thumbnails {
-      margin-top: 12px;
       display: flex;
       gap: 9px;
+      margin-top: 12px;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -898,18 +769,14 @@
       height: 66px;
       flex-shrink: 0;
       padding: 2px;
-      border:
-        1px solid
-        var(--border);
+      border: 1px solid var(--border);
       border-radius: 10px;
       background: var(--white);
       overflow: hidden;
     }
 
     .gallery-thumb.active {
-      border:
-        2px solid
-        var(--black);
+      border: 2px solid var(--black);
     }
 
     .gallery-thumb img {
@@ -919,15 +786,12 @@
       border-radius: 7px;
     }
 
-    /* =========================================================
+    /* =====================================================
        MODAL DETAILS
-    ========================================================= */
+    ===================================================== */
 
     .modal-details {
-      padding:
-        43px
-        42px
-        40px;
+      padding: 44px 42px 40px;
     }
 
     .modal-category {
@@ -941,14 +805,9 @@
 
     .modal-title {
       margin: 0;
-      padding-right: 28px;
+      padding-right: 30px;
       color: var(--black);
-      font-size:
-        clamp(
-          26px,
-          3vw,
-          36px
-        );
+      font-size: clamp(26px, 3vw, 36px);
       line-height: 1.14;
       letter-spacing: -1.1px;
     }
@@ -1003,15 +862,13 @@
 
     .product-divider {
       height: 1px;
-      margin:
-        22px
-        0;
+      margin: 22px 0;
       background: var(--border);
     }
 
-    /* =========================================================
+    /* =====================================================
        VARIANTS
-    ========================================================= */
+    ===================================================== */
 
     .variant-groups {
       display: flex;
@@ -1023,7 +880,7 @@
       min-width: 0;
     }
 
-    .variant-group-label {
+    .variant-label {
       margin-bottom: 9px;
       color: var(--black);
       font-size: 14px;
@@ -1038,24 +895,16 @@
 
     .variant-option {
       min-height: 40px;
-      padding:
-        0
-        14px;
-      border:
-        1px solid
-        var(--border-dark);
+      padding: 0 14px;
+      border: 1px solid var(--border-dark);
       border-radius: 9px;
       background: var(--white);
       color: #222;
       font-size: 13px;
       font-weight: 600;
-      transition:
-        border-color 0.15s ease,
-        background 0.15s ease,
-        box-shadow 0.15s ease;
     }
 
-    .variant-option:hover:not(:disabled) {
+    .variant-option:hover {
       border-color: #555;
     }
 
@@ -1063,9 +912,7 @@
       border-color: var(--black);
       background: var(--black);
       color: var(--white);
-      box-shadow:
-        0 0 0 1px
-        var(--black);
+      box-shadow: 0 0 0 1px var(--black);
     }
 
     .variant-option:disabled {
@@ -1073,28 +920,24 @@
       text-decoration: line-through;
     }
 
-    .variant-fallback-select {
+    .variant-select {
       width: 100%;
       height: 45px;
-      padding:
-        0
-        12px;
-      border:
-        1px solid
-        var(--border);
+      padding: 0 12px;
+      border: 1px solid var(--border);
       border-radius: 10px;
       background: var(--white);
       color: var(--black);
       outline: none;
     }
 
-    .variant-fallback-select:focus {
+    .variant-select:focus {
       border-color: #888;
     }
 
-    /* =========================================================
-       QUANTITY
-    ========================================================= */
+    /* =====================================================
+       PURCHASE
+    ===================================================== */
 
     .purchase-area {
       margin-top: 22px;
@@ -1119,9 +962,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border:
-        1px solid
-        var(--border-dark);
+      border: 1px solid var(--border-dark);
       border-radius: 10px;
       background: var(--white);
     }
@@ -1135,7 +976,7 @@
       font-size: 20px;
     }
 
-    .quantity-button:hover:not(:disabled) {
+    .quantity-button:hover {
       background: var(--surface);
     }
 
@@ -1145,8 +986,8 @@
       padding: 0;
       border: 0;
       outline: 0;
-      color: var(--black);
       background: var(--white);
+      color: var(--black);
       text-align: center;
       font-size: 14px;
       font-weight: 700;
@@ -1158,10 +999,6 @@
       margin: 0;
       -webkit-appearance: none;
     }
-
-    /* =========================================================
-       PURCHASE BUTTONS
-    ========================================================= */
 
     .purchase-buttons {
       display: grid;
@@ -1180,9 +1017,7 @@
     }
 
     .add-button {
-      border:
-        1px solid
-        var(--black);
+      border: 1px solid var(--black);
       background: var(--white);
       color: var(--black);
     }
@@ -1202,7 +1037,7 @@
     }
 
     .purchase-button:disabled {
-      opacity: 0.42;
+      opacity: 0.48;
     }
 
     .selection-message {
@@ -1237,16 +1072,14 @@
       background: var(--red);
     }
 
-    /* =========================================================
+    /* =====================================================
        DELIVERY
-    ========================================================= */
+    ===================================================== */
 
     .delivery-box {
       margin-top: 20px;
       padding: 15px;
-      border:
-        1px solid
-        var(--border);
+      border: 1px solid var(--border);
       border-radius: 12px;
       background: #fafafa;
     }
@@ -1301,19 +1134,12 @@
       text-decoration: underline;
     }
 
-    .policy-links button:hover {
-      color: var(--black);
-    }
-
-    /* =========================================================
+    /* =====================================================
        DESCRIPTION
-    ========================================================= */
+    ===================================================== */
 
     .description-heading {
-      margin:
-        27px
-        0
-        10px;
+      margin: 27px 0 10px;
       color: var(--black);
       font-size: 16px;
       font-weight: 750;
@@ -1326,10 +1152,7 @@
     }
 
     .modal-description h3 {
-      margin:
-        23px
-        0
-        9px;
+      margin: 23px 0 9px;
       color: var(--black);
       font-size: 16px;
       line-height: 1.35;
@@ -1341,18 +1164,12 @@
     }
 
     .modal-description p {
-      margin:
-        0
-        0
-        12px;
+      margin: 0 0 12px;
     }
 
     .modal-description ul,
     .modal-description ol {
-      margin:
-        8px
-        0
-        17px;
+      margin: 8px 0 17px;
       padding-left: 20px;
     }
 
@@ -1367,22 +1184,16 @@
       font-weight: 700;
     }
 
-    /* =========================================================
+    /* =====================================================
        CART DRAWER
-    ========================================================= */
+    ===================================================== */
 
     .drawer-overlay {
       position: fixed;
       inset: 0;
       z-index: 120;
       display: none;
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          0.42
-        );
+      background: rgba(0, 0, 0, 0.42);
     }
 
     .drawer-overlay.open {
@@ -1394,27 +1205,15 @@
       top: 0;
       right: 0;
       z-index: 121;
-      width: min(
-        460px,
-        100%
-      );
+      width: min(460px, 100%);
       height: 100%;
       display: flex;
       flex-direction: column;
       background: var(--white);
       box-shadow:
-        -20px
-        0
-        60px
-        rgba(
-          0,
-          0,
-          0,
-          0.16
-        );
+        -20px 0 60px rgba(0,0,0,0.16);
       transform: translateX(100%);
-      transition:
-        transform 0.25s ease;
+      transition: transform 0.25s ease;
     }
 
     .cart-drawer.open {
@@ -1423,12 +1222,8 @@
 
     .drawer-header {
       min-height: 72px;
-      padding:
-        0
-        22px;
-      border-bottom:
-        1px solid
-        var(--border);
+      padding: 0 22px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1439,7 +1234,6 @@
       margin: 0;
       color: var(--black);
       font-size: 20px;
-      letter-spacing: -0.4px;
     }
 
     .drawer-subtitle {
@@ -1459,32 +1253,19 @@
       place-items: center;
     }
 
-    .drawer-close:hover {
-      background: var(--surface-2);
-    }
-
     .drawer-items {
       flex: 1;
       overflow-y: auto;
-      padding:
-        8px
-        22px
-        22px;
+      padding: 8px 22px 22px;
       overscroll-behavior: contain;
     }
 
     .cart-item {
       display: grid;
-      grid-template-columns:
-        84px
-        minmax(0, 1fr);
+      grid-template-columns: 84px minmax(0, 1fr);
       gap: 14px;
-      padding:
-        16px
-        0;
-      border-bottom:
-        1px solid
-        var(--border);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
     }
 
     .cart-item-image {
@@ -1529,9 +1310,7 @@
       display: inline-flex;
       align-items: center;
       overflow: hidden;
-      border:
-        1px solid
-        var(--border);
+      border: 1px solid var(--border);
       border-radius: 8px;
     }
 
@@ -1541,7 +1320,6 @@
       border: 0;
       background: var(--white);
       color: var(--black);
-      font-size: 16px;
     }
 
     .drawer-quantity button:hover {
@@ -1570,9 +1348,7 @@
     }
 
     .drawer-empty {
-      padding:
-        100px
-        20px;
+      padding: 100px 20px;
       color: var(--muted);
       text-align: center;
     }
@@ -1580,10 +1356,7 @@
     .drawer-empty-icon {
       width: 60px;
       height: 60px;
-      margin:
-        0
-        auto
-        15px;
+      margin: 0 auto 15px;
       border-radius: 50%;
       background: var(--surface);
       display: grid;
@@ -1599,13 +1372,8 @@
 
     .drawer-footer {
       flex-shrink: 0;
-      padding:
-        17px
-        22px
-        22px;
-      border-top:
-        1px solid
-        var(--border);
+      padding: 17px 22px 22px;
+      border-top: 1px solid var(--border);
       background: var(--white);
     }
 
@@ -1628,10 +1396,7 @@
     }
 
     .drawer-note {
-      margin:
-        6px
-        0
-        15px;
+      margin: 6px 0 15px;
       color: var(--muted);
       font-size: 11px;
       line-height: 1.5;
@@ -1656,9 +1421,9 @@
       opacity: 0.42;
     }
 
-    /* =========================================================
+    /* =====================================================
        POLICY MODAL
-    ========================================================= */
+    ===================================================== */
 
     .policy-overlay {
       position: fixed;
@@ -1668,13 +1433,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          0.48
-        );
+      background: rgba(0,0,0,0.48);
       backdrop-filter: blur(7px);
       -webkit-backdrop-filter: blur(7px);
     }
@@ -1684,14 +1443,8 @@
     }
 
     .policy-modal {
-      width: min(
-        760px,
-        100%
-      );
-      max-height:
-        calc(
-          100vh - 40px
-        );
+      width: min(760px, 100%);
+      max-height: calc(100vh - 40px);
       overflow-y: auto;
       border-radius: 20px;
       background: var(--white);
@@ -1703,19 +1456,9 @@
       top: 0;
       z-index: 2;
       min-height: 68px;
-      padding:
-        0
-        22px;
-      border-bottom:
-        1px solid
-        var(--border);
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.96
-        );
+      padding: 0 22px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
@@ -1746,10 +1489,7 @@
     }
 
     .policy-body h3 {
-      margin:
-        22px
-        0
-        7px;
+      margin: 22px 0 7px;
       color: var(--black);
       font-size: 15px;
     }
@@ -1759,17 +1499,11 @@
     }
 
     .policy-body p {
-      margin:
-        0
-        0
-        12px;
+      margin: 0 0 12px;
     }
 
     .policy-body ul {
-      margin:
-        7px
-        0
-        15px;
+      margin: 7px 0 15px;
       padding-left: 20px;
     }
 
@@ -1778,9 +1512,9 @@
       font-weight: 700;
     }
 
-    /* =========================================================
+    /* =====================================================
        TOAST
-    ========================================================= */
+    ===================================================== */
 
     .toast-container {
       position: fixed;
@@ -1792,27 +1526,14 @@
     }
 
     .toast {
-      max-width:
-        calc(
-          100vw - 30px
-        );
       min-width: 260px;
-      padding:
-        13px
-        17px;
+      max-width: calc(100vw - 30px);
+      padding: 13px 17px;
       border-radius: 11px;
       background: var(--black);
       color: var(--white);
       box-shadow:
-        0
-        12px
-        35px
-        rgba(
-          0,
-          0,
-          0,
-          0.2
-        );
+        0 12px 35px rgba(0,0,0,0.2);
       font-size: 13px;
       font-weight: 600;
       text-align: center;
@@ -1828,15 +1549,12 @@
       transform: translateY(0);
     }
 
-    /* =========================================================
+    /* =====================================================
        FOOTER
-    ========================================================= */
+    ===================================================== */
 
     .site-footer {
-      padding:
-        58px
-        0
-        25px;
+      padding: 58px 0 25px;
       background: var(--black);
       color: #d1d5db;
     }
@@ -1845,10 +1563,7 @@
       display: grid;
       grid-template-columns:
         1.45fr
-        repeat(
-          3,
-          1fr
-        );
+        repeat(3, 1fr);
       gap: 42px;
       padding-bottom: 44px;
     }
@@ -1868,11 +1583,20 @@
       line-height: 1.7;
     }
 
+    .footer-contact {
+      margin-top: 18px;
+      color: #9ca3af;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-contact a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
     .footer-heading {
-      margin:
-        0
-        0
-        14px;
+      margin: 0 0 14px;
       color: var(--white);
       font-size: 13px;
       font-weight: 700;
@@ -1901,27 +1625,9 @@
       text-decoration: underline;
     }
 
-    .footer-contact {
-      margin-top: 18px;
-      color: #9ca3af;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .footer-contact a {
-      color: var(--white);
-      text-decoration: none;
-    }
-
-    .footer-contact a:hover {
-      text-decoration: underline;
-    }
-
     .footer-bottom {
       padding-top: 22px;
-      border-top:
-        1px solid
-        #292929;
+      border-top: 1px solid #292929;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1948,17 +1654,14 @@
       color: var(--white);
     }
 
-    /* =========================================================
+    /* =====================================================
        RESPONSIVE
-    ========================================================= */
+    ===================================================== */
 
     @media (max-width: 1050px) {
       .product-grid {
         grid-template-columns:
-          repeat(
-            3,
-            minmax(0, 1fr)
-          );
+          repeat(3, minmax(0, 1fr));
       }
 
       .modal-content {
@@ -1968,9 +1671,7 @@
       }
 
       .modal-details {
-        padding:
-          35px
-          30px;
+        padding: 35px 30px;
       }
     }
 
@@ -1997,10 +1698,7 @@
 
       .trust-grid {
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
       }
 
       .trust-item:nth-child(2) {
@@ -2008,17 +1706,12 @@
       }
 
       .trust-item:nth-child(-n + 2) {
-        border-bottom:
-          1px solid
-          var(--border);
+        border-bottom: 1px solid var(--border);
       }
 
       .product-grid {
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0, 1fr)
-          );
+          repeat(2, minmax(0, 1fr));
       }
 
       .modal-overlay {
@@ -2037,14 +1730,8 @@
         max-height: 430px;
       }
 
-      .gallery-main-image {
-        max-height: 430px;
-      }
-
       .footer-grid {
-        grid-template-columns:
-          1fr
-          1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .footer-grid > :first-child {
@@ -2054,10 +1741,7 @@
 
     @media (max-width: 600px) {
       .container {
-        width:
-          calc(
-            100% - 24px
-          );
+        width: calc(100% - 24px);
       }
 
       .top-bar {
@@ -2098,10 +1782,7 @@
       }
 
       .hero {
-        padding:
-          44px
-          0
-          32px;
+        padding: 44px 0 32px;
       }
 
       .hero h1 {
@@ -2132,9 +1813,7 @@
 
       .trust-item {
         border-right: 0;
-        border-bottom:
-          1px solid
-          var(--border);
+        border-bottom: 1px solid var(--border);
       }
 
       .trust-item:last-child {
@@ -2150,9 +1829,7 @@
       }
 
       .product-grid {
-        gap:
-          24px
-          11px;
+        gap: 24px 11px;
       }
 
       .product-title {
@@ -2171,11 +1848,7 @@
       .product-modal {
         width: 100%;
         max-height: 96vh;
-        border-radius:
-          22px
-          22px
-          0
-          0;
+        border-radius: 22px 22px 0 0;
       }
 
       .modal-close {
@@ -2184,10 +1857,7 @@
       }
 
       .gallery-panel {
-        padding:
-          10px
-          10px
-          0;
+        padding: 10px 10px 0;
       }
 
       .gallery-main {
@@ -2195,17 +1865,11 @@
       }
 
       .gallery-thumbnails {
-        padding:
-          8px
-          3px
-          3px;
+        padding: 8px 3px 3px;
       }
 
       .modal-details {
-        padding:
-          22px
-          18px
-          28px;
+        padding: 22px 18px 28px;
       }
 
       .modal-title {
@@ -2261,9 +1925,9 @@
 
 <body>
 
-  <!-- ========================================================
+  <!-- =====================================================
        TOP BAR
-  ========================================================= -->
+  ====================================================== -->
 
   <div class="top-bar">
     <div class="container top-bar-inner">
@@ -2300,9 +1964,9 @@
   </div>
 
 
-  <!-- ========================================================
+  <!-- =====================================================
        HEADER
-  ========================================================= -->
+  ====================================================== -->
 
   <header class="site-header">
 
@@ -2311,7 +1975,7 @@
       <a
         class="brand"
         href="./index.html"
-        aria-label="Prasun Store home"
+        aria-label="Prasun Store"
       >
         Prasun Store
       </a>
@@ -2374,9 +2038,10 @@
           id="contactHeaderButton"
           class="header-action"
           type="button"
-          aria-label="Contact Prasun Store"
+          aria-label="Contact"
           title="Contact"
         >
+
           <svg
             width="20"
             height="20"
@@ -2389,6 +2054,7 @@
               d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v7A2.5 2.5 0 0 1 17.5 15H11l-4.5 4V15h0A2.5 2.5 0 0 1 4 12.5v-7Z"
             ></path>
           </svg>
+
         </button>
 
 
@@ -2396,7 +2062,7 @@
           id="cartButton"
           class="header-action"
           type="button"
-          aria-label="Open shopping cart"
+          aria-label="Shopping cart"
           title="Cart"
         >
 
@@ -2411,6 +2077,7 @@
             <path d="M6 7h12l1 13H5L6 7Z"></path>
             <path d="M9 7a3 3 0 0 1 6 0"></path>
           </svg>
+
 
           <span
             id="cartCount"
@@ -2441,9 +2108,9 @@
   </header>
 
 
-  <!-- ========================================================
+  <!-- =====================================================
        MAIN
-  ========================================================= -->
+  ====================================================== -->
 
   <main>
 
@@ -2715,9 +2382,9 @@
   </main>
 
 
-  <!-- ========================================================
+  <!-- =====================================================
        PRODUCT MODAL
-  ========================================================= -->
+  ====================================================== -->
 
   <div
     id="modalOverlay"
@@ -2726,7 +2393,6 @@
   >
 
     <div
-      id="productModal"
       class="product-modal"
       role="dialog"
       aria-modal="true"
@@ -2755,6 +2421,8 @@
 
 
       <div class="modal-content">
+
+        <!-- GALLERY -->
 
         <div class="gallery-panel">
 
@@ -2792,13 +2460,9 @@
                   r="6.8"
                 ></circle>
 
-                <path
-                  d="m16 16 5 5"
-                ></path>
+                <path d="m16 16 5 5"></path>
 
-                <path
-                  d="M10.8 7.8v6M7.8 10.8h6"
-                ></path>
+                <path d="M10.8 7.8v6M7.8 10.8h6"></path>
               </svg>
 
             </button>
@@ -2813,6 +2477,8 @@
 
         </div>
 
+
+        <!-- DETAILS -->
 
         <div class="modal-details">
 
@@ -2848,10 +2514,12 @@
               class="modal-price"
             ></span>
 
+
             <span
               id="modalPriceOld"
               class="modal-price-old"
             ></span>
+
 
             <span
               id="modalSavings"
@@ -2869,11 +2537,15 @@
           <div class="product-divider"></div>
 
 
+          <!-- VARIATION CONTROLS -->
+
           <div
             id="variantGroups"
             class="variant-groups"
           ></div>
 
+
+          <!-- PURCHASE -->
 
           <div class="purchase-area">
 
@@ -2884,10 +2556,7 @@
 
             <div class="purchase-row">
 
-              <div
-                class="quantity-selector"
-                aria-label="Product quantity"
-              >
+              <div class="quantity-selector">
 
                 <button
                   id="modalQuantityMinus"
@@ -2969,6 +2638,8 @@
           </div>
 
 
+          <!-- DELIVERY -->
+
           <div class="delivery-box">
 
             <div class="delivery-row">
@@ -3031,9 +2702,7 @@
                     d="M20 11a8 8 0 1 1-2.34-5.66"
                   ></path>
 
-                  <path
-                    d="M20 4v6h-6"
-                  ></path>
+                  <path d="M20 4v6h-6"></path>
                 </svg>
               </div>
 
@@ -3100,9 +2769,9 @@
   </div>
 
 
-  <!-- ========================================================
-       CART DRAWER
-  ========================================================= -->
+  <!-- =====================================================
+       CART
+  ====================================================== -->
 
   <div
     id="drawerOverlay"
@@ -3198,9 +2867,9 @@
   </aside>
 
 
-  <!-- ========================================================
-       POLICY MODAL
-  ========================================================= -->
+  <!-- =====================================================
+       POLICY
+  ====================================================== -->
 
   <div
     id="policyOverlay"
@@ -3258,9 +2927,9 @@
   </div>
 
 
-  <!-- ========================================================
+  <!-- =====================================================
        TOAST
-  ========================================================= -->
+  ====================================================== -->
 
   <div class="toast-container">
 
@@ -3274,9 +2943,9 @@
   </div>
 
 
-  <!-- ========================================================
+  <!-- =====================================================
        FOOTER
-  ========================================================= -->
+  ====================================================== -->
 
   <footer class="site-footer">
 
@@ -3487,6 +3156,7 @@
   <script>
     "use strict";
 
+
     /* =========================================================
        CONFIGURATION
     ========================================================= */
@@ -3500,9 +3170,9 @@
       "shoppingCart"
     ];
 
-    const MAX_ITEM_QUANTITY = 99;
-
     const STORE_CURRENCY = "USD";
+
+    const MAX_ITEM_QUANTITY = 99;
 
 
     /* =========================================================
@@ -3516,6 +3186,8 @@
 
       search: "",
 
+      cart: [],
+
       selectedProduct: null,
 
       selectedVariant: null,
@@ -3524,9 +3196,7 @@
 
       quantity: 1,
 
-      currentGalleryImage: "",
-
-      cart: []
+      currentGalleryImage: ""
     };
 
 
@@ -3590,14 +3260,14 @@
           "modalClose"
         ),
 
-      galleryMain:
-        document.getElementById(
-          "galleryMain"
-        ),
-
       modalImage:
         document.getElementById(
           "modalImage"
+        ),
+
+      galleryMain:
+        document.getElementById(
+          "galleryMain"
         ),
 
       galleryZoom:
@@ -3753,7 +3423,7 @@
 
 
     /* =========================================================
-       UTILITIES
+       GENERAL HELPERS
     ========================================================= */
 
     function normalizeQuantity(
@@ -3845,7 +3515,7 @@
               "show"
             );
           },
-          2400
+          2500
         );
     }
 
@@ -3937,7 +3607,7 @@
             item =>
               String(
                 item ??
-                  ""
+                ""
               ).trim()
           )
           .filter(
@@ -3961,7 +3631,7 @@
             item =>
               String(
                 item ??
-                  ""
+                ""
               ).trim()
           )
           .filter(
@@ -3973,8 +3643,9 @@
       const text =
         String(
           value ??
-            ""
+          ""
         ).trim();
+
 
       if (!text) {
         return [];
@@ -4007,7 +3678,7 @@
           );
         }
       } catch {
-        // Normal text.
+        // Plain text.
       }
 
 
@@ -4026,7 +3697,7 @@
     function getProductCategories(
       product
     ) {
-      const combined = [
+      const all = [
         ...normalizeCategories(
           product?.store_categories
         ),
@@ -4041,11 +3712,11 @@
         new Set();
 
 
-      return combined.filter(
+      return all.filter(
         category => {
           const key =
-            category
-              .toLowerCase();
+            category.toLowerCase();
+
 
           if (
             seen.has(
@@ -4054,6 +3725,7 @@
           ) {
             return false;
           }
+
 
           seen.add(
             key
@@ -4066,7 +3738,7 @@
 
 
     /* =========================================================
-       DESCRIPTION SANITIZER
+       DESCRIPTION CLEANER
     ========================================================= */
 
     function cleanDescriptionText(
@@ -4075,8 +3747,9 @@
       let value =
         String(
           text ??
-            ""
+          ""
         );
+
 
       value =
         value
@@ -4095,43 +3768,40 @@
           .trim();
 
 
-      value =
-        value
-          .replace(
-            /^\s*#{1,6}\s*/g,
-            ""
-          )
-          .replace(
-            /^\s*\*+\s*/g,
-            ""
-          )
-          .replace(
-            /\s*\*+\s*$/g,
-            ""
-          )
-          .replace(
-            /^\s*_+\s*/g,
-            ""
-          )
-          .replace(
-            /\s*_+\s*$/g,
-            ""
-          )
-          .replace(
-            /【/g,
-            ""
-          )
-          .replace(
-            /】/g,
-            ""
-          );
-
-
-      return value.trim();
+      return value
+        .replace(
+          /^\s*#{1,6}\s*/g,
+          ""
+        )
+        .replace(
+          /^\s*\*+\s*/g,
+          ""
+        )
+        .replace(
+          /\s*\*+\s*$/g,
+          ""
+        )
+        .replace(
+          /^\s*_+\s*/g,
+          ""
+        )
+        .replace(
+          /\s*_+\s*$/g,
+          ""
+        )
+        .replace(
+          /【/g,
+          ""
+        )
+        .replace(
+          /】/g,
+          ""
+        )
+        .trim();
     }
 
 
-    function isDescriptionHeading(
+    function descriptionHeading(
       text
     ) {
       const value =
@@ -4142,56 +3812,16 @@
             /[:：]\s*$/,
             ""
           )
-          .trim()
-          .toLowerCase();
-
-
-      return [
-        "features",
-        "feature",
-        "easy operation",
-        "easy operations",
-        "specifications",
-        "specification",
-        "package list",
-        "package lists",
-        "package contents",
-        "package content"
-      ].includes(
-        value
-      );
-    }
-
-
-    function normalizeDescriptionHeading(
-      text
-    ) {
-      const value =
-        cleanDescriptionText(
-          text
-        )
-          .replace(
-            /[:：]\s*$/,
-            ""
-          )
-          .trim()
           .toLowerCase();
 
 
       if (
-        value.includes(
-          "package"
-        )
-      ) {
-        return "Package Contents";
-      }
-
-
-      if (
-        value ===
-          "feature" ||
-        value ===
+        [
+          "feature",
           "features"
+        ].includes(
+          value
+        )
       ) {
         return "Features";
       }
@@ -4208,6 +3838,15 @@
 
       if (
         value.includes(
+          "package"
+        )
+      ) {
+        return "Package Contents";
+      }
+
+
+      if (
+        value.includes(
           "easy operation"
         )
       ) {
@@ -4215,41 +3854,40 @@
       }
 
 
-      return cleanDescriptionText(
-        text
-      );
+      return "";
     }
 
 
-    function createCleanDescriptionNode(
-      sourceNode,
-      targetParent
+    function cleanDescriptionNode(
+      source,
+      parent
     ) {
       if (
-        sourceNode.nodeType ===
+        source.nodeType ===
         Node.TEXT_NODE
       ) {
         const text =
           cleanDescriptionText(
-            sourceNode.textContent
+            source.textContent
           );
 
-        if (!text) {
-          return;
-        }
 
-        targetParent.appendChild(
-          document.createTextNode(
-            text
-          )
-        );
+        if (
+          text
+        ) {
+          parent.appendChild(
+            document.createTextNode(
+              text
+            )
+          );
+        }
 
         return;
       }
 
 
       if (
-        sourceNode.nodeType !==
+        source.nodeType !==
         Node.ELEMENT_NODE
       ) {
         return;
@@ -4257,7 +3895,7 @@
 
 
       const tag =
-        sourceNode.tagName.toLowerCase();
+        source.tagName.toLowerCase();
 
 
       const blocked =
@@ -4295,12 +3933,12 @@
         "font"
       ) {
         Array.from(
-          sourceNode.childNodes
+          source.childNodes
         ).forEach(
           child =>
-            createCleanDescriptionNode(
+            cleanDescriptionNode(
               child,
-              targetParent
+              parent
             )
         );
 
@@ -4308,8 +3946,8 @@
       }
 
 
-      const text =
-        sourceNode.textContent
+      const wholeText =
+        source.textContent
           ?.replace(
             /\s+/g,
             " "
@@ -4318,35 +3956,25 @@
         "";
 
 
+      const heading =
+        descriptionHeading(
+          wholeText
+        );
+
+
       if (
-        [
-          "p",
-          "div",
-          "span",
-          "b",
-          "strong",
-          "u",
-          "i",
-          "em"
-        ].includes(
-          tag
-        ) &&
-        isDescriptionHeading(
-          text
-        )
+        heading
       ) {
-        const heading =
+        const element =
           document.createElement(
             "h3"
           );
 
-        heading.textContent =
-          normalizeDescriptionHeading(
-            text
-          );
+        element.textContent =
+          heading;
 
-        targetParent.appendChild(
-          heading
+        parent.appendChild(
+          element
         );
 
         return;
@@ -4356,6 +3984,8 @@
       const allowed =
         new Set([
           "p",
+          "div",
+          "span",
           "ul",
           "ol",
           "li",
@@ -4364,9 +3994,7 @@
           "em",
           "i",
           "h3",
-          "br",
-          "div",
-          "span"
+          "br"
         ]);
 
 
@@ -4385,10 +4013,10 @@
 
 
       Array.from(
-        sourceNode.childNodes
+        source.childNodes
       ).forEach(
         child =>
-          createCleanDescriptionNode(
+          cleanDescriptionNode(
             child,
             target
           )
@@ -4404,7 +4032,7 @@
       }
 
 
-      targetParent.appendChild(
+      parent.appendChild(
         target
       );
     }
@@ -4422,7 +4050,7 @@
         new DOMParser();
 
 
-      const sourceDocument =
+      const documentSource =
         parser.parseFromString(
           String(
             source
@@ -4438,10 +4066,10 @@
 
 
       Array.from(
-        sourceDocument.body.childNodes
+        documentSource.body.childNodes
       ).forEach(
         node =>
-          createCleanDescriptionNode(
+          cleanDescriptionNode(
             node,
             output
           )
@@ -4497,6 +4125,7 @@
           Number(
             rawStock
           );
+
 
         if (
           Number.isFinite(
@@ -4780,14 +4409,8 @@
               parsed
             );
           }
-        } catch (
-          error
-        ) {
-          console.warn(
-            "Could not read cart:",
-            key,
-            error
-          );
+        } catch {
+          // Try next key.
         }
       }
 
@@ -4809,24 +4432,18 @@
         );
 
 
-      for (
-        const key of CART_KEYS
-      ) {
-        try {
-          localStorage.setItem(
-            key,
-            serialized
-          );
-        } catch (
-          error
-        ) {
-          console.warn(
-            "Could not save cart:",
-            key,
-            error
-          );
+      CART_KEYS.forEach(
+        key => {
+          try {
+            localStorage.setItem(
+              key,
+              serialized
+            );
+          } catch {
+            // Ignore unavailable storage.
+          }
         }
-      }
+      );
 
 
       updateCartUI();
@@ -4841,15 +4458,15 @@
       return [
         String(
           productId ||
-            ""
+          ""
         ),
         String(
           variantId ||
-            ""
+          ""
         ),
         String(
           sku ||
-            ""
+          ""
         )
       ].join(
         "::"
@@ -4877,28 +4494,23 @@
         (
           total,
           item
-        ) => {
-          const price =
+        ) =>
+          total +
+          (
             Number(
               item.price
-            ) || 0;
-
-
-          return (
-            total +
-            price *
-              normalizeQuantity(
-                item.quantity
-              )
-          );
-        },
+            ) || 0
+          ) *
+            normalizeQuantity(
+              item.quantity
+            ),
         0
       );
     }
 
 
     /* =========================================================
-       VARIANT ENGINE
+       VARIANT HELPERS
     ========================================================= */
 
     function getVariants(
@@ -5011,7 +4623,7 @@
     ) {
       return String(
         value ??
-          ""
+        ""
       )
         .trim()
         .toLowerCase()
@@ -5032,7 +4644,7 @@
       const text =
         String(
           value ??
-            ""
+          ""
         )
           .trim()
           .replace(
@@ -5069,79 +4681,14 @@
     }
 
 
-    function parseDelimitedOptions(
-      text
-    ) {
-      const value =
-        String(
-          text ??
-            ""
-        ).trim();
-
-
-      if (!value) {
-        return [];
-      }
-
-
-      const result =
-        [];
-
-
-      const pieces =
-        value.split(
-          /[,;|]+/
-        );
-
-
-      for (
-        const piece of pieces
-      ) {
-        const part =
-          piece.trim();
-
-
-        if (!part) {
-          continue;
-        }
-
-
-        const match =
-          part.match(
-            /^(.+?)\s*[:=]\s*(.+)$/
-          );
-
-
-        if (
-          match
-        ) {
-          const name =
-            match[1]
-              .trim();
-
-          const optionValue =
-            match[2]
-              .trim();
-
-
-          if (
-            name &&
-            optionValue
-          ) {
-            result.push({
-              name,
-              value:
-                optionValue
-            });
-          }
-        }
-      }
-
-
-      return result;
-    }
-
-
+    /*
+     * Converts common CJ option formats to:
+     *
+     * [
+     *   { name: "Color", value: "Black" },
+     *   { name: "Size", value: "M" }
+     * ]
+     */
     function parseVariantOptions(
       variant
     ) {
@@ -5157,6 +4704,14 @@
         const candidate of candidates
       ) {
 
+        /*
+         * Object:
+         *
+         * {
+         *   Color: "Black",
+         *   Size: "M"
+         * }
+         */
         if (
           candidate &&
           typeof candidate ===
@@ -5172,19 +4727,19 @@
               .map(
                 (
                   [
-                    key,
+                    name,
                     value
                   ]
                 ) => ({
                   name:
                     String(
-                      key
+                      name
                     ).trim(),
 
                   value:
                     String(
                       value ??
-                        ""
+                      ""
                     ).trim()
                 })
               )
@@ -5203,6 +4758,14 @@
         }
 
 
+        /*
+         * Array:
+         *
+         * [
+         *   {name:"Color",value:"Black"},
+         *   {name:"Size",value:"M"}
+         * ]
+         */
         if (
           Array.isArray(
             candidate
@@ -5215,41 +4778,46 @@
           candidate.forEach(
             item => {
               if (
-                item &&
-                typeof item ===
+                !item ||
+                typeof item !==
                   "object"
               ) {
-                const name =
-                  item.name ??
-                  item.key ??
-                  item.label ??
-                  item.option ??
-                  item.attribute;
+                return;
+              }
 
 
-                const value =
-                  item.value ??
-                  item.text ??
-                  item.selected;
+              const name =
+                item.name ??
+                item.key ??
+                item.label ??
+                item.option ??
+                item.attribute;
 
 
-                if (
-                  name &&
-                  value !==
-                    undefined
-                ) {
-                  entries.push({
-                    name:
-                      String(
-                        name
-                      ).trim(),
+              const value =
+                item.value ??
+                item.text ??
+                item.selected;
 
-                    value:
-                      String(
-                        value
-                      ).trim()
-                  });
-                }
+
+              if (
+                name &&
+                value !==
+                  undefined &&
+                value !==
+                  null
+              ) {
+                entries.push({
+                  name:
+                    String(
+                      name
+                    ).trim(),
+
+                  value:
+                    String(
+                      value
+                    ).trim()
+                });
               }
             }
           );
@@ -5263,55 +4831,57 @@
         }
 
 
+        /*
+         * String.
+         */
         if (
           typeof candidate ===
             "string"
         ) {
-          const parsed =
-            parseDelimitedOptions(
-              candidate
-            );
+          const text =
+            candidate.trim();
 
 
-          if (
-            parsed.length
-          ) {
-            return parsed;
+          if (!text) {
+            continue;
           }
 
 
+          /*
+           * JSON string.
+           */
           try {
-            const json =
+            const parsed =
               JSON.parse(
-                candidate
+                text
               );
 
 
             if (
-              json &&
-              typeof json ===
+              parsed &&
+              typeof parsed ===
                 "object"
             ) {
               const entries =
                 Object.entries(
-                  json
+                  parsed
                 )
                   .map(
                     (
                       [
-                        key,
+                        name,
                         value
                       ]
                     ) => ({
                       name:
                         String(
-                          key
+                          name
                         ).trim(),
 
                       value:
                         String(
                           value ??
-                            ""
+                          ""
                         ).trim()
                     })
                   )
@@ -5329,74 +4899,115 @@
               }
             }
           } catch {
-            // Normal text.
+            // Continue with text parsing.
+          }
+
+
+          const pieces =
+            text.split(
+              /[,;|]+/
+            );
+
+
+          const entries =
+            [];
+
+
+          pieces.forEach(
+            piece => {
+              const match =
+                piece
+                  .trim()
+                  .match(
+                    /^(.+?)\s*[:=]\s*(.+)$/
+                  );
+
+
+              if (
+                match
+              ) {
+                entries.push({
+                  name:
+                    match[1].trim(),
+
+                  value:
+                    match[2].trim()
+                });
+              }
+            }
+          );
+
+
+          if (
+            entries.length
+          ) {
+            return entries;
           }
         }
       }
 
 
       /*
-       * Common explicit CJ fields.
+       * Common explicit fields.
        */
       const explicit =
         [];
+
 
       const fields = [
         [
           "Color",
           variant?.color
         ],
+
         [
           "Size",
           variant?.size
         ],
+
         [
           "Style",
           variant?.style
         ],
+
         [
           "Type",
           variant?.type
         ],
+
         [
           "Model",
           variant?.model
-        ],
-        [
-          "Length",
-          variant?.length
-        ],
-        [
-          "Weight",
-          variant?.weight
         ]
       ];
 
 
-      for (
-        const [
-          name,
-          value
-        ] of fields
-      ) {
-        if (
-          value !==
-            undefined &&
-          value !==
-            null &&
-          String(
-            value
-          ).trim()
-        ) {
-          explicit.push({
+      fields.forEach(
+        (
+          [
             name,
-            value:
-              String(
-                value
-              ).trim()
-          });
+            value
+          ]
+        ) => {
+          if (
+            value !==
+              undefined &&
+            value !==
+              null &&
+            String(
+              value
+            ).trim()
+          ) {
+            explicit.push({
+              name,
+              value:
+                String(
+                  value
+                ).trim()
+            });
+          }
         }
-      }
+      );
 
 
       if (
@@ -5407,18 +5018,59 @@
 
 
       /*
-       * Last attempt: parse variant name.
+       * Last attempt:
+       * variant name itself.
        */
-      const nameParsed =
-        parseDelimitedOptions(
-          variant?.name
-        );
+      const name =
+        String(
+          variant?.name ??
+          ""
+        ).trim();
 
 
       if (
-        nameParsed.length
+        name
       ) {
-        return nameParsed;
+        const pieces =
+          name.split(
+            /[,;|]+/
+          );
+
+
+        const entries =
+          [];
+
+
+        pieces.forEach(
+          piece => {
+            const match =
+              piece
+                .trim()
+                .match(
+                  /^(.+?)\s*[:=]\s*(.+)$/
+                );
+
+
+            if (
+              match
+            ) {
+              entries.push({
+                name:
+                  match[1].trim(),
+
+                value:
+                  match[2].trim()
+              });
+            }
+          }
+        );
+
+
+        if (
+          entries.length
+        ) {
+          return entries;
+        }
       }
 
 
@@ -5460,178 +5112,14 @@
     }
 
 
-    function buildVariantGroups(
+    function buildAttributeGroups(
       variants
     ) {
       const groups =
         new Map();
 
 
-      for (
-        const variant of variants
-      ) {
-        const options =
-          parseVariantOptions(
-            variant
-          );
-
-
-        for (
-          const option of options
-        ) {
-          const key =
-            normalizeOptionKey(
-              option.name
-            );
-
-
-          if (!key) {
-            continue;
-          }
-
-
-          if (
-            !groups.has(
-              key
-            )
-          ) {
-            groups.set(
-              key,
-              {
-                key,
-                name:
-                  prettifyOptionName(
-                    option.name
-                  ),
-                values:
-                  new Map()
-              }
-            );
-          }
-
-
-          const group =
-            groups.get(
-              key
-            );
-
-
-          const value =
-            String(
-              option.value
-            ).trim();
-
-
-          const valueKey =
-            value.toLowerCase();
-
-
-          if (
-            !group.values.has(
-              valueKey
-            )
-          ) {
-            group.values.set(
-              valueKey,
-              {
-                value,
-                variants: []
-              }
-            );
-          }
-
-
-          group.values
-            .get(
-              valueKey
-            )
-            .variants.push(
-              variant
-            );
-        }
-      }
-
-
-      return groups;
-    }
-
-
-    function variantMatchesAttributes(
-      variant,
-      selections
-    ) {
-      const options =
-        parseVariantOptions(
-          variant
-        );
-
-
-      if (
-        !options.length
-      ) {
-        return false;
-      }
-
-
-      return Object.entries(
-        selections
-      ).every(
-        (
-          [
-            key,
-            selectedValue
-          ]
-        ) => {
-          const found =
-            options.find(
-              option =>
-                normalizeOptionKey(
-                  option.name
-                ) ===
-                  key
-            );
-
-
-          return (
-            Boolean(
-              found
-            ) &&
-            String(
-              found.value
-            )
-              .trim()
-              .toLowerCase() ===
-            String(
-              selectedValue
-            )
-              .trim()
-              .toLowerCase()
-          );
-        }
-      );
-    }
-
-
-    function isAttributeValueAvailable(
-      groupKey,
-      value
-    ) {
-      const product =
-        state.selectedProduct;
-
-
-      if (!product) {
-        return false;
-      }
-
-
-      const variants =
-        getVariants(
-          product
-        );
-
-
-      return variants.some(
+      variants.forEach(
         variant => {
           const options =
             parseVariantOptions(
@@ -5639,83 +5127,97 @@
             );
 
 
-          const ownValue =
-            options.find(
-              option =>
+          options.forEach(
+            option => {
+              const key =
                 normalizeOptionKey(
                   option.name
-                ) ===
-                  groupKey
-            );
-
-
-          if (
-            !ownValue ||
-            String(
-              ownValue.value
-            )
-              .trim()
-              .toLowerCase() !==
-              String(
-                value
-              )
-                .trim()
-                .toLowerCase()
-          ) {
-            return false;
-          }
-
-
-          return Object.entries(
-            state.selectedAttributes
-          ).every(
-            (
-              [
-                key,
-                selectedValue
-              ]
-            ) => {
-              if (
-                key ===
-                groupKey
-              ) {
-                return true;
-              }
-
-
-              const match =
-                options.find(
-                  option =>
-                    normalizeOptionKey(
-                      option.name
-                    ) ===
-                    key
                 );
 
 
-              return (
-                Boolean(
-                  match
-                ) &&
-                String(
-                  match.value
+              if (!key) {
+                return;
+              }
+
+
+              if (
+                !groups.has(
+                  key
                 )
-                  .trim()
-                  .toLowerCase() ===
+              ) {
+                groups.set(
+                  key,
+                  {
+                    key,
+
+                    name:
+                      prettifyOptionName(
+                        option.name
+                      ),
+
+                    values:
+                      new Map()
+                  }
+                );
+              }
+
+
+              const group =
+                groups.get(
+                  key
+                );
+
+
+              const value =
                 String(
-                  selectedValue
+                  option.value
+                ).trim();
+
+
+              const valueKey =
+                value.toLowerCase();
+
+
+              if (
+                !group.values.has(
+                  valueKey
                 )
-                  .trim()
-                  .toLowerCase()
-              );
+              ) {
+                group.values.set(
+                  valueKey,
+                  {
+                    value,
+                    variants:
+                      []
+                  }
+                );
+              }
+
+
+              group.values
+                .get(
+                  valueKey
+                )
+                .variants
+                .push(
+                  variant
+                );
             }
           );
         }
       );
+
+
+      return groups;
     }
 
 
-    function getSelectedVariant() {
+    /*
+     * Finds the exact CJ variant based
+     * on currently selected Color,
+     * Size, etc.
+     */
+    function resolveSelectedVariant() {
       const product =
         state.selectedProduct;
 
@@ -5732,8 +5234,10 @@
 
 
       /*
-       * Zero CJ variants:
-       * the product itself is purchasable.
+       * No SKU list.
+       *
+       * The product itself remains
+       * purchasable.
        */
       if (
         variants.length ===
@@ -5757,13 +5261,19 @@
             ),
 
           name:
-            "Standard"
+            "Standard",
+
+          cj_variant_id:
+            "",
+
+          sku:
+            ""
         };
       }
 
 
       /*
-       * One CJ variant.
+       * One SKU.
        */
       if (
         variants.length ===
@@ -5774,60 +5284,233 @@
 
 
       /*
-       * If user selected structured
-       * attributes, find exact match.
+       * If the user has already selected
+       * a fallback SKU, preserve it.
+       */
+      if (
+        state.selectedVariant &&
+        getVariantId(
+          state.selectedVariant
+        )
+      ) {
+        const explicit =
+          variants.find(
+            variant =>
+              getVariantId(
+                variant
+              ) ===
+              getVariantId(
+                state.selectedVariant
+              )
+          );
+
+
+        if (
+          explicit
+        ) {
+          return explicit;
+        }
+      }
+
+
+      /*
+       * Resolve structured Color/Size/etc.
        */
       const groups =
-        buildVariantGroups(
+        buildAttributeGroups(
           variants
         );
 
 
       if (
-        groups.size
+        !groups.size
       ) {
-        const groupKeys =
-          Array.from(
-            groups.keys()
-          );
-
-
-        const allSelected =
-          groupKeys.every(
-            key =>
-              state.selectedAttributes[
-                key
-              ]
-          );
-
-
-        if (
-          allSelected
-        ) {
-          return (
-            variants.find(
-              variant =>
-                variantMatchesAttributes(
-                  variant,
-                  state.selectedAttributes
-                )
-            ) ||
-            null
-          );
-        }
-
-
         return null;
       }
 
 
-      /*
-       * Unstructured variants:
-       * preserve manually selected SKU.
-       */
+      const groupKeys =
+        Array.from(
+          groups.keys()
+        );
+
+
+      const complete =
+        groupKeys.every(
+          key =>
+            String(
+              state.selectedAttributes[
+                key
+              ] ??
+              ""
+            ).trim()
+        );
+
+
+      if (!complete) {
+        return null;
+      }
+
+
       return (
-        state.selectedVariant ||
+        variants.find(
+          variant => {
+            const options =
+              parseVariantOptions(
+                variant
+              );
+
+
+            return groupKeys.every(
+              groupKey => {
+                const match =
+                  options.find(
+                    option =>
+                      normalizeOptionKey(
+                        option.name
+                      ) ===
+                      groupKey
+                  );
+
+
+                if (!match) {
+                  return false;
+                }
+
+
+                return (
+                  String(
+                    match.value
+                  )
+                    .trim()
+                    .toLowerCase() ===
+                  String(
+                    state.selectedAttributes[
+                      groupKey
+                    ]
+                  )
+                    .trim()
+                    .toLowerCase()
+                );
+              }
+            );
+          }
+        ) ||
         null
+      );
+    }
+
+
+    function optionAvailable(
+      groupKey,
+      value
+    ) {
+      const product =
+        state.selectedProduct;
+
+
+      if (!product) {
+        return false;
+      }
+
+
+      const variants =
+        getVariants(
+          product
+        );
+
+
+      /*
+       * When we have no structured
+       * variants, all fallback choices
+       * are handled by the select.
+       */
+      if (!variants.length) {
+        return true;
+      }
+
+
+      return variants.some(
+        variant => {
+          const options =
+            parseVariantOptions(
+              variant
+            );
+
+
+          const own =
+            options.find(
+              option =>
+                normalizeOptionKey(
+                  option.name
+                ) ===
+                  groupKey &&
+                String(
+                  option.value
+                )
+                  .trim()
+                  .toLowerCase() ===
+                  String(
+                    value
+                  )
+                    .trim()
+                    .toLowerCase()
+            );
+
+
+          if (!own) {
+            return false;
+          }
+
+
+          /*
+           * Match the other selections.
+           */
+          return Object.entries(
+            state.selectedAttributes
+          ).every(
+            (
+              [
+                otherKey,
+                otherValue
+              ]
+            ) => {
+              if (
+                otherKey ===
+                groupKey
+              ) {
+                return true;
+              }
+
+
+              const other =
+                options.find(
+                  option =>
+                    normalizeOptionKey(
+                      option.name
+                    ) ===
+                      otherKey
+                );
+
+
+              return (
+                Boolean(
+                  other
+                ) &&
+                String(
+                  other.value
+                )
+                  .trim()
+                  .toLowerCase() ===
+                String(
+                  otherValue
+                )
+                  .trim()
+                  .toLowerCase()
+              );
+            }
+          );
+        }
       );
     }
 
@@ -5882,15 +5565,22 @@
               ),
 
             name:
-              "Standard"
+              "Standard",
+
+            cj_variant_id:
+              "",
+
+            sku:
+              ""
           };
+
 
         return;
       }
 
 
       /*
-       * Single variant.
+       * One variant.
        */
       if (
         variants.length ===
@@ -5899,31 +5589,32 @@
         state.selectedVariant =
           variants[0];
 
+
         return;
       }
 
 
       const groups =
-        buildVariantGroups(
+        buildAttributeGroups(
           variants
         );
 
 
       /*
-       * Structured attributes:
-       * Color, Size, Style, etc.
+       * Structured Color / Size /
+       * Style / Type.
        */
       if (
         groups.size
       ) {
         groups.forEach(
-          (
-            group
-          ) => {
+          group => {
+
             const wrapper =
               document.createElement(
                 "div"
               );
+
 
             wrapper.className =
               "variant-group";
@@ -5934,8 +5625,10 @@
                 "div"
               );
 
+
             label.className =
-              "variant-group-label";
+              "variant-label";
+
 
             label.textContent =
               group.name;
@@ -5946,11 +5639,12 @@
                 "div"
               );
 
+
             options.className =
               "variant-options";
 
 
-            const selected =
+            const selectedValue =
               String(
                 state.selectedAttributes[
                   group.key
@@ -5961,30 +5655,27 @@
 
             group.values.forEach(
               item => {
+
                 const button =
                   document.createElement(
                     "button"
                   );
 
+
                 button.type =
                   "button";
 
+
                 button.className =
                   "variant-option";
+
 
                 button.textContent =
                   item.value;
 
 
-                const available =
-                  isAttributeValueAvailable(
-                    group.key,
-                    item.value
-                  );
-
-
                 if (
-                  selected
+                  selectedValue
                     .toLowerCase() ===
                   item.value
                     .toLowerCase()
@@ -5995,25 +5686,27 @@
                 }
 
 
-                /*
-                 * Don't disable a selected
-                 * value just because current
-                 * combinations changed.
-                 */
+                const available =
+                  optionAvailable(
+                    group.key,
+                    item.value
+                  );
+
+
                 button.disabled =
                   !available &&
-                  !(
-                    selected
-                      .toLowerCase() ===
+                  selectedValue
+                    .toLowerCase() !==
                     item.value
-                      .toLowerCase()
-                  );
+                      .toLowerCase();
 
 
                 button.addEventListener(
                   "click",
                   event => {
+
                     event.preventDefault();
+
                     event.stopPropagation();
 
 
@@ -6024,14 +5717,14 @@
 
 
                     /*
-                     * Remove now-invalid
-                     * selections in other
-                     * groups.
+                     * Remove selections
+                     * that are no longer valid.
                      */
                     Object.keys(
                       state.selectedAttributes
                     ).forEach(
                       otherKey => {
+
                         if (
                           otherKey ===
                           group.key
@@ -6041,8 +5734,7 @@
 
 
                         const current =
-                          state
-                            .selectedAttributes[
+                          state.selectedAttributes[
                             otherKey
                           ];
 
@@ -6055,7 +5747,7 @@
 
 
                         if (
-                          !isAttributeValueAvailable(
+                          !optionAvailable(
                             otherKey,
                             current
                           )
@@ -6065,19 +5757,23 @@
                             otherKey
                           ];
                         }
+
                       }
                     );
 
 
                     state.selectedVariant =
-                      getSelectedVariant();
+                      resolveSelectedVariant();
 
 
                     renderVariantControls();
 
-                    updateModalPricing();
+
+                    updateModal();
+
 
                     updateGalleryForVariant();
+
                   }
                 );
 
@@ -6085,6 +5781,7 @@
                 options.appendChild(
                   button
                 );
+
               }
             );
 
@@ -6092,6 +5789,7 @@
             wrapper.appendChild(
               label
             );
+
 
             wrapper.appendChild(
               options
@@ -6101,6 +5799,7 @@
             elements.variantGroups.appendChild(
               wrapper
             );
+
           }
         );
 
@@ -6110,13 +5809,16 @@
 
 
       /*
-       * Unstructured CJ variant list.
-       * Use a guaranteed select.
+       * Unstructured CJ variants.
+       *
+       * Always offer a simple fallback
+       * selector.
        */
       const wrapper =
         document.createElement(
           "div"
         );
+
 
       wrapper.className =
         "variant-group";
@@ -6127,8 +5829,10 @@
           "div"
         );
 
+
       label.className =
-        "variant-group-label";
+        "variant-label";
+
 
       label.textContent =
         "Select Option";
@@ -6139,8 +5843,9 @@
           "select"
         );
 
+
       select.className =
-        "variant-fallback-select";
+        "variant-select";
 
 
       const placeholder =
@@ -6148,14 +5853,18 @@
           "option"
         );
 
+
       placeholder.value =
         "";
+
 
       placeholder.textContent =
         "Choose an option";
 
+
       placeholder.disabled =
         true;
+
 
       placeholder.selected =
         !state.selectedVariant;
@@ -6168,6 +5877,7 @@
 
       variants.forEach(
         variant => {
+
           const option =
             document.createElement(
               "option"
@@ -6204,6 +5914,7 @@
             option.disabled =
               true;
 
+
             option.textContent +=
               " — Out of stock";
           }
@@ -6224,6 +5935,7 @@
           select.appendChild(
             option
           );
+
         }
       );
 
@@ -6231,7 +5943,9 @@
       select.addEventListener(
         "change",
         event => {
+
           event.preventDefault();
+
           event.stopPropagation();
 
 
@@ -6250,9 +5964,11 @@
             null;
 
 
-          updateModalPricing();
+          updateModal();
+
 
           updateGalleryForVariant();
+
         }
       );
 
@@ -6260,6 +5976,7 @@
       wrapper.appendChild(
         label
       );
+
 
       wrapper.appendChild(
         select
@@ -6273,10 +5990,10 @@
 
 
     /* =========================================================
-       MODAL PRICING / STOCK
+       MODAL UPDATE
     ========================================================= */
 
-    function updateModalPricing() {
+    function updateModal() {
       const product =
         state.selectedProduct;
 
@@ -6293,26 +6010,29 @@
 
 
       const variant =
-        getSelectedVariant();
+        resolveSelectedVariant();
 
 
+      /*
+       * Don't clear the current selection
+       * when the user is still choosing.
+       */
       if (
-        variants.length >
-          0 &&
-        variants.length >
-          1
+        variant
       ) {
-        state.selectedVariant =
-          variant;
-      } else {
         state.selectedVariant =
           variant;
       }
 
 
+      const current =
+        variant ||
+        state.selectedVariant;
+
+
       const price =
         Number(
-          variant?.price ??
+          current?.price ??
           product.sale_price ??
           product.price ??
           0
@@ -6339,6 +6059,7 @@
         original >
           price
       ) {
+
         elements.modalPriceOld.textContent =
           formatPrice(
             original,
@@ -6346,7 +6067,7 @@
           );
 
 
-        const percentage =
+        const savings =
           Math.round(
             (
               (
@@ -6360,40 +6081,39 @@
 
 
         elements.modalSavings.textContent =
-          percentage >
+          savings >
             0
-            ? `Save ${percentage}%`
+            ? `Save ${savings}%`
             : "";
+
       } else {
+
         elements.modalPriceOld.textContent =
           "";
 
         elements.modalSavings.textContent =
           "";
+
       }
 
 
       /*
-       * Multiple structured variants
-       * require a valid combination.
+       * Multiple structured variants:
+       * let the customer select them.
        */
       const groups =
-        buildVariantGroups(
+        buildAttributeGroups(
           variants
         );
 
 
-      const requiresSelection =
+      if (
         variants.length >
           1 &&
-        groups.size >
-          0 &&
-        !variant;
-
-
-      if (
-        requiresSelection
+        groups.size &&
+        !current
       ) {
+
         elements.selectionMessage.textContent =
           "Please select all required options.";
 
@@ -6404,37 +6124,48 @@
         elements.stockText.textContent =
           "Select options to continue";
 
+
+        /*
+         * IMPORTANT:
+         *
+         * Buttons remain clickable.
+         * Their click handlers give the
+         * customer feedback.
+         */
         elements.addToCartButton.disabled =
-          true;
+          false;
 
         elements.buyNowButton.disabled =
-          true;
+          false;
+
 
         return;
       }
 
 
       /*
-       * Multiple unstructured variants
-       * require fallback selection.
+       * Multiple unstructured variants.
        */
       if (
         variants.length >
           1 &&
         !groups.size &&
-        !variant
+        !current
       ) {
+
         elements.selectionMessage.textContent =
           "Please select an option.";
 
         elements.stockText.textContent =
-          "Select an option to continue";
+          "Choose an option to continue";
+
 
         elements.addToCartButton.disabled =
-          true;
+          false;
 
         elements.buyNowButton.disabled =
-          true;
+          false;
+
 
         return;
       }
@@ -6446,58 +6177,69 @@
 
       let stock =
         getVariantStock(
-          variant
+          current
         );
 
 
       /*
-       * Product-level stock fallback.
+       * Product fallback.
        */
       if (
-        !stock.known &&
-        variant?.productFallback &&
-        product.total_available_stock !==
-          null &&
-        product.total_available_stock !==
-          undefined
+        current?.productFallback
       ) {
-        const productStock =
-          Number(
-            product.total_available_stock
-          );
-
-
         if (
-          Number.isFinite(
-            productStock
-          )
+          product.total_available_stock !==
+            null &&
+          product.total_available_stock !==
+            undefined
         ) {
-          stock = {
-            known: true,
-            value:
-              productStock
-          };
+
+          const value =
+            Number(
+              product.total_available_stock
+            );
+
+
+          if (
+            Number.isFinite(
+              value
+            )
+          ) {
+            stock = {
+              known: true,
+              value
+            };
+          }
         }
       }
 
 
+      /*
+       * Only disable on explicit
+       * confirmed zero stock.
+       */
       if (
         stock.known &&
         stock.value <=
           0
       ) {
+
         elements.stockStatus.classList.add(
           "out"
         );
 
+
         elements.stockText.textContent =
           "Out of stock";
+
 
         elements.addToCartButton.disabled =
           true;
 
+
         elements.buyNowButton.disabled =
           true;
+
 
         return;
       }
@@ -6511,6 +6253,7 @@
       if (
         stock.known
       ) {
+
         elements.stockText.textContent =
           `${stock.value} available`;
 
@@ -6538,7 +6281,9 @@
           state.quantity =
             maximum;
         }
+
       } else {
+
         elements.stockText.textContent =
           "Available";
 
@@ -6547,6 +6292,7 @@
           String(
             MAX_ITEM_QUANTITY
           );
+
       }
 
 
@@ -6575,30 +6321,31 @@
         [];
 
 
-      const add =
-        value => {
-          const url =
-            String(
-              value ??
-                ""
-            ).trim();
+      function add(
+        value
+      ) {
+        const url =
+          String(
+            value ??
+            ""
+          ).trim();
 
 
-          if (!url) {
-            return;
-          }
+        if (!url) {
+          return;
+        }
 
 
-          if (
-            !result.includes(
-              url
-            )
-          ) {
-            result.push(
-              url
-            );
-          }
-        };
+        if (
+          !result.includes(
+            url
+          )
+        ) {
+          result.push(
+            url
+          );
+        }
+      }
 
 
       add(
@@ -6632,9 +6379,9 @@
 
 
     function setMainGalleryImage(
-      imageUrl
+      url
     ) {
-      if (!imageUrl) {
+      if (!url) {
         elements.modalImage.removeAttribute(
           "src"
         );
@@ -6649,7 +6396,7 @@
 
       const proxy =
         getProductImageUrl(
-          imageUrl
+          url
         );
 
 
@@ -6659,11 +6406,13 @@
 
       elements.modalImage.onerror =
         () => {
+
           elements.modalImage.onerror =
             null;
 
           elements.modalImage.src =
-            imageUrl;
+            url;
+
         };
 
 
@@ -6723,6 +6472,7 @@
 
       images.forEach(
         imageUrl => {
+
           const button =
             document.createElement(
               "button"
@@ -6731,6 +6481,7 @@
 
           button.type =
             "button";
+
 
           button.className =
             "gallery-thumb";
@@ -6773,11 +6524,13 @@
 
           image.onerror =
             () => {
+
               image.onerror =
                 null;
 
               image.src =
                 imageUrl;
+
             };
 
 
@@ -6789,7 +6542,9 @@
           button.addEventListener(
             "click",
             event => {
+
               event.preventDefault();
+
               event.stopPropagation();
 
 
@@ -6817,6 +6572,7 @@
               button.classList.add(
                 "active"
               );
+
             }
           );
 
@@ -6824,6 +6580,7 @@
           elements.galleryThumbnails.appendChild(
             button
           );
+
         }
       );
     }
@@ -6845,7 +6602,7 @@
       const image =
         String(
           variant.image ??
-            ""
+          ""
         ).trim();
 
 
@@ -6869,30 +6626,32 @@
         )
         .forEach(
           thumb => {
-            const imageNode =
+
+            const node =
               thumb.querySelector(
                 "img"
               );
 
 
-            if (!imageNode) {
+            if (!node) {
               return;
             }
 
 
             thumb.classList.toggle(
               "active",
-              imageNode.dataset
+              node.dataset
                 .originalSrc ===
                 image
             );
+
           }
         );
     }
 
 
     /* =========================================================
-       OPEN PRODUCT
+       OPEN / CLOSE PRODUCT
     ========================================================= */
 
     function openProductModal(
@@ -6945,15 +6704,15 @@
       renderVariantControls();
 
 
+      /*
+       * Resolve automatic single/no-variant
+       * selection.
+       */
       state.selectedVariant =
-        getSelectedVariant();
+        resolveSelectedVariant();
 
 
-      updateModalPricing();
-
-
-      elements.modalQuantity.value =
-        "1";
+      updateModal();
 
 
       elements.modalOverlay.classList.add(
@@ -7005,26 +6764,36 @@
       state.quantity =
         1;
 
+
       state.currentGalleryImage =
         "";
     }
 
 
     /* =========================================================
-       ADD TO CART
+       PURCHASE ENGINE
     ========================================================= */
 
-    function addProductToCart(
-      product,
-      variant,
-      quantity
+    function purchaseProduct(
+      mode
     ) {
-      if (
-        !product ||
-        !product.product_id
-      ) {
+      /*
+       * IMPORTANT:
+       *
+       * Everything is resolved again
+       * at click time.
+       *
+       * The button does NOT depend on
+       * an earlier disabled state.
+       */
+
+      const product =
+        state.selectedProduct;
+
+
+      if (!product) {
         showToast(
-          "This product cannot be purchased."
+          "Please select a product."
         );
 
         return false;
@@ -7032,71 +6801,130 @@
 
 
       /*
-       * Critical fallback:
-       * when the product has no CJ SKU,
-       * the product itself is still valid.
+       * Resolve the actual CJ variant.
        */
-      if (
-        !variant
-      ) {
-        const variants =
-          getVariants(
-            product
-          );
+      const variant =
+        resolveSelectedVariant();
 
 
-        if (
-          variants.length ===
-          0
-        ) {
-          variant = {
-            productFallback:
-              true,
+      const variants =
+        getVariants(
+          product
+        );
 
-            price:
-              product.sale_price ??
-              product.price ??
-              0,
 
-            stock:
-              product.total_available_stock,
-
-            image:
-              getRawImageUrl(
-                product
-              ),
-
-            name:
-              "Standard"
-          };
-        }
-      }
+      const groups =
+        buildAttributeGroups(
+          variants
+        );
 
 
       /*
-       * Multiple actual variants require
-       * a real selected variant.
+       * Multiple structured variants.
        */
       if (
+        variants.length >
+          1 &&
+        groups.size &&
         !variant
       ) {
+
+        elements.selectionMessage.textContent =
+          "Please select all required options.";
+
+
         showToast(
           "Please select the product options."
         );
 
+
         return false;
       }
 
 
+      /*
+       * Multiple unstructured variants.
+       */
+      if (
+        variants.length >
+          1 &&
+        !groups.size &&
+        !variant
+      ) {
+
+        elements.selectionMessage.textContent =
+          "Please select an option.";
+
+
+        showToast(
+          "Please select an option."
+        );
+
+
+        return false;
+      }
+
+
+      /*
+       * If absolutely no SKU was provided,
+       * use product-level purchase fallback.
+       */
+      const purchaseVariant =
+        variant ||
+        {
+          productFallback:
+            true,
+
+          price:
+            product.sale_price ??
+            product.price ??
+            0,
+
+          stock:
+            product.total_available_stock,
+
+          image:
+            getRawImageUrl(
+              product
+            ),
+
+          name:
+            "Standard",
+
+          cj_variant_id:
+            "",
+
+          sku:
+            ""
+        };
+
+
+      /*
+       * Quantity from the visible
+       * quantity control.
+       */
+      const quantity =
+        normalizeQuantity(
+          elements.modalQuantity.value
+        );
+
+
+      state.quantity =
+        quantity;
+
+
+      /*
+       * Stock validation.
+       */
       let stock =
         getVariantStock(
-          variant
+          purchaseVariant
         );
 
 
       if (
         !stock.known &&
-        variant.productFallback &&
+        purchaseVariant.productFallback &&
         product.total_available_stock !==
           null &&
         product.total_available_stock !==
@@ -7104,7 +6932,8 @@
         product.total_available_stock !==
           ""
       ) {
-        const productStock =
+
+        const numericStock =
           Number(
             product.total_available_stock
           );
@@ -7112,22 +6941,16 @@
 
         if (
           Number.isFinite(
-            productStock
+            numericStock
           )
         ) {
           stock = {
             known: true,
             value:
-              productStock
+              numericStock
           };
         }
       }
-
-
-      const requestedQuantity =
-        normalizeQuantity(
-          quantity
-        );
 
 
       if (
@@ -7135,9 +6958,11 @@
         stock.value <=
           0
       ) {
+
         showToast(
           "This product is currently out of stock."
         );
+
 
         return false;
       }
@@ -7145,38 +6970,41 @@
 
       if (
         stock.known &&
-        requestedQuantity >
+        quantity >
           stock.value
       ) {
+
         showToast(
           `Only ${stock.value} available.`
         );
+
 
         return false;
       }
 
 
+      /*
+       * Actual CJ values.
+       *
+       * Never invent a CJ variant ID.
+       */
       const variantId =
-        variant.productFallback
+        purchaseVariant.productFallback
           ? ""
           : getVariantId(
-              variant
+              purchaseVariant
             );
 
 
       const sku =
-        variant.productFallback
+        purchaseVariant.productFallback
           ? ""
           : String(
-              variant?.sku ??
-                ""
+              purchaseVariant.sku ??
+              ""
             ).trim();
 
 
-      /*
-       * The cart contains the actual
-       * product ID and CJ variant ID.
-       */
       const item =
         normalizeCartItem({
           product_id:
@@ -7192,23 +7020,23 @@
             product.title,
 
           variant_name:
-            variant.productFallback
+            purchaseVariant.productFallback
               ? ""
               : getVariantDisplayName(
-                  variant
+                  purchaseVariant
                 ),
 
           image:
-            variant?.image ||
+            purchaseVariant.image ||
             getRawImageUrl(
               product
             ),
 
           quantity:
-            requestedQuantity,
+            quantity,
 
           price:
-            variant?.price ??
+            purchaseVariant.price ??
             product.sale_price ??
             product.price ??
             0,
@@ -7217,6 +7045,18 @@
             product.currency ||
             STORE_CURRENCY
         });
+
+
+      if (
+        !item.product_id
+      ) {
+        showToast(
+          "This product cannot be purchased."
+        );
+
+
+        return false;
+      }
 
 
       const key =
@@ -7243,25 +7083,26 @@
         existingIndex >=
         0
       ) {
+
         const existing =
           state.cart[
             existingIndex
           ];
 
 
-        let combinedQuantity =
+        let next =
           normalizeQuantity(
             existing.quantity
           ) +
-          requestedQuantity;
+          quantity;
 
 
         if (
           stock.known
         ) {
-          combinedQuantity =
+          next =
             Math.min(
-              combinedQuantity,
+              next,
               stock.value
             );
         }
@@ -7270,25 +7111,21 @@
         existing.quantity =
           Math.min(
             MAX_ITEM_QUANTITY,
-            combinedQuantity
+            next
           );
 
 
         existing.price =
           item.price;
 
-
         existing.currency =
           item.currency;
-
 
         existing.title =
           item.title;
 
-
         existing.image =
           item.image;
-
 
         existing.variant_name =
           item.variant_name;
@@ -7298,10 +7135,42 @@
         state.cart.push(
           item
         );
+
       }
 
 
       saveCart();
+
+
+      if (
+        mode ===
+        "cart"
+      ) {
+
+        closeProductModal();
+
+        openCart();
+
+        showToast(
+          "Added to cart."
+        );
+
+        return true;
+      }
+
+
+      if (
+        mode ===
+        "buy"
+      ) {
+
+        saveCart();
+
+        window.location.href =
+          "./checkout.html";
+
+        return true;
+      }
 
 
       return true;
@@ -7309,7 +7178,7 @@
 
 
     /* =========================================================
-       CART UI
+       CART DRAWER
     ========================================================= */
 
     function updateCartUI() {
@@ -7328,19 +7197,21 @@
         "";
 
 
-      const quantity =
+      const itemCount =
         getCartQuantity();
 
 
       elements.drawerItemCount.textContent =
-        quantity === 1
+        itemCount ===
+        1
           ? "1 item"
-          : `${quantity} items`;
+          : `${itemCount} items`;
 
 
       if (
         !state.cart.length
       ) {
+
         const empty =
           document.createElement(
             "div"
@@ -7387,13 +7258,13 @@
           "Your cart is empty";
 
 
-        const message =
+        const text =
           document.createElement(
             "div"
           );
 
 
-        message.textContent =
+        text.textContent =
           "Add something you like to get started.";
 
 
@@ -7408,7 +7279,7 @@
 
 
         empty.appendChild(
-          message
+          text
         );
 
 
@@ -7441,6 +7312,7 @@
           item,
           index
         ) => {
+
           const row =
             document.createElement(
               "div"
@@ -7469,6 +7341,7 @@
           if (
             item.image
           ) {
+
             const proxy =
               getProductImageUrl(
                 item.image
@@ -7481,12 +7354,15 @@
 
             image.onerror =
               () => {
+
                 image.onerror =
                   null;
 
                 image.src =
                   item.image;
+
               };
+
           }
 
 
@@ -7519,6 +7395,7 @@
           if (
             item.variant_name
           ) {
+
             const variant =
               document.createElement(
                 "div"
@@ -7536,6 +7413,7 @@
             content.appendChild(
               variant
             );
+
           }
 
 
@@ -7554,11 +7432,13 @@
               (
                 Number(
                   item.price
-                ) || 0
+                ) ||
+                0
               ) *
                 normalizeQuantity(
                   item.quantity
                 ),
+
               item.currency
             );
 
@@ -7578,35 +7458,36 @@
             "cart-item-actions";
 
 
-          const controls =
+          const quantity =
             document.createElement(
               "div"
             );
 
 
-          controls.className =
+          quantity.className =
             "drawer-quantity";
 
 
-          const decrease =
+          const minus =
             document.createElement(
               "button"
             );
 
 
-          decrease.type =
+          minus.type =
             "button";
 
-          decrease.textContent =
+          minus.textContent =
             "−";
 
-          decrease.setAttribute(
+
+          minus.setAttribute(
             "aria-label",
             "Decrease quantity"
           );
 
 
-          decrease.addEventListener(
+          minus.addEventListener(
             "click",
             () =>
               changeCartQuantity(
@@ -7630,25 +7511,26 @@
             );
 
 
-          const increase =
+          const plus =
             document.createElement(
               "button"
             );
 
 
-          increase.type =
+          plus.type =
             "button";
 
-          increase.textContent =
+          plus.textContent =
             "+";
 
-          increase.setAttribute(
+
+          plus.setAttribute(
             "aria-label",
             "Increase quantity"
           );
 
 
-          increase.addEventListener(
+          plus.addEventListener(
             "click",
             () =>
               changeCartQuantity(
@@ -7658,16 +7540,16 @@
           );
 
 
-          controls.appendChild(
-            decrease
+          quantity.appendChild(
+            minus
           );
 
-          controls.appendChild(
+          quantity.appendChild(
             number
           );
 
-          controls.appendChild(
-            increase
+          quantity.appendChild(
+            plus
           );
 
 
@@ -7697,7 +7579,7 @@
 
 
           actions.appendChild(
-            controls
+            quantity
           );
 
 
@@ -7858,17 +7740,7 @@
     }
 
 
-    /* =========================================================
-       CHECKOUT
-    ========================================================= */
-
     function goToCheckout() {
-      state.cart =
-        cleanCart(
-          state.cart
-        );
-
-
       if (
         !state.cart.length
       ) {
@@ -7883,16 +7755,13 @@
       saveCart();
 
 
-      /*
-       * Existing checkout contract.
-       */
       window.location.href =
         "./checkout.html";
     }
 
 
     /* =========================================================
-       PRODUCT FILTERING
+       PRODUCTS / CATEGORIES
     ========================================================= */
 
     function filteredProducts() {
@@ -7904,18 +7773,19 @@
 
       return state.products.filter(
         product => {
-          const productCategories =
+
+          const categories =
             getProductCategories(
               product
             ).map(
-              value =>
-                value.toLowerCase()
+              category =>
+                category.toLowerCase()
             );
 
 
           const matchesCategory =
             !state.category ||
-            productCategories.includes(
+            categories.includes(
               state.category.toLowerCase()
             );
 
@@ -7937,7 +7807,7 @@
                     )
                   : String(
                       value ??
-                        ""
+                      ""
                     )
             )
             .join(
@@ -7962,10 +7832,6 @@
     }
 
 
-    /* =========================================================
-       CATEGORIES
-    ========================================================= */
-
     function renderCategories() {
       const categoryMap =
         new Map();
@@ -7973,10 +7839,12 @@
 
       state.products.forEach(
         product => {
+
           getProductCategories(
             product
           ).forEach(
             category => {
+
               const key =
                 category.toLowerCase();
 
@@ -7991,8 +7859,10 @@
                   category
                 );
               }
+
             }
           );
+
         }
       );
 
@@ -8010,6 +7880,7 @@
       all.type =
         "button";
 
+
       all.className =
         "category-button" +
         (
@@ -8019,8 +7890,10 @@
             : ""
         );
 
+
       all.dataset.category =
         "";
+
 
       all.textContent =
         "All";
@@ -8045,6 +7918,7 @@
         )
         .forEach(
           category => {
+
             const button =
               document.createElement(
                 "button"
@@ -8077,14 +7951,11 @@
             elements.categories.appendChild(
               button
             );
+
           }
         );
     }
 
-
-    /* =========================================================
-       PRODUCT CARDS
-    ========================================================= */
 
     function createProductCard(
       product
@@ -8101,6 +7972,21 @@
 
       card.tabIndex =
         0;
+
+
+      card.setAttribute(
+        "role",
+        "button"
+      );
+
+
+      card.setAttribute(
+        "aria-label",
+        `View ${
+          product.title ||
+          "product"
+        }`
+      );
 
 
       const imageWrap =
@@ -8134,6 +8020,7 @@
         original >
           salePrice
       ) {
+
         const badge =
           document.createElement(
             "div"
@@ -8182,6 +8069,7 @@
       if (
         rawImage
       ) {
+
         image.src =
           getProductImageUrl(
             rawImage
@@ -8190,12 +8078,15 @@
 
         image.onerror =
           () => {
+
             image.onerror =
               null;
 
             image.src =
               rawImage;
+
           };
+
       }
 
 
@@ -8287,6 +8178,7 @@
         original >
           salePrice
       ) {
+
         const old =
           document.createElement(
             "span"
@@ -8317,17 +8209,17 @@
           );
 
 
-        const saving =
+        const savings =
           document.createElement(
             "span"
           );
 
 
-        saving.className =
+        savings.className =
           "product-savings";
 
 
-        saving.textContent =
+        savings.textContent =
           percentage >
             0
             ? `-${percentage}%`
@@ -8340,8 +8232,9 @@
 
 
         price.appendChild(
-          saving
+          savings
         );
+
       }
 
 
@@ -8349,13 +8242,16 @@
         category
       );
 
+
       info.appendChild(
         title
       );
 
+
       info.appendChild(
         rating
       );
+
 
       info.appendChild(
         price
@@ -8366,16 +8262,17 @@
         imageWrap
       );
 
+
       card.appendChild(
         info
       );
 
 
-      const open =
-        () =>
-          openProductModal(
-            product
-          );
+      function open() {
+        openProductModal(
+          product
+        );
+      }
 
 
       card.addEventListener(
@@ -8387,16 +8284,20 @@
       card.addEventListener(
         "keydown",
         event => {
+
           if (
             event.key ===
               "Enter" ||
             event.key ===
               " "
           ) {
+
             event.preventDefault();
 
             open();
+
           }
+
         }
       );
 
@@ -8426,6 +8327,7 @@
       if (
         !products.length
       ) {
+
         const empty =
           document.createElement(
             "div"
@@ -8461,6 +8363,7 @@
         empty.appendChild(
           title
         );
+
 
         empty.appendChild(
           message
@@ -8513,33 +8416,33 @@
             <p>
               Prasun Store provides shipping options according
               to product availability, destination and available
-              fulfillment services. The shipping methods and applicable
-              shipping charges are shown during checkout.
+              fulfillment services. Applicable shipping options
+              and charges are shown during checkout.
             </p>
 
             <h3>Delivery Estimates</h3>
 
             <p>
               Delivery times may vary according to destination,
-              product availability, carrier, customs processing and
-              other circumstances. Delivery estimates are not a
-              guarantee of a specific delivery date.
+              product availability, carrier, customs processing
+              and other circumstances. Delivery estimates are
+              not a guarantee of a specific delivery date.
             </p>
 
             <h3>Tracking</h3>
 
             <p>
-              When tracking is available, tracking information may
-              be provided after an order has been processed and
-              handed to the carrier.
+              Where tracking is available, tracking information
+              may be provided after an order has been processed
+              and handed to the carrier.
             </p>
 
             <h3>Delays</h3>
 
             <p>
-              Carrier disruptions, customs procedures, weather and
-              other circumstances outside our reasonable control may
-              result in shipping delays.
+              Carrier disruptions, customs procedures, weather
+              and other circumstances outside our reasonable
+              control may result in shipping delays.
             </p>
           `
       },
@@ -8554,35 +8457,38 @@
             <h3>Return Requests</h3>
 
             <p>
-              If you receive a damaged, defective or incorrect item,
-              please contact Prasun Store as soon as reasonably
-              possible after delivery and provide the order details
-              and supporting photographs where appropriate.
+              If you receive a damaged, defective or incorrect
+              item, please contact Prasun Store as soon as
+              reasonably possible after delivery and provide
+              your order details and supporting photographs
+              where appropriate.
             </p>
 
             <h3>Eligibility</h3>
 
             <p>
-              Return eligibility depends on the product, condition,
-              reason for the return and applicable fulfillment
-              requirements.
+              Return eligibility depends on the product,
+              condition, reason for the return and applicable
+              fulfillment requirements.
             </p>
 
             <h3>Refunds</h3>
 
             <p>
               Approved refunds are processed after the applicable
-              return or verification process is completed. The time
-              required for the refund to appear in your account may
-              depend on your payment provider or financial institution.
+              return or verification process is completed.
+              The time required for a refund to appear in your
+              account may depend on your payment provider or
+              financial institution.
             </p>
 
             <h3>Important</h3>
 
             <p>
-              Please contact Prasun Store before returning any item.
-              Do not send merchandise to a supplier or fulfillment
-              facility unless you have received return instructions.
+              Please contact Prasun Store before returning any
+              item. Do not send merchandise to a supplier or
+              fulfillment facility unless you have received
+              return instructions.
             </p>
           `
       },
@@ -8597,35 +8503,36 @@
             <h3>Information We Collect</h3>
 
             <p>
-              Prasun Store may collect information you provide when
-              placing an order, contacting customer support or using
-              the store.
+              Prasun Store may collect information you provide
+              when placing an order, contacting customer support
+              or using the store.
             </p>
 
-            <h3>How We Use Information</h3>
+            <h3>How Information Is Used</h3>
 
             <p>
               Information may be used to process orders, arrange
-              shipping, provide customer service, communicate about
-              orders, prevent fraud and maintain the security and
-              operation of the store.
+              shipping, provide customer service, communicate
+              about orders, prevent fraud and maintain the
+              security and operation of the store.
             </p>
 
             <h3>Service Providers</h3>
 
             <p>
-              Information necessary to fulfill an order may be shared
-              with payment, fulfillment, shipping and technology
-              providers involved in completing the transaction.
+              Information necessary to fulfill an order may be
+              shared with payment, fulfillment, shipping and
+              technology providers involved in completing the
+              transaction.
             </p>
 
             <h3>Security</h3>
 
             <p>
               We use reasonable measures to protect information
-              handled through the store. No electronic transmission
-              or storage system can be guaranteed to be completely
-              secure.
+              handled through the store. No electronic
+              transmission or storage system can be guaranteed
+              to be completely secure.
             </p>
 
             <h3>Contact</h3>
@@ -8650,34 +8557,35 @@
 
             <p>
               By using Prasun Store, you agree to use the website
-              lawfully and not interfere with its operation, security
-              or availability.
+              lawfully and not interfere with its operation,
+              security or availability.
             </p>
 
             <h3>Product Information</h3>
 
             <p>
               We make reasonable efforts to present product
-              descriptions, images, prices and availability accurately.
-              Product specifications, prices and availability may
-              change without notice.
+              descriptions, images, prices and availability
+              accurately. Product specifications, prices and
+              availability may change without notice.
             </p>
 
             <h3>Orders</h3>
 
             <p>
-              Orders are subject to product availability, successful
-              payment or payment confirmation, shipping availability
-              and any applicable verification requirements.
+              Orders are subject to product availability,
+              successful payment or payment confirmation,
+              shipping availability and any applicable
+              verification requirements.
             </p>
 
             <h3>Pricing Errors</h3>
 
             <p>
-              If a significant pricing or product-information error is
-              discovered, we may correct the information and, where
-              appropriate, cancel the affected order and issue an
-              applicable refund.
+              If a significant pricing or product-information
+              error is discovered, we may correct the information
+              and, where appropriate, cancel the affected order
+              and issue an applicable refund.
             </p>
 
             <h3>Contact</h3>
@@ -8702,8 +8610,8 @@
 
             <p>
               For questions about products, orders, shipping,
-              returns or other store matters, please contact our
-              support team.
+              returns or other store matters, please contact
+              our support team.
             </p>
 
             <h3>Email</h3>
@@ -8749,9 +8657,9 @@
             <h3>How are shipping charges calculated?</h3>
 
             <p>
-              Shipping options and applicable charges depend on the
-              products in your order and your destination and are
-              calculated during checkout.
+              Shipping options and applicable charges depend on
+              the products in your order and your destination and
+              are calculated during checkout.
             </p>
 
             <h3>How do I contact support?</h3>
@@ -8832,6 +8740,7 @@
     elements.searchInput.addEventListener(
       "input",
       event => {
+
         state.search =
           event.target.value;
 
@@ -8843,6 +8752,7 @@
 
 
         renderProducts();
+
       }
     );
 
@@ -8850,6 +8760,7 @@
     elements.searchClear.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -8871,6 +8782,7 @@
 
 
         elements.searchInput.focus();
+
       }
     );
 
@@ -8878,6 +8790,7 @@
     elements.categories.addEventListener(
       "click",
       event => {
+
         const button =
           event.target.closest(
             ".category-button"
@@ -8898,6 +8811,7 @@
 
 
         renderProducts();
+
       }
     );
 
@@ -8905,10 +8819,13 @@
     elements.cartButton.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
+
         openCart();
+
       }
     );
 
@@ -8916,12 +8833,15 @@
     elements.contactHeaderButton.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
+
 
         openPolicy(
           "contact"
         );
+
       }
     );
 
@@ -8929,10 +8849,13 @@
     elements.drawerClose.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
+
         closeCart();
+
       }
     );
 
@@ -8940,10 +8863,13 @@
     elements.drawerOverlay.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
+
         closeCart();
+
       }
     );
 
@@ -8951,10 +8877,13 @@
     elements.modalClose.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
+
         closeProductModal();
+
       }
     );
 
@@ -8962,12 +8891,14 @@
     elements.modalOverlay.addEventListener(
       "click",
       event => {
+
         if (
           event.target ===
           elements.modalOverlay
         ) {
           closeProductModal();
         }
+
       }
     );
 
@@ -8979,14 +8910,26 @@
     elements.modalQuantityMinus.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
 
-        updateModalQuantity(
-          state.quantity -
-          1
-        );
+        state.quantity =
+          normalizeQuantity(
+            state.quantity -
+            1
+          );
+
+
+        elements.modalQuantity.value =
+          String(
+            state.quantity
+          );
+
+
+        updateModal();
+
       }
     );
 
@@ -8994,14 +8937,26 @@
     elements.modalQuantityPlus.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
 
-        updateModalQuantity(
-          state.quantity +
-          1
-        );
+        state.quantity =
+          normalizeQuantity(
+            state.quantity +
+            1
+          );
+
+
+        elements.modalQuantity.value =
+          String(
+            state.quantity
+          );
+
+
+        updateModal();
+
       }
     );
 
@@ -9009,9 +8964,21 @@
     elements.modalQuantity.addEventListener(
       "input",
       event => {
-        updateModalQuantity(
-          event.target.value
-        );
+
+        state.quantity =
+          normalizeQuantity(
+            event.target.value
+          );
+
+
+        elements.modalQuantity.value =
+          String(
+            state.quantity
+          );
+
+
+        updateModal();
+
       }
     );
 
@@ -9019,65 +8986,20 @@
     elements.modalQuantity.addEventListener(
       "blur",
       () => {
-        updateModalQuantity(
-          elements.modalQuantity.value
-        );
+
+        state.quantity =
+          normalizeQuantity(
+            elements.modalQuantity.value
+          );
+
+
+        elements.modalQuantity.value =
+          String(
+            state.quantity
+          );
+
       }
     );
-
-
-    function updateModalQuantity(
-      value
-    ) {
-      let next =
-        normalizeQuantity(
-          value
-        );
-
-
-      const variant =
-        state.selectedVariant;
-
-
-      const stock =
-        getVariantStock(
-          variant
-        );
-
-
-      if (
-        stock.known
-      ) {
-        next =
-          Math.min(
-            next,
-            Math.max(
-              1,
-              stock.value
-            )
-          );
-      }
-
-
-      next =
-        Math.min(
-          MAX_ITEM_QUANTITY,
-          Math.max(
-            1,
-            next
-          )
-        );
-
-
-      state.quantity =
-        next;
-
-
-      elements.modalQuantity.value =
-        String(
-          next
-        );
-    }
 
 
     /* =========================================================
@@ -9087,104 +9009,15 @@
     elements.addToCartButton.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
 
-        const product =
-          state.selectedProduct;
-
-
-        if (!product) {
-          return;
-        }
-
-
-        const variants =
-          getVariants(
-            product
-          );
-
-
-        let variant =
-          getSelectedVariant();
-
-
-        /*
-         * Structured variants:
-         * a complete combination is required.
-         */
-        if (
-          variants.length >
-            1
-        ) {
-          const groups =
-            buildVariantGroups(
-              variants
-            );
-
-
-          if (
-            groups.size &&
-            !variant
-          ) {
-            elements.selectionMessage.textContent =
-              "Please select all required options.";
-
-
-            showToast(
-              "Please select the product options."
-            );
-
-
-            return;
-          }
-
-
-          /*
-           * Unstructured variants:
-           * an option must be selected.
-           */
-          if (
-            !groups.size &&
-            !variant
-          ) {
-            elements.selectionMessage.textContent =
-              "Please select an option.";
-
-
-            showToast(
-              "Please select an option."
-            );
-
-
-            return;
-          }
-        }
-
-
-        const added =
-          addProductToCart(
-            product,
-            variant,
-            state.quantity
-          );
-
-
-        if (!added) {
-          return;
-        }
-
-
-        closeProductModal();
-
-
-        openCart();
-
-
-        showToast(
-          "Added to cart."
+        purchaseProduct(
+          "cart"
         );
+
       }
     );
 
@@ -9196,99 +9029,15 @@
     elements.buyNowButton.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
 
-        const product =
-          state.selectedProduct;
+        purchaseProduct(
+          "buy"
+        );
 
-
-        if (!product) {
-          return;
-        }
-
-
-        const variants =
-          getVariants(
-            product
-          );
-
-
-        let variant =
-          getSelectedVariant();
-
-
-        if (
-          variants.length >
-            1
-        ) {
-          const groups =
-            buildVariantGroups(
-              variants
-            );
-
-
-          if (
-            groups.size &&
-            !variant
-          ) {
-            elements.selectionMessage.textContent =
-              "Please select all required options.";
-
-
-            showToast(
-              "Please select the product options."
-            );
-
-
-            return;
-          }
-
-
-          if (
-            !groups.size &&
-            !variant
-          ) {
-            elements.selectionMessage.textContent =
-              "Please select an option.";
-
-
-            showToast(
-              "Please select an option."
-            );
-
-
-            return;
-          }
-        }
-
-
-        const added =
-          addProductToCart(
-            product,
-            variant,
-            state.quantity
-          );
-
-
-        if (!added) {
-          return;
-        }
-
-
-        /*
-         * Explicitly persist before
-         * navigation.
-         */
-        saveCart();
-
-
-        /*
-         * Existing checkout page.
-         */
-        window.location.href =
-          "./checkout.html";
       }
     );
 
@@ -9300,10 +9049,13 @@
     elements.checkoutButton.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
+
         goToCheckout();
+
       }
     );
 
@@ -9315,6 +9067,7 @@
     elements.galleryZoom.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -9323,16 +9076,16 @@
           state.currentGalleryImage;
 
 
-        if (!image) {
-          return;
+        if (
+          image
+        ) {
+          window.open(
+            image,
+            "_blank",
+            "noopener,noreferrer"
+          );
         }
 
-
-        window.open(
-          image,
-          "_blank",
-          "noopener,noreferrer"
-        );
       }
     );
 
@@ -9340,8 +9093,6 @@
     elements.galleryMain.addEventListener(
       "click",
       event => {
-        event.preventDefault();
-
 
         if (
           event.target.closest(
@@ -9356,6 +9107,7 @@
           window.innerWidth >=
           700
         ) {
+
           const image =
             state.currentGalleryImage;
 
@@ -9369,7 +9121,9 @@
               "noopener,noreferrer"
             );
           }
+
         }
+
       }
     );
 
@@ -9381,6 +9135,7 @@
     document.addEventListener(
       "click",
       event => {
+
         const trigger =
           event.target.closest(
             "[data-policy]"
@@ -9399,6 +9154,7 @@
         openPolicy(
           trigger.dataset.policy
         );
+
       }
     );
 
@@ -9406,10 +9162,13 @@
     elements.policyClose.addEventListener(
       "click",
       event => {
+
         event.preventDefault();
         event.stopPropagation();
 
+
         closePolicy();
+
       }
     );
 
@@ -9417,12 +9176,14 @@
     elements.policyOverlay.addEventListener(
       "click",
       event => {
+
         if (
           event.target ===
           elements.policyOverlay
         ) {
           closePolicy();
         }
+
       }
     );
 
@@ -9434,6 +9195,7 @@
     document.addEventListener(
       "keydown",
       event => {
+
         if (
           event.key !==
           "Escape"
@@ -9447,9 +9209,11 @@
             "open"
           )
         ) {
+
           closePolicy();
 
           return;
+
         }
 
 
@@ -9458,9 +9222,11 @@
             "open"
           )
         ) {
+
           closeProductModal();
 
           return;
+
         }
 
 
@@ -9469,29 +9235,68 @@
             "open"
           )
         ) {
+
           closeCart();
+
         }
+
       }
     );
 
 
     /* =========================================================
-       CROSS-TAB CART SYNC
+       CROSS-TAB CART
     ========================================================= */
 
     window.addEventListener(
       "storage",
       () => {
+
         state.cart =
           readCart();
 
+
         updateCartUI();
+
       }
     );
 
 
     /* =========================================================
-       INITIALIZATION
+       GLOBAL JS ERROR REPORTING
+       This prevents a silent "nothing happens"
+       experience during debugging.
+    ========================================================= */
+
+    window.addEventListener(
+      "error",
+      event => {
+
+        console.error(
+          "Prasun Store error:",
+          event.error ||
+          event.message
+        );
+
+      }
+    );
+
+
+    window.addEventListener(
+      "unhandledrejection",
+      event => {
+
+        console.error(
+          "Prasun Store promise error:",
+          event.reason
+        );
+
+      }
+    );
+
+
+    /* =========================================================
+       INITIALIZE
     ========================================================= */
 
     async function initialize() {
@@ -9544,7 +9349,7 @@
       ) {
 
         console.error(
-          "Could not load products:",
+          "Unable to load products:",
           error
         );
 
@@ -9585,6 +9390,7 @@
         elements.loadingState.appendChild(
           message
         );
+
       }
     }
 
