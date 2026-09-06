@@ -3,478 +3,485 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Store</title>
+  <title>Modern Storefront</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col">
 
-  <!-- CONFIGURATION -->
-  <script>
-    // Replace with your actual Cloudflare Worker URL if hosting on a different domain
-    const WORKER_URL = window.location.origin.includes('localhost') 
-      ? 'http://127.0.0.1:8787' 
-      : '';
-  </script>
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-      <!-- Logo -->
-      <a href="#" onclick="filterCategory('')" class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
-        <i data-lucide="shopping-bag" class="w-6 h-6 text-indigo-600"></i>
-        <span>BOUTIQUE</span>
-      </a>
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        
+        <!-- Brand Logo -->
+        <a href="#" onclick="filterCategory('All')" class="text-xl font-bold tracking-tight text-gray-900 flex items-center gap-2">
+          <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span>Store<span class="text-indigo-600">Front</span></span>
+        </a>
 
-      <!-- Category Filter Pills (Desktop) -->
-      <nav id="category-nav" class="hidden md:flex items-center space-x-1 overflow-x-auto no-scrollbar py-2">
-        <!-- Dynamic Categories Injection -->
-      </nav>
+        <!-- Search Bar -->
+        <div class="flex-1 max-w-md">
+          <form id="search-form" onsubmit="handleSearch(event)" class="relative">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search products..."
+              class="w-full pl-10 pr-4 py-2 bg-gray-100 rounded-full text-sm border-transparent focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
+            />
+            <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </form>
+        </div>
 
-      <!-- Actions -->
-      <div class="flex items-center gap-3">
-        <button onclick="toggleCart(true)" class="relative p-2 text-slate-600 hover:text-slate-900 transition-colors">
-          <i data-lucide="shopping-cart" class="w-6 h-6"></i>
-          <span id="cart-badge" class="hidden absolute top-0 right-0 bg-indigo-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        <!-- Cart Trigger Button -->
+        <button
+          onclick="toggleCart(true)"
+          class="relative p-2 text-gray-700 hover:text-indigo-600 focus:outline-none transition-colors"
+          aria-label="View Shopping Cart"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+          </svg>
+          <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
         </button>
+
       </div>
-    </div>
-    
-    <!-- Mobile Categories -->
-    <div id="mobile-category-nav" class="md:hidden flex items-center space-x-2 px-4 pb-3 overflow-x-auto no-scrollbar border-t border-slate-100 pt-2">
-      <!-- Dynamic Categories Mobile Injection -->
     </div>
   </header>
 
-  <!-- HERO BANNER -->
-  <section class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-    <div class="relative z-10 max-w-2xl mx-auto space-y-3">
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Curated Products Delivered to You</h1>
-      <p class="text-slate-400 text-sm sm:text-base">Explore our trending items with fast shipping and secure bank transfer payments.</p>
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">Discover Quality Products</h1>
+      <p class="text-indigo-200 max-w-2xl mx-auto text-sm sm:text-base">Explore our curated collection delivered directly to your doorstep with fast shipping and secure payments.</p>
     </div>
   </section>
 
-  <!-- MAIN CATALOG -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
-    <div class="flex justify-between items-center mb-6">
-      <h2 id="catalog-title" class="text-xl font-bold text-slate-900">All Products</h2>
-      <span id="product-count" class="text-sm text-slate-500">Loading...</span>
+  <!-- Main Content Area -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Category Filter Bar -->
+    <div class="flex items-center justify-between gap-4 mb-8 overflow-x-auto no-scrollbar pb-2">
+      <div id="category-pills" class="flex gap-2">
+        <button onclick="filterCategory('All')" class="category-btn active bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap">All Products</button>
+        <button onclick="filterCategory('Electronics')" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Electronics</button>
+        <button onclick="filterCategory('Fashion')" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Fashion</button>
+        <button onclick="filterCategory('Home')" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Home & Kitchen</button>
+        <button onclick="filterCategory('Beauty')" class="category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap">Beauty & Care</button>
+      </div>
+      <div class="text-xs text-gray-500 font-medium whitespace-nowrap hidden sm:block">
+        Showing <span id="product-count">0</span> items
+      </div>
     </div>
 
-    <!-- Products Grid -->
-    <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-      <!-- Skeleton Loaders -->
-      <template id="skeleton-template">
-        <div class="bg-white rounded-xl border border-slate-200 p-4 animate-pulse space-y-3">
-          <div class="bg-slate-200 aspect-square rounded-lg"></div>
-          <div class="h-4 bg-slate-200 rounded w-3/4"></div>
-          <div class="h-4 bg-slate-200 rounded w-1/2"></div>
-        </div>
-      </template>
+    <!-- Product Grid State Container -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Skeleton Loaders injected during fetch -->
     </div>
+
+    <!-- Empty / Error State (Hidden by default) -->
+    <div id="empty-state" class="hidden text-center py-16">
+      <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+      </svg>
+      <h3 class="mt-2 text-sm font-semibold text-gray-900">No products found</h3>
+      <p class="mt-1 text-sm text-gray-500" id="empty-state-msg">Try adjusting your search terms or filter selections.</p>
+      <button onclick="resetFilters()" class="mt-4 text-sm font-medium text-indigo-600 hover:text-indigo-500">Reset Filters</button>
+    </div>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-slate-200 mt-auto py-8">
-    <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
-      &copy; <span id="year"></span> Modern Store. All rights reserved.
-    </div>
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500 mt-auto">
+    <p>&copy; 2026 Modern Storefront Inc. All rights reserved.</p>
   </footer>
 
-  <!-- PRODUCT DETAIL MODAL -->
-  <div id="product-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl my-8 relative flex flex-col md:flex-row">
-      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 p-2 bg-white/80 rounded-full hover:bg-slate-100 text-slate-600">
-        <i data-lucide="x" class="w-5 h-5"></i>
+  <!-- Product Quick-View Modal -->
+  <div id="product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl overflow-hidden my-8 transform transition-all">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 rounded-full p-1 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
+      <div id="modal-content" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Slide-over Drawer -->
+  <div id="cart-drawer" class="hidden fixed inset-0 z-50 overflow-hidden">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleCart(false)"></div>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
+        
+        <!-- Cart Drawer Header -->
+        <div class="p-4 sm:p-6 border-b border-gray-200 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-gray-900">Shopping Cart</h2>
+          <button onclick="toggleCart(false)" class="text-gray-400 hover:text-gray-600 p-1">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cart-items" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 divide-y divide-gray-100">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-4 sm:p-6 border-t border-gray-200 bg-gray-50 space-y-4">
+          <div class="flex justify-between text-base font-semibold text-gray-900">
+            <span>Subtotal</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <p class="text-xs text-gray-500">Shipping and taxes calculated at checkout.</p>
+          <button
+            id="checkout-btn"
+            onclick="openCheckout()"
+            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl transition-all shadow-md shadow-indigo-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-2xl my-8">
+      <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <h2 class="text-xl font-bold text-gray-900 mb-4">Complete Your Order</h2>
       
-      <!-- Image Gallery -->
-      <div class="md:w-1/2 p-6 bg-slate-50 flex flex-col gap-4">
-        <div class="aspect-square rounded-xl overflow-hidden bg-white border border-slate-200">
-          <img id="modal-main-img" src="" alt="Product Image" class="w-full h-full object-cover" />
-        </div>
-        <div id="modal-thumbnails" class="flex gap-2 overflow-x-auto no-scrollbar py-1"></div>
-      </div>
-
-      <!-- Info & Actions -->
-      <div class="md:w-1/2 p-6 flex flex-col justify-between space-y-4">
+      <form id="checkout-form" onsubmit="handlePlaceOrder(event)" class="space-y-4">
         <div>
-          <span id="modal-category" class="text-xs font-semibold uppercase tracking-wider text-indigo-600"></span>
-          <h2 id="modal-title" class="text-xl font-bold text-slate-900 mt-1"></h2>
-          <div id="modal-price" class="text-2xl font-bold text-slate-900 mt-2"></div>
-          
-          <!-- Variant Selector -->
-          <div id="modal-variants-container" class="mt-4 space-y-2 hidden">
-            <label class="block text-xs font-semibold text-slate-600 uppercase">Select Option</label>
-            <select id="modal-variant-select" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            </select>
+          <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Full Name</label>
+          <input type="text" id="cust-name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="John Doe">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Email</label>
+            <input type="email" id="cust-email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="john@example.com">
           </div>
-
-          <div class="mt-4">
-            <h4 class="text-xs font-semibold text-slate-600 uppercase mb-1">Description</h4>
-            <div id="modal-description" class="text-slate-600 text-sm max-h-40 overflow-y-auto pr-1 leading-relaxed"></div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Phone</label>
+            <input type="tel" id="cust-phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="+1234567890">
           </div>
         </div>
-
-        <button id="modal-add-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
-          <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-          <span>Add to Cart</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CART DRAWER -->
-  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
-    <div onclick="toggleCart(false)" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
-    <aside class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
-      <div class="p-4 border-b border-slate-200 flex items-center justify-between">
-        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-          <i data-lucide="shopping-bag" class="w-5 h-5 text-indigo-600"></i> Shopping Cart
-        </h3>
-        <button onclick="toggleCart(false)" class="p-2 text-slate-500 hover:text-slate-800">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <div id="cart-items" class="flex-grow overflow-y-auto p-4 space-y-4">
-        <!-- Cart Items Injected Dynamically -->
-      </div>
-
-      <div class="p-4 border-t border-slate-200 bg-slate-50 space-y-3">
-        <div class="flex justify-between text-base font-bold text-slate-900">
-          <span>Subtotal</span>
-          <span id="cart-subtotal">$0.00</span>
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Street Address</label>
+          <input type="text" id="cust-address" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="123 Main St, Apt 4B">
         </div>
-        <button onclick="openCheckout()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl transition-colors">
-          Proceed to Checkout
-        </button>
-      </div>
-    </aside>
-  </div>
-
-  <!-- CHECKOUT MODAL -->
-  <div id="checkout-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl my-8 relative max-h-[90vh] overflow-y-auto">
-      <button onclick="closeCheckout()" class="absolute top-4 right-4 p-2 bg-slate-100 rounded-full text-slate-600 hover:bg-slate-200">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <h2 class="text-2xl font-bold text-slate-900 mb-6">Complete Your Order</h2>
-
-      <!-- Form View -->
-      <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)" class="space-y-4">
-        <h3 class="font-semibold text-slate-800 text-sm uppercase tracking-wide border-b pb-2">1. Contact Information</h3>
-        <div class="grid grid-cols-2 gap-3">
-          <input required type="text" id="cust-first-name" placeholder="First Name" class="border border-slate-300 rounded-lg p-2.5 text-sm">
-          <input required type="text" id="cust-last-name" placeholder="Last Name" class="border border-slate-300 rounded-lg p-2.5 text-sm">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">City</label>
+            <input type="text" id="cust-city" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="New York">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Province/State</label>
+            <input type="text" id="cust-province" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="NY">
+          </div>
         </div>
-        <div class="grid grid-cols-2 gap-3">
-          <input required type="email" id="cust-email" placeholder="Email Address" class="border border-slate-300 rounded-lg p-2.5 text-sm">
-          <input required type="tel" id="cust-phone" placeholder="Phone Number" class="border border-slate-300 rounded-lg p-2.5 text-sm">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">ZIP / Postal Code</label>
+            <input type="text" id="cust-zip" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="10001">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Country Code</label>
+            <input type="text" id="cust-country" maxlength="2" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 outline-none uppercase" placeholder="US">
+          </div>
         </div>
 
-        <h3 class="font-semibold text-slate-800 text-sm uppercase tracking-wide border-b pb-2 pt-2">2. Shipping Address</h3>
-        <input required type="text" id="ship-address" placeholder="Street Address" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm">
-        <div class="grid grid-cols-3 gap-3">
-          <input required type="text" id="ship-city" placeholder="City" class="border border-slate-300 rounded-lg p-2.5 text-sm">
-          <input required type="text" id="ship-state" placeholder="State/Province" class="border border-slate-300 rounded-lg p-2.5 text-sm">
-          <input required type="text" id="ship-zip" placeholder="ZIP / Postal Code" class="border border-slate-300 rounded-lg p-2.5 text-sm">
+        <div class="pt-4 border-t border-gray-200">
+          <button
+            type="submit"
+            id="place-order-btn"
+            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-all shadow-md shadow-indigo-200"
+          >
+            Place Order Now
+          </button>
         </div>
-
-        <button type="button" onclick="calculateShippingRates()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">
-          Calculate Shipping Fee
-        </button>
-
-        <div id="shipping-options-container" class="hidden space-y-2">
-          <label class="block text-xs font-semibold text-slate-600 uppercase">Select Shipping Option</label>
-          <select id="shipping-select" onchange="updateCheckoutTotal()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm bg-white">
-          </select>
-        </div>
-
-        <!-- Order Summary -->
-        <div class="border-t pt-4 space-y-1 text-sm text-slate-600">
-          <div class="flex justify-between"><span>Subtotal:</span><span id="summary-subtotal">$0.00</span></div>
-          <div class="flex justify-between"><span>Shipping:</span><span id="summary-shipping">$0.00</span></div>
-          <div class="flex justify-between font-bold text-slate-900 text-base pt-2 border-t"><span>Total:</span><span id="summary-total">$0.00</span></div>
-        </div>
-
-        <button type="submit" id="place-order-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl transition-colors">
-          Place Order (Bank Transfer)
-        </button>
       </form>
-
-      <!-- Order Confirmation / Bank Details View -->
-      <div id="order-success-view" class="hidden space-y-6">
-        <div class="text-center space-y-2">
-          <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-            <i data-lucide="check" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900">Order Placed Successfully!</h3>
-          <p class="text-sm text-slate-500">Order Reference ID: <span id="confirmed-order-id" class="font-mono font-bold text-slate-800"></span></p>
-        </div>
-
-        <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900 space-y-3">
-          <h4 class="font-bold flex items-center gap-2">
-            <i data-lucide="landmark" class="w-4 h-4"></i> Bank Transfer Instructions
-          </h4>
-          <p class="text-xs text-amber-800" id="bank-instructions"></p>
-          <div id="bank-details-grid" class="bg-white/80 p-3 rounded-lg space-y-1 font-mono text-xs border border-amber-200">
-            <!-- Dynamic Bank Info -->
-          </div>
-          <p class="text-xs text-amber-700 font-medium">Please include your Order Reference ID in the transfer memo.</p>
-        </div>
-
-        <button onclick="finishCheckout()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 rounded-xl transition-colors">
-          Return to Store
-        </button>
-      </div>
-
     </div>
   </div>
 
-  <!-- SCRIPT APPLICATION LOGIC -->
+  <!-- APPLICATION JAVASCRIPT -->
   <script>
-    // State
+    // Configuration
+    const API_BASE = '/api'; // Relative path matching Cloudflare Worker routes
+    
+    // Application State
     let products = [];
-    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    let activeProduct = null;
-    let selectedShippingFee = 0;
+    let cart = JSON.parse(localStorage.getItem('store_cart') || '[]');
+    let currentCategory = 'All';
+    let searchQuery = '';
 
-    const categories = [
-      "All",
-      "Electronics",
-      "Home & Kitchen",
-      "Fashion",
-      "Beauty & Personal Care",
-      "Sports & Outdoors"
-    ];
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Initialization
+    // Initialize Application
     document.addEventListener('DOMContentLoaded', () => {
-      renderCategories();
       fetchProducts();
       updateCartUI();
-      lucide.createIcons();
     });
 
-    // Render Categories
-    function renderCategories() {
-      const desktopNav = document.getElementById('category-nav');
-      const mobileNav = document.getElementById('mobile-category-nav');
-
-      const html = categories.map(cat => `
-        <button onclick="filterCategory('${cat === 'All' ? '' : cat}')" 
-          class="px-3 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap bg-slate-100 hover:bg-slate-200 text-slate-700">
-          ${cat}
-        </button>
-      `).join('');
-
-      desktopNav.innerHTML = html;
-      mobileNav.innerHTML = html;
-    }
-
-    // Fetch Products from Cloudflare Worker
-    async function fetchProducts(category = '') {
-      const grid = document.getElementById('products-grid');
-      const countEl = document.getElementById('product-count');
-      grid.innerHTML = Array(8).fill(document.getElementById('skeleton-template').innerHTML).join('');
-
+    /* ============================================================
+       API FETCHING & RENDERING
+       ============================================================ */
+    async function fetchProducts() {
+      showSkeletons();
       try {
-        const url = new URL(`${WORKER_URL}/api/products`, window.location.origin);
-        if (category) url.searchParams.set('category', category);
+        const url = new URL(`${window.location.origin}${API_BASE}/products`);
+        if (currentCategory !== 'All') url.searchParams.set('category', currentCategory);
+        if (searchQuery) url.searchParams.set('q', searchQuery);
 
         const res = await fetch(url);
         const data = await res.json();
 
-        if (data.success && data.products) {
+        if (data.success && Array.isArray(data.products)) {
           products = data.products;
           renderProductGrid(products);
-          countEl.textContent = `${products.length} Items`;
         } else {
-          grid.innerHTML = `<p class="col-span-full text-center text-slate-500 py-10">No products found.</p>`;
-          countEl.textContent = '0 Items';
+          showEmptyState('Unable to load products at this time.');
         }
       } catch (err) {
-        console.error('Failed to fetch products:', err);
-        grid.innerHTML = `<p class="col-span-full text-center text-red-500 py-10">Error loading catalog.</p>`;
+        console.error('Fetch error:', err);
+        showEmptyState('Failed to connect to the server.');
       }
     }
 
-    // Render Product Cards
     function renderProductGrid(items) {
-      const grid = document.getElementById('products-grid');
-      if (!items.length) {
-        grid.innerHTML = `<p class="col-span-full text-center text-slate-500 py-10">No products match your criteria.</p>`;
+      const grid = document.getElementById('product-grid');
+      const empty = document.getElementById('empty-state');
+      document.getElementById('product-count').textContent = items.length;
+
+      if (items.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
         return;
       }
 
-      grid.innerHTML = items.map(p => `
-        <div onclick="openProductModal('${p.product_id}')" class="group bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col">
-          <div class="aspect-square bg-slate-100 relative overflow-hidden">
-            <img src="${p.main_image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
-          </div>
-          <div class="p-4 flex flex-col flex-grow justify-between space-y-2">
-            <div>
-              <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">${p.category || 'General'}</span>
-              <h3 class="text-sm font-medium text-slate-800 line-clamp-2 leading-snug">${p.title}</h3>
+      empty.classList.add('hidden');
+      grid.innerHTML = items.map(p => {
+        const image = p.images && p.images.length > 0 ? p.images[0] : 'https://via.placeholder.com/300x300?text=No+Image';
+        const price = p.price || p.sellPrice || p.variants?.[0]?.variantSellPrice || 0;
+        const cjVarId = p.variants?.[0]?.vid || p.cj_variant_id || '';
+
+        return `
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+            <div class="relative pt-[100%] bg-gray-100 overflow-hidden cursor-pointer" onclick="openProductModal('${p.id}')">
+              <img 
+                src="${image}" 
+                alt="${escapeHtml(p.title)}" 
+                class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='https://via.placeholder.com/300x300?text=No+Image'"
+              />
             </div>
-            <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-              <span class="text-base font-bold text-slate-900">$${Number(p.price).toFixed(2)}</span>
-              <span class="text-xs text-indigo-600 font-medium group-hover:underline">View</span>
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">${escapeHtml(p.category || 'General')}</span>
+                <h3 class="mt-2 text-sm font-semibold text-gray-900 line-clamp-2 cursor-pointer hover:text-indigo-600 transition-colors" onclick="openProductModal('${p.id}')">
+                  ${escapeHtml(p.title)}
+                </h3>
+              </div>
+              <div class="mt-4 flex items-center justify-between pt-2 border-t border-gray-50">
+                <span class="text-base font-bold text-gray-900">$${Number(price).toFixed(2)}</span>
+                <button 
+                  onclick="addToCart('${p.id}', '${escapeHtml(p.title)}', ${price}, '${image}', '${cjVarId}')"
+                  class="bg-gray-900 hover:bg-indigo-600 text-white p-2 rounded-xl transition-colors shadow-sm"
+                  aria-label="Add to cart"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                </button>
+              </div>
             </div>
           </div>
+        `;
+      }).join('');
+    }
+
+    function showSkeletons() {
+      const grid = document.getElementById('product-grid');
+      document.getElementById('empty-state').classList.add('hidden');
+      grid.innerHTML = Array(8).fill(0).map(() => `
+        <div class="bg-white rounded-2xl border border-gray-100 p-4 space-y-4 animate-pulse">
+          <div class="bg-gray-200 h-48 rounded-xl w-full"></div>
+          <div class="h-4 bg-gray-200 rounded w-1/3"></div>
+          <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div class="h-6 bg-gray-200 rounded w-1/4 pt-2"></div>
         </div>
       `).join('');
     }
 
-    function filterCategory(cat) {
-      document.getElementById('catalog-title').textContent = cat || 'All Products';
-      fetchProducts(cat);
+    function showEmptyState(msg) {
+      document.getElementById('product-grid').innerHTML = '';
+      document.getElementById('empty-state-msg').textContent = msg;
+      document.getElementById('empty-state').classList.remove('hidden');
     }
 
-    // Modal Control
+    /* ============================================================
+       CATEGORIES & SEARCH
+       ============================================================ */
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.textContent.trim().includes(cat) || (cat === 'All' && btn.textContent.includes('All Products'))) {
+          btn.className = 'category-btn bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap';
+        } else {
+          btn.className = 'category-btn bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap';
+        }
+      });
+      fetchProducts();
+    }
+
+    function handleSearch(e) {
+      e.preventDefault();
+      searchQuery = document.getElementById('search-input').value.trim();
+      fetchProducts();
+    }
+
+    function resetFilters() {
+      document.getElementById('search-input').value = '';
+      searchQuery = '';
+      filterCategory('All');
+    }
+
+    /* ============================================================
+       CART MANAGEMENT & STATE
+       ============================================================ */
+    function addToCart(id, title, price, image, cjVariantId) {
+      const existingIndex = cart.findIndex(item => item.id === id);
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += 1;
+      } else {
+        cart.push({ id, title, price: Number(price), image, cj_variant_id: cjVariantId, quantity: 1 });
+      }
+      saveCart();
+      showToast(`Added "${title.substring(0, 20)}..." to cart`);
+    }
+
+    function updateQuantity(id, delta) {
+      const index = cart.findIndex(item => item.id === id);
+      if (index > -1) {
+        cart[index].quantity += delta;
+        if (cart[index].quantity <= 0) cart.splice(index, 1);
+        saveCart();
+      }
+    }
+
+    function saveCart() {
+      localStorage.setItem('store_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge');
+      const itemsContainer = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+      const checkoutBtn = document.getElementById('checkout-btn');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      if (totalItems > 0) {
+        badge.textContent = totalItems;
+        badge.classList.remove('hidden');
+        checkoutBtn.disabled = false;
+      } else {
+        badge.classList.add('hidden');
+        checkoutBtn.disabled = true;
+      }
+
+      totalEl.textContent = `$${subtotal.toFixed(2)}`;
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p class="text-center text-gray-400 py-12 text-sm">Your cart is empty.</p>';
+        return;
+      }
+
+      itemsContainer.innerHTML = cart.map(item => `
+        <div class="flex items-center gap-4 py-3">
+          <img src="${item.image}" alt="${escapeHtml(item.title)}" class="w-16 h-16 object-cover rounded-lg bg-gray-100 flex-shrink-0">
+          <div class="flex-1 min-w-0">
+            <h4 class="text-xs font-semibold text-gray-900 truncate">${escapeHtml(item.title)}</h4>
+            <p class="text-xs text-gray-500 mt-0.5">$${item.price.toFixed(2)}</p>
+            <div class="flex items-center gap-2 mt-2">
+              <button onclick="updateQuantity('${item.id}', -1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center font-bold text-xs">-</button>
+              <span class="text-xs font-medium w-4 text-center">${item.quantity}</span>
+              <button onclick="updateQuantity('${item.id}', 1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center font-bold text-xs">+</button>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-gray-900">$${(item.price * item.quantity).toFixed(2)}</span>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart(open) {
+      const drawer = document.getElementById('cart-drawer');
+      if (open) drawer.classList.remove('hidden');
+      else drawer.classList.add('hidden');
+    }
+
+    /* ============================================================
+       MODALS & CHECKOUT
+       ============================================================ */
     function openProductModal(id) {
-      activeProduct = products.find(p => p.product_id === id);
-      if (!activeProduct) return;
+      const product = products.find(p => p.id === id);
+      if (!product) return;
 
-      document.getElementById('modal-title').textContent = activeProduct.title;
-      document.getElementById('modal-category').textContent = activeProduct.category;
-      document.getElementById('modal-price').textContent = `$${Number(activeProduct.price).toFixed(2)}`;
-      document.getElementById('modal-description').innerHTML = activeProduct.description || 'No description available.';
-      
-      const mainImg = document.getElementById('modal-main-img');
-      mainImg.src = activeProduct.main_image;
+      const modal = document.getElementById('product-modal');
+      const container = document.getElementById('modal-content');
+      const image = product.images?.[0] || 'https://via.placeholder.com/400';
+      const price = product.price || product.sellPrice || 0;
+      const cjVarId = product.variants?.[0]?.vid || product.cj_variant_id || '';
 
-      // Thumbnails
-      const thumbContainer = document.getElementById('modal-thumbnails');
-      if (activeProduct.images && activeProduct.images.length > 1) {
-        thumbContainer.innerHTML = activeProduct.images.map(img => `
-          <button onclick="document.getElementById('modal-main-img').src='${img}'" class="w-12 h-12 rounded-lg border border-slate-200 overflow-hidden flex-shrink-0">
-            <img src="${img}" class="w-full h-full object-cover">
+      container.innerHTML = `
+        <div class="bg-gray-100 rounded-xl overflow-hidden aspect-square">
+          <img src="${image}" alt="${escapeHtml(product.title)}" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full">${escapeHtml(product.category || 'General')}</span>
+            <h2 class="text-xl font-bold text-gray-900 mt-2">${escapeHtml(product.title)}</h2>
+            <p class="text-2xl font-black text-gray-900 mt-3">$${Number(price).toFixed(2)}</p>
+            <div class="mt-4 text-xs text-gray-600 max-h-40 overflow-y-auto space-y-2 leading-relaxed">
+              ${product.description || 'No detailed description available for this product.'}
+            </div>
+          </div>
+          <button 
+            onclick="addToCart('${product.id}', '${escapeHtml(product.title)}', ${price}, '${image}', '${cjVarId}'); closeProductModal();"
+            class="mt-6 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-colors shadow-md shadow-indigo-100"
+          >
+            Add To Cart
           </button>
-        `).join('');
-        thumbContainer.classList.remove('hidden');
-      } else {
-        thumbContainer.classList.add('hidden');
-      }
-
-      // Variants
-      const variantContainer = document.getElementById('modal-variants-container');
-      const variantSelect = document.getElementById('modal-variant-select');
-      if (activeProduct.variants && activeProduct.variants.length > 0) {
-        variantSelect.innerHTML = activeProduct.variants.map(v => `
-          <option value="${v.cj_variant_id}">${v.title} - $${Number(v.price).toFixed(2)}</option>
-        `).join('');
-        variantContainer.classList.remove('hidden');
-      } else {
-        variantContainer.classList.add('hidden');
-      }
-
-      document.getElementById('modal-add-btn').onclick = () => {
-        const selectedVid = variantSelect.value || (activeProduct.variants[0]?.cj_variant_id) || '';
-        addToCart(activeProduct, selectedVid);
-        closeProductModal();
-      };
-
-      document.getElementById('product-modal').classList.remove('hidden');
+        </div>
+      `;
+      modal.classList.remove('hidden');
     }
 
     function closeProductModal() {
       document.getElementById('product-modal').classList.add('hidden');
     }
 
-    // Cart Operations
-    function addToCart(product, variantId) {
-      const variant = product.variants?.find(v => v.cj_variant_id === variantId);
-      const price = variant ? variant.price : product.price;
-      const title = variant ? `${product.title} (${variant.title})` : product.title;
-
-      const existingIndex = cart.findIndex(item => item.product_id === product.product_id && item.cj_variant_id === variantId);
-
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += 1;
-      } else {
-        cart.push({
-          product_id: product.product_id,
-          cj_variant_id: variantId,
-          title: title,
-          price: price,
-          image: variant?.image || product.main_image,
-          quantity: 1
-        });
-      }
-
-      saveCart();
-      toggleCart(true);
-    }
-
-    function updateQuantity(index, delta) {
-      cart[index].quantity += delta;
-      if (cart[index].quantity <= 0) cart.splice(index, 1);
-      saveCart();
-    }
-
-    function saveCart() {
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      const badge = document.getElementById('cart-badge');
-      const cartItemsContainer = document.getElementById('cart-items');
-      const subtotalEl = document.getElementById('cart-subtotal');
-
-      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-      badge.textContent = totalItems;
-      badge.classList.toggle('hidden', totalItems === 0);
-
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `<p class="text-center text-slate-400 py-10 text-sm">Your cart is empty.</p>`;
-        return;
-      }
-
-      cartItemsContainer.innerHTML = cart.map((item, idx) => `
-        <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
-          <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg border bg-white flex-shrink-0">
-          <div class="flex-grow min-w-0">
-            <h4 class="text-xs font-semibold text-slate-800 truncate">${item.title}</h4>
-            <div class="text-xs text-slate-500 mt-1">$${Number(item.price).toFixed(2)}</div>
-            <div class="flex items-center gap-2 mt-2">
-              <button onclick="updateQuantity(${idx}, -1)" class="w-6 h-6 rounded bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs">-</button>
-              <span class="text-xs font-semibold">${item.quantity}</span>
-              <button onclick="updateQuantity(${idx}, 1)" class="w-6 h-6 rounded bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs">+</button>
-            </div>
-          </div>
-          <div class="text-xs font-bold text-slate-900">$${(item.price * item.quantity).toFixed(2)}</div>
-        </div>
-      `).join('');
-    }
-
-    function toggleCart(open) {
-      document.getElementById('cart-drawer').classList.toggle('hidden', !open);
-    }
-
-    // Checkout Handling
     function openCheckout() {
-      if (!cart.length) return;
+      if (cart.length === 0) return;
       toggleCart(false);
-      updateCheckoutTotal();
-      document.getElementById('checkout-form').classList.remove('hidden');
-      document.getElementById('order-success-view').classList.add('hidden');
       document.getElementById('checkout-modal').classList.remove('hidden');
     }
 
@@ -482,115 +489,87 @@
       document.getElementById('checkout-modal').classList.add('hidden');
     }
 
-    function updateCheckoutTotal() {
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      document.getElementById('summary-subtotal').textContent = `$${subtotal.toFixed(2)}`;
-      document.getElementById('summary-shipping').textContent = `$${selectedShippingFee.toFixed(2)}`;
-      document.getElementById('summary-total').textContent = `$${(subtotal + selectedShippingFee).toFixed(2)}`;
-    }
-
-    async function calculateShippingRates() {
-      const select = document.getElementById('shipping-select');
-      const container = document.getElementById('shipping-options-container');
-
-      try {
-        const res = await fetch(`${WORKER_URL}/api/checkout/shipping`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            countryCode: 'US',
-            items: cart
-          })
-        });
-
-        const data = await res.json();
-        if (data.success && data.shipping_options?.length) {
-          select.innerHTML = data.shipping_options.map(opt => `
-            <option value="${opt.logisticPrice}">${opt.logisticName} - $${Number(opt.logisticPrice).toFixed(2)} (${opt.logisticAging} days)</option>
-          `).join('');
-
-          selectedShippingFee = Number(data.shipping_options[0].logisticPrice) || 0;
-          container.classList.remove('hidden');
-          updateCheckoutTotal();
-        } else {
-          alert('Failed to calculate shipping options.');
-        }
-      } catch (err) {
-        console.error('Shipping calculation error:', err);
-      }
-    }
-
-    async function handleCheckoutSubmit(e) {
+    async function handlePlaceOrder(e) {
       e.preventDefault();
-
-      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      const payload = {
-        customer: {
-          first_name: document.getElementById('cust-first-name').value,
-          last_name: document.getElementById('cust-last-name').value,
-          email: document.getElementById('cust-email').value,
-          phone: document.getElementById('cust-phone').value
-        },
-        shipping_address: {
-          address1: document.getElementById('ship-address').value,
-          city: document.getElementById('ship-city').value,
-          state: document.getElementById('ship-state').value,
-          zip: document.getElementById('ship-zip').value,
-          country_code: 'US'
-        },
-        items: cart,
-        subtotal: subtotal,
-        shipping_cost: selectedShippingFee,
-        total: subtotal + selectedShippingFee
-      };
-
       const btn = document.getElementById('place-order-btn');
       btn.disabled = true;
-      btn.textContent = 'Processing...';
+      btn.textContent = 'Processing Order...';
+
+      const payload = {
+        customer: {
+          name: document.getElementById('cust-name').value,
+          email: document.getElementById('cust-email').value,
+          phone: document.getElementById('cust-phone').value,
+          address: document.getElementById('cust-address').value,
+          city: document.getElementById('cust-city').value,
+          province: document.getElementById('cust-province').value,
+          zip: document.getElementById('cust-zip').value,
+          country_code: document.getElementById('cust-country').value.toUpperCase()
+        },
+        items: cart.map(item => ({
+          product_id: item.id,
+          cj_variant_id: item.cj_variant_id,
+          quantity: item.quantity,
+          price: item.price
+        }))
+      };
 
       try {
-        const res = await fetch(`${WORKER_URL}/api/checkout/order`, {
+        const res = await fetch(`${API_BASE}/orders`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
-
         const data = await res.json();
 
-        if (data.success && data.order) {
+        if (data.success) {
           cart = [];
           saveCart();
-
-          // Render Success View
-          document.getElementById('checkout-form').classList.add('hidden');
-          document.getElementById('order-success-view').classList.remove('hidden');
-          document.getElementById('confirmed-order-id').textContent = data.order_id;
-
-          const bank = data.order.bank_transfer_info;
-          document.getElementById('bank-instructions').textContent = bank.instructions;
-
-          document.getElementById('bank-details-grid').innerHTML = `
-            <div><strong>Bank:</strong> ${bank.bank_name}</div>
-            <div><strong>Account Name:</strong> ${bank.account_name}</div>
-            <div><strong>Account No:</strong> ${bank.account_number}</div>
-            ${bank.iban ? `<div><strong>IBAN:</strong> ${bank.iban}</div>` : ''}
-            ${bank.swift ? `<div><strong>SWIFT/BIC:</strong> ${bank.swift}</div>` : ''}
-          `;
+          closeCheckout();
+          showToast('Order placed successfully! Thank you.', 'success');
         } else {
-          alert('Order submission failed: ' + (data.error || 'Unknown error'));
+          showToast(data.error || 'Failed to place order.', 'error');
         }
       } catch (err) {
-        console.error('Order Error:', err);
-        alert('Failed to place order.');
+        showToast('Network error while placing order.', 'error');
       } finally {
         btn.disabled = false;
-        btn.textContent = 'Place Order (Bank Transfer)';
+        btn.textContent = 'Place Order Now';
       }
     }
 
-    function finishCheckout() {
-      closeCheckout();
-      window.location.reload();
+    /* ============================================================
+       TOAST SYSTEM & UTILS
+       ============================================================ */
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const bgColor = type === 'error' ? 'bg-red-600' : 'bg-gray-900';
+      toast.className = `${bgColor} text-white text-xs font-medium px-4 py-3 rounded-xl shadow-lg transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto flex items-center gap-2`;
+      toast.textContent = message;
+
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, match => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      })[match]);
     }
   </script>
 </body>
