@@ -24,6 +24,11 @@
   />
 
   <meta
+    name="robots"
+    content="index, follow, max-image-preview:large"
+  />
+
+  <meta
     name="theme-color"
     content="#111827"
   />
@@ -104,6 +109,16 @@
     content="Prasun Store"
   />
 
+  <meta
+    property="og:image"
+    content="https://store.prasunbarua.com/prasun-store-logo.jpeg"
+  />
+
+  <meta
+    property="og:image:alt"
+    content="Prasun Store"
+  />
+
 
   <!-- ============================================================
        TWITTER / X
@@ -123,6 +138,36 @@
     name="twitter:description"
     content="Discover useful products across technology, home improvement, lifestyle, solar energy and more at Prasun Store."
   />
+
+  <meta
+    name="twitter:image"
+    content="https://store.prasunbarua.com/prasun-store-logo.jpeg"
+  />
+
+  <meta
+    name="twitter:image:alt"
+    content="Prasun Store"
+  />
+
+
+  <!-- ============================================================
+       STRUCTURED DATA — WEBSITE
+       ============================================================ -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Prasun Store",
+    "url": "https://store.prasunbarua.com/",
+    "description": "Discover useful products across technology, home improvement, lifestyle, solar energy and more at Prasun Store.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://store.prasunbarua.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
 
   <style>
@@ -832,7 +877,9 @@
 
       display: block;
 
-      object-fit: cover;
+      object-fit: contain;
+
+      padding: 10px;
 
       transition:
         transform 0.35s ease;
@@ -1854,7 +1901,7 @@
               id="productsTitle"
               class="section-title"
             >
-              Featured Products
+              Shop Our Products
             </h2>
 
             <p class="section-subtitle">
@@ -2079,11 +2126,13 @@
        CONFIG
        ============================================================ */
 
-    const API_BASE =
-      "https://prasun-store.prasun301.workers.dev";
+    /*
+     * The storefront and API are expected to use the same domain.
+     * Therefore we intentionally use a relative API path.
+     */
 
     const PRODUCTS_API =
-      `${API_BASE}/api/products`;
+      "/api/products";
 
     const CART_STORAGE_KEY =
       "prasun_cart";
@@ -2215,7 +2264,7 @@
                   "application/json"
               },
 
-              cache: "no-store"
+              cache: "default"
             }
           );
 
@@ -2390,6 +2439,8 @@
                 product?.title ||
                 product?.subject ||
                 product?.name ||
+                product?.productName ||
+                product?.productNameEn ||
                 "Product"
               );
 
@@ -2479,6 +2530,7 @@
       const value =
         product?.product_id ??
         product?.productId ??
+        product?.pid ??
         product?.item_id ??
         product?.itemId ??
         product?.id;
@@ -2522,6 +2574,12 @@
 
         product?.mainImage,
 
+        product?.productImage,
+
+        product?.bigImage,
+
+        product?.bigimg,
+
         product?.itemMainPic,
 
         product?.item_main_pic
@@ -2564,6 +2622,42 @@
                   image?.imageUrl ||
                   image?.src ||
                   image?.image
+                );
+
+
+          const url =
+            normalizeImage(
+              value
+            );
+
+
+          if (url) {
+            return url;
+          }
+
+        }
+
+      }
+
+
+      if (
+        Array.isArray(
+          product?.productImageSet
+        )
+      ) {
+
+        for (
+          const image of product.productImageSet
+        ) {
+
+          const value =
+            typeof image === "string"
+              ? image
+              : (
+                  image?.url ||
+                  image?.imageUrl ||
+                  image?.image ||
+                  image?.img
                 );
 
 
@@ -2639,11 +2733,17 @@
 
         product?.sale_price,
 
-        product?.price,
-
         product?.salePrice,
 
+        product?.price,
+
         product?.targetSalePrice,
+
+        product?.sellPrice,
+
+        product?.sellprice,
+
+        product?.nowPrice,
 
         product?.low_price
 
@@ -2738,28 +2838,26 @@
       }
 
 
-      const cleaned =
+      const match =
         String(value)
-
           .replace(
             /,/g,
             ""
           )
-
-          .replace(
-            /[^\d.-]/g,
-            ""
+          .match(
+            /-?\d+(?:\.\d+)?
+            /
           );
 
 
-      if (!cleaned) {
+      if (!match) {
         return null;
       }
 
 
       const number =
         Number(
-          cleaned
+          match[0]
         );
 
 
@@ -3751,7 +3849,11 @@
 
                 product?.sku,
 
-                product?.product_id
+                product?.productSku,
+
+                product?.product_id,
+
+                product?.pid
               ]
 
                 .filter(Boolean)
