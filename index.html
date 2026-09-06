@@ -133,13 +133,908 @@
     Prasun Store | Technology, Home, Lifestyle & Solar Products
   </title>
 
+
+  <style>
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       CONTAINER
+       ========================================================= */
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       ACCESSIBILITY
+       ========================================================= */
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+
+    /* Brand */
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      min-width: 190px;
+    }
+
+    .brand-logo {
+      width: 180px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: none;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name span {
+      color: #2563eb;
+    }
+
+
+    /* Search */
+
+    .search-wrap {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .search-form {
+      display: flex;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      width: 100%;
+      min-width: 0;
+      height: 46px;
+      padding: 0 16px;
+      border: 1px solid #d1d5db;
+      border-right: 0;
+      border-radius: 10px 0 0 10px;
+      outline: none;
+      background: #f9fafb;
+      color: #111827;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .search-input::placeholder {
+      color: #9ca3af;
+    }
+
+    .search-input:focus {
+      border-color: #2563eb;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+    }
+
+    .search-button {
+      height: 46px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid #111827;
+      border-radius: 0 10px 10px 0;
+      background: #111827;
+      color: #ffffff;
+      font-weight: 600;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .search-button:hover {
+      background: #1f2937;
+    }
+
+    .search-button:active {
+      transform: scale(0.98);
+    }
+
+    .search-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+
+    /* Header navigation */
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .header-link {
+      position: relative;
+      min-width: 72px;
+      min-height: 48px;
+      padding: 6px 10px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      border-radius: 8px;
+      color: #374151;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .header-link:hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    .header-icon {
+      width: 21px;
+      height: 21px;
+    }
+
+    .link-label {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      padding: 42px 0 20px;
+    }
+
+    .hero-box {
+      position: relative;
+      overflow: hidden;
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      border-radius: 24px;
+      background:
+        linear-gradient(
+          135deg,
+          #111827 0%,
+          #1f2937 55%,
+          #2563eb 100%
+        );
+      box-shadow:
+        0 20px 50px rgba(17, 24, 39, 0.14);
+    }
+
+    .hero-box::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -130px;
+      top: -180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-box::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: 120px;
+      bottom: -230px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 62px;
+      color: #ffffff;
+    }
+
+    .hero-kicker {
+      margin-bottom: 12px;
+      color: #bfdbfe;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -2.5px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 22px 0 0;
+      color: #e5e7eb;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-button {
+      min-height: 48px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-button.primary {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .hero-button.primary:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-button.secondary {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    .hero-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+
+    /* =========================================================
+       PRODUCTS SECTION
+       ========================================================= */
+
+    .section {
+      padding: 72px 0 90px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #111827;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      margin: 8px 0 0;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .product-count {
+      flex-shrink: 0;
+      color: #6b7280;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       PRODUCT GRID
+       ========================================================= */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 5px 20px rgba(17, 24, 39, 0.05);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(17, 24, 39, 0.10);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: #f3f4f6;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.04);
+    }
+
+    .product-info {
+      padding: 18px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .product-category {
+      margin-bottom: 6px;
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .product-name {
+      margin: 0;
+      color: #111827;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .product-description {
+      margin: 8px 0 0;
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .product-bottom {
+      margin-top: auto;
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .product-price {
+      color: #111827;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .product-button {
+      min-height: 38px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .product-button:hover {
+      background: #2563eb;
+    }
+
+
+    /* =========================================================
+       LOADING / ERROR STATES
+       ========================================================= */
+
+    .state-box {
+      min-height: 300px;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .spinner {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 18px;
+      border: 3px solid #e5e7eb;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .state-title {
+      color: #111827;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .state-text {
+      max-width: 520px;
+      margin-top: 6px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .retry-button {
+      margin-top: 18px;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #111827;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .retry-button:hover {
+      background: #2563eb;
+    }
+
+
+    /* =========================================================
+       EMPTY SEARCH
+       ========================================================= */
+
+    .empty-search {
+      min-height: 300px;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px dashed #d1d5db;
+      border-radius: 14px;
+      background: #f9fafb;
+    }
+
+    .empty-icon {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 16px;
+      color: #9ca3af;
+    }
+
+    .empty-search h3 {
+      margin: 0;
+      color: #111827;
+      font-size: 20px;
+    }
+
+    .empty-search p {
+      margin: 6px 0 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .footer-inner {
+      padding: 46px 0 36px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      color: #111827;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-brand span {
+      color: #2563eb;
+    }
+
+    .footer-text {
+      max-width: 520px;
+      margin-top: 10px;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #4b5563;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+
+    .copyright {
+      padding: 20px 0;
+      border-top: 1px solid #e5e7eb;
+      color: #9ca3af;
+      font-size: 13px;
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      .brand-logo {
+        width: 150px;
+        height: auto;
+      }
+
+      .header-inner {
+        gap: 18px;
+      }
+
+    }
+
+
+    @media (max-width: 760px) {
+
+      .container {
+        width: min(100% - 28px, 680px);
+      }
+
+      .header-inner {
+        min-height: auto;
+        padding: 12px 0;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        flex: 1;
+      }
+
+      .brand-logo {
+        width: 155px;
+      }
+
+      .search-wrap {
+        order: 3;
+        flex-basis: 100%;
+      }
+
+      .search-form {
+        max-width: none;
+      }
+
+      .header-actions {
+        margin-left: auto;
+      }
+
+      .header-link {
+        min-width: 58px;
+      }
+
+      .hero {
+        padding-top: 22px;
+      }
+
+      .hero-box {
+        min-height: 390px;
+        border-radius: 18px;
+      }
+
+      .hero-content {
+        padding: 40px 28px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 11vw, 54px);
+        letter-spacing: -1.8px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 55px 0 65px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+      }
+
+      .product-info {
+        padding: 14px;
+      }
+
+      .product-name {
+        font-size: 15px;
+      }
+
+      .product-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .product-button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        padding: 38px 0 28px;
+        flex-direction: column;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .header-actions {
+        gap: 2px;
+      }
+
+      .header-link {
+        min-width: 52px;
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      .link-label {
+        font-size: 11px;
+      }
+
+      .brand-logo {
+        width: 140px;
+      }
+
+      .search-button {
+        padding: 0 14px;
+      }
+
+      .search-button span {
+        display: none;
+      }
+
+      .hero-box {
+        min-height: 410px;
+      }
+
+      .hero-content {
+        padding: 34px 22px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-button {
+        width: 100%;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        max-width: 100%;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
 
   <header>
 
@@ -335,7 +1230,9 @@
 
 
 
-  <!-- HERO -->
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
 
   <section class="hero">
 
@@ -358,7 +1255,6 @@
             Discover selected products across technology,
             home improvement, lifestyle, solar energy and more.
           </p>
-
 
           <div class="hero-actions">
 
@@ -388,7 +1284,9 @@
 
 
 
-  <!-- PRODUCTS -->
+  <!-- =======================================================
+       PRODUCTS
+       ======================================================= -->
 
   <section
     class="section"
@@ -418,7 +1316,6 @@
 
         </div>
 
-
         <div
           id="productCount"
           class="product-count"
@@ -431,7 +1328,7 @@
 
 
 
-      <!-- LOADING STATE -->
+      <!-- LOADING -->
 
       <div
         id="loadingState"
@@ -457,7 +1354,7 @@
 
 
 
-      <!-- ERROR STATE -->
+      <!-- ERROR -->
 
       <div
         id="errorState"
@@ -489,7 +1386,7 @@
 
 
 
-      <!-- EMPTY SEARCH STATE -->
+      <!-- EMPTY SEARCH -->
 
       <div
         id="emptyState"
@@ -523,7 +1420,6 @@
 
         </svg>
 
-
         <h3>
           No products found
         </h3>
@@ -550,14 +1446,15 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
 
   <footer>
 
     <div class="container">
 
       <div class="footer-inner">
-
 
         <div>
 
@@ -597,7 +1494,8 @@
 
       <div class="copyright">
 
-        © <span id="currentYear"></span>
+        ©
+        <span id="currentYear"></span>
         Prasun Store. All rights reserved.
 
       </div>
@@ -605,6 +1503,540 @@
     </div>
 
   </footer>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      /* -------------------------------------------------------
+         CURRENT YEAR
+         ------------------------------------------------------- */
+
+      const currentYear = document.getElementById("currentYear");
+
+      if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+      }
+
+
+      /* -------------------------------------------------------
+         CART COUNT
+         ------------------------------------------------------- */
+
+      const cartCount = document.getElementById("cartCount");
+
+      function updateCartCount() {
+
+        try {
+
+          const cart = JSON.parse(
+            localStorage.getItem("cart") || "[]"
+          );
+
+          let count = 0;
+
+          if (Array.isArray(cart)) {
+
+            cart.forEach(function (item) {
+
+              const quantity =
+                Number(item.quantity) || 1;
+
+              count += quantity;
+
+            });
+
+          }
+
+          if (cartCount) {
+
+            cartCount.textContent = count;
+
+            cartCount.setAttribute(
+              "aria-label",
+              count + " items in cart"
+            );
+
+          }
+
+        } catch (error) {
+
+          if (cartCount) {
+            cartCount.textContent = "0";
+          }
+
+        }
+
+      }
+
+      updateCartCount();
+
+
+      /* -------------------------------------------------------
+         PRODUCT ELEMENTS
+         ------------------------------------------------------- */
+
+      const searchForm =
+        document.getElementById("searchForm");
+
+      const searchInput =
+        document.getElementById("searchInput");
+
+      const productGrid =
+        document.getElementById("productGrid");
+
+      const productCount =
+        document.getElementById("productCount");
+
+      const loadingState =
+        document.getElementById("loadingState");
+
+      const errorState =
+        document.getElementById("errorState");
+
+      const errorMessage =
+        document.getElementById("errorMessage");
+
+      const emptyState =
+        document.getElementById("emptyState");
+
+      const retryButton =
+        document.getElementById("retryButton");
+
+
+      /* -------------------------------------------------------
+         SAMPLE PRODUCT DATA
+         
+         Replace this array with your existing API/product
+         loading system if your store already has one.
+         ------------------------------------------------------- */
+
+      let products = [
+
+        {
+          id: "solar-energy-tshirt",
+          name: "Solar Energy T-Shirt",
+          category: "Solar Energy",
+          description:
+            "Renewable energy inspired apparel for solar professionals, engineers, students and enthusiasts.",
+          price: "$24.99",
+          image: "./products/solar-energy-tshirt.jpg",
+          url: "#"
+        },
+
+        {
+          id: "technology-product",
+          name: "Technology Product",
+          category: "Technology",
+          description:
+            "Practical technology products selected for everyday use.",
+          price: "$29.99",
+          image: "./products/technology-product.jpg",
+          url: "#"
+        },
+
+        {
+          id: "home-product",
+          name: "Home Improvement Product",
+          category: "Home",
+          description:
+            "Useful products designed to make everyday home improvement easier.",
+          price: "$34.99",
+          image: "./products/home-product.jpg",
+          url: "#"
+        },
+
+        {
+          id: "lifestyle-product",
+          name: "Lifestyle Product",
+          category: "Lifestyle",
+          description:
+            "Useful lifestyle products selected for practical everyday needs.",
+          price: "$19.99",
+          image: "./products/lifestyle-product.jpg",
+          url: "#"
+        }
+
+      ];
+
+
+      /* -------------------------------------------------------
+         SHOW / HIDE STATES
+         ------------------------------------------------------- */
+
+      function showLoading() {
+
+        loadingState.style.display = "flex";
+        errorState.style.display = "none";
+        emptyState.style.display = "none";
+        productGrid.style.display = "none";
+
+        productCount.textContent = "Loading...";
+
+      }
+
+
+      function showError(message) {
+
+        loadingState.style.display = "none";
+        errorState.style.display = "flex";
+        emptyState.style.display = "none";
+        productGrid.style.display = "none";
+
+        errorMessage.textContent =
+          message || "Something went wrong.";
+
+        productCount.textContent = "";
+
+      }
+
+
+      function showEmpty() {
+
+        loadingState.style.display = "none";
+        errorState.style.display = "none";
+        emptyState.style.display = "flex";
+        productGrid.style.display = "none";
+
+        productCount.textContent = "0 products";
+
+      }
+
+
+      function showProducts() {
+
+        loadingState.style.display = "none";
+        errorState.style.display = "none";
+        emptyState.style.display = "none";
+        productGrid.style.display = "grid";
+
+      }
+
+
+      /* -------------------------------------------------------
+         RENDER PRODUCTS
+         ------------------------------------------------------- */
+
+      function renderProducts(items) {
+
+        productGrid.innerHTML = "";
+
+        if (!items.length) {
+
+          showEmpty();
+
+          return;
+
+        }
+
+
+        items.forEach(function (product) {
+
+          const card =
+            document.createElement("article");
+
+          card.className = "product-card";
+
+
+          const imageWrap =
+            document.createElement("div");
+
+          imageWrap.className =
+            "product-image-wrap";
+
+
+          const image =
+            document.createElement("img");
+
+          image.className =
+            "product-image";
+
+          image.src =
+            product.image;
+
+          image.alt =
+            product.name;
+
+          image.loading =
+            "lazy";
+
+          image.decoding =
+            "async";
+
+
+          image.addEventListener(
+            "error",
+            function () {
+
+              this.style.display = "none";
+
+            }
+          );
+
+
+          imageWrap.appendChild(image);
+
+
+          const info =
+            document.createElement("div");
+
+          info.className =
+            "product-info";
+
+
+          const category =
+            document.createElement("div");
+
+          category.className =
+            "product-category";
+
+          category.textContent =
+            product.category;
+
+
+          const name =
+            document.createElement("h3");
+
+          name.className =
+            "product-name";
+
+          name.textContent =
+            product.name;
+
+
+          const description =
+            document.createElement("p");
+
+          description.className =
+            "product-description";
+
+          description.textContent =
+            product.description;
+
+
+          const bottom =
+            document.createElement("div");
+
+          bottom.className =
+            "product-bottom";
+
+
+          const price =
+            document.createElement("div");
+
+          price.className =
+            "product-price";
+
+          price.textContent =
+            product.price;
+
+
+          const button =
+            document.createElement("a");
+
+          button.className =
+            "product-button";
+
+          button.href =
+            product.url || "#";
+
+          button.textContent =
+            "View Product";
+
+
+          bottom.appendChild(price);
+          bottom.appendChild(button);
+
+          info.appendChild(category);
+          info.appendChild(name);
+          info.appendChild(description);
+          info.appendChild(bottom);
+
+          card.appendChild(imageWrap);
+          card.appendChild(info);
+
+          productGrid.appendChild(card);
+
+        });
+
+
+        productCount.textContent =
+          items.length +
+          (items.length === 1 ? " product" : " products");
+
+        showProducts();
+
+      }
+
+
+      /* -------------------------------------------------------
+         SEARCH
+         ------------------------------------------------------- */
+
+      function searchProducts(query) {
+
+        const searchTerm =
+          query.trim().toLowerCase();
+
+
+        if (!searchTerm) {
+
+          renderProducts(products);
+
+          return;
+
+        }
+
+
+        const filtered =
+          products.filter(function (product) {
+
+            return (
+
+              String(product.name || "")
+                .toLowerCase()
+                .includes(searchTerm)
+
+              ||
+
+              String(product.category || "")
+                .toLowerCase()
+                .includes(searchTerm)
+
+              ||
+
+              String(product.description || "")
+                .toLowerCase()
+                .includes(searchTerm)
+
+            );
+
+          });
+
+
+        renderProducts(filtered);
+
+      }
+
+
+      if (searchForm) {
+
+        searchForm.addEventListener(
+          "submit",
+          function (event) {
+
+            event.preventDefault();
+
+            searchProducts(
+              searchInput.value
+            );
+
+          }
+        );
+
+      }
+
+
+      if (searchInput) {
+
+        searchInput.addEventListener(
+          "input",
+          function () {
+
+            searchProducts(
+              this.value
+            );
+
+          }
+        );
+
+      }
+
+
+      /* -------------------------------------------------------
+         RETRY
+         ------------------------------------------------------- */
+
+      if (retryButton) {
+
+        retryButton.addEventListener(
+          "click",
+          function () {
+
+            loadProducts();
+
+          }
+        );
+
+      }
+
+
+      /* -------------------------------------------------------
+         LOAD PRODUCTS
+         ------------------------------------------------------- */
+
+      function loadProducts() {
+
+        showLoading();
+
+
+        try {
+
+          /*
+           * This is currently using the local products array.
+           *
+           * If your existing website loads products from an API,
+           * replace this section with your existing fetch/API code.
+           */
+
+          setTimeout(function () {
+
+            renderProducts(products);
+
+          }, 500);
+
+        } catch (error) {
+
+          showError(
+            "Unable to load products. Please try again."
+          );
+
+        }
+
+      }
+
+
+      /* -------------------------------------------------------
+         STORAGE EVENT
+         ------------------------------------------------------- */
+
+      window.addEventListener(
+        "storage",
+        function (event) {
+
+          if (event.key === "cart") {
+            updateCartCount();
+          }
+
+        }
+      );
+
+
+      /* -------------------------------------------------------
+         INITIAL LOAD
+         ------------------------------------------------------- */
+
+      loadProducts();
+
+    });
+
+  </script>
 
 
 </body>
